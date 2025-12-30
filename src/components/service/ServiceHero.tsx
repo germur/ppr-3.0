@@ -43,10 +43,10 @@ export default function ServiceHero({ title, subtitle, image, serviceType, templ
                             {subtitle}
                         </motion.p>
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="flex flex-col sm:flex-row gap-4">
-                            <a href="tel:1-800-555-0199" className="bg-urgent hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-urgent/20 transition-all transform hover:-translate-y-1">
+                            <a href="tel:7866022217" className="bg-urgent hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-urgent/20 transition-all transform hover:-translate-y-1">
                                 <Phone size={20} /> Call 24/7 Emergency
                             </a>
-                            <a href="#contact" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-white/20 transition-all">
+                            <a href="/contact/" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-white/20 transition-all">
                                 <FileCheck size={20} /> File Insurance Claim
                             </a>
                         </motion.div>
@@ -74,12 +74,12 @@ export default function ServiceHero({ title, subtitle, image, serviceType, templ
                                 {subtitle}
                             </p>
                             <div className="flex gap-4">
-                                <button className="bg-secondary hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg transition-transform hover:-translate-y-1">
+                                <a href="/contact/" className="bg-secondary hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold shadow-lg transition-transform hover:-translate-y-1 block text-center">
                                     Request Quote
-                                </button>
-                                <button className="text-slate-900 dark:text-white font-bold flex items-center gap-2 hover:gap-3 transition-all px-4">
+                                </a>
+                                <a href="/remodeling-services/" className="text-slate-900 dark:text-white font-bold flex items-center gap-2 hover:gap-3 transition-all px-4">
                                     View Portfolio <ArrowRight size={20} />
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <div className="order-1 lg:order-2">
@@ -111,12 +111,12 @@ export default function ServiceHero({ title, subtitle, image, serviceType, templ
                     {subtitle}
                 </motion.p>
                 <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="flex flex-col sm:flex-row justify-center gap-4">
-                    <button className="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold transition-colors">
+                    <a href="/contact/" className="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold transition-colors block text-center">
                         Request Proposal
-                    </button>
-                    <button className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-lg font-bold backdrop-blur-sm transition-colors">
+                    </a>
+                    <a href="/commercial/" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-lg font-bold backdrop-blur-sm transition-colors block text-center">
                         Commercial Portfolio
-                    </button>
+                    </a>
                 </motion.div>
             </div>
         </section>
