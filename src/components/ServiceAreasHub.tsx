@@ -85,14 +85,14 @@ export default function ServiceAreasHub() {
                         <div className="absolute top-16 left-0 w-full bg-white shadow-xl rounded-xl border border-slate-100 p-4 z-10">
                             <p className="text-sm text-slate-500 mb-2">Suggested Locations:</p>
                             <ul>
-                                <li className="p-2 hover:bg-slate-50 rounded cursor-pointer flex justify-between items-center group/item transition-colors">
+                                <a href="/service-areas/central-florida/kissimmee/" className="block p-2 hover:bg-slate-50 rounded cursor-pointer flex justify-between items-center group/item transition-colors">
                                     <span className="font-medium text-slate-700">Kissimmee <span className="text-slate-400 font-normal">(Central Florida)</span></span>
                                     <ArrowRight className="w-4 h-4 text-blue-500 opacity-0 group-hover/item:opacity-100" />
-                                </li>
-                                <li className="p-2 hover:bg-slate-50 rounded cursor-pointer flex justify-between items-center group/item transition-colors">
+                                </a>
+                                <a href="/service-areas/south-florida/key-biscayne/" className="block p-2 hover:bg-slate-50 rounded cursor-pointer flex justify-between items-center group/item transition-colors">
                                     <span className="font-medium text-slate-700">Key Biscayne <span className="text-slate-400 font-normal">(South Florida)</span></span>
                                     <ArrowRight className="w-4 h-4 text-blue-500 opacity-0 group-hover/item:opacity-100" />
-                                </li>
+                                </a>
                             </ul>
                         </div>
                     )}
