@@ -24,13 +24,13 @@ import FireDamageLayout from '../../layouts/FireDamageLayout.astro';
                         Immediate stabilization, deep structural cleaning, and complete reconstruction. We don't just fix houses; we guide you from disaster to full recovery with empathy and expertise.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                        <button class="bg-[#135bec] hover:bg-blue-700 text-white h-12 px-8 rounded-lg font-bold text-base transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20">
+                        <a href="/contact/" class="bg-[#135bec] hover:bg-blue-700 text-white h-12 px-8 rounded-lg font-bold text-base transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20">
                             Get Help Now
                             <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
-                        <button class="bg-[#1e293b] border border-[#334155] hover:bg-[#334155]/50 text-white h-12 px-8 rounded-lg font-semibold text-base transition-colors flex items-center justify-center">
+                        </a>
+                        <a href="#process" class="bg-[#1e293b] border border-[#334155] hover:bg-[#334155]/50 text-white h-12 px-8 rounded-lg font-semibold text-base transition-colors flex items-center justify-center">
                             Our Process
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <!-- Hero Image -->
@@ -124,13 +124,11 @@ import FireDamageLayout from '../../layouts/FireDamageLayout.astro';
             </div>
             <!-- Tabs/Accordion Container -->
             <div class="bg-[#1e293b] border border-[#334155] rounded-2xl overflow-hidden shadow-xl">
-                <div class="flex border-b border-[#334155]">
-                    <button class="flex-1 py-4 text-center font-bold text-sm sm:text-base border-b-2 border-[#135bec] text-white bg-white/5 transition-colors">
-                        What To Do (Do's)
-                    </button>
-                    <button class="flex-1 py-4 text-center font-bold text-sm sm:text-base border-b-2 border-transparent text-[#94a3b8] hover:text-white transition-colors">
-                        What To Avoid (Don'ts)
-                    </button>
+                <div class="flex items-center justify-center border-b border-[#334155] bg-white/5 py-4">
+                    <h3 class="font-bold text-white text-lg flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#135bec]">check_circle</span>
+                        Immediate Do's
+                    </h3>
                 </div>
                 <div class="p-6 sm:p-10">
                     <div class="flex flex-col gap-4">
@@ -177,16 +175,16 @@ import FireDamageLayout from '../../layouts/FireDamageLayout.astro';
     </section>
 
     <!-- Process Section -->
-    <section class="py-20 bg-[#0f172a] overflow-hidden">
+    <section id="process" class="py-20 bg-[#0f172a] overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-16">
                 <!-- Left: Title & Intro -->
                 <div class="lg:w-1/3">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Our Process: <br/>Stabilize to Rebuild</h2>
                     <p class="text-[#94a3b8] mb-8">We handle every step of the journey, ensuring you only have to deal with one point of contact for the entire restoration project.</p>
-                    <button class="hidden lg:flex bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-lg font-semibold transition-colors items-center gap-2 border border-white/10">
+                    <a href="#process" class="hidden lg:flex bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-lg font-semibold transition-colors items-center gap-2 border border-white/10">
                         View Full Timeline <span class="material-symbols-outlined">arrow_downward</span>
-                    </button>
+                    </a>
                 </div>
                 <!-- Right: Vertical Timeline -->
                 <div class="lg:w-2/3 relative pl-8 border-l border-[#334155] space-y-12">

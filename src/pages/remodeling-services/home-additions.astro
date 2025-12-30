@@ -1,15 +1,329 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
+import RemodelingLayout from '../../layouts/RemodelingLayout.astro';
+
+const pageTitle = "Home Additions Services - Paramount Property Restoration";
 ---
 
-<MainLayout title="Home Additions | Paramount Property Restoration">
-  <div class="py-20 px-6 max-w-4xl mx-auto text-center">
-    <h1 class="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Home Additions</h1>
-    <p class="text-lg text-gray-600 dark:text-gray-300">
-      Expand your living space with our expert home addition services.
-    </p>
-    <div class="mt-12 p-8 bg-gray-50 dark:bg-gray-800 rounded-xl">
-      <p class="text-gray-500 italic">Portfolio and service details coming soon.</p>
+<RemodelingLayout 
+    title={pageTitle}
+    htmlClass="dark"
+    headerTheme="dark"
+    emergencyBtnText="Request Consultation"
+>
+    <!-- Breadcrumbs -->
+    <div class="w-full bg-white dark:bg-[#111418] border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-3">
+            <nav aria-label="Breadcrumb" class="flex text-sm">
+                <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                    <li class="inline-flex items-center">
+                        <a class="inline-flex items-center text-gray-500 hover:text-[#1162d4] dark:text-gray-400 dark:hover:text-white" href="/">
+                            <span class="material-symbols-outlined text-lg mr-1">home</span>
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <div class="flex items-center">
+                            <span class="material-symbols-outlined text-gray-400 text-lg mx-1">chevron_right</span>
+                            <a class="text-gray-500 hover:text-[#1162d4] dark:text-gray-400 dark:hover:text-white" href="/remodeling-services/">Remodeling</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <span class="material-symbols-outlined text-gray-400 text-lg mx-1">chevron_right</span>
+                            <span class="text-[#1162d4] font-medium dark:text-white">Home Additions</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
     </div>
-  </div>
-</MainLayout>
+
+    <main class="flex flex-col">
+        <!-- Hero Section -->
+        <section class="relative w-full overflow-hidden">
+            <!-- Background Image with Gradient Overlay -->
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#111418] via-[#111418]/80 to-transparent z-10"></div>
+                <!-- Using a generic construction/remodeling image -->
+                <div class="w-full h-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQsYVIt0abKg_MkmRPRjhNCSgb9twqBeRNLwEFpt_XfLjh8R8qwo-oaTlOu3hQCJJqb_SbLecDvzptairYPEuNfEH1aC1ZYSlUgrlKi8DeRUZNFHGemT308qXJYyr1ZdheWZnZfXQn2LjbVLhPOl8sUPHUUGobPVhpypxi7sjXswBSGgOG75DfEnd3RkATXpYKmn74jSgpYTV1uxlnIhztvKKoLlEM94Z-PF5b7NKR0diocrcEEPTWXWM1sFEaQy75SwccO7qKVE9x");'></div>
+            </div>
+            <div class="relative z-10 flex min-h-[600px] flex-col justify-center px-4 md:px-6 py-20 max-w-7xl mx-auto">
+                <div class="max-w-2xl flex flex-col gap-6 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f97316]/10 border border-[#f97316]/20 w-fit">
+                        <span class="flex h-2 w-2 rounded-full bg-[#f97316] animate-pulse"></span>
+                        <span class="text-xs font-bold text-[#f97316] uppercase tracking-wider">Top Rated in Home Expansion</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight">
+                        Expand Your Home, <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#1162d4] to-blue-300">Elevate Your Lifestyle</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed max-w-xl">
+                        Need more space? Don't move—improve. We specialize in seamless home additions that blend perfectly with your existing architecture.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                        <a href="/contact/" class="flex items-center justify-center gap-2 h-14 px-8 rounded-xl bg-[#1162d4] hover:bg-[#0e4eb5] text-white text-base font-bold transition-all shadow-lg hover:shadow-[#1162d4]/30 transform hover:-translate-y-0.5">
+                            <span>Request Design Consultation</span>
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <a href="#portfolio" class="flex items-center justify-center gap-2 h-14 px-8 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-base font-semibold backdrop-blur-sm transition-all">
+                            <span class="material-symbols-outlined">play_circle</span>
+                            <span>See Our Work</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-4 mt-8 pt-8 border-t border-white/10">
+                        <div class="flex -space-x-3">
+                            <div class="h-10 w-10 rounded-full border-2 border-[#111418] bg-gray-200 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAC9wbF1idqeCKVVwwXnuC4qXlpS03w8MM1LFFUhacBjvdgpgcYa9_RMht-KQiUNI0ICMGF3PO3FSz4KPxg-eW9MwSQqre8NO3x9fxH5AIvqLy0YTNFYo6ZROeN3F1D7SqJkeONg15yzMZ4mL-GqcKGM-nW49KFqYTr7pmzVHbkHDRd5zNfZNTRCjCpsnCCsk-gUyhMgD5z2kn6JpizFzKyo2ROilA8wlOO4bq3jOWdlJXkCGNyjGujuZW1cgaM5i-hYlaXs3tkuFzz");'></div>
+                            <div class="h-10 w-10 rounded-full border-2 border-[#111418] bg-gray-200 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCAgpuBxDQAGsl-h0yoKu3dX5tFjFmupF69MV5ccn2s42XXQoqhacaxZ2Dms-E_eEb9AlMcoENBkRjtnmLZCm62ztHnW_H8G-Q3xjEE9iZ1GJPI5Bn5OoPM5Rz08SncN2inNZlSCdGI9FFUvqx698WlNgjXFsBObs1M9exdUCmizOjuseyEybznakEK0tNwTdOTcCjBhsyGAdeN59eyYchZqHnzzyhnzM0UU5J3-21C4YL0rUDnft2ocVUS9y0quzEawce8kEV4V-t5");'></div>
+                            <div class="h-10 w-10 rounded-full border-2 border-[#111418] bg-gray-200 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7AdC4ydyzRsB83bCTee4aY63DmwLBMOXzyHbsSl4B47vgR8cFeQqo2WT5Hzf9l4sXv9vsdIzrNNkEnLm-jk-9z1XCTfQGiza7IJOyZOqDmU_31IwGJfXFZMCcyJxkTwEynerHnB-CsLccs7L-dfDXAEuHhZou0PQQnLXR10zDZ-RJTamAFwX46_QLk8lGJLh8IGBkgPKB4bBpGxjhB6GI7P6ztn3IagFip9Hx6acC0FyM4WkusGg3U_dR9nZc1-zfN2iIxDiX4tl7");'></div>
+                        </div>
+                        <div class="text-sm text-gray-400">
+                            <span class="text-white font-bold block text-base">25+</span> Years Experience
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inspiration Grid (Bento Box Style) -->
+        <section id="portfolio" class="py-20 px-4 md:px-6 bg-white dark:bg-[#111418]">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Add Space, Value & Comfort</h2>
+                        <p class="text-slate-600 dark:text-gray-400 text-lg max-w-2xl">
+                            From extra bedrooms to spacious sunrooms, we build additions that look like they've always been there.
+                        </p>
+                    </div>
+                    <a class="group flex items-center gap-2 text-[#1162d4] font-bold hover:text-[#0e4eb5] transition-colors" href="/remodeling-services/">
+                        View Gallery
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+                    <!-- Card 1: Large Feature -->
+                    <div class="group relative overflow-hidden rounded-2xl md:col-span-2 lg:col-span-2 row-span-1">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPYpvRDR6dJ7WjaCjN1o6aX4393f5E7auX7DxWT1-qo5D7yER7V2NTPd8LWPtNJXXnRxHIr3jUxQdjjx-B4LyuBGK51wzIPmRx9Jo_H1D1g977O3NXSeW0lWbnoQjECPDRNkQAAocN_4iQLWREURedwRzOHmB2aZQbhqiVREpqGFO8XIBjTeFhijTw9JFKF44ctZlzefUTO_-m6ZANZtdWMnGVNDRV4-yi0Oeg9gYqd_1yO4OsP-aFa0VFvIbQcNcUKR99VnrmoMnR");'></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-8 w-full">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="p-2 bg-white/20 backdrop-blur-md rounded-lg text-white material-symbols-outlined">bedroom_parent</span>
+                                <span class="text-orange-400 font-bold text-xs uppercase tracking-wider">Most Popular</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Master Suite Extensions</h3>
+                            <p class="text-gray-200 text-sm max-w-md">Create the luxurious retreat you deserve with a spacious bedroom and ensuite bathroom.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2: Feature -->
+                    <div class="group relative overflow-hidden rounded-2xl">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKKMIvh4lrZkFG5fb3mGmhdXNIG74LD4o5-6cJZc0lanf1gtjBN8SdNIKJcDBGA1zEdfflJo9Lc84D4ZXuRQFfVsPeSOt93-elxjQf-7Mub_dUF0Pr92QG1s8TvH8cPDSo_VJkRP3dW1OnGccpNHsavfkNDqqazyFqxaVWNFc_8EYXX7es2BwjQDZip9RA9m0vF7VINiNdewz1V-3EzVHCDTgXgjFKfx6JvQxDoRPfRc_SfbGeFrkEVGzAYsILYM-HCRkVeI51KE6A");'></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="p-2 bg-white/20 backdrop-blur-md rounded-lg text-white material-symbols-outlined mb-3 inline-block">wb_sunny</span>
+                            <h3 class="text-xl font-bold text-white mb-1">Sunrooms & Enclosures</h3>
+                            <p class="text-gray-300 text-sm">Enjoy the outdoors year-round in comfort.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3: Feature -->
+                    <div class="group relative overflow-hidden rounded-2xl">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBeonf4LPJ5E6WtHYO-TKrO5cxN7YzLSSuw9dIbmZVgmhSCqmQVT313WaoUty4kE9_xwIO2GIa2Lfyz2TgwDBumd32h706HKfpeHPZLAgYlUTzCK2umC8eypLmB7uaIyGChkoYdN3CY_8IeUHdTKREM-ZTS1lhOEN36IgSWKiCT7RV8wI633GR5RxGG0gOZuYyrNZrYXofSSgOoF3ccBZKFbi-kVYfbz1d9TCgApYC2Q6n773vBJ_iwNh8Rs7Kz4C-HMwZWYpjIcQTy");'></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="p-2 bg-white/20 backdrop-blur-md rounded-lg text-white material-symbols-outlined mb-3 inline-block">garage_home</span>
+                            <h3 class="text-xl font-bold text-white mb-1">Garage Conversions</h3>
+                            <p class="text-gray-300 text-sm">Transform underutilized space into a new living area.</p>
+                        </div>
+                    </div>
+                    <!-- Card 4: Feature -->
+                    <div class="group relative overflow-hidden rounded-2xl md:col-span-2 lg:col-span-2">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhJObamdlsEQcea_fH-LFMMXmhyJ-n7TgVPcPH5FC0FhoNJEOOmX88cIH5lMuXZmVwj1eyFTuhkkxAY5H9lk-J7DSGR0n1LW5o-8-Bnn-gei8LxxnvUxOPtVwpiYHNiYVvfHqSY_u05_K9Ln0T1RHmurO0GYRQa_Nxfqx36RlOp0FuANxlfiOi5OZzUYGHZou29goa2yw8N5qj8pHEdyGd-v-pfj8uWmK_NBDUvq_8G3HhnQyYL0H4fB_2cFZ_h1LFfhrP3KdcgcOV");'></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-8 w-full">
+                            <span class="p-2 bg-white/20 backdrop-blur-md rounded-lg text-white material-symbols-outlined mb-3 inline-block">kitchen</span>
+                            <h3 class="text-2xl font-bold text-white mb-2">Kitchen Expansions</h3>
+                            <p class="text-gray-200 text-sm max-w-md">Open up your culinary space for entertaining and family gatherings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Paramount Difference (Split Section) -->
+        <section class="py-20 px-4 md:px-6 bg-[#f6f7f8] dark:bg-[#1a232e] border-y border-gray-200 dark:border-gray-800">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img alt="Home addition construction site" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJjMZKP6YumcsnTYOcmb-gOWtAc-g06vY7YKbGOvQqC4Istq0tnJJc9VTPoA8DBhB7n3N_Qz8P9LV_dRiBuflZqpjv8B3PkdiRz-hncZj7cTNBVpejeqsTgYUdk57TC6y-80mVO5Lw44jiQIAzlBZ37zJI3teWruqut4dxGEe003MInKf19ighbf4C1JOq3KnHBrOqHQNogKMl9tDSpWbTMlu6_27UM36vA9_v4Zsu5Y4CcwXaWmQrTvfvrl6V56CaCpiAdDBswy-K" />
+                        <!-- Floating Badge -->
+                        <div class="absolute bottom-8 right-8 bg-white dark:bg-[#111418] p-4 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 max-w-[200px]">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="material-symbols-outlined text-green-500">verified_user</span>
+                                <span class="font-bold text-sm text-slate-900 dark:text-white">Licensed Builders</span>
+                            </div>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Structural Experts in Florida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 flex flex-col gap-8">
+                    <div>
+                        <span class="text-[#1162d4] font-bold tracking-wider uppercase text-sm mb-2 block">The Paramount Difference</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Built Stronger, Built Better</h2>
+                        <p class="text-slate-600 dark:text-gray-400 text-lg leading-relaxed">
+                            Adding to your home requires deep structural knowledge. We ensure your addition integrates flawlessly with your foundation, roofline, and plumbing.
+                        </p>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#1162d4]/10 flex items-center justify-center text-[#1162d4]">
+                                <span class="material-symbols-outlined">foundation</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Seamless Integration</h4>
+                                <p class="text-slate-600 dark:text-gray-400">We match your existing siding, roofing, and flooring so completely that no one will know it's an addition.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#f97316]/10 flex items-center justify-center text-[#f97316]">
+                                <span class="material-symbols-outlined">shield</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Hurricane-Grade Construction</h4>
+                                <p class="text-slate-600 dark:text-gray-400">As Florida experts, we build to exceed hurricane codes, ensuring your new space is safe and secure.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#1162d4]/10 flex items-center justify-center text-[#1162d4]">
+                                <span class="material-symbols-outlined">assignment_turned_in</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Permit & Design Handling</h4>
+                                <p class="text-slate-600 dark:text-gray-400">We take care of all blueprints, engineering, and city permitting so you don't have to worry about red tape.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="py-20 px-4 md:px-6 bg-white dark:bg-[#111418]">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Your Expansion Journey</h2>
+                    <p class="text-slate-600 dark:text-gray-400 max-w-2xl mx-auto">A complex project made simple through our proven process.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                    <!-- Connecting Line (Desktop) -->
+                    <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-800 -z-10"></div>
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full bg-white dark:bg-[#111418] border-4 border-[#1162d4] flex items-center justify-center mb-6 shadow-xl">
+                            <span class="material-symbols-outlined text-4xl text-[#1162d4]">architecture</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">1. Feasibility & Design</h3>
+                        <p class="text-sm text-slate-600 dark:text-gray-400">We analyze your property's potential and design the perfect addition.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full bg-white dark:bg-[#111418] border-4 border-gray-200 dark:border-gray-700 flex items-center justify-center mb-6 shadow-xl relative">
+                            <span class="absolute -top-2 -right-2 w-8 h-8 bg-[#f97316] rounded-full flex items-center justify-center text-white font-bold text-sm">2</span>
+                            <span class="material-symbols-outlined text-4xl text-slate-400">gavel</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">2. Permitting</h3>
+                        <p class="text-sm text-slate-600 dark:text-gray-400">We handle all engineering approvals and city paperwork to get the green light.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full bg-white dark:bg-[#111418] border-4 border-gray-200 dark:border-gray-700 flex items-center justify-center mb-6 shadow-xl">
+                            <span class="material-symbols-outlined text-4xl text-slate-400">construction</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">3. Construction</h3>
+                        <p class="text-sm text-slate-600 dark:text-gray-400">Foundation, framing, roofing, and finishing—managed by our expert team.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full bg-white dark:bg-[#111418] border-4 border-gray-200 dark:border-gray-700 flex items-center justify-center mb-6 shadow-xl">
+                            <span class="material-symbols-outlined text-4xl text-slate-400">check_circle</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">4. Final Inspection</h3>
+                        <p class="text-sm text-slate-600 dark:text-gray-400">We ensure everything meets code and your expectations before handing over the keys.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 px-4 md:px-6 bg-[#f6f7f8] dark:bg-[#1a232e]">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-center text-slate-900 dark:text-white mb-12">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <details class="group bg-white dark:bg-[#111418] rounded-lg border border-gray-200 dark:border-gray-800 open:border-[#1162d4] dark:open:border-[#1162d4] transition-all">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                            <span>How much does a home addition cost per square foot?</span>
+                            <span class="transition group-open:rotate-180">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </span>
+                        </summary>
+                        <div class="text-slate-600 dark:text-gray-400 p-6 pt-0 leading-relaxed">
+                            Costs in Florida typically range from $200 to $400+ per square foot, depending on the complexity (e.g., adding a bathroom vs. just a bedroom) and finishes. We provide a detailed estimate after our initial site visit.
+                        </div>
+                    </details>
+                    <details class="group bg-white dark:bg-[#111418] rounded-lg border border-gray-200 dark:border-gray-800 open:border-[#1162d4] dark:open:border-[#1162d4] transition-all">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                            <span>Do I need planning permission for an addition?</span>
+                            <span class="transition group-open:rotate-180">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </span>
+                        </summary>
+                        <div class="text-slate-600 dark:text-gray-400 p-6 pt-0 leading-relaxed">
+                            Yes, almost all home additions require building permits. We handle the entire process, including zoning checks, architectural drawings, and inspections, to ensure your project is 100% compliant.
+                        </div>
+                    </details>
+                    <details class="group bg-white dark:bg-[#111418] rounded-lg border border-gray-200 dark:border-gray-800 open:border-[#1162d4] dark:open:border-[#1162d4] transition-all">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                            <span>How long does it take to build an addition?</span>
+                            <span class="transition group-open:rotate-180">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </span>
+                        </summary>
+                        <div class="text-slate-600 dark:text-gray-400 p-6 pt-0 leading-relaxed">
+                            A typical room addition takes 3-4 months from the start of construction, but permitting can sometimes add time before we break ground. We provide a realistic timeline upfront.
+                        </div>
+                    </details>
+                    <details class="group bg-white dark:bg-[#111418] rounded-lg border border-gray-200 dark:border-gray-800 open:border-[#1162d4] dark:open:border-[#1162d4] transition-all">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-slate-900 dark:text-white">
+                            <span>Will an addition increase my property value?</span>
+                            <span class="transition group-open:rotate-180">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </span>
+                        </summary>
+                        <div class="text-slate-600 dark:text-gray-400 p-6 pt-0 leading-relaxed">
+                            Generally, yes. Adding square footage—especially extra bedrooms and bathrooms—is one of the most reliable ways to increase home value. We can help design an addition that maximizes return on investment.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="relative py-24 px-4 md:px-6 overflow-hidden">
+            <div class="absolute inset-0 bg-[#1162d4]/90 z-10"></div>
+            <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBS8SNUzIMrF0l7KicYJsDIeGHZi95LJJGbNEGp85wBFoCLO44ZUGmFKf1smPdIFLn_pm-Qh84XMby6La6soLmREornIDGeN1t7rksxay1XrebIUMfHvEbZ3n_Tv1Jg2BHlBX84b8WcOlipNJPu-tQle9BOa4gqVk7rgvtgjoSD1A3Zd-aQ0fw9g8VqoHHSYdHAx6ZHMTnJUsXNu2g1X-eFsezTsv5cbkZED28-OYESxp_lbs3ZaA4oL0OGUWiGa0NfEOLPD3prHMJh");'></div>
+            <div class="relative z-20 max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Ready to Expand Your Home?</h2>
+                <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">Schedule your complimentary design consultation today. We serve <span class="font-bold border-b border-[#f97316] text-white">Orlando</span> and surrounding areas.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contact/" class="flex items-center justify-center gap-2 h-14 px-10 rounded-xl bg-white text-[#1162d4] text-lg font-bold hover:bg-gray-100 transition-all shadow-xl">
+                        Get Your Free Quote
+                    </a>
+                    <a href="#portfolio" class="flex items-center justify-center gap-2 h-14 px-10 rounded-xl bg-transparent border-2 border-white text-white text-lg font-bold hover:bg-white/10 transition-all">
+                        View Portfolio
+                    </a>
+                </div>
+                <p class="mt-8 text-sm text-blue-200 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-sm">lock</span>
+                    No obligation. 100% Privacy Guaranteed.
+                </p>
+            </div>
+        </section>
+    </main>
+</RemodelingLayout>
