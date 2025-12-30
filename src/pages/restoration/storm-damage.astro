@@ -1,0 +1,245 @@
+---
+import HurricaneLayout from '../../layouts/HurricaneLayout.astro';
+---
+
+<HurricaneLayout>
+    <!-- Hero Section -->
+    <section class="relative bg-white dark:bg-[#101822] py-12 lg:py-20 px-4 md:px-10 lg:px-40 flex justify-center">
+        <div class="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <!-- Content -->
+            <div class="flex flex-col gap-6 text-left order-2 lg:order-1">
+                <div class="flex flex-col gap-3">
+                    <span class="inline-flex items-center gap-1 w-fit px-3 py-1 rounded-full bg-red-50 text-[#dc2626] text-xs font-black uppercase tracking-wider border border-red-100">
+                        <span class="relative flex h-2 w-2 mr-1">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#dc2626] opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#dc2626]"></span>
+                        </span>
+                        High Priority Response
+                    </span>
+                    <h1 class="text-[#111418] dark:text-white text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-[-0.033em]">
+                        Hurricane Damage Help When You Need It Most
+                    </h1>
+                    <p class="text-[#617289] dark:text-gray-300 text-lg sm:text-xl font-normal leading-relaxed">
+                        Mobilizing now. We secure your property, extract water, and handle your claim.
+                    </p>
+                </div>
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap gap-y-3 gap-x-6 py-2 border-y border-gray-100 dark:border-gray-800">
+                    <div class="flex items-center gap-2 text-sm font-bold text-[#111418] dark:text-gray-200">
+                        <span class="material-symbols-outlined text-green-600">timer</span>
+                        On-Site in 60 Mins
+                    </div>
+                    <div class="flex items-center gap-2 text-sm font-bold text-[#111418] dark:text-gray-200">
+                        <span class="material-symbols-outlined text-[#1162d4]">verified_user</span>
+                        Property Repair Experts
+                    </div>
+                    <div class="flex items-center gap-2 text-sm font-bold text-[#111418] dark:text-gray-200">
+                        <span class="material-symbols-outlined text-[#1162d4]">gavel</span>
+                        Insurance Claim Assistance
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <button class="flex-1 sm:flex-none min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-14 px-6 bg-[#f97316] hover:bg-orange-600 transition-colors text-white text-base font-bold tracking-[0.015em] shadow-lg shadow-orange-500/30">
+                        Request Emergency Deployment
+                    </button>
+                    <button class="flex-1 sm:flex-none min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-14 px-6 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-[#111418] dark:text-white text-base font-bold tracking-[0.015em]">
+                        Our Process
+                    </button>
+                </div>
+            </div>
+            <!-- Image -->
+            <div class="order-1 lg:order-2 w-full h-full relative group">
+                <!-- Image with overlay -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-[#1162d4] to-[#f97316] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                <div class="relative w-full aspect-[4/3] bg-center bg-no-repeat bg-cover rounded-xl shadow-2xl overflow-hidden" data-alt="Restoration team working on a flooded residential street with emergency trucks" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPTmIGYWPYYf4Jlr0lC9gCh4WGsXzPP-nJ1Nap6VN2fhPmabR-0h9ykp5XoD-R-hFHZh_7T9wNtSCvU6UAmGlBiTz1QfCnUzRdS_MxUU3IdGyXsImL3lfmxYeuLATqG2QrTrkF4aQZAr1q63ljVQqOxiMqo62SlBftHXymdRN25IRYF5u-LsdI2nKVGy9Db1ECInlxPX5I4Y0u7GbzigPwi5vkyaYRom_iSQ5OiRiRZbEdmm3Qf2OO-pMUg7IXbhoCPd3IdUO5qj9t");'>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                        <div class="flex items-center gap-2 text-white font-medium">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span class="text-sm">Active in Florida Disaster Zones</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Triage Bento Grid Section -->
+    <section class="py-16 px-4 md:px-10 lg:px-40 bg-[#f6f7f8] dark:bg-gray-900">
+        <div class="max-w-[1200px] mx-auto flex flex-col gap-10">
+            <div class="flex flex-col gap-4 max-w-[720px]">
+                <h2 class="text-[#111418] dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">
+                    Immediate Response Protocols
+                </h2>
+                <p class="text-[#617289] dark:text-gray-400 text-lg font-normal leading-normal">
+                    Our Triage Team prioritizes critical damage to prevent secondary loss. We deploy immediately with specialized equipment.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Card 1 -->
+                <div class="group flex flex-col gap-4 p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:border-[#1162d4]/50 transition-all duration-300">
+                    <div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-[#1162d4] group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-[28px]">umbrella</span>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-lg font-bold text-[#111418] dark:text-white">Emergency Roof Tarping</h3>
+                        <p class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed">Prevent rain intrusion immediately with industrial-grade shrink wrap and tarping systems.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="group flex flex-col gap-4 p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:border-[#1162d4]/50 transition-all duration-300">
+                    <div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-[#1162d4] group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-[28px]">water_drop</span>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-lg font-bold text-[#111418] dark:text-white">Flood Water Extraction</h3>
+                        <p class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed">High-volume truck-mounted pumps remove standing flood water from your home fast.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group flex flex-col gap-4 p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:border-[#1162d4]/50 transition-all duration-300">
+                    <div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-[#1162d4] group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-[28px]">air</span>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-lg font-bold text-[#111418] dark:text-white">Structural Drying</h3>
+                        <p class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed">Hospital-grade dehumidifiers and air movers to dry wall cavities and prevent mold.</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="group flex flex-col gap-4 p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:border-[#1162d4]/50 transition-all duration-300">
+                    <div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-[#1162d4] group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-[28px]">forest</span>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-lg font-bold text-[#111418] dark:text-white">Debris Removal</h3>
+                        <p class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed">Clearing fallen trees and storm debris to create safe access for restoration crews.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wind vs Flood & Education Split -->
+    <section class="py-16 px-4 md:px-10 lg:px-40 bg-white dark:bg-[#101822]">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            <!-- Left: Wind vs Flood -->
+            <div class="flex flex-col gap-8">
+                <div class="flex flex-col gap-3">
+                    <h2 class="text-[#111418] dark:text-white text-2xl font-bold">Insurance Reality Check</h2>
+                    <p class="text-[#617289] dark:text-gray-400">Understanding the source of damage is critical for your claim approval.</p>
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-lg">
+                    <div class="bg-[#1162d4] p-6 text-white">
+                        <h3 class="text-xl font-bold flex items-center gap-2">
+                            <span class="material-symbols-outlined">compare_arrows</span>
+                            Wind vs. Flood
+                        </h3>
+                        <p class="text-blue-100 text-sm mt-1">Most policies treat these as separate events.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-0 flex flex-col sm:flex-row">
+                        <div class="flex-1 p-6 border-b sm:border-b-0 sm:border-r border-gray-100 dark:border-gray-700">
+                            <div class="flex items-center gap-2 mb-3 text-[#f97316] font-bold">
+                                <span class="material-symbols-outlined">cyclone</span>
+                                WIND DAMAGE
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Damage caused "from above" (roof lift, broken windows, rain entry).</p>
+                            <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc pl-4 space-y-1">
+                                <li>Usually Standard Homeowners</li>
+                                <li>Roof shingle loss</li>
+                                <li>Broken windows</li>
+                            </ul>
+                        </div>
+                        <div class="flex-1 p-6 bg-gray-50 dark:bg-gray-750">
+                            <div class="flex items-center gap-2 mb-3 text-blue-600 dark:text-blue-400 font-bold">
+                                <span class="material-symbols-outlined">flood</span>
+                                FLOOD DAMAGE
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Damage caused "from below" (rising water, storm surge).</p>
+                            <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc pl-4 space-y-1">
+                                <li>Requires Flood Policy (NFIP)</li>
+                                <li>Rising creek/street water</li>
+                                <li>Storm surge</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-100 dark:border-blue-800 flex gap-4 items-start">
+                    <span class="material-symbols-outlined text-[#1162d4] mt-1">info</span>
+                    <div class="text-sm text-gray-700 dark:text-gray-300">
+                        <strong>We document everything.</strong> Our team uses 3D Matterport scanning to prove exactly how water entered your property to protect your claim.
+                    </div>
+                </div>
+            </div>
+            <!-- Right: Critical Steps (Education) -->
+            <div class="flex flex-col gap-6">
+                <h2 class="text-[#111418] dark:text-white text-2xl font-bold">Critical Steps After the Storm Passes</h2>
+                <div class="flex flex-col gap-4">
+                    <!-- Step 1 -->
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-8 h-8 rounded-full bg-[#f97316] text-white flex items-center justify-center font-bold text-sm">1</div>
+                            <div class="w-0.5 h-full bg-gray-200 dark:bg-gray-700 my-2"></div>
+                        </div>
+                        <div class="pb-6">
+                            <h4 class="font-bold text-[#111418] dark:text-white text-lg">Ensure Safety First</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Do not enter standing water if power lines are down. Turn off main water and electricity if safe to access.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center font-bold text-sm">2</div>
+                            <div class="w-0.5 h-full bg-gray-200 dark:bg-gray-700 my-2"></div>
+                        </div>
+                        <div class="pb-6">
+                            <h4 class="font-bold text-[#111418] dark:text-white text-lg">Document the Damage</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Take photos and videos of everything before moving debris. This is your primary evidence for insurance.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center font-bold text-sm">3</div>
+                            <div class="w-0.5 h-full bg-gray-200 dark:bg-gray-700 my-2"></div>
+                        </div>
+                        <div class="pb-6">
+                            <h4 class="font-bold text-[#111418] dark:text-white text-lg">Mitigate Further Loss</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Insurance policies require you to "mitigate." Cover broken windows and stop active leaks. Call PPR for professional help.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center font-bold text-sm">4</div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#111418] dark:text-white text-lg">Call Your Restoration Partner</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Contact us immediately to get on the priority list. The faster we start drying, the less damage occurs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Programmatic SEO Section -->
+    <section class="py-12 px-4 md:px-10 lg:px-40 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-[1200px] mx-auto text-center">
+            <h3 class="text-[#111418] dark:text-white text-xl font-bold mb-8">Deploying Units to Impacted Florida Communities</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/south-florida/miami/">Miami Restoration</a>
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/tampa-bay/tampa/">Tampa Cleanup</a>
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/central-florida/orlando/">Orlando Flood Help</a>
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/southwest-florida/naples/">Naples Repair</a>
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/southwest-florida/fort-myers/">Ft. Myers Storm</a>
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/tampa-bay/sarasota/">Sarasota Dryout</a>
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/">Jacksonville Water</a>
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/south-florida/">Key West Relief</a>
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/">Panama City</a>
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/">Tallahassee Roof</a>
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/south-florida/boca-raton/">Boca Raton</a>
+                <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#1162d4] hover:underline bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 shadow-sm transition-colors" href="/service-areas/southwest-florida/cape-coral/">Cape Coral</a>
+            </div>
+        </div>
+    </section>
+</HurricaneLayout>

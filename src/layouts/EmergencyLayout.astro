@@ -1,0 +1,110 @@
+---
+import '../styles/global.css';
+import Header from '../components/common/Header.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Emergency Restoration Services | Paramount Property Restoration",
+  description = "24/7 Emergency Response for Water, Fire, and Storm Damage in Florida."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <style>
+        /* Scoped Variables for Emergency Section to override Global Defaults */
+        :root {
+            --color-primary: #137fec; /* Blue */
+            --color-urgent: #FF5722; /* Orange/Red */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#f6f7f8] dark:bg-[#101922] font-display text-[#111418] overflow-x-hidden">
+    <div class="relative flex flex-col min-h-screen w-full">
+        <!-- Top Alert Bar -->
+        <div class="w-full bg-urgent text-white py-2 px-4 text-center text-sm font-bold tracking-wide animate-pulse">
+            EMERGENCY RESPONSE ACTIVE: 60-Minute Arrival Guarantee in Florida Zones
+        </div>
+        
+        <!-- Navigation -->
+        <!-- Navigation -->
+        <Header variant="emergency" />
+
+        <slot />
+
+        <!-- Footer -->
+        <footer class="bg-[#111418] text-white py-16">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                    <div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="w-8 h-8 bg-primary text-white flex items-center justify-center rounded">
+                                <span class="material-symbols-outlined text-xl">shield_with_house</span>
+                            </div>
+                            <span class="text-xl font-bold">Paramount</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Florida's trusted partner for emergency restoration. We bring properties back to life with speed, integrity, and expertise.
+                        </p>
+                        <div class="flex gap-4">
+                            <a class="text-slate-400 hover:text-white" href="#"><span class="material-symbols-outlined">thumb_up</span></a> <!-- Social Icon placeholder -->
+                            <a class="text-slate-400 hover:text-white" href="#"><span class="material-symbols-outlined">share</span></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-6">Services</h4>
+                        <ul class="space-y-3 text-sm text-slate-400">
+                            <li><a class="hover:text-primary" href="#">Water Damage Mitigation</a></li>
+                            <li><a class="hover:text-primary" href="#">Fire & Smoke Restoration</a></li>
+                            <li><a class="hover:text-primary" href="#">Mold Inspection & Removal</a></li>
+                            <li><a class="hover:text-primary" href="#">Storm Damage Repair</a></li>
+                            <li><a class="hover:text-primary" href="#">Commercial Services</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-6">Company</h4>
+                        <ul class="space-y-3 text-sm text-slate-400">
+
+                            <li><a class="hover:text-primary" href="#">Our Process</a></li>
+                            <li><a class="hover:text-primary" href="#">Careers</a></li>
+                            <li><a class="hover:text-primary" href="#">Contact</a></li>
+                            <li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-6">Emergency Contact</h4>
+                        <p class="text-slate-400 text-sm mb-4">Available 24 hours a day, 7 days a week for all Florida residents.</p>
+                        <a class="flex items-center gap-3 text-2xl font-bold text-urgent hover:text-white transition-colors mb-2" href="#">
+                            <span class="material-symbols-outlined">call</span>
+                            800-555-0199
+                        </a>
+                        <p class="text-xs text-slate-500">Live dispatch • 60-min response</p>
+                    </div>
+                </div>
+                <div class="pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+                    © 2024 Paramount Property Restoration. All rights reserved.
+                </div>
+            </div>
+        </footer>
+        <!-- Floating Mobile CTA -->
+        <div class="fixed bottom-6 right-6 z-50 lg:hidden">
+            <a class="flex items-center justify-center w-14 h-14 bg-urgent text-white rounded-full shadow-2xl animate-bounce" href="#">
+                <span class="material-symbols-outlined text-2xl">phone_in_talk</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

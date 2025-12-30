@@ -1,0 +1,279 @@
+---
+interface Props {
+  variant?: 'default' | 'emergency';
+  theme?: 'light' | 'dark' | 'transparent';
+  sticky?: boolean;
+  secondaryColor?: string; // Hex color for hover states/accents
+  emergencyBtnText?: string;
+  logoText?: string;
+}
+
+const { 
+  variant = 'default',
+  theme = 'light',
+  sticky = true,
+  secondaryColor = '#0d7ff2', // Default Primary Blue
+  emergencyBtnText = '24/7 Emergency',
+  logoText = 'Paramount'
+} = Astro.props;
+
+const links = [
+  { href: '/restoration/', label: 'Restoration' },
+  { href: '/remodeling-services/', label: 'Remodeling' },
+  { href: '/service-areas/', label: 'Locations' },
+  { href: '/commercial/', label: 'Commercial' },
+  { href: '/resources/', label: 'Resources' },
+];
+
+// Theme-based classes
+const themeClasses = {
+  light: 'bg-white border-b border-gray-100 text-slate-900',
+  dark: 'bg-[#101922] border-b border-gray-800 text-white',
+  transparent: 'bg-transparent border-b border-white/10 text-white backdrop-blur-md'
+};
+
+const textColorClass = theme === 'light' ? 'text-slate-700 hover:text-[var(--secondary-color)]' : 'text-slate-300 hover:text-white';
+const logoColorClass = theme === 'light' ? 'text-slate-900' : 'text-white';
+---
+
+<header 
+  class:list={[
+    "w-full z-50 transition-colors duration-300",
+    sticky ? "sticky top-0" : "relative",
+    themeClasses[theme]
+  ]}
+  style={`--secondary-color: ${secondaryColor};`}
+>
+    <div class="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Brand Logo -->
+            <a href="/" class="block shrink-0 group">
+                <img 
+                    src="/ppr-logo.png" 
+                    alt="Paramount Property Restoration" 
+                    class="h-16 w-auto object-contain transition-transform group-hover:scale-105"
+                />
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <!-- Mega Menu Trigger -->
+                <div class="group relative">
+                    <button class={`flex items-center gap-1 text-sm font-medium transition-colors py-8 ${textColorClass}`}>
+                        Restoration
+                        <span class="material-symbols-outlined text-[18px] transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
+                    </button>
+                    <!-- Mega Menu Dropdown -->
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 w-[800px] bg-white dark:bg-[#1a2632] shadow-xl rounded-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0 p-6 grid grid-cols-4 gap-6 z-50 text-left">
+                        
+                        <!-- Water Silo -->
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="material-symbols-outlined text-blue-500">water_drop</span>
+                                <span class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Water</span>
+                            </div>
+                            <a href="/restoration/water-damage/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Water Damage</a>
+                            <a href="/restoration/flood-damage/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Flood Damage</a>
+                            <a href="/restoration/sewage-cleanup/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Sewage Cleanup</a>
+                            <a href="/restoration/water-damage/leak-detection/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Leak Detection</a>
+                            <a href="/restoration/water-damage/burst-pipe/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Burst Pipes</a>
+                            <a href="/restoration/water-damage/ceiling-leak/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Ceiling Leaks</a>
+                        </div>
+
+                        <!-- Fire Silo -->
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="material-symbols-outlined text-orange-500">local_fire_department</span>
+                                <span class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Fire</span>
+                            </div>
+                            <a href="/restoration/fire-damage/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Fire Damage</a>
+                            <a href="/restoration/smoke-damage/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Smoke & Soot</a>
+                            <a href="/restoration/board-up-services/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Emergency Board-Up</a>
+                        </div>
+
+                        <!-- Mold Silo -->
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="material-symbols-outlined text-teal-500">coronavirus</span>
+                                <span class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Mold</span>
+                            </div>
+                            <a href="/restoration/mold-remediation/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Mold Remediation</a>
+                            <a href="/restoration/mold-testing/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Mold Inspection</a>
+                        </div>
+
+                        <!-- Storm Silo -->
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="material-symbols-outlined text-indigo-500">cyclone</span>
+                                <span class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Storm</span>
+                            </div>
+                            <a href="/restoration/storm-damage/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Hurricane Damage</a>
+                            <a href="/restoration/wind-damage/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Wind Damage</a>
+                            <a href="/restoration/storm-debris-removal/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Debris Removal</a>
+                        </div>
+                    </div>
+                </div>
+
+                {links.slice(1).map((link) => (
+                    <a 
+                        href={link.href} 
+                        class={`text-sm font-medium transition-colors ${textColorClass}`}
+                    >
+                        {link.label}
+                    </a>
+                ))}
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                 <!-- Quote/Service Button -->
+                 <a 
+                    href={variant === 'emergency' ? "/contact" : "/contact"}
+                    class={`hidden sm:flex items-center justify-center px-5 py-2.5 rounded-lg text-white font-bold text-sm transition-all hover:opacity-90 shadow-sm`}
+                    style={`background-color: ${secondaryColor}`}
+                >
+                    {variant === 'emergency' ? 'File a Claim' : 'Request Quote'}
+                </a>
+
+                <!-- Emergency Button -->
+                <a 
+                    href="tel:1-800-555-0199" 
+                    class="flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-bold text-sm transition-all shadow-lg hover:opacity-90 animate-pulse"
+                    style="background-color: #dc2626;" 
+                >
+                    <span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
+                    <span class="hidden lg:inline">{emergencyBtnText}</span>
+                    <span class="lg:hidden">Call</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class={`lg:hidden ${theme === 'light' ? 'text-slate-900' : 'text-white'}`} aria-label="Open menu">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white dark:bg-[#101922] translate-x-full transition-transform duration-300 lg:hidden flex flex-col">
+        <div class="flex items-center justify-between px-4 md:px-6 h-20 border-b border-gray-100 dark:border-gray-800 shrink-0">
+            <div class="flex items-center gap-3">
+                 <div class="size-10 flex items-center justify-center rounded-lg bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400">
+                    <span class="material-symbols-outlined text-2xl">shield_with_house</span>
+                </div>
+                <span class="font-display font-bold text-lg text-slate-900 dark:text-white">Paramount</span>
+            </div>
+            <button id="close-menu-btn" class="size-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
+            <!-- Mobile Restoration Dropdown -->
+            <div class="flex flex-col gap-4">
+                <div class="font-bold text-lg text-slate-900 dark:text-white pb-2 border-b border-gray-100 dark:border-gray-800">Restoration Services</div>
+                <div class="grid grid-cols-1 gap-3 pl-2">
+                    <!-- Water Silo -->
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300">
+                             <span class="material-symbols-outlined text-blue-500 text-lg">water_drop</span>
+                             Water
+                        </div>
+                        <div class="pl-7 flex flex-col gap-2 border-l border-gray-100 dark:border-gray-800 ml-2">
+                            <a href="/restoration/water-damage/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Water Damage</a>
+                            <a href="/restoration/flood-damage/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Flood Damage</a>
+                            <a href="/restoration/sewage-cleanup/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Sewage Cleanup</a>
+                            <a href="/restoration/water-damage/leak-detection/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Leak Detection</a>
+                            <a href="/restoration/water-damage/burst-pipe/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Burst Pipes</a>
+                        </div>
+                    </div>
+
+                    <!-- Fire Silo -->
+                     <div class="flex flex-col gap-2 mt-2">
+                        <div class="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300">
+                             <span class="material-symbols-outlined text-orange-500 text-lg">local_fire_department</span>
+                             Fire
+                        </div>
+                        <div class="pl-7 flex flex-col gap-2 border-l border-gray-100 dark:border-gray-800 ml-2">
+                            <a href="/restoration/fire-damage/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Fire Damage</a>
+                            <a href="/restoration/smoke-damage/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Smoke & Soot</a>
+                            <a href="/restoration/board-up-services/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Board-Up</a>
+                        </div>
+                    </div>
+
+                    <!-- Mold Silo -->
+                    <div class="flex flex-col gap-2 mt-2">
+                         <div class="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300">
+                             <span class="material-symbols-outlined text-teal-500 text-lg">coronavirus</span>
+                             Mold
+                        </div>
+                        <div class="pl-7 flex flex-col gap-2 border-l border-gray-100 dark:border-gray-800 ml-2">
+                            <a href="/restoration/mold-remediation/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Mold Remediation</a>
+                            <a href="/restoration/mold-testing/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Mold Inspection</a>
+                        </div>
+                    </div>
+
+                    <!-- Storm Silo -->
+                    <div class="flex flex-col gap-2 mt-2">
+                         <div class="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300">
+                             <span class="material-symbols-outlined text-indigo-500 text-lg">cyclone</span>
+                             Storm
+                        </div>
+                        <div class="pl-7 flex flex-col gap-2 border-l border-gray-100 dark:border-gray-800 ml-2">
+                            <a href="/restoration/storm-damage/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Hurricane Damage</a>
+                            <a href="/restoration/wind-damage/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Wind Damage</a>
+                            <a href="/restoration/storm-debris-removal/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Debris Removal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Links -->
+            <div class="flex flex-col gap-4">
+                <div class="font-bold text-lg text-slate-900 dark:text-white pb-2 border-b border-gray-100 dark:border-gray-800">Company</div>
+                {links.slice(1).map((link) => (
+                    <a href={link.href} class="text-lg font-medium text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 py-2">
+                        {link.label}
+                    </a>
+                ))}
+            </div>
+
+            <!-- Mobile Actions -->
+            <div class="mt-auto flex flex-col gap-4 pt-6 border-t border-gray-100 dark:border-gray-800">
+                <a 
+                    href="/contact"
+                    class="flex items-center justify-center w-full py-3 rounded-lg text-white font-bold text-sm shadow-sm transition-opacity hover:opacity-90"
+                    style={`background-color: ${secondaryColor}`}
+                >
+                    Request Quote
+                </a>
+                <a 
+                    href="tel:1-800-555-0199" 
+                    class="flex items-center justify-center gap-2 w-full py-3 rounded-lg text-white font-bold text-sm shadow-sm animate-pulse"
+                    style="background-color: #dc2626;" 
+                >
+                    <span class="material-symbols-outlined">phone_in_talk</span>
+                    {emergencyBtnText}
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && closeBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+             mobileMenu.classList.remove('translate-x-full');
+             document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+    }
+</script>

@@ -1,0 +1,54 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+  className?: string;
+  themeColor?: string;
+}
+
+const { items, className = "", themeColor = "#0d7ff2" } = Astro.props;
+
+// Schema.org JSON-LD
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    "item": `https://paramountrestoration.com${item.href}` // Ensure absolute URL for schema
+  }))
+};
+---
+
+<nav aria-label="Breadcrumb" class:list={["w-full", className]}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  
+  <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+    {items.map((item, index) => (
+      <li class="flex items-center">
+        {index > 0 && (
+          <span class="material-symbols-outlined text-lg mx-1 text-gray-400">chevron_right</span>
+        )}
+        
+        {index === items.length - 1 ? (
+          <span class="font-semibold text-gray-900 dark:text-gray-200" aria-current="page">
+            {item.label}
+          </span>
+        ) : (
+          <a 
+            href={item.href} 
+            class="hover:underline transition-colors duration-200 flex items-center gap-1"
+            style={`&:hover { color: ${themeColor} }`}
+          >
+            {item.label}
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

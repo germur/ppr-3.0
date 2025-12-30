@@ -1,0 +1,321 @@
+---
+import '../styles/global.css';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+---
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Privacy Policy - Paramount Property Restoration</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .sidebar-link.active {
+            color: #137fec;
+            border-left-color: #137fec;
+            background-color: rgba(19, 127, 236, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-[#f8fafc] dark:bg-[#101922] text-[#0d141b] dark:text-white transition-colors duration-200">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        <!-- Navigation -->
+        <Header />
+
+        <!-- Main Content Wrapper -->
+        <main class="flex-1">
+            <!-- Header Section -->
+            <div class="bg-white dark:bg-[#1e293b] border-b border-slate-200 dark:border-slate-800 py-12 md:py-20">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-3xl">
+                        <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-50 dark:bg-blue-900/30 px-3 py-1 text-xs font-semibold text-[#137fec]">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#137fec] opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#137fec]"></span>
+                            </span>
+                            Legal Compliance
+                        </div>
+                        <h1 class="text-4xl font-black tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-6xl mb-4">
+                            Privacy Policy
+                        </h1>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+                            We value your trust. This document outlines how Paramount Property Restoration collects, uses, and protects your data while providing our services.
+                        </p>
+                        <div class="mt-6 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-500">
+                            <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                            <span>Last Updated: October 26, 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Sidebar Navigation (Sticky) -->
+                    <aside class="hidden lg:block w-64 flex-shrink-0">
+                        <div class="sticky top-24">
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-4 px-3 uppercase tracking-wider text-xs">On this page</h3>
+                            <nav class="flex flex-col space-y-1">
+                                <a class="sidebar-link active block border-l-2 border-transparent px-3 py-2 text-sm font-medium text-slate-600 hover:text-[#137fec] hover:border-l-[#137fec] hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-[#137fec] transition-all rounded-r-lg" href="#introduction">
+                                    1. Introduction
+                                </a>
+                                <a class="sidebar-link block border-l-2 border-transparent px-3 py-2 text-sm font-medium text-slate-600 hover:text-[#137fec] hover:border-l-[#137fec] hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-[#137fec] transition-all rounded-r-lg" href="#collection">
+                                    2. Information Collection
+                                </a>
+                                <a class="sidebar-link block border-l-2 border-transparent px-3 py-2 text-sm font-medium text-slate-600 hover:text-[#137fec] hover:border-l-[#137fec] hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-[#137fec] transition-all rounded-r-lg" href="#usage">
+                                    3. Use of Information
+                                </a>
+                                <a class="sidebar-link block border-l-2 border-transparent px-3 py-2 text-sm font-medium text-slate-600 hover:text-[#137fec] hover:border-l-[#137fec] hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-[#137fec] transition-all rounded-r-lg" href="#cookies">
+                                    4. Cookies & Tracking
+                                </a>
+                                <a class="sidebar-link block border-l-2 border-transparent px-3 py-2 text-sm font-medium text-slate-600 hover:text-[#137fec] hover:border-l-[#137fec] hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-[#137fec] transition-all rounded-r-lg" href="#sharing">
+                                    5. Third-Party Disclosure
+                                </a>
+                                <a class="sidebar-link block border-l-2 border-transparent px-3 py-2 text-sm font-medium text-slate-600 hover:text-[#137fec] hover:border-l-[#137fec] hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-[#137fec] transition-all rounded-r-lg" href="#contact">
+                                    6. Contact Us
+                                </a>
+                            </nav>
+                            <div class="mt-8 rounded-2xl bg-slate-100 dark:bg-slate-800 p-4">
+                                <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase mb-2">Need immediate help?</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300 mb-3">Our team is available 24/7 for emergency restoration services.</p>
+                                <a class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#f97316] px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-orange-600 transition-colors" href="/contact/">
+                                    <span class="material-symbols-outlined text-[18px]">call</span>
+                                    (555) 123-4567
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Main Article Content -->
+                    <article class="flex-1 max-w-3xl">
+                        <!-- Section 1 -->
+                        <section class="mb-12 scroll-mt-28" id="introduction">
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-[#137fec] text-sm font-bold">01</span>
+                                Introduction
+                            </h2>
+                            <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed">
+                                <p class="mb-4">
+                                    At Paramount Property Restoration, we are committed to protecting your privacy and ensuring the security of your personal information. We understand that inviting a restoration company into your home or business involves trust, and we take that responsibility seriously.
+                                </p>
+                                <p>
+                                    This Privacy Policy outlines the types of personal information we collect, how we use it, and the steps we take to safeguard your data. By using our website or engaging our services, you consent to the data practices described in this policy.
+                                </p>
+                            </div>
+                        </section>
+                        
+                        <hr class="border-slate-200 dark:border-slate-800 mb-12"/>
+
+                        <!-- Section 2 -->
+                        <section class="mb-12 scroll-mt-28" id="collection">
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-[#137fec] text-sm font-bold">02</span>
+                                Information Collection
+                            </h2>
+                            <div class="text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
+                                <p>
+                                    We collect information to provide better services to our customers. The data we collect generally falls into two categories:
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                                    <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 bg-white dark:bg-[#1e293b]">
+                                        <div class="flex items-center gap-2 mb-3 text-slate-900 dark:text-white font-semibold">
+                                            <span class="material-symbols-outlined text-[#137fec]">person</span>
+                                            Personal Information
+                                        </div>
+                                        <p class="text-sm">
+                                            Data you provide directly via quote forms or phone calls, such as your name, property address, email address, phone number, and insurance policy details relevant to your claim.
+                                        </p>
+                                    </div>
+                                    <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 bg-white dark:bg-[#1e293b]">
+                                        <div class="flex items-center gap-2 mb-3 text-slate-900 dark:text-white font-semibold">
+                                            <span class="material-symbols-outlined text-[#137fec]">dns</span>
+                                            Technical Data
+                                        </div>
+                                        <p class="text-sm">
+                                            Information collected automatically when you visit our website, including your IP address, browser type, device information, and browsing behavior to help us optimize our site.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Section 3 -->
+                        <section class="mb-12 scroll-mt-28" id="usage">
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-[#137fec] text-sm font-bold">03</span>
+                                Use of Information
+                            </h2>
+                            <div class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                                <p class="mb-4">
+                                    The information we collect is used primarily to fulfill your service requests and improve our offerings. Specifically, we use your data to:
+                                </p>
+                                <ul class="list-none space-y-3 pl-0">
+                                    <li class="flex gap-3">
+                                        <span class="material-symbols-outlined text-[#137fec] shrink-0">check_circle</span>
+                                        <span>Generate accurate restoration and remodeling estimates based on your property details.</span>
+                                    </li>
+                                    <li class="flex gap-3">
+                                        <span class="material-symbols-outlined text-[#137fec] shrink-0">check_circle</span>
+                                        <span>Communicate with insurance carriers on your behalf to process claims efficiently.</span>
+                                    </li>
+                                    <li class="flex gap-3">
+                                        <span class="material-symbols-outlined text-[#137fec] shrink-0">check_circle</span>
+                                        <span>Schedule inspections, repairs, and follow-up maintenance services.</span>
+                                    </li>
+                                    <li class="flex gap-3">
+                                        <span class="material-symbols-outlined text-[#137fec] shrink-0">check_circle</span>
+                                        <span>Send educational resources and updates related to property maintenance (you may opt-out at any time).</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- Section 4 -->
+                        <section class="mb-12 scroll-mt-28" id="cookies">
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-[#137fec] text-sm font-bold">04</span>
+                                Cookies & Tracking Technologies
+                            </h2>
+                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-100 dark:border-blue-800 mb-6">
+                                <div class="flex gap-4">
+                                    <span class="material-symbols-outlined text-[#137fec] text-3xl shrink-0">cookie</span>
+                                    <div>
+                                        <h3 class="font-bold text-slate-900 dark:text-white mb-1">We use cookies responsibly</h3>
+                                        <p class="text-sm text-slate-600 dark:text-slate-300">
+                                            Our website uses cookies to enhance your browsing experience and for local programmatic SEO purposes to ensure our services reach those in need of emergency restoration in our service areas.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
+                                <p>
+                                    We use Google Analytics and Google Ads cookies to understand how visitors interact with our website and to measure the effectiveness of our advertising. These tools may collect data about your IP address and on-site behavior.
+                                </p>
+                                <p>
+                                    You can choose to disable cookies through your individual browser options. However, this may affect your ability to use certain features of our website. For more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Section 5 -->
+                        <section class="mb-12 scroll-mt-28" id="sharing">
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-[#137fec] text-sm font-bold">05</span>
+                                Third-Party Disclosure
+                            </h2>
+                            <div class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                                <p class="mb-6 font-medium text-slate-800 dark:text-slate-200">
+                                    We do not sell, trade, or otherwise transfer your Personally Identifiable Information to outside parties for marketing purposes.
+                                </p>
+                                <p class="mb-4">
+                                    This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. Examples include:
+                                </p>
+                                <ul class="grid gap-3 md:grid-cols-2">
+                                    <li class="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-3 text-sm border border-slate-100 dark:border-slate-800">
+                                        <strong>Insurance Carriers:</strong> To verify coverage and process your restoration claim.
+                                    </li>
+                                    <li class="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-3 text-sm border border-slate-100 dark:border-slate-800">
+                                        <strong>Subcontractors:</strong> Specialized tradespeople (e.g., plumbers, electricians) needed to complete your project.
+                                    </li>
+                                    <li class="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-3 text-sm border border-slate-100 dark:border-slate-800">
+                                        <strong>Software Providers:</strong> Secure CRM platforms used to manage your project timeline.
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- Section 6: Contact -->
+                        <section class="scroll-mt-28" id="contact">
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-[#137fec] text-sm font-bold">06</span>
+                                Contact Us
+                            </h2>
+                            <div class="relative overflow-hidden rounded-2xl bg-slate-900 p-8 text-white shadow-xl">
+                                <!-- Abstract Background Pattern -->
+                                <div class="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-[#137fec]/20 blur-3xl"></div>
+                                <div class="absolute -left-10 -bottom-10 h-64 w-64 rounded-full bg-[#f97316]/20 blur-3xl"></div>
+                                
+                                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2">Have privacy concerns?</h3>
+                                        <p class="text-slate-300 text-sm mb-6 max-w-md">
+                                            If you have any questions regarding this privacy policy or wish to request the deletion of your data, you may contact us using the information below.
+                                        </p>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center gap-3">
+                                                <div class="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 backdrop-blur">
+                                                    <span class="material-symbols-outlined text-sm">mail</span>
+                                                </div>
+                                                <a class="text-sm font-medium hover:text-[#137fec] transition-colors" href="mailto:privacy@paramountrestoration.com">privacy@paramountrestoration.com</a>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <div class="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 backdrop-blur">
+                                                    <span class="material-symbols-outlined text-sm">location_on</span>
+                                                </div>
+                                                <span class="text-sm">123 Restoration Way, Suite 100, Metro City, ST 12345</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <a class="inline-flex h-12 items-center justify-center rounded-lg bg-white px-6 font-bold text-slate-900 hover:bg-slate-100 transition-colors" href="/contact/">
+                                            Send a Request
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <Footer />
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const id = entry.target.getAttribute('id');
+                    if (entry.intersectionRatio > 0) {
+                        document.querySelector(`nav a[href="#${id}"]`)?.classList.add('active');
+                    } else {
+                        document.querySelector(`nav a[href="#${id}"]`)?.classList.remove('active');
+                    }
+                });
+            }, {
+                rootMargin: '-20% 0px -50% 0px'
+            });
+
+            // Track all sections that have an `id` applied
+            document.querySelectorAll('section[id]').forEach((section) => {
+                observer.observe(section);
+            });
+            
+            // Add click event for smooth scroll (redundant with CSS but good fallback)
+            document.querySelectorAll('.sidebar-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Remove active class from all links
+                    document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import ServiceAreasHub from '../../components/ServiceAreasHub';
+
+const meta = {
+  title: "Florida Service Areas | Paramount Property Restoration",
+  description: "Property Restoration Experts serving Central & South Florida. 24/7 Emergency response in Orlando, Miami, Tampa, Naples, and surrounding areas."
+};
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Paramount Property Restoration",
+  "areaServed": [
+    { "@type": "State", "name": "Florida" },
+    { "@type": "AdministrativeArea", "name": "Central Florida" },
+    { "@type": "AdministrativeArea", "name": "South Florida" },
+    { "@type": "AdministrativeArea", "name": "Tampa Bay Area" },
+    { "@type": "AdministrativeArea", "name": "Southwest Florida" },
+    { "@type": "AdministrativeArea", "name": "Treasure Coast" }
+  ],
+  "description": "Statewide restoration experts serving Miami, Orlando, Tampa and surrounding areas."
+});
+---
+
+<MainLayout title={meta.title} description={meta.description}>
+  <slot name="head">
+     <script type="application/ld+json" set:html={schema} />
+  </slot>
+
+  <main class="bg-white min-h-screen">
+    <ServiceAreasHub client:load />
+  </main>
+</MainLayout>

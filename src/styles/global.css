@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #E67E22;
+  --color-primary-hover: #D35400;
+  --color-secondary: #1B3B6F;
+  --color-secondary-hover: #162F58;
+
+  /* Legacy Support for existing components using these names */
+  --color-urgent: #FF5722;
+  --color-paramount-blue: #1B3B6F;
+  --color-paramount-orange: #E67E22;
+
+  --color-background-light: #F8F9FA;
+  --color-background-dark: #121212;
+
+  --color-card-light: #FFFFFF;
+  --color-card-dark: #1E1E1E;
+
+  --color-text-light: #1F2937;
+  --color-text-dark: #E5E7EB;
+
+  --font-display: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-shine: shine 5s linear infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+@layer utilities {
+  .kinetic-text {
+    background: linear-gradient(90deg, #1B3B6F, #E67E22, #1B3B6F);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 5s linear infinite;
+  }
+
+  .dark .kinetic-text {
+    background: linear-gradient(90deg, #60A5FA, #FB923C, #60A5FA);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 5s linear infinite;
+  }
+
+  .bento-card {
+    transition: all 0.3s ease;
+  }
+
+  .bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+}

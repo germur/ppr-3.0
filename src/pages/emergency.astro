@@ -1,0 +1,313 @@
+---
+import EmergencyLayout from '../layouts/EmergencyLayout.astro';
+---
+
+<EmergencyLayout>
+    <!-- Hero Section -->
+    <section class="relative bg-white pt-12 pb-16 lg:pt-20 lg:pb-24">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="flex-1 flex flex-col gap-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-100 rounded-full w-fit">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-urgent opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-urgent"></span>
+                        </span>
+                        <span class="text-xs font-bold text-primary uppercase tracking-wide">Live Dispatch Available</span>
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-black leading-tight tracking-tight text-[#111418]">
+                        24/7 Emergency Restoration Services in <span class="text-primary">Florida</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 leading-relaxed max-w-[600px]">
+                        We handle mitigation, restoration, and insurance claims so you don't have to. <strong class="text-[#111418]">60-minute response time</strong> for water, fire, mold, and storm damage.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-2">
+                        <button class="flex items-center justify-center gap-3 bg-urgent hover:bg-[#E64A19] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-urgent/20 transition-all transform hover:-translate-y-1">
+                            <span class="material-symbols-outlined">call</span>
+                            Call 800-555-0199
+                        </button>
+                        <button class="flex items-center justify-center gap-3 bg-white border-2 border-slate-200 hover:border-primary text-[#111418] hover:text-primary px-8 py-4 rounded-xl font-bold text-lg transition-colors">
+                            <span>File an Insurance Claim</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-6 mt-4 opacity-80">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-green-600 text-xl">verified</span>
+                            <span class="text-sm font-semibold text-slate-600">Industry Certified</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-green-600 text-xl">verified</span>
+                            <span class="text-sm font-semibold text-slate-600">Trusted & Insured</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-green-600 text-xl">verified</span>
+                            <span class="text-sm font-semibold text-slate-600">Highly Rated</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 w-full">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] group">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Paramount Property Restoration team van arriving at a residential home during a storm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCpQ9e719mSIqPfHLpMtKlN09la9ZJmFXtMzF0rDCkY9f1Wb2Sbi5-2Qzf0__D7ptTdCtH_4tWWEv6-DJYWgNC3cfwIscBduG9FtpWImsmiOa2jMQV_eZK2BNeqC65ndqVDfOoMKWBWX33K6e5Rq3Ghd4nGROTUkV8UYsCCPvhmHqWhHRciwe25Lh7pUM0WflBp570r9kd2XW_r4GTsgqRR6jr309TU6j2moaSofcuGDBDTkX05FXnygS5fi35PFgBV7QbsU-Xn_Av3");'>
+                        </div>
+                        <div class="absolute bottom-6 left-6 z-20 text-white">
+                            <p class="font-bold text-lg">Rapid Response Team</p>
+                            <p class="text-sm opacity-90">Ready to deploy across Florida</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Definition Block (SEO & Trust) -->
+    <section class="bg-slate-50 py-12 border-y border-slate-200">
+        <div class="max-w-[960px] mx-auto px-6">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col md:flex-row gap-8 items-start">
+                <div class="bg-blue-50 p-4 rounded-xl shrink-0">
+                    <span class="material-symbols-outlined text-primary text-4xl">info</span>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-[#111418] mb-3">What is Emergency Restoration?</h2>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Emergency restoration is the immediate mitigation of property damage caused by <strong>water, fire, mold, or storms</strong>. Unlike general remodeling, our primary goal is to stabilize the structure within hours to prevent secondary damage (like mold growth or structural collapse). We deploy industrial-grade equipment to dry, clean, and sanitize your property before rebuilding begins.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service Clusters -->
+    <section class="py-20 bg-white" id="services">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="text-center max-w-[720px] mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-[#111418] mb-4">Core Restoration Services</h2>
+                <p class="text-lg text-slate-600">Comprehensive disaster recovery solutions for residential and commercial properties.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="group flex flex-col h-full bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                    <div class="h-48 bg-cover bg-center relative" data-alt="Water damage mitigation equipment drying a flooded hallway" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjEkjbwDPj6DBnoJiVaE2kznhymc-fvy12IVkkYwkug8AJY2inAWkIRWvBlAimKdLbJw1MJvk5sN62jd00Xo94NZ0ZZ8F8ew4WV9ey3ZmOtaNU1IXt80AqeM_fF10nV2sdw9r3In3Pi5umMPZnilD9xIS9RKraCrNFH25sodK9l8J5_d50IVR3hKVwO-x7D3Roc00Pj5rVRfA19kdXYuyGMqdmFzq4dPkp6hNxuDCAAzjQWCccKwiI_5CG7_oypZ9ccSzshH7YyQ_q");'>
+                        <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-symbols-outlined text-primary">water_drop</span>
+                            <h3 class="font-bold text-lg text-[#111418]">Water Damage</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-6 flex-grow">Rapid extraction, structural drying, and dehumidification to prevent rot and mold.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li><a class="text-sm font-medium text-primary hover:underline flex items-center gap-1" href="/restoration/water-damage/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Burst Pipe Cleanup</a></li>
+                            <li><a class="text-sm font-medium text-primary hover:underline flex items-center gap-1" href="/restoration/water-damage/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Flood Extraction</a></li>
+                            <li><a class="text-sm font-medium text-primary hover:underline flex items-center gap-1" href="/restoration/water-damage/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Leak Detection</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="group flex flex-col h-full bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-urgent/30 transition-all duration-300">
+                    <div class="h-48 bg-cover bg-center relative" data-alt="Fire damage restoration specialist cleaning soot from walls" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-sa8SprbDVLvPfFUcopwKMcE8SUwGP1iYGCKqgsyJJK5Le-yiUOmwG-h14NHxeYfN6nSMJvB-Yg7x1IaBmwOrmWLBV1zPh6Qq91NlGc0w1j2J-xtgTtqHJFBEJo1eNHHX50NClQPke2SKUnwNq-qbu1DTGuSCh6GGNaLcHKbHQzNyRYufMkH6vrk_60mQVZYhbqdMrEeZYUKQJGnnlhKO36dUtHinSGPQunONyOAMOA4IQG3lUT-1GPSAvXy85jm0suxI8khYTQw9");'>
+                        <div class="absolute inset-0 bg-urgent/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-symbols-outlined text-urgent">local_fire_department</span>
+                            <h3 class="font-bold text-lg text-[#111418]">Fire & Smoke</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-6 flex-grow">Soot removal, structural cleaning, odor control, and content restoration services.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li><a class="text-sm font-medium text-urgent hover:underline flex items-center gap-1" href="/restoration/fire-damage/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Smoke Odor Removal</a></li>
+                            <li><a class="text-sm font-medium text-urgent hover:underline flex items-center gap-1" href="/restoration/fire-damage/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Soot Cleanup</a></li>
+                            <li><a class="text-sm font-medium text-urgent hover:underline flex items-center gap-1" href="/restoration/fire-damage/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Structural Repairs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="group flex flex-col h-full bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-green-500/30 transition-all duration-300">
+                    <div class="h-48 bg-cover bg-center relative" data-alt="Professional mold inspector checking a wall with a flashlight" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmzRC2GhkKzLdm9zFPNy3l3ej80PQ_8e1aTXAgXNfHMBUKpY5o0AsnsOIcCAplgjP975OqGoRqp5UlA8z3jpd4zfPJjYfp32k79E0lyhlqm_A_kPHCkgFdJm4nheiJe7HLEwS2nNM2tTbaB0NXCgWQEsQvL_GvuwxdxofG495Vvd3C3QC-iXTTfwovDbXIlk2IT9-05fUIy3EXIJ3zVx2AAIZfT-nWQprktUDZmCEHQ7z0-aPTLXyazjeUa5cspnTyuRS5Pr5bUq_d");'>
+                        <div class="absolute inset-0 bg-green-900/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-symbols-outlined text-green-600">coronavirus</span>
+                            <h3 class="font-bold text-lg text-[#111418]">Mold Remediation</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-6 flex-grow">Professional mold testing, negative air containment, and certified remediation protocols.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li><a class="text-sm font-medium text-green-700 hover:underline flex items-center gap-1" href="/restoration/mold-remediation/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Mold Inspection</a></li>
+                            <li><a class="text-sm font-medium text-green-700 hover:underline flex items-center gap-1" href="/restoration/mold-remediation/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Black Mold Removal</a></li>
+                            <li><a class="text-sm font-medium text-green-700 hover:underline flex items-center gap-1" href="/restoration/mold-remediation/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Air Quality Testing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="group flex flex-col h-full bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-slate-500/30 transition-all duration-300">
+                    <div class="h-48 bg-cover bg-center relative" data-alt="House with boarded up windows after hurricane damage" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWeTgTgNlMjtiYPhu1qNfUs6PyH5gLTzbaunmyUQ5nzec0fm11-vpAI5t2OwON9tCN2SGVBeR0fvtLie60zxGNEctuF1-Aum2Ct3dx9rFRt8BehcCxAQIsmjKuyQAwYJBT5gKbAS74PFHubTlg9NYh6lkuWUFZkW4t_du2WZmpsyggJY1kSJwj0yynYI_8oW6niJSQQPIgQl5x2RZoZJ9x3E6l2JPlHGEmQ7VDe4D2w0qISvNBiHqrDanGypmpTtq0GQWoXnE77ipX");'>
+                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-symbols-outlined text-slate-700">storm</span>
+                            <h3 class="font-bold text-lg text-[#111418]">Storm Damage</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-6 flex-grow">Emergency board-up services, roof tarping, and complete hurricane damage recovery.</p>
+                        <ul class="space-y-2 mb-6">
+                            <li><a class="text-sm font-medium text-slate-700 hover:underline flex items-center gap-1" href="/restoration/storm-damage/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Emergency Board-up</a></li>
+                            <li><a class="text-sm font-medium text-slate-700 hover:underline flex items-center gap-1" href="/restoration/storm-damage/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Roof Tarping</a></li>
+                            <li><a class="text-sm font-medium text-slate-700 hover:underline flex items-center gap-1" href="/restoration/storm-damage/"><span class="material-symbols-outlined text-[16px]">chevron_right</span> Debris Removal</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Process Section -->
+    <section class="py-20 bg-background-light border-t border-slate-200" id="process">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-black text-[#111418] mb-6">Restoration & Insurance Process</h2>
+                    <p class="text-lg text-slate-600 mb-8">We navigate the complex insurance paperwork while simultaneously restoring your property. Here is what to expect.</p>
+                    <div class="flex flex-col gap-6">
+                        <!-- Step 1 -->
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-10 h-10 rounded-full bg-urgent text-white flex items-center justify-center font-bold text-lg">1</div>
+                                <div class="w-0.5 h-full bg-slate-200 my-2"></div>
+                            </div>
+                            <div class="pb-8">
+                                <h4 class="font-bold text-lg text-[#111418]">Immediate Assessment</h4>
+                                <p class="text-slate-600">Our team arrives within 60 minutes to assess damage and stop the source of the issue.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">2</div>
+                                <div class="w-0.5 h-full bg-slate-200 my-2"></div>
+                            </div>
+                            <div class="pb-8">
+                                <h4 class="font-bold text-lg text-[#111418]">Mitigation & Cleanup</h4>
+                                <p class="text-slate-600">We deploy industrial drying or cleaning equipment immediately to prevent secondary damage.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-10 h-10 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center font-bold text-lg">3</div>
+                                <div class="w-0.5 h-full bg-slate-200 my-2"></div>
+                            </div>
+                            <div class="pb-8">
+                                <h4 class="font-bold text-lg text-[#111418]">Insurance Direct Billing</h4>
+                                <p class="text-slate-600">Our specialists document everything and bill your insurance company directly. You don't pay upfront.</p>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-10 h-10 rounded-full bg-white border-2 border-slate-300 text-slate-400 flex items-center justify-center font-bold text-lg">4</div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-[#111418]">Reconstruction</h4>
+                                <p class="text-slate-600">From drywall to painting, we restore your property to pre-loss condition.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full">
+                    <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-200 aspect-[4/5] relative bg-slate-100 flex items-center justify-center">
+                        <!-- Abstract Representation of Documentation/Process -->
+                        <div class="absolute inset-0 bg-cover bg-center opacity-90" data-alt="Paramount Property Restoration manager reviewing insurance paperwork with a tablet on a construction site" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBm6l8fBfS0nMPrsZur4v8ZwpIMI5q9BBM4knjzaw1BlrKp93jjbhJEQD3EgKEUSPu4aC3IF0aZFM8q23HjL_kO9Xjv1sGF12Q_ptCakQ1UO5C8OBlmccHJI3QhHZugle-w-8Qa4LqVPuQ6URvQOMS1mANRSAgNEQihqMgmzo3t4IcyYamtPKnZ4rvqUT3KzLHrT48fqGGrDPRNCi5Rlc7MFesr8u4mQ6gZ0XAHf4WtdpKqCLU8tmdArW2GY-G3kVFMrY-lNmsvXz1n");'>
+                        </div>
+                        <div class="absolute bottom-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-lg max-w-xs">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="material-symbols-outlined text-primary">verified_user</span>
+                                <span class="font-bold text-sm">Insurance Approved</span>
+                            </div>
+                            <p class="text-xs text-slate-500">We work with all major Florida insurance carriers including State Farm, Allstate, and Citizens.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Local Service Areas -->
+    <section class="py-16 bg-white" id="locations">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="flex flex-col items-center text-center mb-12">
+                <div class="w-12 h-12 bg-blue-50 text-primary rounded-full flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <h2 class="text-3xl font-black text-[#111418] mb-2">Local Response Hubs</h2>
+                <p class="text-slate-600">Strategically located teams for rapid deployment across Florida.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <a class="flex flex-col items-center p-4 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all group" href="/service-areas/south-florida/miami/">
+                    <span class="font-bold text-[#111418] group-hover:text-primary mb-1">Miami</span>
+                    <span class="text-xs text-slate-500">Miami-Dade County</span>
+                </a>
+                <a class="flex flex-col items-center p-4 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all group" href="/service-areas/central-florida/orlando/">
+                    <span class="font-bold text-[#111418] group-hover:text-primary mb-1">Orlando</span>
+                    <span class="text-xs text-slate-500">Orange County</span>
+                </a>
+                <a class="flex flex-col items-center p-4 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all group" href="/service-areas/tampa-bay/tampa/">
+                    <span class="font-bold text-[#111418] group-hover:text-primary mb-1">Tampa</span>
+                    <span class="text-xs text-slate-500">Hillsborough County</span>
+                </a>
+                <a class="flex flex-col items-center p-4 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all group" href="/service-areas/">
+                    <span class="font-bold text-[#111418] group-hover:text-primary mb-1">Jacksonville</span>
+                    <span class="text-xs text-slate-500">Duval County</span>
+                </a>
+                <a class="flex flex-col items-center p-4 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all group" href="/service-areas/south-florida/fort-lauderdale/">
+                    <span class="font-bold text-[#111418] group-hover:text-primary mb-1">Fort Lauderdale</span>
+                    <span class="text-xs text-slate-500">Broward County</span>
+                </a>
+                <a class="flex flex-col items-center p-4 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all group" href="/service-areas/south-florida/west-palm-beach/">
+                    <span class="font-bold text-[#111418] group-hover:text-primary mb-1">West Palm Beach</span>
+                    <span class="text-xs text-slate-500">Palm Beach County</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Educational Resources -->
+    <section class="py-16 bg-background-light border-t border-slate-200">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-[#111418]">Restoration Resources</h2>
+                    <p class="text-slate-600 mt-2">Expert advice on handling property emergencies.</p>
+                </div>
+                <a class="hidden md:flex items-center text-primary font-medium hover:underline" href="/resources/">View all articles <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="aspect-video bg-cover bg-center" data-alt="Close up of black mold on drywall corner" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3_5oot-eDHBDTERjCIi6HLgGstY9cuVumNrpE1hFM3cY02x0tGXB7s76KWV6QUsQGk-31A-sXmDtTlzQfRqdIJddP-5BHM8JfZzKknsyb1WMtjmE7wk6Tg6fQ1cSINZQL2YJajFUcJUbhMZuBp3pNVwotjMj1S4DBjZBBhEObskCMrrhk6v06hUiCyqXPa5eFN5leebtizHCvux196sNGRL-CbndHk6zc1yjTmz6V6Sch7M-L0O5RvWwrtJd9wRgRpJ2cyrd2H-rD");'></div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold text-primary uppercase tracking-wider">Mold</span>
+                        <h3 class="font-bold text-lg mt-2 mb-2 text-[#111418] leading-tight">How to Identify Black Mold vs. Mildew</h3>
+                        <p class="text-sm text-slate-600 mb-4 line-clamp-2">Learn the critical differences and when you need professional testing services immediately.</p>
+                        <a class="text-sm font-medium text-[#111418] hover:text-primary" href="/resources/">Read Guide</a>
+                    </div>
+                </article>
+                <!-- Article 2 -->
+                <article class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="aspect-video bg-cover bg-center" data-alt="Flooded living room with furniture in water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqxOPD_5DGSkHwQAKbjyoShyPAwGOALrw3tEMgnzV3TPqL2GLyZBWNboi8zAs4xFGnXeYe_A6PlcksgDevFL9p3y_V2VjBOb4J990nY3HtXKYtrffxCoj9lnGs8kchjb61BBRY6mHK5UPz3w7fyio75o46SHlSIltFFlUoU47t4t_OlHAJWhOPa9cQDOBWkv8WSEFo56N6ygNTCqE5gIY2LHF7iIfNnVoMnAP-aW1e6Oyke7o8IjqNiYGyLaY-JTaJSyjGfoObGbH_");'></div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold text-primary uppercase tracking-wider">Water Damage</span>
+                        <h3 class="font-bold text-lg mt-2 mb-2 text-[#111418] leading-tight">5 Steps to Take Immediately After a Pipe Burst</h3>
+                        <p class="text-sm text-slate-600 mb-4 line-clamp-2">Minimize damage before the restoration crew arrives with these essential safety steps.</p>
+                        <a class="text-sm font-medium text-[#111418] hover:text-primary" href="/resources/">Read Guide</a>
+                    </div>
+                </article>
+                <!-- Article 3 -->
+                <article class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="aspect-video bg-cover bg-center" data-alt="Hurricane shutters on a Florida home window" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvk-JajqKTrihjjkPdjRpjcrTA4MiAT7_EhEhBrAlXukISgEX1n_v02YL35sy81HRQfv3ue4BNMxdDLFjo7-0riETGl1-CCEfW7Qv36cMVv_-LxOk7w2StIFJKumOo4Ao6aoMzN5Vydf1iRODinVK7iIXUhS6Ma9aaI-LH8UnPJWJtin7qSI0xJVuyOrdkESO2MfkZATbzFNPmPS3QzWHgibL_L1S2s6938koNxKQh3H-yhvEeddvbaIpdSiFpJI1Tgc-IjAtlVWKf");'></div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold text-primary uppercase tracking-wider">Storm Prep</span>
+                        <h3 class="font-bold text-lg mt-2 mb-2 text-[#111418] leading-tight">Florida Homeowner's Hurricane Checklist 2024</h3>
+                        <p class="text-sm text-slate-600 mb-4 line-clamp-2">Prepare your property for the upcoming season with our comprehensive protection guide.</p>
+                        <a class="text-sm font-medium text-[#111418] hover:text-primary" href="/resources/">Read Guide</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</EmergencyLayout>

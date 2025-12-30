@@ -1,0 +1,260 @@
+---
+import RemodelingLayout from '../../layouts/RemodelingLayout.astro';
+---
+
+<RemodelingLayout>
+    <!-- HeroSection -->
+    <div class="relative w-full">
+        <div class="flex min-h-[600px] flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-20 text-center" data-alt="Luxury modern open concept kitchen with marble island and floor to ceiling windows overlooking florida palms" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAd_-Tgc2glQ_xzm9AIof1siP0JiuRuMWtsQ3nOkm0GlUbLSSVyfhqPFl0lEPc9A_2JKlC2kbzC4jCZC0bqePgQYO_NVEAysFEKlT1_ItPHQ6TdQmzhRCBiwsOtrITx9nK5-Me8lG3MFvK6_VrR5SvKXaH02WEpdtWBmAUFq1gnq1K6iK0Ftcm0yQGaMDg0I4SI2dLP4m88p7B7X2oBLSYflorJ_rH46KPOSWbOtG3KPv9itdXgl0zUK7SWZ0l81-hkO2h86xVHM2Lh");'>
+            <div class="flex max-w-[960px] flex-col gap-6 animate-fade-in-up">
+                <span class="mx-auto w-fit rounded-full bg-primary/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+                    Florida's Premier Renovators
+                </span>
+                <h1 class="text-shadow text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl md:text-6xl">
+                    Transforming Florida Homes with <br class="hidden md:block" /> Resilience & Style
+                </h1>
+                <h2 class="mx-auto max-w-[700px] text-gray-200 text-lg font-medium leading-relaxed sm:text-xl">
+                    Storm-proofing meets modern luxury. Experience the Paramount Standard in home renovation with Net-Zero efficiency and Biofilic design.
+                </h2>
+                <div class="flex flex-wrap justify-center gap-4 pt-4">
+                    <button class="flex h-12 min-w-[160px] cursor-pointer items-center justify-center rounded-lg bg-secondary px-6 text-base font-bold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-orange-500/30">
+                        Get a Free Quote
+                    </button>
+                    <button class="flex h-12 min-w-[160px] cursor-pointer items-center justify-center rounded-lg bg-white/20 px-6 text-base font-bold text-white backdrop-blur-md transition-all hover:bg-white/30 border border-white/40">
+                        View Portfolio
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Introduction / The Paramount Standard -->
+    <section class="py-16 px-4 md:px-10 bg-white dark:bg-[#1a2632]">
+        <div class="mx-auto max-w-[960px] text-center">
+            <h2 class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-tight mb-4">The Paramount Standard</h2>
+            <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
+                We combine Florida-specific resilience with modern luxury aesthetics. Specializing in <span class="text-primary font-semibold">Net-Zero efficiency</span>, <span class="text-primary font-semibold">Biofilic Design</span>, and storm-proof construction, we build homes that aren't just beautiful—they are built to last through every season.
+            </p>
+            <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+                <div class="flex flex-col items-center gap-3 p-4">
+                    <span class="material-symbols-outlined text-4xl text-primary">shield</span>
+                    <h3 class="font-bold text-lg dark:text-white">Storm Resilient</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Impact-rated materials and structural reinforcement.</p>
+                </div>
+                <div class="flex flex-col items-center gap-3 p-4">
+                    <span class="material-symbols-outlined text-4xl text-primary">energy_savings_leaf</span>
+                    <h3 class="font-bold text-lg dark:text-white">Eco-Efficient</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Solar-ready roofing and high-efficiency insulation.</p>
+                </div>
+                <div class="flex flex-col items-center gap-3 p-4">
+                    <span class="material-symbols-outlined text-4xl text-primary">design_services</span>
+                    <h3 class="font-bold text-lg dark:text-white">Modern Design</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Curated aesthetics that blend indoor and outdoor living.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Core Services Cluster -->
+    <section class="py-16 px-4 md:px-10 bg-background-light dark:bg-background-dark" id="services">
+        <div class="mx-auto max-w-[1200px]">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+                <div>
+                    <span class="text-primary font-bold tracking-wider uppercase text-sm">Our Expertise</span>
+                    <h2 class="text-[#111418] dark:text-white text-3xl font-bold mt-2">Core Renovation Services</h2>
+                </div>
+                <a class="text-primary font-bold flex items-center gap-1 hover:text-blue-700" href="/remodeling-services/">
+                    See All Services <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="group relative flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#1a2632] shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+                    <div class="aspect-[4/3] w-full bg-cover bg-center" data-alt="Modern gourmet chef kitchen with white quartz countertops and gold fixtures" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoMHKfuhInz_ckbXUJfw5kfRnd4v7JTtbs-mK-PoSOpQ66WoEL-FycsJr_KkGhPBEq09ar6NHux0ADLHNRTZM3pP7Plh3XyWqTJAS1znYdLFLAFFE_1QTJdWjKzXu5nQkb-i9tJcoLs0dzyjf5A0sHFIqObfYl_mNm2snbMsv8cmJpucKNBNc53GO30fFqxb8RdojOfLtUYIFaAdU4Ht0AxCNU1e8nWxdKF0TQoEesoq-EJKGXDR9lxPkVTs0xwRqDhO4wB5Ew5MdA");'>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Luxury Kitchens</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-1">Chef-grade appliances, custom cabinetry, and open-concept layouts.</p>
+                        <span class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="group relative flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#1a2632] shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+                    <div class="aspect-[4/3] w-full bg-cover bg-center" data-alt="Spa-like bathroom renovation with freestanding tub and rain shower" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3wNEkt7S8Fep08YJ5DV8yJF8UhRdDweMUl-7QZN6KsXQs6AmP0nZLZyza7-h8S2yHxTC3dAErxfzRb2dtQlFMlWtDCz8mmUtVTSf0YiUbCR7sXTYW4DvBefDZERuqWtybCrNu0I1Pjp1qphik_LJCfCusApBKZsX3NBAxj0cKSzMjjqZaoc0bjbreeig6HrHdWAo_6zhpcdess0EBJZwVq2PkQEOVSmORV4kJI1jmtP37Jd5Iy7jkE0lT4aea-je18mIfR0IkHHkL");'>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Spa Bathrooms</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-1">Transform your bath into a personal wellness retreat.</p>
+                        <span class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="group relative flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#1a2632] shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+                    <div class="aspect-[4/3] w-full bg-cover bg-center" data-alt="Modern home addition ADU guest house in backyard" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRTFp7TqAVCUK5FjUo34PkUaFx5WKEyzAmn1rEcRXXYG4y-NdvRb2_537Nrpmk1toj_ldA8DyaqGfZMNTc0etGdGKMyvAANdDQm6y5YXmQoh878IOc2UKBPZbGJ5AfbiX7s61HieLWV9iAbpsDQOGhyNR_ERrrD42pEgPiSYMlDMyFJC2AF4yD4LJ0ZhYiztutmky_IFteo4Mdn2xWw4I7IRzp2aHr4uzIBVVhN1qjiNAlzHCzu5WfF44tKb8Xz4WlyD11aZydgl9E");'>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Additions & ADUs</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-1">Expand your living space and increase property value.</p>
+                        <span class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="group relative flex flex-col overflow-hidden rounded-xl bg-white dark:bg-[#1a2632] shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+                    <div class="aspect-[4/3] w-full bg-cover bg-center" data-alt="Impact windows and reinforced roofing installation on a florida home" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvj4RR_L6vPAY67P2nzpo_d9pQdQTeoTguScjKWSq4bmOgpWMaVEBMJrbF0C6xcPVw20vvCmZd9ZsECIyMsARPH3iCDAv4XqBo-jP_KRBL5p4RPGrLJvrzEztEmmIjswWbjtf5ne_ACdvKdnafgxn1aeDxAlt37aURpi2Z_rWeLm2aOuqLRvz9D7R66Docj4PgjxFiP1zPztsE1ZGBNNVzucAOufwJ7HO_3-K0ADrbLJ9iLH8BRYgI4ltlZDvWEL7SPfO4opSE9Qx8");'>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Whole-Home Resilience</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-1">Impact windows, roofing, and structural reinforcement.</p>
+                        <span class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Process Section -->
+    <section class="py-16 px-4 md:px-10 bg-white dark:bg-[#1a2632] border-y border-gray-100 dark:border-gray-800" id="process">
+        <div class="mx-auto max-w-[1200px]">
+            <div class="text-center mb-12">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm">How We Work</span>
+                <h2 class="text-[#111418] dark:text-white text-3xl font-bold mt-2">The Paramount Process</h2>
+                <p class="text-gray-500 dark:text-gray-400 mt-2">A transparent journey from concept to completion.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gray-200 dark:bg-gray-700 -z-10"></div>
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-primary flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-4xl text-primary">chat</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-2">1. Consultation</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">We discuss your vision, budget, and resilience needs.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-gray-200 dark:border-gray-700 flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-4xl text-gray-400">architecture</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-2">2. Design</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Blueprints, 3D renderings, and material selection.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-gray-200 dark:border-gray-700 flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-4xl text-gray-400">construction</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-2">3. Build</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Expert construction with regular progress updates.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-gray-200 dark:border-gray-700 flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-4xl text-gray-400">check_circle</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-2">4. Reveal</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Final walkthrough and handover of your new space.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Trend Spotlight -->
+    <section class="py-16 px-4 md:px-10 bg-background-light dark:bg-background-dark" id="trends">
+        <div class="mx-auto max-w-[1200px] flex flex-col lg:flex-row gap-10 items-center">
+            <div class="w-full lg:w-1/2 relative">
+                <div class="aspect-[4/3] rounded-xl bg-cover bg-center shadow-xl" data-alt="Sunlit minimalist living room with indoor plants and biofilic design elements" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNW7DdoTWPfeluUp0VxeO2oGr8L0GjT7vhnNnvZ6nZgtikJzA6wuVGLrJRyPUQyWGCxWt7giblgE31B4S9AukLwKJWXhIZSdhdRlsu3yyI1z6Mx91fdfNplx8R1UhXCHmfEf_y-dgEVteCrobXGn6-Ofu4w3sCt7vDx5JBAW6o2qtISkLX7G8L7kdDl2tLCLT7BnOqtS1hyIiKM_-DV36tPZ_iNvGVBPDg0bQcHCY4WJ3Ss0uDa7l9vt659UrAYfu0nKj1DqK5aCfO");'>
+                </div>
+                <!-- Floating Badge -->
+                <div class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg max-w-[200px] hidden md:block">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-secondary">trending_up</span>
+                        <span class="font-bold text-sm dark:text-white">Trend Alert</span>
+                    </div>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">Biophilic Design is up 40% in Florida renovations.</p>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2">
+                <span class="text-secondary font-bold tracking-wider uppercase text-sm">Design Forecast</span>
+                <h2 class="text-[#111418] dark:text-white text-3xl lg:text-4xl font-bold mt-2 mb-4 leading-tight">2026 Trend Spotlight: <br />Future-Proofing Your Home</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-6 text-lg">
+                    Florida homeowners are moving beyond simple aesthetics. The future is about blending sustainability with luxury.
+                </p>
+                <ul class="flex flex-col gap-4 mb-8">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary mt-1">solar_power</span>
+                        <div>
+                            <strong class="block text-[#111418] dark:text-white">Net-Zero Ready</strong>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Homes designed to produce as much energy as they consume.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary mt-1">potted_plant</span>
+                        <div>
+                            <strong class="block text-[#111418] dark:text-white">Biophilic Integration</strong>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Seamless transitions between indoor spaces and Florida's nature.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary mt-1">home_work</span>
+                        <div>
+                            <strong class="block text-[#111418] dark:text-white">Multi-Gen ADUs</strong>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Detached units for aging parents or rental income.</span>
+                        </div>
+                    </li>
+                </ul>
+                <a class="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-6 text-base font-bold text-white shadow-md transition-colors hover:bg-blue-700" href="/contact/">
+                    Read the Full 2026 Report
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Local Service Areas & FAQ -->
+    <section class="py-16 px-4 md:px-10 bg-white dark:bg-[#1a2632]" id="locations">
+        <div class="mx-auto max-w-[1000px]">
+            <!-- Service Areas -->
+            <div class="mb-16 text-center">
+                <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-6">Serving Florida Communities</h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a class="rounded-full bg-gray-100 dark:bg-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-primary hover:text-white transition-colors" href="/service-areas/south-florida/">Miami</a>
+                    <a class="rounded-full bg-gray-100 dark:bg-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-primary hover:text-white transition-colors" href="/service-areas/south-florida/">Fort Lauderdale</a>
+                    <a class="rounded-full bg-gray-100 dark:bg-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-primary hover:text-white transition-colors" href="/service-areas/treasure-coast/">West Palm Beach</a>
+                    <a class="rounded-full bg-gray-100 dark:bg-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-primary hover:text-white transition-colors" href="/service-areas/south-florida/">Boca Raton</a>
+                    <a class="rounded-full bg-gray-100 dark:bg-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-primary hover:text-white transition-colors" href="/service-areas/central-florida/">Orlando</a>
+                    <a class="rounded-full bg-gray-100 dark:bg-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-primary hover:text-white transition-colors" href="/service-areas/tampa-bay/">Tampa Bay</a>
+                    <a class="rounded-full bg-gray-100 dark:bg-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-primary hover:text-white transition-colors" href="/service-areas/southwest-florida/">Sarasota</a>
+                    <a class="rounded-full bg-gray-100 dark:bg-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-primary hover:text-white transition-colors" href="/service-areas/southwest-florida/">Naples</a>
+                </div>
+            </div>
+            <!-- FAQ -->
+            <div class="bg-background-light dark:bg-gray-800 rounded-xl p-6 md:p-10">
+                <h3 class="text-2xl font-bold text-[#111418] dark:text-white mb-6 text-center">Frequently Asked Questions</h3>
+                <div class="space-y-4">
+                    <details class="group bg-white dark:bg-[#1a2632] rounded-lg p-4 cursor-pointer shadow-sm">
+                        <summary class="flex justify-between items-center font-bold text-[#111418] dark:text-white">
+                            How long does a typical kitchen renovation take?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed">
+                            A standard kitchen remodel typically takes 6-8 weeks from demolition to completion. Custom cabinetry or structural changes may extend this timeline.
+                        </p>
+                    </details>
+                    <details class="group bg-white dark:bg-[#1a2632] rounded-lg p-4 cursor-pointer shadow-sm">
+                        <summary class="flex justify-between items-center font-bold text-[#111418] dark:text-white">
+                            Do you handle all the permits and inspections?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed">
+                            Yes, Paramount Property Restoration manages the entire permitting process with your local municipality to ensure all work is code-compliant.
+                        </p>
+                    </details>
+                    <details class="group bg-white dark:bg-[#1a2632] rounded-lg p-4 cursor-pointer shadow-sm">
+                        <summary class="flex justify-between items-center font-bold text-[#111418] dark:text-white">
+                            Can we live in the house during the renovation?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed">
+                            For smaller projects like a single bathroom, yes. For whole-home renovations, we typically recommend finding temporary accommodation to ensure your safety and speed up the process.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+</RemodelingLayout>

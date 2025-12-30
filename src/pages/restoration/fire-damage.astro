@@ -1,0 +1,314 @@
+---
+import FireDamageLayout from '../../layouts/FireDamageLayout.astro';
+---
+
+<FireDamageLayout>
+    <!-- Hero Section -->
+    <div class="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <!-- Text Content -->
+                <div class="flex flex-col gap-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#135bec]/20 border border-[#135bec]/30 w-fit mx-auto lg:mx-0">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#135bec] opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#135bec]"></span>
+                        </span>
+                        <span class="text-xs font-semibold text-[#135bec] uppercase tracking-wider">Emergency Response Live</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white">
+                        After the Fire: <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500">We Restore Your Peace of Mind.</span>
+                    </h1>
+                    <p class="text-lg text-[#94a3b8] max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Immediate stabilization, deep structural cleaning, and complete reconstruction. We don't just fix houses; we guide you from disaster to full recovery with empathy and expertise.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <button class="bg-[#135bec] hover:bg-blue-700 text-white h-12 px-8 rounded-lg font-bold text-base transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20">
+                            Get Help Now
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                        <button class="bg-[#1e293b] border border-[#334155] hover:bg-[#334155]/50 text-white h-12 px-8 rounded-lg font-semibold text-base transition-colors flex items-center justify-center">
+                            Our Process
+                        </button>
+                    </div>
+                </div>
+                <!-- Hero Image -->
+                <div class="relative lg:h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl border border-[#334155]/50 group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-transparent to-transparent z-10"></div>
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Professional restoration team inspecting fire damage with care" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBd5RZlvJ_eI0JbY-KPS1MZ7NTuPfXp1YEgq76GVYr5zoJncOE99wF7p0dInVssUjsB2slnz_3pGap-Xszxa5Zl3FUOPvzsagm8B61WAmEoUeQ2xIC8-vJd_gTMOyzOKZabMjlGmWXU-WFrlJywhZXey_FMQuHDOPk_Lx1BTjwAB7mTKolCX3crGVzAKghp7ALaMEwAfFYtwUb5_RWBFl9_JcOf8Ml_xUxdk1xLpUySdGMG1VD_gJvfZaX8oj4nI_ao7BC1_GWKg7Tj');"></div>
+                    <!-- Floating Badge -->
+                    <div class="absolute bottom-6 left-6 right-6 z-20 bg-[#0f172a]/90 backdrop-blur-md p-4 rounded-xl border border-[#334155] flex items-start gap-4">
+                        <div class="bg-green-500/20 p-2 rounded-lg text-green-500">
+                            <span class="material-symbols-outlined">verified_user</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Emergency Experts</p>
+                            <p class="text-[#94a3b8] text-xs mt-1">Our team is trained to handle hazardous materials and structural instability safely.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Background Gradient blob -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-[#135bec]/10 rounded-full blur-3xl pointer-events-none opacity-50"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] bg-[#f97316]/5 rounded-full blur-3xl pointer-events-none opacity-30"></div>
+        </div>
+    </div>
+    
+    <!-- Triple Threat Bento Grid -->
+    <section class="py-20 bg-[#1e293b]/30 border-y border-[#334155]/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The Triple Threat of Fire Damage</h2>
+                <p class="text-[#94a3b8] max-w-2xl mx-auto">Fire is just the beginning. We address the three critical layers of damage immediately to prevent total loss.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1: Fire -->
+                <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-8 hover:border-[#f97316]/50 transition-colors group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <span class="material-symbols-outlined text-[120px] text-[#f97316]">local_fire_department</span>
+                    </div>
+                    <div class="size-12 rounded-lg bg-[#f97316]/20 flex items-center justify-center text-[#f97316] mb-6 relative z-10">
+                        <span class="material-symbols-outlined">local_fire_department</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 relative z-10">Structural Fire Damage</h3>
+                    <p class="text-[#94a3b8] text-sm leading-relaxed mb-6 relative z-10">
+                        Flames compromise the structural integrity of your home. We stabilize weakened framing and safely remove charred materials.
+                    </p>
+                    <a class="text-white text-sm font-semibold flex items-center gap-2 hover:text-[#f97316] transition-colors relative z-10" href="/our-process/">
+                        Learn about structural repair <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <!-- Card 2: Smoke -->
+                <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-8 hover:border-gray-400 transition-colors group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <span class="material-symbols-outlined text-[120px] text-white">cloud</span>
+                    </div>
+                    <div class="size-12 rounded-lg bg-white/10 flex items-center justify-center text-white mb-6 relative z-10">
+                        <span class="material-symbols-outlined">cloud</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 relative z-10">Smoke & Soot Contamination</h3>
+                    <p class="text-[#94a3b8] text-sm leading-relaxed mb-6 relative z-10">
+                        Acids in soot can corrode metal and stain porous surfaces within hours. We use industrial air scrubbers to neutralize toxic odors.
+                    </p>
+                    <a class="text-white text-sm font-semibold flex items-center gap-2 hover:text-gray-300 transition-colors relative z-10" href="/our-process/">
+                        See odor removal process <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <!-- Card 3: Water -->
+                <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-8 hover:border-[#135bec]/50 transition-colors group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <span class="material-symbols-outlined text-[120px] text-[#135bec]">water_drop</span>
+                    </div>
+                    <div class="size-12 rounded-lg bg-[#135bec]/20 flex items-center justify-center text-[#135bec] mb-6 relative z-10">
+                        <span class="material-symbols-outlined">water_drop</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 relative z-10">Water Damage Suppression</h3>
+                    <p class="text-[#94a3b8] text-sm leading-relaxed mb-6 relative z-10">
+                        Firefighting efforts leave gallons of water behind. We extract moisture immediately to prevent mold growth and secondary rot.
+                    </p>
+                    <a class="text-white text-sm font-semibold flex items-center gap-2 hover:text-[#135bec] transition-colors relative z-10" href="/restoration/water-damage/">
+                        View water extraction <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- First 24 Hours Guide -->
+    <section class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">The First 24 Hours: Critical Steps</h2>
+                <p class="text-[#94a3b8] mt-4">Correct action in the first day can save thousands in secondary damages.</p>
+            </div>
+            <!-- Tabs/Accordion Container -->
+            <div class="bg-[#1e293b] border border-[#334155] rounded-2xl overflow-hidden shadow-xl">
+                <div class="flex border-b border-[#334155]">
+                    <button class="flex-1 py-4 text-center font-bold text-sm sm:text-base border-b-2 border-[#135bec] text-white bg-white/5 transition-colors">
+                        What To Do (Do's)
+                    </button>
+                    <button class="flex-1 py-4 text-center font-bold text-sm sm:text-base border-b-2 border-transparent text-[#94a3b8] hover:text-white transition-colors">
+                        What To Avoid (Don'ts)
+                    </button>
+                </div>
+                <div class="p-6 sm:p-10">
+                    <div class="flex flex-col gap-4">
+                        <label class="flex items-start gap-4 p-4 rounded-lg bg-[#0f172a] border border-[#334155]/50 hover:border-[#135bec]/30 transition-colors cursor-pointer group">
+                            <div class="relative flex items-center justify-center pt-1">
+                                <input checked="" class="peer h-5 w-5 rounded border-[#334155] bg-[#1e293b] text-[#135bec] focus:ring-offset-[#0f172a] focus:ring-[#135bec]" type="checkbox"/>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold group-hover:text-[#135bec] transition-colors">Turn off HVAC System</h4>
+                                <p class="text-[#94a3b8] text-sm mt-1">Prevent soot and smoke particles from circulating into unaffected rooms and ductwork.</p>
+                            </div>
+                        </label>
+                         <label class="flex items-start gap-4 p-4 rounded-lg bg-[#0f172a] border border-[#334155]/50 hover:border-[#135bec]/30 transition-colors cursor-pointer group">
+                            <div class="relative flex items-center justify-center pt-1">
+                                <input checked="" class="peer h-5 w-5 rounded border-[#334155] bg-[#1e293b] text-[#135bec] focus:ring-offset-[#0f172a] focus:ring-[#135bec]" type="checkbox"/>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold group-hover:text-[#135bec] transition-colors">Limit Movement</h4>
+                                <p class="text-[#94a3b8] text-sm mt-1">Restrict foot traffic to prevent soot particles from being embedded into carpets and upholstery.</p>
+                            </div>
+                        </label>
+                        <label class="flex items-start gap-4 p-4 rounded-lg bg-[#0f172a] border border-[#334155]/50 hover:border-[#135bec]/30 transition-colors cursor-pointer group">
+                            <div class="relative flex items-center justify-center pt-1">
+                                <input checked="" class="peer h-5 w-5 rounded border-[#334155] bg-[#1e293b] text-[#135bec] focus:ring-offset-[#0f172a] focus:ring-[#135bec]" type="checkbox"/>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold group-hover:text-[#135bec] transition-colors">Protect Chrome & Porcelain</h4>
+                                <p class="text-[#94a3b8] text-sm mt-1">If possible, wipe down chrome faucets and porcelain to prevent permanent pitting from acid soot.</p>
+                            </div>
+                        </label>
+                        <label class="flex items-start gap-4 p-4 rounded-lg bg-[#0f172a] border border-[#334155]/50 hover:border-[#135bec]/30 transition-colors cursor-pointer group">
+                            <div class="relative flex items-center justify-center pt-1">
+                                <input class="peer h-5 w-5 rounded border-[#334155] bg-[#1e293b] text-[#135bec] focus:ring-offset-[#0f172a] focus:ring-[#135bec]" type="checkbox"/>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold group-hover:text-[#135bec] transition-colors">Call Your Insurance & Restoration Pro</h4>
+                                <p class="text-[#94a3b8] text-sm mt-1">Initiate the claim and get a certified team on-site immediately to assess the scope.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-[#0f172a] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Left: Title & Intro -->
+                <div class="lg:w-1/3">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Our Process: <br/>Stabilize to Rebuild</h2>
+                    <p class="text-[#94a3b8] mb-8">We handle every step of the journey, ensuring you only have to deal with one point of contact for the entire restoration project.</p>
+                    <button class="hidden lg:flex bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-lg font-semibold transition-colors items-center gap-2 border border-white/10">
+                        View Full Timeline <span class="material-symbols-outlined">arrow_downward</span>
+                    </button>
+                </div>
+                <!-- Right: Vertical Timeline -->
+                <div class="lg:w-2/3 relative pl-8 border-l border-[#334155] space-y-12">
+                    <!-- Step 1 -->
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1 h-5 w-5 rounded-full bg-[#f97316] border-4 border-[#0f172a] shadow-[0_0_0_4px_rgba(249,115,22,0.2)]"></div>
+                        <h3 class="text-xl font-bold text-white mb-2">1. Emergency Board-Up & Assessment</h3>
+                        <p class="text-[#94a3b8] text-sm">Within hours of the fire being extinguished, we secure the property. We board up windows, tarp damaged roofs, and secure doors to prevent theft and weather damage.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1 h-5 w-5 rounded-full bg-[#135bec] border-4 border-[#0f172a]"></div>
+                        <h3 class="text-xl font-bold text-white mb-2">2. Water Removal & Drying</h3>
+                        <p class="text-[#94a3b8] text-sm">We extract water used by firefighters immediately. Industrial dehumidifiers and air movers are deployed to dry the structure and prevent mold.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1 h-5 w-5 rounded-full bg-[#334155] border-4 border-[#0f172a]"></div>
+                        <h3 class="text-xl font-bold text-white mb-2">3. Smoke & Soot Removal</h3>
+                        <p class="text-[#94a3b8] text-sm">Using specialized equipment, we remove smoke and soot from ceilings, walls, and other surfaces. We also use thermal fogging for odor neutralization.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1 h-5 w-5 rounded-full bg-[#334155] border-4 border-[#0f172a]"></div>
+                        <h3 class="text-xl font-bold text-white mb-2">4. Reconstruction & Remodeling</h3>
+                        <p class="text-[#94a3b8] text-sm">From installing new drywall and painting to complete kitchen remodels. We bring your property back to its pre-loss condition—or better.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specific Scenarios Cards -->
+    <section class="py-20 bg-[#1e293b]/30 border-y border-[#334155]/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">Specific Fire Scenarios</h2>
+                <p class="text-[#94a3b8] mt-4">We are equipped to handle specialized fire damage situations.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Kitchen -->
+                <div class="bg-[#1e293b] border border-[#334155] rounded-xl overflow-hidden hover:shadow-lg transition-all group">
+                    <div class="h-40 bg-cover bg-center relative" data-alt="Modern kitchen interior with clean surfaces" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjb_BJdhGL5zjwj8xIN0RRVRsWKAS__6dd5NcNM868bzXuNLJ_zVa4Xfr11ARPKW4FCFHEB8bMPwf_1FFB38JuzPDEW0R74c-NDobaI2qGqpar3YhBEgEXtmZSa92bJKvEQ04sxaXPl3VIxOoUa9HtANiwCqN01DnmW8hIkZ4c2zNu9BBS_rWE2wlyb3xf6DdcQ9zAMxmKAdw826zGRl8OVKyWfTocouffWG3MoJYkuKZynnL74y7W9xAgWV2n2dFbunx0UfcfVv9X');">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="material-symbols-outlined text-white text-3xl">skillet</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Kitchen Grease Fires</h3>
+                        <p class="text-[#94a3b8] text-sm">Specialized cleaning for protein-based residues that leave sticky, pungent films across surfaces.</p>
+                    </div>
+                </div>
+                <!-- Electrical -->
+                <div class="bg-[#1e293b] border border-[#334155] rounded-xl overflow-hidden hover:shadow-lg transition-all group">
+                    <div class="h-40 bg-cover bg-center relative" data-alt="Electrical wiring panel and circuits" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDDS_VO7p2eA26fL5S4VhTgiOkb9D6cce2AKiL_Q-Jnlwa0OvGNgXaLkbk-3ZiGdhxCCiEA3UEbmD6dfmPTg79y6z27c8Ft6H6PFbIEOegWLrlRJ50MUvAA1fq-RkPG3pxmcy2QRyVIAiTipbpxsmoTKf7wjjMJ1_7AO2-upzwPR0oiGmcEAC_lPHwMNBxaTqof8XOg1rd03J-zEqoV1_VYXa3iY6ioX963iHfZWvBaBVj5Q9T_7HqSXIJl3JP18-KpjRXBXkXSg6Ml');">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="material-symbols-outlined text-white text-3xl">electric_bolt</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Electrical Malfunctions</h3>
+                        <p class="text-[#94a3b8] text-sm">Addressing hidden damage within walls and ensuring the electrical system is safe before power restoration.</p>
+                    </div>
+                </div>
+                <!-- Commercial -->
+                <div class="bg-[#1e293b] border border-[#334155] rounded-xl overflow-hidden hover:shadow-lg transition-all group">
+                    <div class="h-40 bg-cover bg-center relative" data-alt="Tall commercial office building glass facade" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjAE5suZlPkMw0CDZSAh6f-FJogl-yy9umnPeBpRWg4CvELeDTvLun6s6YiA1UHiw43ikYeOXyYBHskO_nORshyitVTAxE2obPt33C8Vv6KkwofsGGk7P8ONwojS-85Wj7r4DfDRmYiZKoid6GIbqxWz59ep7qRH1eTFMcfBDjyoc-g0_-IlRyqawOsZuDxuaCF0B6vIwOLXlwbW30RlIqqRRak2kaj5nngx7CiIyBNchus46OHMHjTk4Ig2dOQyyjiXQsHaoAVlmh');">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="material-symbols-outlined text-white text-3xl">domain</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Commercial Complex</h3>
+                        <p class="text-[#94a3b8] text-sm">Large-scale loss recovery designed to minimize business downtime and get doors open faster.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-[#0f172a]">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white text-center mb-10">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-[#1e293b] border border-[#334155] rounded-lg open:border-[#135bec]/50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between p-6 font-medium text-white">
+                        <span>Can my clothes and furniture be saved?</span>
+                        <span class="transition group-open:rotate-180">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-[#94a3b8] text-sm leading-relaxed">
+                        In many cases, yes. We use specialized contents cleaning methods, including ultrasonic cleaning and ozone treatments, to salvage soft goods and furniture that haven't been charred.
+                    </div>
+                </details>
+                <details class="group bg-[#1e293b] border border-[#334155] rounded-lg open:border-[#135bec]/50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between p-6 font-medium text-white">
+                        <span>How do you remove the smoke smell completely?</span>
+                        <span class="transition group-open:rotate-180">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-[#94a3b8] text-sm leading-relaxed">
+                        We don't just mask odors; we eliminate them. We identify the source, remove charred materials, clean surfaces with professional agents, and use thermal foggers or hydroxyl generators to neutralize odor particles at the molecular level.
+                    </div>
+                </details>
+                <details class="group bg-[#1e293b] border border-[#334155] rounded-lg open:border-[#135bec]/50 transition-colors">
+                    <summary class="flex cursor-pointer items-center justify-between p-6 font-medium text-white">
+                        <span>Will my insurance cover the restoration?</span>
+                        <span class="transition group-open:rotate-180">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-[#94a3b8] text-sm leading-relaxed">
+                        Most homeowner policies cover fire, smoke, and water damage from firefighting. We work directly with your insurance adjuster to document the damage and ensure you receive the coverage you are entitled to.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+</FireDamageLayout>

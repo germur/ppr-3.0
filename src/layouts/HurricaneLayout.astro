@@ -1,0 +1,89 @@
+---
+import '../styles/global.css';
+import Header from '../components/common/Header.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Hurricane Damage Restoration | Paramount Property Restoration",
+  description = "Immediate mobilization and readiness. 24/7 Rapid Response Teams standing by for dispatch covering Miami-Dade, Broward, and Palm Beach."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <style>
+        /* Scoped Variables for Hurricane Page */
+        :root {
+            --color-primary: #1162d4;
+            --color-secondary: #f97316; 
+            --color-background-light: #f6f7f8;
+            --color-background-dark: #101822;
+            --color-alert: #dc2626;
+
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        .pulsate-btn {
+            animation: shadow-pulse 1.5s infinite;
+        }
+        @keyframes shadow-pulse {
+            0% { box-shadow: 0 0 0 0px rgba(249, 115, 22, 0.7); }
+            100% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); }
+        }
+    </style>
+</head>
+<body class="font-display bg-[#f6f7f8] dark:bg-[#101822] text-[#111418] dark:text-white overflow-x-hidden antialiased">
+    <!-- Sticky Header Wrapper -->
+    <div class="sticky top-0 z-50 w-full shadow-md">
+        <!-- Disaster Mode Alert Bar -->
+        <div class="bg-[#dc2626] text-white px-4 py-3 flex items-center justify-center gap-2 font-bold text-sm md:text-base text-center relative overflow-hidden">
+            <span class="material-symbols-outlined animate-pulse text-yellow-300">warning</span>
+            <span class="tracking-wide uppercase">24/7 Hurricane Response Unit Active - Immediate Deployment Available</span>
+        </div>
+        
+        <!-- Main Navigation -->
+        <Header 
+            theme="light" 
+            secondaryColor="#f97316" 
+            emergencyBtnText="(888) CALL-PPR" 
+            logoText="Paramount Property Restoration"
+            sticky={false}
+        />
+    </div>
+
+    <main class="flex flex-col w-full">
+        <slot />
+        
+        <!-- CTA Footer -->
+        <footer class="bg-[#111418] text-white py-12 px-4 md:px-10 lg:px-40">
+            <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex flex-col gap-2 text-center md:text-left">
+                    <h2 class="text-2xl font-bold">Don't Wait Until Mold Starts Growing</h2>
+                    <p class="text-gray-400">Our emergency operators are standing by 24/7/365.</p>
+                </div>
+                <div class="flex flex-col gap-3 w-full md:w-auto">
+                    <button class="flex w-full md:w-auto cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-[#dc2626] hover:bg-red-700 text-white text-lg font-bold transition-colors">
+                        Call Now: (888) CALL-PPR
+                    </button>
+                    <p class="text-xs text-gray-500 text-center">Paramount Property Restoration © 2024. FL License #CGC152345</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

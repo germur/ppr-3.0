@@ -1,0 +1,361 @@
+---
+import '../styles/global.css';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+---
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Contact Paramount Property Restoration</title>
+    <meta name="description" content="Need urgent help? Call (786) 602-2217. We provide 24/7 emergency restoration services in Miami, Orlando, Tampa & more. Get your free quote today.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "LocalBusiness",
+        "name": "Paramount Property Restoration",
+        "image": "https://paramountrestoration.com/logo.png",
+        "telephone": "+1-786-602-2217",
+        "email": "info@paramountrestoration.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        
+        /* Manual Form Resets / Fixes */
+        input, select, textarea {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            outline: none;
+        }
+        select {
+            background-image: none; /* We use custom chevron */
+        }
+    </style>
+</head>
+<body class="bg-[#f8fafc] dark:bg-[#101922] text-[#0f172a] dark:text-[#f1f5f9] transition-colors duration-200">
+    <!-- Navbar -->
+    <Header />
+
+
+    <main class="flex-grow w-full">
+        <!-- Hero Section: Split Layout -->
+        <section class="relative w-full overflow-hidden bg-[#f8fafc] dark:bg-[#101922] lg:min-h-[calc(100vh-64px)] flex items-center">
+            <!-- Abstract background graphic for visual interest -->
+            <div class="absolute inset-0 z-0 opacity-10 dark:opacity-5 pointer-events-none">
+                <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-[#137fec] blur-[120px]"></div>
+                <div class="absolute bottom-[10%] right-[10%] w-[40%] h-[40%] rounded-full bg-[#f97316] blur-[100px]"></div>
+            </div>
+            
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <!-- Left Column: Emergency Focus -->
+                    <div class="flex flex-col items-start gap-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#fee2e2] dark:bg-[#7f1d1d]/30 text-[#b91c1c] dark:text-[#fca5a5] text-xs font-bold uppercase tracking-wider animate-pulse">
+                            <span class="size-2 rounded-full bg-[#dc2626] dark:bg-[#ef4444]"></span>
+                            Live 24/7 Response
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0f172a] dark:text-white leading-[1.1]">
+                            Emergency? <br/>
+                            We Respond in <span class="text-[#137fec]">60 Minutes.</span>
+                        </h1>
+                        <p class="text-lg text-[#475569] dark:text-[#cbd5e1] max-w-lg leading-relaxed">
+                            Immediate dispatch for water, fire, and mold damage. Our restoration experts are ready to restore your property now.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md mt-4">
+                            <!-- Giant Call Button -->
+                            <a class="group flex-1 flex items-center justify-center gap-3 bg-[#f97316] hover:bg-orange-600 text-white px-8 py-4 rounded-xl shadow-lg shadow-orange-500/30 transition-all transform hover:-translate-y-0.5" href="tel:7866022217">
+                                <span class="bg-white/20 p-2 rounded-full">
+                                    <span class="material-symbols-outlined text-2xl group-hover:animate-bounce">phone_in_talk</span>
+                                </span>
+                                <div class="flex flex-col items-start">
+                                    <span class="text-xs font-medium uppercase opacity-90">Call 24/7 Now</span>
+                                    <span class="text-xl font-bold tracking-tight">(786) 602-2217</span>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <!-- Trust Badges Small -->
+                        <div class="flex flex-wrap items-center gap-6 mt-4 text-sm font-medium text-[#64748b] dark:text-[#94a3b8]">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[#137fec]">verified_user</span>
+                                <span>Florida Statewide</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[#137fec]">security</span>
+                                <span>Fully Insured</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Non-Emergency Quote Form -->
+                    <div class="w-full">
+                        <div class="bg-white dark:bg-[#1e293b] rounded-2xl shadow-xl border border-[#f1f5f9] dark:border-[#334155] overflow-hidden">
+                            <div class="bg-[#137fec]/5 dark:bg-[#137fec]/10 px-6 py-4 border-b border-[#f1f5f9] dark:border-[#334155]">
+                                <h3 class="text-xl font-bold text-[#0f172a] dark:text-white flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-[#137fec]">assignment</span>
+                                    Request a Free Quote
+                                </h3>
+                                <p class="text-sm text-[#64748b] dark:text-[#94a3b8] mt-1">For non-emergency inquiries and estimates.</p>
+                            </div>
+                            <form class="p-6 md:p-8 space-y-5">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div class="space-y-1.5 container-query">
+                                        <label class="text-sm font-semibold text-[#334155] dark:text-[#cbd5e1]" for="name">Full Name</label>
+                                        <input class="w-full px-4 py-3 rounded-lg bg-[#f8fafc] dark:bg-[#101922] border border-[#e2e8f0] dark:border-[#334155] focus:ring-2 focus:ring-[#137fec] focus:border-transparent transition-all placeholder:text-[#94a3b8] text-sm" id="name" placeholder="John Doe" type="text"/>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <label class="text-sm font-semibold text-[#334155] dark:text-[#cbd5e1]" for="phone">Phone Number</label>
+                                        <input class="w-full px-4 py-3 rounded-lg bg-[#f8fafc] dark:bg-[#101922] border border-[#e2e8f0] dark:border-[#334155] focus:ring-2 focus:ring-[#137fec] focus:border-transparent transition-all placeholder:text-[#94a3b8] text-sm" id="phone" placeholder="(555) 000-0000" type="tel"/>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div class="space-y-1.5">
+                                        <label class="text-sm font-semibold text-[#334155] dark:text-[#cbd5e1]" for="zip">Zip Code</label>
+                                        <input class="w-full px-4 py-3 rounded-lg bg-[#f8fafc] dark:bg-[#101922] border border-[#e2e8f0] dark:border-[#334155] focus:ring-2 focus:ring-[#137fec] focus:border-transparent transition-all placeholder:text-[#94a3b8] text-sm" id="zip" placeholder="33101" type="text"/>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <label class="text-sm font-semibold text-[#334155] dark:text-[#cbd5e1]" for="service">Service Type</label>
+                                        <div class="relative">
+                                            <select class="w-full px-4 py-3 rounded-lg bg-[#f8fafc] dark:bg-[#101922] border border-[#e2e8f0] dark:border-[#334155] focus:ring-2 focus:ring-[#137fec] focus:border-transparent transition-all appearance-none text-sm text-[#334155] dark:text-[#cbd5e1]" id="service">
+                                                <option disabled="" selected="" value="">Select a Service</option>
+                                                <option value="water">Water Damage Restoration</option>
+                                                <option value="fire">Fire & Smoke Damage</option>
+                                                <option value="mold">Mold Remediation</option>
+                                                <option value="remodel">Remodeling Services</option>
+                                                <option value="commercial">Commercial Services</option>
+                                            </select>
+                                            <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-[#64748b]">
+                                                <span class="material-symbols-outlined text-sm">expand_more</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="text-sm font-semibold text-[#334155] dark:text-[#cbd5e1]" for="message">How can we help?</label>
+                                    <textarea class="w-full px-4 py-3 rounded-lg bg-[#f8fafc] dark:bg-[#101922] border border-[#e2e8f0] dark:border-[#334155] focus:ring-2 focus:ring-[#137fec] focus:border-transparent transition-all placeholder:text-[#94a3b8] text-sm resize-none" id="message" placeholder="Briefly describe your issue or project..." rows="3"></textarea>
+                                </div>
+                                <button class="w-full bg-[#137fec] hover:bg-blue-600 text-white font-bold py-3.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mt-2" type="button">
+                                    <span>Send Request</span>
+                                    <span class="material-symbols-outlined text-sm">send</span>
+                                </button>
+                                <p class="text-center text-xs text-[#94a3b8] dark:text-[#64748b] mt-2">
+                                    Your information is secure. We typically respond within 24 hours.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust & Stats Strip -->
+        <section class="bg-white dark:bg-[#1e293b] border-y border-[#e2e8f0] dark:border-[#1e293b] py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+                    <div class="flex flex-col items-center gap-2 text-center group">
+                        <div class="p-3 bg-[#eff6ff] dark:bg-[#1e3a8a]/20 text-[#137fec] rounded-full group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">timer</span>
+                        </div>
+                        <h4 class="font-bold text-[#0f172a] dark:text-white">60 Min Response</h4>
+                        <p class="text-xs text-[#64748b]">Average on-site time</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 text-center group">
+                        <div class="p-3 bg-[#eff6ff] dark:bg-[#1e3a8a]/20 text-[#137fec] rounded-full group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">license</span>
+                        </div>
+                        <h4 class="font-bold text-[#0f172a] dark:text-white">Experienced</h4>
+                        <p class="text-xs text-[#64748b]">Trusted Professionals</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 text-center group">
+                        <div class="p-3 bg-[#eff6ff] dark:bg-[#1e3a8a]/20 text-[#137fec] rounded-full group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">gpp_good</span>
+                        </div>
+                        <h4 class="font-bold text-[#0f172a] dark:text-white">Fully Insured</h4>
+                        <p class="text-xs text-[#64748b]">For your peace of mind</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 text-center group">
+                        <div class="p-3 bg-[#eff6ff] dark:bg-[#1e3a8a]/20 text-[#137fec] rounded-full group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">location_city</span>
+                        </div>
+                        <h4 class="font-bold text-[#0f172a] dark:text-white">Local Experts</h4>
+                        <p class="text-xs text-[#64748b]">Serving all of FL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info & Local Service Grid -->
+        <section class="py-16 bg-[#f8fafc] dark:bg-[#101922]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-3 gap-12">
+                    
+                    <!-- Contact Details Sidebar -->
+                    <div class="lg:col-span-1 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-[#0f172a] dark:text-white mb-6">Contact Information</h3>
+                            <div class="bg-white dark:bg-[#1e293b] p-6 rounded-2xl shadow-sm border border-[#e2e8f0] dark:border-[#334155] space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="mt-1 p-2 bg-[#137fec]/10 rounded-lg text-[#137fec]">
+                                        <span class="material-symbols-outlined">storefront</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold text-[#94a3b8] uppercase tracking-wide mb-1">Corporate Office</p>
+                                        <p class="text-[#1e293b] dark:text-[#e2e8f0] font-medium">Headquarters<br/>Miami, FL<br/>Serving All South Florida</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="mt-1 p-2 bg-[#137fec]/10 rounded-lg text-[#137fec]">
+                                        <span class="material-symbols-outlined">mail</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold text-[#94a3b8] uppercase tracking-wide mb-1">Email Us</p>
+                                        <a class="text-[#1e293b] dark:text-[#e2e8f0] font-medium hover:text-[#137fec] transition-colors" href="mailto:info@paramountrestoration.com">info@paramountrestoration.com</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="mt-1 p-2 bg-[#f97316]/10 rounded-lg text-[#f97316]">
+                                        <span class="material-symbols-outlined">call</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold text-[#94a3b8] uppercase tracking-wide mb-1">24/7 Hotline</p>
+                                        <a class="text-lg font-bold text-[#f97316] hover:text-orange-600 transition-colors" href="tel:7866022217">(786) 602-2217</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Map Preview -->
+                        <div class="rounded-2xl overflow-hidden shadow-sm border border-[#e2e8f0] dark:border-[#334155] h-64 relative bg-[#f1f5f9]">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4588.761590529669!2d-80.3716092!3d25.789550199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9bffe61a8a491%3A0x9fa1be37c9fd21d0!2sParamount%20Property%20Restoration!5e1!3m2!1sen!2sco!4v1766819233064!5m2!1sen!2sco" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                            <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/50 to-transparent pointer-events-none">
+                                <span class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold shadow-lg flex items-center justify-center gap-2 mx-auto w-fit group-hover:scale-105 transition-transform pointer-events-auto cursor-pointer">
+                                    <span class="material-symbols-outlined text-[#137fec]">map</span>
+                                    View Full Service Map
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Areas Grid -->
+                    <div class="lg:col-span-2">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold text-[#0f172a] dark:text-white">Our Service Areas</h3>
+                            <p class="text-[#64748b] dark:text-[#94a3b8] mt-2">Paramount Property Restoration proudly serves homeowners and businesses across Florida. We have strategically located hubs to ensure rapid response times.</p>
+                        </div>
+                        
+                        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                            <!-- Orlando Hub -->
+                            <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#137fec]/50 transition-colors">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="material-symbols-outlined text-[#137fec]">sunny</span>
+                                    <h4 class="font-bold text-[#0f172a] dark:text-white">Orlando Hub</h4>
+                                </div>
+                                <ul class="space-y-2 text-sm text-[#475569] dark:text-[#cbd5e1]">
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span><a href="/service-areas/orlando/water-damage-restoration" class="hover:text-[#137fec]">Orlando</a></li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>Winter Park</li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>Kissimmee</li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>Sanford</li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>Altamonte Springs</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Tampa Bay Hub -->
+                            <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#137fec]/50 transition-colors">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="material-symbols-outlined text-[#137fec]">waves</span>
+                                    <h4 class="font-bold text-[#0f172a] dark:text-white">Tampa Bay Hub</h4>
+                                </div>
+                                <ul class="space-y-2 text-sm text-[#475569] dark:text-[#cbd5e1]">
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span><a href="/service-areas/tampa/water-damage-restoration" class="hover:text-[#137fec]">Tampa</a></li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>St. Petersburg</li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>Clearwater</li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>Brandon</li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>Sarasota</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- South Florida Hub -->
+                            <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl border border-[#e2e8f0] dark:border-[#334155] hover:border-[#137fec]/50 transition-colors">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="material-symbols-outlined text-[#137fec]">beach_access</span>
+                                    <h4 class="font-bold text-[#0f172a] dark:text-white">South FL Hub</h4>
+                                </div>
+                                <ul class="space-y-2 text-sm text-[#475569] dark:text-[#cbd5e1]">
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span><a href="/service-areas/miami/water-damage-restoration" class="hover:text-[#137fec]">Miami</a></li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>Fort Lauderdale</li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>West Palm Beach</li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>Boca Raton</li>
+                                    <li class="flex items-center gap-2"><span class="size-1.5 bg-[#cbd5e1] rounded-full"></span>Coral Gables</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- SEO Helper Text -->
+                        <div class="mt-8 p-4 bg-[#137fec]/5 rounded-lg border border-[#137fec]/10">
+                            <p class="text-sm text-[#475569] dark:text-[#94a3b8] italic">
+                                * Don't see your city listed? We likely still cover your area. Call our 24/7 hotline to confirm service availability in your specific zip code.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+</body>
+</html>

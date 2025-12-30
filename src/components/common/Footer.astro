@@ -1,0 +1,169 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#111827] text-white pt-12 pb-6 border-t border-gray-800" role="contentinfo">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8 mb-10">
+            
+            <!-- Col 1: Identity & Trust (Always Visible) -->
+            <div class="flex flex-col gap-5">
+                <!-- Brand Text (Logo Replacement) -->
+                <a href="/" class="block font-display font-bold text-xl md:text-2xl text-white leading-tight hover:text-orange-500 transition-colors">
+                    Paramount<br/>Property Restoration
+                </a>
+                
+                <div class="flex flex-col gap-4 text-sm text-gray-400">
+                    <p class="font-medium text-white">
+                        <span class="text-orange-500">Professional Restoration</span>
+                    </p>
+                    
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-orange-500 text-[20px] mt-0.5">location_on</span>
+                            <span>Headquarters:<br/>Orlando, FL</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-orange-500 text-[20px]">phone_in_talk</span>
+                            <a href="tel:7866022217" class="hover:text-white transition-colors">(786) 602-2217</a>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 mt-2">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                            <span class="text-2xl font-bold">in</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
+                            <span class="text-2xl font-bold">f</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                             <span class="material-symbols-outlined text-2xl">photo_camera</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Col 2: Restoration Services (Accordion on Mobile) -->
+            <div class="lg:col-span-1">
+                <details class="group lg:open">
+                    <summary class="flex justify-between items-center font-bold text-lg text-white mb-4 lg:mb-6 cursor-pointer lg:cursor-default list-none">
+                        Restoration Services
+                        <span class="lg:hidden material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <ul class="space-y-3 text-sm text-gray-400 pb-4 lg:pb-0">
+                        <li><a href="/restoration/water-damage/" class="hover:text-orange-500 transition-colors">Water Damage Restoration</a></li>
+                        <li><a href="/restoration/fire-damage/" class="hover:text-orange-500 transition-colors">Fire & Smoke Damage</a></li>
+                        <li><a href="/restoration/mold-remediation/" class="hover:text-orange-500 transition-colors">Mold Remediation</a></li>
+                        <li><a href="/restoration/storm-damage/" class="hover:text-orange-500 transition-colors">Storm Damage Recovery</a></li>
+                        <li><a href="/commercial/" class="hover:text-orange-500 transition-colors">Commercial Restoration</a></li>
+                    </ul>
+                </details>
+            </div>
+
+            <!-- Col 3: Remodeling Services (Accordion on Mobile) -->
+            <div class="lg:col-span-1">
+                <details class="group lg:open">
+                    <summary class="flex justify-between items-center font-bold text-lg text-white mb-4 lg:mb-6 cursor-pointer lg:cursor-default list-none">
+                        Remodeling Services
+                        <span class="lg:hidden material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <ul class="space-y-3 text-sm text-gray-400 pb-4 lg:pb-0">
+                        <li><a href="/remodeling-services/kitchen-remodeling/" class="hover:text-orange-500 transition-colors">Kitchen Remodeling</a></li>
+                        <li><a href="/remodeling-services/bathroom-remodeling/" class="hover:text-orange-500 transition-colors">Bathroom Remodeling</a></li>
+                        <li><a href="/remodeling-services/home-additions/" class="hover:text-orange-500 transition-colors">Home Additions</a></li>
+                        <li><a href="/commercial/construction/" class="hover:text-orange-500 transition-colors">Commercial Construction</a></li>
+                        <li><a href="/our-process/" class="text-orange-500/80 hover:text-orange-500 transition-colors font-medium">Our Process →</a></li>
+                    </ul>
+                </details>
+            </div>
+
+            <!-- Col 4: Service Areas (Regional Hubs) (Accordion on Mobile) -->
+            <div class="lg:col-span-1">
+                <details class="group lg:open">
+                    <summary class="flex justify-between items-center font-bold text-lg text-white mb-4 lg:mb-6 cursor-pointer lg:cursor-default list-none">
+                        Service Areas
+                        <span class="lg:hidden material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <ul class="space-y-3 text-sm text-gray-400 pb-4 lg:pb-0">
+                        <li><a href="/service-areas/central-florida/" class="hover:text-white transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Central Florida</a></li>
+                        <li><a href="/service-areas/south-florida/" class="hover:text-white transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> South Florida</a></li>
+                        <li><a href="/service-areas/tampa-bay/" class="hover:text-white transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Tampa Bay Area</a></li>
+                        <li><a href="/service-areas/southwest-florida/" class="hover:text-white transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Southwest Florida</a></li>
+                        <li><a href="/service-areas/treasure-coast/" class="hover:text-white transition-colors flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Treasure Coast</a></li>
+                    </ul>
+                </details>
+            </div>
+
+            <!-- Col 5: Company & Legal (Always Visible) -->
+            <div>
+                <h4 class="font-bold text-lg text-white mb-6">Company</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+
+                    <li><a href="/contact/" class="hover:text-white transition-colors font-bold text-orange-500">Contact Us</a></li>
+                    <li><a href="/careers/" class="hover:text-white transition-colors">Careers</a></li>
+                    <li><a href="/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service/" class="hover:text-white transition-colors">Terms of Service</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <p>&copy; {currentYear} Paramount Property Restoration. All Rights Reserved.</p>
+            <p class="mt-2 md:mt-0">Professional Restoration Services</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Force open details on desktop if window resizes
+    function checkWidth() {
+        const details = document.querySelectorAll('footer details');
+        if (window.innerWidth >= 1024) {
+            details.forEach(d => {
+                d.setAttribute('open', '');
+                d.addEventListener('click', (e) => e.preventDefault()); // Disable toggle on desktop
+            });
+        } else {
+             // Re-enable toggle on mobile
+            details.forEach(d => {
+                // Determine if we should close them or leave them as is. 
+                // Usually better to start closed on mobile load, but if resizing, maybe leave checks.
+                // For simplicity, we just remove the preventDefault listener by cloning (nuclear option) or just allow default.
+                // Since cloning removes listeners:
+                if (d.getAttribute('data-desktop-locked') && d.parentNode) {
+                    const newEl = d.cloneNode(true);
+                    d.parentNode.replaceChild(newEl, d);
+                }
+            });
+        }
+    }
+    
+    // Initial check
+    // We actually handle this better with CSS media queries for display, 
+    // but <details> 'open' attribute is semantic. 
+    // Ensuring 'open' is present on desktop via script is a good progressive enhancement.
+    
+    // Simple CSS-only approach for the 'open' state is hard because the attribute controls visibility.
+    // We will use a script to enforce 'open' on desktop load.
+    
+    window.addEventListener('resize', () => {
+        if(window.innerWidth >= 1024) {
+            document.querySelectorAll('footer details').forEach(d => d.setAttribute('open', ''));
+        }
+    });
+    
+    if(window.innerWidth >= 1024) {
+        document.querySelectorAll('footer details').forEach(d => d.setAttribute('open', ''));
+    }
+</script>
+
+<style>
+    /* Turn off the default marker for summary everywhere (we use custom icon) */
+    details > summary {
+        list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+        display: none;
+    }
+</style>

@@ -1,0 +1,288 @@
+---
+import BurstPipeLayout from '../../../layouts/BurstPipeLayout.astro';
+---
+
+<BurstPipeLayout>
+    <!-- Hero Section -->
+    <section class="relative bg-[linear-gradient(135deg,rgba(19,91,236,0.05)_0%,rgba(255,255,255,0)_100%)] pt-10 pb-16 lg:pt-20 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-12 lg:items-center">
+                <!-- Hero Content -->
+                <div class="flex-1 text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#dc2626]/10 text-[#dc2626] border border-[#dc2626]/20 mb-6 w-fit">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#dc2626]"></span>
+                        </span>
+                        <span class="text-xs font-bold uppercase tracking-wider">Active Emergency Response Team</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] mb-6 tracking-tight font-display">
+                        Burst Pipe? <br/>
+                        <span class="text-[#135bec]">We Stop the Water</span> <br/>
+                        & Fix the Damage.
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl leading-relaxed">
+                        24/7 Rapid Response in Florida. Don't let water damage spread. We arrive fast to mitigate flooding, dry your property, and handle the reconstruction.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="flex items-center justify-center gap-2 h-14 px-8 bg-[#135bec] hover:bg-blue-700 text-white text-lg font-bold rounded-lg shadow-lg shadow-blue-500/20 transition-all hover:-translate-y-0.5">
+                            <span class="material-symbols-outlined">ambulance</span>
+                            Dispatch Emergency Team
+                        </button>
+                        <button class="flex items-center justify-center gap-2 h-14 px-8 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 text-lg font-bold rounded-lg transition-all">
+                            <span class="material-symbols-outlined text-[#dc2626]">valve</span>
+                            How to Shut Off Water
+                        </button>
+                    </div>
+                    <div class="mt-8 flex items-center gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-green-500 text-[18px]">verified_user</span>
+                            <span>Trusted Professionals</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-green-500 text-[18px]">timer</span>
+                            <span>60 Min Response</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-green-500 text-[18px]">handshake</span>
+                            <span>Direct Insurance Billing</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hero Visual -->
+                <div class="flex-1 w-full lg:max-w-[600px] relative">
+                    <div class="absolute -inset-4 bg-[#135bec]/20 blur-2xl rounded-full opacity-50 -z-10"></div>
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-700 relative group aspect-video lg:aspect-square max-h-[400px]">
+                        <!-- Image representing chaos of water damage -->
+                        <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-700 opacity-100 group-hover:opacity-0" data-alt="Flooded living room with water on floor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHZItAo23eW4Jn8S8TyvWF_67QWQUfvKpMQcRV4EgeSp1iT7v2Hljg7Svv1kqdrfeoF3H2_W3xRL2lITtjTfk4WpK3KJ3-aSiYN3xVJ6-QZicmKR3aadiv3BwapTIvxyUseza8bsEXQf2IqTIN6Iqw4pKd8Zkj026KIUrFG8JslJ2XxPHU_GH13BoLMjdS7l6u7w9SEtVWTrbOn-DW1iCWsRvN-gQyXV3eG5Nr7RWQ4HTNkk6qu1ZVuGWGWzQVGR6jt-YCAGCHHE3u');">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                                <span class="text-white font-bold text-lg flex items-center gap-2"><span class="material-symbols-outlined text-[#dc2626]">warning</span> Before: Active Flood</span>
+                            </div>
+                        </div>
+                        <!-- Image representing restored room -->
+                        <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-700 opacity-0 group-hover:opacity-100" data-alt="Restored clean living room interior" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmij7sL96NDr4WzsRl_eGDWDwbvCurwV1wtTalzZRpVodQiTHp1QrbxaCU6DfYfulZzA02DK8DJvitsgAusbh7GIp_f25WE89HAKFl2_Gp_8Ov44ZIo5W1pa0CFC1spne7dBS8KhCZDSnWGBpCwqhK7iB5oBhISTkNpfP4NCgT3ODhlBR4MTslnZId1ZXeXyEkebgLNhc3ibPLlrj2JkvcNmYI6IwxRajhMWUJdHD1aAaj_qBzJMY-Vb1agntlaI7-PTojMFPXK44v');">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                                <span class="text-white font-bold text-lg flex items-center gap-2"><span class="material-symbols-outlined text-green-500">check_circle</span> After: Fully Restored</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center text-xs text-slate-400 mt-2 italic">Hover to see the transformation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Immediate Action Steps (Checklist) -->
+    <section class="py-16 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-[#135bec]/5 dark:bg-slate-800/50 rounded-2xl border border-[#135bec]/10 dark:border-slate-700 p-8 shadow-sm">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-[#135bec] text-3xl">hourglass_top</span>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">While You Wait for Our Team</h2>
+                </div>
+                <div class="space-y-4">
+                    <label class="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-[#135bec]/50 cursor-pointer transition-colors group">
+                        <div class="relative flex items-center mt-0.5">
+                            <input checked="" class="peer h-6 w-6 rounded border-slate-300 text-[#135bec] focus:ring-[#135bec]/20" disabled="" type="checkbox"/>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#135bec] transition-colors">Shut off the main water valve</p>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Stop the flow immediately. Usually located near the street or in the garage.</p>
+                        </div>
+                    </label>
+                    <label class="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-[#135bec]/50 cursor-pointer transition-colors group">
+                        <div class="relative flex items-center mt-0.5">
+                            <input class="peer h-6 w-6 rounded border-slate-300 text-[#135bec] focus:ring-[#135bec]/20" type="checkbox"/>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#135bec] transition-colors">Turn off electricity to wet areas</p>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Prevent shock hazards. Do not enter standing water if power is on.</p>
+                        </div>
+                    </label>
+                    <label class="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-[#135bec]/50 cursor-pointer transition-colors group">
+                        <div class="relative flex items-center mt-0.5">
+                            <input class="peer h-6 w-6 rounded border-slate-300 text-[#135bec] focus:ring-[#135bec]/20" type="checkbox"/>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#135bec] transition-colors">Document the damage</p>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Take photos and videos of the burst pipe and water levels for insurance.</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Culprits (Bento Grid) -->
+    <section class="py-20 bg-[#f6f6f8] dark:bg-[#101622]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">The Culprits: Why Pipes Fail in Florida</h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400">Identifying the source is step one. Our region's unique climate and infrastructure often lead to these specific failures.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="h-12 w-12 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center mb-4 group-hover:bg-[#135bec]/10 transition-colors">
+                        <span class="material-symbols-outlined text-3xl text-slate-700 dark:text-slate-300 group-hover:text-[#135bec]">plumbing</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Cast Iron Failure</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Common in older FL homes. Corrosion causes "bottom-out" failures, leading to messy sewage leaks.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="h-12 w-12 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center mb-4 group-hover:bg-[#dc2626]/10 transition-colors">
+                        <span class="material-symbols-outlined text-3xl text-slate-700 dark:text-slate-300 group-hover:text-[#dc2626]">warning</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Polybutylene</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">The "ticking time bomb." Chemical reactions with chlorine water cause these pipes to suddenly rupture.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="h-12 w-12 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center mb-4 group-hover:bg-[#f97316]/10 transition-colors">
+                        <span class="material-symbols-outlined text-3xl text-slate-700 dark:text-slate-300 group-hover:text-[#f97316]">broken_image</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">CPVC Cracks</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Plastic pipes that become extremely brittle with age and heat, shattering under standard pressure.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="h-12 w-12 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center mb-4 group-hover:bg-blue-400/10 transition-colors">
+                        <span class="material-symbols-outlined text-3xl text-slate-700 dark:text-slate-300 group-hover:text-blue-400">water_damage</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Supply Lines</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Braided lines to toilets and sinks are a leading cause of sudden, high-volume indoor flooding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restoration Timeline -->
+    <section class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-3">The Restoration Process</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg">More than just a plumber. We manage the entire lifecycle.</p>
+                </div>
+                <button class="text-[#135bec] font-bold flex items-center gap-2 hover:underline">
+                    View Full Process <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+            <div class="relative">
+                <!-- Mobile Line (Vertical) -->
+                <div class="absolute left-6 top-4 bottom-4 w-1 bg-slate-200 dark:bg-slate-700 md:hidden"></div>
+                <!-- Desktop Line (Horizontal) -->
+                <div class="hidden md:block absolute top-6 left-4 right-4 h-1 bg-slate-200 dark:bg-slate-700"></div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="relative flex md:flex-col items-center md:items-start gap-6 md:gap-4 pl-0">
+                        <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-[#135bec] text-white border-4 border-white dark:border-slate-900 shadow-lg shrink-0">
+                            <span class="material-symbols-outlined text-[20px]">search</span>
+                        </div>
+                        <div class="flex-1 bg-[#f6f6f8] dark:bg-slate-800 md:bg-transparent md:dark:bg-transparent p-4 md:p-0 rounded-lg">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">1. Assessment</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Leak detection and water shut-off immediately.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative flex md:flex-col items-center md:items-start gap-6 md:gap-4 pl-0">
+                        <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-300 dark:border-slate-600 shadow-lg shrink-0">
+                            <span class="material-symbols-outlined text-[20px]">water_drop</span>
+                        </div>
+                        <div class="flex-1 bg-[#f6f6f8] dark:bg-slate-800 md:bg-transparent md:dark:bg-transparent p-4 md:p-0 rounded-lg">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">2. Extraction</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Industrial pumps remove standing water fast.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative flex md:flex-col items-center md:items-start gap-6 md:gap-4 pl-0">
+                        <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-300 dark:border-slate-600 shadow-lg shrink-0">
+                            <span class="material-symbols-outlined text-[20px]">air</span>
+                        </div>
+                        <div class="flex-1 bg-[#f6f6f8] dark:bg-slate-800 md:bg-transparent md:dark:bg-transparent p-4 md:p-0 rounded-lg">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">3. Drying</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Medical-grade dehumidifiers prevent mold growth.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative flex md:flex-col items-center md:items-start gap-6 md:gap-4 pl-0">
+                        <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-300 dark:border-slate-600 shadow-lg shrink-0">
+                            <span class="material-symbols-outlined text-[20px]">construction</span>
+                        </div>
+                        <div class="flex-1 bg-[#f6f6f8] dark:bg-slate-800 md:bg-transparent md:dark:bg-transparent p-4 md:p-0 rounded-lg">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">4. Build Back</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Complete reconstruction of walls, floors, and paint.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance & Info -->
+    <section class="py-20 bg-[#135bec] dark:bg-blue-900/40 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Insurance & "Sudden Damage"</h2>
+                    <p class="text-blue-100 text-lg mb-8 leading-relaxed">
+                        Most homeowners' insurance policies in Florida cover "Sudden and Accidental" water damage, which specifically includes burst pipes. We work directly with your adjuster to ensure your claim is documented correctly from the start.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#f97316]">check_circle</span>
+                            <span class="font-medium">Direct billing to your insurance provider</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#f97316]">check_circle</span>
+                            <span class="font-medium">Detailed documentation of all moisture readings</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#f97316]">check_circle</span>
+                            <span class="font-medium">Assistance with loss mitigation requirements</span>
+                        </li>
+                    </ul>
+                    <button class="bg-white text-[#135bec] px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors">
+                        Learn About Coverage
+                    </button>
+                </div>
+                <div class="flex-1 flex justify-center">
+                    <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 max-w-md w-full">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined">help</span> FAQ
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="border-b border-white/10 pb-4">
+                                <h4 class="font-bold text-[#f97316] mb-1">Will insurance cover the plumbing bill?</h4>
+                                <p class="text-sm text-blue-100">Usually, insurance covers the <i>resulting water damage</i> but not the repair of the pipe itself.</p>
+                            </div>
+                            <div class="border-b border-white/10 pb-4">
+                                <h4 class="font-bold text-[#f97316] mb-1">How long does drying take?</h4>
+                                <p class="text-sm text-blue-100">Typically 3-5 days depending on the materials affected and the extent of saturation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="py-16 bg-[#f6f6f8] dark:bg-[#101622] text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="inline-flex items-center justify-center p-4 bg-[#dc2626]/10 rounded-full mb-6">
+                <span class="material-symbols-outlined text-[#dc2626] text-4xl">notification_important</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Don't Wait. Water Damage Worsens Every Hour.</h2>
+            <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">Our team is ready to deploy immediately to minimize your loss.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a class="flex items-center justify-center gap-2 h-14 px-10 bg-[#f97316] hover:bg-orange-600 text-white text-xl font-bold rounded-lg shadow-lg transition-colors" href="tel:5551234567">
+                    <span class="material-symbols-outlined">call</span>
+                    Call (555) 123-4567
+                </a>
+            </div>
+        </div>
+    </section>
+</BurstPipeLayout>

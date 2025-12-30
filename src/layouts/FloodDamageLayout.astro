@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+import Header from '../components/common/Header.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Emergency Flood Damage Cleanup - Paramount Property Restoration",
+  description = "Expert team in handling contaminated water, sewage backups, and storm surge extraction. Immediate dispatch needed to prevent mold."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <style>
+        /* Scoped Variables for Flood Damage Section */
+        :root {
+            /* 
+               User HTML:
+               Brand Blue (Logo): #0e2a47
+               Primary Orange (CTA): #f27f0d
+               
+               Mapping to Header.astro:
+               --color-primary -> Logo BG, Links Hover, Quote Button -> Blue #0e2a47
+               --color-urgent -> Emergency Button -> Orange #f27f0d
+            */
+            --color-primary: #0e2a47; 
+            --color-secondary: #f27f0d;
+            --color-urgent: #f27f0d; 
+            
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Noto Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#f8f7f5] text-slate-900 font-body antialiased selection:bg-orange-500/20 selection:text-orange-600 transition-colors duration-200">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+    <!-- Unified Header -->
+    <Header 
+        theme="light" 
+        secondaryColor="#137fec" 
+        emergencyBtnText="24/7 Flood Response" 
+    />
+
+        <slot />
+        
+        <!-- Footer matches the provided HTML design -->
+        <footer class="bg-[#061524] text-slate-400 py-12 px-6 border-t border-slate-800">
+            <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 text-white mb-4">
+                        <span class="material-symbols-outlined">water_drop</span>
+                        <h2 class="text-xl font-bold font-display">Paramount Property Restoration</h2>
+                    </div>
+                    <p class="text-sm max-w-[400px]">
+                        Florida's trusted partner for disaster recovery. We restore homes and businesses from water, fire, and mold damage with urgency and compassion.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Services</h3>
+                    <ul class="flex flex-col gap-2 text-sm">
+                        <li><a class="hover:text-[#f27f0d] transition-colors" href="#">Water Damage</a></li>
+                        <li><a class="hover:text-[#f27f0d] transition-colors" href="#">Flood Cleanup</a></li>
+                        <li><a class="hover:text-[#f27f0d] transition-colors" href="#">Mold Remediation</a></li>
+                        <li><a class="hover:text-[#f27f0d] transition-colors" href="#">Fire Restoration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contact</h3>
+                    <ul class="flex flex-col gap-2 text-sm">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xs">phone</span> (555) 123-4567
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xs">mail</span> help@paramountrestore.com
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xs">location_on</span> Orlando, FL
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs gap-4">
+                <p>© 2023 Paramount Property Restoration. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a class="hover:text-white" href="#">Privacy Policy</a>
+                    <a class="hover:text-white" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

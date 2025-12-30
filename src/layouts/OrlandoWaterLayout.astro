@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Expert Water Damage Restoration in Orlando. 24/7 Emergency Service, 60-minute response time." />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  </head>
+  <body class="font-display bg-[#f6f7f8] dark:bg-[#101822] text-[#111418] dark:text-white antialiased">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+      
+      <!-- TopNavBar (Standardized) -->
+      <Header 
+        sticky={true} 
+        secondaryColor="#1162d4" 
+        variant="default" 
+      />
+
+      <slot />
+
+      <!-- Footer (Strictly from HTML) -->
+      <!-- Footer (Standardized) -->
+      <Footer />
+
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  /* Explicitly Override Global Colors for this Layout */
+  :root {
+    --font-display: 'Inter', sans-serif;
+    --color-primary: #1162d4;
+    --color-accent: #f97316;
+    --color-background-light: #f6f7f8;
+    --color-background-dark: #101822;
+  }
+  
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+</style>

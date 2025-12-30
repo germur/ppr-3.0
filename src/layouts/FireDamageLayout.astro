@@ -1,0 +1,140 @@
+---
+import '../styles/global.css';
+import Header from '../components/common/Header.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Fire Damage Restoration Hub - Paramount Property Restoration",
+  description = "24/7 Fire Damage Restoration. Immediate stabilization, smoke removal, and structural reconstruction. Restoration experts."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <style>
+        /* Scoped Variables for Fire Damage Page */
+        :root {
+             --color-primary: #135bec;
+            --color-secondary: #f97316; /* Orange for urgency */
+            --color-background-light: #f6f6f8;
+            --color-background-dark: #0f172a; /* Deep slate for dark mode */
+            --color-card-dark: #1e293b;
+            --color-border-dark: #334155;
+            --color-text-dim: #94a3b8;
+
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        /* Icon styles */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-[#0f172a] text-white overflow-x-hidden selection:bg-[#135bec] selection:text-white font-display">
+    <!-- Sticky Glass Navigation -->
+    <Header 
+        theme="dark" 
+        secondaryColor="#f97316" 
+        emergencyBtnText="24/7 Fire Dispatch" 
+    />
+
+    <slot />
+    
+    <!-- Custom Footer -->
+    <footer class="bg-[#1e293b] border-t border-[#334155] pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="size-6 text-[#135bec]">
+                            <svg class="w-full h-full" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 22H22L12 2Z" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <span class="text-white font-bold text-lg">Paramount Property</span>
+                    </div>
+                    <p class="text-[#94a3b8] text-sm mb-6">
+                        Paramount Property Restoration provides 24/7 emergency services for fire, water, and storm damage.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+                        <a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">linked_camera</span></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-[#94a3b8]">
+                        <li><a class="hover:text-[#135bec] transition-colors" href="#">Fire Damage</a></li>
+                        <li><a class="hover:text-[#135bec] transition-colors" href="#">Water Damage</a></li>
+                        <li><a class="hover:text-[#135bec] transition-colors" href="#">Mold Remediation</a></li>
+                        <li><a class="hover:text-[#135bec] transition-colors" href="#">Reconstruction</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-[#94a3b8]">
+
+                        <li><a class="hover:text-[#135bec] transition-colors" href="#">Our Process</a></li>
+                        <li><a class="hover:text-[#135bec] transition-colors" href="#">Insurance Help</a></li>
+                        <li><a class="hover:text-[#135bec] transition-colors" href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-[#94a3b8]">
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-[#135bec] text-base">location_on</span>
+                            <span>123 Restoration Way,<br/>Cityville, ST 12345</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[#135bec] text-base">phone</span>
+                            <span class="font-bold text-white">888-555-0123</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[#135bec] text-base">mail</span>
+                            <span>help@paramountprop.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-[#334155] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[#94a3b8] text-sm">© 2023 Paramount Property Restoration. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-[#94a3b8]">
+                    <a class="hover:text-white" href="#">Privacy Policy</a>
+                    <a class="hover:text-white" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

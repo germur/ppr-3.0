@@ -1,0 +1,266 @@
+---
+import MoldTestingLayout from '../../layouts/MoldTestingLayout.astro';
+---
+
+<MoldTestingLayout>
+    <!-- Hero Section -->
+    <section class="w-full px-4 md:px-10 py-12 md:py-20 max-w-7xl mx-auto">
+        <div class="@container">
+            <div class="flex flex-col-reverse lg:flex-row gap-10 items-center">
+                <!-- Text Content -->
+                <div class="flex flex-col gap-6 lg:w-1/2">
+                    <div class="inline-flex w-fit items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-[#618986] shadow-sm">
+                        <span class="flex size-2 rounded-full bg-[#11d4c4]"></span>
+                        Lab-Verified Results
+                    </div>
+                    <h1 class="text-[#111817] text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-[-0.03em]">
+                        Advanced Mold Inspection & Indoor Air Quality Testing
+                    </h1>
+                    <p class="text-[#618986] text-lg md:text-xl font-normal leading-relaxed max-w-xl">
+                        Stop guessing. Get scientific certainty about what is in your air with hospital-grade diagnostics and independent lab analysis.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                        <button class="flex h-12 items-center justify-center rounded-lg bg-[#11d4c4] hover:bg-[#0eb5a8] px-8 text-base font-bold text-[#111817] transition-all shadow-md hover:shadow-lg">
+                            Schedule Inspection
+                        </button>
+                        <div class="flex items-center justify-center gap-2 text-sm font-medium text-[#618986] h-12 px-4">
+                            <span class="material-symbols-outlined text-[#11d4c4]" style="font-size: 20px;">timer</span>
+                            Results in 48 Hours
+                        </div>
+                    </div>
+                </div>
+                <!-- Image -->
+                <div class="lg:w-1/2 w-full relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-[#11d4c4] to-blue-400 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-2xl bg-gray-100">
+                        <img alt="Technician in protective gear conducting air quality test with equipment" class="w-full h-full object-cover" data-alt="Technician in PPE holding scientific air testing device" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmWCWqdgiKfPNIUov3u1J3SSzZO8nuwxeHKmjvmXrVksGfz-ua96Ub2JzXshLBtKDIeI6mjEEtzIQwC_cH-Y2f1PW1qPetZsMP-B5rx3o_luD7RJAT7O_6_6YqL5pSTdnFaSU0-WkqU9VqANf7U1OQV5D5jj7Vew00BIekc0B_EBykMF1dHYH2nsCRoQ0CvJKaVqyTrq4E7Sx94ES1BLJJQkR8uSEyQkPSprKk2WpEuocOD5BhswdhPaiWLM-vWNjTQNPvGEhNriC6"/>
+                        <!-- Floating Badge -->
+                        <div class="absolute bottom-4 left-4 right-4 md:right-auto md:w-auto bg-white/95 backdrop-blur-sm p-4 rounded-lg border border-gray-100 shadow-lg flex items-center gap-3">
+                            <div class="bg-blue-50 p-2 rounded-full text-blue-600">
+                                <span class="material-symbols-outlined">verified_user</span>
+                            </div>
+                            <div>
+                                <div class="text-xs text-[#618986] uppercase tracking-wider font-semibold">Accuracy</div>
+                                <div class="text-[#111817] font-bold">99.9% Lab Precision</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnostic Tech Bento Grid -->
+    <section class="w-full px-4 md:px-10 py-16 bg-white max-w-7xl mx-auto">
+        <div class="mb-10 text-center md:text-left max-w-3xl">
+            <h2 class="text-[#111817] text-3xl font-bold leading-tight tracking-[-0.02em] mb-4">Diagnostic Technology & Tools</h2>
+            <p class="text-[#618986] text-lg">We use hospital-grade equipment to detect what the naked eye cannot see.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Card 1 -->
+            <div class="group flex flex-col gap-4 rounded-2xl border border-gray-200 bg-[#f6f8f8] p-6 hover:border-[#11d4c4]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div class="size-12 rounded-lg bg-white border border-gray-100 flex items-center justify-center text-[#11d4c4] shadow-sm group-hover:bg-[#11d4c4] group-hover:text-[#111817] transition-colors">
+                    <span class="material-symbols-outlined" style="font-size: 28px;">thermometer_gain</span>
+                </div>
+                <div>
+                    <h3 class="text-[#111817] text-lg font-bold mb-2">Thermal Moisture Mapping</h3>
+                    <p class="text-[#618986] text-sm leading-relaxed">Infrared technology detects hidden moisture pockets behind walls that sustain mold growth.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="group flex flex-col gap-4 rounded-2xl border border-gray-200 bg-[#f6f8f8] p-6 hover:border-[#11d4c4]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div class="size-12 rounded-lg bg-white border border-gray-100 flex items-center justify-center text-[#11d4c4] shadow-sm group-hover:bg-[#11d4c4] group-hover:text-[#111817] transition-colors">
+                    <span class="material-symbols-outlined" style="font-size: 28px;">air</span>
+                </div>
+                <div>
+                    <h3 class="text-[#111817] text-lg font-bold mb-2">Air Quality Sampling</h3>
+                    <p class="text-[#618986] text-sm leading-relaxed">Captures airborne spore counts to identify toxicity levels and species present in the home.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="group flex flex-col gap-4 rounded-2xl border border-gray-200 bg-[#f6f8f8] p-6 hover:border-[#11d4c4]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div class="size-12 rounded-lg bg-white border border-gray-100 flex items-center justify-center text-[#11d4c4] shadow-sm group-hover:bg-[#11d4c4] group-hover:text-[#111817] transition-colors">
+                    <span class="material-symbols-outlined" style="font-size: 28px;">biotech</span>
+                </div>
+                <div>
+                    <h3 class="text-[#111817] text-lg font-bold mb-2">Surface Swab & Lift</h3>
+                    <p class="text-[#618986] text-sm leading-relaxed">Physical samples sent to independent labs to confirm surface contamination types.</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="group flex flex-col gap-4 rounded-2xl border border-gray-200 bg-[#f6f8f8] p-6 hover:border-[#11d4c4]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div class="size-12 rounded-lg bg-white border border-gray-100 flex items-center justify-center text-[#11d4c4] shadow-sm group-hover:bg-[#11d4c4] group-hover:text-[#111817] transition-colors">
+                    <span class="material-symbols-outlined" style="font-size: 28px;">water_drop</span>
+                </div>
+                <div>
+                    <h3 class="text-[#111817] text-lg font-bold mb-2">Moisture Meters</h3>
+                    <p class="text-[#618986] text-sm leading-relaxed">Precise digital readings of water saturation in drywall, wood, and concrete foundations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="w-full bg-[#f6f8f8] py-16 px-4 md:px-10 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-[#111817] text-3xl font-bold leading-tight tracking-[-0.02em] mb-4">The Process: From Test to Protocol</h2>
+                <p class="text-[#618986] max-w-2xl mx-auto">We follow a strict scientific method to ensure no conflict of interest and absolute precision.</p>
+            </div>
+            <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gray-200 -z-10"></div>
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 rounded-2xl bg-white border-2 border-gray-200 flex items-center justify-center mb-6 shadow-sm group-hover:border-[#11d4c4] group-hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-[#11d4c4] transition-colors">travel_explore</span>
+                    </div>
+                    <div class="bg-white px-3 py-1 rounded-full text-xs font-bold text-[#618986] border border-gray-100 mb-3">STEP 01</div>
+                    <h3 class="text-lg font-bold text-[#111817] mb-2">Visual Assessment</h3>
+                    <p class="text-sm text-[#618986]">Comprehensive walkthrough and thermal imaging to identify problem areas.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 rounded-2xl bg-white border-2 border-gray-200 flex items-center justify-center mb-6 shadow-sm group-hover:border-[#11d4c4] group-hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-[#11d4c4] transition-colors">science</span>
+                    </div>
+                    <div class="bg-white px-3 py-1 rounded-full text-xs font-bold text-[#618986] border border-gray-100 mb-3">STEP 02</div>
+                    <h3 class="text-lg font-bold text-[#111817] mb-2">Sampling & Lab Work</h3>
+                    <p class="text-sm text-[#618986]">Air and surface samples are overnighted to an accredited 3rd party laboratory.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 rounded-2xl bg-white border-2 border-gray-200 flex items-center justify-center mb-6 shadow-sm group-hover:border-[#11d4c4] group-hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-[#11d4c4] transition-colors">description</span>
+                    </div>
+                    <div class="bg-white px-3 py-1 rounded-full text-xs font-bold text-[#618986] border border-gray-100 mb-3">STEP 03</div>
+                    <h3 class="text-lg font-bold text-[#111817] mb-2">The Protocol</h3>
+                    <p class="text-sm text-[#618986]">A detailed roadmap for remediation based on the specific species found.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 rounded-2xl bg-white border-2 border-gray-200 flex items-center justify-center mb-6 shadow-sm group-hover:border-[#11d4c4] group-hover:shadow-md transition-all">
+                        <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-[#11d4c4] transition-colors">construction</span>
+                    </div>
+                    <div class="bg-white px-3 py-1 rounded-full text-xs font-bold text-[#618986] border border-gray-100 mb-3">STEP 04</div>
+                    <h3 class="text-lg font-bold text-[#111817] mb-2">Remediation Handoff</h3>
+                    <p class="text-sm text-[#618986]">Our team executes the protocol to return your air quality to safe levels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison & Local Context -->
+    <section class="w-full px-4 md:px-10 py-16 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <!-- Comparison Card -->
+            <div class="rounded-2xl bg-white border border-gray-200 p-8 shadow-sm">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="p-2 bg-red-50 rounded-lg text-red-500">
+                        <span class="material-symbols-outlined">warning</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#111817]">Why Store-Bought Kits Fail</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <span class="material-symbols-outlined text-red-400 mt-0.5 shrink-0">close</span>
+                        <div>
+                            <h4 class="font-bold text-[#111817] text-sm">False Positives</h4>
+                            <p class="text-[#618986] text-sm">DIY petri dishes often grow mold simply because mold is naturally in the air everywhere, causing unnecessary panic.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="material-symbols-outlined text-red-400 mt-0.5 shrink-0">close</span>
+                        <div>
+                            <h4 class="font-bold text-[#111817] text-sm">No Species Identification</h4>
+                            <p class="text-[#618986] text-sm">They don't tell you if it's common Cladosporium or toxic Stachybotrys (Black Mold).</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="material-symbols-outlined text-red-400 mt-0.5 shrink-0">close</span>
+                        <div>
+                            <h4 class="font-bold text-[#111817] text-sm">Zero Actionable Data</h4>
+                            <p class="text-[#618986] text-sm">Insurance companies will not accept DIY kit results as proof of damage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="p-1 bg-[#11d4c4]/20 rounded-full text-[#11d4c4]">
+                            <span class="material-symbols-outlined text-sm">check</span>
+                        </div>
+                        <p class="text-sm font-medium text-[#111817]">We provide legally defensible, lab-verified reports.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Local Context: Florida -->
+            <div class="rounded-2xl overflow-hidden relative min-h-[400px] flex flex-col justify-end p-8">
+                <img alt="Sunny Florida palm trees and blue sky" class="absolute inset-0 w-full h-full object-cover" data-alt="Florida palm trees against a blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFGC5gorXPAOGTjY4hycDztASnw3MNgXlJ7T5zmSp10VC_XQNeQHJ2qsZDMcUvnXfaZ4FMSUQK7yVO3tkMa82ycjPkXM4y4h3_jA8mY-fbJJdsiq8O05ZJ0TlSGzV_fGfKthRZnf5Pvh9RTQVboEToa1WRAFKYC45CLAZFfKubK3TE_0UfYfKKyBTTWhS6wPKM3U1mNjR3pPmWhHDuxsC7bAsazYa7pbm5x4zkpg0pEembX9Y4Jz_dxRZgUOzIlxRhIIioWikc3gvy"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div class="relative z-10 text-white">
+                    <div class="inline-flex items-center gap-2 bg-[#11d4c4]/90 text-[#111817] text-xs font-bold px-3 py-1 rounded-full mb-3 backdrop-blur-md">
+                        <span class="material-symbols-outlined text-sm">location_on</span>
+                        Florida Specific
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">The Humidity & HVAC Factor</h3>
+                    <p class="text-gray-200 text-sm mb-4 leading-relaxed">
+                        In Florida's tropical climate, your HVAC system is the lungs of your home. High humidity levels (>60%) combined with cooling ducts often create hidden condensation points—the perfect breeding ground for mold inside your AC unit.
+                    </p>
+                    <a class="inline-flex items-center gap-2 text-[#11d4c4] font-bold text-sm hover:text-white transition-colors" href="/restoration/mold-remediation/">
+                        Learn about AC Mold Remediation <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="w-full bg-[#f6f8f8] py-16 px-4 md:px-10 border-t border-gray-200">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-[#111817] text-3xl font-bold text-center mb-10">Common Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-white rounded-xl border border-gray-200 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-[#111817] font-bold">
+                        <h3>Does homeowners insurance cover mold testing?</h3>
+                        <span class="material-symbols-outlined shrink-0 transition duration-300 group-open:-rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 leading-relaxed text-[#618986] text-sm">
+                        Typically, insurance covers mold remediation if it results from a sudden, covered peril (like a burst pipe). Standalone testing coverage varies. We can help you document the source of the damage to present a strong case to your adjuster.
+                    </div>
+                </details>
+                <details class="group bg-white rounded-xl border border-gray-200 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-[#111817] font-bold">
+                        <h3>How much does a professional inspection cost?</h3>
+                        <span class="material-symbols-outlined shrink-0 transition duration-300 group-open:-rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 leading-relaxed text-[#618986] text-sm">
+                        Costs vary based on the square footage and number of samples required. A basic visual inspection starts lower, while a comprehensive protocol with multiple air cassettes and surface swabs will be priced accordingly. We provide upfront quotes with no hidden fees.
+                    </div>
+                </details>
+                <details class="group bg-white rounded-xl border border-gray-200 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-[#111817] font-bold">
+                        <h3>Is mold testing necessary before remediation?</h3>
+                        <span class="material-symbols-outlined shrink-0 transition duration-300 group-open:-rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 leading-relaxed text-[#618986] text-sm">
+                        Yes. Testing establishes the baseline "Pre-Remediation" conditions. It identifies the specific species (some are more dangerous than others) and dictates the safety protocol. Without testing, you cannot perform "Post-Remediation Verification" (PRV) to prove the mold is gone.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="w-full py-20 px-4 text-center bg-white">
+        <div class="max-w-2xl mx-auto flex flex-col items-center gap-6">
+            <div class="size-16 rounded-full bg-[#11d4c4]/10 flex items-center justify-center text-[#11d4c4] mb-2">
+                <span class="material-symbols-outlined text-3xl">health_and_safety</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black text-[#111817]">Ready to Breathe Easier?</h2>
+            <p class="text-[#618986] text-lg">Schedule your assessment today and get results within 48 hours.</p>
+            <button class="flex h-12 items-center justify-center rounded-lg bg-[#11d4c4] hover:bg-[#0eb5a8] px-10 text-base font-bold text-[#111817] transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                Book Your Assessment
+            </button>
+        </div>
+    </section>
+</MoldTestingLayout>

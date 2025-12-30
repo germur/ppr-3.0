@@ -1,0 +1,304 @@
+---
+import SewageCleanupLayout from '../../layouts/SewageCleanupLayout.astro';
+---
+
+<SewageCleanupLayout>
+    <!-- Hero Section with Urgency -->
+    <section class="relative bg-white overflow-hidden">
+        <!-- Background with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/40 z-10"></div>
+            <div class="w-full h-full bg-cover bg-center" data-alt="Biohazard team in full PPE suits walking down a hallway" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7lcuBXJNQBUgeZppc_5OKFYU43HxeLWMTQg_IwOSDPV3KtP1XjJsa_OMAt-xPVJFVKqXmrGSfqO7ht3uSV5zA0z8q6oXP1Oa6GXWrlQh1_oZajuP8jgea--b5bxAzJI5QYM4oqPWlc8J1g0Ilmb_ocHDEXm-WfT5scG38LlDJXFfFzVByCE2LuYOaDKW9cy8YtXNe5aAau8bHOBPO7JRNZtqvzZokMQwhmn1_xkdNUfX97Xz9MG_SUh05egpfxDxWpXWMga8CHlZ4');"></div>
+        </div>
+        <div class="relative z-10 max-w-[1200px] mx-auto px-4 lg:px-8 py-16 lg:py-24">
+            <div class="max-w-[640px] flex flex-col gap-6">
+                <!-- Warning Badge -->
+                <div class="inline-flex items-center gap-2 bg-red-50 border border-red-200 text-[#ef4444] px-3 py-1.5 rounded-full w-fit">
+                    <span class="material-symbols-outlined text-lg">foot_bones</span>
+                    <span class="text-xs font-extrabold uppercase tracking-wider">Biohazard Alert: Level 3 Contaminant</span>
+                </div>
+                <!-- Main Heading -->
+                <h1 class="text-[#111318] text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight font-display">
+                    DANGEROUS SEWAGE BACKUP? <br/><span class="text-[#ef4444] block">DO NOT ENTER.</span>
+                </h1>
+                <!-- Subheadline -->
+                <p class="text-[#4b5563] text-lg font-medium leading-relaxed font-body max-w-[540px]">
+                    Hospital-Grade Sanitization & Biohazard Removal. We deploy full PPE hazmat teams immediately to mitigate pathogenic risks.
+                </p>
+                <!-- Warning Box -->
+                <div class="bg-yellow-50 border-l-4 border-[#f59e0b] p-4 rounded-r-lg max-w-[540px] shadow-sm">
+                    <div class="flex gap-3">
+                        <span class="material-symbols-outlined text-[#f59e0b] shrink-0">warning</span>
+                        <div class="space-y-1">
+                            <p class="text-sm font-bold text-[#111318] uppercase">Critical Safety Warning</p>
+                            <p class="text-sm text-[#4b5563]">Sewage contains deadly pathogens like E. Coli & Salmonella. Do not attempt DIY cleaning. Wait for professionals.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                    <a href="tel:800-555-0199" class="flex items-center justify-center gap-2 bg-[#ff6b00] hover:bg-orange-600 transition-colors text-white h-14 px-8 rounded-lg font-bold text-lg shadow-xl shadow-orange-100 w-full sm:w-auto">
+                        <span>DISPATCH HAZMAT TEAM</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                    <button class="flex items-center justify-center gap-2 bg-white border-2 border-[#135bec] text-[#135bec] hover:bg-blue-50 transition-colors h-14 px-8 rounded-lg font-bold text-lg w-full sm:w-auto">
+                        <span class="material-symbols-outlined">shield</span>
+                        <span>View Credentials</span>
+                    </button>
+                </div>
+                <p class="text-xs text-gray-500 font-medium flex items-center gap-1 mt-2">
+                    <span class="material-symbols-outlined text-green-600 text-sm">check_circle</span>
+                    Trusted, Experienced & Professional S500 Standard
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Hidden Dangers (Bento Grid) -->
+    <section class="py-16 bg-[#f8f9fc]">
+        <div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+            <div class="mb-12 max-w-[720px]">
+                <h2 class="text-[#111318] text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4 font-display">The Hidden Dangers</h2>
+                <p class="text-[#616f89] text-lg font-body">Why immediate professional remediation is critical. Sewage is not just water; it is a toxic biological weapon against your property and health.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="group bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="size-12 rounded-lg bg-red-100 text-[#ef4444] flex items-center justify-center mb-4 group-hover:bg-[#ef4444] group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">coronavirus</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#111318] mb-2 font-display">Deadly Pathogens</h3>
+                    <p class="text-[#616f89] font-body text-sm leading-relaxed">High risk of direct exposure to E. Coli, Hepatitis A, bacteria, parasites, and Salmonella.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="group bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="size-12 rounded-lg bg-blue-100 text-[#135bec] flex items-center justify-center mb-4 group-hover:bg-[#135bec] group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">masks</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#111318] mb-2 font-display">Airborne Toxins</h3>
+                    <p class="text-[#616f89] font-body text-sm leading-relaxed">Aerosolized bacteria can be inhaled without proper PPE, causing severe respiratory infections.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="group bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="size-12 rounded-lg bg-orange-100 text-[#ff6b00] flex items-center justify-center mb-4 group-hover:bg-[#ff6b00] group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">foundation</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#111318] mb-2 font-display">Structural Absorption</h3>
+                    <p class="text-[#616f89] font-body text-sm leading-relaxed">Sewage rapidly soaks into drywall, wood, and insulation, compromising structural integrity within hours.</p>
+                </div>
+                <!-- Card 4 (Span 2 on MD) -->
+                <div class="group bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow md:col-span-2 lg:col-span-1">
+                    <div class="size-12 rounded-lg bg-yellow-100 text-yellow-700 flex items-center justify-center mb-4 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">co2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#111318] mb-2 font-display">Gas Hazards</h3>
+                    <p class="text-[#616f89] font-body text-sm leading-relaxed">Potential for dangerous methane and hydrogen sulfide buildup in enclosed spaces, creating explosion risks.</p>
+                </div>
+                <!-- Card 5 (Image Card) -->
+                <div class="md:col-span-2 lg:col-span-2 relative overflow-hidden rounded-xl border border-gray-200 group h-full min-h-[200px]">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Microscopic view of bacteria and pathogens" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSi7ddin0oXDti3lLhALEMrSOkgwwpVZbofvUpI4QtJAXgMJ3vluPtG5E9h3jYJQgOXblLlh1FvMPp9sjD8c35X52rUpYrRvRj48rf-BYLfIZbhoATdu47UGCM3itXdPh-3IDTkDuHsY3N9SN-w-Eeh5gUC-tZsG_uiicpBNkpJ1SBXBsp8n8hIGMazN1ttUuPSUGiSwF81YZDaN2JLDkgVfZEkg4tz6HRvDLCTJtjSL2TBrTVRQaV1doxYDRonpPZgf5r6yShZtVM');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold mb-2 flex items-center gap-2 font-display">
+                            <span class="material-symbols-outlined text-[#f59e0b]">warning</span>
+                            Secondary Mold Growth
+                        </h3>
+                        <p class="font-body text-sm opacity-90 max-w-lg">Without immediate drying and sanitization, toxic mold colonies can begin to form within 24-48 hours of initial exposure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-[800px] mx-auto mb-16">
+                <span class="text-[#135bec] font-bold tracking-widest uppercase text-sm mb-2 block">Industry Standard Procedures</span>
+                <h2 class="text-[#111318] text-3xl md:text-4xl font-bold leading-tight mb-4 font-display">Our 'Clean' Protocol</h2>
+                <p class="text-[#616f89] text-lg font-body">We don't just clean; we decontaminate. Our 5-step bio-wash process ensures your property is medically safe for re-entry.</p>
+            </div>
+            <div class="relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gray-100 -translate-y-1/2 z-0"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="size-16 rounded-full bg-white border-4 border-[#135bec] text-[#135bec] flex items-center justify-center text-xl font-bold mb-6 shadow-lg relative group-hover:scale-110 transition-transform duration-300">
+                            1
+                            <div class="absolute -bottom-2 bg-[#135bec] text-white text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Contain</div>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#111318] mb-2 font-display">Isolation & PPE</h3>
+                        <p class="text-sm text-[#616f89] font-body">Sealing the affected area to prevent cross-contamination to clean zones.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="size-16 rounded-full bg-white border-4 border-[#135bec] text-[#135bec] flex items-center justify-center text-xl font-bold mb-6 shadow-lg relative group-hover:scale-110 transition-transform duration-300">
+                            2
+                            <div class="absolute -bottom-2 bg-[#135bec] text-white text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Extract</div>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#111318] mb-2 font-display">Solid Removal</h3>
+                        <p class="text-sm text-[#616f89] font-body">Industrial pumps remove standing black water and sewage solids immediately.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="size-16 rounded-full bg-white border-4 border-[#ff6b00] text-[#ff6b00] flex items-center justify-center text-xl font-bold mb-6 shadow-lg relative group-hover:scale-110 transition-transform duration-300">
+                            3
+                            <div class="absolute -bottom-2 bg-[#ff6b00] text-white text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Sanitize</div>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#111318] mb-2 font-display">Bio-Wash</h3>
+                        <p class="text-sm text-[#616f89] font-body">Application of hospital-grade biocides to kill bacteria and viruses on all surfaces.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="size-16 rounded-full bg-white border-4 border-[#135bec] text-[#135bec] flex items-center justify-center text-xl font-bold mb-6 shadow-lg relative group-hover:scale-110 transition-transform duration-300">
+                            4
+                            <div class="absolute -bottom-2 bg-[#135bec] text-white text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Dry</div>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#111318] mb-2 font-display">Structural Drying</h3>
+                        <p class="text-sm text-[#616f89] font-body">High-velocity air movers and dehumidifiers remove moisture absorbed by the structure.</p>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="size-16 rounded-full bg-white border-4 border-green-500 text-green-600 flex items-center justify-center text-xl font-bold mb-6 shadow-lg relative group-hover:scale-110 transition-transform duration-300">
+                            5
+                            <div class="absolute -bottom-2 bg-green-500 text-white text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider">Test</div>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#111318] mb-2 font-display">ATP Testing</h3>
+                        <p class="text-sm text-[#616f89] font-body">Scientific verification that surface cleanliness levels meet safety standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two-Column Content: Scenarios & Insurance -->
+    <section class="py-16 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Left: Common Scenarios Accordion -->
+                <div class="flex-1">
+                    <h3 class="text-2xl font-bold text-[#111318] mb-6 font-display">Common Sewage Scenarios</h3>
+                    <div class="flex flex-col gap-4">
+                        <!-- Item 1 -->
+                        <details class="group bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm open:shadow-md transition-all">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer font-bold text-[#111318] hover:bg-gray-50">
+                                <span>Toilet Overflow & Backup</span>
+                                <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="p-4 pt-0 text-sm text-[#616f89] font-body border-t border-transparent group-open:border-gray-100 mt-2">
+                                Toilet backups often involve "Category 3" black water. This occurs when the main sewer line is blocked, forcing waste back up into the bowl. This requires immediate snaking and decontamination of the surrounding floor.
+                            </div>
+                        </details>
+                        <!-- Item 2 -->
+                        <details class="group bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm open:shadow-md transition-all">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer font-bold text-[#111318] hover:bg-gray-50">
+                                <span>Septic Tank Failure</span>
+                                <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="p-4 pt-0 text-sm text-[#616f89] font-body border-t border-transparent group-open:border-gray-100 mt-2">
+                                When a septic tank is full or the drain field fails, sewage can pool in your yard or back up into drains. This creates a large-scale biohazard zone requiring specialized soil treatment and tank pumping.
+                            </div>
+                        </details>
+                        <!-- Item 3 -->
+                        <details class="group bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm open:shadow-md transition-all">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer font-bold text-[#111318] hover:bg-gray-50">
+                                <span>Main Line Blockage</span>
+                                <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="p-4 pt-0 text-sm text-[#616f89] font-body border-t border-transparent group-open:border-gray-100 mt-2">
+                                Tree roots or grease can block the city main line connection. When this happens, sewage from your home has nowhere to go but back up into bathtubs and sinks.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- Right: Insurance Info Card -->
+                <div class="flex-1">
+                    <div class="bg-[#135bec] text-white rounded-xl p-8 h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-10">
+                            <span class="material-symbols-outlined text-9xl">policy</span>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold mb-4 font-display">Does Insurance Cover Sewage?</h3>
+                            <p class="font-body mb-6 text-blue-100 leading-relaxed">Most standard homeowners policies DO NOT cover sewage backup unless you have a specific endorsement for "Water Backup and Sewer Sump Overflow".</p>
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-[#ff6b00] shrink-0">check_circle</span>
+                                    <p class="text-sm">We work directly with all major insurance carriers.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-[#ff6b00] shrink-0">check_circle</span>
+                                    <p class="text-sm">Our team documents all damage for your claim.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-[#ff6b00] shrink-0">check_circle</span>
+                                    <p class="text-sm">We can help verify your coverage immediately.</p>
+                                </div>
+                            </div>
+                            <button class="w-full bg-white text-[#135bec] font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors">
+                                Verify My Coverage
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety FAQ -->
+    <section class="py-16 bg-white">
+        <div class="max-w-[800px] mx-auto px-4 lg:px-8">
+            <h2 class="text-3xl font-bold text-[#111318] text-center mb-10 font-display">Critical Safety FAQ</h2>
+            <div class="space-y-6">
+                <div class="border-b border-gray-200 pb-6">
+                    <h4 class="text-lg font-bold text-[#111318] mb-2 flex items-center gap-2 font-display">
+                        <span class="material-symbols-outlined text-[#ef4444]">health_and_safety</span>
+                        Can I stay in my house during cleanup?
+                    </h4>
+                    <p class="text-[#616f89] font-body text-sm leading-relaxed">
+                        If the spill is contained to a small area (like a single bathroom) and we can set up negative air pressure containment, you may be able to stay. However, for large scale backups affecting HVAC systems or main living areas, we strongly recommend relocating to a hotel for 24-48 hours.
+                    </p>
+                </div>
+                <div class="border-b border-gray-200 pb-6">
+                    <h4 class="text-lg font-bold text-[#111318] mb-2 flex items-center gap-2 font-display">
+                        <span class="material-symbols-outlined text-[#ef4444]">health_and_safety</span>
+                        Is the smell toxic?
+                    </h4>
+                    <p class="text-[#616f89] font-body text-sm leading-relaxed">
+                        Yes, the "sewer gas" smell can contain hydrogen sulfide and methane. While the smell itself is mostly a nuisance, high concentrations can be harmful. The bigger risk is the invisible airborne pathogens that accompany the smell.
+                    </p>
+                </div>
+                <div class="pb-6">
+                    <h4 class="text-lg font-bold text-[#111318] mb-2 flex items-center gap-2 font-display">
+                        <span class="material-symbols-outlined text-[#ef4444]">health_and_safety</span>
+                        Can I clean it with bleach?
+                    </h4>
+                    <p class="text-[#616f89] font-body text-sm leading-relaxed">
+                        Pouring bleach on sewage does not remove the solids or the pathogens absorbed into porous materials like wood or drywall. Bleach is a surface disinfectant; it cannot penetrate structural materials where bacteria hide. Professional extraction and removal of affected materials is required.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Footer Strip -->
+    <section class="bg-[#101622] text-white py-12 border-t-4 border-[#ff6b00]">
+        <div class="max-w-[1200px] mx-auto px-4 lg:px-8 text-center">
+            <div class="flex justify-center mb-6">
+                <span class="material-symbols-outlined text-5xl text-[#ff6b00] animate-bounce">warning</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black mb-4 uppercase tracking-wider font-display">Don't Risk Your Health.</h2>
+            <p class="text-gray-400 mb-8 max-w-2xl mx-auto font-body text-lg">Our Hazmat teams are on standby 24/7. We arrive within 60 minutes to contain the spread.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:800-555-0199" class="flex items-center justify-center gap-3 bg-[#ff6b00] hover:bg-orange-600 text-white font-bold text-xl py-4 px-10 rounded-full shadow-lg transition-all transform hover:scale-105 w-full sm:w-auto">
+                    <span class="material-symbols-outlined">call</span>
+                    CALL 800-555-0199
+                </a>
+                <div class="text-gray-400 text-sm font-medium">
+                    <span class="block">Live Agent 24/7</span>
+                    <span class="block">No Automated Menus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</SewageCleanupLayout>
