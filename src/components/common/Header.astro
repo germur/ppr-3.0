@@ -45,21 +45,28 @@ const logoColorClass = theme === 'light' ? 'text-slate-900' : 'text-white';
   style={`--secondary-color: ${secondaryColor};`}
 >
     <div class="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
+        <div class="flex items-center lg:items-end justify-between h-20 lg:h-24 lg:pb-2">
             <!-- Brand Logo -->
-            <a href="/" class="block shrink-0 group">
+            <a href="/" class="block shrink-0 group relative z-10 flex items-center h-full py-1">
+                <!-- Mobile Icon -->
+                <img 
+                    src="/ppr-icon.png" 
+                    alt="Paramount Property Restoration" 
+                    class="h-12 w-auto object-contain lg:hidden transition-transform group-hover:scale-105"
+                />
+                <!-- Desktop Logo - Natural Size -->
                 <img 
                     src="/ppr-logo.png" 
                     alt="Paramount Property Restoration" 
-                    class="h-16 w-auto object-contain transition-transform group-hover:scale-105"
+                    class="hidden lg:block h-14 w-auto object-contain transition-transform group-hover:scale-105"
                 />
             </a>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center gap-8">
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 mb-2">
                 <!-- Mega Menu Trigger -->
                 <div class="group relative">
-                    <button class={`flex items-center gap-1 text-sm font-medium transition-colors py-8 ${textColorClass}`}>
+                    <button class={`flex items-center gap-1 text-sm font-medium transition-colors py-2 ${textColorClass}`}>
                         Restoration
                         <span class="material-symbols-outlined text-[18px] transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
                     </button>
@@ -125,11 +132,11 @@ const logoColorClass = theme === 'light' ? 'text-slate-900' : 'text-white';
             </nav>
 
             <!-- Action Buttons -->
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 shrink-0 mb-1">
                  <!-- Quote/Service Button -->
                  <a 
                     href={variant === 'emergency' ? "/contact" : "/contact"}
-                    class={`hidden sm:flex items-center justify-center px-5 py-2.5 rounded-lg text-white font-bold text-sm transition-all hover:opacity-90 shadow-sm`}
+                    class={`hidden sm:flex items-center justify-center px-5 py-2.5 rounded-lg text-white font-bold text-sm transition-all hover:opacity-90 shadow-sm whitespace-nowrap`}
                     style={`background-color: ${secondaryColor}`}
                 >
                     {variant === 'emergency' ? 'File a Claim' : 'Request Quote'}
@@ -138,7 +145,7 @@ const logoColorClass = theme === 'light' ? 'text-slate-900' : 'text-white';
                 <!-- Emergency Button -->
                 <a 
                     href="tel:7866022217" 
-                    class="flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-bold text-sm transition-all shadow-lg hover:opacity-90 animate-pulse"
+                    class="flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-bold text-sm transition-all shadow-lg hover:opacity-90 animate-pulse whitespace-nowrap"
                     style="background-color: #dc2626;" 
                 >
                     <span class="material-symbols-outlined text-[20px]">phone_in_talk</span>

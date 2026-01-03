@@ -1,0 +1,134 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const sitemapSections = [
+  {
+    title: "General",
+    links: [
+      { name: "Home", url: "/" },
+      { name: "About Us / Our Process", url: "/our-process" },
+      { name: "Contact Us", url: "/contact" },
+      { name: "24/7 Emergency Service", url: "/emergency" },
+      { name: "Careers", url: "/careers" },
+    ]
+  },
+  {
+    title: "Restoration Services",
+    links: [
+      { name: "Water Damage Restoration", url: "/restoration/water-damage" },
+      { name: "Fire & Smoke Damage", url: "/restoration/fire-damage" },
+      { name: "Mold Remediation", url: "/restoration/mold-remediation" },
+      { name: "Mold Testing", url: "/restoration/mold-testing" },
+      { name: "Storm Damage Repair", url: "/restoration/storm-damage" },
+      { name: "Wind Damage Repair", url: "/restoration/wind-damage" },
+      { name: "Flood Damage Restoration", url: "/restoration/flood-damage" },
+      { name: "Smoke Damage Cleanup", url: "/restoration/smoke-damage" },
+      { name: "Sewage Cleanup", url: "/restoration/sewage-cleanup" },
+      { name: "Emergency Board-Up", url: "/restoration/board-up-services" },
+      { name: "Storm Debris Removal", url: "/restoration/storm-debris-removal" },
+    ]
+  },
+  {
+    title: "Remodeling Services",
+    links: [
+      { name: "Remodeling Overview", url: "/remodeling-services" },
+      { name: "Kitchen Remodeling", url: "/remodeling-services/kitchen-remodeling" },
+      { name: "Bathroom Remodeling", url: "/remodeling-services/bathroom-remodeling" },
+      { name: "Home Additions", url: "/remodeling-services/home-additions" },
+    ]
+  },
+  {
+    title: "Commercial Services",
+    links: [
+      { name: "Commercial Services Overview", url: "/commercial" },
+      { name: "Commercial Construction", url: "/commercial/construction" },
+    ]
+  },
+  {
+    title: "Service Areas",
+    links: [
+      { name: "Service Areas Overview", url: "/service-areas" },
+      { name: "Central Florida", url: "/service-areas/central-florida" },
+      { name: "South Florida", url: "/service-areas/south-florida" },
+      { name: "Tampa Bay", url: "/service-areas/tampa-bay" },
+      { name: "Southwest Florida", url: "/service-areas/southwest-florida" },
+      { name: "Treasure Coast", url: "/service-areas/treasure-coast" },
+    ]
+  },
+  {
+    title: "Resources & Legal",
+    links: [
+      { name: "Insurance Claims Help", url: "/insurance-claims" },
+      { name: "Blog & Resources", url: "/resources" },
+      { name: "Privacy Policy", url: "/privacy-policy" },
+      { name: "Terms of Service", url: "/terms-of-service" },
+    ]
+  }
+];
+---
+
+<MainLayout title="Sitemap | Paramount Property Restoration" description="Complete overview of all pages and services offered by Paramount Property Restoration in Florida.">
+    <!-- Hero Section -->
+    <section class="relative bg-slate-900 text-white py-20 px-4">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900 to-slate-800 opacity-90"></div>
+            <!-- Abstract background pattern -->
+            <svg class="absolute w-full h-full opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 C 20 0 50 0 100 100 Z" fill="currentColor"/>
+            </svg>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto text-center z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Site Map</h1>
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                Navigate through all our services, locations, and resources. Find exactly what you need to restore or improve your property.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sitemap Grid -->
+    <section class="py-16 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {sitemapSections.map((section) => (
+                    <div class="bg-gray-50 dark:bg-slate-800 rounded-xl p-8 border border-gray-100 dark:border-slate-700 hover:shadow-lg transition-shadow duration-300">
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-6 border-b border-gray-200 dark:border-slate-700 pb-2">
+                            {section.title}
+                        </h2>
+                        <ul class="space-y-3">
+                            {section.links.map((link) => (
+                                <li>
+                                    <a 
+                                        href={link.url} 
+                                        class="flex items-center group text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200"
+                                    >
+                                        <span class="material-symbols-outlined text-sm mr-2 opacity-50 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick CTA -->
+    <section class="bg-slate-50 dark:bg-slate-950 py-16 border-t border-gray-200 dark:border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Can't find what you're looking for?</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-8">
+                Our support team is available 24/7 to answer your questions and provide immediate assistance.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-blue-700 transition-colors">
+                    Contact Support
+                </a>
+                <a href="tel:7866022217" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-slate-600 text-base font-medium rounded-md text-gray-700 dark:text-white bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors">
+                    Call (786) 602-2217
+                </a>
+            </div>
+        </div>
+    </section>
+</MainLayout>

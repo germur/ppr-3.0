@@ -1,5 +1,6 @@
 ---
 import MoldRemediationLayout from '../../layouts/MoldRemediationLayout.astro';
+import { moldRemediationFAQs } from '../../data/restoration-faqs';
 ---
 
 <MoldRemediationLayout>
@@ -13,15 +14,15 @@ import MoldRemediationLayout from '../../layouts/MoldRemediationLayout.astro';
                     Trusted & Insured
                 </div>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0f172a] leading-[1.1] tracking-tight">
-                    Professional Mold Remediation & <span class="text-[#11d4c4]">Air Quality Solutions</span>
+                    Licensed Mold Remediation & <span class="text-[#11d4c4]">Inspection Services</span>
                 </h1>
                 <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Don't let hidden mold compromise your health. We provide professional testing, scientific remediation, and humidity control to restore healthy air to your Florida home.
+                    In Florida's humid climate, mold is more than a nuisance—it’s a health risk. Following Florida Senate Bill 2A regulations, we provide professional mold assessment and remediation. Don't rely on DIY kits; our certified team identifies hidden moisture sources and removes mold safely using HEPA filtration and negative air pressure.
                 </p>
                 <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
                     <a href="/contact/" class="bg-[#11d4c4] hover:bg-teal-400 text-[#0f172a] px-6 py-3.5 rounded-lg font-bold text-base transition-colors flex items-center gap-2 shadow-lg shadow-[#11d4c4]/20 justify-center">
                         <span class="material-symbols-outlined">calendar_month</span>
-                        Schedule Inspection
+                        Get a Professional Mold Inspection
                     </a>
                     <a href="#process" class="bg-white border-2 border-slate-200 hover:border-[#11d4c4] text-slate-700 hover:text-[#11d4c4] px-6 py-3.5 rounded-lg font-bold text-base transition-all flex items-center gap-2 justify-center">
                         <span class="material-symbols-outlined">school</span>
@@ -64,53 +65,41 @@ import MoldRemediationLayout from '../../layouts/MoldRemediationLayout.astro';
     <section id="process" class="py-16 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-100">
         <div class="max-w-[1280px] mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Complete Mold Defense Strategy</h2>
+                <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Complete Mold Solutions</h2>
                 <p class="text-slate-600">Our scientific approach moves beyond simple cleaning. We identify the source, contain the spread, and engineer a permanent solution.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Step 1: Assess -->
+                <!-- Step 1: Inspection & Testing -->
                 <article class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors">
                     <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined text-2xl">biotech</span>
                     </div>
-                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">1. Assess</h3>
-                    <p class="text-sm text-slate-600 mb-4 flex-grow">Inspection & Testing. Microscopic analysis to identify mold types and spore counts.</p>
-                    <a class="text-sm font-bold text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all" href="/restoration/mold-testing/">
-                        Testing Process <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
+                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">1. Inspection & Testing</h3>
+                    <p class="text-sm text-slate-600 mb-4 flex-grow">Identifying air quality issues and visible growth through professional assessment.</p>
                 </article>
-                <!-- Step 2: Contain -->
+                <!-- Step 2: Containment -->
                 <article class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors">
                     <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined text-2xl">security</span>
                     </div>
-                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">2. Contain</h3>
-                    <p class="text-sm text-slate-600 mb-4 flex-grow">Safety Barriers. HEPA filtration and negative air pressure to stop spore spread.</p>
-                    <a class="text-sm font-bold text-amber-600 flex items-center gap-1 group-hover:gap-2 transition-all" href="/our-process/">
-                        Containment Tech <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
+                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">2. Containment</h3>
+                    <p class="text-sm text-slate-600 mb-4 flex-grow">Preventing spore spread to other areas of your home using safety barriers.</p>
                 </article>
-                <!-- Step 3: Remediate -->
+                <!-- Step 3: Sanitization -->
                 <article class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors">
                     <div class="w-12 h-12 bg-[#11d4c4]/20 text-[#11d4c4] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined text-2xl">cleaning_services</span>
                     </div>
-                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">3. Remediate</h3>
-                    <p class="text-sm text-slate-600 mb-4 flex-grow">Removal & Sanitize. Professional removal of affected materials and chemical sanitation.</p>
-                    <a class="text-sm font-bold text-[#11d4c4] flex items-center gap-1 group-hover:gap-2 transition-all" href="/our-process/">
-                        Remediation Steps <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
+                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">3. Sanitization</h3>
+                    <p class="text-sm text-slate-600 mb-4 flex-grow">Cleaning contents and structural elements with professional-grade solutions.</p>
                 </article>
-                <!-- Step 4: Prevent -->
+                <!-- Step 4: Prevention -->
                 <article class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors">
                     <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined text-2xl">water_drop</span>
                     </div>
-                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">4. Prevent</h3>
-                    <p class="text-sm text-slate-600 mb-4 flex-grow">Humidity Control. Moisture management systems to stop future colony growth.</p>
-                    <a class="text-sm font-bold text-green-600 flex items-center gap-1 group-hover:gap-2 transition-all" href="/contact/">
-                        Prevention Systems <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
+                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">4. Prevention</h3>
+                    <p class="text-sm text-slate-600 mb-4 flex-grow">Installing dehumidification systems to prevent recurrence of mold growth.</p>
                 </article>
             </div>
         </div>
@@ -238,36 +227,41 @@ import MoldRemediationLayout from '../../layouts/MoldRemediationLayout.astro';
                 <!-- FAQ -->
                 <div class="lg:col-span-2">
                     <h3 class="text-xl font-bold text-[#0f172a] mb-6">Frequently Asked Questions</h3>
-                    <div class="flex flex-col gap-4">
-                        <details class="group bg-[#f6f8f8] rounded-lg">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer font-semibold text-slate-800 list-none">
-                                <span>Can I just clean mold with bleach?</span>
-                                <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
-                            </summary>
-                            <div class="px-4 pb-4 text-slate-600 text-sm leading-relaxed">
-                                No. Bleach only kills surface mold on non-porous materials. On porous surfaces like drywall or wood, the roots remain, and the moisture in bleach can actually feed future growth. Professional remediation removes the root structure physically.
-                            </div>
-                        </details>
-                        <details class="group bg-[#f6f8f8] rounded-lg">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer font-semibold text-slate-800 list-none">
-                                <span>How much does mold remediation cost?</span>
-                                <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
-                            </summary>
-                            <div class="px-4 pb-4 text-slate-600 text-sm leading-relaxed">
-                                Costs vary significantly based on the scope of damage. A small localized treatment might start around $500, while extensive structural remediation can be several thousand. We provide transparent, itemized estimates after the initial assessment.
-                            </div>
-                        </details>
-                        <details class="group bg-[#f6f8f8] rounded-lg">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer font-semibold text-slate-800 list-none">
-                                <span>Is mold covered by homeowners insurance in Florida?</span>
-                                <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
-                            </summary>
-                            <div class="px-4 pb-4 text-slate-600 text-sm leading-relaxed">
-                                It depends on the cause. If the mold results from a covered "peril" like a sudden pipe burst, it is often covered up to policy limits. Gradual negligence is usually not. We can help you understand your policy's coverage.
-                            </div>
-                        </details>
+            <div class="flex flex-col gap-3">
+                       {moldRemediationFAQs.map((item) => (
+                         <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                           <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                             <span class="text-base font-bold text-[#0f172a] group-hover:text-[#11d4c4] transition-colors pr-4">
+                               {item.question}
+                             </span>
+                             <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-slate-50 text-slate-400 group-open:bg-[#11d4c4] group-open:text-[#0f172a] transition-all duration-300">
+                               <span class="material-symbols-outlined text-xl group-open:hidden">add</span>
+                               <span class="material-symbols-outlined text-xl hidden group-open:block">remove</span>
+                             </span>
+                           </summary>
+                           <div class="px-4 pb-4 text-slate-600 leading-relaxed animate-fade-in text-sm bg-slate-50/50">
+                             {item.answer}
+                           </div>
+                         </details>
+                       ))}
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service Areas (Internal Linking) -->
+    <section class="py-16 bg-[#f6f8f8] border-t border-slate-200">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-xl font-bold text-[#0f172a] mb-6">Serving All Major Florida Metros</h3>
+            <div class="flex flex-wrap gap-3">
+                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/central-florida/orlando/">Orlando</a>
+                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/south-florida/miami/">Miami</a>
+                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/tampa-bay/tampa/">Tampa</a>
+                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/south-florida/fort-lauderdale/">Fort Lauderdale</a>
+                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/southwest-florida/fort-myers/">Fort Myers</a>
+                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/southwest-florida/naples/">Naples</a>
+                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/tampa-bay/sarasota/">Sarasota</a>
+                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/">View All Locations</a>
             </div>
         </div>
     </section>

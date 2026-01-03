@@ -1,5 +1,7 @@
 ---
 import HurricaneLayout from '../../layouts/HurricaneLayout.astro';
+import FAQAccordion from '../../components/ui/FAQAccordion';
+import { stormDamageFAQs } from '../../data/restoration-faqs';
 ---
 
 <HurricaneLayout>
@@ -218,6 +220,18 @@ import HurricaneLayout from '../../layouts/HurricaneLayout.astro';
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 px-4 md:px-10 lg:px-40 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-[720px] mx-auto">
+            <h2 class="text-[#111418] dark:text-white text-3xl font-black leading-tight tracking-[-0.033em] text-center mb-10">
+                Common Storm Questions
+            </h2>
+            <div class="space-y-4">
+                <FAQAccordion items={stormDamageFAQs} client:visible />
             </div>
         </div>
     </section>

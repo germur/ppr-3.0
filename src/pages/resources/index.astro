@@ -1,5 +1,9 @@
 ---
 import ResourcesLayout from '../../layouts/ResourcesLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
 ---
 
 <ResourcesLayout>
@@ -234,66 +238,35 @@ import ResourcesLayout from '../../layouts/ResourcesLayout.astro';
                         <h2 class="text-3xl font-bold text-[#111418] dark:text-white mt-2">Latest Industry Insights</h2>
                     </div>
                     <div class="flex gap-2">
-                        <button class="size-10 rounded-full border border-[#dbe0e6] dark:border-[#374151] flex items-center justify-center hover:bg-[#f0f2f4] dark:hover:bg-[#1f2937] text-[#111418] dark:text-white">
+                        <a href="/resources/water-damage" class="size-10 rounded-full border border-[#dbe0e6] dark:border-[#374151] flex items-center justify-center hover:bg-[#f0f2f4] dark:hover:bg-[#1f2937] text-[#111418] dark:text-white">
                             <span class="material-symbols-outlined">arrow_back</span>
-                        </button>
-                        <button class="size-10 rounded-full bg-[#137fec] text-white flex items-center justify-center hover:bg-blue-600">
+                        </a>
+                        <a href="/resources/water-damage" class="size-10 rounded-full bg-[#137fec] text-white flex items-center justify-center hover:bg-blue-600">
                             <span class="material-symbols-outlined">arrow_forward</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Article 1 -->
-                    <a href="/remodeling-services/kitchen-remodeling/" class="flex flex-col group cursor-pointer">
+                    {sortedPosts.map(post => (
+                    <a href={`/resources/${post.data.subcategory}/${post.slug}`} class="flex flex-col group cursor-pointer">
                         <div class="relative rounded-xl overflow-hidden aspect-[16/10] mb-4">
-                            <img alt="Modern kitchen" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIRpXMOjS23DlcFX_7RZc_ysxEjOMFzem66g1CQvPFLkENssgzv51mQ6OUyDH3Oaz_Zrt0CQyxH-wuvVMvQRAGJVcEi6Ba-rVOst-fhMT8rW8wTLYEXwWbrr2edit2hA3FO7qDExd-p5Se_SXzFhjFtGHi9Axo59dOy8zPcrK5Zo4d4XOFx2-krX4FyADqqm5DL8s9nHvL-CNazSKz7p0Bs4rMOFOEN4ymhXnB4DVYQj3ZykE6mdxBp3GCRx0v1hhxPf-KIbb82Js6" />
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-xs font-bold text-[#111418] uppercase">Remodeling</div>
+                            {post.data.image && (
+                            <img alt={post.data.title} class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src={post.data.image} />
+                            )}
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-xs font-bold text-[#111418] uppercase">{post.data.category}</div>
                         </div>
                         <div class="flex items-center gap-2 text-xs text-[#617589] mb-3">
-                            <span class="material-symbols-outlined text-sm">calendar_today</span> Oct 24, 2023
+                            <span class="material-symbols-outlined text-sm">calendar_today</span> {post.data.pubDate.toLocaleDateString()}
                         </div>
                         <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3 group-hover:text-[#137fec] transition-colors line-clamp-2">
-                            Top 5 Kitchen Remodel Trends Taking Over Florida Homes in 2024
+                            {post.data.title}
                         </h3>
                         <p class="text-[#617589] dark:text-[#9ca3af] text-sm mb-4 line-clamp-3">
-                            From sustainable materials to smart appliances, discover what homeowners are prioritizing this year for both value and style.
+                            {post.data.description}
                         </p>
                         <span class="text-[#137fec] font-bold text-sm mt-auto inline-flex items-center gap-1">Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
                     </a>
-                    <!-- Article 2 -->
-                    <a href="/restoration/water-damage/" class="flex flex-col group cursor-pointer">
-                        <div class="relative rounded-xl overflow-hidden aspect-[16/10] mb-4">
-                            <img alt="Water damage restoration" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoqXFOqFMG4xG5LTtVCLGpHG4ymRI1d2qbIeEw-AjkSTi_hsMX6-goJdZDrtEbQ6sTE33xDHAQKp5I2VRXgd3XPzGYr2n0mrEa1vfBKyKG9gdQFl22GWuj8rBNqCGOCNfRhBb_8QLtOucoEkBH5EDAgmwS_AMhDyhLhqjA_NdIvdzymLQ5qSpCfPxxnhry_vHJSw8OfIRMrlM1sfnn-UzJn-FOvC03Abm0Ox286gvASkJFlTMJ9TmGi_vZYechYEI5HrU8BMh5rkrh" />
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-xs font-bold text-[#111418] uppercase">Restoration</div>
-                        </div>
-                        <div class="flex items-center gap-2 text-xs text-[#617589] mb-3">
-                            <span class="material-symbols-outlined text-sm">calendar_today</span> Oct 18, 2023
-                        </div>
-                        <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3 group-hover:text-[#137fec] transition-colors line-clamp-2">
-                            Why You Shouldn't Wait: The Hidden Dangers of Standing Water
-                        </h3>
-                        <p class="text-[#617589] dark:text-[#9ca3af] text-sm mb-4 line-clamp-3">
-                            Bacteria growth and structural integrity issues can begin within hours. Here is the timeline of water damage progression.
-                        </p>
-                        <span class="text-[#137fec] font-bold text-sm mt-auto inline-flex items-center gap-1">Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-                    </a>
-                    <!-- Article 3 -->
-                    <a href="/commercial/" class="flex flex-col group cursor-pointer">
-                        <div class="relative rounded-xl overflow-hidden aspect-[16/10] mb-4">
-                            <img alt="Commercial construction" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHkWNBDiO_FnA2jChUFUdGExAFYMtZm4vN-bzmJtkh6QmoqIVnrZ33NoYUvtfRHj0zCs1pl1kwE37TE5GhUbpHewBa7y5v4dJ0UqJxY_jD_EmvNnVqvTqsGRMJJlNAYS7t774D2_gT509MMwCfC0t9fv6Ef0yyMjDe0usfiElJEosYGnoPU2ovmWaLtRu2ZSh_2QbGQmfuJ0yMskCuIwpDJmwdPXbExW1iRrKMaybBdwNdBtmnaBLYWsxUsnnbrgCVqrdPwI1NrkaB" />
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-xs font-bold text-[#111418] uppercase">Commercial</div>
-                        </div>
-                        <div class="flex items-center gap-2 text-xs text-[#617589] mb-3">
-                            <span class="material-symbols-outlined text-sm">calendar_today</span> Oct 12, 2023
-                        </div>
-                        <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3 group-hover:text-[#137fec] transition-colors line-clamp-2">
-                            Minimizing Business Downtime During Property Repairs
-                        </h3>
-                        <p class="text-[#617589] dark:text-[#9ca3af] text-sm mb-4 line-clamp-3">
-                            Strategies for property managers to keep operations running smoothly while undergoing necessary structural repairs.
-                        </p>
-                        <span class="text-[#137fec] font-bold text-sm mt-auto inline-flex items-center gap-1">Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-                    </a>
+                    ))}
                 </div>
             </div>
         </section>

@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
 
 interface Props {
   title?: string;
@@ -74,7 +75,7 @@ const {
     <!-- End Google Tag Manager (noscript) -->
     <!-- Sticky Glass Navigation -->
     <Header 
-        theme="dark" 
+        theme="light" 
         secondaryColor="#f97316" 
         emergencyBtnText="24/7 Fire Dispatch" 
     />
@@ -82,70 +83,6 @@ const {
     <slot />
     
     <!-- Custom Footer -->
-    <footer class="bg-[#1e293b] border-t border-[#334155] pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-1">
-                    <div class="flex items-center gap-2 mb-6">
-                        <div class="size-6 text-[#135bec]">
-                            <svg class="w-full h-full" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 22H22L12 2Z" fill="currentColor"></path>
-                            </svg>
-                        </div>
-                        <span class="text-white font-bold text-lg">Paramount Property</span>
-                    </div>
-                    <p class="text-[#94a3b8] text-sm mb-6">
-                        Paramount Property Restoration provides 24/7 emergency services for fire, water, and storm damage.
-                    </p>
-                    <div class="flex gap-4">
-                        <a class="text-slate-400 hover:text-white transition-colors" href="/contact/"><span class="material-symbols-outlined">social_leaderboard</span></a>
-                        <a class="text-slate-400 hover:text-white transition-colors" href="/contact/"><span class="material-symbols-outlined">linked_camera</span></a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Services</h4>
-                    <ul class="space-y-2 text-sm text-[#94a3b8]">
-                        <li><a class="hover:text-[#135bec] transition-colors" href="/restoration/fire-damage/">Fire Damage</a></li>
-                        <li><a class="hover:text-[#135bec] transition-colors" href="/restoration/water-damage/">Water Damage</a></li>
-                        <li><a class="hover:text-[#135bec] transition-colors" href="/restoration/mold-remediation/">Mold Remediation</a></li>
-                        <li><a class="hover:text-[#135bec] transition-colors" href="/commercial/construction/">Reconstruction</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Company</h4>
-                    <ul class="space-y-2 text-sm text-[#94a3b8]">
-
-                        <li><a class="hover:text-[#135bec] transition-colors" href="/our-process/">Our Process</a></li>
-                        <li><a class="hover:text-[#135bec] transition-colors" href="/insurance-claims/">Insurance Help</a></li>
-                        <li><a class="hover:text-[#135bec] transition-colors" href="/contact/">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-sm text-[#94a3b8]">
-                        <li class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-[#135bec] text-base">location_on</span>
-                            <span>10890 NW 17th St Suite 138<br/>Miami, FL 33172</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[#135bec] text-base">phone</span>
-                            <a href="tel:7866022217" class="font-bold text-white hover:text-[#135bec] transition-colors">(786) 602-2217</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[#135bec] text-base">mail</span>
-                            <a href="mailto:services@paramountpropertyrestoration.com" class="hover:text-white transition-colors break-all">services@paramountpropertyrestoration.com</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-[#334155] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-[#94a3b8] text-sm">© 2023 Paramount Property Restoration. All rights reserved.</p>
-                <div class="flex gap-6 text-sm text-[#94a3b8]">
-                    <a class="hover:text-white" href="/privacy-policy/">Privacy Policy</a>
-                    <a class="hover:text-white" href="/terms-of-service/">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <Footer />
 </body>
 </html>

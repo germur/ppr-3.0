@@ -1,29 +1,341 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const pageTitle = "Our Process - Paramount Property Restoration";
+const metaDesc = "Transparency at Every Step. From emergency restoration to luxury remodeling, see how we guide you from crisis to completion.";
 ---
 
-<MainLayout title="Our Process | Paramount Property Restoration">
-  <div class="py-20 px-6 max-w-4xl mx-auto text-center">
-    <h1 class="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Our Restoration Process</h1>
-    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-      We follow a proven, industry-standard process to ensure your property is restored quickly and correctly.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-      <div class="p-6 border border-gray-200 dark:border-gray-800 rounded-lg">
-        <div class="text-2xl font-bold text-blue-600 mb-2">01</div>
-        <h3 class="font-bold text-lg mb-2 dark:text-white">Inspection</h3>
-        <p class="text-gray-500 text-sm">Thorough assessment of the damage.</p>
-      </div>
-      <div class="p-6 border border-gray-200 dark:border-gray-800 rounded-lg">
-        <div class="text-2xl font-bold text-blue-600 mb-2">02</div>
-        <h3 class="font-bold text-lg mb-2 dark:text-white">Mitigation</h3>
-        <p class="text-gray-500 text-sm">Stopping the damage from spreading.</p>
-      </div>
-      <div class="p-6 border border-gray-200 dark:border-gray-800 rounded-lg">
-        <div class="text-2xl font-bold text-blue-600 mb-2">03</div>
-        <h3 class="font-bold text-lg mb-2 dark:text-white">Restoration</h3>
-        <p class="text-gray-500 text-sm">Rebuilding and returning to pre-loss condition.</p>
-      </div>
+<MainLayout title={pageTitle} description={metaDesc}>
+  <!-- Inject Public Sans for this page specifically to match design -->
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  
+  <style>
+    .font-public-sans {
+        font-family: 'Public Sans', sans-serif;
+    }
+    /* Smooth scrolling is handled globally usually, but ensuring it here */
+    html {
+        scroll-behavior: smooth;
+    }
+  </style>
+
+<div class="font-public-sans bg-[#f6f7f8] dark:bg-[#101822] text-[#0d131b] dark:text-white overflow-x-hidden">
+
+<!-- Hero Section -->
+<header class="relative w-full bg-[#101822] py-16 md:py-24">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0 opacity-20">
+        <div class="h-full w-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnd6QKtzdwLxsULlOWT5IsjdBM4IIXYRaeMy3Z1I2P_5sWJWmAdDzZltfrAbH3SRA-NIgVtYzUUy4N3k_4U2nB5iPuLcuIdw3OfLBJ_ugsD0EVQlCkKVG3p-nUnENb8ZHUnnQ26rvJpCHbWsfQNQ3FadSrGdQIrn8BWZrpAdimym6XeHzpnFNQrYhV5yCMt6OVSg6irmLuQWVtIncmW1p3YAxZzlh8BytNL7qqavBWmUOK_Xis5ZNapf0Jhudwb6Peo9iYNYEMIUYZ');"></div>
     </div>
-  </div>
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-[#101822]/80 to-[#101822] via-[#101822]/90"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <h1 class="mx-auto max-w-4xl text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+            Transparency at Every Step: <br/><span class="text-[#136dec]">From Crisis to Completion</span>
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
+            Whether you are rebuilding after a disaster or reimagining your home, we guide you with clarity and expertise. Choose your path below to see how we work.
+        </p>
+        
+        <!-- Dual Path Selector Cards -->
+        <div class="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-6 md:grid-cols-2">
+            <!-- Restoration Path -->
+            <a class="group relative flex flex-col items-center rounded-xl border-2 border-[#136dec] bg-[#1a2636] p-6 text-center transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#136dec]/20" href="#restoration-workflow">
+                <div class="mb-4 flex size-14 items-center justify-center rounded-full bg-[#136dec]/20 text-[#136dec] group-hover:bg-[#136dec] group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-3xl">medical_services</span>
+                </div>
+                <h3 class="text-xl font-bold text-white">Emergency Restoration</h3>
+                <p class="mt-2 text-sm text-slate-400">Rapid response, insurance handling, and damage mitigation.</p>
+                <span class="mt-4 inline-flex items-center text-sm font-bold text-[#136dec] group-hover:text-white">
+                    View Workflow <span class="material-symbols-outlined ml-1 text-sm">arrow_downward</span>
+                </span>
+            </a>
+            
+            <!-- Remodeling Path -->
+            <a class="group relative flex flex-col items-center rounded-xl border-2 border-transparent bg-white p-6 text-center shadow-lg transition-all hover:-translate-y-1 hover:border-[#f97316] hover:shadow-xl" href="#remodeling-workflow">
+                <div class="mb-4 flex size-14 items-center justify-center rounded-full bg-[#f97316]/10 text-[#f97316] group-hover:bg-[#f97316] group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-3xl">architecture</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#0d131b]">Home Remodeling</h3>
+                <p class="mt-2 text-sm text-slate-500">Design-led renovations, permitting, and quality craftsmanship.</p>
+                <span class="mt-4 inline-flex items-center text-sm font-bold text-[#f97316] group-hover:text-[#f97316]/80">
+                    View Workflow <span class="material-symbols-outlined ml-1 text-sm">arrow_downward</span>
+                </span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Restoration Workflow Section -->
+<section class="scroll-mt-24 w-full bg-white py-16 md:py-24" id="restoration-workflow">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4 border-b border-slate-100 pb-6">
+            <div>
+                <span class="mb-2 block font-bold text-[#136dec] uppercase tracking-wider text-sm">Speed &amp; Stability</span>
+                <h2 class="text-3xl font-bold text-[#0d131b] md:text-4xl">Emergency Restoration Workflow</h2>
+            </div>
+            <p class="max-w-md text-slate-500">
+                We know disaster strikes unexpectedly. Our process is built for speed, transparency, and navigating complex insurance claims.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
+            <!-- Timeline Column -->
+            <div class="lg:col-span-7">
+                <div class="relative pl-8 md:pl-0">
+                    <!-- Vertical Line (Mobile/Desktop) -->
+                    <div class="absolute left-3 md:left-[27px] top-4 h-[calc(100%-24px)] w-0.5 bg-slate-200"></div>
+                    
+                    <!-- Step 1 -->
+                    <div class="relative mb-12 flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0 z-10">
+                            <div class="flex size-14 items-center justify-center rounded-full bg-[#136dec] text-white shadow-lg ring-4 ring-white">
+                                <span class="material-symbols-outlined">e911_emergency</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 rounded-lg border border-slate-100 bg-slate-50 p-6 shadow-sm">
+                            <h3 class="text-lg font-bold text-[#0d131b]">1. Immediate Response</h3>
+                            <div class="mt-1 mb-3 inline-block rounded bg-red-100 px-2 py-0.5 text-xs font-bold text-red-700">24/7 Dispatch</div>
+                            <p class="text-slate-600">
+                                Our emergency team is dispatched immediately to secure the property. We focus on safety, water extraction, and preventing secondary damage.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative mb-12 flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0 z-10">
+                            <div class="flex size-14 items-center justify-center rounded-full bg-white border-2 border-[#136dec] text-[#136dec] shadow-lg ring-4 ring-white">
+                                <span class="material-symbols-outlined">view_in_ar</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 rounded-lg border border-slate-100 bg-slate-50 p-6 shadow-sm group">
+                            <h3 class="text-lg font-bold text-[#0d131b]">2. Mitigation &amp; Documentation</h3>
+                            <div class="mt-1 mb-3 flex gap-2">
+                                <span class="inline-flex items-center rounded bg-blue-100 px-2 py-0.5 text-xs font-bold text-[#136dec]">
+                                    <span class="material-symbols-outlined mr-1 text-[14px]">view_in_ar</span> Matterport 3D Scans
+                                </span>
+                            </div>
+                            <p class="text-slate-600">
+                                We dry out the structure and create a digital twin of your property using Matterport technology. This provides indisputable proof of loss for your carrier.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative mb-12 flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0 z-10">
+                            <div class="flex size-14 items-center justify-center rounded-full bg-white border-2 border-[#136dec] text-[#136dec] shadow-lg ring-4 ring-white">
+                                <span class="material-symbols-outlined">request_quote</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 rounded-lg border border-slate-100 bg-slate-50 p-6 shadow-sm">
+                            <h3 class="text-lg font-bold text-[#0d131b]">3. The Insurance Phase</h3>
+                            <div class="mt-1 mb-3 inline-block rounded bg-slate-200 px-2 py-0.5 text-xs font-bold text-slate-700">Xactimate Estimates</div>
+                            <p class="text-slate-600">
+                                We speak the insurance language. Using Xactimate (the industry standard), we submit precise estimates to ensure your claim covers all necessary repairs.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0 z-10">
+                            <div class="flex size-14 items-center justify-center rounded-full bg-[#0d131b] text-white shadow-lg ring-4 ring-white">
+                                <span class="material-symbols-outlined">construction</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 rounded-lg border border-slate-100 bg-slate-50 p-6 shadow-sm">
+                            <h3 class="text-lg font-bold text-[#0d131b]">4. Reconstruction</h3>
+                            <p class="mt-2 text-slate-600">
+                                With approval secured, we rebuild your property to pre-loss condition (or better), coordinating all trades and finishing details.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature/Visual Column -->
+            <div class="lg:col-span-5 lg:pl-12 flex flex-col gap-6">
+                <div class="rounded-xl overflow-hidden bg-slate-100 h-64 md:h-80 shadow-inner relative">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVc5DBY9v9amdsqQYNfEEjixv_ER-_eQCVQhD3cCS29HgfETElPHkqnekwy7E_5ZdIt9xpqKx3MdQZuoIM-fqWU7Xj3xrSao3Uzz5P_MI8M8Yctu4tKMbHqw8jgcrozFdeamptps8fuLJsnPGRC4VBXMy4IN24P1tFZk3UM2ONb9Ad0WixdA1JNoX86i07nzLuwPtY6cU4poA3zpJQE4kpVDmigjbhkoPZzsqZyPO33UIYuWAGPeXQjyHJ3pffqTTFlUbobmbI5KD3');"></div>
+                    <div class="absolute bottom-0 w-full bg-black/60 p-4 backdrop-blur-sm">
+                        <p class="text-white text-sm font-medium"><span class="material-symbols-outlined align-middle mr-1 text-sm">warning</span> Dealing with water or fire damage?</p>
+                    </div>
+                </div>
+                <div class="rounded-xl border border-[#136dec]/20 bg-[#136dec]/5 p-6">
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-3xl text-[#136dec]">verified_user</span>
+                        <div>
+                            <h4 class="font-bold text-[#0d131b]">We Work With Your Insurance</h4>
+                            <p class="mt-2 text-sm text-slate-600">You don't have to navigate the claim alone. We have relationships with major carriers and understand the documentation they require.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Remodeling Workflow Section -->
+<section class="scroll-mt-24 w-full bg-slate-50 py-16 md:py-24 border-t border-slate-200" id="remodeling-workflow">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4 border-b border-slate-200 pb-6">
+            <div>
+                <span class="mb-2 block font-bold text-[#f97316] uppercase tracking-wider text-sm">Vision &amp; Craft</span>
+                <h2 class="text-3xl font-bold text-[#0d131b] md:text-4xl">Home Remodeling Workflow</h2>
+            </div>
+            <p class="max-w-md text-slate-500">
+                Transforming your home shouldn't be stressful. We break down the remodeling process into predictable, managed stages.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
+            <!-- Visual/Feature Column (Left on Desktop) -->
+            <div class="order-2 lg:order-1 lg:col-span-5 lg:pr-12 flex flex-col gap-6">
+                <div class="rounded-xl border border-[#f97316]/20 bg-white p-6 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 bg-[#f97316]/10 rounded-lg text-[#f97316]">
+                            <span class="material-symbols-outlined">sunny</span>
+                        </div>
+                        <h4 class="font-bold text-[#0d131b] text-lg">The "Florida Factor"</h4>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Building in Florida is unique. Between hurricane codes, FEMA regulations, and specific permitting requirements, you need a local expert. Our team handles all municipality interactions to ensure your project is compliant and safe.
+                    </p>
+                </div>
+                <div class="rounded-xl overflow-hidden bg-slate-200 h-64 md:h-80 shadow-inner relative">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUc_z4RljflBGSo1JcZyjwR0_0M07QPPHNItdCtqckdT5DMbuZ6sNQpWr56acLt-MzsxCMfPk0ut0B89ADfYWpALVRKSJ1q7Br_yROKIf9K0A6ejAQDyElbcBVWpuEUh_idmktD2p9mOlKEfHmpIyQM4D0JN2nXWPF7c0-fSM_5PThG-lm2Nop1doXyRAVYvM-aHZs5YTB3r7WnzN3f0xQRT7uqZIZgEe2vcW2p3h8MYklmcAfXHJyD59efwDHQbbAClQENSBGw96Y');"></div>
+                </div>
+            </div>
+            
+            <!-- Timeline Column -->
+            <div class="order-1 lg:order-2 lg:col-span-7">
+                <div class="relative pl-8 md:pl-0">
+                    <!-- Vertical Line -->
+                    <div class="absolute left-3 md:left-[27px] top-4 h-[calc(100%-24px)] w-0.5 bg-slate-200"></div>
+                    
+                    <!-- Step 1 -->
+                    <div class="relative mb-12 flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0 z-10">
+                            <div class="flex size-14 items-center justify-center rounded-full bg-[#f97316] text-white shadow-lg ring-4 ring-slate-50">
+                                <span class="material-symbols-outlined">chat_bubble</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-900/5">
+                            <h3 class="text-lg font-bold text-[#0d131b]">1. Consultation &amp; Budgeting</h3>
+                            <p class="mt-2 text-slate-600">
+                                We meet to discuss your vision, assess feasibility, and establish a realistic budget. No hidden fees or surprise costs later on.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative mb-12 flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0 z-10">
+                            <div class="flex size-14 items-center justify-center rounded-full bg-white border-2 border-[#f97316] text-[#f97316] shadow-lg ring-4 ring-slate-50">
+                                <span class="material-symbols-outlined">design_services</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-900/5">
+                            <h3 class="text-lg font-bold text-[#0d131b]">2. Design &amp; Selections</h3>
+                            <div class="mt-1 mb-3 inline-block rounded bg-orange-100 px-2 py-0.5 text-xs font-bold text-orange-800">3D Renderings Available</div>
+                            <p class="text-slate-600">
+                                Visualize the result before we hammer a single nail. We help you select materials and layout, providing 3D concepts to align expectations.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative mb-12 flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0 z-10">
+                            <div class="flex size-14 items-center justify-center rounded-full bg-white border-2 border-[#f97316] text-[#f97316] shadow-lg ring-4 ring-slate-50">
+                                <span class="material-symbols-outlined">gavel</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-900/5 border-l-4 border-l-[#f97316]">
+                            <h3 class="text-lg font-bold text-[#0d131b]">3. Permitting</h3>
+                            <p class="mt-2 text-slate-600">
+                                We leverage our CGC license to handle all city submissions. We navigate the "Florida Factor" of building codes so you don't have to.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0 z-10">
+                            <div class="flex size-14 items-center justify-center rounded-full bg-[#0d131b] text-white shadow-lg ring-4 ring-slate-50">
+                                <span class="material-symbols-outlined">home_work</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-900/5">
+                            <h3 class="text-lg font-bold text-[#0d131b]">4. Build &amp; Warranty</h3>
+                            <p class="mt-2 text-slate-600">
+                                Our skilled tradesmen bring the design to life. After a final walkthrough, you receive our warranty package for long-term peace of mind.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Our Process Works (E-E-A-T) -->
+<section class="w-full bg-[#101822] py-20 text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Why Our Process Works</h2>
+            <p class="mt-4 text-slate-400">Built on experience, expertise, authority, and trust.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                <div class="mb-6 flex size-16 items-center justify-center rounded-full bg-[#136dec] text-white">
+                    <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+                </div>
+                <h3 class="text-xl font-bold">Advanced Technology</h3>
+                <p class="mt-3 text-slate-400 leading-relaxed">
+                    We don't guess. From Matterport 3D scanning to Xactimate pricing software, we use data-driven tools to ensure accuracy for you and your insurer.
+                </p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                <div class="mb-6 flex size-16 items-center justify-center rounded-full bg-[#f97316] text-white">
+                    <span class="material-symbols-outlined text-3xl">badge</span>
+                </div>
+                <h3 class="text-xl font-bold">Fully Licensed &amp; Certified</h3>
+                <p class="mt-3 text-slate-400 leading-relaxed">
+                    We are a State Certified General Contractor (<span class="text-white font-mono">CGC#1529606</span>). We adhere to the highest standards of safety and legality in Florida.
+                </p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                <div class="mb-6 flex size-16 items-center justify-center rounded-full bg-[#136dec] text-white">
+                    <span class="material-symbols-outlined text-3xl">mark_chat_read</span>
+                </div>
+                <h3 class="text-xl font-bold">Clear Communication</h3>
+                <p class="mt-3 text-slate-400 leading-relaxed">
+                    You are never in the dark. We provide a dedicated project manager and regular updates so you always know the status of your property.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Footer -->
+<section class="w-full bg-[#136dec] py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 class="mb-6 text-3xl font-bold text-white">Ready to start your project?</h2>
+        <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a href="/contact" class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg bg-white px-8 py-3 text-base font-bold text-[#136dec] hover:bg-slate-100 transition-colors">
+                Get an Estimate
+            </a>
+            <a href="tel:786-602-2217" class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg border-2 border-white bg-transparent px-8 py-3 text-base font-bold text-white hover:bg-white/10 transition-colors">
+                Call 24/7 Support
+            </a>
+        </div>
+    </div>
+</section>
+
+</div>
 </MainLayout>

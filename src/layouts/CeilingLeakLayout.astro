@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
 
 interface Props {
   title?: string;
@@ -67,36 +68,7 @@ const {
     <slot />
     
     <!-- Footer from user HTML -->
-    <footer class="bg-[#101622] py-12 text-white">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-8 md:grid-cols-4">
-                <div class="col-span-1 md:col-span-2">
-                    <h2 class="text-xl font-bold">Paramount Property Restoration</h2>
-                    <p class="mt-4 max-w-xs text-sm text-slate-400">Your trusted partner for restoration, remodeling, and commercial services. We bring your property back to life.</p>
-                </div>
-                <div>
-                    <h3 class="mb-4 text-sm font-bold uppercase tracking-wider text-slate-400">Quick Links</h3>
-                    <ul class="space-y-2 text-sm text-slate-300">
-                        <li><a href="/restoration/water-damage/" class="hover:text-[#135bec] transition-colors">Water Damage</a></li>
-                        <li><a href="/restoration/fire-damage/" class="hover:text-[#135bec] transition-colors">Fire Restoration</a></li>
-                        <li><a href="/restoration/mold-remediation/" class="hover:text-[#135bec] transition-colors">Mold Remediation</a></li>
-                        <li><a href="/commercial/construction/" class="hover:text-[#135bec] transition-colors">Reconstruction</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="mb-4 text-sm font-bold uppercase tracking-wider text-slate-400">Contact</h3>
-                    <ul class="space-y-2 text-sm text-slate-300">
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">phone</span> <a href="tel:7866022217" class="hover:text-[#135bec] text-slate-300">(786) 602-2217</a></li>
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> <a href="mailto:services@paramountpropertyrestoration.com" class="hover:text-[#135bec] text-slate-300 break-all">services@paramountpropertyrestoration.com</a></li>
-                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Miami, FL</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-12 border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
-                © 2023 Paramount Property Restoration. All rights reserved.
-            </div>
-        </div>
-    </footer>
+    <Footer />
     
     <!-- FAB for mobile from user HTML -->
     <div class="fixed bottom-4 right-4 z-40 md:hidden">

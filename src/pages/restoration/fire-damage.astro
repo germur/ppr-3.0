@@ -1,5 +1,7 @@
 ---
 import FireDamageLayout from '../../layouts/FireDamageLayout.astro';
+import FAQAccordion from '../../components/ui/FAQAccordion';
+import { fireDamageFAQs } from '../../data/restoration-faqs';
 ---
 
 <FireDamageLayout>
@@ -273,39 +275,7 @@ import FireDamageLayout from '../../layouts/FireDamageLayout.astro';
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-white text-center mb-10">Frequently Asked Questions</h2>
             <div class="space-y-4">
-                <details class="group bg-[#1e293b] border border-[#334155] rounded-lg open:border-[#135bec]/50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between p-6 font-medium text-white">
-                        <span>Can my clothes and furniture be saved?</span>
-                        <span class="transition group-open:rotate-180">
-                            <span class="material-symbols-outlined">expand_more</span>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-[#94a3b8] text-sm leading-relaxed">
-                        In many cases, yes. We use specialized contents cleaning methods, including ultrasonic cleaning and ozone treatments, to salvage soft goods and furniture that haven't been charred.
-                    </div>
-                </details>
-                <details class="group bg-[#1e293b] border border-[#334155] rounded-lg open:border-[#135bec]/50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between p-6 font-medium text-white">
-                        <span>How do you remove the smoke smell completely?</span>
-                        <span class="transition group-open:rotate-180">
-                            <span class="material-symbols-outlined">expand_more</span>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-[#94a3b8] text-sm leading-relaxed">
-                        We don't just mask odors; we eliminate them. We identify the source, remove charred materials, clean surfaces with professional agents, and use thermal foggers or hydroxyl generators to neutralize odor particles at the molecular level.
-                    </div>
-                </details>
-                <details class="group bg-[#1e293b] border border-[#334155] rounded-lg open:border-[#135bec]/50 transition-colors">
-                    <summary class="flex cursor-pointer items-center justify-between p-6 font-medium text-white">
-                        <span>Will my insurance cover the restoration?</span>
-                        <span class="transition group-open:rotate-180">
-                            <span class="material-symbols-outlined">expand_more</span>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-[#94a3b8] text-sm leading-relaxed">
-                        Most homeowner policies cover fire, smoke, and water damage from firefighting. We work directly with your insurance adjuster to document the damage and ensure you receive the coverage you are entitled to.
-                    </div>
-                </details>
+               <FAQAccordion items={fireDamageFAQs} variant="dark" client:visible />
             </div>
         </div>
     </section>

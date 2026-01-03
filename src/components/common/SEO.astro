@@ -1,0 +1,156 @@
+---
+import { Astro } from 'astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  type?: 'website' | 'article' | 'service';
+  schemaType?: 'Service' | 'Article' | 'FAQPage';
+  faqItems?: { question: string; answer: string }[];
+  customSchema?: any;
+}
+
+const {
+  title,
+  description,
+  image = '/ppr-logo.png', // Default image
+  type = 'website',
+  schemaType,
+  faqItems = [],
+  customSchema
+} = Astro.props;
+
+const siteURL = Astro.site ? Astro.site.origin : 'https://paramountpropertyrestoration.com'; 
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+// Ensure trailing slash consistency if needed, but standardizing on what Astro provides
+// Usually efficient to just use Astro.url.href but user requested strict canonicals.
+const absoluteImage = new URL(image, siteURL).href;
+
+// Global Organization Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Paramount Property Restoration",
+  "image": new URL('/ppr-logo.png', siteURL).href,
+  "telephone": "(786) 602-2217",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10890 NW 17th St Suite 138",
+    "addressLocality": "Miami",
+    "addressRegion": "FL",
+    "postalCode": "33172",
+    "addressCountry": "US"
+  },
+  "url": siteURL,
+  "areaServed": [
+    "Orlando", "Miami", "Tampa", "Fort Lauderdale", "Fort Myers" 
+    // Add more major cities as needed
+  ],
+  "priceRange": "$$"
+};
+
+// Dynamic Schema Generation
+let pageSchema: any = null;
+
+if (schemaType === 'Service') {
+  pageSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": title,
+    "provider": organizationSchema,
+    "description": description,
+    "areaServed": {
+       "@type": "State",
+       "name": "Florida"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Restoration Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": title
+          }
+        }
+      ]
+    }
+  };
+} else if (schemaType === 'Article') {
+    // Basic Article Schema implementation
+    pageSchema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title,
+        "image": absoluteImage,
+        "author": {
+            "@type": "Organization",
+            "name": "Paramount Property Restoration"
+        },
+        "publisher": organizationSchema,
+        "datePublished": new Date().toISOString() // Ideally passed as prop
+    };
+}
+
+// FAQ Schema
+let faqSchema: any = null;
+if (faqItems.length > 0) {
+  faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+}
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<link rel="icon" type="image/png" href="/ppr-icon.png" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL.href} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL.href} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={absoluteImage} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL.href} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={absoluteImage} />
+
+<!-- Schemas -->
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
+{pageSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+)}
+
+{faqSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+)}
+
+{customSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(customSchema)} />
+)}

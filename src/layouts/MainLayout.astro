@@ -2,15 +2,18 @@
 import '../styles/global.css';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
+import SEO from '../components/common/SEO.astro';
 
 interface Props {
   title?: string;
   description?: string;
+  customSchema?: any;
 }
 
 const { 
   title = "Paramount Property Restoration | Florida General Contractor",
-  description = "Florida’s Trusted General Contractor for Restoration & Remodeling. From catastrophic storm recovery to luxury kitchen renovations."
+  description = "Florida’s Trusted General Contractor for Restoration & Remodeling. From catastrophic storm recovery to luxury kitchen renovations.",
+  customSchema
 } = Astro.props;
 ---
 
@@ -24,12 +27,13 @@ const {
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WG5DT6GN');</script>
     <!-- End Google Tag Manager -->
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        
+        <SEO 
+          title={title}
+          description={description}
+          customSchema={customSchema}
+        />
+
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
     </head>
