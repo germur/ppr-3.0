@@ -1,4 +1,33 @@
 User-agent: *
+# 1. Permitir el acceso general
 Allow: /
 
+# 2. Bloquear áreas administrativas y de backend
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /cart/
+
+# 3. Bloquear Búsquedas Internas (CRÍTICO para SEO)
+Disallow: /search/
+Disallow: /?s=
+Disallow: /search?q=
+
+# 4. Bloquear Parámetros de URL que no cambian el contenido (Filtros/Orden)
+Disallow: /*?sort=
+Disallow: /*?filter=
+Disallow: /*?price=
+Disallow: /*?session_id=
+
+# 5. Reglas específicas para SEO Programático (Protección)
+Disallow: /templates/
+Disallow: /preview/
+
+# 6. Permitir recursos críticos (CSS/JS)
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+
+# 7. Declarar el Sitemap (Obligatorio)
 Sitemap: https://paramountpropertyrestoration.com/sitemap-index.xml
