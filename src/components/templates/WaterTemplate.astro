@@ -1,0 +1,372 @@
+---
+
+import { waterDamageFAQs } from '../../data/restoration-faqs';
+
+const { city } = Astro.props;
+const locationName = city ? city.data.name : 'Florida';
+---
+
+<main class="layout-container flex flex-col items-center w-full">
+    <!-- Hero Section -->
+    <div class="w-full relative bg-surface-light">
+      <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" data-alt="Restoration team extracting water from a flooded living room" style='background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKuY9PlD8cZ07Mu16EMrWZA_N8XUGFfW1vJuYXyWHvS-yXJZ0EyfWbK3CMlkB8qRLgukltToB9jLPWmMhdyqstQlIlrGEM_66hi9jB1o6vZ9MZBBtsjRecAtJJmxsLBV9-elrQNrKqVrP7_MTa-wJuLikbyoli21jaVje7sJlaaoyv2Dazk9ZbB0uKeDgcqIMIxKWiPTnTEj5nVfWoo9AM2rBlZxXrvE3xxDVEyQluq8kTUva11L8IDpo7L9PoFNy--fnKUw9ZZE4B");'>
+      </div>
+      <!-- Dark Mode Overlay fix for the background image -->
+      <div class="absolute inset-0 z-0 bg-[#101822]/90 dark:block hidden"></div>
+
+      <div class="relative z-10 w-full flex justify-center px-4 py-12 lg:py-20">
+        <div class="max-w-[1200px] w-full grid lg:grid-cols-2 gap-12 items-center">
+          <div class="flex flex-col gap-6">
+            <!-- Pulsing Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800 w-fit">
+                <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                </span>
+                <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide">24/7 Rapid Response Team Active</span>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#111418] dark:text-white leading-[1.1] tracking-[-0.02em]">
+                Expert Water Damage Restoration & Mitigation in <span class="text-[#1162d4]">{locationName}</span>
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-xl">
+                Immediate dispatch for water emergencies. We use hospital-grade technology and licensed experts to extract, dry, and restore your property—fast.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mt-2">
+              <a href="tel:7866022217" class="flex items-center justify-center rounded-lg h-12 px-8 bg-[#1162d4] hover:bg-blue-700 text-white text-base font-bold shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-0.5">
+                <span class="material-symbols-outlined mr-2">call</span>
+                Call 24/7 Dispatch
+              </a>
+              <a href="/contact/" class="flex items-center justify-center rounded-lg h-12 px-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-[#111418] dark:text-white text-base font-bold transition-colors">
+                Insurance Claims Help
+              </a>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="flex items-center gap-6 mt-4 pt-6 border-t border-gray-100 dark:border-gray-800">
+                <div class="flex -space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-gray-200 border-2 border-white dark:border-gray-900 flex items-center justify-center text-[10px] font-bold text-gray-600">JD</div>
+                    <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white dark:border-gray-900 flex items-center justify-center text-[10px] font-bold text-gray-600">AS</div>
+                    <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-white dark:border-gray-900 flex items-center justify-center text-[10px] font-bold text-gray-600">MR</div>
+                    <div class="w-8 h-8 rounded-full bg-[#1162d4] text-white border-2 border-white dark:border-gray-900 flex items-center justify-center text-[10px] font-bold">5k+</div>
+                </div>
+                <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Trusted by 5,000+ Florida Homeowners</p>
+            </div>
+          </div>
+
+          <!-- Hero Image with Overlay -->
+          <div class="relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10 aspect-[4/3] group">
+                <!-- Abstract overlay gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                <div class="absolute bottom-6 left-6 right-6 z-20">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="bg-[#f97316] text-white text-xs font-bold px-2 py-1 rounded">LIVE</span>
+                        <span class="text-white text-sm font-medium drop-shadow-md">Technician On-Site</span>
+                    </div>
+                </div>
+                <img alt="Restoration technician working" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH2V1HZUDV9PfYr-byho_eJLBP7oeKdJ0jlilhQ2oAi9M04ZCvOteYtwLS7r6_n_O0iNf3wJfhSBP5EjlyD11chYgIWOof77NMkDp7ZScIw09m030MLz3YINzC8wlncRdSkgGxWpgSpJ7pMGGi82IpsM6W31131EnQIgZHWGWjMetYL1ObHR5sHKZZXKKYEudo4QQZBKqydki-SVEdf6r7rLNX8LpJ-CZv_6CxWPgQ0W74TH0pTo1JUvYn79e2ShvQuOmd6Yrrpszo"/>
+            </div>
+            <!-- Floating Badge -->
+            <div class="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl flex items-center gap-3 max-w-[240px] hidden md:flex border border-gray-100 dark:border-gray-700">
+                <div class="size-12 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-400">
+                    <span class="material-symbols-outlined">verified_user</span>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-[#111418] dark:text-white">Licensed & Insured</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">CGC #1529606</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Zero-Click Definition Section -->
+    <section class="py-10 bg-white dark:bg-[#101822] border-b border-gray-100 dark:border-gray-800 w-full">
+        <div class="w-full max-w-[1200px] px-4 mx-auto flex justify-center">
+            <div class="w-full">
+                <div class="bg-blue-50/50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800 rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 text-[#1162d4]">
+                        <span class="material-symbols-outlined text-9xl">menu_book</span>
+                    </div>
+                    <div class="flex-1 z-10">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="material-symbols-outlined text-[#1162d4]">info</span>
+                            <h3 class="text-sm font-bold text-[#1162d4] uppercase tracking-wider">Technical Definition</h3>
+                        </div>
+                        <h2 class="text-2xl font-bold text-[#111418] dark:text-white mb-3">What is Water Damage Restoration?</h2>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+                            Water damage restoration is the professional process of mitigating water intrusion, drying affected structures using <span class="font-semibold text-[#1162d4] dark:text-blue-400">psychrometry principles</span>, and sanitizing environments to prevent microbial growth. It involves scientific assessment, rapid extraction, and controlled dehumidification to return a property to its pre-loss condition ("Standard of Care").
+                        </p>
+                    </div>
+                    <div class="w-full md:w-auto flex-shrink-0 z-10">
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-blue-100 dark:border-gray-700">
+                            <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                    <span class="font-medium">24/7 Mitigation</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                    <span class="font-medium">Structure Drying</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                                    <span class="font-medium">Mold Prevention</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Process Section -->
+    <div class="w-full bg-[#f6f7f8] dark:bg-gray-900/50 py-16 lg:py-24">
+      <div class="max-w-[1200px] mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-black text-[#111418] dark:text-white mb-4">Our Scientific Restoration Process</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300">We don't just remove water; we use advanced data to ensure your home is dry. Our IICRC-certified process guarantees stability.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Step 1 -->
+          <div class="bg-white dark:bg-[#101822] p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+            <div class="absolute top-0 right-0 text-[#1162d4]/10 font-black text-6xl opacity-20 -mr-4 -mt-2 group-hover:opacity-30 transition-opacity">01</div>
+            <div class="size-14 rounded-xl bg-[#1162d4] text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30">
+              <span class="material-symbols-outlined text-3xl">camera_indoor</span>
+            </div>
+            <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Thermal Inspection</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+               We utilize FLIR thermal imaging cameras to detect hidden moisture pockets behind walls and under floors that the naked eye cannot see.
+            </p>
+            <div class="h-1 w-12 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                <div class="h-full bg-[#1162d4] w-1/3"></div>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="bg-white dark:bg-[#101822] p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+            <div class="absolute top-0 right-0 text-[#1162d4]/10 font-black text-6xl opacity-20 -mr-4 -mt-2 group-hover:opacity-30 transition-opacity">02</div>
+            <div class="size-14 rounded-xl bg-[#f97316] text-white flex items-center justify-center mb-6 shadow-lg shadow-orange-500/30">
+              <span class="material-symbols-outlined text-3xl">science</span>
+            </div>
+            <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Water Classification</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+              Identifying the water source is critical for safety. We categorize the loss to determine the correct sanitization protocol.
+            </p>
+            <!-- Mini Classification Grid -->
+            <div class="grid grid-cols-3 gap-2 mt-4">
+                <div class="text-center p-1 rounded bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800">
+                    <span class="block text-[10px] font-bold text-blue-700 dark:text-blue-300">Cat 1</span>
+                    <span class="block text-[9px] text-blue-500 dark:text-blue-400">Clean</span>
+                </div>
+                <div class="text-center p-1 rounded bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                    <span class="block text-[10px] font-bold text-gray-700 dark:text-gray-300">Cat 2</span>
+                    <span class="block text-[9px] text-gray-500 dark:text-gray-400">Gray</span>
+                </div>
+                <div class="text-center p-1 rounded bg-red-50 dark:bg-red-900/30 border border-red-100 dark:border-red-800">
+                    <span class="block text-[10px] font-bold text-red-700 dark:text-red-300">Cat 3</span>
+                    <span class="block text-[9px] text-red-500 dark:text-red-400">Black</span>
+                </div>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="bg-white dark:bg-[#101822] p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+            <div class="absolute top-0 right-0 text-[#1162d4]/10 font-black text-6xl opacity-20 -mr-4 -mt-2 group-hover:opacity-30 transition-opacity">03</div>
+            <div class="size-14 rounded-xl bg-[#1162d4] text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30">
+              <span class="material-symbols-outlined text-3xl">air</span>
+            </div>
+            <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Extraction & Drying</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+              Industrial-grade extractors remove standing water, followed by LGR dehumidifiers and air movers to evaporate remaining moisture.
+            </p>
+            <div class="flex gap-2">
+                <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-gray-600 dark:text-gray-400">LGR Dehus</span>
+                <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-gray-600 dark:text-gray-400">Air Movers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Common Scenarios Grid -->
+    <section class="py-16 w-full bg-white dark:bg-[#101822]">
+        <div class="max-w-[1200px] mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 w-full">
+                <div class="max-w-[600px]">
+                    <h2 class="text-3xl font-black text-[#111418] dark:text-white mb-3">Common Water Damage Scenarios</h2>
+                    <p class="text-gray-600 dark:text-gray-400">From natural disasters to plumbing failures, we have the specialized equipment for every type of water intrusion.</p>
+                </div>
+                <!-- Optional link if we had a dedicated services page -->
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+                <!-- Card 1 -->
+                <div class="group p-6 rounded-xl bg-gray-50 dark:bg-gray-900 hover:bg-white dark:hover:bg-gray-800 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-xl transition-all duration-300">
+                    <div class="mb-4 text-[#1162d4] bg-white dark:bg-gray-800 w-fit p-3 rounded-lg shadow-sm group-hover:bg-[#1162d4] group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">plumbing</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Burst Pipes</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Sudden pipe failures can flood a home in minutes. We stop the water and repair the plumbing.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="group p-6 rounded-xl bg-gray-50 dark:bg-gray-900 hover:bg-white dark:hover:bg-gray-800 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-xl transition-all duration-300">
+                    <div class="mb-4 text-[#1162d4] bg-white dark:bg-gray-800 w-fit p-3 rounded-lg shadow-sm group-hover:bg-[#1162d4] group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">thunderstorm</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Storm Intrusion</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Hurricanes and heavy rains causing roof leaks or window intrusion in Florida properties.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="group p-6 rounded-xl bg-gray-50 dark:bg-gray-900 hover:bg-white dark:hover:bg-gray-800 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-xl transition-all duration-300">
+                    <div class="mb-4 text-[#1162d4] bg-white dark:bg-gray-800 w-fit p-3 rounded-lg shadow-sm group-hover:bg-[#1162d4] group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">water_drop</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Ceiling Leaks</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Gradual leaks from AC units or upstairs bathrooms that cause structural rot and mold.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="group p-6 rounded-xl bg-gray-50 dark:bg-gray-900 hover:bg-white dark:hover:bg-gray-800 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-xl transition-all duration-300">
+                    <div class="mb-4 text-[#f97316] bg-white dark:bg-gray-800 w-fit p-3 rounded-lg shadow-sm group-hover:bg-[#f97316] group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">warning</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Sewage Backup</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Category 3 Black Water events requiring Hazmat gear and specialized sanitization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reconstruction Feature -->
+    <section class="py-16 md:py-24 w-full bg-[#101922] text-white">
+        <div class="max-w-[1200px] mx-auto px-4">
+            <div class="w-full flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2">
+                    <div class="inline-block px-3 py-1 bg-[#1162d4]/20 text-[#1162d4] border border-[#1162d4]/30 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                        Full-Service Contractor
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">We Don't Just Dry It. <br/><span class="text-[#1162d4]">We Rebuild It.</span></h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Many companies leave you with torn-up walls and missing floors. Paramount Property Restoration handles the entire project lifecycle, from mitigation to final coat of paint.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-[#f97316] mt-1">construction</span>
+                            <div>
+                                <h4 class="font-bold text-lg">Seamless Transition</h4>
+                                <p class="text-sm text-gray-500">No need to hire a separate contractor. We schedule repairs immediately after drying.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-[#f97316] mt-1">floor</span>
+                            <div>
+                                <h4 class="font-bold text-lg">Quality Materials</h4>
+                                <p class="text-sm text-gray-500">Access to premium flooring, drywall, and cabinetry options.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="bg-white text-[#101922] font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors flex items-center">
+                        Explore Remodeling Services
+                        <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                    </button>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute -inset-4 bg-[#1162d4]/20 rounded-2xl blur-2xl"></div>
+                    <img alt="Reconstruction project" class="relative rounded-2xl w-full shadow-2xl border border-gray-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2pOAGhgQjtnyMANtG8eb61MPWfojrLxC3t8PNgCNxEe6C5TSIZ501lE8Fx3gV51GVaDKRn_Vi6rRj_l8zzkdaKGCnQNkYw2tWWZqzbR2h9ciU73DAtd2H2MC1o5nZoSXYxlACm3ZIYjVtGP4-tihOcwXWfHuNJxTyEYOjSW3kjFJ0ohlZJzPc2ZugNqMUvgKBisgaC9H-e4I09U51boBEDyvajHKdd-DAEjNRS0APswGZGQAB3kGYRoRb-U8K_ACdeL-e2EC-L1kN"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Guidance -->
+    <section class="py-16 w-full bg-blue-50 dark:bg-blue-900/10 border-t border-blue-100 dark:border-blue-800">
+        <div class="max-w-[1200px] mx-auto px-4 text-center">
+            <div class="max-w-[800px] mx-auto">
+                <span class="material-symbols-outlined text-5xl text-[#1162d4] mb-4">assignment_turned_in</span>
+                <h2 class="text-3xl font-black text-[#111418] dark:text-white mb-4">We Speak Insurance</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                    Navigating insurance claims can be stressful. We work directly with your carrier using Xactimate® pricing software to ensure your claim is accurate and fair.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="bg-white dark:bg-gray-800 px-6 py-3 rounded-lg shadow-sm border border-blue-100 dark:border-blue-700 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-green-500">check_circle</span>
+                        <span class="font-bold text-sm text-[#111418] dark:text-white">Direct Billing</span>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 px-6 py-3 rounded-lg shadow-sm border border-blue-100 dark:border-blue-700 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-green-500">check_circle</span>
+                        <span class="font-bold text-sm text-[#111418] dark:text-white">Detailed Documentation</span>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 px-6 py-3 rounded-lg shadow-sm border border-blue-100 dark:border-blue-700 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-green-500">check_circle</span>
+                        <span class="font-bold text-sm text-[#111418] dark:text-white">Xactimate Certified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nearby Areas & FAQ -->
+    <div class="w-full max-w-[1200px] px-4 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-12 gap-12">
+        <!-- Left: FAQ -->
+        <div class="lg:col-span-8 flex flex-col gap-6">
+           <h2 class="text-3xl font-bold text-[#111418] dark:text-white">Water Restoration FAQ</h2>
+           <div class="w-full flex flex-col gap-3">
+              {waterDamageFAQs.map((item) => (
+                <details class="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                    <span class="text-lg font-bold text-[#111418] dark:text-white group-hover:text-[#1162d4] transition-colors pr-4">
+                      {item.question}
+                    </span>
+                    <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-500 group-open:bg-[#1162d4] group-open:text-white transition-all duration-300">
+                      <span class="material-symbols-outlined text-xl group-open:hidden">add</span>
+                      <span class="material-symbols-outlined text-xl hidden group-open:block">remove</span>
+                    </span>
+                  </summary>
+                  <div class="px-6 pb-6 text-gray-600 dark:text-gray-300 leading-relaxed animate-fade-in text-base">
+                    {item.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+        </div>
+        <!-- Right: Service Areas -->
+        <div class="lg:col-span-4 flex flex-col gap-6">
+          <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+            <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-4">Our Service Areas</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">Paramount Property Restoration serves major metropolitan areas across Florida.</p>
+            <div class="flex flex-wrap gap-2">
+              <a class="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-full text-sm font-medium hover:border-[#1162d4] hover:text-[#1162d4] transition-colors" href="/service-areas/central-florida/orlando/">Orlando</a>
+              <a class="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-full text-sm font-medium hover:border-[#1162d4] hover:text-[#1162d4] transition-colors" href="/service-areas/south-florida/miami/">Miami</a>
+               <a class="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-full text-sm font-medium hover:border-[#1162d4] hover:text-[#1162d4] transition-colors" href="/service-areas/tampa-bay/tampa/">Tampa</a>
+              <a class="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-full text-sm font-medium hover:border-[#1162d4] hover:text-[#1162d4] transition-colors" href="/service-areas/south-florida/fort-lauderdale/">Fort Lauderdale</a>
+              <a class="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-full text-sm font-medium hover:border-[#1162d4] hover:text-[#1162d4] transition-colors" href="/service-areas/southwest-florida/fort-myers/">Fort Myers</a>
+              <a class="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-full text-sm font-medium hover:border-[#1162d4] hover:text-[#1162d4] transition-colors" href="/service-areas/southwest-florida/naples/">Naples</a>
+               <a class="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-full text-sm font-medium hover:border-[#1162d4] hover:text-[#1162d4] transition-colors" href="/service-areas/tampa-bay/sarasota/">Sarasota</a>
+               <a class="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-full text-sm font-medium hover:border-[#1162d4] hover:text-[#1162d4] transition-colors" href="/service-areas/">Jacksonville</a>
+            </div>
+             <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                 <a href="/service-areas/" class="text-sm font-bold text-[#1162d4] hover:underline flex items-center gap-1">
+                     View All Locations <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                 </a>
+             </div>
+          </div>
+          <div class="bg-[#1162d4]/5 dark:bg-[#1162d4]/10 p-6 rounded-xl border border-[#1162d4]/10">
+            <div class="flex flex-col items-center text-center gap-4">
+              <div class="p-3 bg-white dark:bg-gray-800 rounded-full shadow-md text-[#f97316]">
+                <span class="material-symbols-outlined text-3xl">phone_in_talk</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-[#111418] dark:text-white">Emergency? Call Now</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">24/7 Live Operator Standing By</p>
+              </div>
+              <a class="w-full py-3 bg-[#f97316] hover:bg-orange-600 text-white font-bold rounded-lg shadow-md transition-colors" href="tel:7866022217">
+                (786) 602-2217
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>

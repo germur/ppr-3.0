@@ -1,0 +1,341 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+interface Props {
+  city: CollectionEntry<'cities'>;
+  service: {
+    slug: string;
+    type: 'restoration' | 'remodeling' | 'commercial'; // More specific if possible
+    name: string;
+  };
+}
+
+const { city, service } = Astro.props;
+const { 
+  name: cityName, 
+  remodeling_desire, 
+  local_building_dept, 
+  local_service_radius, 
+  stats, 
+  compliance 
+} = city.data;
+
+// Dynamic Data setup
+const roi = stats?.roi || '85%';
+const valueIncrease = stats?.value_increase || '+12%';
+
+// Tagline Logic
+const taglines: Record<string, string> = {
+  'Kitchen Remodeling': 'Crafting Your Culinary Oasis',
+  'Bathroom Remodeling': 'Your Private Spa Retreat',
+  'Whole Home Renovation': 'Reimagining Your Living Space',
+  'Commercial Renovation': 'Building Business Success'
+};
+const tagline = taglines[service.name] || 'Excellence in Every Detail';
+
+const isKitchen = service.slug === 'kitchen-remodeling';
+
+// Image Logic (Fallbacks if no dynamic image provided)
+const heroImage = isKitchen 
+  ? 'https://lh3.googleusercontent.com/aida-public/AB6AXuAmVMMj3fxbRmw8hLgcwdCjLmSJAO8-lhT5S6-4cDlWVIzxmWtrAh1bbst00D3IYs1C9vXQt_Hz2P9ocQTngc0umxpOyzmDRlD8nJm6BIm8O8rLLoKm5fhYS2e4zjWnIArg9Ovlzlrdnb8Kqen3XDulKXQVeCGT2wFzdiNmfyxPPmMm1zl1IqoKfNMOrx7CsNWIbfeLqAuYkRIEGdXOb6Nl6FvcYQEraKW_-zMxbKk2afQ-UdhuLzqd1BUu7Z3y8Etan-ouvzYb1OVc'
+  : 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiEiy8YZs7Ig69Nfh1r0kKx5r3UmECqxmz3OJW5rJW9fg1ixUW6moZlDyfp4bH6kzBRLBF7e2_BGdhpZqxDbxUmER70o68ygV-ck_YYZ2WTsKhE1lUh-DyV-xn_8de08hmBZ-egPoPQtWdAOJYWNb-szb4_RVJhi71mTPk-IgW3Ng5biI-mOfW1lfNwnryWRDhJJ6Sp4KIv-rAc09H3WLYj0kGhwKkrIzXptT5USdVN4KMoH3TMtU10xAYOuz1EgJWn8ZaKRbzK9VT';
+
+---
+
+<MainLayout 
+  title={`${service.name} ${cityName} | Paramount Property Restoration`}
+  description={`Premier luxury ${service.name} services in ${cityName}. Custom design, licensed contracting, and clear communication. ${remodeling_desire}`}
+  city={cityName}
+  serviceName={service.name}
+  schemaType="Service"
+>
+    
+    {/* HeroSection */}
+    <div class="w-full bg-white dark:bg-[#111418]">
+        <div class="flex flex-col items-center">
+            <div class="w-full max-w-[1280px] p-4 md:px-10 md:py-8">
+                <div class="relative flex min-h-[560px] flex-col gap-6 overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-8 md:gap-8 items-center justify-center text-center shadow-lg" 
+                     data-alt={`Luxury ${service.name} in ${cityName}`} 
+                     style={`background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url("${heroImage}");`}>
+                    
+                    <div class="flex flex-col gap-4 max-w-[800px]">
+                        <span class="mx-auto w-fit rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white backdrop-blur-md">
+                            Serving {cityName} & Southwest Florida
+                        </span>
+                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-6xl drop-shadow-sm">
+                            {cityName} {service.name}: {tagline}
+                        </h1>
+                        <h2 class="text-white/90 text-base font-medium leading-relaxed md:text-xl max-w-[640px] mx-auto drop-shadow-sm">
+                            {remodeling_desire}
+                        </h2>
+                    </div>
+                    <div class="flex flex-col gap-3 sm:flex-row">
+                        <button class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-[#ea580c] hover:bg-orange-700 text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg transition-transform hover:scale-105">
+                            <span class="truncate">Get Your Estimate</span>
+                        </button>
+                        <button class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/30 text-base font-bold leading-normal tracking-[0.015em] transition-colors">
+                            <span class="truncate">View Our Portfolio</span>
+                        </button>
+                    </div>
+                    {/* Trust Badges Overlay */}
+                    <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-6 opacity-80">
+                        <div class="flex items-center gap-2 text-white text-xs font-semibold uppercase tracking-wide">
+                            <span class="material-symbols-outlined text-[#ea580c] text-lg">verified_user</span> Licensed & Insured
+                        </div>
+                        <div class="flex items-center gap-2 text-white text-xs font-semibold uppercase tracking-wide">
+                            <span class="material-symbols-outlined text-[#ea580c] text-lg">home_work</span> Local Experts
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {/* Local Context Section */}
+    <div class="w-full bg-[#f8fafe] dark:bg-[#1a222c] py-12 md:py-20">
+        <div class="flex justify-center">
+            <div class="w-full max-w-[1280px] px-4 md:px-10">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="flex flex-col gap-6 lg:w-1/2">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-2">
+                                <div class="h-1 w-12 rounded-full bg-[#1269e2]"></div>
+                                <span class="text-sm font-bold text-[#1269e2] uppercase tracking-wider">Local Context</span>
+                            </div>
+                            <h2 class="text-[#111418] dark:text-white text-3xl font-black leading-tight tracking-[-0.02em] md:text-5xl">
+                                Remodeling for the {cityName} Lifestyle
+                            </h2>
+                            <p class="text-[#4e5d78] dark:text-gray-300 text-lg leading-relaxed">
+                                Designing for {cityName} means understanding coastal climate challenges like humidity and salt air, while meeting the high standards of luxury entertaining.
+                            </p>
+                            <p class="text-[#4e5d78] dark:text-gray-300 text-base leading-relaxed">
+                                We navigate the complexities of {local_building_dept} permits and HOA regulations so you don't have to.
+                            </p>
+                        </div>
+                        <button class="w-fit flex items-center gap-2 text-[#1269e2] font-bold text-lg hover:gap-3 transition-all">
+                            Learn About Our Process <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                    <div class="lg:w-1/2 relative">
+                        <div class="aspect-[4/3] w-full rounded-2xl bg-cover bg-center shadow-2xl" 
+                             style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABgadTg0n-4oxrhu--dBfDFXRVbuudGYGCRmlyRGN2cgO1SpqD1l7CAEW4BS7Mb8VwJ8TSHRE5_xojIKBmwy5EEkNdrzaOCvqVzem4HY-qD7QOrBMgL3jaDW3GUrd_5PMcqQ6y67iZ0jOVX4mVB-PloCAZTSYdekdhNo1pZcVIHkMSTniMfAz_AITxgH5dHaVpHGCH4t9ftssZJGTAOwCbLJQTlMgvEgxmab5M-Vjh9EI5XIRA7oCF1CyQ2RNPHqv4-Gq4B5cXEzI4");'>
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 hidden md:flex flex-col gap-2 rounded-xl bg-white dark:bg-[#1e2732] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] max-w-[280px]">
+                            <div class="flex items-center gap-3">
+                                <div class="grid place-items-center rounded-full bg-blue-100 p-2 text-[#1269e2]">
+                                    <span class="material-symbols-outlined">sunny</span>
+                                </div>
+                                <p class="font-bold text-[#111418] dark:text-white">Climate Ready</p>
+                            </div>
+                            <p class="text-sm text-[#617289] dark:text-gray-400">Materials selected to withstand humidity and coastal conditions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {/* Bento Grid Services */}
+    <div class="w-full bg-white dark:bg-[#111418] py-12 md:py-20">
+        <div class="flex justify-center">
+            <div class="w-full max-w-[1280px] px-4 md:px-10 flex flex-col gap-10">
+                <div class="flex flex-col items-center text-center gap-4">
+                    <h2 class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] md:text-4xl">Our Specialized Services</h2>
+                    <p class="text-[#617289] dark:text-gray-400 max-w-2xl">Tailored renovation solutions for every corner of your {cityName} property.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
+                    {/* Card 1: Main Feature (Dynamic to Service) */}
+                    <div class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-100 p-6 shadow-md transition-all hover:shadow-xl md:col-span-2">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" 
+                             style={`background-image: url("${isKitchen ? 'https://lh3.googleusercontent.com/aida-public/AB6AXuB44qeiOVzcAu2hRN5l625UiYVgEChEd98mxg_6_dZY0JmPzBaRvWb5vfH3jMY07c_5ekPvj2j7EmK_TKwBXBGnTcK3ic-7kAX5_eFCZALV9AWQS3zKwMpWTTPyZARwOCORbncuY4LVjywvJLVnHQidy2TIXWRLY2SHT2TAq9iJffBRlJkYXJnPZRWpOTUSJepAMeg-8LjJBLGI8HFDQsrKeB-Lgi3R8kaX3WpktjA_D8sXnA7TzLNZqplObpvmTfYt69vMJ8kCSQpA' : 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiEiy8YZs7Ig69Nfh1r0kKx5r3UmECqxmz3OJW5rJW9fg1ixUW6moZlDyfp4bH6kzBRLBF7e2_BGdhpZqxDbxUmER70o68ygV-ck_YYZ2WTsKhE1lUh-DyV-xn_8de08hmBZ-egPoPQtWdAOJYWNb-szb4_RVJhi71mTPk-IgW3Ng5biI-mOfW1lfNwnryWRDhJJ6Sp4KIv-rAc09H3WLYj0kGhwKkrIzXptT5USdVN4KMoH3TMtU10xAYOuz1EgJWn8ZaKRbzK9VT'}");`}>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="relative z-10 flex flex-col gap-2">
+                            <div class="w-fit rounded-lg bg-[#ea580c]/90 px-3 py-1 text-xs font-bold text-white uppercase mb-2">Most Popular</div>
+                            <h3 class="text-3xl font-bold text-white">{cityName} Luxury {isKitchen ? 'Kitchens' : 'Bathrooms'}</h3>
+                            <p class="text-white/90 text-lg max-w-md">Custom designs and high-end finishes for the connoisseur.</p>
+                            <a class="mt-2 flex items-center gap-2 font-bold text-white hover:underline" href="#">View Portfolio <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+                        </div>
+                    </div>
+
+                    {/* Card 2: Secondary (The 'Other' Service) */}
+                    <a href={isKitchen ? `/service-areas/${city.slug}/bathroom-remodeling/` : `/service-areas/${city.slug}/kitchen-remodeling/`} class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-100 p-6 shadow-md transition-all hover:shadow-xl">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" 
+                             style={`background-image: url("${isKitchen ? 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiEiy8YZs7Ig69Nfh1r0kKx5r3UmECqxmz3OJW5rJW9fg1ixUW6moZlDyfp4bH6kzBRLBF7e2_BGdhpZqxDbxUmER70o68ygV-ck_YYZ2WTsKhE1lUh-DyV-xn_8de08hmBZ-egPoPQtWdAOJYWNb-szb4_RVJhi71mTPk-IgW3Ng5biI-mOfW1lfNwnryWRDhJJ6Sp4KIv-rAc09H3WLYj0kGhwKkrIzXptT5USdVN4KMoH3TMtU10xAYOuz1EgJWn8ZaKRbzK9VT' : 'https://lh3.googleusercontent.com/aida-public/AB6AXuB44qeiOVzcAu2hRN5l625UiYVgEChEd98mxg_6_dZY0JmPzBaRvWb5vfH3jMY07c_5ekPvj2j7EmK_TKwBXBGnTcK3ic-7kAX5_eFCZALV9AWQS3zKwMpWTTPyZARwOCORbncuY4LVjywvJLVnHQidy2TIXWRLY2SHT2TAq9iJffBRlJkYXJnPZRWpOTUSJepAMeg-8LjJBLGI8HFDQsrKeB-Lgi3R8kaX3WpktjA_D8sXnA7TzLNZqplObpvmTfYt69vMJ8kCSQpA'}");`}>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="relative z-10 flex flex-col gap-2">
+                            <h3 class="text-2xl font-bold text-white">{isKitchen ? 'Spa Retreats' : 'Luxury Kitchens'}</h3>
+                            <p class="text-white/90 text-sm">{isKitchen ? 'Transforming master baths.' : 'Culinary masterpieces.'}</p>
+                        </div>
+                    </a>
+
+                    {/* Card 3: Outdoor Living */}
+                    <div class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-100 p-6 shadow-md transition-all hover:shadow-xl">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAU6_1qRp2Mbpyzby2jIl3GsPeI0hcWKF9GFUJRtlxHSyN5X7EVyQsE6Fon_5nlP5CGTLPaLSdQpcXNMc5RSNnFOliQLl_USryDBjEk31EWDj2UcuLKsL4CZV2zJrTHjXHtFtYqKTMysinl5Y5s9f8BuhRGDJraAZkah9ET8iQiBjPNxqSMAS0ujySQNk7P3FOeo35-2nMMNtQ30O2_DdmAG6VuJAuPi9kQJWi9IBEppxNFKs7hushbCvXyMQ4FTvnn6-iFmgZjpK8n");'>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="relative z-10 flex flex-col gap-2">
+                            <h3 class="text-2xl font-bold text-white">Outdoor Living</h3>
+                            <p class="text-white/90 text-sm">Hurricane-resistant outdoor kitchens.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {/* Technical Authority & Market Data Split */}
+    <div class="w-full bg-[#f0f4f8] dark:bg-[#161e28] py-12 md:py-20">
+        <div class="flex justify-center">
+            <div class="w-full max-w-[1280px] px-4 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                {/* Technical Authority */}
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#1269e2]">gavel</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Compliance & Safety</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-[#111418] dark:text-white">Navigating {cityName} Building Requirements</h2>
+                    <p class="text-[#617289] dark:text-gray-400">Our team handles all permitting, FEMA 50% rule calculations, and condo association approvals.</p>
+                    <div class="flex flex-col gap-3">
+                         {compliance ? compliance.map(item => (
+                             <details class="group rounded-xl bg-white dark:bg-[#1e2732] p-4 shadow-sm open:shadow-md transition-all">
+                                <summary class="flex cursor-pointer list-none items-center justify-between font-bold text-[#111418] dark:text-white">
+                                    <span>{item.title}</span>
+                                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                </summary>
+                                <p class="mt-3 text-sm text-[#617289] dark:text-gray-400 leading-relaxed">{item.content}</p>
+                            </details>
+                         )) : (
+                             // Fallback Content
+                             <details class="group rounded-xl bg-white dark:bg-[#1e2732] p-4 shadow-sm open:shadow-md transition-all">
+                                <summary class="flex cursor-pointer list-none items-center justify-between font-bold text-[#111418] dark:text-white">
+                                    <span>{cityName} Permitting Process</span>
+                                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                </summary>
+                                <p class="mt-3 text-sm text-[#617289] dark:text-gray-400 leading-relaxed">
+                                    We work directly with {local_building_dept} to expedite approvals.
+                                </p>
+                            </details>
+                         )}
+                    </div>
+                </div>
+
+                {/* Market Data Widget */}
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#1269e2]">trending_up</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Market Insights</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-[#111418] dark:text-white">Why Renovate in {cityName} Now?</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-[#1e2732] p-6 shadow-sm border-l-4 border-[#1269e2]">
+                            <span class="text-4xl font-black text-[#111418] dark:text-white">{roi}</span>
+                            <span class="text-sm font-medium text-[#617289] dark:text-gray-400">Average ROI</span>
+                        </div>
+                        <div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-[#1e2732] p-6 shadow-sm border-l-4 border-[#ea580c]">
+                            <span class="text-4xl font-black text-[#111418] dark:text-white">{valueIncrease}</span>
+                             <span class="text-sm font-medium text-[#617289] dark:text-gray-400">Value Increase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {/* Social Proof (Bypass mapping for now, keeping static high quality layout but with city name injection if needed) */}
+    <div class="w-full bg-white dark:bg-[#111418] py-12 md:py-20">
+        <div class="flex justify-center">
+            <div class="w-full max-w-[1280px] px-4 md:px-10 flex flex-col gap-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] mb-4">Trusted by Neighbors in {local_service_radius || cityName}</h2>
+                    <div class="flex justify-center gap-1 text-yellow-400 mb-2">
+                        <span class="material-symbols-outlined fill-current">star</span>
+                        <span class="material-symbols-outlined fill-current">star</span>
+                        <span class="material-symbols-outlined fill-current">star</span>
+                        <span class="material-symbols-outlined fill-current">star</span>
+                        <span class="material-symbols-outlined fill-current">star</span>
+                    </div>
+                    <p class="text-[#617289] dark:text-gray-400">5-Star Rated on Google Business Profile</p>
+                </div>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex flex-col justify-between rounded-xl bg-[#f8fafe] dark:bg-[#1a222c] p-8">
+                        <div class="flex flex-col gap-4">
+                            <span class="material-symbols-outlined text-4xl text-[#1269e2]/40">format_quote</span>
+                            <p class="text-[#111418] dark:text-gray-200 font-medium text-lg leading-relaxed">"The team at Paramount understood exactly what we wanted for our condo. They navigated the HOA rules flawlessly and delivered a stunning kitchen."</p>
+                        </div>
+                        <div class="mt-6 flex items-center gap-3">
+                            <div class="h-10 w-10 rounded-full bg-gray-300 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8HaCtk2ZE7mx5CUghEEGUCA-ZiRx52cny_tpO8rWFHgDZTeik6Gj8sHQj4_xnULfYm1z-xJ57s8OOqDcdTuH178PpQ_jYhs_QfZXkm28i_Ig6Sui8OEBDfbwceBp9Wl5PqbCZ87iLmn8ZXaFHHipj9lYkzJ9K7-R0v_oEuOjF8va6UvB81EwwifbCEepWZuXu8lSqTnzoudoYWEN7kDL3IE2_0oddCdGkeswkE1NOpJ4J2v8xeDojR057n3PPAmI8lWrZ3_jICEk5");'></div>
+                            <div>
+                                <p class="font-bold text-[#111418] dark:text-white">Sarah Jenkins</p>
+                                <p class="text-sm text-[#617289] dark:text-gray-400">{cityName} Resident</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-between rounded-xl bg-[#f8fafe] dark:bg-[#1a222c] p-8 shadow-lg ring-1 ring-[#1269e2]/10">
+                        <div class="flex flex-col gap-4">
+                            <span class="material-symbols-outlined text-4xl text-[#1269e2]/40">format_quote</span>
+                            <p class="text-[#111418] dark:text-gray-200 font-medium text-lg leading-relaxed">"We needed a full restoration after the last hurricane season. Paramount not only restored our kitchen but made it more resilient and beautiful than before."</p>
+                        </div>
+                        <div class="mt-6 flex items-center gap-3">
+                            <div class="h-10 w-10 rounded-full bg-gray-300 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAiw-bQnZtAp3KOKIwCPcSL_pZQQ-MlXrj1TRpqRkvuWRU-Rke4p4Jy6tCbV3zWfR6aNNinQXJEtuDoQ4B1Wo_fEeGq9K_VvM2Az4Bdu4AKgSe2-iwrMS6JhwZ_4KoCROkJ_NeQr9zgXX29QPNIY224hcAB7O4jkE4AiGmCcujHto13ugVOEDfSOF-NnbhglAttxzT8T22SWwx_KSts_sTP_zFx2zEMYioxjWRusGT0UvRHGcowwmCdaxTnMV1DP8pcgBsnVXSBx0wG");'></div>
+                            <div>
+                                <p class="font-bold text-[#111418] dark:text-white">Michael & Elena R.</p>
+                                <p class="text-sm text-[#617289] dark:text-gray-400">Local Homeowners</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="flex flex-col justify-between rounded-xl bg-[#f8fafe] dark:bg-[#1a222c] p-8">
+                        <div class="flex flex-col gap-4">
+                            <span class="material-symbols-outlined text-4xl text-[#1269e2]/40">format_quote</span>
+                            <p class="text-[#111418] dark:text-gray-200 font-medium text-lg leading-relaxed">"Professional, clean, and on time. The permitting process was a breeze thanks to their local knowledge. Highly recommend for any high-end work."</p>
+                        </div>
+                        <div class="mt-6 flex items-center gap-3">
+                            <div class="h-10 w-10 rounded-full bg-gray-300 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9MO0oh2uo-YfeY2H9ACaxZheB9eDcpBOWGkKZOf-rg3DmlrHwqfmmd0PztaWR7oKFYv9rQqxVNTNSgYb3qWzeEC3O4jXJEucNPY2PE0wS6K5EYKgujeNzL19lHZqvCgvfmaO0BnFw3-r2B9p6nPPWTIZ4rBJy6n9tWa50-NIFw19jl5CmTYbhs8WcqcawKPPn_GUs_3wmWlC_MpOWL_OYkoqYO4hjXrn6igoY8_XNJ3Dah1WLmzJQZHW8wukzncyh1v4pHyVfwIze");'></div>
+                            <div>
+                                <p class="font-bold text-[#111418] dark:text-white">David Thompson</p>
+                                <p class="text-sm text-[#617289] dark:text-gray-400">Real Estate Investor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {/* FAQ Section */}
+    <div class="w-full bg-[#f8fafe] dark:bg-[#161e28] py-12 md:py-20">
+        <div class="flex justify-center">
+            <div class="w-full max-w-[800px] px-4 md:px-10 flex flex-col gap-10">
+                <h2 class="text-center text-[#111418] dark:text-white text-3xl font-bold">Frequently Asked Questions</h2>
+                <div class="flex flex-col gap-4">
+                    <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e2732] overflow-hidden">
+                        <button class="flex w-full items-center justify-between p-6 text-left font-bold text-[#111418] dark:text-white text-lg">
+                            Do I need a permit for a {isKitchen ? 'kitchen' : 'bathroom'} remodel in {cityName}?
+                            <span class="material-symbols-outlined text-[#1269e2]">add_circle</span>
+                        </button>
+                        <div class="px-6 pb-6 text-[#617289] dark:text-gray-400">
+                            Yes, almost all renovations in {cityName} that involve electrical, plumbing, or structural changes require a permit. We handle the entire permitting process for you to ensure compliance with {local_building_dept} codes.
+                        </div>
+                    </div>
+                    {/* More FAQs can be localized similarly */}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {/* Call to Action Banner */}
+    <div class="w-full bg-[#1269e2] py-16">
+        <div class="flex justify-center">
+            <div class="w-full max-w-[1280px] px-4 md:px-10 flex flex-col items-center text-center gap-6">
+                <h2 class="text-white text-3xl md:text-5xl font-black tracking-tight max-w-3xl">Ready to Transform Your {cityName} Home?</h2>
+                <p class="text-blue-100 text-lg max-w-2xl">Schedule your complimentary consultation today and let's start designing your dream {isKitchen ? 'kitchen' : 'space'}.</p>
+                <button class="mt-4 flex min-w-[220px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-8 bg-[#ea580c] hover:bg-orange-600 shadow-xl text-white text-lg font-bold transition-all hover:scale-105">
+                     Get Your Free Estimate
+                </button>
+            </div>
+        </div>
+    </div>
+
+</MainLayout>

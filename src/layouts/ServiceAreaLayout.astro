@@ -9,9 +9,25 @@ interface Props {
   description?: string;
   themeColor?: string;
   accentColor?: string;
+  // pSEO Props
+  city?: string;
+  serviceName?: string;
+  noindex?: boolean;
+  customSchema?: any;
+  faqItems?: { question: string; answer: string }[];
 }
 
-const { title, description, themeColor = "#0f172a", accentColor = "#f97316" } = Astro.props;
+const { 
+  title, 
+  description, 
+  themeColor = "#0f172a", 
+  accentColor = "#f97316",
+  city,
+  serviceName,
+  noindex,
+  customSchema,
+  faqItems
+} = Astro.props;
 
 // Defined explicitly to inject into :root for this page scope
 const cssVariables = `
@@ -37,8 +53,12 @@ const cssVariables = `
     <SEO 
       title={title} 
       description={description || `Professional restoration services in ${title}`}
-      type="service"
       schemaType="Service"
+      city={city}
+      serviceName={serviceName}
+      noindex={noindex}
+      customSchema={customSchema}
+      faqData={faqItems}
     />
 
     <!-- Fonts -->

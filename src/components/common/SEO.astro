@@ -1,39 +1,55 @@
 ---
-import { Astro } from 'astro';
-
-interface Props {
+export interface Props {
   title: string;
   description: string;
   image?: string;
-  type?: 'website' | 'article' | 'service';
-  schemaType?: 'Service' | 'Article' | 'FAQPage';
-  faqItems?: { question: string; answer: string }[];
-  customSchema?: any;
+  canonical?: string;
+  noindex?: boolean;
+  // Variables para Schema Dinámico
+  schemaType?: 'LocalBusiness' | 'Service' | 'Article' | 'FAQPage';
+  city?: string; // Para pSEO (ej: "Orlando")
+  serviceName?: string; // Para pSEO (ej: "Water Damage Restoration")
+  publishDate?: string; // Para Blogs
+  authorName?: string; // Para Blogs
+  faqData?: { question: string; answer: string }[]; // Para FAQs
+  customSchema?: any; // Fallback for custom injections
+  type?: 'LocalBusiness' | 'Service' | 'Article' | 'FAQPage'; // Backwards compatibility alias for schemaType
 }
 
 const {
   title,
   description,
-  image = '/ppr-logo.png', // Default image
-  type = 'website',
-  schemaType,
-  faqItems = [],
-  customSchema
+  image = '/ppr-logo.png', // Corrected default image path
+  canonical,
+  noindex = false,
+  schemaType = 'LocalBusiness',
+  city,
+  serviceName,
+  publishDate,
+  authorName = 'Paramount Property Restoration Team',
+  faqData = [],
+  customSchema,
+  type
 } = Astro.props;
 
-const siteURL = Astro.site ? Astro.site.origin : 'https://paramountpropertyrestoration.com'; 
-const canonicalURL = new URL(Astro.url.pathname, siteURL);
-// Ensure trailing slash consistency if needed, but standardizing on what Astro provides
-// Usually efficient to just use Astro.url.href but user requested strict canonicals.
+// Map legacy 'type' prop to schemaType if schemaType is default/unset but type is present
+// Note: schemaType default is 'LocalBusiness', so we check if type is provided to override
+const effectiveSchemaType = type || schemaType;
+
+// 1. Construcción de URLs Absolutas (Crítico para SEO y OpenGraph)
+const siteURL = Astro.site ? Astro.site.origin : 'https://paramountpropertyrestoration.com';
+const canonicalURL = canonical || new URL(Astro.url.pathname, siteURL).href;
 const absoluteImage = new URL(image, siteURL).href;
 
-// Global Organization Schema
+// 2. Base del Schema: Organización Global (Siempre presente para E-E-A-T)
 const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "GeneralContractor", // Más específico que LocalBusiness
+  "@id": `${siteURL}/#organization`,
   "name": "Paramount Property Restoration",
-  "image": new URL('/ppr-logo.png', siteURL).href,
-  "telephone": "(786) 602-2217",
+  "url": siteURL,
+  "logo": `${siteURL}/ppr-logo.png`, // Corrected path
+  "image": `${siteURL}/ppr-logo.png`, // Corrected path
+  "telephone": "+1-786-602-2217",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "10890 NW 17th St Suite 138",
@@ -42,65 +58,109 @@ const organizationSchema = {
     "postalCode": "33172",
     "addressCountry": "US"
   },
-  "url": siteURL,
-  "areaServed": [
-    "Orlando", "Miami", "Tampa", "Fort Lauderdale", "Fort Myers" 
-    // Add more major cities as needed
-  ],
-  "priceRange": "$$"
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 25.790654, 
+    "longitude": -80.370327
+  },
+  "license": "CGC #1529606", // Crítico para confianza en construcción
+  "sameAs": [
+    "https://www.facebook.com/paramountpropertyrestoration",
+    "https://www.linkedin.com/company/paramount-property-restoration"
+  ]
 };
 
-// Dynamic Schema Generation
-let pageSchema: any = null;
+// 3. Generación Dinámica del Schema de la Página
+let mainEntitySchema;
 
-if (schemaType === 'Service') {
-  pageSchema = {
+if (effectiveSchemaType === 'Service' && serviceName) {
+  // Schema para Páginas de Servicio y pSEO (Ciudades)
+  mainEntitySchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": title,
-    "provider": organizationSchema,
-    "description": description,
-    "areaServed": {
-       "@type": "State",
-       "name": "Florida"
+    "provider": { "@id": `${siteURL}/#organization` },
+    "areaServed": city ? {
+      "@type": "City",
+      "name": city,
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      }
+    } : {
+      "@type": "State",
+      "name": "Florida"
     },
+    "description": description,
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Restoration Services",
+      "name": serviceName,
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": title
+            "name": `${serviceName} in ${city || 'Florida'}`
           }
         }
       ]
     }
   };
-} else if (schemaType === 'Article') {
-    // Basic Article Schema implementation
-    pageSchema = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": title,
-        "image": absoluteImage,
-        "author": {
-            "@type": "Organization",
-            "name": "Paramount Property Restoration"
-        },
-        "publisher": organizationSchema,
-        "datePublished": new Date().toISOString() // Ideally passed as prop
-    };
+} else if (effectiveSchemaType === 'Article') {
+  // Schema para Blog (Potencia E-E-A-T y "Article" Rich Results)
+  mainEntitySchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "image": absoluteImage,
+    "author": {
+      "@type": "Person",
+      "name": authorName
+    },
+    "publisher": { "@id": `${siteURL}/#organization` },
+    "datePublished": publishDate,
+    "description": description
+  };
+} else {
+  // Fallback a LocalBusiness (Home y páginas generales)
+  mainEntitySchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${siteURL}/#organization`,
+    "name": title,
+    "description": description
+  };
 }
 
-// FAQ Schema
-let faqSchema: any = null;
-if (faqItems.length > 0) {
+// 4. Schema de Breadcrumbs (Migas de Pan) - Vital para Jerarquía y UX
+// Basic implementation - can be enhanced to parsing URL segments dynamically if needed
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": siteURL
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": title,
+      "item": canonicalURL
+    }
+  ]
+};
+
+// 5. Schema de FAQ (Si hay datos)
+let faqSchema = null;
+if (faqData.length > 0) {
   faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
+    "mainEntity": faqData.map(item => ({
       "@type": "Question",
       "name": item.question,
       "acceptedAnswer": {
@@ -113,44 +173,54 @@ if (faqItems.length > 0) {
 ---
 
 <!-- Global Metadata -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="generator" content={Astro.generator} />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/png" href="/ppr-icon.png" />
 
-<!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL.href} />
-
-<!-- Primary Meta Tags -->
+<!-- SEO Tags Principales -->
 <title>{title}</title>
-<meta name="title" content={title} />
 <meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Control de Robots -->
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+{!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content={type} />
-<meta property="og:url" content={canonicalURL.href} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={absoluteImage} />
+<meta property="og:site_name" content="Paramount Property Restoration" />
+<meta property="og:locale" content="en_US" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL.href} />
+<meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={absoluteImage} />
 
-<!-- Schemas -->
-<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<!-- Inyección de JSON-LD Schemas -->
+<!-- 1. Organization Global -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  ...organizationSchema
+})} />
 
-{pageSchema && (
-  <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
-)}
+<!-- 2. Main Entity (Service/Article) -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify(mainEntitySchema)} />
 
+<!-- 3. Breadcrumbs -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<!-- 4. FAQ (Condicional) -->
 {faqSchema && (
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 )}
 
+<!-- 5. Custom Schema (Fallback) -->
 {customSchema && (
-  <script type="application/ld+json" set:html={JSON.stringify(customSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(customSchema)} />
 )}

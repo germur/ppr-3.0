@@ -1,5 +1,5 @@
 ---
-import ResourcesLayout from '../../../layouts/ResourcesLayout.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -23,7 +23,7 @@ const relatedPosts = allPosts
     .slice(0, 3);
 ---
 
-<ResourcesLayout title={post.data.title}>
+<MainLayout title={post.data.title}>
   <div class="bg-white dark:bg-slate-900 min-h-screen">
     
     <!-- Reading Progress Bar -->
@@ -130,4 +130,4 @@ const relatedPosts = allPosts
           }
       });
   </script>
-</ResourcesLayout>
+</MainLayout>

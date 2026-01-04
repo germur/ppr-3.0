@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import RemodelingPage from '../../../components/pages/RemodelingPage.astro';
+
+
+import WaterTemplate from '../../../components/templates/WaterTemplate.astro';
+import FireTemplate from '../../../components/templates/FireTemplate.astro';
+import MoldTemplate from '../../../components/templates/MoldTemplate.astro';
+import StormTemplate from '../../../components/templates/StormTemplate.astro';
+import '../../../styles/global.css';
+
+export async function getStaticPaths() {
+  const cities = await getCollection('cities');
+  
+  const services = [
+    { slug: 'water-damage-restoration', type: 'restoration', name: 'Water Damage Restoration' },
+    { slug: 'fire-damage-restoration', type: 'restoration', name: 'Fire Damage Restoration' },
+    { slug: 'mold-remediation', type: 'restoration', name: 'Mold Remediation' },
+    { slug: 'storm-damage-repair', type: 'restoration', name: 'Storm Damage Repair' },
+    { slug: 'kitchen-remodeling', type: 'remodeling', name: 'Kitchen Remodeling' },
+    { slug: 'bathroom-remodeling', type: 'remodeling', name: 'Bathroom Remodeling' },
+    { slug: 'commercial-renovation', type: 'commercial', name: 'Commercial Renovation' }
+  ] as const;
+
+  return cities.flatMap(city => {
+    return services.map(service => ({
+      params: { 
+        city: city.slug,
+        service: service.slug 
+      },
+      props: { city, service },
+    }));
+  });
+}
+
+const { city, service } = Astro.props;
+const { name: cityName, restoration_pain } = city.data;
+
+const isRemodeling = service.type === 'remodeling';
+
+
+---
+
+{isRemodeling ? (
+  <RemodelingPage city={city} service={service} />
+) : (
+  <MainLayout 
+    title={`${service.name} ${cityName} | Paramount Property Restoration`}
+    description={`Professional ${service.name} services in ${cityName}. 24/7 Emergency Response, Licensed & Insured. ${restoration_pain.substring(0, 100)}...`}
+    city={cityName}
+    serviceName={service.name}
+    schemaType="Service"
+  >
+    {service.slug === 'water-damage-restoration' && <WaterTemplate city={city} />}
+    {service.slug === 'fire-damage-restoration' && <FireTemplate city={city} />}
+    {service.slug === 'mold-remediation' && <MoldTemplate city={city} />}
+    {service.slug === 'storm-damage-repair' && <StormTemplate city={city} />}
+  </MainLayout>
+)}

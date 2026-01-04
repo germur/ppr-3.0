@@ -1,5 +1,5 @@
 ---
-import ResourcesLayout from '../../../layouts/ResourcesLayout.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -24,7 +24,7 @@ const formattedTitle = category.split('-').map(word => word.charAt(0).toUpperCas
 const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<ResourcesLayout title={`${formattedTitle} | Resources`}>
+<MainLayout title={`${formattedTitle} | Resources`}>
   <div class="bg-gray-50 dark:bg-slate-900 min-h-screen pb-20">
     
     <!-- Header -->
@@ -78,4 +78,4 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
       </div>
     </main>
   </div>
-</ResourcesLayout>
+</MainLayout>

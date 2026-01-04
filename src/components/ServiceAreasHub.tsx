@@ -44,12 +44,21 @@ const regions = [
     }
 ];
 
-export default function ServiceAreasHub() {
+interface City {
+    name: string;
+    slug: string;
+    radius?: string;
+}
+
+export default function ServiceAreasHub({ cities = [] }: { cities?: City[] }) {
     const [searchTerm, setSearchTerm] = useState("");
+
+    const filteredCities = cities.filter(city =>
+        city.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
-        // In a real implementation, this would filter a list of cities and show a dropdown
     };
 
     return (
@@ -61,7 +70,7 @@ export default function ServiceAreasHub() {
                     From the Gulf Coast to the Atlantic, our fleets are positioned for 60-minute emergency response.
                 </p>
 
-                {/* Visual Map Placeholder - Can be replaced with an SVG or Image later */}
+                {/* Visual Map Placeholder */}
                 <div className="w-full h-48 bg-slate-100 rounded-2xl flex items-center justify-center mb-12 border border-slate-200">
                     <p className="text-slate-400 flex items-center gap-2">
                         <MapPin className="w-6 h-6" /> Florida Service Map Visualization
@@ -76,23 +85,23 @@ export default function ServiceAreasHub() {
                     <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-6 h-6" />
                     <input
                         type="text"
-                        placeholder="Enter your city or zip code..."
+                        placeholder="Enter your city (e.g. Naples)..."
                         className="w-full pl-12 pr-4 py-4 rounded-full border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg shadow-sm"
                         value={searchTerm}
                         onChange={handleSearch}
                     />
                     {searchTerm && (
-                        <div className="absolute top-16 left-0 w-full bg-white shadow-xl rounded-xl border border-slate-100 p-4 z-10">
-                            <p className="text-sm text-slate-500 mb-2">Suggested Locations:</p>
+                        <div className="absolute top-16 left-0 w-full bg-white shadow-xl rounded-xl border border-slate-100 p-4 z-10 max-h-60 overflow-y-auto">
+                            <p className="text-sm text-slate-500 mb-2">Service Locations:</p>
                             <ul>
-                                <a href="/service-areas/central-florida/kissimmee/" className="block p-2 hover:bg-slate-50 rounded cursor-pointer flex justify-between items-center group/item transition-colors">
-                                    <span className="font-medium text-slate-700">Kissimmee <span className="text-slate-400 font-normal">(Central Florida)</span></span>
-                                    <ArrowRight className="w-4 h-4 text-blue-500 opacity-0 group-hover/item:opacity-100" />
-                                </a>
-                                <a href="/service-areas/south-florida/key-biscayne/" className="block p-2 hover:bg-slate-50 rounded cursor-pointer flex justify-between items-center group/item transition-colors">
-                                    <span className="font-medium text-slate-700">Key Biscayne <span className="text-slate-400 font-normal">(South Florida)</span></span>
-                                    <ArrowRight className="w-4 h-4 text-blue-500 opacity-0 group-hover/item:opacity-100" />
-                                </a>
+                                {filteredCities.length > 0 ? filteredCities.map((city) => (
+                                    <a key={city.slug} href={`/service-areas/${city.slug}/`} className="block p-2 hover:bg-slate-50 rounded cursor-pointer flex justify-between items-center group/item transition-colors">
+                                        <span className="font-medium text-slate-700">{city.name}</span>
+                                        <ArrowRight className="w-4 h-4 text-blue-500 opacity-0 group-hover/item:opacity-100" />
+                                    </a>
+                                )) : (
+                                    <li className="p-2 text-slate-400 text-sm">No locations found. We might still serve you, call us!</li>
+                                )}
                             </ul>
                         </div>
                     )}

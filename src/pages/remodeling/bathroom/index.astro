@@ -1,0 +1,434 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+const pageTitle = "Luxury Bathroom Remodeling & Spa Renovations | Paramount Property Restoration";
+const metaDesc = "Sanctuaries designed for Florida's climate. Experience the fusion of high-end aesthetics and industrial-grade waterproofing durability. Licensed CGC #1529606.";
+
+const bathroomSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Bathroom Remodeling",
+  "provider": {
+    "@type": "GeneralContractor",
+    "name": "Paramount Property Restoration",
+    "url": "https://paramountpropertyrestoration.com"
+  },
+  "areaServed": "Florida",
+  "description": metaDesc,
+  "serviceType": "Residential Remodeling",
+   "offer": {
+    "@type": "Offer",
+    "name": "Luxury Bathroom Renovation"
+  }
+};
+---
+
+<MainLayout title={pageTitle} description={metaDesc} customSchema={bathroomSchema}>
+    
+    <!-- Inject Fonts into Head -->
+    <fragment slot="head">
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    </fragment>
+
+    <!-- Local Styles -->
+    <style>
+        .font-display {
+            font-family: 'Manrope', sans-serif;
+        }
+        
+        /* Custom styles for before/after slider handle */
+        .slider-handle {
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Hide scrollbar for horizontal scroll areas */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+       /* Override primary/secondary colors locally as requested */
+       :global(.text-primary) { color: #1269e2; }
+       :global(.bg-primary) { background-color: #1269e2; }
+       :global(.border-primary) { border-color: #1269e2; }
+       :global(.bg-secondary) { background-color: #FF6B00; }
+       :global(.text-secondary) { color: #FF6B00; }
+    </style>
+
+    <div class="font-display">
+        <!-- Hero Section with Before/After Concept -->
+        <div class="relative w-full overflow-hidden bg-[#101822]">
+            <div class="absolute inset-0 z-0 opacity-40">
+                <!-- Abstract background pattern/image -->
+                <div class="w-full h-full bg-cover bg-center" data-alt="Luxury dark bathroom interior blurred background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPGHYLp2bpObrbBqH6F6AQzv_jWC6vmBi2ZznueiYEDNBtEXWOOFgCsYX5qNdeRsPh8pbXwWrwPGzSca0vpGI-A_Pvj6bbmcQQ_nsiaqZhj61UMfgnFf4KqLQDxJDObFNvRSLlRuASoiQMSobm21h9eZ2TptldbmY42LI7sraokZjFCLSpK_YAFdzHK5UGBxFDthIeKced8T63dvVfHKY1KEOHvqB5qz224e3_0r9zIYBx12Xh-hfQ2vqoMWvt1ODWnj-VsRaYrHCT");'></div>
+            </div>
+            <div class="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="flex flex-col gap-6 text-white animate-fade-in-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 w-fit backdrop-blur-sm border border-white/20">
+                        <span class="w-2 h-2 rounded-full bg-[#FF6B00]"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider">Florida's Premier Remodeler</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                        Luxury Bathroom Remodeling & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white">Spa Renovations</span>
+                    </h1>
+                    <p class="text-gray-300 text-lg max-w-xl leading-relaxed">
+                        Sanctuaries designed for Florida's climate. Experience the fusion of high-end aesthetics and industrial-grade waterproofing durability.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                        <button class="flex items-center justify-center gap-2 bg-[#FF6B00] hover:bg-orange-600 text-white font-bold h-12 px-8 rounded-lg transition-all shadow-lg shadow-orange-500/20">
+                            <span>Request Design Consultation</span>
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                        <button class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold h-12 px-6 rounded-lg transition-all border border-white/20">
+                            <span class="material-symbols-outlined">play_circle</span>
+                            <span>Watch Transformation</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-4 mt-4 pt-4 border-t border-white/10">
+                        <div class="flex -space-x-3">
+                            <img alt="Customer avatar" class="w-10 h-10 rounded-full border-2 border-[#101822]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9pZeD8_GBAGAV6etuPRm3kCCR0v_-zMrsZHMmKFMzJOLoPJ6lSnV5odvrYGz8CsRGGkJu6I3XWPvuSmhkQCloNEd7y_k3nF1GHnXm0YZg3mSYUs8LUVZOhzgTGxw5HvascCOxOHtXs65U0RlpKrAaVYsePU4Kabnzainss3eyUpzEzIqTxQr-xSJ-XsUyT-fNNm0GNW8l4RM_JeAmnrSwb-5sdHQPMYFDkdxEaGB-9yFHCrBdAapF_WEGeFs0zpRtMLOqUSPu9Dyl"/>
+                            <img alt="Customer avatar" class="w-10 h-10 rounded-full border-2 border-[#101822]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8I2i5FBgIwy-rOjX5Uzyuv6UraJfEQy_ikxXTbhEctgp8HPFB8C4VPPGYEiymkK9mtdeYHHP4_ShjSdyWG16RpoqUGmFROmfq4lvxuFjRSPMOrhIDKmZlE2dgYaJqvx_3duew052OZm15pu5aYue9q2R-BPNEqm_1T9-8XPw9kBjPVcYXMYbx3kxdR09M7YJxNPkFlFbQsKMLWhLyMR4bvuVdES-DEFD1T_fib4yxOP_4g0mfeSm1nuSL6An7q2vJqdt9Wv84ia0n"/>
+                            <img alt="Customer avatar" class="w-10 h-10 rounded-full border-2 border-[#101822]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHrR2ub_DjU0l84psNP9CY2fEyqO2rl7OCv_f834aApXVacUNYo5KBwPuHuk5GFYJGwXX2yba83riI5R6ouoSyi3UD_VWrF3qIVIFw9ggl_MXzjmrhtMnFIzcu472mcdrcdbfe2cMZe4xGKa4LL4uR7kC-Rs6YVhV4hQfQ3HqSXNi3it9O_11Awspm8O-wEo-NBfHD8cW_8y1VZZZ4vL_kF5U9ujmjwXGMDGqm4BGTNk7AderWpdwoIjjADcfrn2Ng_IrLM_y2aL9-"/>
+                        </div>
+                        <div class="text-sm">
+                            <div class="flex text-yellow-400 text-[16px]">
+                                <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+                                <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+                                <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+                                <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+                                <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+                            </div>
+                            <span class="text-gray-400">Trusted by 500+ Florida Homeowners</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Interactive Before/After Card -->
+                <div class="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 group cursor-ew-resize select-none" id="ba-slider">
+                    <!-- After Image (Background) -->
+                    <div class="absolute inset-0 bg-cover bg-center" data-alt="Modern luxury bathroom with white marble and glass shower" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjvK7_2xcpwWPklXAU7u3xfwta6HVXOJYluDVmEQamQDhjic6zmzU04SvQ5ist10P3s0ivsoMUVxUCxriJWR0HaIbA_qNvoN1GuRCmm1I1DP4Kx346ZFV9Ygw_tUCABJU4Efe2gQuk156OzYUI3ZOkH9I1iv3IeexbnUfTd8YtXYNuPfakoS9dQdAzbtNiybXQDWChMZAyfU4Gg2a32L52t1BRdhtqXezjWf8XtZZcOKIX_ih3gz1AYWzOA4FTyBonjKL3J9Hrp5sh");'></div>
+                    <!-- Before Image (Clipped) -->
+                    <div class="absolute inset-0 bg-cover bg-center border-r-4 border-white shadow-[5px_0_20px_rgba(0,0,0,0.5)]" id="ba-before" data-alt="Old outdated bathroom with dated tiles" style='width: 50%; background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKax6rrtXIfhWmYU4H3tjaMLwYhoVS_eRsUWMZTBK4_jZ7zUHypvvD6rNbq3fQnSHAD3HRTvug0mk49bWvICbtPFlP-J5II9kVrad47b8-Oan22Vv33GtwiRtfFQzV7xAkpfDPvYvoLlwbHN0ZvpUWR2mSx3Fd1Zu-RFwEHEisbWHGwvPZzZTcTWnplXBb8-_zGtfvBHCoAPmU89PcHEgo_VrBwhxbtUMqRZ1aZH5jfBoxgvSrgRicvMrGWttSPFbfcCMQJOAdVWOG");'>
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white px-3 py-1 rounded text-xs font-bold tracking-wider whitespace-nowrap">BEFORE</div>
+                    </div>
+                    <!-- Labels -->
+                    <div class="absolute top-4 right-4 bg-[#1269e2]/80 backdrop-blur-sm text-white px-3 py-1 rounded text-xs font-bold tracking-wider pointer-events-none">AFTER</div>
+                    <!-- Slider Handle -->
+                    <div class="absolute inset-y-0 w-11 flex items-center justify-center pointer-events-none" id="ba-handle" style="left: 50%; margin-left: -22px;">
+                        <div class="w-11 h-11 bg-white rounded-full flex items-center justify-center shadow-[0_4px_14px_rgba(0,0,0,0.3)] z-20">
+                            <span class="material-symbols-outlined text-[#1269e2] font-bold">code</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent pointer-events-none fade-out-on-interaction">
+                        <p class="text-white text-sm font-medium">Drag to see the transformation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Authority Block: The Science -->
+        <section class="py-20 bg-white dark:bg-[#111418]">
+            <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-5 flex flex-col gap-6">
+                        <div class="flex items-center gap-2 text-[#1269e2] font-bold tracking-wider uppercase text-sm">
+                            <span class="material-symbols-outlined">science</span>
+                            <span>Technical Expertise</span>
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-black text-[#111418] dark:text-white leading-tight">
+                            Beyond the Surface: The Science of a Florida Bathroom
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                            In Florida's humid climate, luxury means nothing without resilience. Leveraging our deep background in restoration, we build bathrooms that withstand humidity and prevent mold using industrial-grade systems.
+                        </p>
+                        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-100 dark:border-blue-800/50 flex gap-4 mt-4">
+                            <div class="bg-[#1269e2]/10 p-3 rounded-full h-fit">
+                                <span class="material-symbols-outlined text-[#1269e2]">verified_user</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#111418] dark:text-white mb-1">Lifetime Waterproofing Warranty</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">We stand behind our installations with industry-leading guarantees on all wet-area waterproofing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 grid md:grid-cols-2 gap-6">
+                        <!-- Feature Card 1 -->
+                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#1269e2]/20 transition-all hover:shadow-lg">
+                            <div class="bg-white dark:bg-gray-800 w-14 h-14 rounded-xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-[#1269e2] text-3xl">water_drop</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Industrial Waterproofing</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Advanced Schluter® & Kerdi systems create a completely watertight seal for wet rooms, surpassing standard code requirements.</p>
+                        </div>
+                        <!-- Feature Card 2 -->
+                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#1269e2]/20 transition-all hover:shadow-lg">
+                            <div class="bg-white dark:bg-gray-800 w-14 h-14 rounded-xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-[#1269e2] text-3xl">health_and_safety</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Mold Prevention</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Zero-organic-matter substrates and mold-resistant drywall ensure hidden damage never compromises your investment.</p>
+                        </div>
+                        <!-- Feature Card 3 -->
+                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#1269e2]/20 transition-all hover:shadow-lg">
+                            <div class="bg-white dark:bg-gray-800 w-14 h-14 rounded-xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-[#1269e2] text-3xl">thermostat</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Climate Durability</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Materials and sealants specifically selected to endure the extreme heat cycles and humidity of Central & South Florida.</p>
+                        </div>
+                        <!-- Feature Card 4 -->
+                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#1269e2]/20 transition-all hover:shadow-lg">
+                            <div class="bg-white dark:bg-gray-800 w-14 h-14 rounded-xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-[#1269e2] text-3xl">plumbing</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">High-Flow Drainage</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Linear drains and precision grading for rapid water evacuation in large format rain-head showers and wet rooms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Bento Grid -->
+        <section class="py-20 bg-[#f6f7f8] dark:bg-[#101822]">
+            <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-black text-[#111418] dark:text-white mb-4">Design Features & Capabilities</h2>
+                    <p class="text-gray-600 dark:text-gray-400">From spa-inspired wet rooms to intelligent vanity systems.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+                    <!-- Card 1: Large Feature -->
+                    <div class="md:col-span-2 row-span-2 relative group overflow-hidden rounded-2xl">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Expansive wet room with rainfall shower and marble walls" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMDONgacwkyPUuS_9Ey4VSAvHmrrVNhbQ_hUIfhJaky_kPuHX_J9Ju1td30I35-8ogjznOhVOaKb0Co6uHLB9InAw6ba2FnYxoGZ7sOjv-99qpk1w_-OWrxxY8UmPjH8Dek_D9UFy7HBLo-Jfpn7LLWSIQrnvHOCDi7JP7tWWkRDttdAqqj5Yn903ruXVwN7ZqiATZM_iBfncnZmoOlm271VKB2dYqdX01pzb5BhhtUZ8cFnZk33C7JvOCez0K00GzgNy54iJg0fAP");'></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-8">
+                            <div class="bg-[#1269e2]/90 text-white text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">TRENDING</div>
+                            <h3 class="text-3xl font-bold text-white mb-2">Wet Rooms & Walk-in Showers</h3>
+                            <p class="text-gray-200 max-w-lg">Seamless, curbless designs that expand your space. Featuring linear drains and frameless glass for maximum accessibility and modern style.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="relative group overflow-hidden rounded-2xl bg-white dark:bg-gray-800">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-100 group-hover:opacity-40" data-alt="Modern freestanding bathtub near a window" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKhjz9lICOWt-Rc08A5g0lUcT_XlO0KWltPfqvSWJLTikv5vZgM_zhVDCUxUao7pANKl1UEPAKqVPQAD3TE2NRV8TuDtb2zua1-RKWn1JXN09GL0okP8llrsBkZ3wTZwAv1_5qOT863DvKYWC7zqlrNbtWF8ANB4Q3k8SkkFJbskVPX4zTzvKR_KpNGY3XVPbXb48q0rq8vrPbkjZ2WRkzBoxEuE9M4CIqCwJR7FIdC_rXxoIc3d1fNh4nSR5ZMw-ttQDmdcfjpclH");'></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <!-- Visible Text (Hover State mainly) -->
+                        <div class="absolute bottom-0 left-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="material-symbols-outlined text-white">bathtub</span>
+                                <h3 class="text-xl font-bold text-white shadow-black drop-shadow-md">Freestanding Tubs</h3>
+                            </div>
+                            <p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity delay-100">Sculptural centerpieces designed for deep soaking and relaxation.</p>
+                        </div>
+                        <!-- Default Label for mobile/no-hover -->
+                        <div class="absolute bottom-4 left-6 group-hover:opacity-0 transition-opacity">
+                            <h3 class="text-xl font-bold text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">Freestanding Tubs</h3>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="relative group overflow-hidden rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex flex-col justify-end p-6">
+                        <div class="absolute top-6 right-6 text-[#1269e2] bg-blue-50 dark:bg-blue-900/30 p-3 rounded-full">
+                            <span class="material-symbols-outlined">light_mode</span>
+                        </div>
+                        <div class="z-10 mt-auto">
+                            <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-2">Smart Lighting & Mirrors</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Integrated LED tech for mood setting, anti-fog capabilities, and circadian rhythm support.</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="relative group overflow-hidden rounded-2xl md:col-span-1">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Custom wooden double vanity with vessel sinks" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQPFwB0ALzCx5raQFSpbByRC2HIv_3weFGviLVArP_QDl_RWfVVcWSZATu1Dmq9KsS6kgShLbXZlRaBG8JeTnsbPKI280GPryKgjg0GwbIArNkD2btsEUPE5JzR0m5eJkMh5PIAxDMXAHAxdw64JVEKyLT2M6y9z6E1qN99naUy1LrqM1OJJvni_7rDj-Z4WsNzBLTWuB-Weup2DgIZVGlK5vp-Zre01M8F3u6S4T8LLjjZljPuy_uiVGoDpoN8e9LH6vcR0iSBsoQ");'></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Custom Vanities</h3>
+                            <p class="text-gray-200 text-sm">Bespoke storage solutions with premium quartz, granite, or marble finishes.</p>
+                        </div>
+                    </div>
+                    <!-- Card 5: Call to Action within grid -->
+                    <div class="relative overflow-hidden rounded-2xl bg-[#1269e2] flex flex-col items-center justify-center p-8 text-center md:col-span-2">
+                        <div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+                        <div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-[#FF6B00]/30 rounded-full blur-3xl"></div>
+                        <h3 class="text-2xl font-bold text-white mb-4 relative z-10">Ready to start your project?</h3>
+                        <p class="text-blue-100 mb-6 max-w-md relative z-10">Schedule a free on-site assessment with our restoration and design experts.</p>
+                        <button class="bg-white text-[#1269e2] font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg relative z-10 flex items-center gap-2">
+                            Get Started
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 bg-white dark:bg-[#111418]">
+            <div class="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-[#FF6B00] font-bold tracking-wider uppercase text-sm mb-2 block">Common Questions</span>
+                    <h2 class="text-3xl lg:text-4xl font-black text-[#111418] dark:text-white">What Homeowners Ask Us</h2>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <!-- FAQ Item 1 -->
+                    <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-[#f6f7f8] dark:bg-gray-900 overflow-hidden transition-all duration-300 open:shadow-md">
+                        <summary class="flex cursor-pointer items-center justify-between gap-6 p-6 select-none list-none">
+                            <div class="flex items-center gap-4">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1269e2]/10 text-[#1269e2] font-bold text-sm">01</span>
+                                <p class="text-[#111418] dark:text-white text-base font-bold leading-normal">Do I need a permit for a bathroom remodel in Florida?</p>
+                            </div>
+                            <div class="text-[#111418] dark:text-white transition-transform group-open:rotate-180">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </div>
+                        </summary>
+                        <div class="px-6 pb-6 pt-0 ml-12">
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                Yes, in most Florida municipalities, any renovation involving plumbing, electrical work, or structural changes requires a permit. As a licensed contractor, PPR handles all permitting and inspections for you, ensuring your remodel is fully code-compliant.
+                            </p>
+                        </div>
+                    </details>
+                    <!-- FAQ Item 2 -->
+                    <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-[#f6f7f8] dark:bg-gray-900 overflow-hidden transition-all duration-300 open:shadow-md">
+                        <summary class="flex cursor-pointer items-center justify-between gap-6 p-6 select-none list-none">
+                            <div class="flex items-center gap-4">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1269e2]/10 text-[#1269e2] font-bold text-sm">02</span>
+                                <p class="text-[#111418] dark:text-white text-base font-bold leading-normal">How much does a luxury master bath renovation cost?</p>
+                            </div>
+                            <div class="text-[#111418] dark:text-white transition-transform group-open:rotate-180">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </div>
+                        </summary>
+                        <div class="px-6 pb-6 pt-0 ml-12">
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                Luxury renovations in Florida typically range from $25,000 to $60,000+, depending heavily on the finishes (marble vs. tile), fixture choices, and if structural changes like moving plumbing lines are required. We provide detailed, itemized quotes after our initial consultation.
+                            </p>
+                        </div>
+                    </details>
+                    <!-- FAQ Item 3 -->
+                    <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-[#f6f7f8] dark:bg-gray-900 overflow-hidden transition-all duration-300 open:shadow-md">
+                        <summary class="flex cursor-pointer items-center justify-between gap-6 p-6 select-none list-none">
+                            <div class="flex items-center gap-4">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1269e2]/10 text-[#1269e2] font-bold text-sm">03</span>
+                                <p class="text-[#111418] dark:text-white text-base font-bold leading-normal">How do you handle mold if found during demolition?</p>
+                            </div>
+                            <div class="text-[#111418] dark:text-white transition-transform group-open:rotate-180">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </div>
+                        </summary>
+                        <div class="px-6 pb-6 pt-0 ml-12">
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                This is where our restoration background shines. If mold is discovered, we pause immediately to contain the area. Our certified remediation team treats and removes the mold safely before any new construction begins, ensuring your new bathroom is built on a healthy foundation.
+                            </p>
+                        </div>
+                    </details>
+                    <!-- FAQ Item 4 -->
+                    <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-[#f6f7f8] dark:bg-gray-900 overflow-hidden transition-all duration-300 open:shadow-md">
+                        <summary class="flex cursor-pointer items-center justify-between gap-6 p-6 select-none list-none">
+                            <div class="flex items-center gap-4">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1269e2]/10 text-[#1269e2] font-bold text-sm">04</span>
+                                <p class="text-[#111418] dark:text-white text-base font-bold leading-normal">What is the typical timeline?</p>
+                            </div>
+                            <div class="text-[#111418] dark:text-white transition-transform group-open:rotate-180">
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </div>
+                        </summary>
+                        <div class="px-6 pb-6 pt-0 ml-12">
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                A full gut-renovation for a master bathroom typically takes 3-5 weeks. Simpler "pull and replace" updates can be done in 1-2 weeks. We provide a Gantt chart schedule before starting so you know exactly what to expect.
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programmatic SEO / Local Neighborhoods -->
+        <section class="py-12 bg-white dark:bg-[#101822] border-t border-[#f0f2f4] dark:border-gray-800">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="mb-8">
+                    <h3 class="text-[#111418] dark:text-white text-xl font-bold mb-2">Designing Bathrooms Across Florida</h3>
+                    <p class="text-sm text-[#617289] dark:text-gray-400">Local renovation teams in your area.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/central-florida/orlando/bathroom-remodeling/">
+                        <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                        Orlando
+                    </a>
+                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/miami/bathroom-remodeling/">
+                        <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                        Miami
+                    </a>
+                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/tampa-bay/tampa/bathroom-remodeling/">
+                        <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                        Tampa
+                    </a>
+                        <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/fort-lauderdale/bathroom-remodeling/">
+                        <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                        Fort Lauderdale
+                    </a>
+                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/southwest-florida/naples/bathroom-remodeling/">
+                        <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                        Naples
+                    </a>
+                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/west-palm-beach/bathroom-remodeling/">
+                        <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                        West Palm Beach
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Client-side script for Slider -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('ba-slider');
+            const beforeImage = document.getElementById('ba-before');
+            const handle = document.getElementById('ba-handle');
+            
+            if (!slider || !beforeImage || !handle) return;
+
+            let isDragging = false;
+
+            const updateSlider = (x: number) => {
+                const rect = slider.getBoundingClientRect();
+                let position = x - rect.left;
+                
+                // Clamp position
+                if (position < 0) position = 0;
+                if (position > rect.width) position = rect.width;
+
+                const percentage = (position / rect.width) * 100;
+
+                beforeImage.style.width = `${percentage}%`;
+                handle.style.left = `${percentage}%`;
+            };
+
+            const startDrag = (e: MouseEvent | TouchEvent) => {
+                isDragging = true;
+                e.preventDefault(); // Prevent text selection
+                const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
+                updateSlider(clientX);
+            };
+
+            const stopDrag = () => {
+                isDragging = false;
+            };
+
+            const moveDrag = (e: MouseEvent | TouchEvent) => {
+                if (!isDragging) return;
+                const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
+                updateSlider(clientX);
+            };
+
+            // Mouse events
+            slider.addEventListener('mousedown', startDrag);
+            window.addEventListener('mouseup', stopDrag);
+            window.addEventListener('mousemove', moveDrag);
+
+            // Touch events
+            slider.addEventListener('touchstart', startDrag, { passive: false });
+            window.addEventListener('touchend', stopDrag);
+            window.addEventListener('touchmove', moveDrag, { passive: false });
+        });
+    </script>
+</MainLayout>

@@ -19,7 +19,7 @@ const {
 
 const links = [
   { href: '/restoration/', label: 'Restoration' },
-  { href: '/remodeling-services/', label: 'Remodeling' },
+
   { href: '/service-areas/', label: 'Locations' },
   { href: '/commercial/', label: 'Commercial' },
   { href: '/resources/', label: 'Resources' },
@@ -33,7 +33,7 @@ const themeClasses = {
 };
 
 const textColorClass = theme === 'light' ? 'text-slate-700 hover:text-[var(--secondary-color)]' : 'text-slate-300 hover:text-white';
-const logoColorClass = theme === 'light' ? 'text-slate-900' : 'text-white';
+
 ---
 
 <header 
@@ -44,8 +44,8 @@ const logoColorClass = theme === 'light' ? 'text-slate-900' : 'text-white';
   ]}
   style={`--secondary-color: ${secondaryColor};`}
 >
-    <div class="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8">
-        <div class="flex items-center lg:items-end justify-between h-20 lg:h-24 lg:pb-2">
+    <div class="max-w-[1280px] mx-auto px-4 lg:px-4 xl:px-8">
+        <div class="flex items-center lg:items-center justify-between h-20 lg:h-24">
             <!-- Brand Logo -->
             <a href="/" class="block shrink-0 group relative z-10 flex items-center h-full py-1">
                 <!-- Mobile Icon -->
@@ -55,20 +55,15 @@ const logoColorClass = theme === 'light' ? 'text-slate-900' : 'text-white';
                     class="h-12 w-auto object-contain lg:hidden transition-transform group-hover:scale-105"
                 />
                 <!-- Desktop Logo - Natural Size -->
-                <img 
-                    src="/ppr-logo.png" 
-                    alt="Paramount Property Restoration" 
-                    class="hidden lg:block h-14 w-auto object-contain transition-transform group-hover:scale-105"
-                />
+                <img src="/ppr-logo.png" alt="Paramount Property Restoration" class="hidden lg:block h-10 xl:h-14 w-auto object-contain transition-transform group-hover:scale-105" />
             </a>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 mb-2">
-                <!-- Mega Menu Trigger -->
+            <nav class="hidden lg:flex items-center gap-2 xl:gap-8 mb-2">
                 <div class="group relative">
-                    <button class={`flex items-center gap-1 text-sm font-medium transition-colors py-2 ${textColorClass}`}>
+                    <button class={`flex items-center gap-1 text-xs xl:text-sm font-medium transition-colors py-2 ${textColorClass}`}>
                         Restoration
-                        <span class="material-symbols-outlined text-[18px] transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
+                        <span class="material-symbols-outlined text-[16px] xl:text-[18px] transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
                     </button>
                     <!-- Mega Menu Dropdown -->
                     <div class="absolute top-full left-1/2 -translate-x-1/2 w-[800px] bg-white dark:bg-[#1a2632] shadow-xl rounded-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0 p-6 grid grid-cols-4 gap-6 z-50 text-left">
@@ -119,12 +114,37 @@ const logoColorClass = theme === 'light' ? 'text-slate-900' : 'text-white';
                             <a href="/restoration/storm-debris-removal/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Debris Removal</a>
                         </div>
                     </div>
+                    </div>
+
+
+                <!-- Remodeling Mega Menu Trigger -->
+                <div class="group relative">
+                    <button class={`flex items-center gap-1 text-xs xl:text-sm font-medium transition-colors py-2 ${textColorClass}`}>
+                        Remodeling
+                        <span class="material-symbols-outlined text-[16px] xl:text-[18px] transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
+                    </button>
+                    <!-- Mega Menu Dropdown -->
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 w-[400px] bg-white dark:bg-[#1a2632] shadow-xl rounded-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0 p-6 flex flex-col gap-4 z-50 text-left">
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="material-symbols-outlined text-blue-500">architecture</span>
+                                <span class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Services</span>
+                            </div>
+                            <a href="/remodeling/#kitchen" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Kitchen Remodeling</a>
+                            <a href="/remodeling/#bathroom" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all">Bathroom Remodeling</a>
+                            <a href="/commercial/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all font-semibold text-blue-600">Commercial Build-Outs</a>
+                            <div class="h-px bg-gray-100 dark:bg-gray-700 my-1"></div>
+                            <a href="/remodeling/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all font-semibold flex items-center gap-1">
+                                View All Remodeling <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 {links.slice(1).map((link) => (
                     <a 
                         href={link.href} 
-                        class={`text-sm font-medium transition-colors ${textColorClass}`}
+                        class={`text-xs xl:text-sm font-medium transition-colors ${textColorClass}`}
                     >
                         {link.label}
                     </a>
@@ -133,10 +153,9 @@ const logoColorClass = theme === 'light' ? 'text-slate-900' : 'text-white';
 
             <!-- Action Buttons -->
             <div class="flex items-center gap-3 shrink-0 mb-1">
-                 <!-- Quote/Service Button -->
-                 <a 
+                <a 
                     href={variant === 'emergency' ? "/contact" : "/contact"}
-                    class={`hidden sm:flex items-center justify-center px-5 py-2.5 rounded-lg text-white font-bold text-sm transition-all hover:opacity-90 shadow-sm whitespace-nowrap`}
+                    class={`hidden sm:flex items-center justify-center px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg text-white font-bold text-xs xl:text-sm transition-all hover:opacity-90 shadow-sm whitespace-nowrap`}
                     style={`background-color: ${secondaryColor}`}
                 >
                     {variant === 'emergency' ? 'File a Claim' : 'Request Quote'}
@@ -145,7 +164,7 @@ const logoColorClass = theme === 'light' ? 'text-slate-900' : 'text-white';
                 <!-- Emergency Button -->
                 <a 
                     href="tel:7866022217" 
-                    class="flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-bold text-sm transition-all shadow-lg hover:opacity-90 animate-pulse whitespace-nowrap"
+                    class="flex items-center gap-2 px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg text-white font-bold text-xs xl:text-sm transition-all shadow-lg hover:opacity-90 animate-pulse whitespace-nowrap"
                     style="background-color: #dc2626;" 
                 >
                     <span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
@@ -230,6 +249,25 @@ const logoColorClass = theme === 'light' ? 'text-slate-900' : 'text-white';
                             <a href="/restoration/storm-damage/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Hurricane Damage</a>
                             <a href="/restoration/wind-damage/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Wind Damage</a>
                             <a href="/restoration/storm-debris-removal/" class="text-sm text-slate-600 dark:text-slate-400 py-1">Debris Removal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Remodeling Dropdown -->
+            <div class="flex flex-col gap-4">
+                <div class="font-bold text-lg text-slate-900 dark:text-white pb-2 border-b border-gray-100 dark:border-gray-800">Remodeling Services</div>
+                <div class="grid grid-cols-1 gap-3 pl-2">
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-blue-500 text-lg">architecture</span>
+                                Renovations
+                        </div>
+                        <div class="pl-7 flex flex-col gap-2 border-l border-gray-100 dark:border-gray-800 ml-2">
+                            <a href="/remodeling/#kitchen" class="text-sm text-slate-600 dark:text-slate-400 py-1">Kitchen Remodeling</a>
+                            <a href="/remodeling/#bathroom" class="text-sm text-slate-600 dark:text-slate-400 py-1">Bathroom Remodeling</a>
+                            <a href="/commercial/" class="text-sm text-slate-600 dark:text-slate-400 py-1 font-semibold text-blue-600">Commercial Build-Outs</a>
+                            <a href="/remodeling/" class="text-sm text-slate-600 dark:text-slate-400 py-1 font-semibold">View All</a>
                         </div>
                     </div>
                 </div>

@@ -2,24 +2,24 @@
 @plugin "@tailwindcss/container-queries";
 
 @theme {
-  --color-primary: #E67E22;
-  --color-primary-hover: #D35400;
-  --color-secondary: #1B3B6F;
-  --color-secondary-hover: #162F58;
+  /* User's Exact Colors */
+  --color-primary: #1269e2;
+  --color-secondary: #ea580c;
+  --color-background-light: #f6f7f8;
+  --color-background-dark: #101822;
 
-  /* Legacy Support for existing components using these names */
-  --color-urgent: #FF5722;
-  --color-paramount-blue: #1B3B6F;
-  --color-paramount-orange: #E67E22;
+  --color-primary-hover: #0f56b8;
+  --color-secondary-hover: #c2410c;
 
-  --color-background-light: #F8F9FA;
-  --color-background-dark: #121212;
+  /* Legacy aliases to keep other parts working */
+  --color-paramount-blue: var(--color-primary);
+  --color-paramount-orange: var(--color-secondary);
 
   --color-card-light: #FFFFFF;
   --color-card-dark: #1E1E1E;
 
-  --color-text-light: #1F2937;
-  --color-text-dark: #E5E7EB;
+  --color-text-light: #111418;
+  --color-text-dark: #FFFFFF;
 
   --font-display: 'Oswald', sans-serif;
   --font-body: 'Inter', sans-serif;

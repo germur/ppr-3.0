@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+import CityHubPage from '../../../components/pages/CityHubPage.astro';
+
+export async function getStaticPaths() {
+  const cities = await getCollection('cities');
+  return cities.map(city => ({
+    params: { city: city.slug },
+    props: { city },
+  }));
+}
+
+const { city } = Astro.props;
+---
+
+<CityHubPage city={city} />

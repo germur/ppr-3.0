@@ -1,274 +1,314 @@
 ---
+import { getCollection } from 'astro:content';
 import MainLayout from '../../../layouts/MainLayout.astro';
-import { regions } from '../../../data/regions';
-import type { RegionData } from '../../../data/regions';
-import { cities } from '../../../data/service-areas';
-import type { CityData } from '../../../data/service-areas';
 
 export async function getStaticPaths() {
-  return regions.map(region => ({
-    params: { region: region.slug },
-    props: { region },
-  }));
+    const cities = await getCollection('cities');
+    
+    // Define regions and their display data
+    const regions = [
+        { 
+            slug: 'central-florida', 
+            name: 'Central Florida', 
+            title: 'Central Florida',
+            description: 'Serving Orlando, Kissimmee, Sanford and surrounding Central Florida communities with 24/7 disaster restoration.',
+            heroImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5IElSlDjVLBE7fZclhWir8YAOnMCir_GQcNNjJVj0a8QBNJjuJxnOFTlrYw-1c3rHCTbJSLN3wAtVS-1vRVkRBqdN640l_GFgPPyZWGZyO_weVs_z4C5znOTRUUfQydXscCknu4b9APYm95Pjahs92soikVTXKQp16tNa9UqWV6sAHWY2nCEuFTAGlfOEhIhzAZPUi9hRE2jJXNyd9X89nfMyBTx8G1AEdU_BiikwTRzarQTQBYG6CyZvWcfQCj4GeqFGUXji9ln5'
+        },
+        { 
+            slug: 'tampa-bay', 
+            name: 'Tampa Bay & Coast', 
+            title: 'Tampa Bay',
+            description: 'Premier restoration services for Tampa, St. Petersburg, Clearwater and the Gulf Coast.',
+            heroImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiEiy8YZs7Ig69Nfh1r0kKx5r3UmECqxmz3OJW5rJW9fg1ixUW6moZlDyfp4bH6kzBRLBF7e2_BGdhpZqxDbxUmER70o68ygV-ck_YYZ2WTsKhE1lUh-DyV-xn_8de08hmBZ-egPoPQtWdAOJYWNb-szb4_RVJhi71mTPk-IgW3Ng5biI-mOfW1lfNwnryWRDhJJ6Sp4KIv-rAc09H3WLYj0kGhwKkrIzXptT5USdVN4KMoH3TMtU10xAYOuz1EgJWn8ZaKRbzK9VT'
+        },
+        { 
+            slug: 'south-florida', 
+            name: 'South Florida', 
+            title: 'South Florida',
+            description: 'Expert recovery teams for Miami, Fort Lauderdale, West Palm Beach and the Keys.',
+            heroImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB44qeiOVzcAu2hRN5l625UiYVgEChEd98mxg_6_dZY0JmPzBaRvWb5vfH3jMY07c_5ekPvj2j7EmK_TKwBXBGnTcK3ic-7kAX5_eFCZALV9AWQS3zKwMpWTTPyZARwOCORbncuY4LVjywvJLVnHQidy2TIXWRLY2SHT2TAq9iJffBRlJkYXJnPZRWpOTUSJepAMeg-8LjJBLGI8HFDQsrKeB-Lgi3R8kaX3WpktjA_D8sXnA7TzLNZqplObpvmTfYt69vMJ8kCSQpA'
+        },
+        { 
+            slug: 'southwest-florida', 
+            name: 'Southwest Florida', 
+            title: 'Southwest Florida',
+            description: 'Fort Myers, Naples, and Cape Coral restoration specialists. Hurricane hardened and ready.',
+            heroImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuABgadTg0n-4oxrhu--dBfDFXRVbuudGYGCRmlyRGN2cgO1SpqD1l7CAEW4BS7Mb8VwJ8TSHRE5_xojIKBmwy5EEkNdrzaOCvqVzem4HY-qD7QOrBMgL3jaDW3GUrd_5PMcqQ6y67iZ0jOVX4mVB-PloCAZTSYdekdhNo1pZcVIHkMSTniMfAz_AITxgH5dHaVpHGCH4t9ftssZJGTAOwCbLJQTlMgvEgxmab5M-Vjh9EI5XIRA7oCF1CyQ2RNPHqv4-Gq4B5cXEzI4'
+        }
+    ];
+
+    return regions.map(region => {
+        // Filter cities belonging to this region
+        const regionalCities = cities.filter(city => city.data.region === region.name);
+        return {
+            params: { region: region.slug },
+            props: { region, cities: regionalCities }
+        };
+    });
 }
 
-interface Props {
-  region: RegionData;
-}
-
-const { region } = Astro.props;
-
-// Filter cities for this region
-const regionCities = cities.filter(city => city.region === region.slug);
-
-// Group cities by county
-const citiesByCounty = regionCities.reduce((acc: Record<string, CityData[]>, city) => {
-  if (!acc[city.county]) {
-    acc[city.county] = [];
-  }
-  acc[city.county].push(city);
-  return acc;
-}, {} as Record<string, CityData[]>);
-
-const counties = Object.keys(citiesByCounty).sort();
-const countiesString = counties.join(", ").replace(/, ([^,]*)$/, ' & $1');
-
-// Schema Construction
-const containedCities = regionCities.map(city => ({
-  "@type": "City",
-  "name": city.name
-}));
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Property Restoration",
-  "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": region.name,
-    "containsPlace": containedCities
-  },
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Paramount Property Restoration",
-    "telephone": "+1-786-602-2217", 
-    "image": "https://paramountrestoration.com/logo.png"
-  },
-  "description": region.introText
-};
+const { region, cities } = Astro.props;
 ---
 
-<MainLayout title={region.heroH1} description={region.metaDescription} customSchema={schema}>
+<MainLayout 
+    title={`Emergency Restoration & Remodeling Services in ${region.title} | PPR`}
+    description={region.description}
+    serviceName="General Contractor"
+    schemaType="Service"
+>
 
-  <!-- Breadcrumbs -->
-  <div class="bg-surface-light dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-6 py-3">
-        <div class="flex flex-wrap gap-2 items-center text-sm">
-            <a href="/" class="text-slate-500 hover:text-primary transition-colors">Home</a>
-            <span class="text-slate-400">/</span>
-            <a href="/service-areas" class="text-slate-500 hover:text-primary transition-colors">Locations</a>
-            <span class="text-slate-400">/</span>
-            <span class="text-slate-900 dark:text-white font-medium">{region.name} Hub</span>
+    {/* HERO SECTION - Matching Design */}
+    <section class="relative min-h-[600px] flex items-center bg-[#111418] overflow-hidden">
+        {/* Background Image with Gradient Overlay */}
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#111418] via-[#111418]/90 to-transparent z-10"></div>
+            <img 
+                src={region.heroImage} 
+                alt={`${region.title} Skyline`} 
+                class="w-full h-full object-cover opacity-60"
+            />
         </div>
-    </div>
-  </div>
 
-  <!-- Hero Section -->
-  <section class="relative bg-slate-900 py-16 lg:py-24 overflow-hidden">
-    <!-- Background Image with Overlay -->
-    <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent z-10"></div>
-        <img src={region.coverImage} alt={`${region.name} skyline`} class="w-full h-full object-cover opacity-60" />
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-6 relative z-20">
-        <div class="max-w-2xl flex flex-col gap-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/50 border border-blue-500/30 text-blue-200 text-xs font-semibold w-fit backdrop-blur-md">
-                <span class="material-symbols-outlined text-sm">location_on</span>
-                {region.heroBadgeText}
-            </div>
-            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
-                {region.heroH1}
-            </h1>
-            <p class="text-slate-300 text-lg md:text-xl font-normal leading-relaxed max-w-xl">
-                {region.introText}
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                <a href="/contact/" class="flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg shadow-orange-900/20 transition-all transform hover:scale-[1.02]">
-                    <span>Get a Quote in {region.name}</span>
-                    <span class="material-symbols-outlined">arrow_forward</span>
-                </a>
-                <a href="#coverage-map" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-6 py-4 rounded-lg font-semibold transition-colors">
-                    <span class="material-symbols-outlined">map</span>
-                    <span>View Service Map</span>
-                </a>
-            </div>
-            
-            <!-- TRUST SIGNALS -->
-            <div class="flex items-center gap-6 mt-8 pt-8 border-t border-white/10">
-                <div class="flex -space-x-2">
-                    <div class="w-10 h-10 rounded-full bg-slate-200 border-2 border-slate-900 flex items-center justify-center text-xs font-bold text-slate-900">4.9</div>
-                    <div class="w-10 h-10 rounded-full bg-slate-300 border-2 border-slate-900 flex items-center justify-center text-xs font-bold text-slate-900">G</div>
-                    <div class="w-10 h-10 rounded-full bg-slate-400 border-2 border-slate-900 flex items-center justify-center text-xs font-bold text-slate-900">FB</div>
+        <div class="relative z-20 w-full max-w-[1280px] mx-auto px-4 md:px-10 py-12 md:py-20">
+            <div class="max-w-2xl flex flex-col gap-6 md:gap-8">
+                <div class="flex items-center gap-2">
+                     <span class="material-symbols-outlined text-[#1269e2]">location_on</span>
+                     <span class="text-blue-400 font-bold uppercase tracking-wider text-sm">Serving {region.title}</span>
                 </div>
-                <div class="flex flex-col">
-                    <div class="flex text-yellow-400 text-sm">
-                        <span class="material-symbols-outlined text-[18px] fill-current">star</span>
-                        <span class="material-symbols-outlined text-[18px] fill-current">star</span>
-                        <span class="material-symbols-outlined text-[18px] fill-current">star</span>
-                        <span class="material-symbols-outlined text-[18px] fill-current">star</span>
-                        <span class="material-symbols-outlined text-[18px] fill-current">star</span>
-                    </div>
-                    <span class="text-slate-400 text-sm">Trusted by 500+ {region.name} Locals</span>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- Local Reality Section -->
-  <section class="py-16 lg:py-24 bg-white dark:bg-slate-950">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div class="flex flex-col gap-6">
-                <div class="inline-block text-primary font-bold tracking-wider uppercase text-sm">The Local Reality</div>
-                <h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold leading-tight">
-                    Why {region.name} Relies on Paramount
-                </h2>
-                <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
-                    Our teams are specifically equipped to handle the unique challenges of the {region.name} environment. We understand what local homes face and adapt our protocols accordingly.
-                </p>
                 
-                <div class="grid sm:grid-cols-2 gap-4 mt-4">
-                    {region.localRealityFeatures && region.localRealityFeatures.map(feature => (
-                        <div class="bg-slate-50 dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800">
-                            <div class="text-primary mb-3">
-                                <span class="material-symbols-outlined text-3xl">{feature.icon}</span>
-                            </div>
-                            <h3 class="font-bold text-slate-900 dark:text-white mb-1">{feature.title}</h3>
-                            <p class="text-sm text-slate-500 dark:text-slate-400">{feature.description}</p>
-                        </div>
-                    ))}
+                <h1 class="text-white text-4xl md:text-6xl font-black leading-[1.1] tracking-tight">
+                    Emergency Restoration & <br/>
+                    Remodeling Services in <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">{region.title}</span>
+                </h1>
+
+                <p class="text-gray-300 text-lg md:text-xl leading-relaxed font-light border-l-4 border-[#1269e2] pl-6">
+                    From {cities[0]?.data.name || 'Major Cities'} to {cities[cities.length - 1]?.data.name || 'Coastal Areas'}, our rapid response teams are ready 24/7. We understand local building codes and climate challenges better than anyone else.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                    <a href="/contact/" class="flex items-center justify-center gap-2 bg-[#1269e2] hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-[1.02] shadow-lg shadow-blue-900/20">
+                        Request Service in {region.title}
+                    </a>
+                    <button onclick="document.getElementById('service-map').scrollIntoView({behavior: 'smooth'})" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all">
+                        <span class="material-symbols-outlined">map</span>
+                        View Service Map
+                    </button>
                 </div>
             </div>
-            
-            <div class="relative h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-                <img src={region.localRealityImage} alt={`Restoration team working in ${region.name}`} class="absolute inset-0 w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                    <div class="bg-white/95 dark:bg-slate-900/95 backdrop-blur rounded-lg p-4 w-full border-l-4 border-orange-500">
-                        <div class="text-sm font-bold text-slate-900 dark:text-white mb-1">24/7 Rapid Response</div>
-                        <div class="text-xs text-slate-600 dark:text-slate-400">Average arrival time in {region.name}: &lt; 45 mins</div>
+        </div>
+    </section>
+
+    {/* WHY US / MAP SECTION */}
+    <section id="service-map" class="py-16 md:py-24 bg-white dark:bg-[#1a222c]">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-10">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                
+                {/* Text Content */}
+                <div class="lg:w-1/2 flex flex-col gap-8">
+                    <div>
+                        <h2 class="text-[#111418] dark:text-white text-3xl md:text-4xl font-bold mb-4">Why {region.title} Trusts Paramount</h2>
+                        <p class="text-[#617289] dark:text-gray-400 text-lg">
+                            Restoration in {region.title} requires specific knowledge. We specialize in handling local challenges, from extreme humidity control to hurricane recovery, ensuring your home meets all regional building codes and insurance requirements.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        {/* Feature 1 */}
+                        <div class="flex gap-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
+                             <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[#1269e2]">cyclone</span>
+                             </div>
+                             <div>
+                                 <h3 class="font-bold text-[#111418] dark:text-white text-lg">Hurricane Season Prep & Recovery</h3>
+                                 <p class="text-sm text-[#617289] dark:text-gray-400 mt-1">Rapid response teams equipped for storm surges, wind damage, and immediate board-ups specific to Florida weather patterns.</p>
+                             </div>
+                        </div>
+
+                        {/* Feature 2 */}
+                        <div class="flex gap-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
+                             <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[#ea580c]">humidity_percentage</span>
+                             </div>
+                             <div>
+                                 <h3 class="font-bold text-[#111418] dark:text-white text-lg">Humidity & Mold Control</h3>
+                                 <p class="text-sm text-[#617289] dark:text-gray-400 mt-1">Advanced industrial dehumidification technology designed specifically to combat Florida's 90%+ humidity levels.</p>
+                             </div>
+                        </div>
+
+                         {/* Feature 3 */}
+                         <div class="flex gap-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
+                             <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-green-600">gavel</span>
+                             </div>
+                             <div>
+                                 <h3 class="font-bold text-[#111418] dark:text-white text-lg">Local Building Code Compliance</h3>
+                                 <p class="text-sm text-[#617289] dark:text-gray-400 mt-1">Full adherence to {region.title} regulatory standards for all repairs, remodels, and structural drying.</p>
+                             </div>
+                        </div>
                     </div>
                 </div>
+
+                {/* Map Visual */}
+                <div class="lg:w-1/2 w-full">
+                    <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700 bg-gray-100">
+                        {/* Static Map Background (Conceptual) */}
+                         <img 
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5XDWOqguud53-AF4JoXfEwclQJImSitTM8_iGB-Zmp_tGRu2qWBuVUkAJheMGb-r1R8xOoe8mM-DkWrsgQGFGS45v7EhQkIXvW1XXSJBSpGMkUtHnH3I3yteYSkW0XEJ8InDgwBCxz-n-sjsz_uNYLY0ROA3sPx4YcobrTAZrAWoWDs_kFkb-a6ydf3dhy-1AcApLOAHG42v4qZRNnZpsOXSI_7kIXbDaQXt1Dgidg3NaedaOuB3Szv2mXm_4km0eyxniqlccEA0l" 
+                            class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale"
+                            alt="Map of region"
+                        />
+                        
+                        {/* Overlay Card */}
+                        <div class="absolute inset-0 flex items-center justify-center p-6">
+                            <div class="bg-white dark:bg-[#1e2732] p-6 rounded-xl shadow-xl max-w-sm text-center">
+                                <span class="material-symbols-outlined text-4xl text-[#1269e2] mb-3">map</span>
+                                <h3 class="font-bold text-xl text-[#111418] dark:text-white mb-2">Regional Coverage</h3>
+                                <p class="text-[#617289] dark:text-gray-400 mb-4">
+                                    Serving {cities.length} key locations across {region.title}.
+                                </p>
+                                <div class="flex flex-wrap justify-center gap-2">
+                                    {cities.slice(0, 4).map(city => (
+                                        <span class="text-xs font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-gray-600 dark:text-gray-300">
+                                            {city.data.name}
+                                        </span>
+                                    ))}
+                                    {cities.length > 4 && <span class="text-xs font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-gray-600 dark:text-gray-300">+{cities.length - 4} more</span>}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Animated Pins */}
+                        <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-[#ea580c] rounded-full animate-ping"></div>
+                        <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-[#ea580c] rounded-full border-2 border-white shadow-lg"></div>
+
+                        <div class="absolute bottom-1/3 right-1/3 w-4 h-4 bg-[#1269e2] rounded-full animate-ping delay-700"></div>
+                        <div class="absolute bottom-1/3 right-1/3 w-4 h-4 bg-[#1269e2] rounded-full border-2 border-white shadow-lg"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Services Coverage Grid -->
-  <section class="py-16 bg-slate-50 dark:bg-slate-900/50">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-4">Service Coverage Adapted for {region.name}</h2>
-            <p class="text-slate-600 dark:text-slate-400 text-lg">We don't just restore; we adapt. Our services are tailored to the specific building codes and environmental pressures of the {region.name} region.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {region.serviceFeatures && region.serviceFeatures.map(feature => (
-                <div class="group bg-white dark:bg-slate-950 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden border border-slate-100 dark:border-slate-800">
-                    <div class="h-48 overflow-hidden bg-slate-200 relative">
-                         <img src={feature.image} alt={feature.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+    {/* SERVICES GRID */}
+    <section class="py-16 bg-[#f8fafe] dark:bg-[#111418]">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-10">
+            <div class="text-center mb-12">
+                <span class="text-[#1269e2] font-bold uppercase tracking-widest text-xs mb-2 block">Our Expertise</span>
+                <h2 class="text-[#111418] dark:text-white text-3xl md:text-4xl font-bold">Comprehensive Services for Florida Homes</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Card 1: Water */}
+                <div class="bg-white dark:bg-[#1a222c] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                    <div class="h-48 overflow-hidden">
+                        <img 
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB44qeiOVzcAu2hRN5l625UiYVgEChEd98mxg_6_dZY0JmPzBaRvWb5vfH3jMY07c_5ekPvj2j7EmK_TKwBXBGnTcK3ic-7kAX5_eFCZALV9AWQS3zKwMpWTTPyZARwOCORbncuY4LVjywvJLVnHQidy2TIXWRLY2SHT2TAq9iJffBRlJkYXJnPZRWpOTUSJepAMeg-8LjJBLGI8HFDQsrKeB-Lgi3R8kaX3WpktjA_D8sXnA7TzLNZqplObpvmTfYt69vMJ8kCSQpA" 
+                            alt="Water Damage" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
                     </div>
                     <div class="p-6">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="p-2 rounded-lg bg-primary/10 text-primary">
-                                <span class="material-symbols-outlined">{feature.icon}</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">{feature.title}</h3>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-xl text-[#111418] dark:text-white">Water Damage Restoration</h3>
+                            <span class="material-symbols-outlined text-[#1269e2]">water_drop</span>
                         </div>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">{feature.description}</p>
-                        <a href={feature.link} class="inline-flex items-center text-primary font-semibold text-sm hover:underline">
-                            Learn more <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                        <p class="text-sm text-[#617289] dark:text-gray-400 mb-4 line-clamp-3">
+                            Rapid extraction and structural drying for flood, leak, and storm damage. We handle insurance claims directly.
+                        </p>
+                        <a href="/restoration/water-damage/" class="text-[#1269e2] font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                     </div>
                 </div>
-            ))}
-        </div>
-    </div>
-  </section>
 
-  <!-- The City Clusters (SEO Engine) -->
-  <section class="py-16 lg:py-20 bg-white dark:bg-slate-950" id="coverage-map">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col lg:flex-row gap-12">
-            <div class="lg:w-1/3 flex flex-col justify-center">
-                <div class="inline-block text-orange-600 font-bold tracking-wider uppercase text-sm mb-2">Service Areas</div>
-                <h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-6">Our {region.name} Service Network</h2>
-                <p class="text-slate-600 dark:text-slate-400 mb-8">
-                    We have positioned our response teams across {countiesString} to ensure we can reach any emergency within 45 minutes, traffic permitting. Select your city to see local team details.
-                </p>
-                <a href="#coverage-map" class="inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-600 transition-colors w-full sm:w-auto">
-                    <span class="material-symbols-outlined">map</span>
-                    View Coverage Areas
-                </a>
-            </div>
-            
-            <div class="lg:w-2/3 grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-                {counties.length > 0 ? (
-                    counties.map(county => (
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
-                                <span class="material-symbols-outlined text-primary">location_city</span>
-                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">{county}</h3>
-                            </div>
-                                <ul class="space-y-3">
-                                {citiesByCounty[county].map((city, index) => {
-                                    // SEO: Varied Anchor Text Strategy
-                                    // We cycle through 4 distinct variations to avoid over-optimization
-                                    const variations = [
-                                        `${city.name} Water Damage`,
-                                        `Restoration in ${city.name}`,
-                                        `${city.name} Flood Cleanup`,
-                                        `Emergency Services ${city.name}`
-                                    ];
-                                    const anchorText = variations[index % variations.length];
-
-                                    return (
-                                    <li>
-                                        <a href={`/service-areas/${region.slug}/${city.slug}/`} class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 flex-shrink-0"></span>
-                                            {anchorText}
-                                        </a>
-                                    </li>
-                                    );
-                                })}
-                            </ul>
+                {/* Card 2: Fire */}
+                <div class="bg-white dark:bg-[#1a222c] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                    <div class="h-48 overflow-hidden">
+                        <img 
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiEiy8YZs7Ig69Nfh1r0kKx5r3UmECqxmz3OJW5rJW9fg1ixUW6moZlDyfp4bH6kzBRLBF7e2_BGdhpZqxDbxUmER70o68ygV-ck_YYZ2WTsKhE1lUh-DyV-xn_8de08hmBZ-egPoPQtWdAOJYWNb-szb4_RVJhi71mTPk-IgW3Ng5biI-mOfW1lfNwnryWRDhJJ6Sp4KIv-rAc09H3WLYj0kGhwKkrIzXptT5USdVN4KMoH3TMtU10xAYOuz1EgJWn8ZaKRbzK9VT" 
+                            alt="Fire Restoration" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                             <h3 class="font-bold text-xl text-[#111418] dark:text-white">Fire & Smoke Cleanup</h3>
+                             <span class="material-symbols-outlined text-[#ea580c]">local_fire_department</span>
                         </div>
+                        <p class="text-sm text-[#617289] dark:text-gray-400 mb-4 line-clamp-3">
+                            Comprehensive soot removal, odor control, and fire damage repair. Restoring your property to pre-loss condition.
+                        </p>
+                        <a href="/restoration/fire-damage/" class="text-[#1269e2] font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                {/* Card 3: Remodeling */}
+                <div class="bg-white dark:bg-[#1a222c] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                     <div class="h-48 overflow-hidden">
+                        <img 
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmVMMj3fxbRmw8hLgcwdCjLmSJAO8-lhT5S6-4cDlWVIzxmWtrAh1bbst00D3IYs1C9vXQt_Hz2P9ocQTngc0umxpOyzmDRlD8nJm6BIm8O8rLLoKm5fhYS2e4zjWnIArg9Ovlzlrdnb8Kqen3XDulKXQVeCGT2wFzdiNmfyxPPmMm1zl1IqoKfNMOrx7CsNWIbfeLqAuYkRIEGdXOb6Nl6FvcYQEraKW_-zMxbKk2afQ-UdhuLzqd1BUu7Z3y8Etan-ouvzYb1OVc" 
+                            alt="Remodeling" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                             <h3 class="font-bold text-xl text-[#111418] dark:text-white">Remodeling & Renovation</h3>
+                             <span class="material-symbols-outlined text-green-600">construction</span>
+                        </div>
+                        <p class="text-sm text-[#617289] dark:text-gray-400 mb-4 line-clamp-3">
+                            Modernizing homes with resilient materials suited for the Florida climate. Kitchens, baths, and full home makeovers.
+                        </p>
+                         <a href="/remodeling/" class="text-[#1269e2] font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/* LOCAL SERVICE AREAS LIST */}
+    <section class="py-16 md:py-24 bg-white dark:bg-[#1a222c] border-t border-gray-100 dark:border-gray-800">
+         <div class="max-w-[1280px] mx-auto px-4 md:px-10">
+             <div class="mb-10">
+                  <h2 class="text-[#111418] dark:text-white text-2xl font-bold mb-2">Local Service Areas in {region.title}</h2>
+                  <p class="text-[#617289] dark:text-gray-400">Find your local Paramount Restoration team. We are just around the corner.</p>
+             </div>
+
+             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {cities.length > 0 ? (
+                    cities.map(city => (
+                        <a href={`/service-areas/${city.slug}/`} class="group flex items-center gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#1269e2] dark:hover:border-[#1269e2] transition-colors bg-white dark:bg-[#1e2732] shadow-sm hover:shadow-md">
+                            <span class="material-symbols-outlined text-[#1269e2] bg-blue-50 dark:bg-blue-900/30 p-2 rounded-lg group-hover:bg-[#1269e2] group-hover:text-white transition-colors">location_city</span>
+                            <span class="font-bold text-[#111418] dark:text-white group-hover:text-[#1269e2] transition-colors">{city.data.name}</span>
+                        </a>
                     ))
                 ) : (
-                    <p>No cities found for this region.</p>
+                    <div class="col-span-full text-center py-10 bg-gray-50 dark:bg-gray-800 rounded-xl border border-dashed border-gray-300 dark:border-gray-700 text-gray-400">
+                        No specific cities listed for this region yet, but we serve the entire area. Call for availability.
+                    </div>
                 )}
-            </div>
-        </div>
-    </div>
-  </section>
+             </div>
+         </div>
+    </section>
 
-  <!-- Bottom CTA Bar -->
-  <section class="bg-primary py-12 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-        <div class="text-white">
-            <h2 class="text-2xl font-bold mb-2">Need Restoration Services in {region.name}?</h2>
-            <p class="text-blue-100 max-w-xl">Whether it's emergency restoration or a planned remodel, our local team is ready to help you navigate the process.</p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <a href="/contact/" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors whitespace-nowrap text-center">
-                Get Your Free Quote
-            </a>
-            <a href="tel:1-786-602-2217" class="bg-white text-primary hover:bg-slate-100 font-bold py-3 px-8 rounded-lg shadow-lg transition-colors whitespace-nowrap text-center">
-                Call (786) 602-2217
+    {/* CALL TO ACTION BOTTOM */}
+    <section class="bg-[#1269e2] py-12 md:py-16">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h2 class="text-white text-3xl font-black mb-2">Need emergency assistance?</h2>
+                <p class="text-blue-100 text-lg">Our local {region.title} team is ready to deploy immediately.</p>
+            </div>
+            <a href="tel:7866022217" class="bg-white text-[#1269e2] px-8 py-4 rounded-xl font-black text-xl hover:bg-gray-100 transition-colors shadow-2xl flex items-center gap-2">
+                <span class="material-symbols-outlined">call</span>
+                (786) 602-2217
             </a>
         </div>
-    </div>
-  </section>
+    </section>
 
 </MainLayout>
