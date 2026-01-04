@@ -6,14 +6,15 @@ export interface Props {
   canonical?: string;
   noindex?: boolean;
   // Variables para Schema Dinámico
-  schemaType?: 'LocalBusiness' | 'Service' | 'Article' | 'FAQPage';
+  // Variables para Schema Dinámico
+  schemaType?: 'LocalBusiness' | 'Service' | 'Article' | 'FAQPage' | 'EmergencyService' | 'CleaningService';
   city?: string; // Para pSEO (ej: "Orlando")
   serviceName?: string; // Para pSEO (ej: "Water Damage Restoration")
   publishDate?: string; // Para Blogs
   authorName?: string; // Para Blogs
   faqData?: { question: string; answer: string }[]; // Para FAQs
   customSchema?: any; // Fallback for custom injections
-  type?: 'LocalBusiness' | 'Service' | 'Article' | 'FAQPage'; // Backwards compatibility alias for schemaType
+  type?: 'LocalBusiness' | 'Service' | 'Article' | 'FAQPage' | 'EmergencyService' | 'CleaningService'; // Backwards compatibility alias for schemaType
 }
 
 const {

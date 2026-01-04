@@ -12,7 +12,7 @@ export interface ServiceData {
 
 export const services: ServiceData[] = [
     {
-        slug: "water-damage-restoration",
+        slug: "restoration/water-damage",
         name: "Water Damage Restoration",
         heroTitle: "Expert Water Damage Restoration", // City will be appended dynamically
         description: "Fast response to flood and leak emergencies. On-site in 60 minutes or less. We handle the insurance paperwork.",
@@ -23,7 +23,18 @@ export const services: ServiceData[] = [
         icon: "water_drop",
     },
     {
-        slug: "mold-remediation",
+        slug: "restoration/water-damage/structural-drying",
+        name: "Structural Drying",
+        heroTitle: "Structural Drying & Dehumidification",
+        description: "Advanced drying technology to salvage hardwood floors, cabinets, and drywall. Prevent mold with scientific structural drying.",
+        theme: {
+            primary: "#1162d4", // Blue
+            accent: "#f97316",  // Orange
+        },
+        icon: "air",
+    },
+    {
+        slug: "restoration/mold-remediation",
         name: "Mold Remediation",
         heroTitle: "Professional Mold Remediation",
         description: "Certified mold inspection and removal. We identify the source, contain the spread, and restore healthy air quality.",
@@ -34,7 +45,7 @@ export const services: ServiceData[] = [
         icon: "biotech",
     },
     {
-        slug: "fire-damage-restoration",
+        slug: "restoration/fire-damage",
         name: "Fire Damage Restoration",
         heroTitle: "Fire & Smoke Damage Restoration",
         description: "Complete fire recovery services. From soot and smoke removal to structural reconstruction. We handle your insurance claim.",
@@ -45,7 +56,29 @@ export const services: ServiceData[] = [
         icon: "fire_extinguisher",
     },
     {
-        slug: "storm-damage-repair",
+        slug: "restoration/fire-damage/soot-cleanup",
+        name: "Soot & Smoke Cleanup",
+        heroTitle: "Soot Cleanup & Removal",
+        description: "Specialized soot removal for walls, ceilings, and contents. We use chem-sponges and thermal fogging to eliminate acidic residue.",
+        theme: {
+            primary: "#dc2626", // Red
+            accent: "#f97316",  // Orange
+        },
+        icon: "cleaning_services",
+    },
+    {
+        slug: "restoration/fire-damage/repair",
+        name: "Fire Damage Repair",
+        heroTitle: "Fire Restoration Contractors",
+        description: "Full-service reconstruction from permits to paint. We handle structural repairs, electrical, and finishing for a complete recovery.",
+        theme: {
+            primary: "#ea580c", // Orange 600
+            accent: "#c2410c",  // Orange 700
+        },
+        icon: "construction",
+    },
+    {
+        slug: "restoration/storm-damage",
         name: "Storm Damage Repair",
         heroTitle: "Hurricane & Storm Damage Repair",
         description: "Rapid response for wind and storm damage. Board-up services, roof tarping, and structural repairs.",
@@ -54,6 +87,17 @@ export const services: ServiceData[] = [
             accent: "#38bdf8",  // Sky Blue
         },
         icon: "cyclone",
+    },
+    {
+        slug: "restoration/storm-damage/hurricane-recovery",
+        name: "Hurricane Recovery",
+        heroTitle: "Hurricane & Storm Damage Recovery",
+        description: "Emergency board-ups, drone-assisted inspections, and complex insurance claim management for Florida homeowners.",
+        theme: {
+            primary: "#0f172a", // Slate 900
+            accent: "#f97316",  // Orange
+        },
+        icon: "flood",
     },
     {
         slug: "kitchen-remodeling",
@@ -89,9 +133,9 @@ export const services: ServiceData[] = [
         icon: "domain",
     },
     {
-        slug: "leak-detection",
-        name: "Leak Detection",
-        heroTitle: "Precision Leak Detection",
+        slug: "restoration/water-damage/leak-repair",
+        name: "Leak Repairs",
+        heroTitle: "Precision Leak Detection & Repair",
         description: "Pinpoint hidden leaks without destruction. We use advanced thermal imaging and acoustic technology to find the source fast.",
         theme: {
             primary: "#2563eb", // Blue 600
@@ -100,7 +144,7 @@ export const services: ServiceData[] = [
         icon: "plumbing",
     },
     {
-        slug: "roof-tarping",
+        slug: "restoration/board-up-services",
         name: "Roof Tarping",
         heroTitle: "Emergency Roof Tarping",
         description: "Immediate protection against rain and wind. Professional shrink-wrap and tarping services to prevent secondary water damage.",

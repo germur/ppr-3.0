@@ -1,0 +1,333 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+const pageTitle = "Structural Drying & Dehumidification Services Florida | Paramount Restoration";
+const pageDescription = "Advanced structural drying and dehumidification services in Florida. We save hardwood floors and drywall using hospital-grade technology. 24/7 Emergency Service.";
+---
+
+<MainLayout title={pageTitle} description={pageDescription} image="/images/structural-drying-og.jpg" schemaType="Service">
+    
+    <!-- Custom Styles -->
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <!-- Sticky Alert Bar -->
+    <div class="sticky top-20 z-40 bg-orange-50 border-b border-orange-100 text-orange-900 px-4 py-2 text-center text-sm font-medium">
+        <div class="flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-orange-600 text-[20px]">warning</span>
+            <span>Florida Humidity Alert: Mold can grow in 24 hours. Call now to save your property.</span>
+            <a href="tel:7866022217" class="underline font-bold ml-2">Call Tech Support: (786) 602-2217</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <!-- Content -->
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+                        <span class="material-symbols-outlined text-sm">science</span>
+                        Scientific Restoration
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-[1.1] mb-6 tracking-tight">
+                        Advanced Structural <span class="text-primary">Drying</span> & Dehumidification
+                    </h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed max-w-lg">
+                        The Science of Saving Your Home: We save materials others destroy through precision drying. Don't replace what you can restore.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="tel:7866022217" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg shadow-blue-500/20 transition-all transform hover:-translate-y-0.5">
+                            <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                            Schedule Moisture Assessment
+                        </a>
+                        <a href="#equipment" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold rounded-lg transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+                            See Our Equipment
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center gap-4 text-sm text-slate-500">
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span>
+                            <span>24/7 Response</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span>
+                            <span>IICRC Certified</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span>
+                            <span>Licensed in FL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visual -->
+                <div class="relative lg:h-auto h-[300px] w-full rounded-2xl overflow-hidden shadow-2xl bg-slate-100">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-multiply z-10"></div>
+                    <div class="w-full h-full bg-cover bg-center" role="img" aria-label="Industrial dehumidifier and air movers set up in a flooded hallway" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwy5W7ZsahtoNTYfKa7C90zbsunJbnkJg56ra8ijV_9Xnzz9bVtJiSHwsMFyBF7hWNXJ293KBvP2lR_cQZaeCDYgWR0SF9SWiKJtDgIxDB8jbp_0IgtEiaixGsVGxvwuJK_1E-fM-wmSDkHZ7wOaXS6AX98mXccxGtuiEReE9JZ3_voCyvzVRbSLr43Si7B7RE1n0BRBjAz9C1h6MdweHG-aUYl-6LCiT_Ja1lmkmkee_cBsvk7Ny9WGHAnuQ9NL_0HSmYU3yleDkX');">
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute bottom-6 left-6 z-20 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-slate-100 max-w-[240px]">
+                        <div class="flex items-start gap-3">
+                            <div class="bg-orange-100 p-2 rounded-lg text-orange-600">
+                                <span class="material-symbols-outlined">water_voc</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase mb-1">Current Humidity</p>
+                                <div class="text-2xl font-bold text-slate-900">32% RH</div>
+                                <p class="text-xs text-green-600 font-medium mt-1">Target Reached ✅</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Answer First Block -->
+    <section class="py-16 bg-slate-50 dark:bg-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 lg:p-10 border border-primary/20 shadow-xl shadow-primary/5 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+                <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-4xl">psychology_alt</span>
+                    Why Air Drying Isn't Enough in Florida's Climate
+                </h2>
+                <div class="prose prose-lg text-slate-600 dark:text-slate-300">
+                    <p class="mb-4">
+                        In Florida's high humidity environment (often averaging 70-90% RH), simply opening windows or using standard fans acts counter-productively, introducing <strong>more moisture</strong> into porous materials rather than removing it.
+                    </p>
+                    <p>
+                        Professional structural drying isn't just about moving air; it's about managing <strong>Relative Humidity (RH)</strong> and <strong>Equilibrium Moisture Content (EMC)</strong>. We use industrial desiccant and LGR dehumidifiers to pull water molecules from deep within studs, subfloors, and drywall—preventing the hidden mold growth that surface drying almost always misses.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Features -->
+    <section class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4">Scientific Drying Features</h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400">Our process uses advanced technology to save your home without unnecessary demolition.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="group p-6 rounded-xl border border-slate-200 hover:border-primary/50 hover:shadow-lg transition-all bg-white dark:bg-slate-800 dark:border-slate-700">
+                    <div class="w-12 h-12 bg-blue-50 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">home_repair_service</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">In-Place Drying</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">Advanced injection systems allow us to dry behind cabinets and under floors without ripping them out.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="group p-6 rounded-xl border border-slate-200 hover:border-primary/50 hover:shadow-lg transition-all bg-white dark:bg-slate-800 dark:border-slate-700">
+                    <div class="w-12 h-12 bg-blue-50 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">carpenter</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Hardwood Rescue</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">Specialized mats and vacuum pressure systems can often salvage cupped hardwood flooring, saving thousands.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="group p-6 rounded-xl border border-slate-200 hover:border-primary/50 hover:shadow-lg transition-all bg-white dark:bg-slate-800 dark:border-slate-700">
+                    <div class="w-12 h-12 bg-blue-50 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">heat</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Thermal Monitoring</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">Infrared cameras track moisture pockets invisible to the naked eye to ensure 100% dryness.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="group p-6 rounded-xl border border-slate-200 hover:border-primary/50 hover:shadow-lg transition-all bg-white dark:bg-slate-800 dark:border-slate-700">
+                    <div class="w-12 h-12 bg-blue-50 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">verified_user</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Mold Prevention</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">Rapid humidity control stops microbial growth before it starts, keeping your family safe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Process Timeline -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm">Transparency</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mt-2">The Drying Lifecycle</h2>
+            </div>
+            <div class="relative">
+                <!-- Vertical Line -->
+                <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-700"></div>
+                <!-- Step 1 -->
+                <div class="relative flex gap-8 mb-12">
+                    <div class="relative z-10 w-16 h-16 rounded-full bg-white dark:bg-slate-800 border-4 border-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <span class="font-bold text-primary text-xl">01</span>
+                    </div>
+                    <div class="pt-3">
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Day 1: Extraction & Setup</h3>
+                            <span class="bg-red-100 text-red-700 text-xs px-2 py-0.5 rounded-full font-bold">Critical</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400">Immediate removal of standing water. Setup of containment zones to prevent cross-contamination. Installation of LGR dehumidifiers and air movers to begin the evaporation process immediately.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative flex gap-8 mb-12">
+                    <div class="relative z-10 w-16 h-16 rounded-full bg-white dark:bg-slate-800 border-4 border-blue-300 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <span class="font-bold text-blue-300 text-xl">02</span>
+                    </div>
+                    <div class="pt-3">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Day 2-3: Monitoring & Adjustment</h3>
+                        <p class="text-slate-600 dark:text-slate-400">Technicians visit daily to monitor humidity logs. Equipment is repositioned based on thermal imaging readings to target stubborn moisture pockets in corners or behind walls.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative flex gap-8">
+                    <div class="relative z-10 w-16 h-16 rounded-full bg-white dark:bg-slate-800 border-4 border-green-400 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <span class="font-bold text-green-500 text-xl">03</span>
+                    </div>
+                    <div class="pt-3">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Day 4-5: Equilibrium & Removal</h3>
+                        <p class="text-slate-600 dark:text-slate-400">Moisture content reaches "Dry Standard" (typically 8-12% in Florida). Equipment is removed, and the site is prepared for any minor cosmetic repairs or final cleaning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Showcase -->
+    <section id="equipment" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-10">Industrial Equipment Fleet</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row">
+                    <div class="w-full md:w-2/5 bg-slate-100 aspect-square md:aspect-auto relative">
+                        <div class="w-full h-full bg-cover bg-center" role="img" aria-label="Close up of a blue industrial LGR dehumidifier" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoW3cElI-lqreP8Q28dfriDZD6Ux86HKe2ttr8fFSxbl9vFqUcXNhVTm-ntf1rflyJwueh9rtLgBb4bmrNgvADkhTViK4Duu64uAZUoKaGKMAVNzxrhAD75Bck5eiBAzw-9ydFxgaDg1KyL7G7ViRavyJFvQQfq7amow9-6_eGPkqGMEdZsW-5sT6u6qNzoVnfiWSrC4kQkePU1v74sjUsg7DuGaXNMvzII_559hGOQwyZLiGzH_XualVVr7th9tmyw1J0EYepMhov')"></div>
+                    </div>
+                    <div class="p-6 md:w-3/5 flex flex-col justify-center">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="material-symbols-outlined text-primary">air</span>
+                            <span class="text-xs font-bold uppercase text-slate-500 tracking-wider">Dehumidification</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">LGR 7000 XLi</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4 text-sm">Low Grain Refrigerant (LGR) technology removes more water at lower humidity levels than standard units.</p>
+                        <ul class="text-sm space-y-1 text-slate-500 dark:text-slate-400">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Removes 130 pints/day</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Smart Control Panel</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row">
+                    <div class="w-full md:w-2/5 bg-slate-100 aspect-square md:aspect-auto relative">
+                        <div class="w-full h-full bg-cover bg-center" role="img" aria-label="Industrial hoses and drying pipes connected to a wall system" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuClAXco16zjn4grrdVcGoLC3VY2xhdUuFVB7S0BMwLhXA9TVf1yUGKvOctPutuSrtTF1nBEc_aMOIJTsrpFQ9cENMmTCJJPD6hLLvWH1GAzzLBCuCY3d2XSPH5W7k0AUTlX-Zito0_RwVDILX8KgUBV9u6GOzecJQPmb6QwsasfeL4anT6VxNa693GCwi4TbWQYgufpuNzi9USOpoLhkjLMJwe4bn1BySV53M3Z2FFILqhNYwhErF2nmD6ZeclifZbs4rE_UJocl2iC')"></div>
+                    </div>
+                    <div class="p-6 md:w-3/5 flex flex-col justify-center">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="material-symbols-outlined text-primary">heat_pump</span>
+                            <span class="text-xs font-bold uppercase text-slate-500 tracking-wider">Injection Drying</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Injectidry HP-60</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4 text-sm">Force-dries trapped moisture in wall cavities and ceiling plenums without removing drywall.</p>
+                        <ul class="text-sm space-y-1 text-slate-500 dark:text-slate-400">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Preserves custom paint/texture</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>High-pressure airflow</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-20 bg-primary dark:bg-blue-900 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Why Restore Instead of Replace?</h2>
+                <p class="text-blue-100 text-lg">See the difference in time and cost between professional drying and standard reconstruction.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-2xl text-slate-900 dark:text-white">
+                <div class="overflow-x-auto scrollbar-hide">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+                                <th class="p-6 text-sm font-bold uppercase text-slate-500 tracking-wider w-1/3">Factor</th>
+                                <th class="p-6 text-lg font-bold text-primary w-1/3 bg-blue-50/50">Professional Drying</th>
+                                <th class="p-6 text-lg font-bold text-slate-700 dark:text-slate-300 w-1/3">Demolition & Replace</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+                            <tr>
+                                <td class="p-6 font-semibold">Typical Timeline</td>
+                                <td class="p-6 text-primary font-bold bg-blue-50/20">3 - 5 Days</td>
+                                <td class="p-6 text-slate-600 dark:text-slate-400">2 - 6 Weeks</td>
+                            </tr>
+                            <tr>
+                                <td class="p-6 font-semibold">Cost Estimate (Avg)</td>
+                                <td class="p-6 text-primary font-bold bg-blue-50/20">$$ (Lower)</td>
+                                <td class="p-6 text-slate-600 dark:text-slate-400">$$$$$ (Significant)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-6 font-semibold">Mess & Disruption</td>
+                                <td class="p-6 text-primary font-bold bg-blue-50/20">Minimal</td>
+                                <td class="p-6 text-slate-600 dark:text-slate-400">High (Dust, debris, noise)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-6 font-semibold">Insurance Coverage</td>
+                                <td class="p-6 text-primary font-bold bg-blue-50/20">Preferred by Adjusters</td>
+                                <td class="p-6 text-slate-600 dark:text-slate-400">Harder to Approve</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-800">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 dark:text-white font-medium hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">
+                        <span class="text-lg font-bold">How long does the drying process take?</span>
+                        <span class="material-symbols-outlined transition group-open:-rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed">
+                        For most clean water losses (Category 1), structural drying typically takes 3 to 5 days. However, dense materials like hardwood floors or plaster may require 7+ days. We monitor moisture levels daily to let you know exactly when the job is done.
+                    </div>
+                </details>
+                <details class="group bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 dark:text-white font-medium hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">
+                        <span class="text-lg font-bold">Can you dry wet drywall, or does it need to be cut?</span>
+                        <span class="material-symbols-outlined transition group-open:-rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed">
+                        If the water is clean (sanitary) and the drywall has not lost its structural integrity or started growing mold, we can often dry it in place using Injectidry systems. If insulation behind the wall is wet, we may need to make small holes or remove baseboards to facilitate airflow.
+                    </div>
+                </details>
+                <details class="group bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-slate-900 dark:text-white font-medium hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">
+                        <span class="text-lg font-bold">Is the equipment noisy?</span>
+                        <span class="material-symbols-outlined transition group-open:-rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Yes, industrial air movers and dehumidifiers generate noise comparable to a loud vacuum cleaner. However, keeping them running 24/7 is critical to preventing mold growth. Turning them off will delay drying and may compromise your insurance claim.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+</MainLayout>

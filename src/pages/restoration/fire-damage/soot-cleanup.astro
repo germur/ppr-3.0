@@ -1,0 +1,398 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+const pageTitle = "Soot Cleanup & Removal Services Florida | Paramount Restoration";
+const pageDescription = "Professional soot and smoke residue removal in Florida. Specialized chemical sponges and thermal fogging to restore your property. Don't wipe it!";
+---
+
+<MainLayout title={pageTitle} description={pageDescription} image="/images/soot-cleanup-og.jpg" schemaType="Service">
+    
+    <!-- Custom Styles for Slider -->
+    <style>
+        .slider-handle {
+            cursor: col-resize;
+        }
+        /* Hide scrollbar for Types of Soot horizontal scroll on mobile if needed */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+    <!-- Sticky Alert Bar -->
+    <div class="sticky top-20 z-40 bg-orange-50 border-b border-orange-200 px-4 py-3 flex items-center justify-center gap-4 text-sm font-medium text-orange-900 shadow-sm transition-transform duration-300" id="sticky-alert">
+        <div class="flex items-center gap-2 max-w-5xl w-full justify-center flex-wrap text-center">
+            <span class="material-symbols-outlined text-orange-600 filled-icon">warning</span>
+            <span><strong class="font-bold">WARNING:</strong> Do not use standard cleaning products on soot. It can cause permanent staining.</span>
+            <a class="ml-2 inline-flex items-center gap-1 font-bold text-primary hover:underline whitespace-nowrap" href="tel:7866022217">
+                Ask a Professional: (786) 602-2217
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative bg-white dark:bg-slate-900 pt-12 pb-20 lg:pt-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <!-- Content -->
+                <div class="flex flex-col gap-6 max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-primary dark:text-blue-400 text-xs font-bold uppercase tracking-wider w-fit">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        Florida Soot Removal Experts
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-[1.1] tracking-tight">
+                        Don't Wipe It, <br class="hidden lg:block"/> <span class="text-primary">Remove It.</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-normal max-w-lg">
+                        Professional soot & residue removal in Florida. We use specialized chemical sponges and thermal fogging to restore your property without sealing in the damage.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                        <a href="#assessment" class="flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white h-12 px-8 rounded-lg font-bold text-base shadow-lg shadow-blue-200/50 dark:shadow-blue-900/30 transition-all transform hover:-translate-y-0.5">
+                            Get a Free Assessment
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                        </a>
+                        <a href="tel:7866022217" class="flex items-center justify-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white h-12 px-8 rounded-lg font-bold text-base transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">call</span>
+                            (786) 602-2217
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual Before/After Representation -->
+                <div class="relative group w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 select-none before-after-slider">
+                    <!-- Images Container -->
+                    <div class="relative w-full h-full">
+                        <!-- After Image (Background) -->
+                        <div class="absolute inset-0 w-full h-full">
+                            <img 
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBakSBghq-saRaloqJilI4XRkwvude9Xma9am99uao_D8-t7O7qRaucXK9f_I4xly5acZh5pfW10M4pOPg2pOM8z60f71jZgQLMWM8BYYC8DviARguavH6YCAeHD-SUfqYJprDTJQfi-takS5b6p56Kzp19zDzskrHaTM2HQoIZV1uXsByX-urrMnmCKXDi1VUNUqzDnoGOUqMLgxX2xUV9N4BmNfB0OItEpg9LvudXnYBdkxhJcNGgOs-YAZveQ_MPLLlG2WgP9np0" 
+                                alt="Clean pristine white wall corner restored" 
+                                class="w-full h-full object-cover"
+                            />
+                            <span class="absolute top-4 right-4 bg-primary/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full border border-white/20 z-10">AFTER</span>
+                        </div>
+
+                        <!-- Before Image (Clipped) -->
+                        <div class="absolute inset-0 w-full h-full overflow-hidden before-image-wrapper" style="width: 50%;">
+                            <img 
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYJodvth9Nw5Q2YkJ5SERwGOCCx05mz2jqufPeoH5Yo0NhlnGN0px1CBC0YxbGT_u6uY7yJDQVJvGG991o9c1H09ZjfY8eJLzJkdHpqLoClQUcVer5m5njAp7i73wTKhMvJaG-IGWR18TUSkvIKPoopfm221NYR_4iZptNFdmo4RpBHLSjyeFczEnidFrdX6SYxc6-uSJgu_0PbCA2SSMU7CPvEtoqN_2MoFebiwyj5pMnSLgx2k81_zKUkRLDT3LvdRMPflcBgguK"
+                                alt="Dark soot stained wall corner details" 
+                                class="absolute top-0 left-0 w-full h-full object-cover max-w-none" 
+                                style="width: 200%;" 
+                                id="before-img-element"
+                            />
+                            <div class="absolute inset-0 bg-black/40"></div>
+                            <span class="absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full border border-white/20 z-10">BEFORE</span>
+                        </div>
+
+                        <!-- Slider Handle -->
+                        <div class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 slider-handle" style="left: 50%;">
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-[20px]">compare_arrows</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Abstract Background Pattern -->
+        <div class="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-blue-50 to-transparent opacity-60 dark:from-blue-900/20"></div>
+    </section>
+
+    <!-- STOP! Warning Section -->
+    <section class="py-16 bg-white dark:bg-slate-900 border-t border-b border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-10">
+                <div class="flex flex-col gap-4 max-w-3xl">
+                    <div class="flex items-center gap-2 text-orange-600">
+                        <span class="material-symbols-outlined filled-icon">error</span>
+                        <span class="font-bold text-sm tracking-wider uppercase">Critical Warning</span>
+                    </div>
+                    <h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight">
+                        STOP! Read This Before You Clean
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg">
+                        Improper cleaning methods can permanently set stains, drive soot deeper into pores, and void insurance coverage.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Warning Card 1 -->
+                    <div class="group flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 hover:border-orange-500/30 hover:shadow-lg transition-all">
+                        <div class="w-12 h-12 rounded-full bg-red-50 dark:bg-red-900/20 text-orange-600 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-[28px]">water_drop</span>
+                        </div>
+                        <div>
+                            <h3 class="text-slate-900 dark:text-white text-lg font-bold mb-2">No Water</h3>
+                            <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Water drives soot particles deeper into drywall and fabric pores, often setting the stain permanently and making restoration impossible.</p>
+                        </div>
+                    </div>
+                    <!-- Warning Card 2 -->
+                    <div class="group flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 hover:border-orange-500/30 hover:shadow-lg transition-all">
+                        <div class="w-12 h-12 rounded-full bg-red-50 dark:bg-red-900/20 text-orange-600 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-[28px]">vacuum</span>
+                        </div>
+                        <div>
+                            <h3 class="text-slate-900 dark:text-white text-lg font-bold mb-2">No Household Vacuums</h3>
+                            <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Standard vacuums lack industrial HEPA filters. They simply chop soot particles into finer dust and blow them back into the air you breathe.</p>
+                        </div>
+                    </div>
+                    <!-- Warning Card 3 -->
+                    <div class="group flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 hover:border-orange-500/30 hover:shadow-lg transition-all">
+                        <div class="w-12 h-12 rounded-full bg-red-50 dark:bg-red-900/20 text-orange-600 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-[28px]">gavel</span>
+                        </div>
+                        <div>
+                            <h3 class="text-slate-900 dark:text-white text-lg font-bold mb-2">Insurance Risk</h3>
+                            <p class="text-slate-500 dark:text-slate-400 leading-relaxed">DIY damage is often categorized as "negligence" by adjusters. Let our certified team document the damage for your claim.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Breakdown: Types of Soot -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Technical Breakdown: Types of Soot</h2>
+                <p class="text-slate-600 dark:text-slate-400">Not all soot is the same. We identify the residue type to determine the correct chemical protocol.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col h-full hover:shadow-md transition-shadow">
+                    <div class="mb-4 text-primary">
+                        <span class="material-symbols-outlined text-4xl">oil_barrel</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Oily Soot</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 flex-grow">Result of grease fires or burning plastic. Smears easily and is highly resistant to water-based cleaning.</p>
+                    <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Treatment</span>
+                        <p class="text-sm font-semibold text-primary">Degreasing Agents + Gel</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col h-full hover:shadow-md transition-shadow">
+                    <div class="mb-4 text-primary">
+                        <span class="material-symbols-outlined text-4xl">dry_cleaning</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Dry Soot</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 flex-grow">Caused by high-oxygen fires (wood, paper). Easier to clean but extremely fine and dusty.</p>
+                    <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Treatment</span>
+                        <p class="text-sm font-semibold text-primary">Dry Chemical Sponge</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col h-full hover:shadow-md transition-shadow">
+                    <div class="mb-4 text-primary">
+                        <span class="material-symbols-outlined text-4xl">skillet</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Protein Residue</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 flex-grow">From burnt food (meat, beans). Often invisible but leaves a pungent, horrifying odor.</p>
+                    <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Treatment</span>
+                        <p class="text-sm font-semibold text-primary">Enzymatic Cleaners</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col h-full hover:shadow-md transition-shadow">
+                    <div class="mb-4 text-primary">
+                        <span class="material-symbols-outlined text-4xl">local_gas_station</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Fuel Oil Soot</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 flex-grow">Furnace puff-backs. This oily, sticky mess covers everything in minutes.</p>
+                    <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Treatment</span>
+                        <p class="text-sm font-semibold text-primary">Solvent-Based Cleaning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Our Process: The Chem-Sponge Technique</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg mb-8">
+                        We employ a meticulous 4-step protocol designed to capture particulate matter rather than spreading it.
+                    </p>
+                    <div class="space-y-8">
+                        <!-- Step 1 -->
+                        <div class="flex gap-4 group">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm mt-1 ring-4 ring-blue-50 dark:ring-blue-900/20 group-hover:ring-blue-100 dark:group-hover:ring-blue-900/40 transition-all">1</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">Air Scrubbing & Containment</h4>
+                                <p class="text-slate-500 dark:text-slate-400 mt-1">We seal off affected areas and use industrial air scrubbers to capture airborne soot particles.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex gap-4 group">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm mt-1 ring-4 ring-blue-50 dark:ring-blue-900/20 group-hover:ring-blue-100 dark:group-hover:ring-blue-900/40 transition-all">2</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">Dry Sponge Removal</h4>
+                                <p class="text-slate-500 dark:text-slate-400 mt-1">Using vulcanized rubber sponges, we lift dry soot from porous surfaces like drywall and ceilings.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex gap-4 group">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm mt-1 ring-4 ring-blue-50 dark:ring-blue-900/20 group-hover:ring-blue-100 dark:group-hover:ring-blue-900/40 transition-all">3</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">Thermal Fogging</h4>
+                                <p class="text-slate-500 dark:text-slate-400 mt-1">We use a heated fog to neutralize odor molecules trapped in cracks and crevices that manual cleaning can't reach.</p>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="flex gap-4 group">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm mt-1 ring-4 ring-blue-50 dark:ring-blue-900/20 group-hover:ring-blue-100 dark:group-hover:ring-blue-900/40 transition-all">4</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">HVAC Decontamination</h4>
+                                <p class="text-slate-500 dark:text-slate-400 mt-1">Cleaning ductwork ensures soot isn't recirculated back into your clean home.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative h-full min-h-[400px] rounded-2xl overflow-hidden shadow-lg group">
+                    <div class="absolute inset-0 bg-cover bg-center transform transition-transform duration-700 group-hover:scale-105" role="img" aria-label="Professional restoration technician in protective gear cleaning a wall with a chemical sponge" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjLNOxuP4cm45_ax3xWP-2VSkR57XkD9E97g5Ea0BacZeNqIIlr7TZFjMKWLw1r6KoD4c2-gQihwYIlZTCGvZKfjWDtqPNoiHg4XoFiKj6FK8N0JOHsI67_E_nZWp1GtCXxgD5lSTMD1Bm8JpEE9snAxFiwHU2QmzYhalbow7TBT0ns9wgo-AOxH5CXfu4URpdetHN5Pgxy3tC5tv3RceWWn4E1NedPwxKmN5kke1oh2wGvI_u95BunNyiK0Sgkv-yKkK1NznR-Dju');"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900/90 to-transparent">
+                        <div class="flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-green-400">verified_user</span>
+                            <span class="font-bold">IICRC Certified Technicians</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Critical Application: Electronics & Art -->
+    <section class="py-16 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="flex-1">
+                    <div class="inline-block px-3 py-1 bg-blue-900/50 text-blue-200 border border-blue-800 rounded-full text-xs font-bold uppercase mb-4">Specialized Recovery</div>
+                    <h2 class="text-3xl font-bold mb-6">Critical Application: Electronics & Art</h2>
+                    <p class="text-slate-400 mb-8 text-lg">
+                        Soot is acidic. If left on electronics, it will corrode circuit boards. On oil paintings, it reacts with the varnish. Time is your enemy.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                            <div class="text-primary mb-2"><span class="material-symbols-outlined">memory</span></div>
+                            <h4 class="font-bold mb-1">Electronics</h4>
+                            <p class="text-sm text-slate-400">Ultrasonic cleaning to remove acidic residue from circuit boards.</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                            <div class="text-primary mb-2"><span class="material-symbols-outlined">palette</span></div>
+                            <h4 class="font-bold mb-1">Fine Art</h4>
+                            <p class="text-sm text-slate-400">Collaboration with conservators to safely clean delicate canvases.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 flex items-center justify-center">
+                    <div class="relative w-full max-w-md aspect-square bg-slate-800 rounded-xl overflow-hidden border border-slate-700 shadow-2xl">
+                        <div class="absolute inset-0 bg-cover bg-center" role="img" aria-label="Close up of electronic circuit board with cleaning tools" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGv81cZ_fdKFqVHWPPu1V85A9PquzLulHKOiQ7RJ-bWRdm7EdWpDZpWv26EjuBwbyh7-MFE7-HRDzBvuyJyR_x2ysH9O_262P2AMpFhPyeluIZRLtCVOU8KjuHX7H3B4TD5cd7Mvn1NrYqhH8SYjUTv2XmroT-DnzwpIFTjdEUUO-ffmSENY_YcJ3D041bVC5_TqsyQa3dd5iwqUwbAOA51tzxxbwXCwxH97dW2WIZmsDymUXs1z3NxnBm2q5ah19D_4lJrruJxgfG');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-900">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white text-center mb-10">Common Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden open:shadow-md transition-shadow">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                        Is soot harmful to my health?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-slate-400">expand_more</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Yes. Soot particles are microscopic (often smaller than 2.5 microns) and can be inhaled deep into the lungs. They contain toxic chemicals, acids, and carcinogens resulting from the combustion of synthetic materials.
+                    </div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden open:shadow-md transition-shadow">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                        Can I just paint over the soot stains?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-slate-400">expand_more</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed">
+                        No. Standard paint will not adhere properly to soot, and the oily residue will bleed through the paint within weeks ("ghosting"). The soot must be removed and the surface sealed with a specialized shellac-based primer before painting.
+                    </div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden open:shadow-md transition-shadow">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                        How do you clean soot off brick fireplaces?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-slate-400">expand_more</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Brick is porous and difficult to clean. We use a combination of heavy-duty degreasers, agitation with stiff brushes, and sometimes latex-based peel-away cleaners that pull the soot out of the pores as they dry.
+                    </div>
+                </details>
+                <details class="group bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden open:shadow-md transition-shadow">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                        Will my insurance cover professional soot removal?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-slate-400">expand_more</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed">
+                        In most cases, yes. Smoke and soot damage is a standard peril in homeowner policies. We work directly with your insurance adjuster to document the damage and justify the cleaning protocol.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Script for Slider -->
+    <script>
+        const sliderContainer = document.querySelector('.before-after-slider');
+        const beforeImage = document.querySelector('.before-image-wrapper') as HTMLElement;
+        const sliderHandle = document.querySelector('.slider-handle') as HTMLElement;
+        const beforeImgElement = document.getElementById('before-img-element') as HTMLElement;
+
+        if (sliderContainer && beforeImage && sliderHandle && beforeImgElement) {
+            let isDragging = false;
+
+            const updateSlider = (x: number) => {
+                const rect = sliderContainer.getBoundingClientRect();
+                let position = ((x - rect.left) / rect.width) * 100;
+                
+                // Clamp position
+                position = Math.max(0, Math.min(100, position));
+
+                beforeImage.style.width = `${position}%`;
+                sliderHandle.style.left = `${position}%`;
+            };
+
+            const onMouseMove = (e: MouseEvent) => {
+                if (!isDragging) return;
+                updateSlider(e.clientX);
+            };
+
+            const onTouchMove = (e: TouchEvent) => {
+                if (!isDragging) return;
+                updateSlider(e.touches[0].clientX);
+            };
+
+            const onMouseDown = () => isDragging = true;
+            const onMouseUp = () => isDragging = false;
+
+            // Mouse events
+            sliderContainer.addEventListener('mousedown', onMouseDown);
+            window.addEventListener('mouseup', onMouseUp);
+            window.addEventListener('mousemove', onMouseMove);
+
+            // Touch events
+            sliderContainer.addEventListener('touchstart', onMouseDown);
+            window.addEventListener('touchend', onMouseUp);
+            window.addEventListener('touchmove', onTouchMove);
+
+            // Initial position just in case
+            updateSlider(sliderContainer.getBoundingClientRect().left + sliderContainer.getBoundingClientRect().width / 2);
+        }
+    </script>
+
+</MainLayout>

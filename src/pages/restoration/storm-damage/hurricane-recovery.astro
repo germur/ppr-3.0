@@ -1,0 +1,383 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Header from '../../../components/common/Header.astro';
+import Breadcrumbs from '../../../components/common/Breadcrumbs.astro';
+
+const pageTitle = "Hurricane & Storm Damage Recovery - Paramount Property Restoration";
+const pageDescription = "Immediate hurricane response: Emergency board-ups, drone-assisted inspections, and complete structural restoration. Licensed General Contractor.";
+
+const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Restoration', href: '/restoration/' },
+    { label: 'Storm Damage', href: '/restoration/storm-damage/' },
+    { label: 'Hurricane Recovery', href: '/restoration/storm-damage/hurricane-recovery/' }
+];
+---
+
+<MainLayout 
+    title={pageTitle} 
+    description={pageDescription} 
+    image="/images/hurricane-recovery-og.jpg" 
+    schemaType="EmergencyService"
+    hideHeader={true}
+    breadcrumbItems={[]} 
+>
+
+    <!-- Custom Styles for this page only to match user prototype -->
+    <style>
+        /* Hide scrollbar for Bento Grid horizontal scroll on mobile if needed */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Native details marker hide */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+
+    <!-- Body content from user, adapted with arbitrary values for custom colors -->
+    <div class="bg-[#f6f7f8] dark:bg-[#0f172a] text-slate-900 dark:text-white font-sans overflow-x-hidden">
+        
+        <!-- Sticky Header Wrapper: Crisis Bar + Standard Header -->
+        <div class="sticky top-0 z-50 w-full shadow-md">
+            <!-- Sticky Crisis Alert Bar -->
+            <div class="bg-[#dc2626] text-white px-4 py-2 flex items-center justify-center gap-3 relative z-[51]">
+                <span class="material-symbols-outlined animate-pulse fill-1">warning</span>
+                <p class="text-sm font-bold tracking-wide uppercase">Crisis Mode Active: Crews Deployed in Florida Zones A, B & C</p>
+                <a href="tel:7866022217" class="hidden sm:flex items-center gap-1 bg-white text-[#dc2626] px-3 py-0.5 rounded text-xs font-black uppercase tracking-wider hover:bg-gray-100 transition-colors">
+                    Call 24/7 Hotline
+                </a>
+            </div>
+
+            <!-- Standard Project Header (light theme for better logo contrast, emergency variant, not sticky itself as wrapper is sticky) -->
+            <Header 
+                theme="light" 
+                variant="emergency" 
+                sticky={false} 
+                secondaryColor="#137fec"
+                emergencyBtnText="800-911-HELP"
+            />
+        </div>
+
+        <!-- Manually Rendered Breadcrumbs (Below Header) -->
+        <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+                <Breadcrumbs items={breadcrumbItems} />
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="relative w-full min-h-[650px] flex items-center justify-center overflow-hidden bg-[#0f172a]">
+            <!-- Background Image/Video Placeholder -->
+            <div class="absolute inset-0 z-0 bg-cover bg-center" data-alt="Storm damaged roof being repaired by workers in safety gear during sunset" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.6) 100%), url('/images/restoration/hurricane-hero.jpg');">
+            </div>
+            <div class="relative z-10 container mx-auto px-4 lg:px-12 flex flex-col items-center text-center gap-8 pt-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f97316]/20 border border-[#f97316]/40 text-[#f97316] text-xs font-bold uppercase tracking-wider mb-2">
+                    <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f97316] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-[#f97316]"></span>
+                    </span>
+                    Immediate Response Teams Available
+                </div>
+                <h1 class="text-white text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tighter max-w-4xl">
+                    Hurricane & Storm <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#137fec] to-blue-300">Damage Recovery</span>
+                </h1>
+                <p class="text-slate-300 text-base md:text-xl font-normal leading-relaxed max-w-2xl">
+                    The fastest path from disaster to restoration. Emergency board-ups, drone-assisted inspections, and complex insurance claim management for Florida homeowners.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4">
+                    <a href="/contact" class="flex items-center justify-center rounded-lg h-12 px-8 bg-[#dc2626] hover:bg-red-700 text-white text-base font-bold tracking-wide shadow-lg shadow-[#dc2626]/20 transition-all w-full sm:w-auto">
+                        Request Emergency Tarping
+                    </a>
+                    <a href="tel:7866022217" class="flex items-center justify-center rounded-lg h-12 px-8 bg-[#1e293b] hover:bg-slate-700 border border-slate-600 text-white text-base font-bold tracking-wide transition-all w-full sm:w-auto">
+                        Call Dispatch
+                    </a>
+                </div>
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 pt-8 opacity-70 border-t border-slate-700/50 w-full max-w-3xl mt-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-green-500">verified_user</span>
+                        <span class="text-slate-300 text-sm font-semibold">Licensed General Contractor</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-green-500">handshake</span>
+                        <span class="text-slate-300 text-sm font-semibold">Insurance Preferred Vendor</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-green-500">schedule</span>
+                        <span class="text-slate-300 text-sm font-semibold">24/7 Rapid Response</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech-First Assessment Section -->
+        <section class="py-20 bg-[#0f172a]">
+            <div class="container mx-auto px-4 lg:px-12 max-w-[1200px]">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-center gap-2 text-[#137fec] font-bold uppercase tracking-wider text-sm">
+                            <span class="material-symbols-outlined">flight</span>
+                            Tech-First Assessment
+                        </div>
+                        <h2 class="text-white text-3xl md:text-4xl font-bold leading-tight">
+                            Faster Claims with <br/>
+                            <span class="text-[#137fec]">Drone-Assisted Inspections</span>
+                        </h2>
+                        <p class="text-[#94a3b8] text-lg leading-relaxed">
+                            We don't just guess; we measure. Our teams utilize thermal imaging drones to detect moisture under roof membranes and create 3D damage maps, getting your insurance claim approved and restoration started days faster than traditional methods.
+                        </p>
+                        <div class="flex flex-col gap-4 mt-4">
+                            <div class="flex items-start gap-4 p-4 rounded-lg bg-[#1e293b] border border-slate-700/50">
+                                <div class="p-2 rounded bg-[#137fec]/10 text-[#137fec]">
+                                    <span class="material-symbols-outlined">speed</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Unmatched Speed</h3>
+                                    <p class="text-[#94a3b8] text-sm">Deploying aerial units allows us to inspect unsafe roofs immediately after the storm passes.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 rounded-lg bg-[#1e293b] border border-slate-700/50">
+                                <div class="p-2 rounded bg-[#137fec]/10 text-[#137fec]">
+                                    <span class="material-symbols-outlined">analytics</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Pinpoint Accuracy</h3>
+                                    <p class="text-[#94a3b8] text-sm">Thermal scanning identifies hidden water pockets that manual inspections often miss.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative h-full min-h-[400px]">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-[#137fec]/20 to-transparent rounded-2xl z-0 transform rotate-3"></div>
+                        <div class="relative z-10 w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-black/50 bg-[#1e293b]" data-alt="Drone view of a residential neighborhood inspecting roof damage" style="background-image: url('/images/restoration/drone-inspection.jpg'); background-size: cover; background-position: center;">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                                <div class="flex items-center gap-3 text-white">
+                                    <span class="material-symbols-outlined animate-pulse text-red-500 fill-1">fiber_manual_record</span>
+                                    <span class="font-mono text-sm tracking-widest">LIVE FEED // DRONE UNIT 04</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Immediate Mitigation Services -->
+        <section class="py-20 bg-[#0b1120]">
+            <div class="container mx-auto px-4 lg:px-12 max-w-[1200px]">
+                <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+                    <div class="max-w-2xl">
+                        <h2 class="text-white text-3xl font-bold mb-4">Immediate Mitigation Services</h2>
+                        <p class="text-[#94a3b8] text-lg">Before rebuilding, we must stop the damage. Our rapid response teams are equipped for immediate stabilization.</p>
+                    </div>
+                    <a href="/restoration" class="text-[#137fec] font-bold hover:text-white transition-colors flex items-center gap-1 shrink-0">
+                        View All Services <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Service Card 1 -->
+                    <div class="group relative bg-[#1e293b] p-6 rounded-xl border border-slate-700/50 hover:border-[#137fec]/50 transition-all hover:-translate-y-1">
+                        <div class="size-12 rounded-lg bg-blue-900/30 text-blue-400 flex items-center justify-center mb-6 group-hover:bg-[#137fec] group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">roofing</span>
+                        </div>
+                        <h3 class="text-white text-xl font-bold mb-3">Emergency Tarping</h3>
+                        <p class="text-[#94a3b8] text-sm leading-relaxed mb-4">Professional shrink-wrap and tarp installation to prevent secondary water intrusion immediately.</p>
+                        <a href="/restoration/storm-damage" class="text-sm font-bold text-[#137fec] group-hover:text-white flex items-center gap-1">
+                            Learn more <span class="material-symbols-outlined text-base">chevron_right</span>
+                        </a>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="group relative bg-[#1e293b] p-6 rounded-xl border border-slate-700/50 hover:border-[#137fec]/50 transition-all hover:-translate-y-1">
+                        <div class="size-12 rounded-lg bg-orange-900/30 text-orange-400 flex items-center justify-center mb-6 group-hover:bg-[#f97316] group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">carpenter</span>
+                        </div>
+                        <h3 class="text-white text-xl font-bold mb-3">Board-Up Services</h3>
+                        <p class="text-[#94a3b8] text-sm leading-relaxed mb-4">Securing broken windows, doors, and structural openings to protect your property from looting and weather.</p>
+                        <a href="/restoration/storm-damage" class="text-sm font-bold text-[#f97316] group-hover:text-white flex items-center gap-1">
+                            Learn more <span class="material-symbols-outlined text-base">chevron_right</span>
+                        </a>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="group relative bg-[#1e293b] p-6 rounded-xl border border-slate-700/50 hover:border-[#137fec]/50 transition-all hover:-translate-y-1">
+                        <div class="size-12 rounded-lg bg-blue-900/30 text-blue-400 flex items-center justify-center mb-6 group-hover:bg-[#137fec] group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">water_drop</span>
+                        </div>
+                        <h3 class="text-white text-xl font-bold mb-3">Water Extraction</h3>
+                        <p class="text-[#94a3b8] text-sm leading-relaxed mb-4">Industrial-grade pumps and dehumidifiers to remove standing water and prevent mold growth.</p>
+                        <a href="/restoration/water-damage" class="text-sm font-bold text-[#137fec] group-hover:text-white flex items-center gap-1">
+                            Learn more <span class="material-symbols-outlined text-base">chevron_right</span>
+                        </a>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="group relative bg-[#1e293b] p-6 rounded-xl border border-slate-700/50 hover:border-[#137fec]/50 transition-all hover:-translate-y-1">
+                        <div class="size-12 rounded-lg bg-blue-900/30 text-blue-400 flex items-center justify-center mb-6 group-hover:bg-[#137fec] group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">delete</span>
+                        </div>
+                        <h3 class="text-white text-xl font-bold mb-3">Debris Removal</h3>
+                        <p class="text-[#94a3b8] text-sm leading-relaxed mb-4">Safe clearing of fallen trees, structural debris, and hazardous materials from your property.</p>
+                        <a href="/restoration/storm-damage" class="text-sm font-bold text-[#137fec] group-hover:text-white flex items-center gap-1">
+                            Learn more <span class="material-symbols-outlined text-base">chevron_right</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rebuild Stronger & Compliance -->
+        <section class="py-20 bg-[#0f172a] relative overflow-hidden">
+            <div class="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-[#137fec]/5 to-transparent pointer-events-none"></div>
+            <div class="container mx-auto px-4 lg:px-12 max-w-[1200px]">
+                <div class="bg-[#1e293b] rounded-2xl border border-slate-700 p-8 lg:p-12 flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="flex-1">
+                        <div class="inline-block px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-bold uppercase tracking-wide mb-4 border border-green-800">
+                            Code Compliance
+                        </div>
+                        <h2 class="text-white text-3xl md:text-4xl font-bold mb-6">Rebuild Stronger: Wind Mitigation & Insurance Compliance</h2>
+                        <div class="space-y-4 mb-8">
+                            <p class="text-[#94a3b8]">
+                                We don't just restore; we upgrade. All reconstruction adheres strictly to the <strong>Florida Building Code (HVHZ)</strong> standards.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-[#137fec] shrink-0">check_circle</span>
+                                    <span class="text-slate-300">Eligibility for "My Safe Florida Home" grants</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-[#137fec] shrink-0">check_circle</span>
+                                    <span class="text-slate-300">Detailed documentation for Wind Mitigation Insurance Credits</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-[#137fec] shrink-0">check_circle</span>
+                                    <span class="text-slate-300">Impact-resistant materials for future storm protection</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="/contact" class="inline-flex items-center justify-center bg-[#f97316] hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                            Verify Your Coverage
+                        </a>
+                    </div>
+                    <div class="flex-1 w-full relative">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="h-48 rounded-lg bg-cover bg-center" data-alt="Close up of new hurricane strapping on roof truss" style="background-image: url('/images/restoration/hurricane-strapping.jpg');"></div>
+                            <div class="h-48 rounded-lg bg-cover bg-center mt-8" data-alt="Contractor reviewing blueprints on a construction site" style="background-image: url('/images/restoration/blueprints.jpg');"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regional Response Map & SEO -->
+        <section class="py-16 bg-[#0b1120] border-t border-slate-800">
+            <div class="container mx-auto px-4 lg:px-12 max-w-[1000px] text-center">
+                <h3 class="text-white text-2xl font-bold mb-2">Regional Rapid Response Units</h3>
+                <p class="text-[#94a3b8] mb-8">We have mobilized fleets strategically positioned across key Florida metros.</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="/service-areas" class="flex items-center justify-center gap-2 bg-[#1e293b] border border-slate-700 hover:border-[#137fec] text-slate-300 hover:text-white px-5 py-3 rounded-full transition-all group">
+                        <span class="material-symbols-outlined text-[#137fec] group-hover:animate-bounce">location_on</span>
+                        <span class="font-medium">Miami-Dade</span>
+                    </a>
+                    <a href="/service-areas" class="flex items-center justify-center gap-2 bg-[#1e293b] border border-slate-700 hover:border-[#137fec] text-slate-300 hover:text-white px-5 py-3 rounded-full transition-all group">
+                        <span class="material-symbols-outlined text-[#137fec] group-hover:animate-bounce">location_on</span>
+                        <span class="font-medium">Fort Lauderdale</span>
+                    </a>
+                    <a href="/service-areas" class="flex items-center justify-center gap-2 bg-[#1e293b] border border-slate-700 hover:border-[#137fec] text-slate-300 hover:text-white px-5 py-3 rounded-full transition-all group">
+                        <span class="material-symbols-outlined text-[#137fec] group-hover:animate-bounce">location_on</span>
+                        <span class="font-medium">Orlando</span>
+                    </a>
+                    <a href="/service-areas" class="flex items-center justify-center gap-2 bg-[#1e293b] border border-slate-700 hover:border-[#137fec] text-slate-300 hover:text-white px-5 py-3 rounded-full transition-all group">
+                        <span class="material-symbols-outlined text-[#137fec] group-hover:animate-bounce">location_on</span>
+                        <span class="font-medium">Tampa Bay</span>
+                    </a>
+                    <a href="/service-areas" class="flex items-center justify-center gap-2 bg-[#1e293b] border border-slate-700 hover:border-[#137fec] text-slate-300 hover:text-white px-5 py-3 rounded-full transition-all group">
+                        <span class="material-symbols-outlined text-[#137fec] group-hover:animate-bounce">location_on</span>
+                        <span class="font-medium">Naples & SWFL</span>
+                    </a>
+                </div>
+                <!-- Map Visualization Placeholder -->
+                <div class="mt-10 h-64 w-full bg-slate-800/50 rounded-xl border border-slate-700 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-20 bg-[url('https://upload.wikimedia.org/wikipedia/commons/1/14/Florida_in_United_States_%28US48%29.svg')] bg-no-repeat bg-contain bg-center"></div>
+                    <div class="z-10 bg-black/40 backdrop-blur px-6 py-3 rounded-lg border border-slate-600">
+                        <p class="text-white font-mono text-sm">Status: <span class="text-green-400">active_deployment</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Resource -->
+        <section class="py-16 bg-[#137fec]">
+            <div class="container mx-auto px-4 lg:px-12 max-w-[1000px]">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="text-white">
+                        <h3 class="text-3xl font-black tracking-tight mb-2">Be Prepared, Not Scared.</h3>
+                        <p class="opacity-90 max-w-lg">Download our comprehensive Hurricane Prep Checklist. It includes supply lists, document organizers, and post-storm safety steps.</p>
+                    </div>
+                    <a href="#" onclick="alert('Hurricane Prep Checklist download coming soon!'); return false;" class="bg-white text-[#137fec] hover:bg-slate-100 px-8 py-4 rounded-lg font-bold shadow-lg flex items-center gap-2 whitespace-nowrap transition-colors">
+                        <span class="material-symbols-outlined">download</span>
+                        Download Checklist (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 bg-[#0f172a]">
+            <div class="container mx-auto px-4 lg:px-12 max-w-[800px]">
+                <div class="text-center mb-12">
+                    <h2 class="text-white text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+                    <p class="text-[#94a3b8]">Common concerns during storm season.</p>
+                </div>
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-[#1e293b] rounded-lg border border-slate-700 overflow-hidden">
+                        <details class="group p-6 cursor-pointer">
+                            <summary class="flex justify-between items-center font-bold text-white list-none">
+                                <span>Does insurance cover temporary tarping?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </span>
+                            </summary>
+                            <div class="text-slate-400 mt-4 leading-relaxed">
+                                Yes, most policies not only cover but <em>require</em> you to mitigate further damage. Tarping is considered a temporary repair and is typically fully reimbursable. We can bill your insurance directly for this service.
+                            </div>
+                        </details>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-[#1e293b] rounded-lg border border-slate-700 overflow-hidden">
+                        <details class="group p-6 cursor-pointer">
+                            <summary class="flex justify-between items-center font-bold text-white list-none">
+                                <span>How fast can you get a crew to my house?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </span>
+                            </summary>
+                            <div class="text-slate-400 mt-4 leading-relaxed">
+                                In designated disaster zones, we aim for a response time of 2-4 hours for emergency tarping and board-ups. Priority is given to severe structural risks. Call our hotline for real-time dispatch updates.
+                            </div>
+                        </details>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-[#1e293b] rounded-lg border border-slate-700 overflow-hidden">
+                        <details class="group p-6 cursor-pointer">
+                            <summary class="flex justify-between items-center font-bold text-white list-none">
+                                <span>Can you help with the "My Safe Florida Home" grant?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </span>
+                            </summary>
+                            <div class="text-slate-400 mt-4 leading-relaxed">
+                                Absolutely. As a licensed contractor, our restoration work is compliant with program requirements. We can provide the necessary documentation and inspections to help you qualify for grant reimbursements on eligible improvements.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</MainLayout>

@@ -26,6 +26,7 @@ const blog = defineCollection({
             'bathroom-upgrades',
             'home-additions',
             'flooring-finishes',
+            'exterior-renovations',
             // Florida Resources
             'insurance-claims',
             'building-codes',
@@ -35,6 +36,7 @@ const blog = defineCollection({
             'facility-maintenance'
         ]),
         featured: z.boolean().default(false),
+        fullWidth: z.boolean().optional(),
     }),
 });
 

@@ -1,0 +1,338 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/common/Header.astro';
+import Breadcrumbs from '../../components/common/Breadcrumbs.astro';
+
+const customSchema = {
+  "@context": "https://schema.org",
+  "@type": "CleaningService",
+  "name": "Paramount Property Restoration - Commercial Cleaning",
+  "description": "Certified Commercial & Specialized Cleaning in Florida. Hospital-grade sanitation and industrial cleaning solutions.",
+  "url": "https://paramountpropertyrestoration.com/cleaning-services/",
+  "areaServed": ["Miami", "Fort Lauderdale", "Orlando", "Tampa", "Jacksonville"],
+  "serviceType": ["Post-Construction Cleaning", "Air Duct Cleaning", "Biohazard Cleanup", "Graffiti Removal"],
+  "provider": {
+    "@type": "Organization",
+    "name": "Paramount Property Restoration"
+  }
+};
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Cleaning Services', href: '/cleaning-services/' }
+];
+---
+
+<MainLayout 
+  title="Paramount Property Restoration - Commercial Cleaning" 
+  description="Certified Commercial & Specialized Cleaning in Florida. From post-construction cleanup to biohazard decontamination."
+  customSchema={customSchema}
+  hideHeader={true}
+  hideFooter={false}
+  breadcrumbItems={[]} 
+>
+  <!-- Sticky Wrapper for Conversion Bar + Header -->
+  <div class="sticky top-0 z-50 font-['Noto_Sans']">
+      <!-- Conversion Bar -->
+      <div class="bg-[#f97316] text-white text-xs md:text-sm font-bold py-2 px-4 text-center tracking-wide font-['Space_Grotesk'] relative z-[51]">
+        <span class="opacity-90">SECURE YOUR FACILITY:</span> priority slots for annual maintenance contracts are filling up. 
+        <a href="#" class="underline underline-offset-2 ml-2 hover:text-white/80">Check Availability</a>
+      </div>
+      
+      <!-- Standard Header (Light Theme) -->
+      <Header theme="light" sticky={false} />
+  </div>
+
+  <!-- Manual Breadcrumbs (Placed below header to avoid overlap) -->
+  <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800 relative z-30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+          <Breadcrumbs items={breadcrumbItems} />
+      </div>
+  </div>
+
+  <!-- Main Wrapper -->
+  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden font-['Noto_Sans']">
+    
+    <!-- Hero Section -->
+    <section class="relative flex min-h-[600px] flex-col justify-center overflow-hidden bg-[#111418]">
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 z-0 bg-cover bg-center" style='background-image: linear-gradient(rgba(17, 20, 24, 0.7) 0%, rgba(17, 20, 24, 0.4) 50%, rgba(17, 20, 24, 1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1POJ1m4TVjYnLw-d-hg47BHaVvoyVBFhUMtsd1fmmAc1LJaIc03IBRe1Tzo1QYI_MVKkxvwsJxD7PlKHyPYxnWDRAwNnt-xe-qRBSSQhBesLfxNOoNEID8C9XMEfBhytCKn9YhxUMVOJOa0XEPljgd-6jq8EQLWmmP9SumrEp2tV_ZCH4ctTGH5AvFWmygXLaoZufm8Dn8xEsA4DG41Gv0A000XPCHfOI5LSwRWvyv8bRyUJwWZewIMKPBkOVPmNig7UFHN4sz7Ms");'>
+      </div>
+      <div class="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-4 py-20 lg:px-10">
+        <div class="max-w-3xl">
+          <div class="mb-4 inline-flex items-center rounded-full border border-[#137fec]/30 bg-[#137fec]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#137fec]">
+            <span class="mr-2 h-2 w-2 rounded-full bg-[#137fec] animate-pulse"></span> Available Nationwide
+          </div>
+          <h1 class="font-['Space_Grotesk'] text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-7xl">
+            Certified Commercial &amp; <span class="text-[#137fec]">Specialized Cleaning</span>
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg text-gray-300 sm:text-xl leading-relaxed">
+            Hospital-grade sanitation. OSHA-compliant workflows. Industrial scale solutions beyond the mop. We protect your assets and your reputation.
+          </p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <button class="flex h-12 items-center justify-center rounded-lg bg-[#137fec] px-8 font-['Space_Grotesk'] text-base font-bold tracking-wide text-white transition-all hover:bg-[#0f56b8] shadow-lg shadow-blue-900/20">
+              Get a Quote for Your Facility
+            </button>
+            <button class="flex h-12 items-center justify-center rounded-lg border border-[#283039] bg-[#1e252b] px-8 font-['Space_Grotesk'] text-base font-medium text-white transition-all hover:bg-[#283039]">
+              View Service Catalog
+            </button>
+          </div>
+          <!-- Trust Signals in Hero -->
+          <div class="mt-12 border-t border-white/10 pt-8">
+            <p class="mb-4 text-xs font-bold uppercase tracking-widest text-gray-500">Certified Excellence</p>
+            <div class="flex flex-wrap items-center gap-8 opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0">
+              <!-- Placeholder Logos with Text representation for clarity -->
+              <div class="flex items-center gap-2 text-white">
+                <span class="material-symbols-outlined text-3xl">verified_user</span>
+                <span class="font-['Space_Grotesk'] font-bold text-lg">IICRC</span>
+              </div>
+              <div class="h-4 w-px bg-white/20"></div>
+              <div class="flex items-center gap-2 text-white">
+                <span class="material-symbols-outlined text-3xl">health_and_safety</span>
+                <span class="font-['Space_Grotesk'] font-bold text-lg">OSHA</span>
+              </div>
+              <div class="h-4 w-px bg-white/20"></div>
+              <div class="flex items-center gap-2 text-white">
+                <span class="material-symbols-outlined text-3xl">air</span>
+                <span class="font-['Space_Grotesk'] font-bold text-lg">NADCA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Segments Grid -->
+    <section class="bg-[#111418] py-16 lg:py-24">
+      <div class="mx-auto max-w-7xl px-4 lg:px-10">
+        <div class="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <h2 class="font-['Space_Grotesk'] text-3xl font-bold text-white md:text-4xl">Specialized Service Segments</h2>
+            <p class="mt-2 text-gray-400 max-w-xl">Targeted solutions for complex contamination and restoration needs.</p>
+          </div>
+          <a href="#" class="flex items-center gap-2 text-sm font-bold text-[#137fec] hover:text-white transition-colors">
+            View All Services <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Card 1 -->
+          <a href="/cleaning-services/post-construction/" class="group relative flex aspect-[4/3] sm:aspect-[3/4] flex-col justify-end overflow-hidden rounded-xl bg-[#1e252b] transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#137fec]/20">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBnK6HqJ9QZgWpy0C64RxwrP9R9flGLi7IHBWpJb85bLEukQZjimEld9_2bUAdf_ti8z0O3s1J58djrNJdVEDSDjI9eoxbsY-k_OJfaMgMeboxp3qu5Gdsx4J_niWR0McwF3N6pK3J_UYHSPzhvdlOUIfpEi-9bxRmHi3MS0sBU5SVpa0iDhvkJAn5gIJkbf22AdzwpzKLjYs53V3E0YzwFC6CYk5sUZj9i7x7HAsWRwR0fneKnsiVLCct99JvBhSAQpeGOQzcnUr2n");'>
+            </div>
+            <div class="relative p-6">
+              <span class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#f97316]">Construction</span>
+              <h3 class="font-['Space_Grotesk'] text-xl font-bold leading-tight text-white">Post-Construction Cleaning</h3>
+              <p class="mt-2 text-sm text-gray-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100">Debris removal and detailed dusting for final handover.</p>
+            </div>
+          </a>
+          <!-- Card 2 -->
+          <a href="/cleaning-services/air-duct-hvac/" class="group relative flex aspect-[4/3] sm:aspect-[3/4] flex-col justify-end overflow-hidden rounded-xl bg-[#1e252b] transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#137fec]/20">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKrW0lgIO_eQfhFljsvN1CQPm96hi2tPye0KZQEqcYPiT44ROn6vy3QYPzjQ7Qth8z22XKeeRmaG-7wJsxQ-3vq5YdDImpTeP1WLXNZYLp5pQotnTqX20nuNl9iCoGp3HLF9AsAjIh9Nk_pCeGzo7VWeQBP3CXWcXSqLaTaYVzA_BiDE8_fqEVvbvQaalQNaM4cZ6L4FdIRaR9oLiaBgqKoM51sWfsE8OBZTPo3KjkoHPCCAAeZd0epBSiBMBHzZu47669sYPp-10H");'>
+            </div>
+            <div class="relative p-6">
+              <span class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#137fec]">Air Quality</span>
+              <h3 class="font-['Space_Grotesk'] text-xl font-bold leading-tight text-white">Air Duct &amp; HVAC Cleaning</h3>
+              <p class="mt-2 text-sm text-gray-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100">Improving IAQ and system efficiency through NADCA standards.</p>
+            </div>
+          </a>
+          <!-- Card 3 -->
+          <a href="/cleaning-services/biohazard-trauma/" class="group relative flex aspect-[4/3] sm:aspect-[3/4] flex-col justify-end overflow-hidden rounded-xl bg-[#1e252b] transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#137fec]/20">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8wtax6q3C4K-iXbIpz8Qaz4wtaS22PeUqi2opyoxUCSv7ecTu4162iv1kvedclnN4HwBdiLn3Koyssty93WNUK1kqLTCs0doZLv4oJ4-9Oq0OwuycEhbtSvzuQWNqhGwAFvLsZJUp0t6Y---BJeYp4gxKAHTNqI3KAbAwrGIVQR2SR17qMpNioLw_YL_bhfkHTjXllVhxUJ-AYEA-7BDsGZD0YACk16gJ4M9TGWYBDsX_sRnmexAa7kXx308fuxDBzIarmI-ixO8S");'>
+            </div>
+            <div class="absolute right-4 top-4 rounded bg-[#f97316] px-2 py-1 text-[10px] font-bold uppercase text-white shadow-md">Urgent</div>
+            <div class="relative p-6">
+              <span class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#f97316]">Hazardous</span>
+              <h3 class="font-['Space_Grotesk'] text-xl font-bold leading-tight text-white">Biohazard &amp; Trauma Cleanup</h3>
+              <p class="mt-2 text-sm text-gray-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100">Discreet, compliant remediation of biological risks.</p>
+            </div>
+          </a>
+          <!-- Card 4 -->
+          <a href="/cleaning-services/vandalism-graffiti/" class="group relative flex aspect-[4/3] sm:aspect-[3/4] flex-col justify-end overflow-hidden rounded-xl bg-[#1e252b] transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#137fec]/20">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPZX9HjW1v6sAJCAlGKd-1wz_z_JZJU_ibQuSwfvRzkZuw75hSWy-Q1FLg4SwTkPcW-nv1bztVF8Jm3BZcIENPQ56IamDFOxbMLGKeW5b04ZP_GzLmb52GENh-PS123Tp3lIpShLHS8b1N4Cj0Omdgh40OofsX6gL8Dm6NexnZnui4qk4axfsyDwyvtt2YlSGRPjVT3vdxsuZeuU2kDVRru3dX7gZfX66ODR2ElYsuEBYaywnxDy6f5Cb3zw7zHvRYb62n7vdtu7GI");'>
+            </div>
+            <div class="relative p-6">
+              <span class="mb-2 block text-xs font-bold uppercase tracking-wider text-[#137fec]">Exterior</span>
+              <h3 class="font-['Space_Grotesk'] text-xl font-bold leading-tight text-white">Vandalism &amp; Graffiti Removal</h3>
+              <p class="mt-2 text-sm text-gray-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100">Rapid response restoration for building facades.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Verticals (Tabs/Icons) -->
+    <section class="border-y border-[#283039] bg-[#161b21] py-20">
+      <div class="mx-auto max-w-7xl px-4 lg:px-10">
+        <div class="text-center mb-16">
+          <h2 class="font-['Space_Grotesk'] text-3xl font-bold text-white md:text-4xl">Tailored for Your Sector</h2>
+          <p class="mt-4 text-gray-400">Industry-specific protocols designed for minimal downtime.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <!-- Vertical 1 -->
+          <div class="group rounded-xl border border-[#283039] bg-[#111418] p-6 transition-colors hover:border-[#137fec]/50">
+            <div class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-[#137fec]/10 text-[#137fec] group-hover:bg-[#137fec] group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined text-3xl">medical_services</span>
+            </div>
+            <h3 class="font-['Space_Grotesk'] text-lg font-bold text-white">Healthcare</h3>
+            <p class="mt-2 text-sm text-gray-400">Terminal cleaning, operating room sterilization, and infection control compliance.</p>
+          </div>
+          <!-- Vertical 2 -->
+          <div class="group rounded-xl border border-[#283039] bg-[#111418] p-6 transition-colors hover:border-[#137fec]/50">
+            <div class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-[#137fec]/10 text-[#137fec] group-hover:bg-[#137fec] group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined text-3xl">factory</span>
+            </div>
+            <h3 class="font-['Space_Grotesk'] text-lg font-bold text-white">Industrial</h3>
+            <p class="mt-2 text-sm text-gray-400">Heavy machinery degreasing, high-ceiling cleaning, and warehouse sanitation.</p>
+          </div>
+          <!-- Vertical 3 -->
+          <div class="group rounded-xl border border-[#283039] bg-[#111418] p-6 transition-colors hover:border-[#137fec]/50">
+            <div class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-[#137fec]/10 text-[#137fec] group-hover:bg-[#137fec] group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined text-3xl">storefront</span>
+            </div>
+            <h3 class="font-['Space_Grotesk'] text-lg font-bold text-white">Retail &amp; Offices</h3>
+            <p class="mt-2 text-sm text-gray-400">High-traffic floor care, window washing, and daily porter services.</p>
+          </div>
+          <!-- Vertical 4 -->
+          <div class="group rounded-xl border border-[#283039] bg-[#111418] p-6 transition-colors hover:border-[#137fec]/50">
+            <div class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-[#137fec]/10 text-[#137fec] group-hover:bg-[#137fec] group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined text-3xl">hotel</span>
+            </div>
+            <h3 class="font-['Space_Grotesk'] text-lg font-bold text-white">Hospitality</h3>
+            <p class="mt-2 text-sm text-gray-400">Kitchen deep cleans, carpet restoration, and odor elimination for guests.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Difference (3 Columns) -->
+    <section class="bg-[#111418] py-20 relative overflow-hidden">
+      <!-- Decorative gradient blur -->
+      <div class="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#137fec]/10 blur-[100px]"></div>
+      <div class="mx-auto max-w-7xl px-4 lg:px-10 relative z-10">
+        <div class="mb-16">
+          <h2 class="font-['Space_Grotesk'] text-3xl font-bold text-white md:text-4xl">The Technical Difference</h2>
+          <p class="mt-4 text-gray-400 max-w-2xl">We don't just clean; we restore environments using data-driven methodologies and hospital-grade technology.</p>
+        </div>
+        <div class="grid gap-8 md:grid-cols-3">
+          <!-- Feature 1 -->
+          <div class="flex flex-col gap-4">
+            <div class="flex size-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#137fec] to-blue-600 text-white shadow-lg shadow-blue-500/20">
+              <span class="material-symbols-outlined text-3xl">engineering</span>
+            </div>
+            <h3 class="font-['Space_Grotesk'] text-xl font-bold text-white">Certified Technicians</h3>
+            <p class="text-gray-400 leading-relaxed">Our team holds active IICRC certifications. We invest in continuous training for biohazard, mold, and fire restoration protocols, ensuring every job meets insurance standards.</p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="flex flex-col gap-4">
+            <div class="flex size-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#137fec] to-blue-600 text-white shadow-lg shadow-blue-500/20">
+              <span class="material-symbols-outlined text-3xl">science</span>
+            </div>
+            <h3 class="font-['Space_Grotesk'] text-xl font-bold text-white">EPA-Rated Disinfectants</h3>
+            <p class="text-gray-400 leading-relaxed">We utilize List N disinfectants proven to eliminate 99.9% of pathogens. Our chemistry is powerful against viruses yet safe for sensitive surfaces and electronics.</p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="flex flex-col gap-4">
+            <div class="flex size-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#137fec] to-blue-600 text-white shadow-lg shadow-blue-500/20">
+              <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+            </div>
+            <h3 class="font-['Space_Grotesk'] text-xl font-bold text-white">Advanced Equipment</h3>
+            <p class="text-gray-400 leading-relaxed">From HEPA air scrubbers and electrostatic foggers to truck-mounted extractors, we deploy industrial-grade hardware that consumer tools can't match.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="bg-[#161b21] py-16">
+      <div class="mx-auto max-w-7xl px-4 lg:px-10">
+        <div class="flex flex-col md:flex-row gap-10 items-center">
+          <div class="flex-1">
+            <div class="flex gap-1 text-[#f97316] mb-4">
+              <span class="material-symbols-outlined fill-current">star</span>
+              <span class="material-symbols-outlined fill-current">star</span>
+              <span class="material-symbols-outlined fill-current">star</span>
+              <span class="material-symbols-outlined fill-current">star</span>
+              <span class="material-symbols-outlined fill-current">star</span>
+            </div>
+            <h2 class="font-['Space_Grotesk'] text-2xl font-bold text-white mb-6">"Paramount transformed our facility's hygiene standards. Their night crew is invisible, but the results are obvious every morning."</h2>
+            <div class="flex items-center gap-4">
+              <div class="h-12 w-12 rounded-full bg-gray-600 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYwkFvpxRbJSfRQylbppWlQAMRWN9Q6DPaoo2xjHQkdHYBjAfhYQBfEZ656bzW5LNmDASQzHd7tC9rxW5UKXIDTwPsQ2FjKrRHA8-_csOLMmwLNKNc0hCAjH2Hvxjm_kDghn5qQCcYayhmnbgglqL2G6i03GkLKMCGe2a0Wuo0zHuM7P-gEJ9Im50PK4Oomp1JH3iuLV45uLyniZh1X5MGVwVhFZtCa8auwptpu4g5mfWrY9z8N9YWY7NCHsAyvOMQGj-pDR59B0TR");'>
+              </div>
+              <div>
+                <p class="text-white font-bold">Sarah Jenkins</p>
+                <p class="text-sm text-gray-400">Director of Operations, MedTech Florida</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-1 w-full">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 opacity-50 grayscale">
+              <!-- Simple Logo Placeholders -->
+              <div class="h-16 bg-white/5 rounded flex items-center justify-center border border-white/10 text-white/40 font-bold">HealthCore</div>
+              <div class="h-16 bg-white/5 rounded flex items-center justify-center border border-white/10 text-white/40 font-bold">FL Realty</div>
+              <div class="h-16 bg-white/5 rounded flex items-center justify-center border border-white/10 text-white/40 font-bold">TechSpace</div>
+              <div class="h-16 bg-white/5 rounded flex items-center justify-center border border-white/10 text-white/40 font-bold">SunHotels</div>
+              <div class="h-16 bg-white/5 rounded flex items-center justify-center border border-white/10 text-white/40 font-bold">BuildCo</div>
+              <div class="h-16 bg-white/5 rounded flex items-center justify-center border border-white/10 text-white/40 font-bold">CityMalls</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Magnet & FAQ Split -->
+    <section class="bg-[#111418] py-20">
+      <div class="mx-auto max-w-7xl px-4 lg:px-10">
+        <div class="grid gap-16 lg:grid-cols-2">
+          <!-- FAQ Column -->
+          <div>
+            <h2 class="font-['Space_Grotesk'] text-3xl font-bold text-white mb-8">Common Questions</h2>
+            <div class="flex flex-col gap-4">
+              <details class="group rounded-lg bg-[#1e252b] p-4 [&_summary::-webkit-details-marker]:hidden">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-white">
+                  <h3 class="font-medium text-lg">What is included in a recurring maintenance contract?</h3>
+                  <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+                </summary>
+                <p class="mt-4 leading-relaxed text-gray-400">
+                  Our contracts are custom-built. Typically, they include daily janitorial tasks, scheduled deep carpet cleaning (quarterly), HVAC filter maintenance, and emergency response priority.
+                </p>
+              </details>
+              <details class="group rounded-lg bg-[#1e252b] p-4 [&_summary::-webkit-details-marker]:hidden">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-white">
+                  <h3 class="font-medium text-lg">Do you use Green Cleaning products?</h3>
+                  <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+                </summary>
+                <p class="mt-4 leading-relaxed text-gray-400">
+                  Yes. Upon request, we utilize LEED-certified, eco-friendly products that are effective yet non-toxic, perfect for schools and offices with sensitive occupants.
+                </p>
+              </details>
+              <details class="group rounded-lg bg-[#1e252b] p-4 [&_summary::-webkit-details-marker]:hidden">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-white">
+                  <h3 class="font-medium text-lg">How is this different from standard janitorial services?</h3>
+                  <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+                </summary>
+                <p class="mt-4 leading-relaxed text-gray-400">
+                  Standard janitorial is surface-level. Our specialized services involve restoration-grade equipment, certified technicians for hazards (bio, mold), and deeper structural cleaning.
+                </p>
+              </details>
+            </div>
+          </div>
+          <!-- Lead Magnet Column -->
+          <div class="relative overflow-hidden rounded-2xl bg-[#137fec] p-8 lg:p-12 text-white">
+            <div class="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="relative z-10">
+              <span class="mb-3 block text-sm font-bold uppercase tracking-wider text-blue-100">Free Resource</span>
+              <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-4">Don't fail your next inspection.</h3>
+              <p class="mb-8 text-blue-50 text-lg">Download the 2024 Commercial Facility Maintenance Checklist. A 20-point guide to keeping your building compliant and clean.</p>
+              <form class="flex flex-col gap-3">
+                <input class="h-12 w-full rounded-lg border-none bg-white/90 px-4 text-slate-900 placeholder:text-slate-500 focus:ring-2 focus:ring-white" placeholder="Enter your work email" type="email"/>
+                <button class="h-12 w-full rounded-lg bg-[#f97316] font-bold text-white transition-colors hover:bg-orange-600 shadow-lg" type="button">Download Checklist</button>
+              </form>
+              <p class="mt-4 text-xs text-blue-200">We respect your privacy. No spam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</MainLayout>

@@ -1,11 +1,26 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import heroBg from '../assets/images/hero-bg.webp';
+import waterDamageImg from '../assets/images/water-damage.webp';
+import kitchenRemodelImg from '../assets/images/kitchen-remodel.webp';
+import orlandoSkyline from '../assets/images/orlando-skyline.webp';
+import miamiSkyline from '../assets/images/miami-skyline.webp';
+import tampaSkyline from '../assets/images/tampa-skyline.webp';
 ---
 
 <MainLayout>
     <section class="relative bg-background-light dark:bg-background-dark pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden">
         <div class="absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none">
-            <img alt="Construction background pattern" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHniosOMNlhibcBDjPook-0aCP8Z37iGufFPqtI2MZ2relmuU5KUpRHe2rvJ_x4OqSn9vLc8fz8UaHgqcfrsdffQAJqEOuI5x7iyX-kyo4l3bg28x2ACbTlapVxQJJ0H1vzfx7je6n-iIVGHTLp8s0L9que3SuG32x9nqYHjIEqvjb0XvQN93_zYO3crjEqxS9mp9WDAWJSJX9--19bLqDtJgfv-4oygM6laQqBRKUh9Bmr7so3Bw58f-Cnm7mEFs5zeM6qGb43ip-" />
+            <Image 
+                src={heroBg} 
+                alt="Construction background pattern" 
+                class="w-full h-full object-cover grayscale" 
+                loading="eager"
+                fetchpriority="high"
+                width={1920}
+                height={1080}
+            />
         </div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="inline-block py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-secondary dark:text-blue-300 text-sm font-semibold mb-6 animate-float">
@@ -75,7 +90,12 @@ import MainLayout from '../layouts/MainLayout.astro';
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 grid-rows-auto gap-4 md:gap-6 auto-rows-[200px]">
                 <div class="bento-card relative group col-span-1 md:col-span-2 row-span-2 rounded-2xl overflow-hidden bg-card-light dark:bg-card-dark border border-gray-100 dark:border-gray-800">
                     <div class="absolute inset-0 bg-secondary/80 mix-blend-multiply z-10 transition-opacity group-hover:opacity-90"></div>
-                    <img alt="Water damage restoration" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCarWEPmHGmtf53_HLApOcJ_cftnucYQ5P0E-qznsEcz_mD6xjvXUomc_nKKDs8MXmMGw7QbfJhkAcBdRoFksqKoCG2euy4mikT-pwdJz1smu0pDVNh88jW6QzgzF5DsKfzKLjOAZywDkkHMb1ZZkgTQiW7ErDmn3bZQ4pQhMkmiUVr_geKKltGA0RXeUB7iV5oqXoWtzIwqYyAtm7ry61-XXjvesp6VqGvYS6_dD4-jC-CC5bLfah7ietFkmF_-jWU7MFVqeDIhsC9" />
+                    <Image 
+                        src={waterDamageImg} 
+                        alt="Water damage restoration" 
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                        width={800} height={600}
+                    />
                     <div class="relative z-20 p-8 h-full flex flex-col justify-end">
                         <span class="material-symbols-outlined text-4xl text-blue-300 mb-4">water_damage</span>
                         <h3 class="text-2xl font-bold text-white mb-2">Water Damage Restoration</h3>
@@ -87,7 +107,12 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </div>
                 <div class="bento-card relative group col-span-1 md:col-span-1 row-span-2 rounded-2xl overflow-hidden bg-card-light dark:bg-card-dark border border-gray-100 dark:border-gray-800">
                     <div class="absolute inset-0 bg-black/40 z-10 transition-opacity group-hover:opacity-30"></div>
-                    <img alt="Modern kitchen remodeling" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9pzA7ua1iKrrQE06hNRxJStM7bFCk8sgzpLR0Z_qJjyMT4X0kCRm68oZSd0qU7W5akqeV7vJAe-KbKkQ17-2YTlcnG_WzDRUPURMx4_Jbe00PPA_24EFqUlPRyDZbBj6ZrNFCBXzxGj6IZdFFJ6h99gW-ANrkTYRBOZWN-b4r9clQ-Vh3elU9UFz0vHVH-XPj3l3CsVWO7LKHImvGVFc0TE-A5uVTDNUEGOCjUloKPofAbyHgimYOdp5mEhxQPPzplHFqCKS5zQ4E" />
+                    <Image 
+                        src={kitchenRemodelImg} 
+                        alt="Modern kitchen remodeling" 
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                        width={600} height={800}
+                    />
                     <div class="relative z-20 p-6 h-full flex flex-col justify-between">
                         <div class="bg-primary/90 backdrop-blur-sm w-fit p-2 rounded-lg text-white">
                             <span class="material-symbols-outlined">countertops</span>
@@ -218,7 +243,12 @@ import MainLayout from '../layouts/MainLayout.astro';
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <a class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]" href="/service-areas/central-florida/">
-                    <img alt="Orlando Skyline" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrwsTf_fD_31pVlUKUOn2yzyyaghwB5-B0HboNqtAdHF4_fanVrIDK2LSS3OJ4v8kPgSKhbmIbcxmupskkwcgF-pEip2qleXiF83Iw7MbfN-d6NaX6LQ_gIi9llO_fI92N8IXf29tP1xv9wtlgVQSWXEq2SCg5MUjDXOyjDwqKi-nxiCR7J2XgdEoeiTSVDjU1hfeZEoHjEocxDp2i3y9JrCYX6wjeidDul8qgug7dTGZLzV41ZTby2NSHkSRqIjugX6o8kxE1hqOp" />
+                    <Image 
+                        src={orlandoSkyline} 
+                        alt="Orlando Skyline" 
+                        class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" 
+                        width={600} height={400}
+                    />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6">
                         <h3 class="text-2xl font-bold text-white mb-1">Central Florida</h3>
@@ -226,7 +256,12 @@ import MainLayout from '../layouts/MainLayout.astro';
                     </div>
                 </a>
                 <a class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]" href="/service-areas/south-florida/">
-                    <img alt="Miami Skyline" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYUXQPrWgXjvp_-nbZbJn50P-55Qpr2TqZZ8sZOOIk9QxdwB0D7YCuvV9ANDd_MIJWILr7sEnS8lisU6Uam2ghWw1jO7IBpehlJby_AE4MypZTblUYjxvzmpvQbLy9lFZ0iq7LnO3QidkUBt9TTPqi_GCSRAhr60yQb7kEbVTt0EOFe-XDzP2fmABg5kCjtOUzV2OVW7R8RMI_330RJpv8WysmTIa5udYcjmn_wCWAJx5lTXl-tDDsBTYFrhzjU0xpSbyM2HZhkRmJ" />
+                    <Image 
+                        src={miamiSkyline} 
+                        alt="Miami Skyline" 
+                        class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" 
+                        width={600} height={400}
+                    />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6">
                         <h3 class="text-2xl font-bold text-white mb-1">South Florida</h3>
@@ -234,7 +269,12 @@ import MainLayout from '../layouts/MainLayout.astro';
                     </div>
                 </a>
                 <a class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3]" href="/service-areas/tampa-bay/">
-                    <img alt="Tampa Skyline" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA25oWGgOb1mkyl-doC8cdqivGEtvrqKlAdBhXGghNycnq-RwywQgLALtZn5N1Zg27IuXtu2jpckDScLheKkL_I8zD4oypXJ9oJEavMzzLtre5fTiW8ni5m-8snriMhPs2PA16_2Qp_vHqiRISi0LM-3lfSibELTX71T_Dg14gInzxMA5i7d-wGICEAeoapuV70Xm06LNdns8QtVk-GsfhD_fMLcKrAJWQzjQzRrWkHtnyADfK5UgEcILPSBoCvniPd5MAgsqttGCTF" />
+                    <Image 
+                        src={tampaSkyline} 
+                        alt="Tampa Skyline" 
+                        class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" 
+                        width={600} height={400}
+                    />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6">
                         <h3 class="text-2xl font-bold text-white mb-1">Tampa Bay</h3>
