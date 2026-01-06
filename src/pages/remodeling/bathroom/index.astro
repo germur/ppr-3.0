@@ -1,4 +1,6 @@
 ---
+import Header from '../../../components/common/Header.astro';
+import Breadcrumbs from '../../../components/common/Breadcrumbs.astro';
 import MainLayout from '../../../layouts/MainLayout.astro';
 
 const pageTitle = "Luxury Bathroom Remodeling & Spa Renovations | Paramount Property Restoration";
@@ -23,12 +25,48 @@ const bathroomSchema = {
 };
 ---
 
-<MainLayout title={pageTitle} description={metaDesc} customSchema={bathroomSchema}>
-    
+<MainLayout 
+  title={pageTitle} 
+  description={metaDesc} 
+  customSchema={bathroomSchema}
+  hideHeader={true}
+  hideFooter={false}
+  breadcrumbItems={[]}
+>
     <!-- Inject Fonts into Head -->
     <fragment slot="head">
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     </fragment>
+
+    <!-- Sticky Nav Wrapper -->
+    <div class="sticky top-0 z-50 font-['Manrope']">
+        <!-- Sticky Bar -->
+        <div class="bg-[#06b6d4] text-white px-4 py-2 text-center text-sm font-medium flex items-center justify-center gap-4 flex-wrap shadow-md border-b border-cyan-600 relative z-[51]">
+            <span class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-white text-[18px]">hot_tub</span>
+                Turn your bathroom into a <span class="font-bold">Private Spa Sanctuary.</span>
+            </span>
+            <a href="tel:7866022217" class="bg-white text-[#06b6d4] hover:bg-cyan-50 px-4 py-1 rounded text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-1">
+                Start Design
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Global Header -->
+        <Header theme="light" sticky={false} />
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 max-w-6xl py-2">
+            <Breadcrumbs items={[
+                { label: 'Home', href: '/' },
+                { label: 'Remodeling', href: '/remodeling/' },
+                { label: 'Bathroom', href: '/remodeling/bathroom/' }
+            ]} />
+        </div>
+    </div>
 
     <!-- Local Styles -->
     <style>
@@ -41,21 +79,12 @@ const bathroomSchema = {
             box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         
-        /* Hide scrollbar for horizontal scroll areas */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-       /* Override primary/secondary colors locally as requested */
-       :global(.text-primary) { color: #1269e2; }
-       :global(.bg-primary) { background-color: #1269e2; }
-       :global(.border-primary) { border-color: #1269e2; }
-       :global(.bg-secondary) { background-color: #FF6B00; }
-       :global(.text-secondary) { color: #FF6B00; }
+        /* Override primary/secondary colors locally as requested */
+        :global(.text-primary) { color: #06b6d4; } /* Cyan 500 */
+        :global(.bg-primary) { background-color: #06b6d4; }
+        :global(.border-primary) { border-color: #06b6d4; }
+        :global(.bg-secondary) { background-color: #0e7490; } /* Cyan 700 */
+        :global(.text-secondary) { color: #0e7490; }
     </style>
 
     <div class="font-display">
@@ -69,17 +98,17 @@ const bathroomSchema = {
                 <!-- Hero Content -->
                 <div class="flex flex-col gap-6 text-white animate-fade-in-up">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 w-fit backdrop-blur-sm border border-white/20">
-                        <span class="w-2 h-2 rounded-full bg-[#FF6B00]"></span>
+                        <span class="w-2 h-2 rounded-full bg-[#06b6d4]"></span>
                         <span class="text-xs font-bold uppercase tracking-wider">Florida's Premier Remodeler</span>
                     </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
-                        Luxury Bathroom Remodeling & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white">Spa Renovations</span>
+                        Luxury Bathroom Remodeling & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-white">Spa Renovations</span>
                     </h1>
                     <p class="text-gray-300 text-lg max-w-xl leading-relaxed">
                         Sanctuaries designed for Florida's climate. Experience the fusion of high-end aesthetics and industrial-grade waterproofing durability.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mt-2">
-                        <button class="flex items-center justify-center gap-2 bg-[#FF6B00] hover:bg-orange-600 text-white font-bold h-12 px-8 rounded-lg transition-all shadow-lg shadow-orange-500/20">
+                        <button class="flex items-center justify-center gap-2 bg-[#06b6d4] hover:bg-cyan-600 text-white font-bold h-12 px-8 rounded-lg transition-all shadow-lg shadow-cyan-500/20">
                             <span>Request Design Consultation</span>
                             <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </button>
@@ -115,11 +144,11 @@ const bathroomSchema = {
                         <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white px-3 py-1 rounded text-xs font-bold tracking-wider whitespace-nowrap">BEFORE</div>
                     </div>
                     <!-- Labels -->
-                    <div class="absolute top-4 right-4 bg-[#1269e2]/80 backdrop-blur-sm text-white px-3 py-1 rounded text-xs font-bold tracking-wider pointer-events-none">AFTER</div>
+                    <div class="absolute top-4 right-4 bg-[#06b6d4]/80 backdrop-blur-sm text-white px-3 py-1 rounded text-xs font-bold tracking-wider pointer-events-none">AFTER</div>
                     <!-- Slider Handle -->
                     <div class="absolute inset-y-0 w-11 flex items-center justify-center pointer-events-none" id="ba-handle" style="left: 50%; margin-left: -22px;">
                         <div class="w-11 h-11 bg-white rounded-full flex items-center justify-center shadow-[0_4px_14px_rgba(0,0,0,0.3)] z-20">
-                            <span class="material-symbols-outlined text-[#1269e2] font-bold">code</span>
+                            <span class="material-symbols-outlined text-[#06b6d4] font-bold">code</span>
                         </div>
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent pointer-events-none fade-out-on-interaction">
@@ -129,12 +158,12 @@ const bathroomSchema = {
             </div>
         </div>
 
-        <!-- Authority Block: The Science -->
+        <!-- Authority Block: The Science (Updated Colors) -->
         <section class="py-20 bg-white dark:bg-[#111418]">
             <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-12 gap-12 items-start">
                     <div class="lg:col-span-5 flex flex-col gap-6">
-                        <div class="flex items-center gap-2 text-[#1269e2] font-bold tracking-wider uppercase text-sm">
+                        <div class="flex items-center gap-2 text-[#06b6d4] font-bold tracking-wider uppercase text-sm">
                             <span class="material-symbols-outlined">science</span>
                             <span>Technical Expertise</span>
                         </div>
@@ -144,9 +173,9 @@ const bathroomSchema = {
                         <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                             In Florida's humid climate, luxury means nothing without resilience. Leveraging our deep background in restoration, we build bathrooms that withstand humidity and prevent mold using industrial-grade systems.
                         </p>
-                        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-100 dark:border-blue-800/50 flex gap-4 mt-4">
-                            <div class="bg-[#1269e2]/10 p-3 rounded-full h-fit">
-                                <span class="material-symbols-outlined text-[#1269e2]">verified_user</span>
+                        <div class="bg-cyan-50 dark:bg-cyan-900/20 p-6 rounded-xl border border-cyan-100 dark:border-cyan-800/50 flex gap-4 mt-4">
+                            <div class="bg-[#06b6d4]/10 p-3 rounded-full h-fit">
+                                <span class="material-symbols-outlined text-[#06b6d4]">verified_user</span>
                             </div>
                             <div>
                                 <h4 class="font-bold text-[#111418] dark:text-white mb-1">Lifetime Waterproofing Warranty</h4>
@@ -156,33 +185,33 @@ const bathroomSchema = {
                     </div>
                     <div class="lg:col-span-7 grid md:grid-cols-2 gap-6">
                         <!-- Feature Card 1 -->
-                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#1269e2]/20 transition-all hover:shadow-lg">
+                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#06b6d4]/20 transition-all hover:shadow-lg">
                             <div class="bg-white dark:bg-gray-800 w-14 h-14 rounded-xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-[#1269e2] text-3xl">water_drop</span>
+                                <span class="material-symbols-outlined text-[#06b6d4] text-3xl">water_drop</span>
                             </div>
                             <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Industrial Waterproofing</h3>
                             <p class="text-gray-600 dark:text-gray-400">Advanced Schluter® & Kerdi systems create a completely watertight seal for wet rooms, surpassing standard code requirements.</p>
                         </div>
                         <!-- Feature Card 2 -->
-                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#1269e2]/20 transition-all hover:shadow-lg">
+                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#06b6d4]/20 transition-all hover:shadow-lg">
                             <div class="bg-white dark:bg-gray-800 w-14 h-14 rounded-xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-[#1269e2] text-3xl">health_and_safety</span>
+                                <span class="material-symbols-outlined text-[#06b6d4] text-3xl">health_and_safety</span>
                             </div>
                             <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Mold Prevention</h3>
                             <p class="text-gray-600 dark:text-gray-400">Zero-organic-matter substrates and mold-resistant drywall ensure hidden damage never compromises your investment.</p>
                         </div>
                         <!-- Feature Card 3 -->
-                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#1269e2]/20 transition-all hover:shadow-lg">
+                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#06b6d4]/20 transition-all hover:shadow-lg">
                             <div class="bg-white dark:bg-gray-800 w-14 h-14 rounded-xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-[#1269e2] text-3xl">thermostat</span>
+                                <span class="material-symbols-outlined text-[#06b6d4] text-3xl">thermostat</span>
                             </div>
                             <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">Climate Durability</h3>
                             <p class="text-gray-600 dark:text-gray-400">Materials and sealants specifically selected to endure the extreme heat cycles and humidity of Central & South Florida.</p>
                         </div>
                         <!-- Feature Card 4 -->
-                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#1269e2]/20 transition-all hover:shadow-lg">
+                        <div class="group bg-[#f6f7f8] dark:bg-gray-900 p-8 rounded-2xl border border-transparent hover:border-[#06b6d4]/20 transition-all hover:shadow-lg">
                             <div class="bg-white dark:bg-gray-800 w-14 h-14 rounded-xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-[#1269e2] text-3xl">plumbing</span>
+                                <span class="material-symbols-outlined text-[#06b6d4] text-3xl">plumbing</span>
                             </div>
                             <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-3">High-Flow Drainage</h3>
                             <p class="text-gray-600 dark:text-gray-400">Linear drains and precision grading for rapid water evacuation in large format rain-head showers and wet rooms.</p>
@@ -192,7 +221,7 @@ const bathroomSchema = {
             </div>
         </section>
 
-        <!-- Services Bento Grid -->
+        <!-- Services Bento Grid (Updated Colors) -->
         <section class="py-20 bg-[#f6f7f8] dark:bg-[#101822]">
             <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
@@ -205,7 +234,7 @@ const bathroomSchema = {
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Expansive wet room with rainfall shower and marble walls" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMDONgacwkyPUuS_9Ey4VSAvHmrrVNhbQ_hUIfhJaky_kPuHX_J9Ju1td30I35-8ogjznOhVOaKb0Co6uHLB9InAw6ba2FnYxoGZ7sOjv-99qpk1w_-OWrxxY8UmPjH8Dek_D9UFy7HBLo-Jfpn7LLWSIQrnvHOCDi7JP7tWWkRDttdAqqj5Yn903ruXVwN7ZqiATZM_iBfncnZmoOlm271VKB2dYqdX01pzb5BhhtUZ8cFnZk33C7JvOCez0K00GzgNy54iJg0fAP");'></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                         <div class="absolute bottom-0 left-0 p-8">
-                            <div class="bg-[#1269e2]/90 text-white text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">TRENDING</div>
+                            <div class="bg-[#06b6d4]/90 text-white text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">TRENDING</div>
                             <h3 class="text-3xl font-bold text-white mb-2">Wet Rooms & Walk-in Showers</h3>
                             <p class="text-gray-200 max-w-lg">Seamless, curbless designs that expand your space. Featuring linear drains and frameless glass for maximum accessibility and modern style.</p>
                         </div>
@@ -214,7 +243,6 @@ const bathroomSchema = {
                     <div class="relative group overflow-hidden rounded-2xl bg-white dark:bg-gray-800">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-100 group-hover:opacity-40" data-alt="Modern freestanding bathtub near a window" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKhjz9lICOWt-Rc08A5g0lUcT_XlO0KWltPfqvSWJLTikv5vZgM_zhVDCUxUao7pANKl1UEPAKqVPQAD3TE2NRV8TuDtb2zua1-RKWn1JXN09GL0okP8llrsBkZ3wTZwAv1_5qOT863DvKYWC7zqlrNbtWF8ANB4Q3k8SkkFJbskVPX4zTzvKR_KpNGY3XVPbXb48q0rq8vrPbkjZ2WRkzBoxEuE9M4CIqCwJR7FIdC_rXxoIc3d1fNh4nSR5ZMw-ttQDmdcfjpclH");'></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <!-- Visible Text (Hover State mainly) -->
                         <div class="absolute bottom-0 left-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                             <div class="flex items-center gap-2 mb-2">
                                 <span class="material-symbols-outlined text-white">bathtub</span>
@@ -222,14 +250,10 @@ const bathroomSchema = {
                             </div>
                             <p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity delay-100">Sculptural centerpieces designed for deep soaking and relaxation.</p>
                         </div>
-                        <!-- Default Label for mobile/no-hover -->
-                        <div class="absolute bottom-4 left-6 group-hover:opacity-0 transition-opacity">
-                            <h3 class="text-xl font-bold text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">Freestanding Tubs</h3>
-                        </div>
                     </div>
                     <!-- Card 3 -->
                     <div class="relative group overflow-hidden rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex flex-col justify-end p-6">
-                        <div class="absolute top-6 right-6 text-[#1269e2] bg-blue-50 dark:bg-blue-900/30 p-3 rounded-full">
+                        <div class="absolute top-6 right-6 text-[#06b6d4] bg-cyan-50 dark:bg-cyan-900/30 p-3 rounded-full">
                             <span class="material-symbols-outlined">light_mode</span>
                         </div>
                         <div class="z-10 mt-auto">
@@ -247,12 +271,12 @@ const bathroomSchema = {
                         </div>
                     </div>
                     <!-- Card 5: Call to Action within grid -->
-                    <div class="relative overflow-hidden rounded-2xl bg-[#1269e2] flex flex-col items-center justify-center p-8 text-center md:col-span-2">
+                    <div class="relative overflow-hidden rounded-2xl bg-[#06b6d4] flex flex-col items-center justify-center p-8 text-center md:col-span-2">
                         <div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
-                        <div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-[#FF6B00]/30 rounded-full blur-3xl"></div>
+                        <div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-cyan-900/30 rounded-full blur-3xl"></div>
                         <h3 class="text-2xl font-bold text-white mb-4 relative z-10">Ready to start your project?</h3>
-                        <p class="text-blue-100 mb-6 max-w-md relative z-10">Schedule a free on-site assessment with our restoration and design experts.</p>
-                        <button class="bg-white text-[#1269e2] font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg relative z-10 flex items-center gap-2">
+                        <p class="text-cyan-100 mb-6 max-w-md relative z-10">Schedule a free on-site assessment with our restoration and design experts.</p>
+                        <button class="bg-white text-[#06b6d4] font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg relative z-10 flex items-center gap-2">
                             Get Started
                             <span class="material-symbols-outlined">arrow_forward</span>
                         </button>
@@ -261,11 +285,11 @@ const bathroomSchema = {
             </div>
         </section>
 
-        <!-- FAQ Section -->
+        <!-- FAQ Section (Updated Colors) -->
         <section class="py-20 bg-white dark:bg-[#111418]">
             <div class="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <span class="text-[#FF6B00] font-bold tracking-wider uppercase text-sm mb-2 block">Common Questions</span>
+                    <span class="text-[#06b6d4] font-bold tracking-wider uppercase text-sm mb-2 block">Common Questions</span>
                     <h2 class="text-3xl lg:text-4xl font-black text-[#111418] dark:text-white">What Homeowners Ask Us</h2>
                 </div>
                 <div class="flex flex-col gap-4">
@@ -273,7 +297,7 @@ const bathroomSchema = {
                     <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-[#f6f7f8] dark:bg-gray-900 overflow-hidden transition-all duration-300 open:shadow-md">
                         <summary class="flex cursor-pointer items-center justify-between gap-6 p-6 select-none list-none">
                             <div class="flex items-center gap-4">
-                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1269e2]/10 text-[#1269e2] font-bold text-sm">01</span>
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#06b6d4]/10 text-[#06b6d4] font-bold text-sm">01</span>
                                 <p class="text-[#111418] dark:text-white text-base font-bold leading-normal">Do I need a permit for a bathroom remodel in Florida?</p>
                             </div>
                             <div class="text-[#111418] dark:text-white transition-transform group-open:rotate-180">
@@ -290,7 +314,7 @@ const bathroomSchema = {
                     <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-[#f6f7f8] dark:bg-gray-900 overflow-hidden transition-all duration-300 open:shadow-md">
                         <summary class="flex cursor-pointer items-center justify-between gap-6 p-6 select-none list-none">
                             <div class="flex items-center gap-4">
-                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1269e2]/10 text-[#1269e2] font-bold text-sm">02</span>
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#06b6d4]/10 text-[#06b6d4] font-bold text-sm">02</span>
                                 <p class="text-[#111418] dark:text-white text-base font-bold leading-normal">How much does a luxury master bath renovation cost?</p>
                             </div>
                             <div class="text-[#111418] dark:text-white transition-transform group-open:rotate-180">
@@ -307,7 +331,7 @@ const bathroomSchema = {
                     <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-[#f6f7f8] dark:bg-gray-900 overflow-hidden transition-all duration-300 open:shadow-md">
                         <summary class="flex cursor-pointer items-center justify-between gap-6 p-6 select-none list-none">
                             <div class="flex items-center gap-4">
-                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1269e2]/10 text-[#1269e2] font-bold text-sm">03</span>
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#06b6d4]/10 text-[#06b6d4] font-bold text-sm">03</span>
                                 <p class="text-[#111418] dark:text-white text-base font-bold leading-normal">How do you handle mold if found during demolition?</p>
                             </div>
                             <div class="text-[#111418] dark:text-white transition-transform group-open:rotate-180">
@@ -324,7 +348,7 @@ const bathroomSchema = {
                     <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-[#f6f7f8] dark:bg-gray-900 overflow-hidden transition-all duration-300 open:shadow-md">
                         <summary class="flex cursor-pointer items-center justify-between gap-6 p-6 select-none list-none">
                             <div class="flex items-center gap-4">
-                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1269e2]/10 text-[#1269e2] font-bold text-sm">04</span>
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#06b6d4]/10 text-[#06b6d4] font-bold text-sm">04</span>
                                 <p class="text-[#111418] dark:text-white text-base font-bold leading-normal">What is the typical timeline?</p>
                             </div>
                             <div class="text-[#111418] dark:text-white transition-transform group-open:rotate-180">
@@ -349,27 +373,27 @@ const bathroomSchema = {
                     <p class="text-sm text-[#617289] dark:text-gray-400">Local renovation teams in your area.</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/central-florida/orlando/bathroom-remodeling/">
+                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#06b6d4] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/central-florida/orlando/bathroom-remodeling/">
                         <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
                         Orlando
                     </a>
-                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/miami/bathroom-remodeling/">
+                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#06b6d4] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/miami/bathroom-remodeling/">
                         <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
                         Miami
                     </a>
-                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/tampa-bay/tampa/bathroom-remodeling/">
+                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#06b6d4] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/tampa-bay/tampa/bathroom-remodeling/">
                         <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
                         Tampa
                     </a>
-                        <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/fort-lauderdale/bathroom-remodeling/">
+                        <a class="text-[#617289] dark:text-gray-400 hover:text-[#06b6d4] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/fort-lauderdale/bathroom-remodeling/">
                         <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
                         Fort Lauderdale
                     </a>
-                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/southwest-florida/naples/bathroom-remodeling/">
+                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#06b6d4] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/southwest-florida/naples/bathroom-remodeling/">
                         <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
                         Naples
                     </a>
-                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/west-palm-beach/bathroom-remodeling/">
+                    <a class="text-[#617289] dark:text-gray-400 hover:text-[#06b6d4] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/west-palm-beach/bathroom-remodeling/">
                         <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
                         West Palm Beach
                     </a>

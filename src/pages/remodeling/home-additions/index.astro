@@ -1,4 +1,6 @@
 ---
+import Header from '../../../components/common/Header.astro';
+import Breadcrumbs from '../../../components/common/Breadcrumbs.astro';
 import MainLayout from '../../../layouts/MainLayout.astro';
 
 const pageTitle = "Home Additions & ADU Builders in Florida | Expand Your Space | Paramount";
@@ -50,12 +52,61 @@ const additionsSchema = {
 };
 ---
 
-<MainLayout title={pageTitle} description={metaDesc} customSchema={additionsSchema}>
+<MainLayout 
+  title={pageTitle} 
+  description={metaDesc} 
+  customSchema={additionsSchema}
+  hideHeader={true}
+  hideFooter={false}
+  breadcrumbItems={[]}
+>
+    <!-- Inject Fonts into Head -->
+    <fragment slot="head">
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    </fragment>
+
+    <!-- Sticky Nav Wrapper -->
+    <div class="sticky top-0 z-50 font-['Plus_Jakarta_Sans']">
+        <!-- Sticky Bar -->
+        <div class="bg-[#1269e2] text-white px-4 py-2 text-center text-sm font-medium flex items-center justify-center gap-4 flex-wrap shadow-md border-b border-blue-600 relative z-[51]">
+            <span class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-white text-[18px]">add_home_work</span>
+                Need more space? <span class="font-bold">Free Feasibility Study for ADUs & Additions.</span>
+            </span>
+            <a href="tel:7866022217" class="bg-white text-[#1269e2] hover:bg-blue-50 px-4 py-1 rounded text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-1">
+                Check Feasibility
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Global Header -->
+        <Header theme="light" sticky={false} />
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 max-w-6xl py-2">
+            <Breadcrumbs items={[
+                { label: 'Home', href: '/' },
+                { label: 'Remodeling', href: '/remodeling/' },
+                { label: 'Additions & ADUs', href: '/remodeling/home-additions/' }
+            ]} />
+        </div>
+    </div>
     
     <!-- Local Styles -->
     <style>
         .text-shadow {
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        /* Override primary color locally for this page */
+        .text-primary, .bg-primary, .border-primary, .hover\:bg-primary:hover, .hover\:text-primary:hover, .group-hover\:bg-primary:hover {
+            --tw-text-opacity: 1;
+            color: rgba(18, 105, 226, var(--tw-text-opacity)); /* #1269e2 */
+        }
+        .bg-primary {
+            background-color: #1269e2;
         }
     </style>
 
@@ -142,7 +193,6 @@ const additionsSchema = {
                 <!-- The Modern ADU (Large) -->
                 <div class="md:col-span-2 row-span-2 relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all">
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern backyard ADU with floor to ceiling windows" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHg78_q5K7zR0946720D23851532910748123564012395678019345678912345678901234567890123456789012345678901234567890123456789");'></div> 
-                    <!-- Note: Using placeholder URL pattern, will default to a solid color if fails or I should find a real one. Sticking to simple structure for now or reusing a valid one if known. Using a generic valid generic image from previous context if possible, or a solid fallback. -->
                     <div class="absolute inset-0 bg-gray-600 mix-blend-multiply"></div>
                      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_lNPtFDntKgzGHzRGx9UCLVH472zRFHPPmigN-VJbebE0x-xhHQTgrGARvFqTqdx96DxFjaviySHVSOmdNOcaki8vgvZZjZF4S7mD2SPz4Z6xnx1Xlov8Fj6XacYa33nrQ9nWVfdUnb45ezFrTN6IhboftCftg18MoeEkK6Zh3efDtfc3kUD0gOcfUcbg_2iFEMKx_aAj73e8o3ZwgT29KFueNNqwhoBikxXcQh9Zu1NMBKZAqXpbCYurm-EMPw7gmywKPY-VpQaj");'></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>

@@ -78,6 +78,17 @@ export const services: ServiceData[] = [
         icon: "construction",
     },
     {
+        slug: "restoration/fire-damage/contents-cleaning",
+        name: "Contents Cleaning",
+        heroTitle: "Contents Cleaning & Restoration",
+        description: "We refuse to call it a total loss. Advanced ultrasonic cleaning and deodorization for electronics, textiles, and sentimental items.",
+        theme: {
+            primary: "#be123c", // Rose 700
+            accent: "#f43f5e",  // Rose 500
+        },
+        icon: "checkroom", // Material symbol for clothes/wardrobe
+    },
+    {
         slug: "restoration/storm-damage",
         name: "Storm Damage Repair",
         heroTitle: "Hurricane & Storm Damage Repair",
@@ -153,6 +164,82 @@ export const services: ServiceData[] = [
             accent: "#0f172a",  // Slate 900
         },
         icon: "roofing",
+    },
+    {
+        slug: "cleaning-services/biohazard-trauma",
+        name: "Biohazard & Trauma Cleaning",
+        heroTitle: "Biohazard & Trauma Scene Cleanup",
+        description: "Certified and compassionate cleanup for crime scenes, unattended deaths, and biohazard accidents. 24/7 discreet response.",
+        theme: {
+            primary: "#1193d4", // Medical/Calm Blue
+            accent: "#f97316",  // Orange (Warning/Safety)
+        },
+        icon: "biological", // 'biological' or 'sanitizer'
+    },
+    {
+        slug: "cleaning-services/biohazard-trauma/crime-scene",
+        name: "Crime Scene Cleanup",
+        heroTitle: "Crime Scene Cleanup Services",
+        description: "Professional remediation of crime scenes. We handle biological hazards with strict adherence to legal and safety protocols.",
+        theme: {
+            primary: "#1193d4",
+            accent: "#0f172a",
+        },
+        icon: "policy",
+    },
+    {
+        slug: "cleaning-services/biohazard-trauma/unattended-death",
+        name: "Unattended Death Cleanup",
+        heroTitle: "Unattended Death Remediation",
+        description: "Respectful and thorough cleanup for unattended death discovery. We restore the property's safety and livability.",
+        theme: {
+            primary: "#64748b", // Muted slate for solemnity
+            accent: "#1193d4",
+        },
+        icon: "church",
+    },
+    {
+        slug: "cleaning-services/biohazard-trauma/industrial-accidents",
+        name: "Industrial Accident Cleanup",
+        heroTitle: "Industrial Accident Remediation",
+        description: "OSHA-compliant cleanup for industrial workplace accidents. Minimizing downtime while ensuring employee safety.",
+        theme: {
+            primary: "#f59e0b", // Amber/Caution
+            accent: "#1e293b",
+        },
+        icon: "factory",
+    },
+    {
+        slug: "cleaning-services/biohazard-trauma/hoarding",
+        name: "Hoarding Cleanup",
+        heroTitle: "Compassionate Hoarding Cleanup",
+        description: "Non-judgmental decluttering and sanitization services. Reclaiming safe living spaces for you or your loved ones.",
+        theme: {
+            primary: "#10b981", // Emerald/New Beginnings
+            accent: "#0f172a",
+        },
+        icon: "recycling",
+    },
+    {
+        slug: "cleaning-services/vandalism-graffiti",
+        name: "Vandalism & Graffiti Removal",
+        heroTitle: "Graffiti Removal & Vandalism Restoration",
+        description: "Rapid removal of graffiti and vandalism repairs. restoring the professional image of your commercial property.",
+        theme: {
+            primary: "#334155", // Urban Slate
+            accent: "#ef4444",  // Alert Red
+        },
+        icon: "format_paint",
+    },
+    {
+        slug: "cleaning-services/covid-disinfection",
+        name: "Commercial Disinfection",
+        heroTitle: "Commercial Disinfection Services",
+        description: "Hospital-grade sanitization for offices, schools, and gyms. We use CDC-approved disinfectants to ensure a safe environment.",
+        theme: {
+            primary: "#059669", // Emerald 600
+            accent: "#0ea5e9",  // Sky Blue
+        },
+        icon: "sanitizer",
     }
-    // Add more services like "mold-remediation", "fire-damage" here
 ];

@@ -1,0 +1,331 @@
+---
+import MainLayout from '../../../../layouts/MainLayout.astro';
+import Header from '../../../../components/common/Header.astro';
+import { Image } from 'astro:assets';
+import heroImage from '/Users/rogermurillo/.gemini/antigravity/brain/a8627244-7c5e-4ed3-b008-40c089f300a3/prevention_hero_3d_house_1767628296780.png';
+import crawlSpaceImage from '/Users/rogermurillo/.gemini/antigravity/brain/a8627244-7c5e-4ed3-b008-40c089f300a3/crawl_space_encapsulation_1767628313031.png';
+import dehumidifierImage from '/Users/rogermurillo/.gemini/antigravity/brain/a8627244-7c5e-4ed3-b008-40c089f300a3/whole_home_dehumidifier_1767628327851.png';
+import uvLightImage from '/Users/rogermurillo/.gemini/antigravity/brain/a8627244-7c5e-4ed3-b008-40c089f300a3/hvac_uv_lights_1767628355875.png';
+import ventilationImage from '/Users/rogermurillo/.gemini/antigravity/brain/a8627244-7c5e-4ed3-b008-40c089f300a3/ventilation_erv_system_1767628370280.png';
+import blowerDoorImage from '/Users/rogermurillo/.gemini/antigravity/brain/a8627244-7c5e-4ed3-b008-40c089f300a3/blower_door_test_1767628385586.png';
+
+const seoTitle = "Mold Prevention & Humidity Control | Paramount Property Restoration";
+const seoDescription = "Stop mold before it starts. Advanced humidity control, crawl space encapsulation, and dehumidification systems for Florida homes. Free assessments.";
+---
+
+<MainLayout title={seoTitle} description={seoDescription} hideHeader={true} breadcrumbItems={[]}>
+  <!-- Font and Variable Overrides for this Page Only -->
+  <style is:global>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap');
+
+    :root {
+      --font-display: 'Space Grotesk', sans-serif !important;
+      --font-body: 'Noto Sans', sans-serif !important;
+      --color-primary: #1193d4 !important;
+      --color-secondary: #f97316 !important;
+      /* Ensure background defaults match user spec if relying on utility classes */
+      --color-background-dark: #101c22 !important;
+    }
+  </style>
+
+  <!-- Top Micro-copy Bar -->
+  <div class="bg-[#101c22] text-white text-xs font-medium py-2 text-center tracking-wide px-4 relative z-[60]">
+    <span class="opacity-90">Stop mold before it starts. Protect your property investment.</span>
+  </div>
+  
+  <!-- Sticky Header Component -->
+  <Header 
+    theme="light" 
+    sticky={true} 
+    emergencyBtnText="Get a Humidity Assessment" 
+    secondaryColor="#1193d4"
+  />
+
+  <!-- Hero Section -->
+  <section class="bg-white">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-10 py-12 md:py-20">
+      <div class="flex flex-col-reverse lg:flex-row gap-12 items-center">
+        <!-- Text Content -->
+        <div class="flex flex-col gap-6 flex-1 lg:max-w-[600px]">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1193d4]/10 text-[#1193d4] text-xs font-bold w-fit uppercase tracking-wider">
+            <span class="material-symbols-outlined text-sm">shield</span> The Dry Standard
+          </div>
+          <h1 class="text-[#111618] text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] tracking-[-0.033em] font-display">
+              Advanced Mold Prevention & Humidity Control for Florida Homes
+          </h1>
+          <p class="text-[#617c89] text-lg leading-relaxed">
+              Hospital-grade systems and year-round humidity control below 60%. Stop mold before it starts and protect your property investment with our comprehensive defense strategy.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mt-2">
+            <a href="/contact/" class="bg-[#f97316] hover:bg-[#e66000] text-white text-base font-bold h-12 px-8 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-[#f97316]/20">
+              <span>Analyze My Home's Risk</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+            <a href="#how-it-works" class="bg-white border border-[#dbe2e6] hover:bg-gray-50 text-[#111618] text-base font-bold h-12 px-8 rounded-lg transition-colors flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined">play_circle</span>
+              See How It Works
+            </a>
+          </div>
+        </div>
+        <!-- 3D Interactive Diagram Placeholder -->
+        <div class="flex-1 w-full relative group">
+          <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border border-gray-200">
+            <Image src={heroImage} alt="3D isometric cross-section of a modern house highlighting moisture defense layers" class="absolute inset-0 w-full h-full object-cover" />
+            <!-- Overlay for "Interactive" feel -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
+              <div class="bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-lg max-w-sm">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="material-symbols-outlined text-[#1193d4]">check_circle</span>
+                  <span class="text-sm font-bold text-[#111618]">System Active</span>
+                </div>
+                <p class="text-xs text-[#617c89]">Multi-layer defense shield active against latent load and moisture intrusion.</p>
+              </div>
+            </div>
+            <!-- Fake Hotspots -->
+            <div class="absolute top-[30%] left-[40%] size-8 bg-white/30 backdrop-blur-md rounded-full border-2 border-white animate-pulse flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <div class="size-3 bg-[#f97316] rounded-full"></div>
+            </div>
+            <div class="absolute top-[60%] right-[25%] size-8 bg-white/30 backdrop-blur-md rounded-full border-2 border-white animate-pulse delay-700 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+              <div class="size-3 bg-[#1193d4] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Florida Factor Section -->
+  <section class="bg-[#f6f7f8] py-16 md:py-24">
+    <div class="max-w-[960px] mx-auto px-4 md:px-10">
+      <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-4 text-center md:text-left">
+          <h2 class="text-[#111618] text-3xl md:text-4xl font-bold font-display leading-tight">
+              Why Florida Homes Are Vulnerable
+          </h2>
+          <p class="text-[#617c89] text-base md:text-lg max-w-[720px]">
+              Understanding the science behind Florida's unique climate challenges is the first step to protection.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Card 1: Latent Load -->
+          <div class="flex flex-col gap-4 rounded-xl border border-[#dbe2e6] bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div class="size-12 rounded-lg bg-blue-50 flex items-center justify-center text-[#1193d4]">
+              <span class="material-symbols-outlined text-3xl">water_drop</span>
+            </div>
+            <div class="flex flex-col gap-2">
+              <h3 class="text-[#111618] text-xl font-bold font-display">Latent Load Management</h3>
+              <p class="text-[#617c89] text-sm leading-relaxed">
+                  Standard AC systems cool air (sensible load) but often fail to remove enough water vapor (latent load). This hidden moisture energy accumulates in walls and fabrics, creating perfect mold conditions.
+              </p>
+            </div>
+          </div>
+          <!-- Card 2: The 60% Rule -->
+          <div class="flex flex-col gap-4 rounded-xl border border-[#dbe2e6] bg-white p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+            <!-- Decorative background gauge element -->
+            <div class="absolute -right-10 -top-10 opacity-5 group-hover:opacity-10 transition-opacity">
+              <span class="material-symbols-outlined text-[200px] text-[#f97316]">speed</span>
+            </div>
+            <div class="size-12 rounded-lg bg-orange-50 flex items-center justify-center text-[#f97316]">
+              <span class="material-symbols-outlined text-3xl">warning</span>
+            </div>
+            <div class="flex flex-col gap-2 relative z-10">
+              <h3 class="text-[#111618] text-xl font-bold font-display">The 60% Rule</h3>
+              <p class="text-[#617c89] text-sm leading-relaxed">
+                  Mold thrives when relative humidity exceeds 60% for just 24-48 hours. Our systems maintain a strict "Dry Standard" below 55%, starving mold spores of the moisture they need to germinate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Solutions Grid -->
+  <section id="how-it-works" class="bg-white py-16 md:py-24">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-10">
+      <div class="flex flex-col gap-10">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-[#111618] text-3xl md:text-4xl font-bold font-display mb-4">Technical Solutions</h2>
+          <p class="text-[#617c89]">Our hospital-grade approach utilizes four key technologies to secure your home.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Solution 1: Crawl Space (Linked) -->
+          <a href="/restoration/mold-remediation/prevention/crawl-space-encapsulation/" class="flex flex-col rounded-xl border border-[#dbe2e6] bg-white overflow-hidden group hover:border-[#1193d4]/50 transition-colors cursor-pointer text-left">
+            <div class="aspect-video group-hover:scale-105 transition-transform duration-500 overflow-hidden relative">
+                <Image src={crawlSpaceImage} alt="Clean crawl space encapsulated with white liner" class="object-cover w-full h-full" />
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="text-[#111618] text-lg font-bold font-display mb-2 text-[#1193d4] group-hover:underline">Crawl Space Encapsulation</h3>
+              <p class="text-[#617c89] text-sm mb-4 flex-1">Sealing foundation vents and installing vapor barriers to stop ground moisture from rising.</p>
+              <div class="text-[#1193d4] text-sm font-bold flex items-center gap-1 mt-auto">
+                  View Service <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </a>
+          <!-- Solution 2: Dehumidifier (Linked) -->
+          <a href="/restoration/mold-remediation/prevention/dehumidifier-installation/" class="flex flex-col rounded-xl border border-[#dbe2e6] bg-white overflow-hidden group hover:border-[#1193d4]/50 transition-colors cursor-pointer text-left">
+            <div class="aspect-video group-hover:scale-105 transition-transform duration-500 overflow-hidden relative">
+                <Image src={dehumidifierImage} alt="Modern HVAC dehumidifier system installed in utility room" class="object-cover w-full h-full" />
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="text-[#111618] text-lg font-bold font-display mb-2 text-[#1193d4] group-hover:underline">Whole-Home Dehumidification</h3>
+              <p class="text-[#617c89] text-sm mb-4 flex-1">Dedicated units that run independently of AC to manage humidity even on mild days.</p>
+              <div class="text-[#1193d4] text-sm font-bold flex items-center gap-1 mt-auto">
+                  View Service <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </a>
+          <!-- Solution 3: UV Lights (Informational) -->
+          <div class="flex flex-col rounded-xl border border-[#dbe2e6] bg-white overflow-hidden group hover:border-[#f97316]/50 transition-colors">
+            <div class="aspect-video group-hover:scale-105 transition-transform duration-500 overflow-hidden relative">
+                <Image src={uvLightImage} alt="Blue UV light glow inside HVAC ductwork" class="object-cover w-full h-full" />
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="text-[#111618] text-lg font-bold font-display mb-2">HVAC UV Lights</h3>
+              <p class="text-[#617c89] text-sm mb-4 flex-1">Sterilizing coils and air streams to kill airborne bacteria and mold spores instantly.</p>
+              <div class="text-xs font-bold text-gray-400 uppercase tracking-wide mt-auto">
+                  Integrated Feature
+              </div>
+            </div>
+          </div>
+          <!-- Solution 4: Ventilation (Informational) -->
+          <div class="flex flex-col rounded-xl border border-[#dbe2e6] bg-white overflow-hidden group hover:border-[#f97316]/50 transition-colors">
+            <div class="aspect-video group-hover:scale-105 transition-transform duration-500 overflow-hidden relative">
+                <Image src={ventilationImage} alt="Fresh air ventilation vent on modern white ceiling" class="object-cover w-full h-full" />
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="text-[#111618] text-lg font-bold font-display mb-2">ASHRAE 62.2 Ventilation</h3>
+              <p class="text-[#617c89] text-sm mb-4 flex-1">Mechanical fresh air exchange to flush out stale, contaminated air and introduce oxygen.</p>
+              <div class="text-xs font-bold text-gray-400 uppercase tracking-wide mt-auto">
+                  Standard Feature
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Building Envelope Science -->
+  <section class="bg-[#f6f7f8] py-16 md:py-24">
+    <div class="max-w-[1024px] mx-auto px-4 md:px-10">
+      <div class="bg-white rounded-2xl shadow-sm border border-[#dbe2e6] overflow-hidden flex flex-col md:flex-row">
+        <div class="flex-1 p-8 md:p-12 flex flex-col justify-center gap-6">
+          <div class="flex flex-col gap-2">
+            <span class="text-[#f97316] font-bold text-sm tracking-wider uppercase">Building Science</span>
+            <h2 class="text-[#111618] text-3xl font-bold font-display">Hardening Your Home's Envelope</h2>
+            <p class="text-[#617c89] text-base leading-relaxed mt-2">
+                You can't control humidity in a leaky bucket. We utilize scientific Blower Door tests to quantify air leakage rates (ACH50) and identify exactly where Florida's humid air is infiltrating your home's defenses.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-[#1193d4] mt-1">check_circle</span>
+              <span class="text-[#111618] text-sm font-medium">Identify invisible leak points around windows and doors</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-[#1193d4] mt-1">check_circle</span>
+              <span class="text-[#111618] text-sm font-medium">Seal attic bypasses where heat enters</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-[#1193d4] mt-1">check_circle</span>
+              <span class="text-[#111618] text-sm font-medium">Verify airtightness post-remediation</span>
+            </div>
+          </div>
+          <button class="flex items-center justify-center gap-2 bg-[#f0f3f4] hover:bg-[#e2e8ea] text-[#111618] font-bold py-3 px-6 rounded-lg w-fit transition-colors mt-2">
+            <span>Learn About Blower Door Tests</span>
+          </button>
+        </div>
+        <div class="w-full md:w-[400px] min-h-[300px] relative">
+            <Image src={blowerDoorImage} alt="Technician setting up a red blower door test" class="absolute inset-0 w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maintenance Plan: Dry-Guard -->
+  <section class="bg-[#101c22] py-20 text-white relative overflow-hidden">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#1193d4] via-transparent to-transparent"></div>
+    <div class="max-w-[960px] mx-auto px-4 md:px-10 relative z-10">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="flex-1 flex flex-col gap-6">
+          <h2 class="text-3xl md:text-4xl font-bold font-display text-white">Maintenance That Pays for Itself</h2>
+          <p class="text-gray-300 text-lg">
+              Don't let your investment deteriorate. The <span class="text-[#1193d4] font-bold">Dry-Guard™</span> Annual Plan ensures your systems are running at peak efficiency and your home remains airtight.
+          </p>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex items-center gap-2 text-sm text-gray-200">
+              <span class="material-symbols-outlined text-[#f97316] text-base">verified</span> Annual Coil Cleaning
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-200">
+              <span class="material-symbols-outlined text-[#f97316] text-base">verified</span> Sensor Calibration
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-200">
+              <span class="material-symbols-outlined text-[#f97316] text-base">verified</span> 24/7 Priority Status
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-200">
+              <span class="material-symbols-outlined text-[#f97316] text-base">verified</span> Filter Replacements
+            </div>
+          </div>
+        </div>
+        <!-- Pricing/CTA Card -->
+        <div class="w-full md:w-auto min-w-[320px] bg-white text-[#111618] rounded-xl p-8 flex flex-col gap-6 shadow-2xl">
+          <div class="flex flex-col gap-2 border-b border-gray-100 pb-4">
+            <span class="text-sm font-bold text-gray-500 uppercase tracking-wide">Dry-Guard™ Plan</span>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-bold font-display text-[#1193d4]">$199</span>
+              <span class="text-gray-500">/ year</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <p class="text-sm text-gray-600">Complete peace of mind for your Florida home.</p>
+            <button class="w-full bg-[#f97316] hover:bg-[#e66000] text-white font-bold h-12 rounded-lg transition-colors shadow-lg shadow-[#f97316]/20">
+                Join Dry-Guard
+            </button>
+            <p class="text-xs text-center text-gray-400 mt-2">No contract. Cancel anytime.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="bg-white py-16 md:py-24">
+    <div class="max-w-[800px] mx-auto px-4 md:px-10">
+      <h2 class="text-[#111618] text-3xl font-bold font-display text-center mb-10">Frequently Asked Questions</h2>
+      <div class="flex flex-col gap-4">
+        <!-- FAQ Item 1 -->
+        <details class="group bg-[#f6f7f8] rounded-lg border border-[#dbe2e6] overflow-hidden">
+          <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-[#111618] list-none select-none">
+            <span>What is the ideal humidity level for a Florida home?</span>
+            <span class="material-symbols-outlined text-[#1193d4] transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 pt-0 text-[#617c89] leading-relaxed">
+              We recommend maintaining indoor relative humidity between 45% and 55%. While anything under 60% prevents mold growth, the 45-55% range offers the best balance of comfort, energy efficiency, and pathogen control.
+          </div>
+        </details>
+        <!-- FAQ Item 2 -->
+        <details class="group bg-[#f6f7f8] rounded-lg border border-[#dbe2e6] overflow-hidden">
+          <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-[#111618] list-none select-none">
+            <span>Are HVAC UV lights really worth the investment?</span>
+            <span class="material-symbols-outlined text-[#1193d4] transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 pt-0 text-[#617c89] leading-relaxed">
+              Yes, especially in humid climates. UV-C lights installed in the air handler prevent biological growth on the cooling coils—a common source of "dirty sock syndrome" and spore distribution throughout the home. They extend system life and improve air quality.
+          </div>
+        </details>
+        <!-- FAQ Item 3 -->
+        <details class="group bg-[#f6f7f8] rounded-lg border border-[#dbe2e6] overflow-hidden">
+          <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-[#111618] list-none select-none">
+            <span>How does crawl space encapsulation help my living area?</span>
+            <span class="material-symbols-outlined text-[#1193d4] transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 pt-0 text-[#617c89] leading-relaxed">
+              Up to 50% of the air on your first floor comes from the crawl space due to the "stack effect." By sealing the crawl space, you prevent moldy, humid soil gases from being drawn up into your living environment, significantly lowering your home's latent load.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+</MainLayout>

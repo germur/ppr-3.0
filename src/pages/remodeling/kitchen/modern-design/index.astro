@@ -1,0 +1,391 @@
+---
+import MainLayout from '../../../../layouts/MainLayout.astro';
+
+const seoTitle = "Modern Kitchen Remodeling - Paramount Property Restoration";
+const seoDescription = "Modern kitchen remodeling in Florida. Style meets resilience with hurricane-ready designs, smart tech, and energy-efficient upgrades.";
+---
+
+<MainLayout title={seoTitle} description={seoDescription} hideHeader={true} hideFooter={true} breadcrumbItems={[]}>
+  <!-- Page-Specific Styles (Font & Colors) -->
+  <style is:global>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --font-display: 'Space Grotesk', sans-serif;
+      /* Custom Colors from User Config */
+      --color-primary: #1193d4;
+      --color-secondary: #f97316;
+      --color-bg-light: #f6f7f8;
+      --color-bg-dark: #101c22;
+    }
+
+    /* Animation Utilities */
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Details/Summary Customization */
+    details > summary {
+      list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+
+  <div class="bg-[#f6f7f8] dark:bg-[#101c22] font-display text-slate-900 dark:text-white antialiased">
+    <!-- Top Navigation -->
+    <header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-[#101c22]/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <div class="flex items-center gap-3">
+            <div class="size-8 text-[#1193d4]">
+              <span class="material-symbols-outlined text-4xl">roofing</span>
+            </div>
+            <div class="flex flex-col">
+              <h2 class="text-slate-900 dark:text-white text-lg font-bold leading-none tracking-tight">Paramount</h2>
+              <span class="text-xs text-slate-500 dark:text-slate-400 font-medium tracking-wide">RESTORATION & REMODELING</span>
+            </div>
+          </div>
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex flex-1 justify-end items-center gap-8">
+            <div class="flex items-center gap-6">
+              <a class="text-slate-600 dark:text-slate-300 hover:text-[#1193d4] dark:hover:text-[#1193d4] text-sm font-medium transition-colors" href="/remodeling/kitchen/">Kitchens</a>
+              <a class="text-slate-600 dark:text-slate-300 hover:text-[#1193d4] dark:hover:text-[#1193d4] text-sm font-medium transition-colors" href="/restoration/">Restoration</a>
+              <a class="text-slate-600 dark:text-slate-300 hover:text-[#1193d4] dark:hover:text-[#1193d4] text-sm font-medium transition-colors" href="/resources/">Resources</a>
+              <a class="text-slate-600 dark:text-slate-300 hover:text-[#1193d4] dark:hover:text-[#1193d4] text-sm font-medium transition-colors" href="/about/">About Us</a>
+            </div>
+            <a href="/contact/" class="flex items-center justify-center rounded-lg h-10 px-5 bg-[#1193d4] hover:bg-[#0e7bb3] transition-colors text-white text-sm font-bold tracking-wide shadow-lg shadow-[#1193d4]/20">
+                Start 3D Design
+            </a>
+          </nav>
+          <!-- Mobile Menu Icon -->
+          <div class="md:hidden text-slate-900 dark:text-white">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative w-full overflow-hidden bg-[#101c22]">
+      <div class="absolute inset-0 w-full h-full">
+        <div class="w-full h-full bg-cover bg-center opacity-60" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1hTVIXYRdlXZNAzSJk0bebKbtpjF4B2y2WTxZSJzm_9wEhRKoZXo8viX23Xpj3dDq69FQzT0FjKDujzFped5uUwhSnrcpTnrPfR9l_g9gmYT9bmdRQGyxlAgI-k-i0rp-zDlTHJamyplkR7MGJx6C5b2JH_pU2bB_TUsQMFpbboZM3nE7rMjCeREXF3op2_hPQbLS5oAmGoaIXQwbPSXpvxFmGOaS7dljVtL2yPb2aFDHq98_6IvPhmTyLcrarMy822Io9fNyizL6');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#101c22]/90 via-[#101c22]/50 to-transparent"></div>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col justify-center min-h-[600px]">
+        <div class="max-w-2xl flex flex-col gap-6 animate-fade-in-up">
+          <div class="flex items-center gap-2 text-[#f97316] font-bold text-sm uppercase tracking-widest">
+            <span class="w-8 h-0.5 bg-[#f97316]"></span>
+            <span>Florida Living</span>
+          </div>
+          <h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight">
+              Modern Kitchen Remodeling: <span class="text-[#1193d4]">Style Meets Resilience</span>
+          </h1>
+          <p class="text-slate-200 text-lg md:text-xl font-normal leading-relaxed max-w-lg">
+              Chef-grade functionality designed to withstand the humidity and storms of the Sunshine State. Transform your home with materials built to last.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mt-4">
+            <a href="/contact/" class="flex items-center justify-center rounded-lg h-12 px-8 bg-[#1193d4] hover:bg-[#0e7bb3] transition-colors text-white text-base font-bold tracking-wide shadow-xl shadow-[#1193d4]/30">
+                Start Your 3D Kitchen Design
+                <span class="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
+            </a>
+            <button class="flex items-center justify-center rounded-lg h-12 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-colors text-white text-base font-bold tracking-wide">
+                <span class="material-symbols-outlined mr-2 text-xl">play_circle</span>
+                See Transformation
+            </button>
+          </div>
+        </div>
+        <!-- Floating badge -->
+        <div class="absolute bottom-8 right-4 md:right-8 bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-4 max-w-xs hidden md:block">
+          <div class="flex items-center gap-3">
+            <div class="bg-green-500 rounded-full p-1.5">
+              <span class="material-symbols-outlined text-white text-sm">check</span>
+            </div>
+            <div>
+              <p class="text-white text-sm font-bold">Hurricane Ready</p>
+              <p class="text-white/70 text-xs">Certified impact-resistant materials</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trend Spotlight Section -->
+    <section class="py-20 bg-white dark:bg-[#101c22]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div class="max-w-2xl">
+            <h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold leading-tight mb-4">
+                Trend Spotlight: <span class="text-[#1193d4]">The 2026 Florida Kitchen</span>
+            </h2>
+            <p class="text-slate-600 dark:text-slate-300 text-lg">
+                Discover the features defining the next generation of resilient luxury homes in Florida.
+            </p>
+          </div>
+          <a class="text-[#f97316] font-bold flex items-center hover:underline" href="#">
+              View Full Report <span class="material-symbols-outlined text-lg ml-1">arrow_outward</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="group flex flex-col gap-4">
+            <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
+              <div class="absolute top-3 left-3 bg-[#f97316] text-white text-xs font-bold px-3 py-1 rounded-full z-10">Tech</div>
+              <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPqTq_5GUwnclPUkNt1ewoidzdmoCoTtJpdSKbuTXvmGvEWF3xe870IGDjJCvPmqNkZGf7l2ljw3tHvSf8BaRWNgLAXs9Syl7BvgDqNO6qB8FpZpM2NyE4BfpbLOpQKZlAle-TTzfDcfleFJC8HUo5uKMAgeMRskoaDm6rj-rZea7rHmbUnwla3cW1l7qE6Nj1xiFVHRkSeEs-OXJSzy5bWTwUsHwdbIGuEXG47dR0o9J-pu1M4fSWELxJkv8QRKH0m1uIkcgXsS85');"></div>
+            </div>
+            <div>
+              <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Smart Tech Integration</h3>
+              <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                  Wi-Fi enabled appliances and touchless faucets that reduce germ spread and monitor water usage for conservation.
+              </p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="group flex flex-col gap-4">
+            <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
+              <div class="absolute top-3 left-3 bg-[#1193d4] text-white text-xs font-bold px-3 py-1 rounded-full z-10">Resilience</div>
+              <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJ8YxS7SvZwk3DvxkO69iqMQMXjiFgj6qs73Jb9L2v2MtDqXvbPyezMTPRcMG0PvJ2LfBfanSb9f7XKZAoKS0bNie8eS90i4QLDv__ps-5AiEImtDuP0j7Efm8lIR9JviTx4Nmh4CIlLWI3vdn2qInQmEtT8oC41AO8vIS446iKvfGwm5eg738reMHuv2cDgB6InflZHNhlUBt4EM9xL1d_8SxxLjNTb2cE3svDPipExNYMd0CnDhtospsVma8ZULjmkWRRWWmLn8I');"></div>
+            </div>
+            <div>
+              <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Hidden Storage</h3>
+              <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                  Hurricane-ready pantries reinforced for storm supplies, seamlessly integrated behind sleek, handle-less cabinetry.
+              </p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="group flex flex-col gap-4">
+            <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
+              <div class="absolute top-3 left-3 bg-slate-800 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Lifestyle</div>
+              <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8pfcCOatsNan797Px0eet3Jip3Bbahqr9LMSCEAGaHz1wpnkD9hFCORdbRjOuC2MN-PAADn-sr8jFjYDrdBEtZw6--1375qGDJlXnQl0JJm1MSX44peluxflY8X24TO9700aZ3n71xqqtFoK1Zl5uXhBiO18Q9cRkM0XYWjISVDbh8ApzNoPaPnazvnqXEygpW-PhrUhO995X41U3Ri0vtvAlmgARTzHe45K79DKezfgRoqQfgqAi0v4WzATYYXb9ojGKJvwxrO0C');"></div>
+            </div>
+            <div>
+              <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Indoor-Outdoor Flow</h3>
+              <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                  Impact-rated sliding doors that create a seamless transition to your patio while protecting against high-velocity winds.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Storytelling Section -->
+    <section class="py-20 bg-[#f6f7f8] dark:bg-slate-900/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Left Content -->
+          <div class="flex flex-col gap-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-[#1193d4] text-sm font-bold w-fit">
+              <span class="material-symbols-outlined text-lg">analytics</span>
+              <span>Market Insights</span>
+            </div>
+            <h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold leading-tight">
+                ROI & Energy Efficiency: <br/>Invest Smart in Florida
+            </h2>
+            <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+                A modern kitchen isn't just a lifestyle upgrade; it's a financial shield. In Florida's unique real estate market, resilient upgrades drive property value while cutting energy costs.
+            </p>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm mt-4">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-[#f97316]/10 rounded-lg text-[#f97316]">
+                  <span class="material-symbols-outlined text-2xl">solar_power</span>
+                </div>
+                <div>
+                  <h4 class="text-slate-900 dark:text-white font-bold text-lg">Net-Zero Solutions</h4>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 mb-3">
+                      Integrate solar-ready circuits and high-efficiency induction cooking.
+                  </p>
+                  <a class="text-[#f97316] font-bold text-sm hover:underline" href="#">Explore Net-Zero Packages →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Chart -->
+          <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
+            <div class="mb-8">
+              <p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider mb-1">Projected Growth</p>
+              <div class="flex items-baseline gap-3">
+                <h3 class="text-4xl font-bold text-slate-900 dark:text-white">+20% ROI</h3>
+                <span class="text-green-500 font-bold text-sm bg-green-500/10 px-2 py-1 rounded-full flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm">trending_up</span> 2024-2026 Forecast
+                </span>
+              </div>
+            </div>
+            <!-- CSS Chart Visualization -->
+            <div class="relative h-64 w-full mt-4">
+              <div class="absolute bottom-0 left-0 w-full h-full flex items-end justify-around gap-4 px-2">
+                <!-- Bar 1 -->
+                <div class="w-full flex flex-col items-center gap-2 group cursor-pointer">
+                  <div class="text-xs font-bold text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity mb-1">$45k</div>
+                  <div class="w-16 bg-gray-200 dark:bg-slate-700 rounded-t-lg relative overflow-hidden h-[40%] transition-all duration-500 hover:bg-gray-300"></div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 font-bold text-center">Avg Cost</p>
+                </div>
+                <!-- Bar 2 -->
+                <div class="w-full flex flex-col items-center gap-2 group cursor-pointer">
+                  <div class="text-xs font-bold text-[#1193d4] opacity-0 group-hover:opacity-100 transition-opacity mb-1">$54k+</div>
+                  <div class="w-16 bg-[#1193d4] rounded-t-lg relative overflow-hidden h-[65%] transition-all duration-500 hover:bg-[#0e7bb3] shadow-[0_0_20px_rgba(17,147,212,0.3)]">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-white/30"></div>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 font-bold text-center">Resale Value</p>
+                </div>
+                <!-- Bar 3 -->
+                <div class="w-full flex flex-col items-center gap-2 group cursor-pointer">
+                  <div class="text-xs font-bold text-[#f97316] opacity-0 group-hover:opacity-100 transition-opacity mb-1">$12k Saved</div>
+                  <div class="w-16 bg-[#f97316]/80 rounded-t-lg relative overflow-hidden h-[25%] transition-all duration-500 hover:bg-[#f97316]"></div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 font-bold text-center">10y Energy Savings</p>
+                </div>
+              </div>
+              <!-- Grid Lines -->
+              <div class="absolute inset-0 border-l border-b border-slate-200 dark:border-slate-700 -z-10"></div>
+              <div class="absolute top-[0%] left-0 w-full border-t border-dashed border-slate-200 dark:border-slate-700/50"></div>
+              <div class="absolute top-[33%] left-0 w-full border-t border-dashed border-slate-200 dark:border-slate-700/50"></div>
+              <div class="absolute top-[66%] left-0 w-full border-t border-dashed border-slate-200 dark:border-slate-700/50"></div>
+            </div>
+            <p class="text-center text-xs text-slate-400 mt-6">*Based on Zillow & Florida Realtors 2023 Reports for remodeled kitchens in coastal zones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white dark:bg-[#101c22]">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-4">Common Questions</h2>
+          <p class="text-slate-600 dark:text-slate-400">Everything you need to know about remodeling in Florida.</p>
+        </div>
+        <div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
+          <!-- FAQ Item 1 -->
+          <div class="border border-gray-200 dark:border-gray-800 rounded-lg bg-[#f6f7f8] dark:bg-slate-900/50 overflow-hidden" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <details class="group p-6 cursor-pointer">
+              <summary class="flex items-center justify-between font-bold text-slate-900 dark:text-white text-lg select-none">
+                <span itemprop="name">What is the timeline for a kitchen remodel in Orlando?</span>
+                <span class="material-symbols-outlined text-slate-400 transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base border-t border-gray-100 dark:border-gray-800 pt-4" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <div itemprop="text">
+                    Typically, a full kitchen remodel in the Orlando area takes between <strong>6 to 10 weeks</strong> from demolition to final walkthrough. This includes permitting, which Paramount Restoration handles directly. Custom cabinetry or imported materials may extend this timeline.
+                </div>
+              </div>
+            </details>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="border border-gray-200 dark:border-gray-800 rounded-lg bg-[#f6f7f8] dark:bg-slate-900/50 overflow-hidden" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <details class="group p-6 cursor-pointer">
+              <summary class="flex items-center justify-between font-bold text-slate-900 dark:text-white text-lg select-none">
+                <span itemprop="name">Do I need a permit for a kitchen island with plumbing?</span>
+                <span class="material-symbols-outlined text-slate-400 transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base border-t border-gray-100 dark:border-gray-800 pt-4" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <div itemprop="text">
+                    <strong>Yes.</strong> In Florida, adding plumbing or electrical to a kitchen island requires a permit to ensuring code compliance, especially regarding loop venting and GFI outlets. We manage all city inspections as part of our comprehensive service.
+                </div>
+              </div>
+            </details>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="border border-gray-200 dark:border-gray-800 rounded-lg bg-[#f6f7f8] dark:bg-slate-900/50 overflow-hidden" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <details class="group p-6 cursor-pointer">
+              <summary class="flex items-center justify-between font-bold text-slate-900 dark:text-white text-lg select-none">
+                <span itemprop="name">Are your cabinets hurricane resistant?</span>
+                <span class="material-symbols-outlined text-slate-400 transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base border-t border-gray-100 dark:border-gray-800 pt-4" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <div itemprop="text">
+                    We utilize marine-grade plywood and humidity-resistant finishes that prevent warping in Florida's climate. While cabinets themselves aren't rated for wind loads like windows, our installation methods secure them directly to structural studs for maximum stability during storms.
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="relative py-24 bg-[#1193d4] overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+      <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+        <h2 class="text-white text-3xl md:text-5xl font-black mb-6 tracking-tight">Ready to build your dream kitchen?</h2>
+        <p class="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+            Schedule a free consultation with our design experts and see a 3D preview of your resilient, modern kitchen.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/contact/" class="w-full sm:w-auto px-8 h-14 bg-white text-[#1193d4] text-lg font-bold rounded-lg shadow-xl hover:bg-slate-50 transition-colors flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined">calendar_month</span>
+            Book Free Consultation
+          </a>
+          <a href="tel:7866022217" class="w-full sm:w-auto px-8 h-14 bg-[#0e7bb3] border border-white/20 text-white text-lg font-bold rounded-lg hover:bg-black/20 transition-colors flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined">call</span>
+            (786) 602-2217
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#101c22] text-slate-400 py-12 border-t border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div class="col-span-1 md:col-span-1">
+            <div class="flex items-center gap-2 text-white mb-4">
+              <span class="material-symbols-outlined text-3xl text-[#1193d4]">roofing</span>
+              <span class="font-bold text-lg">Paramount</span>
+            </div>
+            <p class="text-sm">Restoring and remodeling Florida homes with resilience and style since 2010.</p>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-4">Services</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a class="hover:text-[#1193d4] transition-colors" href="/remodeling/kitchen/">Kitchen Remodeling</a></li>
+              <li><a class="hover:text-[#1193d4] transition-colors" href="/restoration/water-damage/">Water Restoration</a></li>
+              <li><a class="hover:text-[#1193d4] transition-colors" href="/restoration/storm-damage/">Storm Damage</a></li>
+              <li><a class="hover:text-[#1193d4] transition-colors" href="/commercial/">Commercial Services</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-4">Locations</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a class="hover:text-[#1193d4] transition-colors" href="/service-areas/central-florida/orlando/">Orlando</a></li>
+              <li><a class="hover:text-[#1193d4] transition-colors" href="/service-areas/tampa-bay/tampa/">Tampa</a></li>
+              <li><a class="hover:text-[#1193d4] transition-colors" href="/service-areas/northeast-florida/jacksonville/">Jacksonville</a></li>
+              <li><a class="hover:text-[#1193d4] transition-colors" href="/service-areas/south-florida/miami/">Miami</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-4">Connect</h4>
+            <div class="flex gap-4">
+              <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#1193d4] hover:text-white transition-colors" href="#">
+                <span class="font-bold text-xs">FB</span>
+              </a>
+              <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#1193d4] hover:text-white transition-colors" href="#">
+                <span class="font-bold text-xs">IG</span>
+              </a>
+              <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#1193d4] hover:text-white transition-colors" href="#">
+                <span class="font-bold text-xs">LN</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+          <p>© 2024 Paramount Property Restoration. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a class="hover:text-white" href="#">Privacy Policy</a>
+            <a class="hover:text-white" href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</MainLayout>

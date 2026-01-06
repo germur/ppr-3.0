@@ -1,0 +1,340 @@
+---
+import MainLayout from '../../../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import heroImage from '/Users/rogermurillo/.gemini/antigravity/brain/a8627244-7c5e-4ed3-b008-40c089f300a3/black_mold_hero_tyvek_1767627549165.png';
+import localContextImage from '/Users/rogermurillo/.gemini/antigravity/brain/a8627244-7c5e-4ed3-b008-40c089f300a3/florida_home_mold_prevention_1767627564258.png';
+
+const seoTitle = "Black Mold Removal & Remediation | Paramount Property Restoration";
+const seoDescription = "Certified toxic black mold removal in Florida. Medical-grade containment and remediation for Stachybotrys chartarum. 24/7 Emergency Response.";
+---
+
+<MainLayout title={seoTitle} description={seoDescription}>
+  <!-- Sticky Safety Alert Bar -->
+  <div class="sticky top-0 z-40 w-full bg-yellow-400 text-black px-4 py-3 shadow-md">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+      <div class="flex items-center gap-2 font-bold uppercase tracking-wide">
+        <span class="material-symbols-outlined text-2xl">warning</span>
+        <span>STOP: Do not disturb black mold</span>
+      </div>
+      <p class="text-sm font-medium hidden sm:block">Spores spread instantly when touched.</p>
+      <a class="inline-flex items-center gap-1 bg-black text-white px-3 py-1 rounded text-sm font-bold hover:bg-gray-800 transition-colors whitespace-nowrap" href="tel:7866022217">
+        <span class="material-symbols-outlined text-sm">call</span>
+        Call Experts: (786) 602-2217
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-white dark:bg-slate-900 px-4 py-12 sm:py-20 flex justify-center">
+    <div class="max-w-7xl w-full flex flex-col md:flex-row gap-10 md:items-center">
+      <div class="flex flex-col gap-6 flex-1 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-3 py-1 self-center md:self-start w-fit">
+          <span class="material-symbols-outlined text-[#1193d4] text-sm">verified</span>
+          <span class="text-[#1193d4] text-xs font-bold uppercase tracking-wide">IICRC Certified Remediation</span>
+        </div>
+        <h1 class="text-slate-900 dark:text-white text-4xl sm:text-5xl font-black leading-[1.1] tracking-[-0.033em]">
+          Certified Black Mold Removal & Medical-Grade Containment
+        </h1>
+        <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed max-w-[600px]">
+          We isolate the danger so your family stays safe. Do not disturb the mold—spores spread instantly. Immediate response for Florida homeowners.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="tel:7866022217" class="flex items-center justify-center rounded-lg h-12 px-6 bg-[#f97316] hover:bg-orange-600 text-white text-base font-bold shadow-lg shadow-orange-200 transition-all transform hover:-translate-y-0.5">
+            Request Emergency Remediation
+          </a>
+          <a href="#process" class="flex items-center justify-center rounded-lg h-12 px-6 bg-white border border-slate-200 text-slate-900 text-base font-bold hover:bg-slate-50 transition-colors">
+            How We Work
+          </a>
+        </div>
+      </div>
+      <div class="flex-1 w-full relative">
+        <div class="aspect-[4/3] w-full bg-slate-100 rounded-2xl overflow-hidden shadow-xl relative">
+          <Image src={heroImage} alt="Technician in full white PPE suit and respirator mask inspecting a wall" class="w-full h-full object-cover" />
+          <!-- Floating Card -->
+          <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur rounded-lg p-4 z-20 shadow-lg border-l-4 border-[#1193d4]">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-[#1193d4]">health_and_safety</span>
+              <div>
+                <p class="font-bold text-sm text-slate-900">Strict Containment Protocol</p>
+                <p class="text-xs text-slate-500">Negative air pressure applied immediately.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warning Banner -->
+  <section class="bg-slate-900 text-white py-12 px-4 relative overflow-hidden">
+    <!-- Pattern -->
+    <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #000 0, #000 10px, #ffd700 10px, #ffd700 20px);"></div>
+    <div class="max-w-4xl mx-auto relative z-10 text-center">
+      <div class="inline-block bg-red-600 text-white font-black text-xl px-4 py-1 uppercase tracking-widest mb-4 rounded transform -rotate-1 shadow-lg">
+        Do Not Enter
+      </div>
+      <h2 class="text-3xl font-bold mb-4">Affected Areas Are Toxic Zones</h2>
+      <p class="text-slate-300 max-w-2xl mx-auto mb-8 text-lg">
+        Visible mold is often just the surface. Without proper PPE (Personal Protective Equipment), entering a contaminated zone can lead to immediate respiratory distress and cross-contamination of your entire property.
+      </p>
+      <div class="flex flex-wrap justify-center gap-8 text-sm font-medium text-yellow-400 uppercase tracking-wider">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined">block</span> No DIY Bleach
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined">block</span> No Fans/AC
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined">block</span> No Touching
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Science of Safety -->
+  <section class="px-4 py-16 bg-slate-50 dark:bg-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <h2 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight mb-4">
+          The Science of Safety: Why Professional Remediation is Critical
+        </h2>
+        <p class="text-slate-600 dark:text-slate-300 text-lg max-w-[720px]">
+          Black mold (Stachybotrys) releases mycotoxins that can cause severe respiratory issues. Standard cleaning methods often trigger spore release, worsening the problem.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white dark:bg-slate-700 p-6 rounded-xl border border-slate-200 dark:border-slate-600 shadow-sm flex flex-col gap-4">
+          <div class="size-12 rounded-full bg-blue-50 flex items-center justify-center text-[#1193d4]">
+            <span class="material-symbols-outlined">biotech</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Mycotoxin Release</h3>
+            <p class="text-slate-500 dark:text-slate-300 text-sm leading-relaxed">
+              Touching or scrubbing mold colonies triggers a defense mechanism, releasing invisible toxic spores into the air you breathe.
+            </p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white dark:bg-slate-700 p-6 rounded-xl border border-slate-200 dark:border-slate-600 shadow-sm flex flex-col gap-4">
+          <div class="size-12 rounded-full bg-blue-50 flex items-center justify-center text-[#1193d4]">
+            <span class="material-symbols-outlined">pulmonology</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Respiratory Risks</h3>
+            <p class="text-slate-500 dark:text-slate-300 text-sm leading-relaxed">
+              Chronic coughing, asthma attacks, headaches, and severe allergic reactions are common when Stachybotrys is present.
+            </p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white dark:bg-slate-700 p-6 rounded-xl border border-slate-200 dark:border-slate-600 shadow-sm flex flex-col gap-4">
+          <div class="size-12 rounded-full bg-blue-50 flex items-center justify-center text-[#1193d4]">
+            <span class="material-symbols-outlined">cleaning_services</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Why Bleach Fails</h3>
+            <p class="text-slate-500 dark:text-slate-300 text-sm leading-relaxed">
+              Bleach only removes color from the surface. It does not kill the root structure (mycelium) in porous materials like drywall.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Timeline -->
+  <section id="process" class="px-4 py-16 bg-white dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-[#1193d4] font-bold uppercase tracking-wider text-sm">Our Protocol</span>
+        <h2 class="text-3xl font-bold mt-2 text-slate-900 dark:text-white">The Negative Pressure System</h2>
+        <p class="text-slate-500 dark:text-slate-400 mt-2">A hospital-grade 4-step process to ensure total removal.</p>
+      </div>
+      <div class="relative">
+        <!-- Connector Line (Desktop) -->
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-100 dark:bg-slate-700 -translate-y-1/2 z-0"></div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+          <!-- Step 1 -->
+          <div class="flex flex-col items-center text-center group">
+            <div class="size-16 rounded-full bg-white dark:bg-slate-800 border-4 border-[#1193d4] text-[#1193d4] flex items-center justify-center shadow-lg mb-4 group-hover:bg-[#1193d4] group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined text-3xl">policy</span>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-slate-900 dark:text-white">1. Isolation</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Sealing the affected area with heavy-duty plastic barriers.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center text-center group">
+            <div class="size-16 rounded-full bg-white dark:bg-slate-800 border-4 border-[#1193d4] text-[#1193d4] flex items-center justify-center shadow-lg mb-4 group-hover:bg-[#1193d4] group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined text-3xl">air</span>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-slate-900 dark:text-white">2. Negative Air</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Using industrial scrubbers to prevent spores from escaping.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center text-center group">
+            <div class="size-16 rounded-full bg-white dark:bg-slate-800 border-4 border-[#1193d4] text-[#1193d4] flex items-center justify-center shadow-lg mb-4 group-hover:bg-[#1193d4] group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined text-3xl">vacuum</span>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-slate-900 dark:text-white">3. HEPA Vacuum</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Removing surface spores with medical-grade filtration.</p>
+          </div>
+          <!-- Step 4 -->
+          <div class="flex flex-col items-center text-center group">
+            <div class="size-16 rounded-full bg-white dark:bg-slate-800 border-4 border-[#1193d4] text-[#1193d4] flex items-center justify-center shadow-lg mb-4 group-hover:bg-[#1193d4] group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined text-3xl">sanitizer</span>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-slate-900 dark:text-white">4. Encapsulation</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Applying antimicrobial sealant to prevent regrowth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Save vs Remove Table -->
+  <section class="px-4 py-16 bg-slate-50 dark:bg-slate-800">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold mb-8 text-slate-900 dark:text-white">What Can Be Saved?</h2>
+      <div class="bg-white dark:bg-slate-700 rounded-xl shadow-sm overflow-hidden border border-slate-200 dark:border-slate-600">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <!-- Left Column: Remove -->
+          <div class="p-8 border-b md:border-b-0 md:border-r border-slate-100 dark:border-slate-600">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="material-symbols-outlined text-red-500 text-3xl">delete_forever</span>
+              <h3 class="text-xl font-bold text-red-600">Porous (MUST REMOVE)</h3>
+            </div>
+            <p class="text-sm text-slate-500 dark:text-slate-300 mb-6">These materials absorb mold roots deep into their fibers. Cleaning is impossible; removal is required.</p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                <span class="material-symbols-outlined text-red-400 text-sm">close</span>
+                Drywall & Insulation
+              </li>
+              <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                <span class="material-symbols-outlined text-red-400 text-sm">close</span>
+                Carpet & Padding
+              </li>
+              <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                <span class="material-symbols-outlined text-red-400 text-sm">close</span>
+                Ceiling Tiles
+              </li>
+              <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                <span class="material-symbols-outlined text-red-400 text-sm">close</span>
+                Upholstered Furniture
+              </li>
+            </ul>
+          </div>
+          <!-- Right Column: Save -->
+          <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="material-symbols-outlined text-green-500 text-3xl">check_circle</span>
+              <h3 class="text-xl font-bold text-green-600">Non-Porous (CAN SAVE)</h3>
+            </div>
+            <p class="text-sm text-slate-500 dark:text-slate-300 mb-6">These materials can often be professionally cleaned, sanitized, and encapsulated.</p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                <span class="material-symbols-outlined text-green-500 text-sm">check</span>
+                Glass & Windows
+              </li>
+              <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                <span class="material-symbols-outlined text-green-500 text-sm">check</span>
+                Tile & Stone
+              </li>
+              <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                <span class="material-symbols-outlined text-green-500 text-sm">check</span>
+                Metal Fixtures
+              </li>
+              <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                <span class="material-symbols-outlined text-green-500 text-sm">check</span>
+                Hard Plastics
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Context -->
+  <section class="px-4 py-16 bg-white dark:bg-slate-900">
+    <div class="max-w-6xl mx-auto bg-[#1193d4]/5 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
+      <div class="flex-1">
+        <h2 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Why Florida Homes Are Vulnerable</h2>
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+          Florida's high humidity levels (often 80%+) create the perfect breeding ground for mold, especially when combined with hidden AC leaks or roof damage. In our local climate, mold can colonize a wet wall in as little as 24-48 hours.
+        </p>
+        <a class="text-[#1193d4] font-bold hover:underline inline-flex items-center gap-1" href="/restoration/mold-remediation/">
+          View our Florida Mold Prevention Guide
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+      <div class="w-full md:w-1/3 aspect-video bg-cover bg-center rounded-lg shadow-md overflow-hidden relative">
+          <Image src={localContextImage} alt="Modern Florida home exterior with palm trees" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="px-4 py-16 bg-slate-50 dark:bg-slate-800">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-10 text-slate-900 dark:text-white">Common Questions</h2>
+      <div class="flex flex-col gap-4">
+        <!-- FAQ Item 1 -->
+        <details class="group bg-white dark:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-600 overflow-hidden">
+          <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+            <span class="font-bold text-slate-900 dark:text-white">Can I stay in my house during remediation?</span>
+            <span class="transition group-open:rotate-180">
+              <span class="material-symbols-outlined dark:text-white">expand_more</span>
+            </span>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            It depends on the severity. If the mold is confined to a small, sealable area (like a single bathroom), you may be able to stay. However, for extensive black mold outbreaks, we often recommend temporary relocation for your safety until air quality tests clear the home.
+          </div>
+        </details>
+        <!-- FAQ Item 2 -->
+        <details class="group bg-white dark:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-600 overflow-hidden">
+          <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+            <span class="font-bold text-slate-900 dark:text-white">Does homeowners insurance cover mold removal?</span>
+            <span class="transition group-open:rotate-180">
+              <span class="material-symbols-outlined dark:text-white">expand_more</span>
+            </span>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            Typically, yes, if the mold is a result of a sudden, accidental covered peril (like a burst pipe). If the mold is due to long-term neglect or humidity, coverage may be denied. We work directly with insurance adjusters to document the source and maximize your claim approval odds.
+          </div>
+        </details>
+        <!-- FAQ Item 3 -->
+        <details class="group bg-white dark:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-600 overflow-hidden">
+          <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+            <span class="font-bold text-slate-900 dark:text-white">Is black mold different from other mold?</span>
+            <span class="transition group-open:rotate-180">
+              <span class="material-symbols-outlined dark:text-white">expand_more</span>
+            </span>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            Yes. Stachybotrys chartarum (Black Mold) produces mycotoxins that are neurotoxic. While all mold is an allergen, black mold poses significantly higher health risks and requires stricter containment protocols (PPE, Negative Air) than common mildew.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-[#1193d4] px-4 py-20 text-center">
+    <div class="max-w-2xl mx-auto text-white">
+      <span class="material-symbols-outlined text-6xl mb-6 text-white/90">medical_services</span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Don't Wait. Mold Spreads Fast.</h2>
+      <p class="text-white/90 text-lg mb-8">
+        Every hour you wait allows the colony to expand. Call our certified team for a discreet, medical-grade assessment.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tel:7866022217" class="bg-white text-[#1193d4] px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-100 transition-colors shadow-lg">
+          Call (786) 602-2217
+        </a>
+        <a href="/contact/" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors">
+          Book Online Inspection
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

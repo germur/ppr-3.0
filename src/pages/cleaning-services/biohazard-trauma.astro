@@ -1,10 +1,429 @@
 ---
+import Header from '../../components/common/Header.astro';
+import Breadcrumbs from '../../components/common/Breadcrumbs.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
+
+// Schema for Biohazard/Crime Scene Cleaning
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "EmergencyService",
+  "name": "Biohazard & Trauma Cleaning Services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Paramount Property Restoration"
+  },
+  "areaServed": "Florida",
+  "description": "Certified biohazard remediation, crime scene cleanup, and unattended death restoration. 24/7 discreet and compassionate response.",
+  "openingHours": "Mo-Su 00:00-24:00",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://paramountpropertyrestoration.com/contact",
+    "servicePhone": "+1-786-602-2217"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will my insurance cover cleanup costs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most cases, yes. Homeowners insurance typically covers the cost of biohazard cleanup and structural restoration. We work directly with your insurance carrier to handle the claim process for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe for me to stay in the house?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the severity of the incident. For significant trauma scenes, we recommend staying elsewhere until the initial sanitization is complete to avoid health risks and emotional distress."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you arrive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer 24/7 emergency response. In most cases, we can have a team dispatched to your location within 1-2 hours of your call."
+      }
+    }
+  ]
+};
 ---
 
-<MainLayout title="Biohazard & Trauma Cleanup | Paramount" description="Discrete and safe biohazard cleanup services for trauma scenes.">
-    <section class="py-20 px-4 max-w-7xl mx-auto">
-        <h1 class="text-4xl font-bold mb-6">Biohazard & Trauma Cleanup</h1>
-        <p class="text-lg text-gray-600 mb-8">Content Coming Soon...</p>
-    </section>
+<MainLayout 
+  title="Biohazard & Trauma Cleanup Florida | Paramount Restoration" 
+  description="Certified 24/7 biohazard and crime scene cleanup in Florida. Discreet, compassionate, and OSHA-compliant remediation services for trauma and unattended deaths."
+  customSchema={[serviceSchema, faqSchema]}
+  hideHeader={true}
+  hideFooter={false}
+  breadcrumbItems={[]}
+>
+    <!-- Fonts (Lexend & Noto Sans as per design) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Sticky Compassionate Nav Wrapper -->
+    <div class="sticky top-0 z-50 font-['Lexend']">
+        <!-- Sticky Bar -->
+        <div class="bg-[#0d1418]/95 backdrop-blur-sm border-b border-[#1193d4]/20 text-white px-4 py-3 shadow-lg relative z-[51]">
+            <div class="layout-container max-w-[1280px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4 text-center sm:text-left">
+                <div class="flex items-center gap-2 text-sm font-medium text-slate-300">
+                    <span class="material-symbols-outlined text-[#1193d4] text-[20px]">local_hospital</span>
+                    <span>24/7 Compassionate & Discreet Response. We are here to help.</span>
+                </div>
+                <!-- Phone Button -->
+                <a class="flex items-center gap-2 bg-[#1193d4] hover:bg-[#1193d4]/90 text-white px-4 py-1.5 rounded-full text-sm font-bold transition-all shadow-md shadow-[#1193d4]/20 animate-pulse" href="tel:7866022217">
+                    <span class="material-symbols-outlined text-[18px]">lock</span>
+                    Call Strictly Confidential: (786) 602-2217
+                </a>
+            </div>
+        </div>
+
+        <!-- Global Header -->
+        <Header theme="light" sticky={false} />
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <Breadcrumbs items={[
+                { label: 'Home', href: '/' },
+                { label: 'Cleaning Services', href: '/cleaning-services/' },
+                { label: 'Biohazard & Trauma', href: '/cleaning-services/biohazard-trauma/' }
+            ]} />
+        </div>
+    </div>
+
+    <div class="font-['Noto_Sans'] text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden bg-[#f6f7f8] dark:bg-[#101c22]">
+        
+        <!-- Hero Section -->
+        <div class="relative flex h-auto w-full flex-col overflow-x-hidden">
+            <div class="layout-container flex h-full grow flex-col">
+                <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+                    <div class="layout-content-container flex flex-col max-w-[1280px] flex-1">
+                        <div class="@container">
+                            <div class="@[480px]:p-4">
+                                <div class="flex min-h-[560px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-center px-4 pb-10 @[480px]:px-16 relative overflow-hidden group" data-alt="Abstract calming blue gradient background with soft bokeh lights representing cleanliness and hope" style='background-image: linear-gradient(to right, rgba(16, 28, 34, 0.95) 0%, rgba(16, 28, 34, 0.8) 50%, rgba(16, 28, 34, 0.3) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBatHyshdHMDim0oxiJE84INk1mq5rIK92ns3DL0FHOFQNzKvVtru3_Q8P8VvRmT4mpDjsudWoE3KVkgihXVSjmflk8fGAbZmGhHSKQu49yuA2nnip6Ek-SgICdBrfD-jS4NQv1QWEoROTlOKz-lndZMCxQrsjKarHYrg4Y6y6JY18djyrRj9qVEVzmGM1S5IhiAKKEHEjEFlx93clWHCrFmqL7zeTvhC2xxGL9thVD401oO3zS0FYouci_W2nxrS-mSKuk2TqXIsDw");'>
+                                    <div class="relative z-10 flex flex-col gap-6 max-w-[700px]">
+                                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1193d4]/20 border border-[#1193d4]/30 text-[#1193d4] text-xs font-bold uppercase tracking-wider w-fit">
+                                            <span class="material-symbols-outlined text-[16px]">shield</span>
+                                            OSHA Compliant & Certified
+                                        </div>
+                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl @[480px]:font-black @[480px]:leading-[1.1] font-['Lexend']">
+                                            Restoring Safety, <br/>
+                                            <span class="text-[#1193d4]">Respecting Privacy</span>
+                                        </h1>
+                                        <h2 class="text-slate-300 text-lg font-normal leading-relaxed max-w-[600px]">
+                                            Certified Biohazard & Trauma Cleanup Services in Florida. Professional restoration with unmarked vehicles to protect your dignity during difficult times.
+                                        </h2>
+                                        <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                                            <button class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-xl h-14 px-6 bg-[#1193d4] hover:bg-[#1193d4]/90 text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-[#1193d4]/25 transition-all transform hover:scale-[1.02]">
+                                                <span class="truncate">Request Confidential Assistance</span>
+                                            </button>
+                                            <button class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-xl h-14 px-6 bg-[#1c2a33]/50 hover:bg-[#1c2a33] border border-slate-600 text-white text-base font-bold leading-normal tracking-[0.015em] backdrop-blur-sm transition-colors">
+                                                <span class="truncate">Insurance Information</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warning Banner -->
+        <div class="w-full bg-[#f97316]/10 border-y border-[#f97316]/30 py-4 px-4 md:px-40">
+            <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-center gap-3 text-center md:text-left">
+                <span class="material-symbols-outlined text-[#f97316] text-[32px]">warning</span>
+                <div>
+                    <h3 class="text-[#f97316] font-bold text-lg uppercase tracking-wide font-['Lexend']">Do Not Enter The Affected Area</h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm">Biohazards are invisible. Improper cleaning can lead to serious health risks and permanent structural damage. Wait for professionals.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discretion Promise Section -->
+        <div class="relative flex h-auto w-full flex-col overflow-x-hidden">
+            <div class="layout-container flex h-full grow flex-col">
+                <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-10">
+                    <div class="layout-content-container flex flex-col max-w-[1280px] flex-1">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-4">
+                            <div class="flex flex-col gap-6">
+                                <h2 class="text-slate-900 dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight font-['Lexend']">
+                                    Our Discretion Promise
+                                </h2>
+                                <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+                                    We understand that you are going through a traumatic event. Our priority is to handle the situation with the utmost respect and confidentiality. Your neighbors won't know why we are there.
+                                </p>
+                                <ul class="flex flex-col gap-4 mt-2">
+                                    <li class="flex items-start gap-3">
+                                        <div class="mt-1 p-1 rounded bg-[#1193d4]/20 text-[#1193d4]">
+                                            <span class="material-symbols-outlined text-[20px]">directions_car</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-slate-900 dark:text-white font-bold">Unmarked Vehicles</h4>
+                                            <p class="text-slate-500 text-sm">We arrive in discreet vehicles to maintain your privacy.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="mt-1 p-1 rounded bg-[#1193d4]/20 text-[#1193d4]">
+                                            <span class="material-symbols-outlined text-[20px]">diversity_1</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-slate-900 dark:text-white font-bold">Compassionate Team</h4>
+                                            <p class="text-slate-500 text-sm">Our certified technicians are trained in sensitivity and empathy.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="mt-1 p-1 rounded bg-[#1193d4]/20 text-[#1193d4]">
+                                            <span class="material-symbols-outlined text-[20px]">description</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-slate-900 dark:text-white font-bold">Direct Insurance Billing</h4>
+                                            <p class="text-slate-500 text-sm">We handle the paperwork directly with your provider to reduce your burden.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="relative h-full min-h-[400px] w-full rounded-xl overflow-hidden shadow-2xl bg-[#1c2a33] border border-slate-700">
+                                <div class="absolute inset-0 bg-cover bg-center" data-alt="A discreet white van parked on a quiet residential street, symbolizing privacy" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuIq2iRZdOSkZhluplOnFQ5MBhdOCGXmTln1xiD_Vw2l3iIJNu0agjyvy4gSuUnkIhyWEUeT_QKSwxtFedYB0Y5lJEjSglv-SWgAgFdxA0ozr7Bpll9gjMjVJZSspNBnYxA7BK6BVikY5l3DTHizScYKgAEe7qOjE7151s-P8RBZ30qz0gHpv62rA1KN93QulN8mcd8dOBAuG7sB54FAoZnVSYHK4zpgsaI48C8sVl9d9-u0oKZ0SKa6vmUJ6XexeX1eb9Aa-quP00");'></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#101c22] via-transparent to-transparent opacity-90"></div>
+                                <div class="absolute bottom-6 left-6 right-6 p-6 bg-[#1c2a33]/80 backdrop-blur-md rounded-lg border border-slate-700">
+                                    <p class="text-white italic text-sm">"The team arrived quietly and handled everything with such grace. I didn't have to explain anything to the neighbors."</p>
+                                    <p class="text-[#1193d4] text-xs font-bold mt-2 uppercase tracking-wider">— Private Client, Miami FL</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="relative flex h-auto w-full flex-col bg-slate-100 dark:bg-[#152028] overflow-x-hidden py-16">
+            <div class="layout-container flex h-full grow flex-col">
+                <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center">
+                    <div class="layout-content-container flex flex-col max-w-[1280px] flex-1">
+                        <div class="flex flex-col gap-2 px-4 mb-8">
+                            <span class="text-[#1193d4] font-bold uppercase tracking-wider text-sm">Specialized Biohazard Services</span>
+                            <h2 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight font-['Lexend']">Clinical precision for sensitive situations</h2>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
+                            <!-- Card 1 -->
+                            <div class="group flex flex-col gap-4 rounded-2xl border border-slate-200 dark:border-[#283339] bg-white dark:bg-[#1c2a33] p-6 shadow-sm hover:shadow-xl hover:border-[#1193d4]/50 transition-all duration-300">
+                                <div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[#1193d4] group-hover:bg-[#1193d4] group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">biotech</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-slate-900 dark:text-white text-lg font-bold">Crime Scene Cleanup</h3>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Forensic cleaning and restoration of scenes involving biological fluids. We restore the property to a safe, pre-incident state.</p>
+                                </div>
+                                <a class="mt-auto text-[#1193d4] text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="/cleaning-services/biohazard-trauma/crime-scene/">Learn more <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="group flex flex-col gap-4 rounded-2xl border border-slate-200 dark:border-[#283339] bg-white dark:bg-[#1c2a33] p-6 shadow-sm hover:shadow-xl hover:border-[#1193d4]/50 transition-all duration-300">
+                                <div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[#1193d4] group-hover:bg-[#1193d4] group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">church</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-slate-900 dark:text-white text-lg font-bold">Unattended Death</h3>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Compassionate remediation for situations where a passing went undiscovered. We handle odor removal and sanitization with dignity.</p>
+                                </div>
+                                <a class="mt-auto text-[#1193d4] text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="/cleaning-services/biohazard-trauma/unattended-death/">Learn more <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="group flex flex-col gap-4 rounded-2xl border border-slate-200 dark:border-[#283339] bg-white dark:bg-[#1c2a33] p-6 shadow-sm hover:shadow-xl hover:border-[#1193d4]/50 transition-all duration-300">
+                                <div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[#1193d4] group-hover:bg-[#1193d4] group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">factory</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-slate-900 dark:text-white text-lg font-bold">Industrial Accidents</h3>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Workplace safety restoration following injuries or accidents. We ensure OSHA compliance so your business can reopen safely.</p>
+                                </div>
+                                <a class="mt-auto text-[#1193d4] text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="/cleaning-services/biohazard-trauma/industrial-accidents/">Learn more <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="group flex flex-col gap-4 rounded-2xl border border-slate-200 dark:border-[#283339] bg-white dark:bg-[#1c2a33] p-6 shadow-sm hover:shadow-xl hover:border-[#1193d4]/50 transition-all duration-300">
+                                <div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[#1193d4] group-hover:bg-[#1193d4] group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">water_drop</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-slate-900 dark:text-white text-lg font-bold">Sewage & Black Water</h3>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Removal of hazardous waste water. We mitigate health risks from bacteria and viruses found in sewage backups.</p>
+                                </div>
+                                <a class="mt-auto text-[#1193d4] text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="/restoration/water-damage/sewage-cleanup/">Learn more <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                            </div>
+                            <!-- Card 5 -->
+                            <div class="group flex flex-col gap-4 rounded-2xl border border-slate-200 dark:border-[#283339] bg-white dark:bg-[#1c2a33] p-6 shadow-sm hover:shadow-xl hover:border-[#1193d4]/50 transition-all duration-300">
+                                <div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[#1193d4] group-hover:bg-[#1193d4] group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">recycling</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-slate-900 dark:text-white text-lg font-bold">Hoarding Cleanup</h3>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Non-judgmental de-cluttering and bio-cleaning. We help restore livability and safety to the home environment.</p>
+                                </div>
+                                <a class="mt-auto text-[#1193d4] text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="/cleaning-services/biohazard-trauma/hoarding/">Learn more <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                            </div>
+                            <!-- CTA Card -->
+                            <div class="flex flex-col items-center justify-center gap-4 rounded-2xl border border-[#1193d4] bg-[#1193d4]/10 p-6 text-center">
+                                <h3 class="text-slate-900 dark:text-white text-lg font-bold">Need Immediate Help?</h3>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm">Our specialists are available 24/7 to answer your questions.</p>
+                                <button class="w-full rounded-xl bg-[#1193d4] text-white font-bold py-3 hover:bg-[#1193d4]/90 transition-colors shadow-md">
+                                    Call (786) 602-2217
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Authority Section -->
+        <div class="relative flex h-auto w-full flex-col overflow-x-hidden py-20 bg-[#f6f7f8] dark:bg-[#101c22]">
+            <div class="layout-container flex h-full grow flex-col">
+                <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center">
+                    <div class="layout-content-container flex flex-col max-w-[1280px] flex-1">
+                        <div class="flex flex-col md:flex-row gap-12">
+                            <div class="md:w-1/3 flex flex-col gap-6">
+                                <h2 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight font-['Lexend']">Why Bleach Isn't Enough</h2>
+                                <p class="text-slate-600 dark:text-slate-300 text-lg">
+                                    Standard cleaning products cannot fully eliminate biohazards. Pathogens can linger in sub-flooring and drywall. Our medical-grade process ensures complete eradication.
+                                </p>
+                                <div class="p-6 bg-[#1c2a33] rounded-xl border border-slate-700 mt-4">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <span class="material-symbols-outlined text-green-400">verified_user</span>
+                                        <span class="text-white font-bold">ATP Verification</span>
+                                    </div>
+                                    <p class="text-slate-400 text-sm">We don't guess. We use ATP testing technology—the same used in hospitals—to scientifically verify that surfaces are free of biological material.</p>
+                                </div>
+                            </div>
+                            <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <!-- Step 1 -->
+                                <div class="flex gap-4">
+                                    <div class="flex flex-col items-center">
+                                        <div class="size-8 rounded-full bg-[#1193d4] text-white flex items-center justify-center font-bold text-sm">1</div>
+                                        <div class="w-0.5 h-full bg-slate-200 dark:bg-slate-700 my-2"></div>
+                                    </div>
+                                    <div class="pb-8">
+                                        <h4 class="text-slate-900 dark:text-white font-bold text-lg mb-2">Containment & Assessment</h4>
+                                        <p class="text-slate-500 dark:text-slate-400 text-sm">We isolate the affected area to prevent cross-contamination to other parts of the property.</p>
+                                    </div>
+                                </div>
+                                <!-- Step 2 -->
+                                <div class="flex gap-4">
+                                    <div class="flex flex-col items-center">
+                                        <div class="size-8 rounded-full bg-[#1193d4] text-white flex items-center justify-center font-bold text-sm">2</div>
+                                        <div class="w-0.5 h-full bg-slate-200 dark:bg-slate-700 my-2"></div>
+                                    </div>
+                                    <div class="pb-8">
+                                        <h4 class="text-slate-900 dark:text-white font-bold text-lg mb-2">Biohazard Removal</h4>
+                                        <p class="text-slate-500 dark:text-slate-400 text-sm">Safe removal and disposal of all biological materials and affected porous structures.</p>
+                                    </div>
+                                </div>
+                                <!-- Step 3 -->
+                                <div class="flex gap-4">
+                                    <div class="flex flex-col items-center">
+                                        <div class="size-8 rounded-full bg-[#1193d4] text-white flex items-center justify-center font-bold text-sm">3</div>
+                                        <div class="w-0.5 h-full bg-slate-200 dark:bg-slate-700 my-2"></div>
+                                    </div>
+                                    <div class="pb-8">
+                                        <h4 class="text-slate-900 dark:text-white font-bold text-lg mb-2">3-Step Sanitization</h4>
+                                        <p class="text-slate-500 dark:text-slate-400 text-sm">Application of hospital-grade disinfectants to neutralize pathogens on a molecular level.</p>
+                                    </div>
+                                </div>
+                                <!-- Step 4 -->
+                                <div class="flex gap-4">
+                                    <div class="flex flex-col items-center">
+                                        <div class="size-8 rounded-full bg-[#1193d4] text-white flex items-center justify-center font-bold text-sm">4</div>
+                                    </div>
+                                    <div class="pb-8">
+                                        <h4 class="text-slate-900 dark:text-white font-bold text-lg mb-2">Odor Neutralization</h4>
+                                        <p class="text-slate-500 dark:text-slate-400 text-sm">Advanced hydroxyl generators and ozone treatments remove lingering odors permanently.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ & Safety Section -->
+        <div class="relative flex h-auto w-full flex-col bg-slate-100 dark:bg-[#152028] py-16">
+            <div class="layout-container flex h-full grow flex-col">
+                <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center">
+                    <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                        <h2 class="text-center text-slate-900 dark:text-white text-2xl font-bold mb-10 font-['Lexend']">Insurance & Safety FAQ</h2>
+                        <div class="flex flex-col gap-4">
+                            <details class="group rounded-xl bg-white dark:bg-[#1c2a33] border border-slate-200 dark:border-slate-700 open:border-[#1193d4]/50 transition-all">
+                                <summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-slate-900 dark:text-white">
+                                    Will my insurance cover cleanup costs?
+                                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 leading-relaxed">
+                                    In most cases, yes. Homeowners insurance typically covers the cost of biohazard cleanup and structural restoration. We work directly with your insurance carrier to handle the claim process for you.
+                                </div>
+                            </details>
+                            <details class="group rounded-xl bg-white dark:bg-[#1c2a33] border border-slate-200 dark:border-slate-700 open:border-[#1193d4]/50 transition-all">
+                                <summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-slate-900 dark:text-white">
+                                    Is it safe for me to stay in the house?
+                                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 leading-relaxed">
+                                    It depends on the severity of the incident. For significant trauma scenes, we recommend staying elsewhere until the initial sanitization is complete to avoid health risks and emotional distress.
+                                </div>
+                            </details>
+                            <details class="group rounded-xl bg-white dark:bg-[#1c2a33] border border-slate-200 dark:border-slate-700 open:border-[#1193d4]/50 transition-all">
+                                <summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-slate-900 dark:text-white">
+                                    How quickly can you arrive?
+                                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 leading-relaxed">
+                                    We offer 24/7 emergency response. In most cases, we can have a team dispatched to your location within 1-2 hours of your call.
+                                </div>
+                            </details>
+                        </div>
+                        <div class="mt-12 flex flex-col items-center gap-6 p-8 rounded-2xl bg-gradient-to-br from-[#1193d4] to-blue-600 text-white text-center shadow-lg">
+                            <h2 class="text-2xl font-bold font-['Lexend']">You don't have to face this alone.</h2>
+                            <p class="max-w-[600px] text-blue-100">Our compassionate team is ready to help you restore safety and peace of mind. Call us anytime, day or night.</p>
+                            <a class="bg-white text-[#1193d4] px-8 py-3 rounded-xl font-bold hover:bg-slate-50 transition-colors shadow-md" href="tel:7866022217">
+                                Call (786) 602-2217
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        
+        /* Summary marker hide */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
 </MainLayout>

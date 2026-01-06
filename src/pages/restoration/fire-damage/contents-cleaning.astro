@@ -1,0 +1,182 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { services } from '../../../data/services';
+
+const currentService = services.find(s => s.slug === 'restoration/fire-damage/contents-cleaning');
+const pageTitle = "Contents Cleaning & Restoration Services Florida | Paramount";
+const metaDesc = "Don't discard your smoke-damaged belongings. Our ultrasonic cleaning and Esporta Wash System can restore 90% of soft goods, electronics, and sentimental items.";
+
+const contentsSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Contents Cleaning & Restoration",
+  "provider": {
+    "@type": "GeneralContractor",
+    "name": "Paramount Property Restoration",
+    "image": "https://paramountpropertyrestoration.com/logo.png"
+  },
+  "areaServed": "Florida",
+  "description": metaDesc
+};
+---
+
+<MainLayout 
+  title={pageTitle} 
+  description={metaDesc} 
+  customSchema={contentsSchema}
+  breadcrumbItems={[
+      { label: 'Home', href: '/' },
+      { label: 'Restoration', href: '/restoration/fire-damage/' },
+      { label: 'Contents Cleaning', href: '/restoration/fire-damage/contents-cleaning/' }
+  ]}
+>
+    <!-- Inject Fonts and Styles -->
+    <fragment slot="head">
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    </fragment>
+    
+    <style>
+        .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+         /* Rose Theme Overrides */
+        .text-primary { color: #be123c; }
+        .bg-primary { background-color: #be123c; }
+    </style>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#0f172a]">
+        <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB89Zw0zzcrHfXKZYQhhYiwQkO5nCbip5lrYHXAM0kBG0mBWqc0RWQ8KZH3HtYtkwUOELIGCNOs24FnAPTxGhjVTc4A0_9cAHbkx5y7cMwS6Yt0gw2NW7csn3k_JNQaCOdikMkFnoEl_YdB4QFo6UCW9Si5rObDWVz8tybRV-uEpiH6suLLfAsyq49bwhF2MON_nLigzlZ3hwJHsTrkwIwQVfc3qTF8bmaY7KKXA5T1cHXvVmrK1ePVjTaWr0rbBtt8P-hAyd4AHLfx');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 w-full py-20">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-rose-900/50 border border-rose-700/50 text-rose-200 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                    <span class="material-symbols-outlined text-sm">checkroom</span>
+                    We Save The Irreplaceable
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+                    Professional <span class="text-[#f43f5e]">Contents Restoration</span>
+                </h1>
+                <p class="text-xl text-slate-300 leading-relaxed mb-8">
+                    Fire and water damage doesn't mean you lose everything. From heirlooms to electronics, our advanced cleaning technology recovers what others would throw away.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                     <a href="tel:7866022217" class="flex items-center justify-center gap-2 bg-[#f43f5e] hover:bg-rose-600 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg hover:shadow-rose-500/25">
+                        <span class="material-symbols-outlined">call</span>
+                        Start Inventory Process
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Grid -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Science, Not Just Soap.</h2>
+                <p class="text-slate-600">We utilize the same cleaning technologies used by museums and high-tech manufacturers.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Esporta Wash System -->
+                <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-rose-200 transition-colors">
+                    <div class="size-14 bg-rose-100 text-[#be123c] rounded-xl flex items-center justify-center mb-6 text-3xl">
+                        <span class="material-symbols-outlined">local_laundry_service</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0f172a] mb-3">Esporta Wash System</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Restores 90% of soft goods (clothes, shoes, leathers) contaminated by Category 3 sewage or heavy soot. It removes 99% of organic/inorganic contaminants.
+                    </p>
+                </div>
+
+                <!-- Ultrasonic Cleaning -->
+                <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-rose-200 transition-colors">
+                    <div class="size-14 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center mb-6 text-3xl">
+                        <span class="material-symbols-outlined">waves</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0f172a] mb-3">Ultrasonic Technology</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Sound waves create microscopic bubbles that implode, gently removing soot from intricate items like jewelry, electronics, and fine china without damage.
+                    </p>
+                </div>
+
+                <!-- Electronics Restoration -->
+                <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-rose-200 transition-colors">
+                    <div class="size-14 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center mb-6 text-3xl">
+                        <span class="material-symbols-outlined">memory</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0f172a] mb-3">Electronics Recovery</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Deionized water cleaning and drying chambers restore computers, TVs, and appliances affected by corrosive smoke acidity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-20 bg-[#0f172a] text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">Digital Inventory Control</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        We know how stressful it is to have your belongings taken away. Our "Pack-Out" process is fully digital. Every single item is photographed, tagged with a barcode, and tracked in real-time. You'll know exactly where "Grandma's Vase" is at all times.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#f43f5e]">qr_code_scanner</span>
+                            <span>Photo documentation for insurance claims.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#f43f5e]">box</span>
+                            <span>Secure, climate-controlled storage facility.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[#f43f5e]">local_shipping</span>
+                            <span>White-glove delivery once your home is ready.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
+                         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDDS_VO7p2eA26fL5S4VhTgiOkb9D6cce2AKiL_Q-Jnlwa0OvGNgXaLkbk-3ZiGdhxCCiEA3UEbmD6dfmPTg79y6z27c8Ft6H6PFbIEOegWLrlRJ50MUvAA1fq-RkPG3pxmcy2QRyVIAiTipbpxsmoTKf7wjjMJ1_7AO2-upzwPR0oiGmcEAC_lPHwMNBxaTqof8XOg1rd03J-zEqoV1_VYXa3iY6ioX963iHfZWvBaBVj5Q9T_7HqSXIJl3JP18-KpjRXBXkXSg6Ml'); opacity 0.5;"></div>
+                        <!-- Placeholder visual for inventory/boxes -->
+                        <div class="bg-slate-800 h-80 flex items-center justify-center">
+                             <span class="material-symbols-outlined text-9xl text-slate-700">inventory_2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-[#0f172a] mb-12">Common Questions</h2>
+            <div class="space-y-4">
+                <details class="bg-white p-6 rounded-xl border border-slate-200 cursor-pointer group">
+                    <summary class="font-bold text-[#0f172a] flex justify-between items-center list-none">
+                        Does insurance cover contents cleaning?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 text-sm">
+                        Yes, most homeowner policies have a specific "Personal Property" coverage limit separate from the structure. We bill your insurance directly for the cleaning and storage services.
+                    </p>
+                </details>
+                <details class="bg-white p-6 rounded-xl border border-slate-200 cursor-pointer group">
+                    <summary class="font-bold text-[#0f172a] flex justify-between items-center list-none">
+                        Can you clean smoke smell out of clothes?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 text-sm">
+                        Absolutely. Dry cleaning often fails at this, but our Esporta Wash System uses hydraulic pressure and specific detergents to remove 99% of organic and inorganic contaminants, including heavy smoke odors.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+</MainLayout>
