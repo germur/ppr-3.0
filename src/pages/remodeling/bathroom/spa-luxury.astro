@@ -1,10 +1,301 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+
+const seoTitle = "Luxury Bathroom Renovations | Spa Retreat Remodeling";
+const seoDescription = "Turn your master bath into a private spa retreat with our high-end remodeling services. Waterproof, mold-resistant, and breathtakingly beautiful designs for Florida homes.";
 ---
 
-<MainLayout title="Spa Luxury Bathroom Remodeling | Paramount" description="Create a spa-like retreat in your home with our high-end bathroom remodeling services.">
-    <section class="py-20 px-4 max-w-7xl mx-auto">
-        <h1 class="text-4xl font-bold mb-6">Spa Luxury Bathroom Remodeling</h1>
-        <p class="text-lg text-gray-600 mb-8">Content Coming Soon...</p>
-    </section>
+<MainLayout title={seoTitle} description={seoDescription} breadcrumbItems={[
+    { label: 'Home', href: '/' },
+    { label: 'Remodeling', href: '/remodeling/' },
+    { label: 'Bathroom', href: '/remodeling/bathroom/' },
+    { label: 'Spa Luxury', href: '/remodeling/bathroom/spa-luxury/' }
+]}>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <style is:global>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+
+        /* Animation Utilities */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <div class="relative flex h-auto min-h-screen w-full flex-col bg-[#f6f7f8] dark:bg-[#111921] group/design-root overflow-x-hidden font-['Manrope'] antialiased">
+        <!-- Navigation -->
+
+
+        <!-- Main Content Wrapper -->
+        <div class="w-full flex h-full grow flex-col items-center">
+            <!-- Hero Section -->
+            <div class="w-full max-w-[1280px] p-4 md:px-10 md:py-8">
+                <div class="relative w-full rounded-2xl overflow-hidden min-h-[560px] flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat shadow-2xl" data-alt="Luxurious modern bathroom with marble walls, soaking tub, and rain shower" style='background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCt07iX4-tJD2LijqdK_tKsg_GFAEL-6LdSm_Ovb41SZGO8lK_xNyy0s9bg1Ni3PVWU7ANumkJASkkaslyVwOYcTRz6UIeERVVUyIdh1dZSX0WNhU4cJIj8sW8CpcuUNx9Mlu09fqRY-1u-WzzmXbkJ4bP7Qyld94jiUnBQlPPbMNpN0NIIJtgpTkH__Q6xeZNKp8nV01b229KaTQZvlCUvsZfbCItX4BHJZNSAc0dgU5Z0HOTAa0xeAHtNwRbCuIAIfnrUzAoyyS-u");'>
+                    <div class="flex flex-col gap-6 text-center max-w-[800px] px-6 z-10 animate-fade-in-up">
+                        <span class="inline-block py-1 px-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold uppercase tracking-wider w-fit mx-auto">
+                            Serving Florida Homeowners
+                        </span>
+                        <h1 class="text-white text-4xl md:text-6xl font-black leading-[1.1] tracking-[-0.033em] drop-shadow-sm">
+                            Turn Your Master Bath into a <br> Private Spa Retreat
+                        </h1>
+                        <p class="text-gray-100 text-lg md:text-xl font-medium leading-relaxed max-w-[640px] mx-auto drop-shadow-sm">
+                            Luxury remodeling engineered for Florida. Waterproof, mold-resistant, and breathtakingly beautiful.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+                            <button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-12 px-6 bg-[#197fe6] hover:bg-blue-600 text-white text-base font-bold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5">
+                                Request a Spa Consultation
+                            </button>
+                            <button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-12 px-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-base font-bold transition-all">
+                                View Portfolio
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="w-full border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-[#111921] py-8">
+                <div class="max-w-[1280px] mx-auto px-4 md:px-10">
+                    <p class="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Trusted Certification & Partnerships</p>
+                    <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                        <div class="flex items-center gap-2 text-[#111418] dark:text-white font-bold text-lg"><span class="material-symbols-outlined">verified_user</span> Schluter Systems</div>
+                        <div class="flex items-center gap-2 text-[#111418] dark:text-white font-bold text-lg"><span class="material-symbols-outlined">shield</span> Licensed & Insured</div>
+                        <div class="flex items-center gap-2 text-[#111418] dark:text-white font-bold text-lg"><span class="material-symbols-outlined">star</span> 5-Star Rated</div>
+                        <div class="flex items-center gap-2 text-[#111418] dark:text-white font-bold text-lg"><span class="material-symbols-outlined">location_on</span> Florida Certified</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="w-full max-w-[1280px] px-4 md:px-10 py-16 md:py-24">
+                <div class="flex flex-col gap-12">
+                    <div class="flex flex-col gap-4 text-center md:text-left">
+                        <h2 class="text-[#111418] dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-tight max-w-[720px]">
+                            Engineered for Florida Luxury
+                        </h2>
+                        <p class="text-[#637588] dark:text-gray-400 text-lg font-normal leading-relaxed max-w-[720px]">
+                            We combine high-end aesthetics with restoration-grade durability to withstand humidity and time.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Card 1 -->
+                        <div class="group flex flex-col gap-4 rounded-2xl bg-white dark:bg-gray-800 p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
+                            <div class="w-full aspect-[4/3] rounded-xl overflow-hidden relative">
+                                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
+                                <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close up of shower waterproofing membrane installation" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQ8vYfIxantXR5XxEXmOppgE2JetKLPhxzvoWtidtOHQvcqNm9h0OjBS2bIVaZ2i3G4RhS5N2gNmP1a29XQd39Nvfmn0WZz721WbURBNbntCQo1lmUUxJINt5Hw-Fe7Y3HQIEWs1WK_7dPHPiHlbZKgVqwpFRZ9ES0lcrO6NDv9GQNJDKKKF5-4fZ8ncH5IcJnnTI5XVjVE4gaY8pmL1zqDyBt3zCH7xPSGfKJ_QSAV28h5D7GiOqFgszRfe3jvsBJWQjuysS7-y-u");'>
+                                </div>
+                                <div class="absolute top-3 left-3 bg-[#f97316] text-white text-xs font-bold px-2 py-1 rounded-md z-20 shadow-sm flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px]">shield</span> Durable
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2 px-2 pb-2">
+                                <h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight flex items-center gap-2">
+                                    Mold-Proof Luxury
+                                </h3>
+                                <p class="text-[#637588] dark:text-gray-400 text-sm leading-relaxed">
+                                    Advanced <a class="text-[#197fe6] hover:underline" href="#">waterproof membranes</a> and restoration-grade sealing to prevent mold growth in Florida's unique climate.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="group flex flex-col gap-4 rounded-2xl bg-white dark:bg-gray-800 p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
+                            <div class="w-full aspect-[4/3] rounded-xl overflow-hidden relative">
+                                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
+                                <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Digital shower interface panel with temperature controls" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-QDDRIWqhGE310QEFidTOszkYoMgluqygyZEF8AC1X_ra74hjLAs4kLKIsA-DgIz5H4DqV_Hk471hs8AQ_18W8T7_Tw8djoQtIxHAa4Qx8_AkWF7StDnGmsRw04ttCwSuM-48RvROvcjF_gM3VqcDzH0VpOvPlNRrGgaIKPLzL3q0fkGxuSQWl9c3yDIeIFF-UMpDV-hVtk4_aYAWV8YWIHr0VfIaH-EoR277PJDp_4TFHvnMZ9ia5WEvVrZc91fT6x8n9C2B7qTF");'>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2 px-2 pb-2">
+                                <h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight flex items-center gap-2">
+                                    Smart Showers
+                                </h3>
+                                <p class="text-[#637588] dark:text-gray-400 text-sm leading-relaxed">
+                                    Digital controls, steam generation, and thermostatic valves for a personalized, tech-forward spa experience.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="group flex flex-col gap-4 rounded-2xl bg-white dark:bg-gray-800 p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
+                            <div class="w-full aspect-[4/3] rounded-xl overflow-hidden relative">
+                                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
+                                <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Modern floating vanity with under-cabinet LED lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBeQW3m7Bxag2EIPxDMWWvwtZWGNgrJrYXUlt6-l1NwrDdSrNVmpiW3FiSTcgVmLts3UzlxxqTA23LGD1CBgJNeyAqO1rYcSR2cTpyTN73jZxd2DJ6wWfVELkpn6iW5wvePxhgJWUvyhqTf1_-BNgirAwQGJPZsAyJaWMZXupqTzd09H3TxzNot_mbgcbEmuWm7U5Ly8oKAcbp_s2sZV5TONelEM-czcZkdxEIz6mJ7LcxFdVrbFN9B_mzrBP-o__HdT128R3aO7JiP");'>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2 px-2 pb-2">
+                                <h3 class="text-[#111418] dark:text-white text-xl font-bold leading-tight flex items-center gap-2">
+                                    Floating Vanities
+                                </h3>
+                                <p class="text-[#637588] dark:text-gray-400 text-sm leading-relaxed">
+                                    Modern, clean lines with quartz tops and under-cabinet lighting for easy maintenance and elegance.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accessibility / Split Section -->
+            <div class="w-full bg-white dark:bg-[#151f2a] border-y border-gray-100 dark:border-gray-800">
+                <div class="max-w-[1280px] mx-auto px-4 md:px-10 py-16 md:py-24">
+                    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                        <div class="flex-1 flex flex-col gap-6 order-2 lg:order-1">
+                            <div class="flex items-center gap-2 text-[#197fe6] font-bold uppercase tracking-wider text-sm">
+                                <span class="material-symbols-outlined text-lg">accessibility_new</span> Universal Design
+                            </div>
+                            <h2 class="text-[#111418] dark:text-white text-3xl md:text-5xl font-black leading-tight tracking-[-0.02em]">
+                                Safety Meets Seamless Design
+                            </h2>
+                            <p class="text-[#637588] dark:text-gray-300 text-lg leading-relaxed">
+                                Curbless showers and comfort-height toilets offer both accessibility and a modern, unbroken aesthetic. Universal design ensures your sanctuary is safe for everyone without compromising on style.
+                            </p>
+                            <ul class="flex flex-col gap-3 mt-2">
+                                <li class="flex items-center gap-3 text-[#111418] dark:text-gray-200">
+                                    <span class="material-symbols-outlined text-green-500">check_circle</span>
+                                    <span>Zero-threshold entries for trip-free access</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-[#111418] dark:text-gray-200">
+                                    <span class="material-symbols-outlined text-green-500">check_circle</span>
+                                    <span>Linear drains for modern minimalism</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-[#111418] dark:text-gray-200">
+                                    <span class="material-symbols-outlined text-green-500">check_circle</span>
+                                    <span>Slip-resistant large format tiles</span>
+                                </li>
+                            </ul>
+                            <div class="pt-4">
+                                <button class="flex items-center gap-2 text-[#197fe6] font-bold hover:text-blue-700 transition-colors group/btn">
+                                    Learn about Universal Design
+                                    <span class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex-1 w-full order-1 lg:order-2">
+                            <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl aspect-video lg:aspect-square">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent z-10"></div>
+                                <div class="w-full h-full bg-cover bg-center" data-alt="Spacious curbless shower with linear drain and glass partition" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVIbDqTMxjx6i3ZlA1XiH6PpZCiD3ULNeKkUtjHmI-vRkgP_F_VXr6mChDTS2HRir9R_LWtIRFj9kus-0bjD_33YcoZPlMS-jaif0kBa0XpsnwNO0vaJ4EKLiU-h2PMmBp4t5eVWyp9KveY_KTGcHmTHP1nF9YDjyCogq23ECZFPyBXr2LJyNv1grXX7vEysnWKqa-47NLFnfDP2T686-f8DS52SYQ1fL_WeIrd2vGcSrf17tuEV-SfmHUQ16oU81xXBrJos2YEz9_");'>
+                                </div>
+                                <!-- Floating Detail Card -->
+                                <div class="absolute bottom-6 left-6 right-6 md:right-auto md:w-64 bg-white/95 dark:bg-gray-900/95 backdrop-blur p-4 rounded-xl shadow-lg z-20 border border-white/50">
+                                    <div class="flex items-start gap-3">
+                                        <div class="bg-[#197fe6]/10 p-2 rounded-full text-[#197fe6]">
+                                            <span class="material-symbols-outlined">straighten</span>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500 font-bold uppercase">Feature</p>
+                                            <p class="text-sm font-bold text-gray-900 dark:text-white">Curbless Zero-Entry</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educational / SEO Content -->
+            <div class="w-full max-w-[960px] px-4 md:px-10 py-16 md:py-24">
+                <div class="flex flex-col gap-10">
+                    <div class="text-center">
+                        <h2 class="text-[#111418] dark:text-white text-2xl md:text-3xl font-bold mb-4">Why Restoration-Grade Remodeling Matters</h2>
+                        <p class="text-[#637588] dark:text-gray-400">Florida's humidity demands more than just good looks. We build to last.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Info Block 1 -->
+                        <div class="bg-white dark:bg-[#1a2632] p-6 rounded-xl border border-gray-100 dark:border-gray-800 flex gap-4">
+                            <div class="min-w-[48px] h-[48px] rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-[#197fe6]">
+                                <span class="material-symbols-outlined">humidity_percentage</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Humidity Control</h3>
+                                <p class="text-sm text-[#637588] dark:text-gray-400 leading-relaxed">
+                                    Standard drywall acts like a sponge in bathrooms. We use cement board and Kerdi-Board backing to ensure your walls never rot from the inside out.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Info Block 2 -->
+                        <div class="bg-white dark:bg-[#1a2632] p-6 rounded-xl border border-gray-100 dark:border-gray-800 flex gap-4">
+                            <div class="min-w-[48px] h-[48px] rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-[#197fe6]">
+                                <span class="material-symbols-outlined">air</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Smart Ventilation</h3>
+                                <p class="text-sm text-[#637588] dark:text-gray-400 leading-relaxed">
+                                    We install ultra-quiet, high-CFM Panasonic fans routed with rigid ducting to actively remove moisture, preventing mildew on your luxury finishes.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Info Block 3 -->
+                        <div class="bg-white dark:bg-[#1a2632] p-6 rounded-xl border border-gray-100 dark:border-gray-800 flex gap-4">
+                            <div class="min-w-[48px] h-[48px] rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-[#197fe6]">
+                                <span class="material-symbols-outlined">plumbing</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Future-Proof Plumbing</h3>
+                                <p class="text-sm text-[#637588] dark:text-gray-400 leading-relaxed">
+                                    All rough-in valves are replaced with solid brass components. We don't just cover up old pipes; we ensure the infrastructure matches the luxury exterior.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Info Block 4 -->
+                        <div class="bg-white dark:bg-[#1a2632] p-6 rounded-xl border border-gray-100 dark:border-gray-800 flex gap-4">
+                            <div class="min-w-[48px] h-[48px] rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-[#197fe6]">
+                                <span class="material-symbols-outlined">handyman</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-2">Detailed Craftsmanship</h3>
+                                <p class="text-sm text-[#637588] dark:text-gray-400 leading-relaxed">
+                                    From mitered tile edges to perfectly leveled niche shelves, our obsessive attention to detail creates that high-end hotel feel.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final CTA -->
+            <div class="w-full bg-[#197fe6]/5 py-20 px-4">
+                <div class="max-w-[800px] mx-auto text-center flex flex-col items-center gap-6">
+                    <h2 class="text-[#111418] dark:text-white text-3xl md:text-4xl font-black">Ready to Start Your Transformation?</h2>
+                    <p class="text-[#637588] dark:text-gray-400 text-lg max-w-[600px]">
+                        Schedule a free in-home consultation to discuss your vision, budget, and timeline with our design experts.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                        <a href="/contact/" class="flex cursor-pointer items-center justify-center rounded-xl h-12 px-8 bg-[#197fe6] hover:bg-blue-600 text-white text-base font-bold shadow-lg transition-all">
+                            Book Free Consultation
+                        </a>
+                        <a href="tel:7866022217" class="flex cursor-pointer items-center justify-center rounded-xl h-12 px-8 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-[#111418] dark:text-white border border-gray-200 dark:border-gray-700 text-base font-bold shadow-sm transition-all">
+                            Call (786) 602-2217
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 </MainLayout>

@@ -1,6 +1,6 @@
 ---
 import Header from '../../../components/common/Header.astro';
-import Breadcrumbs from '../../../components/common/Breadcrumbs.astro';
+
 import MainLayout from '../../../layouts/MainLayout.astro';
 
 const pageTitle = "Luxury Bathroom Remodeling & Spa Renovations | Paramount Property Restoration";
@@ -31,7 +31,11 @@ const bathroomSchema = {
   customSchema={bathroomSchema}
   hideHeader={true}
   hideFooter={false}
-  breadcrumbItems={[]}
+  breadcrumbItems={[
+    { label: 'Home', href: '/' },
+    { label: 'Remodeling', href: '/remodeling/' },
+    { label: 'Bathroom', href: '/remodeling/bathroom/' }
+  ]}
 >
     <!-- Inject Fonts into Head -->
     <fragment slot="head">
@@ -57,16 +61,7 @@ const bathroomSchema = {
         <Header theme="light" sticky={false} />
     </div>
 
-    <!-- Breadcrumbs -->
-    <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800">
-        <div class="container mx-auto px-4 max-w-6xl py-2">
-            <Breadcrumbs items={[
-                { label: 'Home', href: '/' },
-                { label: 'Remodeling', href: '/remodeling/' },
-                { label: 'Bathroom', href: '/remodeling/bathroom/' }
-            ]} />
-        </div>
-    </div>
+
 
     <!-- Local Styles -->
     <style>
@@ -271,16 +266,17 @@ const bathroomSchema = {
                         </div>
                     </div>
                     <!-- Card 5: Call to Action within grid -->
-                    <div class="relative overflow-hidden rounded-2xl bg-[#06b6d4] flex flex-col items-center justify-center p-8 text-center md:col-span-2">
+                    <!-- Card 5: Link to Spa Luxury Page -->
+                    <a href="/remodeling/bathroom/spa-luxury/" class="relative overflow-hidden rounded-2xl bg-[#06b6d4] flex flex-col items-center justify-center p-8 text-center md:col-span-2 group cursor-pointer hover:bg-cyan-600 transition-colors">
                         <div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
                         <div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-cyan-900/30 rounded-full blur-3xl"></div>
-                        <h3 class="text-2xl font-bold text-white mb-4 relative z-10">Ready to start your project?</h3>
-                        <p class="text-cyan-100 mb-6 max-w-md relative z-10">Schedule a free on-site assessment with our restoration and design experts.</p>
-                        <button class="bg-white text-[#06b6d4] font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg relative z-10 flex items-center gap-2">
-                            Get Started
+                        <h3 class="text-2xl font-bold text-white mb-4 relative z-10">Explore Spa Luxury Designs</h3>
+                        <p class="text-cyan-100 mb-6 max-w-md relative z-10">Discover our signature spa-inspired bathroom renovations.</p>
+                        <div class="bg-white text-[#06b6d4] font-bold py-3 px-8 rounded-lg shadow-lg relative z-10 flex items-center gap-2 group-hover:scale-105 transition-transform">
+                            View Gallery
                             <span class="material-symbols-outlined">arrow_forward</span>
-                        </button>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>

@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import Header from '../../components/common/Header.astro';
-import Breadcrumbs from '../../components/common/Breadcrumbs.astro';
+
 
 const customSchema = {
   "@context": "https://schema.org",
@@ -17,10 +17,7 @@ const customSchema = {
   }
 };
 
-const breadcrumbItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Cleaning Services', href: '/cleaning-services/' }
-];
+
 ---
 
 <MainLayout 
@@ -29,7 +26,10 @@ const breadcrumbItems = [
   customSchema={customSchema}
   hideHeader={true}
   hideFooter={false}
-  breadcrumbItems={[]} 
+  breadcrumbItems={[
+    { label: 'Home', href: '/' },
+    { label: 'Cleaning Services', href: '/cleaning-services/' }
+  ]} 
 >
   <!-- Sticky Wrapper for Conversion Bar + Header -->
   <div class="sticky top-0 z-50 font-['Noto_Sans']">
@@ -43,12 +43,7 @@ const breadcrumbItems = [
       <Header theme="light" sticky={false} />
   </div>
 
-  <!-- Manual Breadcrumbs (Placed below header to avoid overlap) -->
-  <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800 relative z-30">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-          <Breadcrumbs items={breadcrumbItems} />
-      </div>
-  </div>
+
 
   <!-- Main Wrapper -->
   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden font-['Noto_Sans']">

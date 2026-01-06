@@ -1,0 +1,378 @@
+---
+import MainLayout from '../../../../layouts/MainLayout.astro';
+import Breadcrumbs from '../../../../components/common/Breadcrumbs.astro';
+
+const seoTitle = "Custom ADU & Guest House Construction - Paramount Property Restoration";
+const seoDescription = "Maximize your property value with turnkey solutions for in-laws, guests, or passive rental income. We navigate the zoning so you don't have to.";
+---
+
+<MainLayout 
+  title={seoTitle} 
+  description={seoDescription} 
+  hideHeader={false}
+  hideFooter={false}
+  breadcrumbItems={[
+    { label: 'Home', href: '/' },
+    { label: 'Remodeling', href: '/remodeling/' },
+    { label: 'Additions', href: '/remodeling/home-additions/' },
+    { label: 'ADUs & Guest Houses', href: '/remodeling/home-additions/adu-guest-house/' }
+  ]}
+>
+  <!-- Google Fonts & Tailwind Config adapted for Astro -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" slot="head"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" slot="head"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" slot="head"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" slot="head"/>
+
+  <style is:global>
+    /* Custom Tailwind Config Simulation */
+    :root {
+      --color-primary: #197fe6;
+      --color-secondary: #f97316;
+      --color-bg-light: #f6f7f8;
+      --color-bg-dark: #111921;
+      --font-display: 'Manrope', sans-serif;
+    }
+    
+    .font-display {
+      font-family: var(--font-display);
+    }
+
+    .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    /* Custom Orange Accent Class */
+    .text-orange-brand { color: #f97316; }
+    .bg-orange-brand { background-color: #f97316; }
+    .border-orange-brand { border-color: #f97316; }
+    
+    /* Hover effects */
+    .hover\:border-orange-brand:hover { border-color: #f97316; }
+    .hover\:shadow-orange-brand\/5:hover { box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.05), 0 2px 4px -1px rgba(249, 115, 22, 0.05); }
+
+    .bg-primary { background-color: var(--color-primary); }
+    .text-primary { color: var(--color-primary); }
+    .hover\:bg-blue-600:hover { background-color: #2563eb; }
+    .hover\:text-primary:hover { color: var(--color-primary); }
+    .border-primary { border-color: var(--color-primary); }
+    .hover\:border-primary:hover { border-color: var(--color-primary); }
+    .bg-primary\/10 { background-color: rgba(25, 127, 230, 0.1); }
+    .hover\:bg-primary:hover { background-color: var(--color-primary); }
+    .hover\:shadow-primary\/5:hover { box-shadow: 0 4px 6px -1px rgba(25, 127, 230, 0.05), 0 2px 4px -1px rgba(25, 127, 230, 0.05); }
+
+    .bg-background-light { background-color: var(--color-bg-light); }
+    .bg-background-dark { background-color: var(--color-bg-dark); }
+  </style>
+
+  <div class="bg-[#f6f7f8] dark:bg-[#111921] text-[#111418] font-display overflow-x-hidden">
+    <main class="flex flex-col items-center justify-center w-full">
+    <div class="w-full max-w-[1280px] flex flex-col">
+    
+    <!-- Hero Section -->
+    <div class="@container w-full px-4 md:px-10 pb-10 pt-4">
+    <div class="flex flex-col-reverse lg:flex-row gap-8 lg:gap-16 items-center">
+    <!-- Left Content -->
+    <div class="flex flex-col gap-6 lg:w-1/2">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 w-fit">
+    <span class="material-symbols-outlined text-orange-brand text-[18px]">trending_up</span>
+    <span class="text-xs font-bold text-orange-brand uppercase tracking-wide">High ROI Investment</span>
+    </div>
+    <div class="flex flex-col gap-4 text-left">
+    <h1 class="text-[#111418] text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl lg:text-6xl">
+                                    Custom ADU &amp; Guest House Construction <span class="text-primary">in Central Florida (DEBUG)</span>
+    </h1>
+    <h2 class="text-[#637588] text-lg font-normal leading-relaxed max-w-[600px]">
+                                    Maximize your property value with turnkey solutions for in-laws, guests, or passive rental income. We navigate the zoning so you don't have to.
+                                </h2>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-4 mt-2">
+    <button class="flex items-center justify-center rounded-xl h-12 px-6 bg-primary text-white text-base font-bold hover:bg-blue-600 transition-all shadow-xl shadow-blue-500/20 group">
+    <span>Free Site Feasibility Check</span>
+    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+    </button>
+    <button class="flex items-center justify-center rounded-xl h-12 px-6 bg-white border border-[#dce0e5] text-[#111418] text-base font-bold hover:bg-gray-50 transition-all">
+    <span>View Recent Projects</span>
+    </button>
+    </div>
+    <div class="flex items-center gap-4 mt-4 text-sm text-[#637588]">
+    <div class="flex items-center gap-1">
+    <span class="material-symbols-outlined text-green-600 text-[20px]">verified</span>
+    <span>Licensed &amp; Insured</span>
+    </div>
+    <div class="w-1 h-1 rounded-full bg-gray-300"></div>
+    <div class="flex items-center gap-1">
+    <span class="material-symbols-outlined text-orange-brand text-[20px]">star</span>
+    <span>Top Rated in FL</span>
+    </div>
+    </div>
+    </div>
+    <!-- Right Image -->
+    <div class="w-full lg:w-1/2 relative group">
+    <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+    <div class="relative w-full aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden shadow-2xl">
+    <div class="w-full h-full bg-center bg-cover" data-alt="Modern detached ADU with large glass sliding doors and a wooden deck in a sunny backyard setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8FkHaj36L36wQUO9e7XhXRAyhyXKADGSUjZ2cd6Slxo0zgrrHGCjF0Hz2mWO0M0GMLdLH_JfT1PdN0zeie8FFm0Egqi80ttMd-KdjvG8HAsMiesN4BihQnVRtK7QxfA-1kgQd3UGqins7YZ62oIZzjxeYTatS1SdOV-1lg-wbh1iKfRK0bKOfmswieTuXvmhiESFY5LdQmeS4JW3pzUWHNEE-8ubx5DFtNJNMb4dnKyFI8Mfy7fCCwPcywIMIVOPKg0RvFyMh-8Lh");'></div>
+    <!-- Floating Card -->
+    <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md p-4 rounded-lg shadow-lg max-w-[240px] hidden sm:block">
+    <div class="flex items-center gap-3 mb-2">
+    <span class="material-symbols-outlined text-primary">analytics</span>
+    <p class="text-xs font-bold text-[#637588] uppercase">Potential ROI</p>
+    </div>
+    <p class="text-sm font-medium text-[#111418]">Add up to <span class="text-primary font-bold">30%</span> to your property value instantly.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Stats Bar -->
+    <div class="w-full px-4 md:px-10 py-12 bg-white">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-[#f0f2f4] py-8">
+    <div class="flex flex-col items-center text-center">
+    <span class="text-3xl font-black text-[#111418]">150+</span>
+    <span class="text-sm text-[#637588] font-medium">ADUs Built</span>
+    </div>
+    <div class="flex flex-col items-center text-center">
+    <span class="text-3xl font-black text-[#111418]">15yr</span>
+    <span class="text-sm text-[#637588] font-medium">Warranty</span>
+    </div>
+    <div class="flex flex-col items-center text-center">
+    <span class="text-3xl font-black text-[#111418]">100%</span>
+    <span class="text-sm text-[#637588] font-medium">Permit Approval</span>
+    </div>
+    <div class="flex flex-col items-center text-center">
+    <span class="text-3xl font-black text-[#111418]">4.9</span>
+    <span class="text-sm text-[#637588] font-medium">Star Rating</span>
+    </div>
+    </div>
+    </div>
+    <!-- Use Cases Section (Semantic Clusters) -->
+    <div class="px-4 md:px-10 py-16 bg-background-light">
+    <div class="flex flex-col gap-10">
+    <div class="flex flex-col gap-4 text-center max-w-[720px] mx-auto">
+    <h2 class="text-[#111418] text-3xl md:text-4xl font-bold leading-tight">
+                                Unlock the Potential of Your Property
+                            </h2>
+    <p class="text-[#637588] text-lg font-normal leading-normal">
+                                Whether for family or finance, a custom Accessory Dwelling Unit offers versatile solutions tailored to your lifestyle.
+                            </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Card 1 -->
+    <div class="group flex flex-col bg-white rounded-xl overflow-hidden border border-[#dce0e5] hover:border-primary hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+    <div class="h-48 w-full bg-cover bg-center" data-alt="Cozy living room interior suitable for grandparents with accessible furniture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVwTve9pr8t75Q8V7tvHowoEzUOQrrhd9trTuSM0-2UV8ENCGkKlmhB9teMygUCqEE5c8TzwmwU5y_UUfa8PYh3jpgKnwyJvsiAutma3-pMu4uI-XzTg9x0O70cuXkvHi0uNADB2CaK3HOvb7VHcpnKDJwQMuiWcgS-olLLIzeoaTTJjN76d-P48i5fc-MknwJ0EsoPdFuETgY_8ozjMkHzVbVd2XYiIS1FYlE5j2LvsLFsov17l9Yh6myJ0jDd2x9ykQaGHSsDgtJ");'></div>
+    <div class="p-6 flex flex-col gap-4 flex-1">
+    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+    <span class="material-symbols-outlined">family_restroom</span>
+    </div>
+    <div class="flex flex-col gap-2">
+    <h3 class="text-[#111418] text-xl font-bold">Multigenerational Living</h3>
+    <p class="text-[#637588] text-sm leading-relaxed">Keep family close with independent, accessible living spaces for in-laws or adult children returning home. Privacy meets proximity.</p>
+    </div>
+    </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="group flex flex-col bg-white rounded-xl overflow-hidden border border-[#dce0e5] hover:border-orange-brand hover:shadow-xl hover:shadow-orange-brand/5 transition-all duration-300">
+    <div class="h-48 w-full bg-cover bg-center" data-alt="Modern studio apartment layout optimized for rental listing" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCXfOIf01g9pkc7wH6ZSQqj3PmXjQBmgZBo1KTGn0SMSKZZHlj1dRtHXIIC-ySnQgsdcRAXCJC2fRqtsRL8Ak_su4sG3TlC5frM9_X0pUszQ6xBnMxN44clh3i_dJjrGtP7EOajSZjzFH4hIo9dPaz87pkvl5uWL-vTGNBtZq72xUeQQaOB2xQZ0Lxi_m0hJ-IQIzV7GHFz4VpyT4_d6bOZkOtq356wJ5AZEAdGJDibGnCudi1kkKHiaZaQNLmAZZL6qsa5QCewyWqh");'></div>
+    <div class="p-6 flex flex-col gap-4 flex-1">
+    <div class="w-12 h-12 rounded-lg bg-orange-50 flex items-center justify-center text-orange-brand group-hover:bg-orange-brand group-hover:text-white transition-colors">
+    <span class="material-symbols-outlined">payments</span>
+    </div>
+    <div class="flex flex-col gap-2">
+    <h3 class="text-[#111418] text-xl font-bold">Rental Income Potential</h3>
+    <p class="text-[#637588] text-sm leading-relaxed">Generate consistent passive income with a high-ROI rental unit or Airbnb guest house. Offset your mortgage efficiently.</p>
+    </div>
+    </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="group flex flex-col bg-white rounded-xl overflow-hidden border border-[#dce0e5] hover:border-primary hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+    <div class="h-48 w-full bg-cover bg-center" data-alt="Quiet and bright home office studio in a garden setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDw1RWbw6YmlsyGmIOq9q1DhZcSC-RF2O2Ti5k1ZoVBrFx3CnP0fyx3dtqothWfvYG5RUZzbK6AND_jXaOEN3fMcWLbN_Ml6XptyAyo7D-A7KeEz_tFzuxlGqMWV8x11I7B5NtCVy2XcnphXfIuJqIwg_xaez1Y3vBRpOJkriCsDaH7hw1bSIftyNwPWkaFQerhlOk-gxYNZ6-RJkiJrPHqpAiZBsQvByc6vTjNP_7Aj_oQZaTAZyXSMjmOu1-v0PN8F649ABo5JDGp");'></div>
+    <div class="p-6 flex flex-col gap-4 flex-1">
+    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+    <span class="material-symbols-outlined">desk</span>
+    </div>
+    <div class="flex flex-col gap-2">
+    <h3 class="text-[#111418] text-xl font-bold">Home Office &amp; Studio</h3>
+    <p class="text-[#637588] text-sm leading-relaxed">Create a dedicated, quiet workspace separate from the main household distractions. Perfect for remote work or creative studios.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Technical Barrier Section -->
+    <div class="w-full bg-[#111921] text-white py-16 px-4 md:px-10">
+    <div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <!-- Left: Intro -->
+    <div class="flex flex-col gap-6 sticky top-24">
+    <div class="inline-flex items-center gap-2 text-orange-brand">
+    <span class="material-symbols-outlined">gavel</span>
+    <span class="text-sm font-bold uppercase tracking-wider">Florida Regulations</span>
+    </div>
+    <h2 class="text-3xl md:text-5xl font-black leading-tight">
+                                We Navigate the Red Tape So You Can Build.
+                            </h2>
+    <p class="text-gray-400 text-lg leading-relaxed">
+                                Building an ADU involves complex zoning laws, utility hookups, and permitting processes unique to Central Florida. Our team handles the technical barriers ensuring your project is compliant and stress-free.
+                            </p>
+    <ul class="flex flex-col gap-4 mt-4">
+    <li class="flex items-center gap-3">
+    <span class="material-symbols-outlined text-primary">check_circle</span>
+    <span class="font-medium">Zoning Feasibility Analysis</span>
+    </li>
+    <li class="flex items-center gap-3">
+    <span class="material-symbols-outlined text-primary">check_circle</span>
+    <span class="font-medium">Complete Permitting Handling</span>
+    </li>
+    <li class="flex items-center gap-3">
+    <span class="material-symbols-outlined text-primary">check_circle</span>
+    <span class="font-medium">Utility Connection Management</span>
+    </li>
+    </ul>
+    </div>
+    <!-- Right: Technical Details -->
+    <div class="flex flex-col gap-4">
+    <!-- Block 1 -->
+    <div class="bg-[#1a2632] p-6 rounded-xl border border-gray-800">
+    <div class="flex items-start gap-4">
+    <div class="p-2 bg-blue-900/30 rounded-lg text-primary">
+    <span class="material-symbols-outlined">map</span>
+    </div>
+    <div>
+    <h3 class="text-xl font-bold mb-2">Zoning &amp; Setbacks</h3>
+    <p class="text-gray-400 text-sm leading-relaxed">
+                                            We assess your property's specific setbacks (rear and side yard requirements), lot coverage ratios, and maximum height allowances. Whether you are in Orlando, Winter Park, or surrounding counties, we know the local code.
+                                        </p>
+    </div>
+    </div>
+    </div>
+    <!-- Block 2 -->
+    <div class="bg-[#1a2632] p-6 rounded-xl border border-gray-800">
+    <div class="flex items-start gap-4">
+    <div class="p-2 bg-blue-900/30 rounded-lg text-primary">
+    <span class="material-symbols-outlined">plumbing</span>
+    </div>
+    <div>
+    <h3 class="text-xl font-bold mb-2">Utility Connections</h3>
+    <p class="text-gray-400 text-sm leading-relaxed">
+                                            Determining whether your ADU needs separate utility meters or can tie into the main house is critical for cost. We manage the engineering for sewer, water, and electrical upgrades if necessary.
+                                        </p>
+    </div>
+    </div>
+    </div>
+    <!-- Block 3 -->
+    <div class="bg-[#1a2632] p-6 rounded-xl border border-gray-800">
+    <div class="flex items-start gap-4">
+    <div class="p-2 bg-blue-900/30 rounded-lg text-primary">
+    <span class="material-symbols-outlined">engineering</span>
+    </div>
+    <div>
+    <h3 class="text-xl font-bold mb-2">Impact Fees</h3>
+    <p class="text-gray-400 text-sm leading-relaxed">
+                                            We provide transparent estimates on potential impact fees required by local municipalities, helping you calculate the true total cost of your investment before breaking ground.
+                                        </p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Process Roadmap -->
+    <div class="px-4 md:px-10 py-20 bg-white">
+    <div class="flex flex-col items-center gap-12">
+    <div class="text-center max-w-[600px]">
+    <h2 class="text-[#111418] text-3xl font-bold mb-4">Our Streamlined Process</h2>
+    <p class="text-[#637588]">From concept to keys in hand, we make construction simple.</p>
+    </div>
+    <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+    <!-- Connecting Line (Desktop) -->
+    <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gray-200 -z-10 transform translate-y-[-50%]"></div>
+    <!-- Step 1 -->
+    <div class="flex flex-col items-center text-center gap-4 bg-white p-4">
+    <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold shadow-lg shadow-blue-500/30 z-10">1</div>
+    <h3 class="text-lg font-bold">Feasibility Check</h3>
+    <p class="text-sm text-[#637588]">Free site visit to determine eligibility and rough costs.</p>
+    </div>
+    <!-- Step 2 -->
+    <div class="flex flex-col items-center text-center gap-4 bg-white p-4">
+    <div class="w-16 h-16 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center text-2xl font-bold z-10">2</div>
+    <h3 class="text-lg font-bold">Design &amp; Permitting</h3>
+    <p class="text-sm text-[#637588]">Architectural plans and handling city approvals.</p>
+    </div>
+    <!-- Step 3 -->
+    <div class="flex flex-col items-center text-center gap-4 bg-white p-4">
+    <div class="w-16 h-16 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center text-2xl font-bold z-10">3</div>
+    <h3 class="text-lg font-bold">Construction</h3>
+    <p class="text-sm text-[#637588]">Expert build with timeline guarantees and updates.</p>
+    </div>
+    <!-- Step 4 -->
+    <div class="flex flex-col items-center text-center gap-4 bg-white p-4">
+    <div class="w-16 h-16 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center text-2xl font-bold z-10">4</div>
+    <h3 class="text-lg font-bold">Move-In Ready</h3>
+    <p class="text-sm text-[#637588]">Final walkthrough, cleaning, and key handover.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Image Grid Portfolio -->
+    <div class="px-4 md:px-10 py-16 bg-[#f8f9fa]">
+    <div class="flex justify-between items-end mb-8">
+    <div class="flex flex-col gap-2">
+    <h2 class="text-[#111418] text-3xl font-bold">Recent Projects</h2>
+    <p class="text-[#637588]">See what we've built for your neighbors.</p>
+    </div>
+    <a class="hidden md:flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all" href="#">
+                            View Full Portfolio
+                            <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Small modern backyard cottage with grey siding" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7kyjLsZZQ79YV3pVLmBDMWKPcHayMbbUgKBH15ZNg74xWttlPowkGsqaB32YdUngookW10y80kxkTFQTf3usAI52vex4JeyK9XrAQmPyfgLA4WWCfPIPZZt3Q22DyquyMMJ8bvf3-FQ1l3GoVMuDaZhzTRyGOly5--XXTvBkslF5LNms2x7meMnv5X1GHOMtwhNvR3dvpEh-dvaxbSTUaYidk3FDIX1zBNuDgmFnaCl1br-zXdHRybzzIAkarVMQBsoLSkKLbzxGk");'></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
+    <p class="font-bold text-lg">The Orlando Oasis</p>
+    <p class="text-sm text-gray-200">600 sq ft Guest House</p>
+    </div>
+    </div>
+    <div class="group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Modern interior kitchen of a small guest house" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBelDB5qiwOR56WWW6K7yIGajfScyUfD5E883L0gZR5_P59i2reUHlawyeRRwY4Ee5pBmZHi2ZJGSGHYT4TSKjjAhpEcipvAEq3LKwfESRHSJt6PwfE45egXQlFzyTDOPq0Et027LoKnHy3ULTqBFQJeNSf0hJdPEXh6JIj5ccCfPKW-MeBPwshV9EbhIgutrTeZz8InrjGd1WX7dm7Kp9rgeESTOb-kqrigYvvo0BYX5tqUPa1FvRTzXoACjnk6siQ1TIrkHG-FlMx");'></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
+    <p class="font-bold text-lg">Modern Kitchenette</p>
+    <p class="text-sm text-gray-200">Custom Cabinetry</p>
+    </div>
+    </div>
+    <div class="group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Bright and airy bedroom in an ADU" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAeNqPhH-HiSiWDArGyNNViTUYzNkI_wmlZknrjpmsPpGX2oIBMTbiqkUlai5OdUQs52r5MIZhJNgtE07Ad5QQkfAT-6Xx4d31NCCZjaHmgtlxyn0EfodXIH3lHMG_3h-yRAJPH3BdGZyN-8K8519S9ofdkI1lEQ8ZLYf0vaA3sXwwZTQok6qiXndYSdML95P4jLXe1AuJdMvxCuFrmeCATDt8JD2pC07IwGTe1Vg9_9T-7cIUBi8A73fd3FYMEKo4JDSP8b33Z38o");'></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
+    <p class="font-bold text-lg">In-Law Suite</p>
+    <p class="text-sm text-gray-200">Accessible Design</p>
+    </div>
+    </div>
+    <div class="group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Exterior of a pool house ADU" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTwZ5hRRD_ZwIqUQD-Vpza3MWF6vV2zqioDWylotQZA-zrkUlTjFTGMXESH1feFTlMzwfmnjub00hHMARoLyI1fZZHgnF6a3yFiLaSkjxalriHPxHzX1csItD9m5L0qxt3JCZDel1olhzC3eaZjj1qzykA3Ui_kRHw7fHkhclipoU3YryFtVzmIaM1bUDmXYso41YlfJ_d6f5WBJpxlb9N050MCwNuYBxGsoj039NzpJSgkkWA_Den7NdRgRS9vgTvVTqY5IZM8DX1");'></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
+    <p class="font-bold text-lg">Poolside Studio</p>
+    <p class="text-sm text-gray-200">Entertainment Space</p>
+    </div>
+    </div>
+    </div>
+    <div class="mt-6 md:hidden text-center">
+    <a class="inline-flex items-center gap-2 text-primary font-bold" href="#">
+                            View Full Portfolio
+                            <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+    </div>
+    </div>
+    <!-- Final CTA / Footer -->
+    </div>
+    </main>
+    </div>
+    </main>
+  </div>
+</MainLayout>

@@ -1,6 +1,6 @@
 ---
 import Header from '../../../components/common/Header.astro';
-import Breadcrumbs from '../../../components/common/Breadcrumbs.astro';
+
 import MainLayout from '../../../layouts/MainLayout.astro';
 
 const pageTitle = "Whole Home Renovation & Gut Remodeling Florida | Paramount";
@@ -31,7 +31,11 @@ const wholeHomeSchema = {
   customSchema={wholeHomeSchema}
   hideHeader={true}
   hideFooter={false}
-  breadcrumbItems={[]}
+  breadcrumbItems={[
+    { label: 'Home', href: '/' },
+    { label: 'Remodeling', href: '/remodeling/' },
+    { label: 'Whole Home', href: '/remodeling/whole-home/' }
+  ]}
 >
     <!-- Inject Fonts into Head -->
     <fragment slot="head">
@@ -57,16 +61,7 @@ const wholeHomeSchema = {
         <Header theme="light" sticky={false} />
     </div>
 
-    <!-- Breadcrumbs -->
-    <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800">
-        <div class="container mx-auto px-4 max-w-6xl py-2">
-            <Breadcrumbs items={[
-                { label: 'Home', href: '/' },
-                { label: 'Remodeling', href: '/remodeling/' },
-                { label: 'Whole Home', href: '/remodeling/whole-home/' }
-            ]} />
-        </div>
-    </div>
+
 
     <!-- Local Styles -->
     <style>

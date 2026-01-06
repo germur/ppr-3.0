@@ -1,0 +1,288 @@
+---
+import cities from '../../../../data/kitchen-cities.json';
+
+export interface CityData {
+  city: string;
+  slug: string;
+  cluster: string;
+  county: string;
+  tier: string;
+  humidity: string;
+  permit_link: string;
+  description: string;
+  features: {
+    climate: string;
+    lifestyle: string;
+  };
+}
+
+export async function getStaticPaths() {
+  return cities.map((city) => ({
+    params: { city: city.slug },
+    props: { cityData: city },
+  }));
+}
+
+const { cityData } = Astro.props;
+const { city, county, description, features, permit_link } = cityData;
+
+// SEO & Metadata
+const pageTitle = `Modern Kitchen Remodeling ${city} - Paramount Property Restoration`;
+const pageDescription = description;
+
+// Schema
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `Kitchen Remodeling ${city}`,
+  "provider": {
+    "@type": "GeneralContractor",
+    "name": "Paramount Property Restoration",
+    "areaServed": {
+      "@type": "City",
+      "name": city
+    }
+  },
+  "description": description,
+  "areaServed": city
+};
+
+import MainLayout from '../../../../layouts/MainLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Remodeling', href: '/remodeling/' },
+  { label: 'Kitchen', href: '/remodeling/kitchen/modern-design/' },
+  { label: city, href: Astro.url.pathname }
+];
+
+const faqItems = [
+    {
+        question: `Do I need a permit for a kitchen island in ${city}?`,
+        answer: `Yes. In ${county} County, if you are adding electrical outlets or plumbing to a new island, a permit is typically required. We handle all drawings and submissions to the ${city} Building Department to ensure code compliance.`
+    },
+    {
+        question: `Are your kitchens hurricane-proof?`,
+        answer: `While no kitchen is completely "hurricane-proof," we design for maximum resilience. We use impact-rated windows, reinforced installation methods for cabinetry, and materials that resist humidity and potential water intrusion common in ${city}.`
+    },
+    {
+        question: `How long does a typical ${city} kitchen remodel take?`,
+        answer: `A typical remodel usually takes 6-10 weeks from demolition to completion. The permitting phase with ${county} County can sometimes add time, which we factor into your timeline.`
+    }
+];
+---
+
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  customSchema={schema}
+  faqItems={faqItems}
+  breadcrumbItems={breadcrumbs}
+>
+    <!-- Mobile Sticky CTA (Thumb Zone) -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:hidden">
+        <div class="flex gap-3">
+            <a href="tel:1-800-555-0123" class="flex-1 h-12 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white font-bold border border-gray-200 dark:border-gray-700">
+                <span class="material-symbols-outlined mr-2">call</span> Call
+            </a>
+            <a href="#cost-calculator" class="flex-[2] h-12 flex items-center justify-center rounded-lg bg-[#f97316] hover:bg-orange-600 text-white font-bold shadow-lg transition-transform active:scale-95">
+                Get Free Estimate
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative w-full overflow-hidden bg-gray-900 min-h-[600px] flex items-center">
+        <!-- Visuals -->
+        <div class="absolute inset-0 w-full h-full">
+            <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTCpC04HHuSCK-evvn286i9inZa2MCq4I46_0oz6IF-PmZU8rsbkX2u2wj7AR6gumnTeVHbHQmT8NPFFPkNh2mSGGJh08p1XqXFvPbOJm3KBm1hxAEapJe8Wwm7xUM5SeRS33bBNY84NUnPnheez3EX1NRv05XPTXgeIzYTmo5Qmc7TPr6s1-az0_vtrZTYL4rBM2t1LVUYlB4Aef5ZvX2HYRCPgTT9I09mDgVS1-WS2zUrhk82cZxjkplp4SOpw8f_al8bal0S9jf" 
+                alt={`Modern Kitchen Remodeling in ${city}`}
+                class="w-full h-full object-cover opacity-50"
+                loading="eager"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col justify-center h-full">
+            <div class="max-w-3xl animate-fade-in-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-sm font-bold w-fit mb-6 border border-orange-500/30 backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-sm">verified</span>
+                    <span>Licensed in {county}</span>
+                </div>
+                <h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6">
+                    Modern Kitchen Remodeling in {city}
+                </h1>
+                <p class="text-gray-200 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mb-8">
+                    {description}
+                </p>
+
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap items-center gap-6 mb-8 text-gray-300 text-sm font-medium">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-green-400">workspace_premium</span>
+                        Licensed & Insured
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-yellow-400">star</span>
+                        4.9/5 Rating
+                    </div>
+                    <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-blue-400">engineering</span>
+                            FL Home Builders Assoc.
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="document.getElementById('cost-calculator').scrollIntoView({behavior: 'smooth'})" class="h-14 px-8 rounded-lg bg-[#f97316] hover:bg-orange-600 text-white font-bold text-lg transition-all shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2">
+                        Calculate Cost
+                        <span class="material-symbols-outlined">calculate</span>
+                    </button>
+                    <button class="h-14 px-8 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-lg transition-all backdrop-blur-md border border-white/10 flex items-center justify-center gap-2">
+                        View Gallery
+                        <span class="material-symbols-outlined">photo_library</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Reality Section (Dynamic) -->
+    <section class="py-20 bg-background-light dark:bg-background-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Building for {city}'s Climate</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Why standard renovations fail here, and how we differ.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Humidity Card -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    <div class="size-14 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center mb-6 text-primary">
+                        <span class="material-symbols-outlined text-3xl">water_drop</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{city} Humidity Control</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {features.climate}
+                    </p>
+                </div>
+
+                 <!-- Permitting Card -->
+                 <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    <div class="size-14 rounded-xl bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center mb-6 text-secondary">
+                        <span class="material-symbols-outlined text-3xl">gavel</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Permitting in {county}</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        We handle all filings via the <a href={permit_link} target="_blank" rel="nofollow noreferrer" class="text-primary hover:underline">{city} Building Services</a>, ensuring full compliance.
+                    </p>
+                </div>
+
+                 <!-- Design Card -->
+                 <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    <div class="size-14 rounded-xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center mb-6 text-green-600">
+                        <span class="material-symbols-outlined text-3xl">deck</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Lifestyle Design</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {features.lifestyle}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Cost Calculator (Reused) -->
+    <section id="cost-calculator" class="py-24 bg-background-light dark:bg-background-dark">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                <div class="p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <span class="text-primary font-bold tracking-wider text-sm uppercase">Transparency First</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-2 mb-4">Kitchen Remodel Estimator</h2>
+                        <p class="text-gray-600 dark:text-gray-400">Get a ballpark range for your {city} kitchen project based on current material and labor rates.</p>
+                    </div>
+
+                    <!-- Calculator UI -->
+                    <div class="space-y-8">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-900 dark:text-white mb-4">Kitchen Size</label>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <label class="relative cursor-pointer">
+                                    <input type="radio" name="size" value="small" class="peer sr-only" onchange="updateEstimate()">
+                                    <div class="p-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 peer-checked:border-primary peer-checked:bg-blue-50 dark:peer-checked:bg-blue-900/20 transition-all text-center">
+                                        <span class="block font-bold text-gray-900 dark:text-white">Small</span>
+                                        <span class="text-xs text-gray-500">&lt; 100 sq ft</span>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer">
+                                    <input type="radio" name="size" value="medium" class="peer sr-only" checked onchange="updateEstimate()">
+                                    <div class="p-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 peer-checked:border-primary peer-checked:bg-blue-50 dark:peer-checked:bg-blue-900/20 transition-all text-center">
+                                        <span class="block font-bold text-gray-900 dark:text-white">Medium</span>
+                                        <span class="text-xs text-gray-500">100 - 200 sq ft</span>
+                                    </div>
+                                </label>
+                                <label class="relative cursor-pointer">
+                                    <input type="radio" name="size" value="large" class="peer sr-only" onchange="updateEstimate()">
+                                    <div class="p-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 peer-checked:border-primary peer-checked:bg-blue-50 dark:peer-checked:bg-blue-900/20 transition-all text-center">
+                                        <span class="block font-bold text-gray-900 dark:text-white">Large</span>
+                                        <span class="text-xs text-gray-500">&gt; 200 sq ft</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-gray-900 dark:text-white mb-4">Finish Level</label>
+                            <input type="range" min="1" max="3" value="2" class="w-full accent-primary h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" id="finishLevel" oninput="updateEstimate()">
+                            <div class="flex justify-between text-xs text-gray-500 mt-2 font-medium">
+                                <span>Budget-Friendly</span>
+                                <span>Mid-Range</span>
+                                <span>Luxury</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 flex flex-col items-center justify-center border border-gray-200 dark:border-gray-700">
+                            <span class="text-gray-500 dark:text-gray-400 text-sm font-medium mb-1">Estimated Range</span>
+                            <div class="text-4xl md:text-5xl font-black text-primary" id="priceDisplay">$45k - $65k</div>
+                            <p class="text-xs text-gray-400 mt-2 text-center max-w-sm">*Estimates vary due to structural changes and specific material choices. Contact us for a precise quote.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inline Script for Interactive Elements -->
+    <script is:inline>
+        function updateEstimate() {
+            const sizeRadio = document.querySelector('input[name="size"]:checked');
+            if(!sizeRadio) return;
+            
+            const size = sizeRadio.value;
+            const level = document.getElementById('finishLevel').value;
+            let min = 0;
+            let max = 0;
+
+            const baseRates = {
+                small: { min: 25000, max: 40000 },
+                medium: { min: 45000, max: 75000 },
+                large: { min: 80000, max: 120000 }
+            };
+
+            const multipliers = [1, 1.3, 1.8]; // Budget, Mid, Luxury
+
+            min = baseRates[size].min * multipliers[level-1];
+            max = baseRates[size].max * multipliers[level-1];
+
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            });
+
+            document.getElementById('priceDisplay').innerText = `${formatter.format(min)} - ${formatter.format(max)}`;
+        }
+    </script>
+</MainLayout>

@@ -1,0 +1,279 @@
+---
+import MainLayout from '../../../../layouts/MainLayout.astro';
+
+const city = "Tampa";
+const county = "Hillsborough";
+const pageTitle = "Modern Kitchen Remodeling Tampa - Paramount Property Restoration";
+const pageDescription = "Transform your Tampa home with a custom modern kitchen. Licensed contractors, hurricane-ready designs & smart tech. Get a free estimate in Tampa.";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Kitchen Remodeling Tampa",
+  "provider": {
+    "@type": "GeneralContractor",
+    "name": "Paramount Property Restoration",
+    "areaServed": {
+      "@type": "City",
+      "name": "Tampa"
+    }
+  },
+  "description": pageDescription,
+  "areaServed": "Tampa"
+};
+
+const faqItems = [
+    {
+        question: "Do I need a permit for a kitchen island in Tampa?",
+        answer: "Yes, if you are adding electrical outlets or plumbing to the island, specific electrical and plumbing permits are required by the City of Tampa. We handle all of this for you."
+    },
+    {
+        question: "Are your kitchens hurricane-proof?",
+        answer: "While no kitchen is completely \"hurricane-proof,\" we design for maximum resilience. We use impact-rated windows, reinforced installation methods for cabinetry, and materials that resist humidity and potential water intrusion."
+    },
+    {
+        question: "How long does a typical Tampa kitchen remodel take?",
+        answer: "A typical remodel usually takes 6-10 weeks from demolition to completion, depending on the complexity and material availability. The permitting phase with Hillsborough County can sometimes add time, which we factor into your timeline."
+    }
+];
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Remodeling', href: '/remodeling/' },
+  { label: 'Kitchen', href: '/remodeling/kitchen/modern-design/' },
+  { label: city, href: Astro.url.pathname }
+];
+---
+
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  customSchema={schema}
+  faqItems={faqItems}
+  breadcrumbItems={breadcrumbs}
+>
+    <!-- Mobile Sticky CTA (Thumb Zone) -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:hidden">
+        <div class="flex gap-3">
+            <a href="tel:1-800-555-0123" class="flex-1 h-12 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white font-bold border border-gray-200 dark:border-gray-700">
+                <span class="material-symbols-outlined mr-2">call</span> Call
+            </a>
+            <a href="#cost-section" class="flex-[2] h-12 flex items-center justify-center rounded-lg bg-[#f97316] hover:bg-orange-600 text-white font-bold shadow-lg transition-transform active:scale-95">
+                Get Free Estimate
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="w-full">
+        <div class="max-w-[1440px] mx-auto">
+            <div class="relative overflow-hidden md:rounded-b-none bg-gray-900 min-h-[600px] flex items-center justify-center text-center p-6 sm:p-12 md:p-16">
+                <!-- Background Image -->
+                <div class="absolute inset-0 z-0">
+                    <img 
+                        alt="Modern bright kitchen with white island and open layout" 
+                        class="w-full h-full object-cover opacity-60" 
+                        data-alt="Modern bright kitchen with white island and open layout" 
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTCpC04HHuSCK-evvn286i9inZa2MCq4I46_0oz6IF-PmZU8rsbkX2u2wj7AR6gumnTeVHbHQmT8NPFFPkNh2mSGGJh08p1XqXFvPbOJm3KBm1hxAEapJe8Wwm7xUM5SeRS33bBNY84NUnPnheez3EX1NRv05XPTXgeIzYTmo5Qmc7TPr6s1-az0_vtrZTYL4rBM2t1LVUYlB4Aef5ZvX2HYRCPgTT9I09mDgVS1-WS2zUrhk82cZxjkplp4SOpw8f_al8bal0S9jf"
+                        loading="eager"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                </div>
+                <!-- Content -->
+                <div class="relative z-10 max-w-3xl flex flex-col gap-6 items-center">
+                    <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-lg font-[Space_Grotesk]">
+                        Modern Kitchen Remodeling in {city}: Resilient & Smart Designs
+                    </h1>
+                    <p class="text-gray-100 text-lg sm:text-xl font-medium leading-relaxed max-w-2xl drop-shadow-md">
+                        A licensed General Contractor specializing in modern kitchen renovations for {city} homeowners. From hurricane-ready cabinetry to smart appliances.
+                    </p>
+
+                    <!-- Trust Badges (E-E-A-T) -->
+                    <div class="flex flex-wrap justify-center items-center gap-6 mb-4 text-gray-300 text-sm font-medium">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-green-400">workspace_premium</span>
+                            Licensed & Insured
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-yellow-400">star</span>
+                            4.9/5 Rating
+                        </div>
+                         <div class="flex items-center gap-2">
+                             <span class="material-symbols-outlined text-blue-400">engineering</span>
+                             FL Home Builders Assoc.
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 w-full justify-center mt-2">
+                        <button class="inline-flex h-12 items-center justify-center rounded-lg bg-[#f97316] hover:bg-orange-600 text-white px-8 text-base font-bold shadow-lg transition-transform active:scale-95" onclick="document.getElementById('cost-section').scrollIntoView({behavior: 'smooth'})">
+                            Get Your {city} Kitchen Remodel Estimate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Meta Text -->
+    <div class="w-full -mt-4 mb-8 relative z-20 hidden md:block">
+        <p class="text-[#637588] dark:text-gray-400 text-sm font-medium text-center flex items-center justify-center gap-2 bg-white dark:bg-[#111921] py-2 w-fit mx-auto px-6 rounded-full shadow-sm border border-gray-100 dark:border-gray-800">
+            <span class="material-symbols-outlined text-lg text-green-600">verified_user</span>
+            Licensed in Hillsborough County. 24-Month Warranty.
+        </p>
+    </div>
+
+    <!-- Local Reality Bento Grid -->
+    <section class="w-full py-12 bg-white dark:bg-[#111921]">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-3 mb-10">
+                <h2 class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-tight font-[Space_Grotesk]">Local Reality: Building for {city}'s Climate</h2>
+                <p class="text-[#637588] dark:text-gray-400 max-w-2xl">We build resilient kitchens designed to withstand Florida's humidity and regulations.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-[#f6f7f8] dark:bg-[#1a2632] rounded-xl p-6 border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow group">
+                    <div class="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 text-[#197fe6] group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">water_drop</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-2 font-[Space_Grotesk]">{city} Humidity Control</h3>
+                    <p class="text-[#637588] dark:text-gray-300 text-sm leading-relaxed">
+                        In {city}, humidity averages <span class="text-[#f97316] font-bold">74%</span>. We use marine-grade plywood and moisture-resistant seals to prevent mold behind your new cabinets.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-[#f6f7f8] dark:bg-[#1a2632] rounded-xl p-6 border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow group">
+                    <div class="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 text-[#197fe6] group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">gavel</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-2 font-[Space_Grotesk]">Permitting in {city}</h3>
+                    <p class="text-[#637588] dark:text-gray-300 text-sm leading-relaxed">
+                        We handle all filings with the {city} Building Department, ensuring your electrical and plumbing upgrades meet the strict Florida Building Code.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-[#f6f7f8] dark:bg-[#1a2632] rounded-xl p-6 border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow group">
+                    <div class="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 text-[#197fe6] group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">deck</span>
+                    </div>
+                <div class="w-full lg:w-[450px] bg-white dark:bg-[#1a2632] rounded-xl shadow-xl p-8 border border-gray-100 dark:border-gray-700">
+                    <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-6 font-[Space_Grotesk]">Quick Estimate Breakdown</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-[#111418] dark:text-gray-300">Materials (Cabinets, Counters)</span>
+                                <span class="text-sm font-bold text-[#197fe6]">40%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-[#197fe6] h-2 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-[#111418] dark:text-gray-300">Labor & Installation</span>
+                                <span class="text-sm font-bold text-[#f97316]">35%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-[#f97316] h-2 rounded-full" style="width: 35%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-[#111418] dark:text-gray-300">Permits & Design Fees</span>
+                                <span class="text-sm font-bold text-blue-400">15%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width: 15%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-[#111418] dark:text-gray-300">Contingency Fund</span>
+                                <span class="text-sm font-bold text-gray-500">10%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-gray-500 h-2 rounded-full" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700">
+                        <a href="/contact/" class="flex items-center justify-center w-full h-12 rounded-lg bg-[#197fe6] hover:bg-blue-600 text-white font-bold transition-colors">
+                            Get A Detailed Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="w-full py-16 bg-white dark:bg-[#111921]">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-[#111418] dark:text-white text-3xl font-bold mb-12 text-center font-[Space_Grotesk]">Our Remodeling Process for Tampa Residents</h2>
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-1 bg-gray-200 dark:bg-gray-700 md:-translate-x-1/2"></div>
+                <div class="space-y-12">
+                    <!-- Step 1 -->
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-0 group">
+                        <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1">
+                            <h3 class="text-xl font-bold text-[#111418] dark:text-white font-[Space_Grotesk]">In-Home Consultation</h3>
+                            <p class="text-[#637588] dark:text-gray-400 mt-2 text-sm">We visit your Tampa home to measure your space, discuss your vision, and assess plumbing/electrical needs.</p>
+                        </div>
+                        <div class="absolute left-[20px] md:left-1/2 w-10 h-10 rounded-full bg-[#197fe6] text-white flex items-center justify-center font-bold z-10 md:-translate-x-1/2 -translate-x-1/2 border-4 border-white dark:border-[#1a202c]">1</div>
+                        <div class="md:w-1/2 md:pl-12 order-3 md:order-3 pl-12 md:pl-12">
+                            <span class="hidden md:block text-xs font-bold text-[#197fe6] uppercase tracking-wider">Start Here</span>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-0 group">
+                        <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 hidden md:block">
+                            <span class="text-xs font-bold text-[#f97316] uppercase tracking-wider">Critical Step</span>
+                        </div>
+                        <div class="absolute left-[20px] md:left-1/2 w-10 h-10 rounded-full bg-white dark:bg-gray-700 border-2 border-[#197fe6] text-[#197fe6] flex items-center justify-center font-bold z-10 md:-translate-x-1/2 -translate-x-1/2">2</div>
+                        <div class="md:w-1/2 md:pl-12 order-3 md:order-3 pl-12">
+                            <h3 class="text-xl font-bold text-[#111418] dark:text-white font-[Space_Grotesk]">Design & Permitting</h3>
+                            <p class="text-[#637588] dark:text-gray-400 mt-2 text-sm">We create 3D renderings and submit all necessary plans to the City of Tampa Building Department.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-0 group">
+                        <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1">
+                            <h3 class="text-xl font-bold text-[#111418] dark:text-white font-[Space_Grotesk]">Construction Phase</h3>
+                            <p class="text-[#637588] dark:text-gray-400 mt-2 text-sm">Demolition, rough-ins, and installation. We use dust barriers to keep your Tampa home clean.</p>
+                        </div>
+                        <div class="absolute left-[20px] md:left-1/2 w-10 h-10 rounded-full bg-white dark:bg-gray-700 border-2 border-[#197fe6] text-[#197fe6] flex items-center justify-center font-bold z-10 md:-translate-x-1/2 -translate-x-1/2">3</div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-0 group">
+                        <div class="absolute left-[20px] md:left-1/2 w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold z-10 md:-translate-x-1/2 -translate-x-1/2 border-4 border-white dark:border-[#1a202c]">
+                            <span class="material-symbols-outlined text-sm">check</span>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 order-3 md:order-3 pl-12">
+                            <h3 class="text-xl font-bold text-[#111418] dark:text-white font-[Space_Grotesk]">Final Walkthrough</h3>
+                            <p class="text-[#637588] dark:text-gray-400 mt-2 text-sm">We ensure every detail meets our standards and explain your 24-month warranty coverage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Linking -->
+    <footer class="w-full bg-[#111921] text-white pt-16 pb-8">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                     <h3 class="font-bold text-lg mb-4 text-[#197fe6]">Serving All Neighborhoods in Tampa</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <a class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-300 px-3 py-1 rounded-full transition-colors" href="#">Hyde Park</a>
+                        <a class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-300 px-3 py-1 rounded-full transition-colors" href="#">Davis Islands</a>
+                        <a class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-300 px-3 py-1 rounded-full transition-colors" href="#">Ybor City</a>
+                        <a class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-300 px-3 py-1 rounded-full transition-colors" href="#">Westchase</a>
+                        <a class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-300 px-3 py-1 rounded-full transition-colors" href="#">St. Petersburg</a>
+                        <a class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-300 px-3 py-1 rounded-full transition-colors" href="#">Clearwater</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</MainLayout>

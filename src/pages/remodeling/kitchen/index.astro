@@ -1,6 +1,6 @@
 ---
 import Header from '../../../components/common/Header.astro';
-import Breadcrumbs from '../../../components/common/Breadcrumbs.astro';
+
 import MainLayout from '../../../layouts/MainLayout.astro';
 
 const pageTitle = "Custom Kitchen Remodeling - Paramount Property Restoration";
@@ -27,7 +27,11 @@ const kitchenSchema = {
   customSchema={kitchenSchema}
   hideHeader={true}
   hideFooter={false}
-  breadcrumbItems={[]}
+  breadcrumbItems={[
+    { label: 'Home', href: '/' },
+    { label: 'Remodeling', href: '/remodeling/' },
+    { label: 'Kitchen', href: '/remodeling/kitchen/' }
+  ]}
 >
     <!-- Inject Fonts into Head -->
     <fragment slot="head">
@@ -53,16 +57,7 @@ const kitchenSchema = {
         <Header theme="light" sticky={false} />
     </div>
 
-    <!-- Breadcrumbs -->
-    <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800">
-        <div class="container mx-auto px-4 max-w-6xl py-2">
-            <Breadcrumbs items={[
-                { label: 'Home', href: '/' },
-                { label: 'Remodeling', href: '/remodeling/' },
-                { label: 'Kitchen', href: '/remodeling/kitchen/' }
-            ]} />
-        </div>
-    </div>
+
 
     <!-- Local Styles -->
     <style>
@@ -228,12 +223,13 @@ const kitchenSchema = {
                     </div>
                 </div>
                 <!-- Small Item -->
-                <div class="relative group overflow-hidden rounded-2xl bg-[#d97706] flex flex-col items-center justify-center text-center p-6 cursor-pointer hover:bg-amber-700 transition-colors">
-                    <h3 class="text-white text-xl font-bold mb-4">Start Your Project</h3>
-                    <div class="bg-white text-[#d97706] rounded-full size-12 flex items-center justify-center shadow-lg">
+                <!-- Small Item: Link to Modern Design Page -->
+                <a href="/remodeling/kitchen/modern-design/" class="relative group overflow-hidden rounded-2xl bg-[#d97706] flex flex-col items-center justify-center text-center p-6 cursor-pointer hover:bg-amber-700 transition-colors">
+                    <h3 class="text-white text-xl font-bold mb-4">View Modern Designs</h3>
+                    <div class="bg-white text-[#d97706] rounded-full size-12 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>

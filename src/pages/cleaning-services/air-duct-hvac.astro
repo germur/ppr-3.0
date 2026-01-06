@@ -1,6 +1,6 @@
 ---
 import Header from '../../components/common/Header.astro';
-import Breadcrumbs from '../../components/common/Breadcrumbs.astro';
+
 import MainLayout from '../../layouts/MainLayout.astro';
 
 const customSchema = {
@@ -83,7 +83,11 @@ const faqSchema = {
   customSchema={[customSchema, faqSchema]}
   hideHeader={true}
   hideFooter={false}
-  breadcrumbItems={[]}
+  breadcrumbItems={[
+    { label: 'Home', href: '/' },
+    { label: 'Cleaning Services', href: '/cleaning-services/' },
+    { label: 'Air Duct & HVAC', href: '/cleaning-services/air-duct-hvac/' }
+  ]}
 >
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -106,16 +110,7 @@ const faqSchema = {
         <Header theme="light" sticky={false} />
     </div>
 
-    <!-- Breadcrumbs (Manually placed below custom header) -->
-    <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-            <Breadcrumbs items={[
-                { label: 'Home', href: '/' },
-                { label: 'Cleaning Services', href: '/cleaning-services/' },
-                { label: 'Air Duct & HVAC', href: '/cleaning-services/air-duct-hvac/' }
-            ]} />
-        </div>
-    </div>
+
 
     <div class="font-[Manrope] text-[#111418] antialiased overflow-x-hidden bg-[#f6f7f8] dark:bg-[#101922]">
 

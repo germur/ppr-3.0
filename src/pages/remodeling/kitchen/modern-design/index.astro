@@ -5,7 +5,12 @@ const seoTitle = "Modern Kitchen Remodeling - Paramount Property Restoration";
 const seoDescription = "Modern kitchen remodeling in Florida. Style meets resilience with hurricane-ready designs, smart tech, and energy-efficient upgrades.";
 ---
 
-<MainLayout title={seoTitle} description={seoDescription} hideHeader={true} hideFooter={true} breadcrumbItems={[]}>
+<MainLayout title={seoTitle} description={seoDescription} breadcrumbItems={[
+  { label: 'Home', href: '/' },
+  { label: 'Remodeling', href: '/remodeling/' },
+  { label: 'Kitchen', href: '/remodeling/kitchen/' },
+  { label: 'Modern Design', href: '/remodeling/kitchen/modern-design/' }
+]}>
   <!-- Page-Specific Styles (Font & Colors) -->
   <style is:global>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
@@ -44,38 +49,7 @@ const seoDescription = "Modern kitchen remodeling in Florida. Style meets resili
 
   <div class="bg-[#f6f7f8] dark:bg-[#101c22] font-display text-slate-900 dark:text-white antialiased">
     <!-- Top Navigation -->
-    <header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-[#101c22]/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-          <!-- Logo -->
-          <div class="flex items-center gap-3">
-            <div class="size-8 text-[#1193d4]">
-              <span class="material-symbols-outlined text-4xl">roofing</span>
-            </div>
-            <div class="flex flex-col">
-              <h2 class="text-slate-900 dark:text-white text-lg font-bold leading-none tracking-tight">Paramount</h2>
-              <span class="text-xs text-slate-500 dark:text-slate-400 font-medium tracking-wide">RESTORATION & REMODELING</span>
-            </div>
-          </div>
-          <!-- Desktop Nav -->
-          <nav class="hidden md:flex flex-1 justify-end items-center gap-8">
-            <div class="flex items-center gap-6">
-              <a class="text-slate-600 dark:text-slate-300 hover:text-[#1193d4] dark:hover:text-[#1193d4] text-sm font-medium transition-colors" href="/remodeling/kitchen/">Kitchens</a>
-              <a class="text-slate-600 dark:text-slate-300 hover:text-[#1193d4] dark:hover:text-[#1193d4] text-sm font-medium transition-colors" href="/restoration/">Restoration</a>
-              <a class="text-slate-600 dark:text-slate-300 hover:text-[#1193d4] dark:hover:text-[#1193d4] text-sm font-medium transition-colors" href="/resources/">Resources</a>
-              <a class="text-slate-600 dark:text-slate-300 hover:text-[#1193d4] dark:hover:text-[#1193d4] text-sm font-medium transition-colors" href="/about/">About Us</a>
-            </div>
-            <a href="/contact/" class="flex items-center justify-center rounded-lg h-10 px-5 bg-[#1193d4] hover:bg-[#0e7bb3] transition-colors text-white text-sm font-bold tracking-wide shadow-lg shadow-[#1193d4]/20">
-                Start 3D Design
-            </a>
-          </nav>
-          <!-- Mobile Menu Icon -->
-          <div class="md:hidden text-slate-900 dark:text-white">
-            <span class="material-symbols-outlined text-3xl">menu</span>
-          </div>
-        </div>
-      </div>
-    </header>
+
 
     <!-- Hero Section -->
     <section class="relative w-full overflow-hidden bg-[#101c22]">
@@ -313,6 +287,18 @@ const seoDescription = "Modern kitchen remodeling in Florida. Style meets resili
       </div>
     </section>
 
+    <!-- Serving Florida Section -->
+    <section class="py-20 bg-[#f6f7f8] dark:bg-slate-900/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-slate-900 dark:text-white text-3xl font-bold mb-8">Serving Major Florida Cities</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/remodeling/kitchen/modern-design/miami/" class="px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-sm hover:shadow-md transition-shadow text-[#1193d4] font-bold border border-gray-100 dark:border-gray-700">Miami Kitchen Remodeling</a>
+          <a href="/remodeling/kitchen/modern-design/orlando/" class="px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-sm hover:shadow-md transition-shadow text-[#1193d4] font-bold border border-gray-100 dark:border-gray-700">Orlando Kitchen Remodeling</a>
+          <a href="/remodeling/kitchen/modern-design/tampa/" class="px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-sm hover:shadow-md transition-shadow text-[#1193d4] font-bold border border-gray-100 dark:border-gray-700">Tampa Kitchen Remodeling</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Bottom CTA -->
     <section class="relative py-24 bg-[#1193d4] overflow-hidden">
       <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
@@ -334,58 +320,6 @@ const seoDescription = "Modern kitchen remodeling in Florida. Style meets resili
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#101c22] text-slate-400 py-12 border-t border-gray-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div class="col-span-1 md:col-span-1">
-            <div class="flex items-center gap-2 text-white mb-4">
-              <span class="material-symbols-outlined text-3xl text-[#1193d4]">roofing</span>
-              <span class="font-bold text-lg">Paramount</span>
-            </div>
-            <p class="text-sm">Restoring and remodeling Florida homes with resilience and style since 2010.</p>
-          </div>
-          <div>
-            <h4 class="text-white font-bold mb-4">Services</h4>
-            <ul class="space-y-2 text-sm">
-              <li><a class="hover:text-[#1193d4] transition-colors" href="/remodeling/kitchen/">Kitchen Remodeling</a></li>
-              <li><a class="hover:text-[#1193d4] transition-colors" href="/restoration/water-damage/">Water Restoration</a></li>
-              <li><a class="hover:text-[#1193d4] transition-colors" href="/restoration/storm-damage/">Storm Damage</a></li>
-              <li><a class="hover:text-[#1193d4] transition-colors" href="/commercial/">Commercial Services</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-white font-bold mb-4">Locations</h4>
-            <ul class="space-y-2 text-sm">
-              <li><a class="hover:text-[#1193d4] transition-colors" href="/service-areas/central-florida/orlando/">Orlando</a></li>
-              <li><a class="hover:text-[#1193d4] transition-colors" href="/service-areas/tampa-bay/tampa/">Tampa</a></li>
-              <li><a class="hover:text-[#1193d4] transition-colors" href="/service-areas/northeast-florida/jacksonville/">Jacksonville</a></li>
-              <li><a class="hover:text-[#1193d4] transition-colors" href="/service-areas/south-florida/miami/">Miami</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-white font-bold mb-4">Connect</h4>
-            <div class="flex gap-4">
-              <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#1193d4] hover:text-white transition-colors" href="#">
-                <span class="font-bold text-xs">FB</span>
-              </a>
-              <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#1193d4] hover:text-white transition-colors" href="#">
-                <span class="font-bold text-xs">IG</span>
-              </a>
-              <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#1193d4] hover:text-white transition-colors" href="#">
-                <span class="font-bold text-xs">LN</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-          <p>© 2024 Paramount Property Restoration. All rights reserved.</p>
-          <div class="flex gap-6">
-            <a class="hover:text-white" href="#">Privacy Policy</a>
-            <a class="hover:text-white" href="#">Terms of Service</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+
   </div>
 </MainLayout>

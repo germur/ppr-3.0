@@ -1,0 +1,464 @@
+[
+    {
+        "city": "Orlando",
+        "slug": "orlando",
+        "cluster": "Central Florida",
+        "county": "Orange",
+        "tier": "Hub",
+        "humidity": "74%",
+        "permit_link": "https://www.orlando.gov/Building-Development/Permits-Inspections",
+        "description": "Transform your Orlando home with a custom modern kitchen. Licensed contractors, hurricane-ready designs & smart tech.",
+        "features": {
+            "climate": "With average high humidity, standard particle board cabinets swell. We use marine-grade plywood boxes.",
+            "lifestyle": "Whether you have a home near Lake Eola or in Winter Park, we optimize layouts for open-concept living."
+        }
+    },
+    {
+        "city": "Kissimmee",
+        "slug": "kissimmee",
+        "cluster": "Central Florida",
+        "county": "Osceola",
+        "tier": "Spoke",
+        "humidity": "73%",
+        "permit_link": "https://www.kissimmee.gov/Services/Building-Permits",
+        "description": "Expert kitchen remodeling in Kissimmee. Durable designs for residential homes and vacation rentals.",
+        "features": {
+            "climate": "Kissimmee's humid subtropical climate demands moisture-resistant cabinetry materials.",
+            "lifestyle": "Ideal for high-traffic vacation rentals and family homes needing durable, modern finishes."
+        }
+    },
+    {
+        "city": "Winter Garden",
+        "slug": "winter-garden",
+        "cluster": "Central Florida",
+        "county": "Orange",
+        "tier": "Spoke",
+        "humidity": "72%",
+        "permit_link": "https://www.cwgdn.com/335/Building-Permits",
+        "description": "Modernize your Winter Garden home with our custom kitchen renovation services.",
+        "features": {
+            "climate": "Protect your investment from humidity with our sealed, heavy-duty cabinet construction.",
+            "lifestyle": "Enhancing historic charm or new construction with open, light-filled culinary spaces."
+        }
+    },
+    {
+        "city": "Miami",
+        "slug": "miami",
+        "cluster": "South Florida",
+        "county": "Miami-Dade",
+        "tier": "Hub",
+        "humidity": "70%",
+        "permit_link": "https://www.miamidade.gov/building/",
+        "description": "Transform your Miami home with a custom modern kitchen. Licensed contractors, hurricane-ready designs.",
+        "features": {
+            "climate": "With average humidity over 70%, standard particle board cabinets swell and mold.",
+            "lifestyle": "Maximize your square footage by connecting your kitchen to your patio with impact-rated sliding doors."
+        }
+    },
+    {
+        "city": "Fort Lauderdale",
+        "slug": "fort-lauderdale",
+        "cluster": "South Florida",
+        "county": "Broward",
+        "tier": "Spoke",
+        "humidity": "76%",
+        "permit_link": "https://www.fortlauderdale.gov/government/departments-a-h/development-services/building-services",
+        "description": "Luxury kitchen remodeling in Fort Lauderdale. Coastal-inspired designs built to last.",
+        "features": {
+            "climate": "Salt air and humidity require specialized finishes to prevent corrosion and warping.",
+            "lifestyle": "Sleek, modern designs that complement the yachting and coastal luxury lifestyle."
+        }
+    },
+    {
+        "city": "Tampa",
+        "slug": "tampa",
+        "cluster": "Tampa Bay",
+        "county": "Hillsborough",
+        "tier": "Hub",
+        "humidity": "74%",
+        "permit_link": "https://www.tampa.gov/construction-services",
+        "description": "Transform your Tampa home with a custom modern kitchen. Licensed contractors, hurricane-ready designs.",
+        "features": {
+            "climate": "In Tampa, humidity averages 74%. We use marine-grade plywood and moisture-resistant seals.",
+            "lifestyle": "Maximize your square footage by connecting your kitchen to your patio with impact-rated sliding doors."
+        }
+    },
+    {
+        "city": "St. Petersburg",
+        "slug": "st-petersburg",
+        "cluster": "Tampa Bay",
+        "county": "Pinellas",
+        "tier": "Spoke",
+        "humidity": "75%",
+        "permit_link": "https://www.stpete.org/business/building_permitting/",
+        "description": "Renovating historic and modern homes in St. Petersburg with resilient kitchen designs.",
+        "features": {
+            "climate": "Coastal resilience is key. We use materials that withstand salt spray and high moisture.",
+            "lifestyle": "blending historic bungalow charm with modern, storm-safe kitchen functionality."
+        }
+    },
+    {
+        "city": "Altamonte Springs",
+        "slug": "altamonte-springs",
+        "cluster": "Central Florida",
+        "county": "Seminole",
+        "tier": "Spoke",
+        "humidity": "72%",
+        "permit_link": "https://www.altamonte.org/211/Building-Permits",
+        "description": "Revitalize your Altamonte Springs home with a modern kitchen remodel designed for style and functionality.",
+        "features": {
+            "climate": "Our moisture-resistant cabinetry is perfect for Altamonte Springs' humid climate.",
+            "lifestyle": "Creating efficient, open workspaces for family living and entertaining."
+        }
+    },
+    {
+        "city": "Clermont",
+        "slug": "clermont",
+        "cluster": "Central Florida",
+        "county": "Lake",
+        "tier": "Spoke",
+        "humidity": "71%",
+        "permit_link": "https://www.clermontfl.gov/247/Building-Services",
+        "description": "Custom kitchen remodeling for Clermont's growing residential community. Modern designs tailored to you.",
+        "features": {
+            "climate": "Durable materials selected to withstand temperature fluctuations and humidity.",
+            "lifestyle": "Spacious, open-plan kitchens matching the expansive feel of Clermont living."
+        }
+    },
+    {
+        "city": "Sanford",
+        "slug": "sanford",
+        "cluster": "Central Florida",
+        "county": "Seminole",
+        "tier": "Spoke",
+        "humidity": "73%",
+        "permit_link": "https://www.sanfordfl.gov/government/city-departments/development-services/building",
+        "description": "Historic charm meets modern convenience with our kitchen remodeling services in Sanford.",
+        "features": {
+            "climate": "Specialized waterproofing and humidity control for historic and modern structures.",
+            "lifestyle": "Blending traditional aesthetics with modern smart-home capabilities."
+        }
+    },
+    {
+        "city": "Oviedo",
+        "slug": "oviedo",
+        "cluster": "Central Florida",
+        "county": "Seminole",
+        "tier": "Spoke",
+        "humidity": "72%",
+        "permit_link": "https://www.cityofoviedo.net/143/Building-Services",
+        "description": "Enhance your Oviedo home with a custom kitchen renovation. Quality craftsmanship guaranteed.",
+        "features": {
+            "climate": "Using premium sealants and materials to combat Central Florida's wet season.",
+            "lifestyle": "Family-centric kitchen designs with durable surfaces for high-traffic areas."
+        }
+    },
+    {
+        "city": "Lakeland",
+        "slug": "lakeland",
+        "cluster": "Central Florida",
+        "county": "Polk",
+        "tier": "Spoke",
+        "humidity": "73%",
+        "permit_link": "https://www.lakelandgov.net/departments/community-economic-development/building-inspection/permits/",
+        "description": "Connecting style and durability, our kitchen remodels in Lakeland stand the test of time.",
+        "features": {
+            "climate": "Resilient construction methods to handle Lakeland's specific humidity profile.",
+            "lifestyle": "Bridging the gap between traditional comfort and modern efficiency."
+        }
+    },
+    {
+        "city": "West Palm Beach",
+        "slug": "west-palm-beach",
+        "cluster": "South Florida",
+        "county": "Palm Beach",
+        "tier": "Spoke",
+        "humidity": "75%",
+        "permit_link": "https://www.wpb.org/government/development-services/building-permits",
+        "description": "High-end kitchen remodeling in West Palm Beach. Luxury finishes for the discerning homeowner.",
+        "features": {
+            "climate": "Salt-air resilient finishes to maintain longevity in coastal environments.",
+            "lifestyle": "Sophisticated designs maximizing views and indoor-outdoor entertainment flows."
+        }
+    },
+    {
+        "city": "Boca Raton",
+        "slug": "boca-raton",
+        "cluster": "South Florida",
+        "county": "Palm Beach",
+        "tier": "Spoke",
+        "humidity": "74%",
+        "permit_link": "https://www.myboca.us/936/Building-Permits",
+        "description": "Exclusive kitchen renovations in Boca Raton. Spa-inspired designs and premium materials.",
+        "features": {
+            "climate": "Mold-resistant, high-grade materials essential for South Florida luxury homes.",
+            "lifestyle": "Elegant, spa-like features and gourmet chef capabilities for the ultimate home experience."
+        }
+    },
+    {
+        "city": "Hollywood",
+        "slug": "hollywood",
+        "cluster": "South Florida",
+        "county": "Broward",
+        "tier": "Spoke",
+        "humidity": "76%",
+        "permit_link": "https://www.hollywoodfl.org/168/Building-Division",
+        "description": "Modern, storm-ready kitchen remodeling for Hollywood homes. Safety meets style.",
+        "features": {
+            "climate": "Robust construction to withstand severe weather events and humidity.",
+            "lifestyle": "Contemporary designs perfect for beachfront condos and suburban homes alike."
+        }
+    },
+    {
+        "city": "Pembroke Pines",
+        "slug": "pembroke-pines",
+        "cluster": "South Florida",
+        "county": "Broward",
+        "tier": "Spoke",
+        "humidity": "75%",
+        "permit_link": "https://www.ppines.com/166/Building-Department",
+        "description": "Family-focused kitchen renovations in Pembroke Pines. Durable, beautiful, and functional.",
+        "features": {
+            "climate": "Focus on moisture mitigation to protect cabinetry and flooring year-round.",
+            "lifestyle": "Open layouts designed for family gatherings and easy maintenance."
+        }
+    },
+    {
+        "city": "Miramar",
+        "slug": "miramar",
+        "cluster": "South Florida",
+        "county": "Broward",
+        "tier": "Spoke",
+        "humidity": "75%",
+        "permit_link": "https://www.miramarfl.gov/173/Building",
+        "description": "Upgrade your Miramar property with a kitchen that blends resilience with modern aesthetics.",
+        "features": {
+            "climate": "Materials chosen for their ability to resist high heat and humidity levels.",
+            "lifestyle": "Smart, functional designs that maximize space and usability."
+        }
+    },
+    {
+        "city": "Coral Gables",
+        "slug": "coral-gables",
+        "cluster": "South Florida",
+        "county": "Miami-Dade",
+        "tier": "Spoke",
+        "humidity": "70%",
+        "permit_link": "https://www.coralgables.com/departments/development-services/building",
+        "description": "Preserving history with luxury kitchen updates in Coral Gables. Refined elegance for every home.",
+        "features": {
+            "climate": "Expertise in historic preservation amidst a humid, tropical climate.",
+            "lifestyle": "Timeless designs that respect architectural heritage while offering modern luxury."
+        }
+    },
+    {
+        "city": "Homestead",
+        "slug": "homestead",
+        "cluster": "South Florida",
+        "county": "Miami-Dade",
+        "tier": "Spoke",
+        "humidity": "72%",
+        "permit_link": "https://www.cityofhomestead.com/145/Building-Safety",
+        "description": "Resilient kitchen remodeling for Homestead's growing community. Built for the future.",
+        "features": {
+            "climate": "Hurricane-ready features incorporated seamlessly into every design.",
+            "lifestyle": "Practical, robust designs for new families and long-time residents."
+        }
+    },
+    {
+        "city": "Clearwater",
+        "slug": "clearwater",
+        "cluster": "Tampa Bay",
+        "county": "Pinellas",
+        "tier": "Spoke",
+        "humidity": "74%",
+        "permit_link": "https://www.myclearwater.com/My-Government/City-Departments/Planning-Development/Building-Permits",
+        "description": "Coastal kitchen makeovers in Clearwater. Storm-resistant and beautifully designed.",
+        "features": {
+            "climate": "Materials specifically chosen to resist salt, sand, and humidity.",
+            "lifestyle": "Bright, airy designs that reflect the beachside lifestyle."
+        }
+    },
+    {
+        "city": "Brandon",
+        "slug": "brandon",
+        "cluster": "Tampa Bay",
+        "county": "Hillsborough",
+        "tier": "Spoke",
+        "humidity": "73%",
+        "permit_link": "https://www.hillsboroughcounty.org/en/businesses/permits-and-records",
+        "description": "Modernize your Brandon home with our expert kitchen remodeling services.",
+        "features": {
+            "climate": "Durable finishes to handle the inland humidity and heat.",
+            "lifestyle": "Comfortable, stylish kitchens designed for suburban living."
+        }
+    },
+    {
+        "city": "Bradenton",
+        "slug": "bradenton",
+        "cluster": "Tampa Bay",
+        "county": "Manatee",
+        "tier": "Spoke",
+        "humidity": "74%",
+        "permit_link": "https://www.cityofbradenton.com/departments/development_services/building_permits.php",
+        "description": "Quality kitchen renovations in Bradenton. Blending function with Florida style.",
+        "features": {
+            "climate": "Construction techniques that prevent moisture buildup and potential damage.",
+            "lifestyle": "Casual, elegant designs suitable for riverfront and suburban homes."
+        }
+    },
+    {
+        "city": "Sarasota",
+        "slug": "sarasota",
+        "cluster": "Tampa Bay",
+        "county": "Sarasota",
+        "tier": "Spoke",
+        "humidity": "73%",
+        "permit_link": "https://www.sarasotafl.gov/government/development-services/building",
+        "description": "Upscale kitchen remodeling in Sarasota. Artful designs for a sophisticated lifestyle.",
+        "features": {
+            "climate": "Premium materials selected for durability in a coastal environment.",
+            "lifestyle": "Artistic, high-end finishes catering to Sarasota's cultural coast vibe."
+        }
+    },
+    {
+        "city": "Fort Myers",
+        "slug": "fort-myers",
+        "cluster": "Southwest Florida",
+        "county": "Lee",
+        "tier": "Hub",
+        "humidity": "74%",
+        "permit_link": "https://www.cityftmyers.com/1247/Building-Permits",
+        "description": "Resilient kitchen remodeling in Fort Myers. Restoring and upgrading for storm safety.",
+        "features": {
+            "climate": "Rigorous standards for storm resilience and moisture control.",
+            "lifestyle": "Rebuilding stronger with modern amenities and open flows."
+        }
+    },
+    {
+        "city": "Naples",
+        "slug": "naples",
+        "cluster": "Southwest Florida",
+        "county": "Collier",
+        "tier": "Hub",
+        "humidity": "73%",
+        "permit_link": "https://www.naplesgov.com/building",
+        "description": "Luxury kitchen design in Naples. Where resilience meets refinement.",
+        "features": {
+            "climate": "Top-tier waterproofing and impact-resistant features for luxury estates.",
+            "lifestyle": "Opulent designs with gourmet features for the ultimate entertaining space."
+        }
+    },
+    {
+        "city": "Cape Coral",
+        "slug": "cape-coral",
+        "cluster": "Southwest Florida",
+        "county": "Lee",
+        "tier": "Spoke",
+        "humidity": "74%",
+        "permit_link": "https://www.capecoral.gov/government/city_departments/building/index.php",
+        "description": "Modern waterfront kitchen remodeling in Cape Coral. Designed for the canal lifestyle.",
+        "features": {
+            "climate": "Specialized materials to withstand the unique canal-front microclimate.",
+            "lifestyle": "Designs that emphasize water views and indoor-outdoor connectivity."
+        }
+    },
+    {
+        "city": "Bonita Springs",
+        "slug": "bonita-springs",
+        "cluster": "Southwest Florida",
+        "county": "Lee",
+        "tier": "Spoke",
+        "humidity": "74%",
+        "permit_link": "https://www.cityofbonitasprings.org/services/community_development/building_permitting",
+        "description": "Elegant kitchen updates in Bonita Springs. Harmonizing nature with modern design.",
+        "features": {
+            "climate": "Eco-friendly, moisture-resistant materials for a sustainable home.",
+            "lifestyle": "Peaceful, nature-inspired designs for a relaxing culinary environment."
+        }
+    },
+    {
+        "city": "Estero",
+        "slug": "estero",
+        "cluster": "Southwest Florida",
+        "county": "Lee",
+        "tier": "Spoke",
+        "humidity": "74%",
+        "permit_link": "https://estero-fl.gov/building-permitting/",
+        "description": "Contemporary kitchen remodeling for Estero's modern communities.",
+        "features": {
+            "climate": "New construction standards applied to every remodel for maximum longevity.",
+            "lifestyle": "Sleek, modern lines tailored to Estero's upscale residential developments."
+        }
+    },
+    {
+        "city": "Marco Island",
+        "slug": "marco-island",
+        "cluster": "Southwest Florida",
+        "county": "Collier",
+        "tier": "Spoke",
+        "humidity": "75%",
+        "permit_link": "https://www.cityofmarcoisland.com/building",
+        "description": "Island-inspired kitchen renovations on Marco Island. Luxury meets durability.",
+        "features": {
+            "climate": "Construction designed to withstand exposure to extreme coastal elements.",
+            "lifestyle": "Tropical luxury designs that bring the vacation vibe home."
+        }
+    },
+    {
+        "city": "Port St. Lucie",
+        "slug": "port-st-lucie",
+        "cluster": "Treasure Coast",
+        "county": "St. Lucie",
+        "tier": "Hub",
+        "humidity": "74%",
+        "permit_link": "https://www.cityofpsl.com/government/departments/building",
+        "description": "Growing with the city, our Port St. Lucie kitchen remodels define modern Florida living.",
+        "features": {
+            "climate": "Durable construction to handle the Treasure Coast's humidity and storms.",
+            "lifestyle": "Spacious, value-driven designs for growing families and retirees."
+        }
+    },
+    {
+        "city": "Stuart",
+        "slug": "stuart",
+        "cluster": "Treasure Coast",
+        "county": "Martin",
+        "tier": "Spoke",
+        "humidity": "74%",
+        "permit_link": "https://www.cityofstuart.us/166/Building-Department",
+        "description": "Coastal charm refined. Kitchen remodeling in Stuart for the relaxed lifestyle.",
+        "features": {
+            "climate": "Materials that resist salt air and moisture, preserving your kitchen's beauty.",
+            "lifestyle": "Nautical and coastal themes that reflect Stuart's 'Sailfish Capital' heritage."
+        }
+    },
+    {
+        "city": "Jupiter",
+        "slug": "jupiter",
+        "cluster": "Treasure Coast",
+        "county": "Palm Beach",
+        "tier": "Spoke",
+        "humidity": "74%",
+        "permit_link": "https://www.jupiter.fl.us/155/Building",
+        "description": "Upscale, resilient kitchen designs for Jupiter's coastal community.",
+        "features": {
+            "climate": "High-performance materials for homes exposed to coastal weather patterns.",
+            "lifestyle": "Sophisticated, airy designs for a life centered around the water."
+        }
+    },
+    {
+        "city": "Fort Pierce",
+        "slug": "fort-pierce",
+        "cluster": "Treasure Coast",
+        "county": "St. Lucie",
+        "tier": "Spoke",
+        "humidity": "74%",
+        "permit_link": "https://www.cityoffortpierce.com/152/Building-Department",
+        "description": "Reviving the Sunrise City with expert kitchen remodeling in Fort Pierce.",
+        "features": {
+            "climate": "Practical, durable solutions for historic and new homes alike.",
+            "lifestyle": "Functional, inviting kitchens that serve as the heart of the home."
+        }
+    }
+]

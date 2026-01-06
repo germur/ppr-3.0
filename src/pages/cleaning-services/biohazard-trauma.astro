@@ -1,6 +1,6 @@
 ---
 import Header from '../../components/common/Header.astro';
-import Breadcrumbs from '../../components/common/Breadcrumbs.astro';
+
 import MainLayout from '../../layouts/MainLayout.astro';
 
 // Schema for Biohazard/Crime Scene Cleaning
@@ -60,7 +60,11 @@ const faqSchema = {
   customSchema={[serviceSchema, faqSchema]}
   hideHeader={true}
   hideFooter={false}
-  breadcrumbItems={[]}
+  breadcrumbItems={[
+    { label: 'Home', href: '/' },
+    { label: 'Cleaning Services', href: '/cleaning-services/' },
+    { label: 'Biohazard & Trauma', href: '/cleaning-services/biohazard-trauma/' }
+  ]}
 >
     <!-- Fonts (Lexend & Noto Sans as per design) -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -87,16 +91,7 @@ const faqSchema = {
         <Header theme="light" sticky={false} />
     </div>
 
-    <!-- Breadcrumbs -->
-    <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-            <Breadcrumbs items={[
-                { label: 'Home', href: '/' },
-                { label: 'Cleaning Services', href: '/cleaning-services/' },
-                { label: 'Biohazard & Trauma', href: '/cleaning-services/biohazard-trauma/' }
-            ]} />
-        </div>
-    </div>
+
 
     <div class="font-['Noto_Sans'] text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden bg-[#f6f7f8] dark:bg-[#101c22]">
         

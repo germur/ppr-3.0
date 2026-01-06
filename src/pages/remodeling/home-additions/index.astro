@@ -1,6 +1,6 @@
 ---
 import Header from '../../../components/common/Header.astro';
-import Breadcrumbs from '../../../components/common/Breadcrumbs.astro';
+
 import MainLayout from '../../../layouts/MainLayout.astro';
 
 const pageTitle = "Home Additions & ADU Builders in Florida | Expand Your Space | Paramount";
@@ -58,7 +58,11 @@ const additionsSchema = {
   customSchema={additionsSchema}
   hideHeader={true}
   hideFooter={false}
-  breadcrumbItems={[]}
+  breadcrumbItems={[
+    { label: 'Home', href: '/' },
+    { label: 'Remodeling', href: '/remodeling/' },
+    { label: 'Additions & ADUs', href: '/remodeling/home-additions/' }
+  ]}
 >
     <!-- Inject Fonts into Head -->
     <fragment slot="head">
@@ -84,16 +88,7 @@ const additionsSchema = {
         <Header theme="light" sticky={false} />
     </div>
 
-    <!-- Breadcrumbs -->
-    <div class="bg-gray-50 dark:bg-black/20 border-b border-gray-200 dark:border-gray-800">
-        <div class="container mx-auto px-4 max-w-6xl py-2">
-            <Breadcrumbs items={[
-                { label: 'Home', href: '/' },
-                { label: 'Remodeling', href: '/remodeling/' },
-                { label: 'Additions & ADUs', href: '/remodeling/home-additions/' }
-            ]} />
-        </div>
-    </div>
+
     
     <!-- Local Styles -->
     <style>
@@ -191,7 +186,7 @@ const additionsSchema = {
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
                 
                 <!-- The Modern ADU (Large) -->
-                <div class="md:col-span-2 row-span-2 relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all">
+                <a href="/remodeling/home-additions/adu-guest-house/" class="md:col-span-2 row-span-2 relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all block">
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern backyard ADU with floor to ceiling windows" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHg78_q5K7zR0946720D23851532910748123564012395678019345678912345678901234567890123456789012345678901234567890123456789");'></div> 
                     <div class="absolute inset-0 bg-gray-600 mix-blend-multiply"></div>
                      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_lNPtFDntKgzGHzRGx9UCLVH472zRFHPPmigN-VJbebE0x-xhHQTgrGARvFqTqdx96DxFjaviySHVSOmdNOcaki8vgvZZjZF4S7mD2SPz4Z6xnx1Xlov8Fj6XacYa33nrQ9nWVfdUnb45ezFrTN6IhboftCftg18MoeEkK6Zh3efDtfc3kUD0gOcfUcbg_2iFEMKx_aAj73e8o3ZwgT29KFueNNqwhoBikxXcQh9Zu1NMBKZAqXpbCYurm-EMPw7gmywKPY-VpQaj");'></div>
@@ -201,10 +196,10 @@ const additionsSchema = {
                         <h3 class="text-2xl font-bold text-white mb-2">The Modern ADU (Accessory Dwelling Unit)</h3>
                         <p class="text-gray-200 text-sm md:text-base mb-4 max-w-lg">Independent structures for aging parents (in-law quarters) or rental income (Airbnb). Complete with kitchenette and bath.</p>
                          <p class="text-blue-200 text-xs italic">
-                            <a href="/remodeling/kitchen/" class="hover:underline hover:text-white transition-colors">We design compact kitchens efficiently...</a>
+                            <span class="hover:underline hover:text-white transition-colors">We design compact kitchens efficiently...</span>
                         </p>
                     </div>
-                </div>
+                </a>
 
                 <!-- Second Story Additions -->
                 <div class="relative group overflow-hidden rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 flex flex-col justify-between">

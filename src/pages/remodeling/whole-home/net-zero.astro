@@ -1,10 +1,356 @@
 ---
 import MainLayout from '../../../layouts/MainLayout.astro';
+
+const pageTitle = "Net-Zero Energy Retrofits - Paramount Property Restoration";
+const pageDescription = "Combine solar power, battery storage, and high-efficiency remodeling to achieve true net-zero status and energy security in Florida.";
+
+const netZeroSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Net-Zero Home Retrofitting",
+  "provider": {
+    "@type": "GeneralContractor",
+    "name": "Paramount Property Restoration",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "FL"
+    }
+  },
+  "description": "Comprehensive home upgrades for net-zero energy efficiency, including solar roofing, battery storage, and envelope sealing.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Net-Zero Upgrades",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Solar Roof Integration"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Home Battery Storage Systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Unvented Attic / Envelope Sealing"
+        }
+      }
+    ]
+  }
+};
 ---
 
-<MainLayout title="Net-Zero Home Retrofit | Paramount" description="Energy-efficient whole home retrofits. Solar integration, insulation, and high-efficiency systems for net-zero living.">
-    <section class="py-20 px-4 max-w-7xl mx-auto">
-        <h1 class="text-4xl font-bold mb-6">Net-Zero Home Retrofit</h1>
-        <p class="text-lg text-gray-600 mb-8">Content Coming Soon...</p>
-    </section>
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  customSchema={netZeroSchema}
+  breadcrumbItems={[
+    { label: 'Home', href: '/' },
+    { label: 'Remodeling', href: '/remodeling/' },
+    { label: 'Net-Zero Retrofits', href: '/remodeling/whole-home/net-zero/' }
+  ]}
+>
+  <!-- Fragment for Head: specific styles if needed -->
+  <fragment slot="head">
+      <style>
+          /* Custom Tooltip implementation for CSS-only interactivity specific to this page */
+          .tooltip-trigger:hover .tooltip-content {
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+          }
+          /* Ensure material symbols render correctly if not globally set identical */
+          .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+      </style>
+  </fragment>
+
+  <!-- Hero Section -->
+  <div class="relative w-full flex justify-center bg-white dark:bg-[#111921]">
+      <div class="max-w-[1280px] w-full px-4 md:px-10 py-8 md:py-12">
+          <div class="relative rounded-2xl overflow-hidden min-h-[560px] flex items-center shadow-xl group">
+              <!-- Background Image -->
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern eco-friendly house with solar panels on roof and electric car in driveway" style='background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCexGqwgINc3tqmhfm2d1HAU14SNAwXRVKJvkZnvtQI01ekA_raMJ5cFOJcM_miMkpX8hxpCivcCcAz6tneTJj8PUIuXn5c99NaGuOoXfZVSZqS-TZ70AqMY-QoE5uB-it7kHOXPhaJnDXoyLoHJZ9o7K7qIZSMYXSB6PsxKG3PxK-hdGeA3tQq31xScItpAre1CZlmXEB2hVDaX95dfrDvpH7oNbClCq_ZK72S4J2VgN-MPedqTvKeQKT_JMWxzluBAH3FcXIZSnGl");'>
+              </div>
+              <div class="relative z-10 p-8 md:p-16 max-w-2xl flex flex-col gap-6">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#ff6b00]/90 text-white text-xs font-bold uppercase tracking-wider rounded-full w-fit backdrop-blur-sm border border-white/20">
+                      <span class="material-symbols-outlined text-sm">bolt</span>
+                      Energy Independence
+                  </div>
+                  <h1 class="text-white text-4xl md:text-6xl font-[Space_Grotesk] font-black leading-tight tracking-tight">
+                      Power Your Life,<br/> Not the Grid.
+                  </h1>
+                  <p class="text-gray-200 text-lg md:text-xl font-light leading-relaxed max-w-lg">
+                      Combine solar power, battery storage, and high-efficiency remodeling to achieve true net-zero status and energy security.
+                  </p>
+                  <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                      <button class="flex items-center justify-center h-12 px-8 bg-[#197fe6] hover:bg-blue-600 text-white font-[Space_Grotesk] font-bold text-base rounded-lg shadow-lg hover:shadow-xl transition-all">
+                          Calculate Your Savings
+                      </button>
+                      <button class="flex items-center justify-center h-12 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-[Space_Grotesk] font-medium text-base rounded-lg transition-all">
+                          <span class="material-symbols-outlined mr-2">play_circle</span>
+                          See How It Works
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Incentive Urgency Section -->
+  <div class="w-full flex justify-center bg-[#f6f7f8] dark:bg-[#0b1117] py-12">
+      <div class="max-w-[1280px] w-full px-4 md:px-10 flex flex-col gap-10">
+          <!-- Alert Box -->
+          <div class="bg-orange-50 dark:bg-orange-950/30 border-l-4 border-[#ff6b00] rounded-r-lg p-6 flex flex-col md:flex-row gap-6 items-start md:items-center shadow-sm">
+              <div class="p-3 bg-[#ff6b00]/10 rounded-full text-[#ff6b00] shrink-0">
+                  <span class="material-symbols-outlined text-3xl icon-filled">timer</span>
+              </div>
+              <div class="flex-1">
+                  <h3 class="text-lg md:text-xl font-[Space_Grotesk] font-bold text-gray-900 dark:text-gray-100 mb-1">Federal Solar Tax Credits (ITC) are changing</h3>
+                  <p class="text-gray-700 dark:text-gray-300">The 30% Investment Tax Credit (ITC) for solar and battery storage is time-sensitive. Act now to lock in maximum savings before rates adjust.</p>
+              </div>
+              <button class="whitespace-nowrap px-6 py-2.5 bg-[#ff6b00] hover:bg-orange-600 text-white font-bold font-[Space_Grotesk] rounded-lg transition-colors shadow-sm">
+                  Check Eligibility
+              </button>
+          </div>
+
+          <!-- Comparison Table -->
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
+              <div class="lg:col-span-4 flex flex-col justify-center h-full gap-4">
+                  <h2 class="text-3xl font-[Space_Grotesk] font-bold text-[#111418] dark:text-white">Why Net-Zero Makes Financial Sense</h2>
+                  <p class="text-gray-500 dark:text-gray-400 text-lg">Investing in a net-zero retrofit isn't just about sustainability—it's about long-term financial security and immediate property value increase.</p>
+                  <div class="flex items-center gap-2 text-[#197fe6] font-bold mt-2">
+                      <span class="material-symbols-outlined">trending_up</span>
+                      <span>Average ROI of 12-15%</span>
+                  </div>
+              </div>
+              <div class="lg:col-span-8 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm bg-white dark:bg-[#1a2632]">
+                  <div class="overflow-x-auto">
+                      <table class="w-full text-left text-sm whitespace-nowrap">
+                          <thead class="uppercase tracking-wider border-b border-gray-100 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/50 text-gray-500 font-[Space_Grotesk]">
+                              <tr>
+                                  <th class="px-6 py-4 font-bold" scope="col">Investment Item</th>
+                                  <th class="px-6 py-4 font-bold" scope="col">Standard Remodel</th>
+                                  <th class="px-6 py-4 font-bold text-[#197fe6]" scope="col">Net-Zero Retrofit</th>
+                                  <th class="px-6 py-4 font-bold text-green-600 dark:text-green-400 text-right" scope="col">Potential Savings</th>
+                              </tr>
+                          </thead>
+                          <tbody class="font-medium text-[#111418] dark:text-gray-200">
+                              <tr class="border-b border-gray-50 dark:border-gray-700 hover:bg-gray-50/50 dark:hover:bg-gray-800/50 transition-colors">
+                                  <td class="px-6 py-4 font-bold">Roof Replacement</td>
+                                  <td class="px-6 py-4 text-gray-500 dark:text-gray-400">$15,000</td>
+                                  <td class="px-6 py-4">$28,000 (Solar Roof)</td>
+                                  <td class="px-6 py-4 text-green-600 dark:text-green-400 font-bold text-right">Offset Energy Bill</td>
+                              </tr>
+                              <tr class="border-b border-gray-50 dark:border-gray-700 hover:bg-gray-50/50 dark:hover:bg-gray-800/50 transition-colors">
+                                  <td class="px-6 py-4 font-bold">HVAC System</td>
+                                  <td class="px-6 py-4 text-gray-500 dark:text-gray-400">$8,000</td>
+                                  <td class="px-6 py-4">$12,000 (Heat Pump)</td>
+                                  <td class="px-6 py-4 text-green-600 dark:text-green-400 font-bold text-right">$2,000 Tax Credit</td>
+                              </tr>
+                              <tr class="border-b border-gray-50 dark:border-gray-700 hover:bg-gray-50/50 dark:hover:bg-gray-800/50 transition-colors">
+                                  <td class="px-6 py-4 font-bold">Windows</td>
+                                  <td class="px-6 py-4 text-gray-500 dark:text-gray-400">$12,000</td>
+                                  <td class="px-6 py-4">$18,000 (Impact Low-E)</td>
+                                  <td class="px-6 py-4 text-green-600 dark:text-green-400 font-bold text-right">30% Energy Reduction</td>
+                              </tr>
+                              <tr class="bg-[#197fe6]/5 dark:bg-[#197fe6]/10">
+                                  <td class="px-6 py-4 text-[#197fe6] font-bold">Total 10-Year Value</td>
+                                  <td class="px-6 py-4 text-gray-500 dark:text-gray-400">-$35,000 Cost</td>
+                                  <td class="px-6 py-4 text-[#197fe6] font-bold font-[Space_Grotesk]">+$12,000 Net Positive</td>
+                                  <td class="px-6 py-4 text-green-600 dark:text-green-400 font-bold text-right text-lg">~ $47k Difference</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Interactive Diagram Section -->
+  <div class="w-full flex justify-center bg-white dark:bg-[#111921] py-16">
+      <div class="max-w-[1280px] w-full px-4 md:px-10">
+          <div class="flex flex-col items-center mb-12 text-center">
+              <span class="text-[#197fe6] font-bold font-[Space_Grotesk] tracking-wider uppercase mb-2">Ecosystem</span>
+              <h2 class="text-3xl md:text-4xl font-[Space_Grotesk] font-bold text-[#111418] dark:text-white">The Connected Home</h2>
+              <p class="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl text-lg">Hover over the numbered zones to explore how our integrated technologies work together to create a self-sustaining ecosystem.</p>
+          </div>
+          <div class="bg-[#f6f7f8] dark:bg-[#1a2632] rounded-2xl p-6 md:p-8 shadow-inner border border-gray-100 dark:border-gray-700">
+              <div class="grid lg:grid-cols-2 gap-10 items-center">
+                  <!-- Left: Visual Representation -->
+                  <div class="relative w-full aspect-video bg-gray-200 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg group">
+                      <div class="absolute inset-0 bg-cover bg-center" data-alt="Diagram of a house showing solar panels, battery, and EV charger" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4aLJTOyQW4sl-sT2-QBJ_XjgLIGeRBA4INR4vszsqTH9_ZhU5zEFqIlaEjqwznRKttcLXE0I_FSf-zwmPAEYU8Zvlcv9pniT5ZUieHthBp9T0EGTUOh4EZQEw1uXOVDS1mNpElHtiXgV9BnSLtgg_jEJ2qBQtoTSsGJcSzvOHjpwflJthYYqVq5fw9hODoBIBij_EFR90Oy3L3OxQO87NCeT_JVlfptWPaNnIRTajmbErmjczm7oY1L2w0sWGEHzkKpUep1C7rLgo");'>
+                      </div>
+                      <!-- Gradient overlay for text readability -->
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                      
+                      <!-- Interactive Hotspots -->
+                      
+                      <!-- Hotspot 1: Roof -->
+                      <div class="absolute top-[20%] left-[50%] -translate-x-1/2 group/spot">
+                          <div class="relative flex items-center justify-center size-8 md:size-10 bg-[#197fe6] text-white rounded-full font-bold shadow-[0_0_15px_rgba(25,127,230,0.6)] animate-pulse cursor-pointer hover:animate-none hover:scale-110 transition-transform peer">
+                              1
+                          </div>
+                          <!-- Tooltip -->
+                          <div class="absolute top-12 left-1/2 -translate-x-1/2 w-48 bg-white dark:bg-gray-900 p-3 rounded-lg shadow-xl opacity-0 invisible peer-hover:opacity-100 peer-hover:visible transition-all duration-300 z-20 text-center pointer-events-none border border-gray-200 dark:border-gray-700">
+                              <p class="text-xs font-bold text-gray-900 dark:text-white">Solar Array</p>
+                              <p class="text-[10px] text-gray-500 dark:text-gray-400">High-efficiency photovoltaic panels capture maximum sunlight.</p>
+                          </div>
+                      </div>
+
+                      <!-- Hotspot 2: Garage -->
+                      <div class="absolute bottom-[20%] left-[25%] group/spot">
+                          <div class="relative flex items-center justify-center size-8 md:size-10 bg-[#ff6b00] text-white rounded-full font-bold shadow-[0_0_15px_rgba(255,107,0,0.6)] cursor-pointer hover:scale-110 transition-transform peer">
+                              2
+                          </div>
+                          <!-- Tooltip -->
+                          <div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-48 bg-white dark:bg-gray-900 p-3 rounded-lg shadow-xl opacity-0 invisible peer-hover:opacity-100 peer-hover:visible transition-all duration-300 z-20 text-center pointer-events-none border border-gray-200 dark:border-gray-700">
+                              <p class="text-xs font-bold text-gray-900 dark:text-white">EV Charger (V2H)</p>
+                              <p class="text-[10px] text-gray-500 dark:text-gray-400">Bidirectional charging allows your car to power your home.</p>
+                          </div>
+                      </div>
+
+                      <!-- Hotspot 3: Battery/Wall -->
+                      <div class="absolute bottom-[40%] right-[30%] group/spot">
+                          <div class="relative flex items-center justify-center size-8 md:size-10 bg-[#197fe6] text-white rounded-full font-bold shadow-[0_0_15px_rgba(25,127,230,0.6)] cursor-pointer hover:scale-110 transition-transform peer">
+                              3
+                          </div>
+                          <!-- Tooltip -->
+                          <div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-48 bg-white dark:bg-gray-900 p-3 rounded-lg shadow-xl opacity-0 invisible peer-hover:opacity-100 peer-hover:visible transition-all duration-300 z-20 text-center pointer-events-none border border-gray-200 dark:border-gray-700">
+                              <p class="text-xs font-bold text-gray-900 dark:text-white">Battery Storage</p>
+                              <p class="text-[10px] text-gray-500 dark:text-gray-400">Store excess solar energy for use at night or during outages.</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Right: Content List -->
+                  <div class="flex flex-col gap-6">
+                      <!-- Item 1 -->
+                      <div class="flex gap-4 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-900 hover:shadow-md transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700 group">
+                          <div class="flex items-center justify-center size-12 rounded-full bg-[#197fe6]/10 text-[#197fe6] group-hover:bg-[#197fe6] group-hover:text-white transition-colors shrink-0">
+                              <span class="font-[Space_Grotesk] font-bold text-xl">1</span>
+                          </div>
+                          <div>
+                              <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-1">Solar Generation</h3>
+                              <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Tier-1 monocrystalline panels designed for low-light performance. Offset up to 100% of your grid usage.</p>
+                          </div>
+                      </div>
+                      <!-- Item 2 -->
+                      <div class="flex gap-4 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-900 hover:shadow-md transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700 group">
+                          <div class="flex items-center justify-center size-12 rounded-full bg-[#ff6b00]/10 text-[#ff6b00] group-hover:bg-[#ff6b00] group-hover:text-white transition-colors shrink-0">
+                              <span class="font-[Space_Grotesk] font-bold text-xl">2</span>
+                          </div>
+                          <div>
+                              <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-1">Vehicle-to-Home (V2H)</h3>
+                              <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Turn your EV into a backup generator. Our bidirectional chargers integrate seamlessly with your home circuit.</p>
+                          </div>
+                      </div>
+                      <!-- Item 3 -->
+                      <div class="flex gap-4 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-900 hover:shadow-md transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700 group">
+                          <div class="flex items-center justify-center size-12 rounded-full bg-[#197fe6]/10 text-[#197fe6] group-hover:bg-[#197fe6] group-hover:text-white transition-colors shrink-0">
+                              <span class="font-[Space_Grotesk] font-bold text-xl">3</span>
+                          </div>
+                          <div>
+                              <h3 class="text-lg font-bold text-[#111418] dark:text-white mb-1">Smart Battery Storage</h3>
+                              <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Lithium-iron phosphate batteries provide safe, long-lasting storage to keep your lights on when the grid goes down.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Technical Solutions Section -->
+  <div class="w-full flex justify-center bg-[#f6f7f8] dark:bg-[#0b1117] pb-20 pt-8">
+      <div class="max-w-[1280px] w-full px-4 md:px-10">
+          <div class="flex justify-between items-end mb-10">
+              <div>
+                  <h2 class="text-3xl font-[Space_Grotesk] font-bold text-[#111418] dark:text-white">Technical Solutions</h2>
+                  <p class="text-gray-500 dark:text-gray-400 mt-2">Comprehensive upgrades for maximum efficiency.</p>
+              </div>
+              <a href="/remodeling/" class="hidden md:flex text-[#197fe6] font-bold hover:underline items-center gap-1">
+                  View All Services <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+              <!-- Card 1: Envelope Sealing -->
+              <div class="bg-white dark:bg-[#1a2632] rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-[#197fe6]/30 transition-all group">
+                  <div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-[#197fe6] flex items-center justify-center mb-6 group-hover:bg-[#197fe6] group-hover:text-white transition-colors">
+                      <span class="material-symbols-outlined text-3xl">home_iot_device</span>
+                  </div>
+                  <h3 class="text-xl font-[Space_Grotesk] font-bold text-[#111418] dark:text-white mb-3">Envelope Sealing</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 leading-relaxed">
+                      Advanced spray foam insulation creates an unvented attic assembly, preventing heat transfer and drastically reducing HVAC load.
+                  </p>
+                  <ul class="text-sm text-[#111418] dark:text-gray-300 space-y-2">
+                      <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Closed-cell foam technology</li>
+                      <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Air leakage reduction</li>
+                  </ul>
+              </div>
+              <!-- Card 2: EV-Ready -->
+              <div class="bg-white dark:bg-[#1a2632] rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-[#ff6b00]/30 transition-all group">
+                  <div class="size-12 rounded-lg bg-orange-50 dark:bg-orange-900/30 text-[#ff6b00] flex items-center justify-center mb-6 group-hover:bg-[#ff6b00] group-hover:text-white transition-colors">
+                      <span class="material-symbols-outlined text-3xl">ev_station</span>
+                  </div>
+                  <h3 class="text-xl font-[Space_Grotesk] font-bold text-[#111418] dark:text-white mb-3">EV-Ready Installations</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 leading-relaxed">
+                      Future-proof your garage with Level 2 chargers and bidirectional hardware. Charge faster and use your car as a battery backup.
+                  </p>
+                  <ul class="text-sm text-[#111418] dark:text-gray-300 space-y-2">
+                      <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> 240V / 50A circuits</li>
+                      <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Smart load management</li>
+                  </ul>
+              </div>
+              <!-- Card 3: Impact Windows -->
+              <div class="bg-white dark:bg-[#1a2632] rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-[#197fe6]/30 transition-all group">
+                  <div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-[#197fe6] flex items-center justify-center mb-6 group-hover:bg-[#197fe6] group-hover:text-white transition-colors">
+                      <span class="material-symbols-outlined text-3xl">shield</span>
+                  </div>
+                  <h3 class="text-xl font-[Space_Grotesk] font-bold text-[#111418] dark:text-white mb-3">Impact Windows</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 leading-relaxed">
+                      Dual-pane Low-E glass that withstands hurricane-force winds while reflecting heat. Security meets energy efficiency.
+                  </p>
+                  <ul class="text-sm text-[#111418] dark:text-gray-300 space-y-2">
+                      <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> Category 5 protection</li>
+                      <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check_circle</span> 99% UV blockage</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Serving Your Community / Local CTA -->
+  <section class="bg-white dark:bg-[#111921] border-t border-gray-100 dark:border-gray-800 py-16">
+      <div class="max-w-[960px] mx-auto px-4 flex flex-col items-center text-center">
+          <div class="mb-6 p-4 bg-[#197fe6]/5 rounded-full">
+              <span class="material-symbols-outlined text-4xl text-[#197fe6]">location_on</span>
+          </div>
+          <h2 class="text-3xl font-[Space_Grotesk] font-bold text-[#111418] dark:text-white mb-4">Serving Your Community</h2>
+          <p class="text-gray-500 dark:text-gray-400 max-w-lg mb-8">
+              Paramount Property Restoration provides Net-Zero Retrofits across the region. Check our localized guides for specific hurricane resilience standards in your county.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+              <a href="/contact/" class="flex items-center justify-center h-12 px-8 bg-[#197fe6] hover:bg-blue-600 text-white font-[Space_Grotesk] font-bold rounded-lg shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
+                  Get a Free Energy Audit
+              </a>
+              <a href="tel:7866022217" class="flex items-center justify-center h-12 px-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 text-[#111418] dark:text-white font-[Space_Grotesk] font-bold rounded-lg transition-all w-full sm:w-auto">
+                  Call (786) 602-2217
+              </a>
+          </div>
+      </div>
+  </section>
+
 </MainLayout>
