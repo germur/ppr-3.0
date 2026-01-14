@@ -13,6 +13,9 @@
 # Bathroom Remodeling (Maps to /service-areas/city/bathroom-remodeling)
 /services/bathroom-remodeling/:city                /service-areas/:city/bathroom-remodeling  301
 
+# Home Additions (No city pages yet, map to main landing)
+/services/home-additions-remodeling/:city          /remodeling/home-additions    301
+
 # Legacy Catch-all
 /restoration / 301
 /services /remodeling-services 301
