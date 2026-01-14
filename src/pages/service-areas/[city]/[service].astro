@@ -34,12 +34,15 @@ export async function getStaticPaths() {
   });
 }
 
+import { cities as cityDataList } from '../../../data/service-areas';
 const { city, service } = Astro.props;
 const { name: cityName, restoration_pain } = city.data;
 
+// Fallback to data file for neighborhoods since Content Collection schema lacks it
+const extendedCity = cityDataList.find(c => c.slug === city.slug);
+const neighborhoods = extendedCity?.neighborhoods || [];
+
 const isRemodeling = service.type === 'remodeling';
-
-
 ---
 
 {isRemodeling ? (
@@ -56,5 +59,18 @@ const isRemodeling = service.type === 'remodeling';
     {service.slug === 'fire-damage-restoration' && <FireTemplate city={city} />}
     {service.slug === 'mold-remediation' && <MoldTemplate city={city} />}
     {service.slug === 'storm-damage-repair' && <StormTemplate city={city} />}
+    
+    {/* Neighborhoods SEO Section - Implemented for Longtail "Brickell" Strategy */}
+    {neighborhoods.length > 0 && (
+      <section class="py-12 bg-gray-50 border-t border-gray-200">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Serving All {cityName} Neighborhoods</h3>
+            <p class="text-gray-700 max-w-3xl mx-auto">
+                We are proud to stand as {cityName}'s leading restoration experts, serving all local communities including <span class="font-semibold">{neighborhoods.join(', ')}</span> and surrounding areas. 
+                Whether you are in {neighborhoods[0]} or near {extendedCity?.landmarks?.[0] || 'downtown'}, our rapid response capability ensures we reach you fast.
+            </p>
+        </div>
+      </section>
+    )}
   </MainLayout>
 )}
