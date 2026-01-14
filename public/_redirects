@@ -1,3 +1,19 @@
+# --- Reglas para niveles profundos (Sub-servicios específicos) ---
+# Fire Damage
+/restoration/fire-damage/fire-damage-repair/:city  /service-areas/:city/fire-damage-restoration  301
+/restoration/fire-damage/smoke-damage/:city        /service-areas/:city/fire-damage-restoration  301
+
+# Water Damage & Leaks
+/restoration/water-damage/leak-repair/:city        /service-areas/:city/water-damage-restoration  301
+/restoration/water-damage/ceiling-water-damage/:city /service-areas/:city/water-damage-restoration 301
+
+# Storm Damage
+/restoration/storm-damage/emergency-storm-repair/:city /service-areas/:city/storm-damage-repair  301
+
+# Bathroom Remodeling (Maps to /service-areas/city/bathroom-remodeling)
+/services/bathroom-remodeling/:city                /service-areas/:city/bathroom-remodeling  301
+
+# Legacy Catch-all
 /restoration / 301
 /services /remodeling-services 301
 /portfolio /remodeling-services 301
