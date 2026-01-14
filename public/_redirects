@@ -16,6 +16,16 @@
 # Home Additions (No city pages yet, map to main landing)
 /services/home-additions-remodeling/:city          /remodeling/home-additions    301
 
+# --- Fixes for Code Bugs & Typos (Manual) ---
+# Fix critical "null" bug in Kitchen Remodeling links
+/services/kitchen-remodeling/null/:city            /remodeling/kitchen/modern-design/:city  301
+
+# Legacy/Typo Fixes
+/home                /            301
+/aboutUs             /contact     301
+/portfolio/portfolio /remodeling  301
+/blog/blog/post      /resources   301
+
 # Legacy Catch-all
 /restoration / 301
 /services /remodeling-services 301
