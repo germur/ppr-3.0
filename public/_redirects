@@ -23,6 +23,7 @@
 # Legacy/Typo Fixes
 /home                /            301
 /aboutUs             /contact     301
+/services/living-dining /remodeling 301
 /portfolio/portfolio /remodeling  301
 /blog/blog/post      /resources   301
 
