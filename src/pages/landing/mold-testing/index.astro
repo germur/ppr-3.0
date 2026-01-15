@@ -13,6 +13,11 @@ const description = "Worried about mold? Get a certified, independent mold inspe
 ---
 
 <Layout title={title} description={description}>
+  <style is:global>
+    /* Ocultar menú y footer para evitar fugas (PPC Landing Page) */
+    header, footer { display: none !important; }
+  </style>
+
   <section class="relative bg-slate-900 text-white py-20 px-4">
     <div class="max-w-4xl mx-auto text-center z-10 relative">
       <span class="bg-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4 inline-block">
