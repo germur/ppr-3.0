@@ -1,0 +1,87 @@
+
+---
+// src/pages/landing/mold-testing/index.astro
+import Layout from '../../../layouts/MainLayout.astro';
+import MoldCalculator from '../../../components/tools/MoldCalculator.jsx';
+import TriageMatrix from '../../../components/mold/TriageMatrix.astro';
+import TrustBar from '../../../components/sections/TrustBar.astro';
+import ContactForm from '../../../components/ContactForm.jsx';
+
+// SEO Metadata for the Landing Page
+const title = "Certified Mold Testing & Inspection | Unbiased Lab Results in 24h";
+const description = "Worried about mold? Get a certified, independent mold inspection. We don't sell repairs, we provide scientific answers. IICRC Certified.";
+---
+
+<Layout title={title} description={description}>
+  <section class="relative bg-slate-900 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center z-10 relative">
+      <span class="bg-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4 inline-block">
+        FLORIDA LICENSED • IICRC CERTIFIED
+      </span>
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+        Do You Have Hidden Mold? <br/>
+        <span class="text-blue-400">Get The Scientific Truth.</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Don't let a "free inspection" sell you expensive repairs you don't need. 
+        We provide <strong>unbiased, lab-verified mold testing</strong>.
+      </p>
+      
+      <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+        <a href="tel:7866022217" class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg shadow-lg transform transition hover:scale-105 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+          Call for Instant Quote
+        </a>
+        <span class="text-sm text-gray-400">or Scroll to Calculate Cost 👇</span>
+      </div>
+    </div>
+    
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900 z-0"></div>
+  </section>
+
+  <TrustBar />
+
+  <section class="py-16 bg-gray-50" id="calculator">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-slate-800 mb-2">Estimate Your Testing Cost</h2>
+      <p class="text-center text-gray-600 mb-8">Select your property type and concerns to get an instant range.</p>
+      
+      <div class="bg-white p-6 rounded-xl shadow-xl border border-gray-200">
+        <MoldCalculator client:load /> 
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Do You Really Need a Test?</h2>
+      <TriageMatrix />
+    </div>
+  </section>
+
+  <section class="py-16 bg-blue-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold mb-4">Get Official Results in 24-48 Hours</h2>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-start gap-3">
+            <span class="text-green-400 text-xl">✓</span>
+            <p><strong>Insurance Ready:</strong> Protocols written by licensed assessors.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-400 text-xl">✓</span>
+            <p><strong>Unbiased:</strong> We don't perform the remediation, so no conflict of interest.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-400 text-xl">✓</span>
+            <p><strong>Certified:</strong> IICRC & NORMI certified inspectors.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-white text-slate-900 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-bold mb-4">Request an Appointment</h3>
+        <ContactForm client:visible />
+      </div>
+    </div>
+  </section>
+</Layout>

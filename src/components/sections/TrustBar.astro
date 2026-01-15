@@ -1,0 +1,25 @@
+
+---
+const trust_badges = [
+    { label: "Fully Insured", icon: "security" },
+    { label: "24/7 Response", icon: "schedule" },
+    { label: "IICRC Certified", icon: "verified" },
+    { label: "Licensed GC", icon: "gavel" },
+    { label: "CGC #1529683", icon: "badge" },
+];
+---
+
+<section class="bg-white border-b border-gray-100 py-6">
+    <div class="max-w-7xl mx-auto px-4">
+        <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Trusted by Florida Homeowners & Insurers</p>
+        <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
+            <!-- Simulated Logos with Text/Icons for speed -->
+            {trust_badges.map(badge => (
+                <div class="flex items-center gap-2 group cursor-default">
+                    <span class="material-symbols-outlined text-3xl text-slate-400 group-hover:text-blue-600 transition-colors">{badge.icon}</span>
+                    <span class="font-bold text-slate-600 group-hover:text-slate-900 transition-colors">{badge.label}</span>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
