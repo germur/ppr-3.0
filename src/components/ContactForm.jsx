@@ -48,6 +48,9 @@ export default function ContactForm() {
             {/* Hidden input for Netlify Form detection */}
             <input type="hidden" name="form-name" value="contact-landing" />
 
+            {/* Subject line for email notifications */}
+            <input type="hidden" name="subject" value="New Mold Testing Lead (Landing Page)" />
+
             {/* Honeypot field for anti-spam (optional but recommended) */}
             <p className="hidden">
                 <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
