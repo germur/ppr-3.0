@@ -15,7 +15,16 @@ export default function ContactForm() {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString(),
         })
-            .then(() => setStatus('submitted'))
+            .then(() => {
+                // 🔥 DISPARO DE CONVERSIÓN (SNIPER SHOT)
+                if (typeof window.gtag !== 'undefined') {
+                    window.gtag('event', 'conversion', {
+                        'send_to': 'AW-17595666136/Wps3CLnKy7AbENidosZB'
+                    });
+                    console.log('🎯 Conversión enviada a Google Ads');
+                }
+                setStatus('submitted');
+            })
             .catch((error) => {
                 console.error("Form submission error:", error);
                 setErrorMessage("Something went wrong. Please call us directly.");
