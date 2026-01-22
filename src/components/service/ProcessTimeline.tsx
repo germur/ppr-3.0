@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 interface ProcessStep {
     title: string;
     description: string;
@@ -26,12 +24,8 @@ export default function ProcessTimeline({ steps }: { steps: ProcessStep[] }) {
                         {steps.map((step, index) => {
                             const Icon = step.icon;
                             return (
-                                <motion.div
+                                <div
                                     key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: index * 0.1 }}
-                                    viewport={{ once: true }}
                                     className="relative flex flex-col items-center text-center group"
                                 >
                                     <div className="w-24 h-24 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:border-blue-100 group-hover:shadow-md transition-all">
@@ -45,7 +39,7 @@ export default function ProcessTimeline({ steps }: { steps: ProcessStep[] }) {
 
                                     <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
                                     <p className="text-slate-500 text-sm leading-relaxed">{step.description}</p>
-                                </motion.div>
+                                </div>
                             );
                         })}
                     </div>

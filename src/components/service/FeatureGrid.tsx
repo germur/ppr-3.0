@@ -4,6 +4,7 @@ interface Feature {
     title: string;
     description: string;
     icon: React.ElementType;
+    link?: string;
 }
 
 export default function FeatureGrid({ title, features }: { title: string, features: Feature[] }) {
@@ -15,18 +16,37 @@ export default function FeatureGrid({ title, features }: { title: string, featur
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {features.map((feature, index) => {
                         const Icon = feature.icon;
-                        return (
-                            <motion.div
-                                key={index}
-                                whileHover={{ y: -5 }}
-                                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-100"
-                            >
+                        const CardContent = (
+                            <div className="h-full">
                                 <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
                                     <Icon size={24} />
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-2">{feature.title}</h3>
                                 <p className="text-slate-500 text-sm leading-relaxed">{feature.description}</p>
-                            </motion.div>
+                            </div>
+                        );
+
+                        const cardClasses = "bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-100 block h-full hover:translate-y-[-5px] duration-300";
+
+                        if (feature.link) {
+                            return (
+                                <a
+                                    key={index}
+                                    href={feature.link}
+                                    className={cardClasses}
+                                >
+                                    {CardContent}
+                                </a>
+                            );
+                        }
+
+                        return (
+                            <div
+                                key={index}
+                                className={cardClasses}
+                            >
+                                {CardContent}
+                            </div>
                         );
                     })}
                 </div>
