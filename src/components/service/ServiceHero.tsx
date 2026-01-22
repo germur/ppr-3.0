@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Phone, ShieldCheck, Clock, FileCheck, ArrowRight } from 'lucide-react';
+import { Phone, ShieldCheck, Clock, FileCheck, ArrowRight, Mail } from 'lucide-react';
 
 interface ServiceHeroProps {
     title: string;
@@ -47,12 +47,12 @@ export default function ServiceHero({ title, subtitle, image, serviceType, templ
                                 <Phone size={20} /> Call 24/7 Emergency
                             </a>
                             <a href="/contact/" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-white/20 transition-all">
-                                <FileCheck size={20} /> File Insurance Claim
+                                <Mail size={20} /> Contact Us
                             </a>
                         </motion.div>
                     </div>
                 </div>
-            </section>
+            </section >
         );
     }
 
