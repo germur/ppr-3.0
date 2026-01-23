@@ -78,4 +78,29 @@ const cities = defineCollection({
     })
 });
 
-export const collections = { blog, cities };
+const services = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        pageTitle: z.string(),
+        pageDescription: z.string(),
+        heroImage: z.string().optional(), // We'll map this string to an import in the layout or component
+        features: z.array(z.object({
+            title: z.string(),
+            description: z.string(),
+            icon: z.string(), // Store icon name as string, map to component at runtime
+            link: z.string().optional()
+        })),
+        processSteps: z.array(z.object({
+            title: z.string(),
+            description: z.string(),
+            icon: z.string()
+        })),
+        faqs: z.array(z.object({
+            question: z.string(),
+            answer: z.string()
+        }))
+    })
+});
+
+export const collections = { blog, cities, services };
