@@ -1,8 +1,7 @@
 ---
-import WaterDamageLayout from "../../../layouts/WaterDamageLayout.astro";
-import ServiceHero from "../../../components/service/ServiceHero";
-import FeatureGrid from "../../../components/service/FeatureGrid";
-import ProcessTimeline from "../../../components/service/ProcessTimeline";
+import ServiceLayout from "../../../layouts/ServiceLayout.astro";
+import FeatureGrid from "../../../components/service/FeatureGrid.astro";
+import ProcessTimeline from "../../../components/service/ProcessTimeline.astro";
 import FAQAccordion from "../../../components/ui/FAQAccordion";
 import { waterDamageFAQs } from "../../../data/restoration-faqs";
 import {
@@ -14,80 +13,63 @@ import {
   FaWind,
 } from "react-icons/fa";
 
-// ------------------------------------------------------------------
-// 🧠 ESTRATEGIA: ALINEACIÓN CON SERVICES.TS + FILE SYSTEM
-// ------------------------------------------------------------------
-// 1. Branding: Usamos los colores definidos en tu data (Blue #1162d4 / Orange #f97316).
-// 2. Promesa: "On-site in 60 minutes" (Dato real del cliente).
-// 3. Arquitectura: Enlazamos a las páginas físicas que existen en tu repo.
-// ------------------------------------------------------------------
+import { generateServiceSchema } from "../../../utils/schemaGenerator";
 
 const pageTitle =
   "Expert Water Damage Restoration & Extraction | 60-Min Response";
 const pageDescription =
   "Fast response to flood and leak emergencies in Florida. On-site in 60 minutes or less. We handle extraction, drying, and insurance paperwork.";
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "GeneralContractor",
-  name: "Paramount Property Restoration",
+const schema = generateServiceSchema({
   url: "https://paramountpropertyrestoration.com/restoration/water-damage/",
-  telephone: "+1-786-602-2217",
   image: "https://paramountpropertyrestoration.com/images/water-damage.webp",
-  areaServed: ["Miami", "Orlando", "Tampa", "Fort Lauderdale"],
   description:
     "Fast response to flood and leak emergencies. On-site in 60 minutes or less.",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Water Damage Services",
-    itemListElement: [
-      { "@type": "Service", name: "Structural Drying" },
-      { "@type": "Service", name: "Leak Repairs" },
-      { "@type": "Service", name: "Emergency Water Extraction" },
-    ],
-  },
-};
+  services: [
+    { name: "Structural Drying" },
+    { name: "Leak Repairs" },
+    { name: "Emergency Water Extraction" },
+  ],
+});
 
-// 🛠️ GRID DE SERVICIOS (Cruza Services.ts con Archivos Reales)
-// Usamos los slugs reales de tu carpeta pages/restoration/water-damage/
 const features = [
   {
-    title: "Precision Leak Repairs", // Match con services.ts
+    title: "Precision Leak Repairs",
     description:
       "Pinpoint hidden leaks without destruction using thermal imaging. We find the source fast.",
     icon: FaTools,
     link: "/restoration/water-damage/leak-repair/",
   },
   {
-    title: "Structural Drying", // Match con services.ts
+    title: "Structural Drying",
     description:
       "Advanced technology to salvage hardwood floors and drywall. Prevent mold with scientific drying.",
     icon: FaWind,
     link: "/restoration/water-damage/structural-drying/",
   },
   {
-    title: "Burst Pipe Emergency", // Página física existente
+    title: "Burst Pipe Emergency",
     description:
       "Immediate repair for frozen or broken pipes. We stop the water source instantly.",
     icon: FaWater,
     link: "/restoration/water-damage/burst-pipe/",
   },
   {
-    title: "Flood & Storm Extraction", // Página física existente
+    title: "Flood & Storm Extraction",
     description:
       "Industrial extraction for hurricane flooding and ground water intrusion.",
     icon: FaHouseDamage,
     link: "/restoration/water-damage/flood-damage/",
   },
   {
-    title: "Sewage Cleanup", // Página física existente
+    title: "Sewage Cleanup",
     description:
       "Hazmat-grade sanitation for toilet backups and dangerous black water spills.",
     icon: FaBiohazard,
     link: "/restoration/water-damage/sewage-cleanup/",
   },
   {
-    title: "24/7 Emergency Contact", // Replaced Insurance Claims as per user request
+    title: "24/7 Emergency Contact",
     description:
       "Immediate response for emergencies. Speak directly to our restoration experts.",
     icon: FaPhoneAlt,
@@ -123,13 +105,13 @@ const processSteps = [
 ];
 ---
 
-<WaterDamageLayout
+<ServiceLayout
   title={pageTitle}
   description={pageDescription}
   schema={schema}
   heroImage="/assets/images/water-damage.webp"
+  themeColor="blue"
 >
-  {/* SILO NAVIGATION: Conecta con el inventario de servicios real */}
   <section class="py-16 bg-white border-b">
     <div class="container mx-auto px-4">
       <div class="text-center mb-10">
@@ -148,66 +130,71 @@ const processSteps = [
     </div>
   </section>
 
-  {/* AUTORIDAD TÉCNICA (Search Intent: Informational/Commercial) */}
   <section class="py-20 bg-slate-50">
-    <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-start">
-      {/* Texto Rico en Entidades (SEO) */}
-      <div class="prose prose-lg text-slate-700">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-16">
         <h2 class="text-3xl font-bold text-slate-900 mb-6">
           Why "60 Minutes or Less" Matters
         </h2>
-        <p>
-          Water damage is progressive. Within minutes, water spreads to porous
-          materials. Within 24 to 48 hours, <strong>mold growth</strong> begins. That's
-          why our promise is simple: we are on-site in <strong
-            >60 minutes or less</strong
-          > across Central and South Florida.
-        </p>
-        <p>
-          Unlike general contractors, we specialize in <strong
-            >mitigation first</strong
-          >. We use advanced thermal imaging to map moisture hidden behind
-          cabinets and inside walls, ensuring we dry your home scientifically,
-          not just superficially.
-        </p>
-
-        <h3 class="text-xl font-bold text-slate-900 mt-8">
-          Handling Your Insurance Claim
-        </h3>
-        <p>
-          Dealing with water damage is stressful enough; fighting with insurance
-          shouldn't be. We use <strong>Xactimate®</strong> software—the industry standard
-          for adjusters—to document every square foot of moisture.
-        </p>
-        <ul class="list-disc pl-5 space-y-2 mt-4">
-          <li>
-            <strong>Direct Billing:</strong> We bill the insurance company, not you
-            (in most covered losses).
-          </li>
-          <li>
-            <strong>Documentation:</strong> Comprehensive moisture logs and thermal
-            photos to prove the damage.
-          </li>
-          <li>
-            <strong>Licensed Pros:</strong> We are fully licensed for both Mold Remediation
-            and General Contracting.
-          </li>
-        </ul>
+        <div class="prose prose-lg text-slate-700 mx-auto text-left">
+          <p>
+            Water damage is progressive. Within minutes, water spreads to porous
+            materials. Within 24 to 48 hours, <strong>mold growth</strong> begins.
+            That's why our promise is simple: we are on-site in <strong
+              >60 minutes or less</strong
+            > across Central and South Florida.
+          </p>
+          <p>
+            Unlike general contractors, we specialize in <strong
+              >mitigation first</strong
+            >. We use advanced thermal imaging to map moisture hidden behind
+            cabinets and inside walls, ensuring we dry your home scientifically,
+            not just superficially.
+          </p>
+          <h3 class="text-xl font-bold text-slate-900 mt-8">
+            Handling Your Insurance Claim
+          </h3>
+          <p>
+            Dealing with water damage is stressful enough; fighting with
+            insurance shouldn't be. We use <strong>Xactimate®</strong> software—the
+            industry standard for adjusters—to document every square foot of moisture.
+          </p>
+          <ul class="list-disc pl-5 space-y-2 mt-4">
+            <li>
+              <strong>Direct Billing:</strong> We bill the insurance company, not
+              you (in most covered losses).
+            </li>
+            <li>
+              <strong>Documentation:</strong> Comprehensive moisture logs and thermal
+              photos to prove the damage.
+            </li>
+            <li>
+              <strong>Licensed Pros:</strong> We are fully licensed for both Mold
+              Remediation and General Contracting.
+            </li>
+          </ul>
+        </div>
       </div>
 
-      {/* Timeline Visual */}
-      <div
-        class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 sticky top-24"
-      >
-        <h3 class="text-2xl font-bold mb-8 text-center text-slate-900">
-          The Restoration Workflow
-        </h3>
+      <!-- Process Section -->
+      <div class="border-t border-slate-200 pt-16">
+        <div class="text-center mb-16">
+          <span class="text-blue-600 font-bold tracking-wider uppercase text-sm"
+            >Our Protocol</span
+          >
+          <h2 class="text-4xl font-bold text-slate-900 mt-2">
+            The Restoration Process
+          </h2>
+          <p class="text-slate-500 mt-4 max-w-2xl mx-auto">
+            Transparent, step-by-step recovery process to ensure your property
+            is restored to pre-loss condition.
+          </p>
+        </div>
         <ProcessTimeline steps={processSteps} />
       </div>
     </div>
   </section>
 
-  {/* FAQs: People Also Ask */}
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4 max-w-4xl">
       <div class="text-center mb-10">
@@ -217,9 +204,7 @@ const processSteps = [
     </div>
   </section>
 
-  {/* CTA FINAL */}
   <section class="py-12 bg-[#1162d4] text-white">
-    {/* Usando tu color primario del tema */}
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-4">Don't Wait for Mold. Call Us Now.</h2>
       <p class="text-xl mb-8 opacity-90">
@@ -230,10 +215,9 @@ const processSteps = [
           href="tel:7866022217"
           class="inline-flex justify-center items-center gap-2 bg-[#f97316] text-white font-bold py-4 px-8 rounded-full hover:bg-orange-600 transition text-lg shadow-lg"
         >
-          {/* Usando tu color de acento */}
           <FaPhoneAlt /> Call 24/7: (786) 602-2217
         </a>
       </div>
     </div>
   </section>
-</WaterDamageLayout>
+</ServiceLayout>

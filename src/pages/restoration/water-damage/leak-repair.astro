@@ -1,324 +1,574 @@
 ---
-import LeakDetectionLayout from '../../../layouts/LeakDetectionLayout.astro';
+import ServiceLayout from "../../../layouts/ServiceLayout.astro";
+
+const pageTitle =
+    "Non-Invasive Water Leak Detection Florida | Zero-Destruction";
+const pageDescription =
+    "Find hidden leaks without tearing up your home. We use thermal imaging and acoustic detection to pinpoint leaks with zero destruction guaranteed. 60-min response.";
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Leak Detection",
+    provider: {
+        "@type": "GeneralContractor",
+        name: "Paramount Property Restoration",
+    },
+};
 ---
 
-<LeakDetectionLayout>
-    <main class="flex flex-col">
-        <!-- Hero Section -->
-        <section class="relative bg-slate-900 dark:bg-slate-950 overflow-hidden">
-            <!-- Background Image with Overlay -->
-            <div class="absolute inset-0 w-full h-full">
-                <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/40 z-10"></div>
-                <div class="w-full h-full bg-cover bg-center" data-alt="Technician using thermal imaging camera for leak detection" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUMLdqm9j0ALbhHqYUzzD-4FERS6s5fJnfzfzROLsxl8IEDQQZE_qG7sKWRKMfcJzE8eyXS4DnJCj10oBIZkN3_i9t6fdccCG0XjdKH9_bHq15wDLO2QMOPHOnLPwseqGiacps30nN9WqIRIjoRttat07C3ATVSRIzH7jkfMMheizVCrNpo4XjW8DoCPGQVtk9YmyRJQmSecrrg51stIi_dsX-aUDTMe45_9ij0DN7NAvvsgXl0jpZCEzjAkJGWMJ8p244QjXzGYSv');">
+<ServiceLayout
+    title={pageTitle}
+    description={pageDescription}
+    heroImage="https://lh3.googleusercontent.com/aida-public/AB6AXuAUMLdqm9j0ALbhHqYUzzD-4FERS6s5fJnfzfzROLsxl8IEDQQZE_qG7sKWRKMfcJzE8eyXS4DnJCj10oBIZkN3_i9t6fdccCG0XjdKH9_bHq15wDLO2QMOPHOnLPwseqGiacps30nN9WqIRIjoRttat07C3ATVSRIzH7jkfMMheizVCrNpo4XjW8DoCPGQVtk9YmyRJQmSecrrg51stIi_dsX-aUDTMe45_9ij0DN7NAvvsgXl0jpZCEzjAkJGWMJ8p244QjXzGYSv"
+    themeColor="blue"
+    schema={schema}
+>
+    <!-- Trusted By / Stats Bar -->
+    <div class="bg-white border-b border-slate-100 py-6">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center md:justify-between items-center gap-6 text-center md:text-left"
+        >
+            <p
+                class="text-slate-500 text-sm font-medium uppercase tracking-wide"
+            >
+                Trusted by 5,000+ Florida Homeowners
+            </p>
+            <div
+                class="flex items-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-300"
+            >
+                <!-- Logos placeholders -->
+                <div
+                    class="h-8 w-24 bg-slate-200 rounded animate-pulse"
+                    data-alt="Insurance Partner Logo 1"
+                >
                 </div>
-            </div>
-            <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="flex flex-col gap-6 max-w-2xl">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#135bec]/20 border border-[#135bec]/30 w-fit backdrop-blur-sm">
-                            <span class="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
-                            <span class="text-blue-100 text-xs font-bold uppercase tracking-wider">Serving Florida Statewide</span>
-                        </div>
-                        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
-                            Non-Invasive <br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Water Leak Detection</span>
-                        </h1>
-                        <p class="text-slate-300 text-lg sm:text-xl font-light max-w-lg leading-relaxed">
-                            Find the leak without tearing up your home. We use advanced technology to pinpoint leaks with <span class="text-white font-semibold">zero destruction guaranteed.</span>
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                            <a href="/contact/" class="flex items-center justify-center gap-2 bg-[#135bec] hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-bold font-display shadow-lg shadow-blue-900/50 transition-all hover:-translate-y-1">
-                                Book Same-Day Inspection
-                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </a>
-                            <div class="flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 backdrop-blur-md border border-white/10">
-                                <span class="material-symbols-outlined text-green-400">verified_user</span>
-                                <div class="flex flex-col">
-                                    <span class="text-white text-sm font-bold leading-none">Zero-Destruction</span>
-                                    <span class="text-slate-400 text-xs">Guarantee Badge</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Hero visual/badge for desktop -->
-                    <div class="hidden lg:flex justify-end relative">
-                        <div class="relative bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl max-w-xs shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                            <div class="flex items-center gap-4 mb-4">
-                                <div class="h-12 w-12 bg-[#f97316] rounded-lg flex items-center justify-center text-white">
-                                    <span class="material-symbols-outlined text-3xl">emergency_home</span>
-                                </div>
-                                <div>
-                                    <h3 class="text-white font-bold font-display text-lg">Urgent Response</h3>
-                                    <p class="text-slate-300 text-sm">60-minute arrival window</p>
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="h-2 bg-white/20 rounded-full w-full overflow-hidden">
-                                    <div class="h-full bg-green-400 w-3/4 animate-[pulse_2s_infinite]"></div>
-                                </div>
-                                <p class="text-xs text-slate-400 flex justify-between">
-                                    <span>Technicians Available</span>
-                                    <span class="text-green-400 font-bold">Active Now</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <div
+                    class="h-8 w-24 bg-slate-200 rounded animate-pulse"
+                    data-alt="Insurance Partner Logo 2"
+                >
                 </div>
-            </div>
-        </section>
-
-        <!-- Trusted By / Stats Bar -->
-        <div class="bg-white dark:bg-[#1e293b] border-b border-slate-100 dark:border-slate-800 py-6">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center md:justify-between items-center gap-6 text-center md:text-left">
-                <p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wide">Trusted by 5,000+ Florida Homeowners</p>
-                <div class="flex items-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
-                    <!-- Logos placeholders -->
-                    <div class="h-8 w-24 bg-slate-200 dark:bg-slate-700 rounded animate-pulse" data-alt="Insurance Partner Logo 1"></div>
-                    <div class="h-8 w-24 bg-slate-200 dark:bg-slate-700 rounded animate-pulse" data-alt="Insurance Partner Logo 2"></div>
-                    <div class="h-8 w-24 bg-slate-200 dark:bg-slate-700 rounded animate-pulse" data-alt="Insurance Partner Logo 3"></div>
-                    <div class="hidden sm:block h-8 w-24 bg-slate-200 dark:bg-slate-700 rounded animate-pulse" data-alt="Insurance Partner Logo 4"></div>
+                <div
+                    class="h-8 w-24 bg-slate-200 rounded animate-pulse"
+                    data-alt="Insurance Partner Logo 3"
+                >
+                </div>
+                <div
+                    class="hidden sm:block h-8 w-24 bg-slate-200 rounded animate-pulse"
+                    data-alt="Insurance Partner Logo 4"
+                >
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Zero-Click Problem Identification Section -->
-        <section class="py-16 sm:py-24 bg-[#f8fafc] dark:bg-[#101622]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    <div class="order-2 lg:order-1">
-                        <div class="bg-white dark:bg-[#1e293b] p-8 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 relative overflow-hidden">
-                            <div class="absolute top-0 left-0 w-2 h-full bg-[#f97316]"></div>
-                            <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-6">Signs You Have a Hidden Leak</h3>
-                            <div class="space-y-4">
-                                <label class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer group">
-                                    <div class="relative flex items-center mt-1">
-                                        <input type="checkbox" checked disabled class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 bg-white checked:bg-[#f97316] checked:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20 transition-all" />
-                                        <span class="material-symbols-outlined absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-[16px] pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity font-bold">check</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-slate-900 dark:text-white font-medium group-hover:text-[#135bec] transition-colors">Unexplained high water bills</p>
-                                        <p class="text-slate-500 text-sm mt-1">Spikes of 20% or more without usage change.</p>
-                                    </div>
-                                </label>
-                                <label class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer group">
-                                    <div class="relative flex items-center mt-1">
-                                        <input type="checkbox" checked disabled class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 bg-white checked:bg-[#f97316] checked:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20 transition-all" />
-                                        <span class="material-symbols-outlined absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-[16px] pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity font-bold">check</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-slate-900 dark:text-white font-medium group-hover:text-[#135bec] transition-colors">Warm or damp spots on flooring</p>
-                                        <p class="text-slate-500 text-sm mt-1">Especially on concrete slabs or tiles.</p>
-                                    </div>
-                                </label>
-                                <label class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer group">
-                                    <div class="relative flex items-center mt-1">
-                                        <input type="checkbox" checked disabled class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 bg-white checked:bg-[#f97316] checked:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20 transition-all" />
-                                        <span class="material-symbols-outlined absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-[16px] pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity font-bold">check</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-slate-900 dark:text-white font-medium group-hover:text-[#135bec] transition-colors">Sound of running water</p>
-                                        <p class="text-slate-500 text-sm mt-1">Hearing hissing or flowing when all taps are off.</p>
-                                    </div>
-                                </label>
-                                <label class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer group">
-                                    <div class="relative flex items-center mt-1">
-                                        <input type="checkbox" checked disabled class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 bg-white checked:bg-[#f97316] checked:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20 transition-all" />
-                                        <span class="material-symbols-outlined absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-[16px] pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity font-bold">check</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-slate-900 dark:text-white font-medium group-hover:text-[#135bec] transition-colors">Musty odors or mold</p>
-                                        <p class="text-slate-500 text-sm mt-1">Persistent smells or visible growth near plumbing.</p>
-                                    </div>
-                                </label>
+    <!-- Zero-Click Problem Identification Section -->
+    <section class="py-16 sm:py-24 bg-[#f8fafc]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="order-2 lg:order-1">
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden"
+                    >
+                        <div
+                            class="absolute top-0 left-0 w-2 h-full bg-[#f97316]"
+                        >
+                        </div>
+                        <h3
+                            class="text-2xl font-display font-bold text-slate-900 mb-6"
+                        >
+                            Signs You Have a Hidden Leak
+                        </h3>
+                        <div class="space-y-4">
+                            <div
+                                class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 transition-colors group"
+                            >
+                                <div class="relative flex items-center mt-1">
+                                    <span
+                                        class="material-symbols-outlined text-[#f97316]"
+                                        >check_circle</span
+                                    >
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-slate-900 font-medium group-hover:text-[#135bec] transition-colors"
+                                    >
+                                        Unexplained high water bills
+                                    </p>
+                                    <p class="text-slate-500 text-sm mt-1">
+                                        Spikes of 20% or more without usage
+                                        change.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 transition-colors group"
+                            >
+                                <div class="relative flex items-center mt-1">
+                                    <span
+                                        class="material-symbols-outlined text-[#f97316]"
+                                        >check_circle</span
+                                    >
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-slate-900 font-medium group-hover:text-[#135bec] transition-colors"
+                                    >
+                                        Warm or damp spots on flooring
+                                    </p>
+                                    <p class="text-slate-500 text-sm mt-1">
+                                        Especially on concrete slabs or tiles.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 transition-colors group"
+                            >
+                                <div class="relative flex items-center mt-1">
+                                    <span
+                                        class="material-symbols-outlined text-[#f97316]"
+                                        >check_circle</span
+                                    >
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-slate-900 font-medium group-hover:text-[#135bec] transition-colors"
+                                    >
+                                        Sound of running water
+                                    </p>
+                                    <p class="text-slate-500 text-sm mt-1">
+                                        Hearing hissing or flowing when all taps
+                                        are off.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 transition-colors group"
+                            >
+                                <div class="relative flex items-center mt-1">
+                                    <span
+                                        class="material-symbols-outlined text-[#f97316]"
+                                        >check_circle</span
+                                    >
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-slate-900 font-medium group-hover:text-[#135bec] transition-colors"
+                                    >
+                                        Musty odors or mold
+                                    </p>
+                                    <p class="text-slate-500 text-sm mt-1">
+                                        Persistent smells or visible growth near
+                                        plumbing.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="order-1 lg:order-2">
-                        <span class="text-[#f97316] font-bold tracking-wider uppercase text-sm mb-2 block">Don't Wait for Damage</span>
-                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-900 dark:text-white mb-6 leading-tight">
-                            Leaks don't fix themselves. <br class="hidden lg:block">
-                            <span class="text-[#135bec]">They get worse.</span>
-                        </h2>
-                        <p class="text-slate-600 dark:text-slate-300 text-lg mb-8 leading-relaxed">
-                            Small leaks can waste 10,000 gallons of water a year and cause structural rot. Our non-invasive methods catch the problem early, saving you thousands in repairs.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="/contact/" class="bg-[#135bec] hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                                <span>Get a Free Consultation</span>
-                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </a>
-                            <a href="/our-process/" class="text-slate-700 dark:text-slate-200 font-semibold py-3 px-6 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
-                                <span class="material-symbols-outlined text-[#f97316]">play_circle</span>
-                                See How We Work
-                            </a>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Technology Bento Grid Section -->
-        <section class="py-20 bg-white dark:bg-[#1e293b]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="bg-blue-100 dark:bg-blue-900/30 text-[#135bec] dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Advanced Technology</span>
-                    <h2 class="text-3xl sm:text-4xl font-display font-bold text-slate-900 dark:text-white mb-4">Precision Detection, No Destruction</h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-lg">
-                        We use military-grade diagnostic tools to see through walls and floors, so your property stays intact.
+                <div class="order-1 lg:order-2">
+                    <span
+                        class="text-[#f97316] font-bold tracking-wider uppercase text-sm mb-2 block"
+                        >Don't Wait for Damage</span
+                    >
+                    <h2
+                        class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-900 mb-6 leading-tight"
+                    >
+                        Leaks don't fix themselves. <br
+                            class="hidden lg:block"
+                        />
+                        <span class="text-[#135bec]">They get worse.</span>
+                    </h2>
+                    <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                        Small leaks can waste 10,000 gallons of water a year and
+                        cause structural rot. Our non-invasive methods catch the
+                        problem early, saving you thousands in repairs.
                     </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(250px,auto)]">
-                    <!-- Card 1: Thermal Imaging (Large) -->
-                    <div class="md:col-span-2 relative group overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Abstract thermal imaging heat map visualization" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCphmvOFPtucIrk97pbvKq_HoNA4HdgPWEadbCwxx1nHo4Wh8-EYoKDcpivR88AlkXwVQ0EGj1i27kaBlk_GxC7AZA2jmJk3WYjmpIGdb7oQnZs5ZZWXgHhQlQ036o357oM_nLz7w2mF3ZpJbyvRnvEcWf_Hkm_89NPlw_ZR1DZV7xCE4c73NcF8ReVrDLCf9y0Wp1Fez5GcqgWlyP2DNar-GJaPe_Yngqy433rV7v2vX7vsnVGTZS5tLEZixUxMxg1AdwWnUGIZ8tI');">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 p-8 w-full">
-                            <div class="bg-[#135bec]/90 p-3 rounded-lg inline-flex mb-4 text-white">
-                                <span class="material-symbols-outlined">thermostat</span>
-                            </div>
-                            <h3 class="text-2xl font-display font-bold text-white mb-2">Thermal Imaging</h3>
-                            <p class="text-slate-200">Detects subtle temperature variances behind walls caused by evaporation and moisture.</p>
-                        </div>
-                    </div>
-                    <!-- Card 2: Acoustic -->
-                    <div class="relative group p-6 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="h-12 w-12 bg-orange-100 dark:bg-orange-900/30 text-[#f97316] rounded-xl flex items-center justify-center mb-4">
-                                <span class="material-symbols-outlined text-2xl">mic</span>
-                            </div>
-                            <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Acoustic Listening</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm">High-sensitivity ground microphones amplify the sound of leaks under concrete slabs.</p>
-                        </div>
-                        <div class="mt-4 h-1 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#f97316] w-2/3"></div>
-                        </div>
-                    </div>
-                    <!-- Card 3: Moisture Mapping -->
-                    <div class="relative group p-6 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="h-12 w-12 bg-blue-100 dark:bg-blue-900/30 text-[#135bec] rounded-xl flex items-center justify-center mb-4">
-                                <span class="material-symbols-outlined text-2xl">water_ec</span>
-                            </div>
-                            <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Moisture Mapping</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm">Digital meters map moisture content levels to trace the water path back to the source.</p>
-                        </div>
-                        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500 font-mono">
-                            <span class="material-symbols-outlined text-[16px]">grid_on</span>
-                             Grid Analysis
-                        </div>
-                    </div>
-                    <!-- Card 4: Video Inspection -->
-                    <div class="md:col-span-2 lg:col-span-4 relative group overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 flex flex-col md:flex-row items-center">
-                        <div class="w-full md:w-1/2 p-8 md:p-12 z-10">
-                            <div class="h-12 w-12 bg-white/10 backdrop-blur text-white rounded-xl flex items-center justify-center mb-6 border border-white/20">
-                                <span class="material-symbols-outlined text-2xl">videocam</span>
-                            </div>
-                            <h3 class="text-2xl font-display font-bold text-white mb-3">Endoscopic Video Inspection</h3>
-                            <p class="text-slate-400 mb-6">Tiny, flexible cameras snake through pipes and wall cavities to visually confirm the break without demolition.</p>
-                            <a href="/resources/" class="text-white font-medium border-b border-[#f97316] pb-0.5 hover:text-[#f97316] transition-colors inline-flex items-center gap-1">
-                                Watch Video Demo <span class="material-symbols-outlined text-sm">arrow_outward</span>
-                            </a>
-                        </div>
-                        <div class="w-full md:w-1/2 h-64 md:h-full bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity" data-alt="Close up of pipe inspection view" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDo55crRHvfc4lopyju4W-TDg5f_siC9ESVDME1g6yweVtHEdtfSwOyXOGyynNzjyuex9A7vFOTzrDcUevQ5J4BjNnwIvz2WEaoq9i3iMwM6fKpF2JPlR_c0Vzp62uICePa7H4zR28ZCjnn_q82OgfcvhW-VZ9av011927-d4AwcFLRBEWJ8Vz7DM9EhitcW7hfqLiKuTc8D5xP-Xb1fcRSqu1x_gwvibtmM8wGSzZVzSwOpiK2KO8MHV3NeSG1WYGSt7m_CugFy0-g');">
-                        </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a
+                            href="/contact/"
+                            class="bg-[#135bec] hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                        >
+                            <span>Get a Free Consultation</span>
+                            <span class="material-symbols-outlined text-sm"
+                                >arrow_forward</span
+                            >
+                        </a>
+                        <a
+                            href="/our-process/"
+                            class="text-slate-700 font-semibold py-3 px-6 rounded-lg hover:bg-slate-100 transition-colors flex items-center justify-center gap-2"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[#f97316]"
+                                >play_circle</span
+                            >
+                            See How We Work
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Process: Detect & Repair Section -->
-        <section class="py-20 bg-slate-50 dark:bg-slate-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl sm:text-4xl font-display font-bold text-slate-900 dark:text-white">Full-Service Solution</h2>
-                    <p class="mt-4 text-slate-600 dark:text-slate-400">We don't just find the leak. We fix the pipe and restore your home.</p>
+    <!-- Technology Bento Grid Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="bg-blue-100 text-[#135bec] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block"
+                    >Advanced Technology</span
+                >
+                <h2
+                    class="text-3xl sm:text-4xl font-display font-bold text-slate-900 mb-4"
+                >
+                    Precision Detection, No Destruction
+                </h2>
+                <p class="text-slate-600 text-lg">
+                    We use military-grade diagnostic tools to see through walls
+                    and floors, so your property stays intact.
+                </p>
+            </div>
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(250px,auto)]"
+            >
+                <!-- Card 1: Thermal Imaging (Large) -->
+                <div
+                    class="md:col-span-2 relative group overflow-hidden rounded-2xl bg-slate-50 border border-slate-200"
+                >
+                    <div
+                        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Abstract thermal imaging heat map visualization"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCphmvOFPtucIrk97pbvKq_HoNA4HdgPWEadbCwxx1nHo4Wh8-EYoKDcpivR88AlkXwVQ0EGj1i27kaBlk_GxC7AZA2jmJk3WYjmpIGdb7oQnZs5ZZWXgHhQlQ036o357oM_nLz7w2mF3ZpJbyvRnvEcWf_Hkm_89NPlw_ZR1DZV7xCE4c73NcF8ReVrDLCf9y0Wp1Fez5GcqgWlyP2DNar-GJaPe_Yngqy433rV7v2vX7vsnVGTZS5tLEZixUxMxg1AdwWnUGIZ8tI');"
+                    >
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"
+                        >
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <div
+                            class="bg-[#135bec]/90 p-3 rounded-lg inline-flex mb-4 text-white"
+                        >
+                            <span class="material-symbols-outlined"
+                                >thermostat</span
+                            >
+                        </div>
+                        <h3
+                            class="text-2xl font-display font-bold text-white mb-2"
+                        >
+                            Thermal Imaging
+                        </h3>
+                        <p class="text-slate-200">
+                            Detects subtle temperature variances behind walls
+                            caused by evaporation and moisture.
+                        </p>
+                    </div>
                 </div>
-                <div class="relative">
-                    <!-- Connecting Line (Desktop) -->
-                    <div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 dark:bg-slate-800 -translate-y-1/2 z-0"></div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-                        <!-- Step 1 -->
-                        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-[#135bec]/50 transition-colors group">
-                            <div class="w-12 h-12 rounded-full bg-[#135bec] text-white flex items-center justify-center font-bold text-lg mb-4 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform">1</div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Pinpoint</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400">Using our non-invasive tech to locate the exact source within inches.</p>
+                <!-- Card 2: Acoustic -->
+                <div
+                    class="relative group p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:shadow-lg transition-all flex flex-col justify-between"
+                >
+                    <div>
+                        <div
+                            class="h-12 w-12 bg-orange-100 text-[#f97316] rounded-xl flex items-center justify-center mb-4"
+                        >
+                            <span class="material-symbols-outlined text-2xl"
+                                >mic</span
+                            >
                         </div>
-                        <!-- Step 2 -->
-                        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-[#f97316]/50 transition-colors group">
-                            <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 group-hover:bg-[#f97316] group-hover:text-white flex items-center justify-center font-bold text-lg mb-4 transition-colors">2</div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Access</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400">Surgical opening of the wall or floor only where absolutely necessary.</p>
+                        <h3
+                            class="text-xl font-display font-bold text-slate-900 mb-2"
+                        >
+                            Acoustic Listening
+                        </h3>
+                        <p class="text-slate-600 text-sm">
+                            High-sensitivity ground microphones amplify the
+                            sound of leaks under concrete slabs.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-4 h-1 w-full bg-slate-200 rounded-full overflow-hidden"
+                    >
+                        <div class="h-full bg-[#f97316] w-2/3"></div>
+                    </div>
+                </div>
+                <!-- Card 3: Moisture Mapping -->
+                <div
+                    class="relative group p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:shadow-lg transition-all flex flex-col justify-between"
+                >
+                    <div>
+                        <div
+                            class="h-12 w-12 bg-blue-100 text-[#135bec] rounded-xl flex items-center justify-center mb-4"
+                        >
+                            <span class="material-symbols-outlined text-2xl"
+                                >water_ec</span
+                            >
                         </div>
-                        <!-- Step 3 -->
-                        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-[#f97316]/50 transition-colors group">
-                            <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 group-hover:bg-[#f97316] group-hover:text-white flex items-center justify-center font-bold text-lg mb-4 transition-colors">3</div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Repair</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400">Our expert technicians fix the pipe, test pressure, and ensure safety.</p>
+                        <h3
+                            class="text-xl font-display font-bold text-slate-900 mb-2"
+                        >
+                            Moisture Mapping
+                        </h3>
+                        <p class="text-slate-600 text-sm">
+                            Digital meters map moisture content levels to trace
+                            the water path back to the source.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-4 flex items-center gap-2 text-xs text-slate-500 font-mono"
+                    >
+                        <span class="material-symbols-outlined text-[16px]"
+                            >grid_on</span
+                        >
+                        Grid Analysis
+                    </div>
+                </div>
+                <!-- Card 4: Video Inspection -->
+                <div
+                    class="md:col-span-2 lg:col-span-4 relative group overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 flex flex-col md:flex-row items-center"
+                >
+                    <div class="w-full md:w-1/2 p-8 md:p-12 z-10">
+                        <div
+                            class="h-12 w-12 bg-white/10 backdrop-blur text-white rounded-xl flex items-center justify-center mb-6 border border-white/20"
+                        >
+                            <span class="material-symbols-outlined text-2xl"
+                                >videocam</span
+                            >
                         </div>
-                        <!-- Step 4 -->
-                        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-[#135bec]/50 transition-colors group">
-                            <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 group-hover:bg-[#135bec] group-hover:text-white flex items-center justify-center font-bold text-lg mb-4 transition-colors">4</div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Restore</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400">We dry, clean, and rebuild your space to pre-loss condition.</p>
-                        </div>
+                        <h3
+                            class="text-2xl font-display font-bold text-white mb-3"
+                        >
+                            Endoscopic Video Inspection
+                        </h3>
+                        <p class="text-slate-400 mb-6">
+                            Tiny, flexible cameras snake through pipes and wall
+                            cavities to visually confirm the break without
+                            demolition.
+                        </p>
+                        <a
+                            href="/resources/"
+                            class="text-white font-medium border-b border-[#f97316] pb-0.5 hover:text-[#f97316] transition-colors inline-flex items-center gap-1"
+                        >
+                            Watch Video Demo <span
+                                class="material-symbols-outlined text-sm"
+                                >arrow_outward</span
+                            >
+                        </a>
+                    </div>
+                    <div
+                        class="w-full md:w-1/2 h-64 md:h-full bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity"
+                        data-alt="Close up of pipe inspection view"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDo55crRHvfc4lopyju4W-TDg5f_siC9ESVDME1g6yweVtHEdtfSwOyXOGyynNzjyuex9A7vFOTzrDcUevQ5J4BjNnwIvz2WEaoq9i3iMwM6fKpF2JPlR_c0Vzp62uICePa7H4zR28ZCjnn_q82OgfcvhW-VZ9av011927-d4AwcFLRBEWJ8Vz7DM9EhitcW7hfqLiKuTc8D5xP-Xb1fcRSqu1x_gwvibtmM8wGSzZVzSwOpiK2KO8MHV3NeSG1WYGSt7m_CugFy0-g');"
+                    >
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Specific Scenarios Accordion -->
-        <section class="py-20 bg-white dark:bg-[#1e293b]">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-display font-bold text-slate-900 dark:text-white mb-10 text-center">Specialized Leak Solutions</h2>
-                <div class="space-y-4">
-                    <!-- Accordion Item 1 -->
-                    <details class="group bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 open:border-[#135bec]/50 dark:open:border-[#135bec]/50">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                            <div class="flex items-center gap-4">
-                                <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-[#135bec]">
-                                    <span class="material-symbols-outlined">foundation</span>
-                                </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Slab Leaks</h3>
-                            </div>
-                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-                        </summary>
-                        <div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-400 ml-[4.5rem]">
-                            <p>Leaks under your concrete foundation can compromise structural integrity. We use acoustic listening to find them without drilling blindly through your floors.</p>
+    <!-- Process: Detect & Repair Section -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-3xl sm:text-4xl font-display font-bold text-slate-900"
+                >
+                    Full-Service Solution
+                </h2>
+                <p class="mt-4 text-slate-600">
+                    We don't just find the leak. We fix the pipe and restore
+                    your home.
+                </p>
+            </div>
+            <div class="relative">
+                <!-- Connecting Line (Desktop) -->
+                <div
+                    class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2 z-0"
+                >
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10"
+                >
+                    <!-- Step 1 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-[#135bec]/50 transition-colors group"
+                    >
+                        <div
+                            class="w-12 h-12 rounded-full bg-[#135bec] text-white flex items-center justify-center font-bold text-lg mb-4 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform"
+                        >
+                            1
                         </div>
-                    </details>
-                    <!-- Accordion Item 2 -->
-                    <details class="group bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 open:border-[#135bec]/50 dark:open:border-[#135bec]/50">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                            <div class="flex items-center gap-4">
-                                <div class="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg text-[#f97316]">
-                                    <span class="material-symbols-outlined">mode_cool</span>
-                                </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">AC Drain Line Leaks</h3>
-                            </div>
-                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-                        </summary>
-                        <div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-400 ml-[4.5rem]">
-                            <p>Clogged or broken AC lines often cause hidden water damage in ceilings and walls. We clear blockages and repair lines to prevent mold growth.</p>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">
+                            Pinpoint
+                        </h3>
+                        <p class="text-sm text-slate-600">
+                            Using our non-invasive tech to locate the exact
+                            source within inches.
+                        </p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-[#f97316]/50 transition-colors group"
+                    >
+                        <div
+                            class="w-12 h-12 rounded-full bg-slate-100 text-slate-500 group-hover:bg-[#f97316] group-hover:text-white flex items-center justify-center font-bold text-lg mb-4 transition-colors"
+                        >
+                            2
                         </div>
-                    </details>
-                    <!-- Accordion Item 3 -->
-                    <details class="group bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 open:border-[#135bec]/50 dark:open:border-[#135bec]/50">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                            <div class="flex items-center gap-4">
-                                <div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600">
-                                    <span class="material-symbols-outlined">roofing</span>
-                                </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Window & Roof Leaks</h3>
-                            </div>
-                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-                        </summary>
-                        <div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-400 ml-[4.5rem]">
-                            <p>Water intrusion from the exterior can be tricky. We use thermal imaging during rain or water tests to track the exact entry point of the moisture.</p>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">
+                            Access
+                        </h3>
+                        <p class="text-sm text-slate-600">
+                            Surgical opening of the wall or floor only where
+                            absolutely necessary.
+                        </p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-[#f97316]/50 transition-colors group"
+                    >
+                        <div
+                            class="w-12 h-12 rounded-full bg-slate-100 text-slate-500 group-hover:bg-[#f97316] group-hover:text-white flex items-center justify-center font-bold text-lg mb-4 transition-colors"
+                        >
+                            3
                         </div>
-                    </details>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">
+                            Repair
+                        </h3>
+                        <p class="text-sm text-slate-600">
+                            Our expert technicians fix the pipe, test pressure,
+                            and ensure safety.
+                        </p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div
+                        class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-[#135bec]/50 transition-colors group"
+                    >
+                        <div
+                            class="w-12 h-12 rounded-full bg-slate-100 text-slate-500 group-hover:bg-[#135bec] group-hover:text-white flex items-center justify-center font-bold text-lg mb-4 transition-colors"
+                        >
+                            4
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">
+                            Restore
+                        </h3>
+                        <p class="text-sm text-slate-600">
+                            We dry, clean, and rebuild your space to pre-loss
+                            condition.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
-</LeakDetectionLayout>
+        </div>
+    </section>
+
+    <!-- Specific Scenarios Accordion -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2
+                class="text-3xl font-display font-bold text-slate-900 mb-10 text-center"
+            >
+                Specialized Leak Solutions
+            </h2>
+            <div class="space-y-4">
+                <!-- Accordion Item 1 -->
+                <details
+                    class="group bg-slate-50 rounded-xl overflow-hidden border border-slate-200 open:border-[#135bec]/50"
+                >
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer list-none"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="p-2 bg-blue-100 rounded-lg text-[#135bec]"
+                            >
+                                <span class="material-symbols-outlined"
+                                    >foundation</span
+                                >
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">
+                                Slab Leaks
+                            </h3>
+                        </div>
+                        <span
+                            class="material-symbols-outlined transition-transform group-open:rotate-180"
+                            >expand_more</span
+                        >
+                    </summary>
+                    <div class="px-6 pb-6 pt-0 text-slate-600 ml-[4.5rem]">
+                        <p>
+                            Leaks under your concrete foundation can compromise
+                            structural integrity. We use acoustic listening to
+                            find them without drilling blindly through your
+                            floors.
+                        </p>
+                    </div>
+                </details>
+                <!-- Accordion Item 2 -->
+                <details
+                    class="group bg-slate-50 rounded-xl overflow-hidden border border-slate-200 open:border-[#135bec]/50"
+                >
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer list-none"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="p-2 bg-orange-100 rounded-lg text-[#f97316]"
+                            >
+                                <span class="material-symbols-outlined"
+                                    >mode_cool</span
+                                >
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">
+                                AC Drain Line Leaks
+                            </h3>
+                        </div>
+                        <span
+                            class="material-symbols-outlined transition-transform group-open:rotate-180"
+                            >expand_more</span
+                        >
+                    </summary>
+                    <div class="px-6 pb-6 pt-0 text-slate-600 ml-[4.5rem]">
+                        <p>
+                            Clogged or broken AC lines often cause hidden water
+                            damage in ceilings and walls. We clear blockages and
+                            repair lines to prevent mold growth.
+                        </p>
+                    </div>
+                </details>
+                <!-- Accordion Item 3 -->
+                <details
+                    class="group bg-slate-50 rounded-xl overflow-hidden border border-slate-200 open:border-[#135bec]/50"
+                >
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer list-none"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="p-2 bg-green-100 rounded-lg text-green-600"
+                            >
+                                <span class="material-symbols-outlined"
+                                    >roofing</span
+                                >
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">
+                                Window & Roof Leaks
+                            </h3>
+                        </div>
+                        <span
+                            class="material-symbols-outlined transition-transform group-open:rotate-180"
+                            >expand_more</span
+                        >
+                    </summary>
+                    <div class="px-6 pb-6 pt-0 text-slate-600 ml-[4.5rem]">
+                        <p>
+                            Water intrusion from the exterior can be tricky. We
+                            use thermal imaging during rain or water tests to
+                            track the exact entry point of the moisture.
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+</ServiceLayout>

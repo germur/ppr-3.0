@@ -1,156 +1,275 @@
 ---
-import SmokeDamageLayout from '../../../layouts/SmokeDamageLayout.astro';
+import ServiceLayout from "../../../layouts/ServiceLayout.astro";
+
+const pageTitle = "Professional Smoke & Soot Removal | Breathe Safe Again";
+const pageDescription =
+    "Microscopic smoke particles penetrate walls, ducts, and soft goods within hours. We don't just cover up the smell—we neutralize the source using industrial-grade science.";
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Smoke Damage Restoration",
+    provider: {
+        "@type": "GeneralContractor",
+        name: "Paramount Property Restoration",
+    },
+};
 ---
 
-<SmokeDamageLayout>
-    <!-- Hero Section -->
-    <section class="relative pt-20 flex min-h-[85vh] items-center justify-center overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0 bg-cover bg-center" data-alt="Dark dramatic smoke damaged interior of a home with subtle lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTCGZ26mbF_ax4iie93skHcrcq9UP51J49dvcDeCio7aXrkh_MmhdKwjOZh9N9W_M-CVFCUqUlkwORyuE9EfFxYM3Y_TUtsT32tmIF31w60R2qOdyg0XhmmfFUyrEFJxWrrozwIHcWpO4_Gm0JC9n4CHKg6XGOML-C_Gl4aYM3rF_qtHXnSSiJiGjb5qpNVjD061fBrx-0BBKns-Ovan1rKYMiVfixXWE0a-Jb97KiS0HoRZIie5NR7RJIgthuK0wTVYDG_yfWLd58');">
-        </div>
-        <div class="absolute inset-0 z-0 bg-gradient-to-r from-[#111111] via-[#111111]/90 to-[#111111]/40"></div>
-        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="max-w-3xl">
-                <!-- Alert Badge -->
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-900/30 border border-red-500/50 text-red-200 mb-6 backdrop-blur-sm animate-pulse">
-                    <span class="material-symbols-outlined text-[18px] text-red-500">warning</span>
-                    <span class="text-xs font-bold uppercase tracking-wider">Acidic Residue Alert: Immediate Action Required</span>
-                </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6">
-                    Professional Smoke & Soot Removal: <span class="text-[#ec7f13]">Breathe Safe Again.</span>
-                </h1>
-                <p class="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
-                    Microscopic smoke particles penetrate walls, ducts, and soft goods within hours. We don't just cover up the smell—we neutralize the source using industrial-grade science.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/contact/" class="bg-[#ec7f13] hover:bg-[#d67311] text-white text-base font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-[1.02] shadow-[0_4px_14px_0_rgba(236,127,19,0.39)] flex items-center justify-center gap-2">
-                        <span>Remove the Smell Now</span>
-                        <span class="material-symbols-outlined">arrow_forward</span>
-                    </a>
-                    <a href="tel:7866022217" class="bg-white/10 hover:bg-white/20 border border-white/10 backdrop-blur-sm text-white text-base font-bold py-4 px-8 rounded-lg transition-colors flex items-center justify-center gap-2">
-                        <span class="material-symbols-outlined">call</span>
-                        (786) 602-2217
-                    </a>
-                </div>
-                <p class="mt-6 text-sm text-gray-500 flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-green-500 block"></span>
-                    Technicians currently deployed in your area.
-                </p>
-            </div>
-        </div>
-    </section>
-
+<ServiceLayout
+    title={pageTitle}
+    description={pageDescription}
+    heroImage="https://lh3.googleusercontent.com/aida-public/AB6AXuDTCGZ26mbF_ax4iie93skHcrcq9UP51J49dvcDeCio7aXrkh_MmhdKwjOZh9N9W_M-CVFCUqUlkwORyuE9EfFxYM3Y_TUtsT32tmIF31w60R2qOdyg0XhmmfFUyrEFJxWrrozwIHcWpO4_Gm0JC9n4CHKg6XGOML-C_Gl4aYM3rF_qtHXnSSiJiGjb5qpNVjD061fBrx-0BBKns-Ovan1rKYMiVfixXWE0a-Jb97KiS0HoRZIie5NR7RJIgthuK0wTVYDG_yfWLd58"
+    themeColor="orange"
+    schema={schema}
+>
     <!-- Residue Types (Bento Grid) -->
-    <section class="py-20 bg-[#1c1c1c] border-t border-white/5 relative">
+    <section class="py-20 bg-slate-900 border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12">
-                <h2 class="text-3xl font-bold text-white mb-4">The Residue Types: <span class="text-[#ec7f13]">Know Your Enemy</span></h2>
-                <p class="text-gray-400 max-w-2xl">Different fires produce different types of residue. Understanding the type is critical for proper remediation protocol.</p>
+                <h2 class="text-3xl font-bold text-white mb-4">
+                    The Residue Types: <span class="text-[#ec7f13]"
+                        >Know Your Enemy</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl">
+                    Different fires produce different types of residue.
+                    Understanding the type is critical for proper remediation
+                    protocol.
+                </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <!-- Card 1 -->
-                <div class="bg-[#111111] border border-white/10 p-6 rounded-xl hover:border-[#ec7f13]/50 transition-colors group">
-                    <div class="w-12 h-12 rounded-lg bg-blue-900/20 text-blue-400 flex items-center justify-center mb-4 group-hover:bg-[#ec7f13]/20 group-hover:text-[#ec7f13] transition-colors">
-                        <span class="material-symbols-outlined text-3xl">water_drop</span>
+                <div
+                    class="bg-black/50 border border-white/10 p-6 rounded-xl hover:border-[#ec7f13]/50 transition-colors group"
+                >
+                    <div
+                        class="w-12 h-12 rounded-lg bg-blue-900/20 text-blue-400 flex items-center justify-center mb-4 group-hover:bg-[#ec7f13]/20 group-hover:text-[#ec7f13] transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-3xl"
+                            >water_drop</span
+                        >
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">Wet Smoke</h3>
-                    <p class="text-sm text-gray-400 mb-4">Low heat, smoldering fires. Result: Sticky, smeary residue with a pungent odor.</p>
-                    <span class="inline-block px-2 py-1 bg-white/5 rounded text-xs text-gray-300 font-mono">Characteristic: Smeary</span>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Low heat, smoldering fires. Result: Sticky, smeary
+                        residue with a pungent odor.
+                    </p>
+                    <span
+                        class="inline-block px-2 py-1 bg-white/5 rounded text-xs text-gray-300 font-mono"
+                        >Characteristic: Smeary</span
+                    >
                 </div>
                 <!-- Card 2 -->
-                <div class="bg-[#111111] border border-white/10 p-6 rounded-xl hover:border-[#ec7f13]/50 transition-colors group">
-                    <div class="w-12 h-12 rounded-lg bg-orange-900/20 text-orange-400 flex items-center justify-center mb-4 group-hover:bg-[#ec7f13]/20 group-hover:text-[#ec7f13] transition-colors">
-                        <span class="material-symbols-outlined text-3xl">local_fire_department</span>
+                <div
+                    class="bg-black/50 border border-white/10 p-6 rounded-xl hover:border-[#ec7f13]/50 transition-colors group"
+                >
+                    <div
+                        class="w-12 h-12 rounded-lg bg-orange-900/20 text-orange-400 flex items-center justify-center mb-4 group-hover:bg-[#ec7f13]/20 group-hover:text-[#ec7f13] transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-3xl"
+                            >local_fire_department</span
+                        >
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">Dry Smoke</h3>
-                    <p class="text-sm text-gray-400 mb-4">Fast burning, high heat fires. Result: Powdery, non-smeary residue.</p>
-                    <span class="inline-block px-2 py-1 bg-white/5 rounded text-xs text-gray-300 font-mono">Characteristic: Powdery</span>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Fast burning, high heat fires. Result: Powdery,
+                        non-smeary residue.
+                    </p>
+                    <span
+                        class="inline-block px-2 py-1 bg-white/5 rounded text-xs text-gray-300 font-mono"
+                        >Characteristic: Powdery</span
+                    >
                 </div>
                 <!-- Card 3 -->
-                <div class="bg-[#111111] border border-white/10 p-6 rounded-xl hover:border-[#ec7f13]/50 transition-colors group">
-                    <div class="w-12 h-12 rounded-lg bg-purple-900/20 text-purple-400 flex items-center justify-center mb-4 group-hover:bg-[#ec7f13]/20 group-hover:text-[#ec7f13] transition-colors">
-                        <span class="material-symbols-outlined text-3xl">restaurant</span>
+                <div
+                    class="bg-black/50 border border-white/10 p-6 rounded-xl hover:border-[#ec7f13]/50 transition-colors group"
+                >
+                    <div
+                        class="w-12 h-12 rounded-lg bg-purple-900/20 text-purple-400 flex items-center justify-center mb-4 group-hover:bg-[#ec7f13]/20 group-hover:text-[#ec7f13] transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-3xl"
+                            >restaurant</span
+                        >
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Protein Residue</h3>
-                    <p class="text-sm text-gray-400 mb-4">Invisible, extremely pungent residue often from kitchen fires. Discolors paint/varnish.</p>
-                    <span class="inline-block px-2 py-1 bg-white/5 rounded text-xs text-gray-300 font-mono">Characteristic: Invisible</span>
+                    <h3 class="text-lg font-bold text-white mb-2">
+                        Protein Residue
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Invisible, extremely pungent residue often from kitchen
+                        fires. Discolors paint/varnish.
+                    </p>
+                    <span
+                        class="inline-block px-2 py-1 bg-white/5 rounded text-xs text-gray-300 font-mono"
+                        >Characteristic: Invisible</span
+                    >
                 </div>
                 <!-- Card 4 -->
-                <div class="bg-[#111111] border border-white/10 p-6 rounded-xl hover:border-[#ec7f13]/50 transition-colors group">
-                    <div class="w-12 h-12 rounded-lg bg-green-900/20 text-green-400 flex items-center justify-center mb-4 group-hover:bg-[#ec7f13]/20 group-hover:text-[#ec7f13] transition-colors">
-                        <span class="material-symbols-outlined text-3xl">oil_barrel</span>
+                <div
+                    class="bg-black/50 border border-white/10 p-6 rounded-xl hover:border-[#ec7f13]/50 transition-colors group"
+                >
+                    <div
+                        class="w-12 h-12 rounded-lg bg-green-900/20 text-green-400 flex items-center justify-center mb-4 group-hover:bg-[#ec7f13]/20 group-hover:text-[#ec7f13] transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-3xl"
+                            >oil_barrel</span
+                        >
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Fuel Oil Soot</h3>
-                    <p class="text-sm text-gray-400 mb-4">Furnace puff-backs causing oily, dangerous soot deposits covering surfaces.</p>
-                    <span class="inline-block px-2 py-1 bg-white/5 rounded text-xs text-gray-300 font-mono">Characteristic: Oily</span>
+                    <h3 class="text-lg font-bold text-white mb-2">
+                        Fuel Oil Soot
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Furnace puff-backs causing oily, dangerous soot deposits
+                        covering surfaces.
+                    </p>
+                    <span
+                        class="inline-block px-2 py-1 bg-white/5 rounded text-xs text-gray-300 font-mono"
+                        >Characteristic: Oily</span
+                    >
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Technology Section -->
-    <section id="technology" class="py-20 bg-[#111111]">
+    <section id="technology" class="py-20 bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6"
+            >
                 <div>
-                    <h2 class="text-3xl font-bold text-white">Scientific Deodorization Technology</h2>
-                    <p class="text-gray-400 mt-2">We use advanced physics, not perfume, to eliminate odors.</p>
+                    <h2 class="text-3xl font-bold text-white">
+                        Scientific Deodorization Technology
+                    </h2>
+                    <p class="text-gray-400 mt-2">
+                        We use advanced physics, not perfume, to eliminate
+                        odors.
+                    </p>
                 </div>
-                <a href="#technology" class="text-[#ec7f13] hover:text-white font-medium flex items-center gap-1 transition-colors">
-                    View Technical Specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Tech Item 1 -->
                 <div class="relative group">
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-[#ec7f13] to-orange-600 rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur"></div>
-                    <div class="relative bg-[#1c1c1c] p-8 rounded-xl h-full flex flex-col">
-                        <div class="mb-6 h-40 rounded-lg bg-[#111111] flex items-center justify-center overflow-hidden border border-white/5">
+                    <div
+                        class="absolute -inset-0.5 bg-gradient-to-r from-[#ec7f13] to-orange-600 rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900 p-8 rounded-xl h-full flex flex-col border border-white/5"
+                    >
+                        <div
+                            class="mb-6 h-40 rounded-lg bg-black flex items-center justify-center overflow-hidden border border-white/5"
+                        >
                             <!-- Abstract illustration for hydroxyl generator -->
                             <div class="relative w-24 h-24">
-                                <div class="absolute inset-0 border-4 border-[#ec7f13]/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
-                                <div class="absolute inset-2 border-4 border-[#ec7f13]/40 rounded-full animate-[spin_7s_linear_infinite_reverse]"></div>
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-4xl text-[#ec7f13]">cyclone</span>
+                                <div
+                                    class="absolute inset-0 border-4 border-[#ec7f13]/20 rounded-full animate-[spin_10s_linear_infinite]"
+                                >
+                                </div>
+                                <div
+                                    class="absolute inset-2 border-4 border-[#ec7f13]/40 rounded-full animate-[spin_7s_linear_infinite_reverse]"
+                                >
+                                </div>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-4xl text-[#ec7f13]"
+                                        >cyclone</span
+                                    >
                                 </div>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Hydroxyl Generators</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed flex-grow">Uses UV light to create hydroxyl radicals that chemically decompose odor molecules. Safe for occupied spaces.</p>
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            Hydroxyl Generators
+                        </h3>
+                        <p
+                            class="text-gray-400 text-sm leading-relaxed flex-grow"
+                        >
+                            Uses UV light to create hydroxyl radicals that
+                            chemically decompose odor molecules. Safe for
+                            occupied spaces.
+                        </p>
                     </div>
                 </div>
                 <!-- Tech Item 2 -->
                 <div class="relative group">
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-[#ec7f13] to-orange-600 rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur"></div>
-                    <div class="relative bg-[#1c1c1c] p-8 rounded-xl h-full flex flex-col">
-                        <div class="mb-6 h-40 rounded-lg bg-[#111111] flex items-center justify-center overflow-hidden border border-white/5">
+                    <div
+                        class="absolute -inset-0.5 bg-gradient-to-r from-[#ec7f13] to-orange-600 rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900 p-8 rounded-xl h-full flex flex-col border border-white/5"
+                    >
+                        <div
+                            class="mb-6 h-40 rounded-lg bg-black flex items-center justify-center overflow-hidden border border-white/5"
+                        >
                             <div class="relative">
-                                <span class="material-symbols-outlined text-6xl text-gray-600">cloud</span>
-                                <span class="material-symbols-outlined text-4xl text-[#ec7f13] absolute -bottom-2 -right-2">blur_on</span>
+                                <span
+                                    class="material-symbols-outlined text-6xl text-gray-600"
+                                    >cloud</span
+                                >
+                                <span
+                                    class="material-symbols-outlined text-4xl text-[#ec7f13] absolute -bottom-2 -right-2"
+                                    >blur_on</span
+                                >
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Thermal Fogging</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed flex-grow">Recreates the fire's path. A heated deodorizer fog penetrates every crack and crevice where smoke traveled.</p>
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            Thermal Fogging
+                        </h3>
+                        <p
+                            class="text-gray-400 text-sm leading-relaxed flex-grow"
+                        >
+                            Recreates the fire's path. A heated deodorizer fog
+                            penetrates every crack and crevice where smoke
+                            traveled.
+                        </p>
                     </div>
                 </div>
                 <!-- Tech Item 3 -->
                 <div class="relative group">
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-[#ec7f13] to-orange-600 rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur"></div>
-                    <div class="relative bg-[#1c1c1c] p-8 rounded-xl h-full flex flex-col">
-                        <div class="mb-6 h-40 rounded-lg bg-[#111111] flex items-center justify-center overflow-hidden border border-white/5">
+                    <div
+                        class="absolute -inset-0.5 bg-gradient-to-r from-[#ec7f13] to-orange-600 rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-slate-900 p-8 rounded-xl h-full flex flex-col border border-white/5"
+                    >
+                        <div
+                            class="mb-6 h-40 rounded-lg bg-black flex items-center justify-center overflow-hidden border border-white/5"
+                        >
                             <div class="flex items-center gap-1">
-                                <span class="w-1 h-12 bg-gray-700 rounded-full"></span>
-                                <span class="w-1 h-16 bg-gray-700 rounded-full"></span>
-                                <div class="w-20 h-20 border-2 border-[#ec7f13] rounded-full flex items-center justify-center">
-                                    <div class="w-16 h-1 border border-[#ec7f13]/50 rotate-45"></div>
-                                    <div class="w-16 h-1 border border-[#ec7f13]/50 -rotate-45 absolute"></div>
+                                <span class="w-1 h-12 bg-gray-700 rounded-full"
+                                ></span>
+                                <span class="w-1 h-16 bg-gray-700 rounded-full"
+                                ></span>
+                                <div
+                                    class="w-20 h-20 border-2 border-[#ec7f13] rounded-full flex items-center justify-center"
+                                >
+                                    <div
+                                        class="w-16 h-1 border border-[#ec7f13]/50 rotate-45"
+                                    >
+                                    </div>
+                                    <div
+                                        class="w-16 h-1 border border-[#ec7f13]/50 -rotate-45 absolute"
+                                    >
+                                    </div>
                                 </div>
-                                <span class="w-1 h-16 bg-gray-700 rounded-full"></span>
-                                <span class="w-1 h-12 bg-gray-700 rounded-full"></span>
+                                <span class="w-1 h-16 bg-gray-700 rounded-full"
+                                ></span>
+                                <span class="w-1 h-12 bg-gray-700 rounded-full"
+                                ></span>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">HEPA Air Scrubbing</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed flex-grow">Captures 99.97% of airborne particulates down to 0.3 microns, effectively clearing the air of soot.</p>
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            HEPA Air Scrubbing
+                        </h3>
+                        <p
+                            class="text-gray-400 text-sm leading-relaxed flex-grow"
+                        >
+                            Captures 99.97% of airborne particulates down to 0.3
+                            microns, effectively clearing the air of soot.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -158,51 +277,118 @@ import SmokeDamageLayout from '../../../layouts/SmokeDamageLayout.astro';
     </section>
 
     <!-- Process Timeline -->
-    <section class="py-24 bg-[#1c1c1c] relative overflow-hidden">
+    <section class="py-24 bg-slate-900 relative overflow-hidden">
         <!-- Background pattern -->
-        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ec7f13 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div
+            class="absolute inset-0 opacity-5"
+            style="background-image: radial-gradient(#ec7f13 1px, transparent 1px); background-size: 32px 32px;"
+        >
+        </div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white mb-4">Remediation Protocol</h2>
-                <p class="text-gray-400">Our expert restoration process ensures no residue is left behind.</p>
+                <h2 class="text-3xl font-bold text-white mb-4">
+                    Remediation Protocol
+                </h2>
+                <p class="text-gray-400">
+                    Our expert restoration process ensures no residue is left
+                    behind.
+                </p>
             </div>
             <div class="relative">
                 <!-- Vertical Line -->
-                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-700 md:-ml-0.5"></div>
+                <div
+                    class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-700 md:-ml-0.5"
+                >
+                </div>
                 <!-- Step 1 -->
-                <div class="relative flex flex-col md:flex-row gap-8 mb-12 group">
-                    <div class="md:w-1/2 md:text-right flex flex-col items-start md:items-end">
-                        <h3 class="text-xl font-bold text-[#ec7f13] mb-2">01. Source Removal</h3>
-                        <p class="text-gray-400 text-sm">Removing non-salvageable debris and charred materials to eliminate the bulk of the odor source immediately.</p>
+                <div
+                    class="relative flex flex-col md:flex-row gap-8 mb-12 group"
+                >
+                    <div
+                        class="md:w-1/2 md:text-right flex flex-col items-start md:items-end"
+                    >
+                        <h3 class="text-xl font-bold text-[#ec7f13] mb-2">
+                            01. Source Removal
+                        </h3>
+                        <p class="text-gray-400 text-sm">
+                            Removing non-salvageable debris and charred
+                            materials to eliminate the bulk of the odor source
+                            immediately.
+                        </p>
                     </div>
-                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#ec7f13] border-4 border-[#1c1c1c] shadow-[0_0_0_4px_rgba(236,127,19,0.2)]"></div>
+                    <div
+                        class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#ec7f13] border-4 border-slate-900 shadow-[0_0_0_4px_rgba(236,127,19,0.2)]"
+                    >
+                    </div>
                     <div class="md:w-1/2 pl-8 md:pl-0"></div>
                 </div>
                 <!-- Step 2 -->
-                <div class="relative flex flex-col md:flex-row gap-8 mb-12 group">
+                <div
+                    class="relative flex flex-col md:flex-row gap-8 mb-12 group"
+                >
                     <div class="md:w-1/2"></div>
-                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gray-600 border-4 border-[#1c1c1c] group-hover:bg-[#ec7f13] transition-colors"></div>
-                    <div class="md:w-1/2 pl-8 md:pl-0 flex flex-col items-start">
-                        <h3 class="text-xl font-bold text-white group-hover:text-[#ec7f13] transition-colors mb-2">02. Agitation & Cleaning</h3>
-                        <p class="text-gray-400 text-sm">Using chemical sponges and specialized alkaline detergents to lift acidic soot from structural surfaces.</p>
+                    <div
+                        class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gray-600 border-4 border-slate-900 group-hover:bg-[#ec7f13] transition-colors"
+                    >
+                    </div>
+                    <div
+                        class="md:w-1/2 pl-8 md:pl-0 flex flex-col items-start"
+                    >
+                        <h3
+                            class="text-xl font-bold text-white group-hover:text-[#ec7f13] transition-colors mb-2"
+                        >
+                            02. Agitation & Cleaning
+                        </h3>
+                        <p class="text-gray-400 text-sm">
+                            Using chemical sponges and specialized alkaline
+                            detergents to lift acidic soot from structural
+                            surfaces.
+                        </p>
                     </div>
                 </div>
                 <!-- Step 3 -->
-                <div class="relative flex flex-col md:flex-row gap-8 mb-12 group">
-                    <div class="md:w-1/2 md:text-right flex flex-col items-start md:items-end">
-                        <h3 class="text-xl font-bold text-white group-hover:text-[#ec7f13] transition-colors mb-2">03. Deodorization Phase</h3>
-                        <p class="text-gray-400 text-sm">Application of thermal fog or ozone treatments to neutralize deep-set odor molecules in pores.</p>
+                <div
+                    class="relative flex flex-col md:flex-row gap-8 mb-12 group"
+                >
+                    <div
+                        class="md:w-1/2 md:text-right flex flex-col items-start md:items-end"
+                    >
+                        <h3
+                            class="text-xl font-bold text-white group-hover:text-[#ec7f13] transition-colors mb-2"
+                        >
+                            03. Deodorization Phase
+                        </h3>
+                        <p class="text-gray-400 text-sm">
+                            Application of thermal fog or ozone treatments to
+                            neutralize deep-set odor molecules in pores.
+                        </p>
                     </div>
-                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gray-600 border-4 border-[#1c1c1c] group-hover:bg-[#ec7f13] transition-colors"></div>
+                    <div
+                        class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gray-600 border-4 border-slate-900 group-hover:bg-[#ec7f13] transition-colors"
+                    >
+                    </div>
                     <div class="md:w-1/2 pl-8 md:pl-0"></div>
                 </div>
                 <!-- Step 4 -->
                 <div class="relative flex flex-col md:flex-row gap-8 group">
                     <div class="md:w-1/2"></div>
-                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gray-600 border-4 border-[#1c1c1c] group-hover:bg-[#ec7f13] transition-colors"></div>
-                    <div class="md:w-1/2 pl-8 md:pl-0 flex flex-col items-start">
-                        <h3 class="text-xl font-bold text-white group-hover:text-[#ec7f13] transition-colors mb-2">04. Encapsulation & Sealing</h3>
-                        <p class="text-gray-400 text-sm">Applying specialized shellac-based sealers to lock in any remaining microscopic particulates before painting.</p>
+                    <div
+                        class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gray-600 border-4 border-slate-900 group-hover:bg-[#ec7f13] transition-colors"
+                    >
+                    </div>
+                    <div
+                        class="md:w-1/2 pl-8 md:pl-0 flex flex-col items-start"
+                    >
+                        <h3
+                            class="text-xl font-bold text-white group-hover:text-[#ec7f13] transition-colors mb-2"
+                        >
+                            04. Encapsulation & Sealing
+                        </h3>
+                        <p class="text-gray-400 text-sm">
+                            Applying specialized shellac-based sealers to lock
+                            in any remaining microscopic particulates before
+                            painting.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -210,65 +396,137 @@ import SmokeDamageLayout from '../../../layouts/SmokeDamageLayout.astro';
     </section>
 
     <!-- Contents Factor & FAQ Split -->
-    <section class="py-20 bg-[#111111]">
+    <section class="py-20 bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16">
                 <!-- Left: FAQ -->
                 <div>
-                    <h2 class="text-2xl font-bold text-white mb-8">Common Questions</h2>
+                    <h2 class="text-2xl font-bold text-white mb-8">
+                        Common Questions
+                    </h2>
                     <div class="space-y-4">
                         <!-- FAQ Item 1 -->
-                        <details class="group bg-[#1c1c1c] rounded-lg overflow-hidden border border-white/5">
-                            <summary class="flex justify-between items-center cursor-pointer p-4 md:p-6 list-none">
-                                <span class="font-semibold text-white">Is soot dangerous to breathe?</span>
+                        <details
+                            class="group bg-slate-900 rounded-lg overflow-hidden border border-white/5"
+                        >
+                            <summary
+                                class="flex justify-between items-center cursor-pointer p-4 md:p-6 list-none"
+                            >
+                                <span class="font-semibold text-white"
+                                    >Is soot dangerous to breathe?</span
+                                >
                                 <span class="transition group-open:rotate-180">
-                                    <span class="material-symbols-outlined text-[#ec7f13]">expand_more</span>
+                                    <span
+                                        class="material-symbols-outlined text-[#ec7f13]"
+                                        >expand_more</span
+                                    >
                                 </span>
                             </summary>
-                            <div class="text-gray-400 px-4 md:px-6 pb-6 text-sm leading-relaxed">
-                                Yes. Soot is made of tiny carbon particles containing acids, chemicals, metals, dust, and soils. Inhaling soot can cause respiratory issues, especially for those with asthma or heart disease. It is classified as a carcinogen.
+                            <div
+                                class="text-gray-400 px-4 md:px-6 pb-6 text-sm leading-relaxed"
+                            >
+                                Yes. Soot is made of tiny carbon particles
+                                containing acids, chemicals, metals, dust, and
+                                soils. Inhaling soot can cause respiratory
+                                issues, especially for those with asthma or
+                                heart disease. It is classified as a carcinogen.
                             </div>
                         </details>
                         <!-- FAQ Item 2 -->
-                        <details class="group bg-[#1c1c1c] rounded-lg overflow-hidden border border-white/5">
-                            <summary class="flex justify-between items-center cursor-pointer p-4 md:p-6 list-none">
-                                <span class="font-semibold text-white">Can I just paint over the smoke damage?</span>
+                        <details
+                            class="group bg-slate-900 rounded-lg overflow-hidden border border-white/5"
+                        >
+                            <summary
+                                class="flex justify-between items-center cursor-pointer p-4 md:p-6 list-none"
+                            >
+                                <span class="font-semibold text-white"
+                                    >Can I just paint over the smoke damage?</span
+                                >
                                 <span class="transition group-open:rotate-180">
-                                    <span class="material-symbols-outlined text-[#ec7f13]">expand_more</span>
+                                    <span
+                                        class="material-symbols-outlined text-[#ec7f13]"
+                                        >expand_more</span
+                                    >
                                 </span>
                             </summary>
-                            <div class="text-gray-400 px-4 md:px-6 pb-6 text-sm leading-relaxed">
-                                No. Ordinary latex paint will not seal in smoke odors or stains. The resin in smoke will bleed through the paint, and the smell will return as humidity changes. You must clean and then seal with a specialized primer first.
+                            <div
+                                class="text-gray-400 px-4 md:px-6 pb-6 text-sm leading-relaxed"
+                            >
+                                No. Ordinary latex paint will not seal in smoke
+                                odors or stains. The resin in smoke will bleed
+                                through the paint, and the smell will return as
+                                humidity changes. You must clean and then seal
+                                with a specialized primer first.
                             </div>
                         </details>
                         <!-- FAQ Item 3 -->
-                        <details class="group bg-[#1c1c1c] rounded-lg overflow-hidden border border-white/5">
-                            <summary class="flex justify-between items-center cursor-pointer p-4 md:p-6 list-none">
-                                <span class="font-semibold text-white">What about my clothes and furniture?</span>
+                        <details
+                            class="group bg-slate-900 rounded-lg overflow-hidden border border-white/5"
+                        >
+                            <summary
+                                class="flex justify-between items-center cursor-pointer p-4 md:p-6 list-none"
+                            >
+                                <span class="font-semibold text-white"
+                                    >What about my clothes and furniture?</span
+                                >
                                 <span class="transition group-open:rotate-180">
-                                    <span class="material-symbols-outlined text-[#ec7f13]">expand_more</span>
+                                    <span
+                                        class="material-symbols-outlined text-[#ec7f13]"
+                                        >expand_more</span
+                                    >
                                 </span>
                             </summary>
-                            <div class="text-gray-400 px-4 md:px-6 pb-6 text-sm leading-relaxed">
-                                We have a specialized "Contents Cleaning" division. We use ultrasonic cleaning tanks for hard items and the Esporta Wash System for soft goods, which can restore over 90% of soft contents previously considered ruined.
+                            <div
+                                class="text-gray-400 px-4 md:px-6 pb-6 text-sm leading-relaxed"
+                            >
+                                We have a specialized "Contents Cleaning"
+                                division. We use ultrasonic cleaning tanks for
+                                hard items and the Esporta Wash System for soft
+                                goods, which can restore over 90% of soft
+                                contents previously considered ruined.
                             </div>
                         </details>
                     </div>
                 </div>
                 <!-- Right: Contents Factor Callout -->
-                <div class="relative rounded-2xl overflow-hidden min-h-[400px] flex flex-col justify-end p-8 bg-gray-800">
+                <div
+                    class="relative rounded-2xl overflow-hidden min-h-[400px] flex flex-col justify-end p-8 bg-gray-800"
+                >
                     <!-- Background for contents section -->
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform hover:scale-105 duration-700" data-alt="Close up of cleaning soft goods like clothes or fabrics" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB89Zw0zzcrHfXKZYQhhYiwQkO5nCbip5lrYHXAM0kBG0mBWqc0RWQ8KZH3HtYtkwUOELIGCNOs24FnAPTxGhjVTc4A0_9cAHbkx5y7cMwS6Yt0gw2NW7csn3k_JNQaCOdikMkFnoEl_YdB4QFo6UCW9Si5rObDWVz8tybRV-uEpiH6suLLfAsyq49bwhF2MON_nLigzlZ3hwJHsTrkwIwQVfc3qTF8bmaY7KKXA5T1cHXvVmrK1ePVjTaWr0rbBtt8P-hAyd4AHLfx');">
+                    <div
+                        class="absolute inset-0 bg-cover bg-center transition-transform hover:scale-105 duration-700"
+                        data-alt="Close up of cleaning soft goods like clothes or fabrics"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB89Zw0zzcrHfXKZYQhhYiwQkO5nCbip5lrYHXAM0kBG0mBWqc0RWQ8KZH3HtYtkwUOELIGCNOs24FnAPTxGhjVTc4A0_9cAHbkx5y7cMwS6Yt0gw2NW7csn3k_JNQaCOdikMkFnoEl_YdB4QFo6UCW9Si5rObDWVz8tybRV-uEpiH6suLLfAsyq49bwhF2MON_nLigzlZ3hwJHsTrkwIwQVfc3qTF8bmaY7KKXA5T1cHXvVmrK1ePVjTaWr0rbBtt8P-hAyd4AHLfx');"
+                    >
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
+                    >
+                    </div>
                     <div class="relative z-10">
-                        <div class="flex items-center gap-2 mb-2 text-[#ec7f13]">
-                            <span class="material-symbols-outlined">checkroom</span>
-                            <span class="text-sm font-bold uppercase tracking-wider">The Contents Factor</span>
+                        <div
+                            class="flex items-center gap-2 mb-2 text-[#ec7f13]"
+                        >
+                            <span class="material-symbols-outlined"
+                                >checkroom</span
+                            >
+                            <span
+                                class="text-sm font-bold uppercase tracking-wider"
+                                >The Contents Factor</span
+                            >
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">We Save Your Belongings Too</h3>
-                        <p class="text-gray-300 text-sm mb-6">Don't throw it away yet. Our ultrasonic cleaning and soft goods sanitization can save sentimental items, electronics, and clothing.</p>
-                        <a href="/restoration/fire-damage/contents-cleaning/" class="bg-white text-[#111111] hover:bg-gray-200 font-bold py-3 px-6 rounded-lg text-sm w-fit transition-colors inline-block">
+                        <h3 class="text-2xl font-bold text-white mb-2">
+                            We Save Your Belongings Too
+                        </h3>
+                        <p class="text-gray-300 text-sm mb-6">
+                            Don't throw it away yet. Our ultrasonic cleaning and
+                            soft goods sanitization can save sentimental items,
+                            electronics, and clothing.
+                        </p>
+                        <a
+                            href="/restoration/fire-damage/contents-cleaning/"
+                            class="bg-white text-slate-900 hover:bg-gray-200 font-bold py-3 px-6 rounded-lg text-sm w-fit transition-colors inline-block"
+                        >
                             Learn About Contents Cleaning
                         </a>
                     </div>
@@ -280,17 +538,29 @@ import SmokeDamageLayout from '../../../layouts/SmokeDamageLayout.astro';
     <!-- Final CTA -->
     <section class="py-20 bg-[#ec7f13]">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-black text-white mb-6">Don't Let Smoke Damage Set In Permanently</h2>
-            <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">The longer acidic soot sits, the more irreversible damage it causes to metals, glass, and plastics. We are ready to deploy 24/7.</p>
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-6">
+                Don't Let Smoke Damage Set In Permanently
+            </h2>
+            <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+                The longer acidic soot sits, the more irreversible damage it
+                causes to metals, glass, and plastics. We are ready to deploy
+                24/7.
+            </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="tel:7866022217" class="bg-[#111111] text-white hover:bg-gray-900 font-bold py-4 px-8 rounded-lg text-lg shadow-lg flex items-center justify-center gap-2 transition-colors">
+                <a
+                    href="tel:7866022217"
+                    class="bg-[#111111] text-white hover:bg-gray-900 font-bold py-4 px-8 rounded-lg text-lg shadow-lg flex items-center justify-center gap-2 transition-colors"
+                >
                     <span class="material-symbols-outlined">call</span>
                     Call (786) 602-2217
                 </a>
-                <a href="/contact/" class="bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-8 rounded-lg text-lg backdrop-blur-sm border border-white/30 transition-colors flex items-center justify-center">
+                <a
+                    href="/contact/"
+                    class="bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-8 rounded-lg text-lg backdrop-blur-sm border border-white/30 transition-colors flex items-center justify-center"
+                >
                     Request Estimate Online
                 </a>
             </div>
         </div>
     </section>
-</SmokeDamageLayout>
+</ServiceLayout>
