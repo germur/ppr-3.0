@@ -14,6 +14,10 @@ import {
 } from "react-icons/fa";
 
 import { generateServiceSchema } from "../../../utils/schemaGenerator";
+import fireHeroImg from "../../../assets/images/restoration/fire-damage/hero.webp";
+import kitchenFireImg from "../../../assets/images/restoration/fire-damage/kitchen-fire.webp";
+import electricalFireImg from "../../../assets/images/restoration/fire-damage/electrical-fire.webp";
+import commercialFireImg from "../../../assets/images/restoration/fire-damage/commercial-fire.webp";
 
 // Fetch content
 const entry = await getEntry("services", "fire-damage");
@@ -32,9 +36,8 @@ const {
     heroImage: heroImageKey,
 } = entry.data;
 
-// Image map (Using remote URL for now as per original file)
-const fireHeroUrl =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBd5RZlvJ_eI0JbY-KPS1MZ7NTuPfXp1YEgq76GVYr5zoJncOE99wF7p0dInVssUjsB2slnz_3pGap-Xszxa5Zl3FUOPvzsagm8B61WAmEoUeQ2xIC8-vJd_gTMOyzOKZabMjlGmWXU-WFrlJywhZXey_FMQuHDOPk_Lx1BTjwAB7mTKolCX3crGVzAKghp7ALaMEwAfFYtwUb5_RWBFl9_JcOf8Ml_xUxdk1xLpUySdGMG1VD_gJvfZaX8oj4nI_ao7BC1_GWKg7Tj";
+// Image map
+const fireHeroUrl = fireHeroImg;
 
 // Icon map
 const iconMap: Record<string, any> = {
@@ -59,7 +62,7 @@ const mappedSteps = processSteps.map((s) => ({
 
 const schema = generateServiceSchema({
     url: "https://paramountpropertyrestoration.com/restoration/fire-damage/",
-    image: fireHeroUrl,
+    image: fireHeroUrl.src,
     description: pageDescription,
     services: [
         { name: "Fire Damage Restoration" },
@@ -141,7 +144,7 @@ const schema = generateServiceSchema({
                     <div
                         class="h-40 bg-cover bg-center relative"
                         data-alt="Modern kitchen interior with clean surfaces"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjb_BJdhGL5zjwj8xIN0RRVRsWKAS__6dd5NcNM868bzXuNLJ_zVa4Xfr11ARPKW4FCFHEB8bMPwf_1FFB38JuzPDEW0R74c-NDobaI2qGqpar3YhBEgEXtmZSa92bJKvEQ04sxaXPl3VIxOoUa9HtANiwCqN01DnmW8hIkZ4c2zNu9BBS_rWE2wlyb3xf6DdcQ9zAMxmKAdw826zGRl8OVKyWfTocouffWG3MoJYkuKZynnL74y7W9xAgWV2n2dFbunx0UfcfVv9X');"
+                        style={`background-image: url('${kitchenFireImg.src}');`}
                     >
                         <div
                             class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"
@@ -170,7 +173,7 @@ const schema = generateServiceSchema({
                 >
                     <div
                         class="h-40 bg-cover bg-center relative"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDDS_VO7p2eA26fL5S4VhTgiOkb9D6cce2AKiL_Q-Jnlwa0OvGNgXaLkbk-3ZiGdhxCCiEA3UEbmD6dfmPTg79y6z27c8Ft6H6PFbIEOegWLrlRJ50MUvAA1fq-RkPG3pxmcy2QRyVIAiTipbpxsmoTKf7wjjMJ1_7AO2-upzwPR0oiGmcEAC_lPHwMNBxaTqof8XOg1rd03J-zEqoV1_VYXa3iY6ioX963iHfZWvBaBVj5Q9T_7HqSXIJl3JP18-KpjRXBXkXSg6Ml');"
+                        style={`background-image: url('${electricalFireImg.src}');`}
                     >
                         <div
                             class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"
@@ -200,7 +203,7 @@ const schema = generateServiceSchema({
                 >
                     <div
                         class="h-40 bg-cover bg-center relative"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjAE5suZlPkMw0CDZSAh6f-FJogl-yy9umnPeBpRWg4CvELeDTvLun6s6YiA1UHiw43ikYeOXyYBHskO_nORshyitVTAxE2obPt33C8Vv6KkwofsGGk7P8ONwojS-85Wj7r4DfDRmYiZKoid6GIbqxWz59ep7qRH1eTFMcfBDjyoc-g0_-IlRyqawOsZuDxuaCF0B6vIwOLXlwbW30RlIqqRRak2kaj5nngx7CiIyBNchus46OHMHjTk4Ig2dOQyyjiXQsHaoAVlmh');"
+                        style={`background-image: url('${commercialFireImg.src}');`}
                     >
                         <div
                             class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"
