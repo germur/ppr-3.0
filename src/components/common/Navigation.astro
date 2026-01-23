@@ -1,0 +1,692 @@
+---
+const { theme = "light" } = Astro.props;
+
+// Theme-based classes matching Header logic
+const textColorClass =
+    theme === "light"
+        ? "text-slate-700 hover:text-[var(--secondary-color)]"
+        : "text-slate-300 hover:text-white";
+const secondaryColor = Astro.props.secondaryColor || "#0d7ff2";
+
+const links = [
+    { href: "/restoration/", label: "Restoration" },
+    { href: "/service-areas/", label: "Locations" },
+    { href: "/commercial/", label: "Commercial" },
+    { href: "/resources/", label: "Resources" },
+];
+---
+
+<nav class="hidden lg:flex items-center gap-2 xl:gap-8 mb-2">
+    <div class="group relative">
+        <button
+            class={`flex items-center gap-1 text-xs xl:text-sm font-medium transition-colors py-2 ${textColorClass}`}
+        >
+            Restoration
+            <span
+                class="material-symbols-outlined text-[16px] xl:text-[18px] transition-transform group-hover:rotate-180"
+                >keyboard_arrow_down</span
+            >
+        </button>
+        <!-- Mega Menu Dropdown -->
+        <div
+            class="absolute top-full left-0 w-[900px] bg-white dark:bg-[#1a2632] shadow-xl rounded-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0 p-6 grid grid-cols-5 gap-6 z-50 text-left"
+        >
+            <!-- Water Silo -->
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="material-symbols-outlined text-blue-500"
+                        >water_drop</span
+                    >
+                    <span
+                        class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider"
+                        >Water</span
+                    >
+                </div>
+                <a
+                    href="/restoration/water-damage/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all font-semibold"
+                    >Water Damage Hub</a
+                >
+                <a
+                    href="/restoration/water-damage/emergency-water-removal/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all text-red-500 font-medium"
+                    >Emergency Extraction</a
+                >
+                <a
+                    href="/restoration/water-damage/burst-pipe/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Burst Pipe Repair</a
+                >
+                <a
+                    href="/restoration/water-damage/flood-damage/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Flood Damage</a
+                >
+                <a
+                    href="/restoration/water-damage/leak-repair/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Leak Detection</a
+                >
+                <a
+                    href="/restoration/water-damage/basement-flooding/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Basement Flooding</a
+                >
+                <a
+                    href="/restoration/water-damage/structural-drying/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Structural Drying</a
+                >
+                <a
+                    href="/restoration/water-damage/sewage-cleanup/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Sewage Cleanup</a
+                >
+            </div>
+
+            <!-- Fire Silo -->
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="material-symbols-outlined text-orange-500"
+                        >local_fire_department</span
+                    >
+                    <span
+                        class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider"
+                        >Fire</span
+                    >
+                </div>
+                <a
+                    href="/restoration/fire-damage/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all font-semibold"
+                    >Fire Damage Hub</a
+                >
+                <a
+                    href="/restoration/fire-damage/repair/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Fire Repair</a
+                >
+                <a
+                    href="/restoration/fire-damage/smoke-damage/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Smoke & Soot</a
+                >
+                <a
+                    href="/restoration/fire-damage/soot-cleanup/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Soot Cleanup</a
+                >
+                <a
+                    href="/restoration/board-up-services/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Emergency Board-Up</a
+                >
+            </div>
+
+            <!-- Mold Silo -->
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="material-symbols-outlined text-teal-500"
+                        >coronavirus</span
+                    >
+                    <span
+                        class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider"
+                        >Mold</span
+                    >
+                </div>
+                <a
+                    href="/restoration/mold-remediation/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all font-semibold"
+                    >Mold Remediation</a
+                >
+                <a
+                    href="/restoration/mold-remediation/inspection/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Inspection</a
+                >
+                <a
+                    href="/restoration/mold-remediation/testing/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Testing</a
+                >
+                <a
+                    href="/restoration/mold-remediation/black-mold-removal/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Black Mold Removal</a
+                >
+                <a
+                    href="/restoration/mold-remediation/prevention/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Prevention</a
+                >
+            </div>
+
+            <!-- Storm Silo -->
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="material-symbols-outlined text-indigo-500"
+                        >cyclone</span
+                    >
+                    <span
+                        class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider"
+                        >Storm</span
+                    >
+                </div>
+                <a
+                    href="/restoration/storm-damage/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all font-semibold"
+                    >Storm Damage</a
+                >
+                <a
+                    href="/restoration/storm-damage/hurricane-recovery/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Hurricane Recovery</a
+                >
+                <a
+                    href="/restoration/storm-damage/wind-damage/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Wind Damage</a
+                >
+                <a
+                    href="/restoration/storm-damage/debris-removal/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Debris Removal</a
+                >
+            </div>
+
+            <!-- Cleaning Silo (NEW) -->
+            <div
+                class="flex flex-col gap-3 bg-gray-50 -my-6 -mr-6 p-6 rounded-r-xl border-l border-gray-100"
+            >
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="material-symbols-outlined text-purple-500"
+                        >cleaning_services</span
+                    >
+                    <span
+                        class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider"
+                        >Cleaning</span
+                    >
+                </div>
+                <a
+                    href="/cleaning-services/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all font-semibold"
+                    >Cleaning Services</a
+                >
+                <a
+                    href="/cleaning-services/post-construction/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Post Construction</a
+                >
+                <a
+                    href="/cleaning-services/air-duct-hvac/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Air Duct & HVAC</a
+                >
+                <a
+                    href="/cleaning-services/biohazard-trauma/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Biohazard & Trauma</a
+                >
+                <a
+                    href="/cleaning-services/vandalism-graffiti/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Graffiti Removal</a
+                >
+                <a
+                    href="/cleaning-services/covid-disinfection/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Disinfection</a
+                >
+            </div>
+        </div>
+    </div>
+
+    <!-- Remodeling Mega Menu Trigger -->
+    <div class="group relative">
+        <button
+            class={`flex items-center gap-1 text-xs xl:text-sm font-medium transition-colors py-2 ${textColorClass}`}
+        >
+            Remodeling
+            <span
+                class="material-symbols-outlined text-[16px] xl:text-[18px] transition-transform group-hover:rotate-180"
+                >keyboard_arrow_down</span
+            >
+        </button>
+        <!-- Mega Menu Dropdown -->
+        <div
+            class="absolute top-full left-1/2 -translate-x-1/2 w-[400px] bg-white dark:bg-[#1a2632] shadow-xl rounded-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0 p-6 flex flex-col gap-4 z-50 text-left"
+        >
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="material-symbols-outlined text-blue-500"
+                        >architecture</span
+                    >
+                    <span
+                        class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider"
+                        >Services</span
+                    >
+                </div>
+                <a
+                    href="/remodeling/kitchen/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Kitchen Remodeling</a
+                >
+                <a
+                    href="/remodeling/bathroom/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Bathroom Remodeling</a
+                >
+                <a
+                    href="/remodeling/home-additions/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Home Additions</a
+                >
+                <a
+                    href="/remodeling/whole-home/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all"
+                    >Whole Home Retrofit</a
+                >
+                <div class="h-px bg-gray-100 dark:bg-gray-700 my-1"></div>
+                <a
+                    href="/commercial/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all font-semibold text-blue-600"
+                    >Commercial Build-Outs</a
+                >
+                <a
+                    href="/remodeling/"
+                    class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary hover:translate-x-1 transition-all font-semibold flex items-center gap-1"
+                >
+                    View All Remodeling <span
+                        class="material-symbols-outlined text-sm"
+                        >arrow_forward</span
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {
+        links.slice(1).map((link) => (
+            <a
+                href={link.href}
+                class={`text-xs xl:text-sm font-medium transition-colors ${textColorClass}`}
+            >
+                {link.label}
+            </a>
+        ))
+    }
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div
+    id="mobile-menu"
+    class="fixed inset-0 z-[60] bg-white dark:bg-[#101922] translate-x-full transition-transform duration-300 lg:hidden flex flex-col"
+>
+    <div
+        class="flex items-center justify-between px-4 md:px-6 h-20 border-b border-gray-100 dark:border-gray-800 shrink-0"
+    >
+        <div class="flex items-center gap-3">
+            <div
+                class="size-10 flex items-center justify-center rounded-lg bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400"
+            >
+                <span class="material-symbols-outlined text-2xl"
+                    >shield_with_house</span
+                >
+            </div>
+            <span
+                class="font-display font-bold text-lg text-slate-900 dark:text-white"
+                >Paramount</span
+            >
+        </div>
+        <button
+            id="close-menu-btn"
+            class="size-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+        >
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
+        <!-- Mobile Restoration Dropdown -->
+        <div class="flex flex-col gap-4">
+            <div
+                class="font-bold text-lg text-slate-900 dark:text-white pb-2 border-b border-gray-100 dark:border-gray-800"
+            >
+                Restoration Services
+            </div>
+            <div class="grid grid-cols-1 gap-3 pl-2">
+                <!-- Water Silo -->
+                <div class="flex flex-col gap-2">
+                    <div
+                        class="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300"
+                    >
+                        <span
+                            class="material-symbols-outlined text-blue-500 text-lg"
+                            >water_drop</span
+                        >
+                        Water
+                    </div>
+                    <div
+                        class="pl-7 flex flex-col gap-2 border-l border-gray-100 dark:border-gray-800 ml-2"
+                    >
+                        <a
+                            href="/restoration/water-damage/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1 font-semibold"
+                            >Water Damage Hub</a
+                        >
+                        <a
+                            href="/restoration/water-damage/emergency-water-removal/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1 text-red-500 font-medium"
+                            >Emergency Extraction</a
+                        >
+                        <a
+                            href="/restoration/water-damage/flood-damage/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Flood Damage</a
+                        >
+                        <a
+                            href="/restoration/water-damage/sewage-cleanup/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Sewage Cleanup</a
+                        >
+                        <a
+                            href="/restoration/water-damage/leak-repair/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Leak Detection</a
+                        >
+                        <a
+                            href="/restoration/water-damage/basement-flooding/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Basement Flooding</a
+                        >
+                    </div>
+                </div>
+
+                <!-- Fire Silo -->
+                <div class="flex flex-col gap-2 mt-2">
+                    <div
+                        class="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300"
+                    >
+                        <span
+                            class="material-symbols-outlined text-orange-500 text-lg"
+                            >local_fire_department</span
+                        >
+                        Fire
+                    </div>
+                    <div
+                        class="pl-7 flex flex-col gap-2 border-l border-gray-100 dark:border-gray-800 ml-2"
+                    >
+                        <a
+                            href="/restoration/fire-damage/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Fire Damage</a
+                        >
+                        <a
+                            href="/restoration/fire-damage/repair/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Fire Repair</a
+                        >
+                        <a
+                            href="/restoration/fire-damage/smoke-damage/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Smoke & Soot</a
+                        >
+                        <a
+                            href="/restoration/fire-damage/soot-cleanup/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Soot Cleanup</a
+                        >
+                        <a
+                            href="/restoration/board-up-services/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Board-Up</a
+                        >
+                    </div>
+                </div>
+
+                <!-- Mold Silo -->
+                <div class="flex flex-col gap-2 mt-2">
+                    <div
+                        class="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300"
+                    >
+                        <span
+                            class="material-symbols-outlined text-teal-500 text-lg"
+                            >coronavirus</span
+                        >
+                        Mold
+                    </div>
+                    <div
+                        class="pl-7 flex flex-col gap-2 border-l border-gray-100 dark:border-gray-800 ml-2"
+                    >
+                        <a
+                            href="/restoration/mold-remediation/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Mold Remediation</a
+                        >
+                        <a
+                            href="/restoration/mold-remediation/inspection/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Inspection</a
+                        >
+                        <a
+                            href="/restoration/mold-remediation/testing/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Testing</a
+                        >
+                        <a
+                            href="/restoration/mold-remediation/black-mold-removal/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Black Mold</a
+                        >
+                    </div>
+                </div>
+
+                <!-- Storm Silo -->
+                <div class="flex flex-col gap-2 mt-2">
+                    <div
+                        class="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300"
+                    >
+                        <span
+                            class="material-symbols-outlined text-indigo-500 text-lg"
+                            >cyclone</span
+                        >
+                        Storm
+                    </div>
+                    <div
+                        class="pl-7 flex flex-col gap-2 border-l border-gray-100 dark:border-gray-800 ml-2"
+                    >
+                        <a
+                            href="/restoration/storm-damage/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Storm Damage</a
+                        >
+                        <a
+                            href="/restoration/storm-damage/hurricane-recovery/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Hurricane Recovery</a
+                        >
+                        <a
+                            href="/restoration/storm-damage/wind-damage/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Wind Damage</a
+                        >
+                        <a
+                            href="/restoration/storm-damage/debris-removal/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Debris Removal</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Cleaning Dropdown (NEW) -->
+        <div class="flex flex-col gap-4">
+            <div
+                class="font-bold text-lg text-slate-900 dark:text-white pb-2 border-b border-gray-100 dark:border-gray-800"
+            >
+                Cleaning Services
+            </div>
+            <div class="grid grid-cols-1 gap-3 pl-2">
+                <div class="flex flex-col gap-2">
+                    <div
+                        class="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300"
+                    >
+                        <span
+                            class="material-symbols-outlined text-purple-500 text-lg"
+                            >cleaning_services</span
+                        >
+                        Specialized Cleaning
+                    </div>
+                    <div
+                        class="pl-7 flex flex-col gap-2 border-l border-gray-100 dark:border-gray-800 ml-2"
+                    >
+                        <a
+                            href="/cleaning-services/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1 font-semibold"
+                            >Cleaning Services Hub</a
+                        >
+                        <a
+                            href="/cleaning-services/post-construction/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Post Construction</a
+                        >
+                        <a
+                            href="/cleaning-services/air-duct-hvac/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Air Duct & HVAC</a
+                        >
+                        <a
+                            href="/cleaning-services/biohazard-trauma/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Biohazard & Trauma</a
+                        >
+                        <a
+                            href="/cleaning-services/vandalism-graffiti/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Graffiti Removal</a
+                        >
+                        <a
+                            href="/cleaning-services/covid-disinfection/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Disinfection</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Remodeling Dropdown -->
+        <div class="flex flex-col gap-4">
+            <div
+                class="font-bold text-lg text-slate-900 dark:text-white pb-2 border-b border-gray-100 dark:border-gray-800"
+            >
+                Remodeling Services
+            </div>
+            <div class="grid grid-cols-1 gap-3 pl-2">
+                <div class="flex flex-col gap-2">
+                    <div
+                        class="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300"
+                    >
+                        <span
+                            class="material-symbols-outlined text-blue-500 text-lg"
+                            >architecture</span
+                        >
+                        Renovations
+                    </div>
+                    <div
+                        class="pl-7 flex flex-col gap-2 border-l border-gray-100 dark:border-gray-800 ml-2"
+                    >
+                        <a
+                            href="/remodeling/kitchen/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Kitchen Remodeling</a
+                        >
+                        <a
+                            href="/remodeling/bathroom/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Bathroom Remodeling</a
+                        >
+                        <a
+                            href="/remodeling/home-additions/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Home Additions</a
+                        >
+                        <a
+                            href="/remodeling/whole-home/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1"
+                            >Whole Home Retrofit</a
+                        >
+                        <a
+                            href="/commercial/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1 font-semibold text-blue-600"
+                            >Commercial Build-Outs</a
+                        >
+                        <a
+                            href="/remodeling/"
+                            class="text-sm text-slate-600 dark:text-slate-400 py-1 font-semibold"
+                            >View All</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Links -->
+        <div class="flex flex-col gap-4">
+            <div
+                class="font-bold text-lg text-slate-900 dark:text-white pb-2 border-b border-gray-100 dark:border-gray-800"
+            >
+                Company
+            </div>
+            {
+                links.slice(1).map((link) => (
+                    <a
+                        href={link.href}
+                        class="text-lg font-medium text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 py-2"
+                    >
+                        {link.label}
+                    </a>
+                ))
+            }
+        </div>
+
+        <!-- Mobile Actions -->
+        <div
+            class="mt-auto flex flex-col gap-4 pt-6 border-t border-gray-100 dark:border-gray-800"
+        >
+            <a
+                href="/contact"
+                class="flex items-center justify-center w-full py-3 rounded-lg text-white font-bold text-sm shadow-sm transition-opacity hover:opacity-90"
+                style={`background-color: ${secondaryColor}`}
+            >
+                Request Quote
+            </a>
+            <a
+                href="tel:7866022217"
+                class="flex items-center justify-center gap-2 w-full py-3 rounded-lg text-white font-bold text-sm shadow-sm animate-pulse"
+                style="background-color: #dc2626;"
+            >
+                <span class="material-symbols-outlined">phone_in_talk</span>
+                (786) 602-2217
+            </a>
+        </div>
+    </nav>
+</div>
+
+<script>
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const closeBtn = document.getElementById("close-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (menuBtn && closeBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-full");
+            document.body.style.overflow = "hidden"; // Prevent scrolling
+        });
+
+        closeBtn.addEventListener("click", () => {
+            mobileMenu.classList.add("translate-x-full");
+            document.body.style.overflow = "";
+        });
+    }
+</script>

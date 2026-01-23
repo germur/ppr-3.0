@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/container-queries";
 
+:root {
+  color-scheme: light; /* Force browser to use light styles */
+}
+
+html {
+  background-color: #ffffff; /* Ensure white background base */
+  color: #0f172a; /* Slate-900 base text */
+}
+
 @theme {
   /* User's Exact Colors */
   --color-primary: #1269e2;

@@ -1,0 +1,43 @@
+---
+import MainLayout from "./MainLayout.astro";
+
+interface Props {
+    title: string;
+    description: string;
+    themeColor?: string;
+    heroImage: string;
+    schema?: Record<string, any>;
+}
+
+const {
+    title,
+    description,
+    themeColor = "blue",
+    heroImage,
+    schema,
+} = Astro.props;
+---
+
+<MainLayout title={title} description={description} customSchema={schema}>
+    <!-- Hero Section -->
+    <div
+        class={`relative w-full h-[300px] md:h-[400px] flex items-center justify-center bg-${themeColor}-600 overflow-hidden`}
+    >
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <img
+            src={heroImage}
+            alt={title}
+            class="absolute inset-0 w-full h-full object-cover"
+        />
+
+        <div class="relative z-20 text-center px-4">
+            <h1
+                class="text-3xl md:text-5xl font-display font-bold text-white mb-4 shadow-sm"
+            >
+                {title}
+            </h1>
+        </div>
+    </div>
+
+    <slot />
+</MainLayout>
