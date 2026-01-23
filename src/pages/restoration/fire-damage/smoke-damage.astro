@@ -1,5 +1,6 @@
----
 import ServiceLayout from "../../../layouts/ServiceLayout.astro";
+import smokeHeroImg from "../../../assets/images/restoration/fire-damage/smoke-damage-hero.webp";
+import contentsCleaningHeroImg from "../../../assets/images/restoration/fire-damage/contents-cleaning-hero.webp";
 
 const pageTitle = "Professional Smoke & Soot Removal | Breathe Safe Again";
 const pageDescription =
@@ -19,7 +20,7 @@ const schema = {
 <ServiceLayout
     title={pageTitle}
     description={pageDescription}
-    heroImage="/assets/images/restoration/fire-damage/smoke-damage-hero.webp"
+    heroImage={smokeHeroImg}
     themeColor="orange"
     schema={schema}
 >
@@ -497,7 +498,7 @@ const schema = {
                     <div
                         class="absolute inset-0 bg-cover bg-center transition-transform hover:scale-105 duration-700"
                         data-alt="Close up of cleaning soft goods like clothes or fabrics"
-                        style="background-image: url('/assets/images/restoration/fire-damage/contents-cleaning-hero.webp');"
+                        style={`background-image: url('${contentsCleaningHeroImg.src}');`}
                     >
                     </div>
                     <div
