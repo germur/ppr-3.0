@@ -1,76 +1,156 @@
 ---
-import BoardUpLayout from '../../layouts/BoardUpLayout.astro';
+import BoardUpLayout from "../../layouts/BoardUpLayout.astro";
 ---
 
 <BoardUpLayout>
     <!-- Hero Section -->
     <section class="relative w-full py-12 md:py-20 lg:py-24 overflow-hidden">
         <!-- Abstract Background Glow -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-[#135bec]/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
-        <div class="relative z-10 px-4 md:px-10 max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-[#135bec]/10 blur-[120px] rounded-full pointer-events-none z-0"
+        >
+        </div>
+        <div
+            class="relative z-10 px-4 md:px-10 max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-center"
+        >
             <!-- Text Content -->
             <div class="flex-1 flex flex-col gap-6 text-center lg:text-left">
                 <!-- Trust Pill -->
-                <div class="inline-flex mx-auto lg:mx-0 items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 w-fit">
-                    <span class="material-symbols-outlined text-blue-400 text-sm">verified_user</span>
-                    <span class="text-blue-200 text-xs font-semibold tracking-wide uppercase">Insurance Approved Vendor</span>
+                <div
+                    class="inline-flex mx-auto lg:mx-0 items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 w-fit"
+                >
+                    <span
+                        class="material-symbols-outlined text-blue-400 text-sm"
+                        >verified_user</span
+                    >
+                    <span
+                        class="text-blue-200 text-xs font-semibold tracking-wide uppercase"
+                        >Insurance Approved Vendor</span
+                    >
                 </div>
-                <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight">
-                    Secure Your Property <br class="hidden lg:block"/>in <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#135bec] to-blue-300">&lt; 2 Hours</span>
+                <h1
+                    class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight"
+                >
+                    Secure Your Property <br class="hidden lg:block" />in <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-[#135bec] to-blue-300"
+                        >&lt; 2 Hours</span
+                    >
                 </h1>
-                <p class="text-slate-300 text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Immediate emergency board-up and tarping deployment. Stop water intrusion, prevent looting, and secure your insurance claim instantly.
+                <p
+                    class="text-slate-300 text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0"
+                >
+                    Immediate emergency board-up and tarping deployment. Stop
+                    water intrusion, prevent looting, and secure your insurance
+                    claim instantly.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                    <a href="/contact/" class="flex h-12 px-8 items-center justify-center rounded-lg bg-[#f97316] hover:bg-[#f97316]/90 text-white text-base font-bold shadow-lg shadow-[#f97316]/20 transition-all">
+                <div
+                    class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
+                >
+                    <a
+                        href="/contact/"
+                        class="flex h-12 px-8 items-center justify-center rounded-lg bg-[#f97316] hover:bg-[#f97316]/90 text-white text-base font-bold shadow-lg shadow-[#f97316]/20 transition-all"
+                    >
                         Request Emergency Board-Up
                     </a>
-                    <a href="/service-areas/" class="flex h-12 px-8 items-center justify-center rounded-lg border border-slate-600 hover:border-slate-400 hover:bg-slate-800 text-white text-base font-medium transition-all">
+                    <a
+                        href="/service-areas/"
+                        class="flex h-12 px-8 items-center justify-center rounded-lg border border-slate-600 hover:border-slate-400 hover:bg-slate-800 text-white text-base font-medium transition-all"
+                    >
                         View Coverage Area
                     </a>
                 </div>
                 <!-- Stats -->
-                <div class="flex items-center justify-center lg:justify-start gap-8 pt-4 text-slate-400 text-sm font-medium">
+                <div
+                    class="flex items-center justify-center lg:justify-start gap-8 pt-4 text-slate-400 text-sm font-medium"
+                >
                     <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-green-500" style="font-size: 20px;">timer</span>
+                        <span
+                            class="material-symbols-outlined text-green-500"
+                            style="font-size: 20px;">timer</span
+                        >
                         <span>Avg. Response: 58m</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-yellow-500" style="font-size: 20px;">star</span>
+                        <span
+                            class="material-symbols-outlined text-yellow-500"
+                            style="font-size: 20px;">star</span
+                        >
                         <span>4.9/5 (200+ Reviews)</span>
                     </div>
                 </div>
             </div>
             <!-- Visual Split (Simulated Before/After) -->
             <div class="flex-1 w-full max-w-[600px] relative group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-[#135bec] to-[#f97316] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-                <div class="relative bg-[#1c1f27] border border-[#282e39] rounded-xl overflow-hidden shadow-2xl">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-[#135bec] to-[#f97316] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"
+                >
+                </div>
+                <div
+                    class="relative bg-[#1c1f27] border border-[#282e39] rounded-xl overflow-hidden shadow-2xl"
+                >
                     <div class="relative h-[360px] w-full">
                         <!-- Left Half (Damaged) -->
-                        <div class="absolute inset-y-0 left-0 w-1/2 overflow-hidden border-r-2 border-white/20 z-10">
-                            <div class="absolute inset-0 bg-black/40 z-10 flex items-center justify-center">
-                                <span class="bg-red-600/90 text-white text-xs font-bold px-2 py-1 rounded backdrop-blur-sm">UNSECURED</span>
+                        <div
+                            class="absolute inset-y-0 left-0 w-1/2 overflow-hidden border-r-2 border-white/20 z-10"
+                        >
+                            <div
+                                class="absolute inset-0 bg-black/40 z-10 flex items-center justify-center"
+                            >
+                                <span
+                                    class="bg-red-600/90 text-white text-xs font-bold px-2 py-1 rounded backdrop-blur-sm"
+                                    >UNSECURED</span
+                                >
                             </div>
-                            <div class="h-full w-[200%] bg-cover bg-center" data-alt="Storm damaged home with broken windows and debris" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDr03tUOH-v1neTKZ1GCKDUxmwRfxU6KvETkAJV1fnFbRMVUxNkwd3HF-r1CuUT0_1ba078Kkf4pCfzr0Sfd-bfaSfevGK2zYaujZXuSA5tbg73SLUfJhS4NStJpI6sp6izeE9PWrsfpRztzO5uS5bdi8MYUelp9hFdaA8BU6g3c_5W_h56dbCE13cmsuS0QX_ccmRPARGKPbKTqpALX7VMqu52STEeVtx5hX6W-ic15azNsuS2k47DCsBrCfppc6AaTG8VWqnZfRVQ'); transform: translateX(0);"></div>
+                            <div
+                                class="h-full w-[200%] bg-cover bg-center"
+                                data-alt="Storm damaged home with broken windows and debris"
+                                style="background-image: url('/assets/images/restoration/board-up/board-up-storm-broken.webp'); transform: translateX(0);"
+                            >
+                            </div>
                         </div>
                         <!-- Right Half (Secured) -->
-                        <div class="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-cover bg-center" data-alt="Professionally boarded up windows with plywood and security tarping" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOZ5l_3YKn8QULp4PWUUrsqZmoBXcN7YIpuQE4wXuBGtvMiZIfNXTO2oM57uIiwMIJnRhluBV8iPTJcC3yFQCjBoO8Df6PXl5r4edHwwtwXXPaa51IwRTocWqeLHCn81mB2NAkt51kxwnkADxOz2DymINgHCx7ZKHsu-2rPQaapHR5fckMXFIWVqjDBV4UqXkWaIC7RHOAe6a5_VIdKhijkdxqFGcaCn7aqFNIfGVp7r0tg0984KHePND4QQuouwHwHco92YW_UT4B');">
-                            <div class="absolute inset-0 bg-[#135bec]/20 z-10 flex items-center justify-center">
-                                <span class="bg-[#135bec]/90 text-white text-xs font-bold px-2 py-1 rounded backdrop-blur-sm">SECURED</span>
+                        <div
+                            class="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-cover bg-center"
+                            data-alt="Professionally boarded up windows with plywood and security tarping"
+                            style="background-image: url('/assets/images/restoration/board-up/board-up-plywood-secure.webp');"
+                        >
+                            <div
+                                class="absolute inset-0 bg-[#135bec]/20 z-10 flex items-center justify-center"
+                            >
+                                <span
+                                    class="bg-[#135bec]/90 text-white text-xs font-bold px-2 py-1 rounded backdrop-blur-sm"
+                                    >SECURED</span
+                                >
                             </div>
                         </div>
                         <!-- Center Label -->
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-white dark:bg-slate-900 rounded-full p-2 shadow-xl border border-[#282e39]">
-                            <span class="material-symbols-outlined text-slate-500">compare_arrows</span>
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-white dark:bg-slate-900 rounded-full p-2 shadow-xl border border-[#282e39]"
+                        >
+                            <span
+                                class="material-symbols-outlined text-slate-500"
+                                >compare_arrows</span
+                            >
                         </div>
                     </div>
-                    <div class="p-4 bg-[#1c1f27] border-t border-[#282e39] flex justify-between items-center">
+                    <div
+                        class="p-4 bg-[#1c1f27] border-t border-[#282e39] flex justify-between items-center"
+                    >
                         <div>
-                            <p class="text-white text-sm font-bold">24/7 Rapid Deployment</p>
-                            <p class="text-slate-400 text-xs">Technicians deployed immediately upon call.</p>
+                            <p class="text-white text-sm font-bold">
+                                24/7 Rapid Deployment
+                            </p>
+                            <p class="text-slate-400 text-xs">
+                                Technicians deployed immediately upon call.
+                            </p>
                         </div>
-                        <div class="h-8 w-8 rounded-full bg-green-500/20 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-green-500 text-sm">check</span>
+                        <div
+                            class="h-8 w-8 rounded-full bg-green-500/20 flex items-center justify-center"
+                        >
+                            <span
+                                class="material-symbols-outlined text-green-500 text-sm"
+                                >check</span
+                            >
                         </div>
                     </div>
                 </div>
@@ -82,49 +162,109 @@ import BoardUpLayout from '../../layouts/BoardUpLayout.astro';
     <section class="py-16 bg-[#0f1115]">
         <div class="px-4 md:px-10 max-w-[1100px] mx-auto">
             <div class="mb-12">
-                <h2 class="text-[#f97316] text-sm font-bold tracking-widest uppercase mb-3">Threat Assessment</h2>
-                <h3 class="text-white text-3xl md:text-4xl font-bold leading-tight">Why Board Up Immediately?</h3>
-                <p class="text-slate-400 mt-4 max-w-2xl">Leaving a property exposed creates cascading risks. Immediate mitigation is not just recommended; it's often required by your insurance policy.</p>
+                <h2
+                    class="text-[#f97316] text-sm font-bold tracking-widest uppercase mb-3"
+                >
+                    Threat Assessment
+                </h2>
+                <h3
+                    class="text-white text-3xl md:text-4xl font-bold leading-tight"
+                >
+                    Why Board Up Immediately?
+                </h3>
+                <p class="text-slate-400 mt-4 max-w-2xl">
+                    Leaving a property exposed creates cascading risks.
+                    Immediate mitigation is not just recommended; it's often
+                    required by your insurance policy.
+                </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <!-- Card 1: Liability -->
-                <div class="group flex flex-col gap-4 rounded-xl border border-[#282e39] bg-[#1c1f27] p-6 hover:border-[#135bec]/50 transition-colors">
-                    <div class="h-12 w-12 rounded-lg bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors">
-                        <span class="material-symbols-outlined text-red-500 text-2xl">gavel</span>
+                <div
+                    class="group flex flex-col gap-4 rounded-xl border border-[#282e39] bg-[#1c1f27] p-6 hover:border-[#135bec]/50 transition-colors"
+                >
+                    <div
+                        class="h-12 w-12 rounded-lg bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors"
+                    >
+                        <span
+                            class="material-symbols-outlined text-red-500 text-2xl"
+                            >gavel</span
+                        >
                     </div>
                     <div>
-                        <h4 class="text-white text-lg font-bold mb-2">Liability & Looting</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Unsecured properties are magnets for theft and injury lawsuits. Secure the perimeter immediately.</p>
+                        <h4 class="text-white text-lg font-bold mb-2">
+                            Liability & Looting
+                        </h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Unsecured properties are magnets for theft and
+                            injury lawsuits. Secure the perimeter immediately.
+                        </p>
                     </div>
                 </div>
                 <!-- Card 2: Weather -->
-                <div class="group flex flex-col gap-4 rounded-xl border border-[#282e39] bg-[#1c1f27] p-6 hover:border-blue-400/50 transition-colors">
-                    <div class="h-12 w-12 rounded-lg bg-blue-400/10 flex items-center justify-center group-hover:bg-blue-400/20 transition-colors">
-                        <span class="material-symbols-outlined text-blue-400 text-2xl">rainy</span>
+                <div
+                    class="group flex flex-col gap-4 rounded-xl border border-[#282e39] bg-[#1c1f27] p-6 hover:border-blue-400/50 transition-colors"
+                >
+                    <div
+                        class="h-12 w-12 rounded-lg bg-blue-400/10 flex items-center justify-center group-hover:bg-blue-400/20 transition-colors"
+                    >
+                        <span
+                            class="material-symbols-outlined text-blue-400 text-2xl"
+                            >rainy</span
+                        >
                     </div>
                     <div>
-                        <h4 class="text-white text-lg font-bold mb-2">Weather Shield</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Stop rain, wind, and debris from turning a small repair into a total loss event.</p>
+                        <h4 class="text-white text-lg font-bold mb-2">
+                            Weather Shield
+                        </h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Stop rain, wind, and debris from turning a small
+                            repair into a total loss event.
+                        </p>
                     </div>
                 </div>
                 <!-- Card 3: Compliance -->
-                <div class="group flex flex-col gap-4 rounded-xl border border-[#282e39] bg-[#1c1f27] p-6 hover:border-green-500/50 transition-colors md:col-span-2 lg:col-span-1">
-                    <div class="h-12 w-12 rounded-lg bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
-                        <span class="material-symbols-outlined text-green-500 text-2xl">policy</span>
+                <div
+                    class="group flex flex-col gap-4 rounded-xl border border-[#282e39] bg-[#1c1f27] p-6 hover:border-green-500/50 transition-colors md:col-span-2 lg:col-span-1"
+                >
+                    <div
+                        class="h-12 w-12 rounded-lg bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors"
+                    >
+                        <span
+                            class="material-symbols-outlined text-green-500 text-2xl"
+                            >policy</span
+                        >
                     </div>
                     <div>
-                        <h4 class="text-white text-lg font-bold mb-2">Insurance Compliance</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Fulfill your policy's "Duty to Mitigate" clause to ensure your claim is not denied.</p>
+                        <h4 class="text-white text-lg font-bold mb-2">
+                            Insurance Compliance
+                        </h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Fulfill your policy's "Duty to Mitigate" clause to
+                            ensure your claim is not denied.
+                        </p>
                     </div>
                 </div>
                 <!-- Card 4: Wildlife -->
-                <div class="group flex flex-col gap-4 rounded-xl border border-[#282e39] bg-[#1c1f27] p-6 hover:border-orange-500/50 transition-colors md:col-span-2 lg:col-span-1">
-                    <div class="h-12 w-12 rounded-lg bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
-                        <span class="material-symbols-outlined text-orange-500 text-2xl">pest_control</span>
+                <div
+                    class="group flex flex-col gap-4 rounded-xl border border-[#282e39] bg-[#1c1f27] p-6 hover:border-orange-500/50 transition-colors md:col-span-2 lg:col-span-1"
+                >
+                    <div
+                        class="h-12 w-12 rounded-lg bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors"
+                    >
+                        <span
+                            class="material-symbols-outlined text-orange-500 text-2xl"
+                            >pest_control</span
+                        >
                     </div>
                     <div>
-                        <h4 class="text-white text-lg font-bold mb-2">Wildlife Barrier</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Keep raccoons, birds, and rodents out of compromised structures preventing biohazards.</p>
+                        <h4 class="text-white text-lg font-bold mb-2">
+                            Wildlife Barrier
+                        </h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Keep raccoons, birds, and rodents out of compromised
+                            structures preventing biohazards.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -132,74 +272,155 @@ import BoardUpLayout from '../../layouts/BoardUpLayout.astro';
     </section>
 
     <!-- Technical Process Timeline -->
-    <section id="specs" class="py-16 lg:py-24 bg-[#111318] relative border-y border-[#282e39]">
+    <section
+        id="specs"
+        class="py-16 lg:py-24 bg-[#111318] relative border-y border-[#282e39]"
+    >
         <div class="px-4 md:px-10 max-w-[1100px] mx-auto">
             <div class="flex flex-col md:flex-row gap-12 items-start">
                 <!-- Left Content -->
                 <div class="md:w-1/3 sticky top-24">
-                    <h2 class="text-[#135bec] text-sm font-bold tracking-widest uppercase mb-3">Technical Process</h2>
-                    <h3 class="text-white text-3xl font-bold leading-tight mb-6">Professional, Non-Damaging Security</h3>
+                    <h2
+                        class="text-[#135bec] text-sm font-bold tracking-widest uppercase mb-3"
+                    >
+                        Technical Process
+                    </h2>
+                    <h3
+                        class="text-white text-3xl font-bold leading-tight mb-6"
+                    >
+                        Professional, Non-Damaging Security
+                    </h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                        We don't just nail plywood to your siding. Our technicians use industry-standard techniques to secure your home without causing secondary damage to frames or stucco.
+                        We don't just nail plywood to your siding. Our
+                        technicians use industry-standard techniques to secure
+                        your home without causing secondary damage to frames or
+                        stucco.
                     </p>
-                    <a href="#specs" class="hidden md:flex h-10 px-6 items-center justify-center rounded-lg border border-slate-600 hover:bg-slate-800 text-white text-sm font-bold transition-all">
+                    <a
+                        href="#specs"
+                        class="hidden md:flex h-10 px-6 items-center justify-center rounded-lg border border-slate-600 hover:bg-slate-800 text-white text-sm font-bold transition-all"
+                    >
                         See Specs
                     </a>
                 </div>
                 <!-- Right Timeline -->
                 <div class="md:w-2/3 flex flex-col gap-8 relative pl-4">
                     <!-- Vertical Line -->
-                    <div class="absolute left-[27px] top-4 bottom-4 w-0.5 bg-[#282e39]"></div>
+                    <div
+                        class="absolute left-[27px] top-4 bottom-4 w-0.5 bg-[#282e39]"
+                    >
+                    </div>
                     <!-- Step 1 -->
                     <div class="relative flex gap-6">
-                        <div class="z-10 flex-shrink-0 size-12 rounded-full bg-[#1c1f27] border border-[#282e39] flex items-center justify-center shadow-lg">
-                            <span class="text-[#135bec] font-bold text-lg">01</span>
+                        <div
+                            class="z-10 flex-shrink-0 size-12 rounded-full bg-[#1c1f27] border border-[#282e39] flex items-center justify-center shadow-lg"
+                        >
+                            <span class="text-[#135bec] font-bold text-lg"
+                                >01</span
+                            >
                         </div>
-                        <div class="bg-[#1c1f27] border border-[#282e39] rounded-xl p-6 flex-1">
-                            <h4 class="text-white text-lg font-bold mb-2 flex items-center gap-2">
-                                <span class="material-symbols-outlined text-slate-400">search</span>
+                        <div
+                            class="bg-[#1c1f27] border border-[#282e39] rounded-xl p-6 flex-1"
+                        >
+                            <h4
+                                class="text-white text-lg font-bold mb-2 flex items-center gap-2"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-slate-400"
+                                    >search</span
+                                >
                                 Site Safety Assessment
                             </h4>
-                            <p class="text-slate-400 text-sm">Technicians identify structural instability, electrical hazards, and points of entry before touching a tool.</p>
+                            <p class="text-slate-400 text-sm">
+                                Technicians identify structural instability,
+                                electrical hazards, and points of entry before
+                                touching a tool.
+                            </p>
                         </div>
                     </div>
                     <!-- Step 2 -->
                     <div class="relative flex gap-6">
-                        <div class="z-10 flex-shrink-0 size-12 rounded-full bg-[#1c1f27] border border-[#282e39] flex items-center justify-center shadow-lg">
-                            <span class="text-[#135bec] font-bold text-lg">02</span>
+                        <div
+                            class="z-10 flex-shrink-0 size-12 rounded-full bg-[#1c1f27] border border-[#282e39] flex items-center justify-center shadow-lg"
+                        >
+                            <span class="text-[#135bec] font-bold text-lg"
+                                >02</span
+                            >
                         </div>
-                        <div class="bg-[#1c1f27] border border-[#282e39] rounded-xl p-6 flex-1">
-                            <h4 class="text-white text-lg font-bold mb-2 flex items-center gap-2">
-                                <span class="material-symbols-outlined text-slate-400">build</span>
+                        <div
+                            class="bg-[#1c1f27] border border-[#282e39] rounded-xl p-6 flex-1"
+                        >
+                            <h4
+                                class="text-white text-lg font-bold mb-2 flex items-center gap-2"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-slate-400"
+                                    >build</span
+                                >
                                 Tension-Fit Installation
                             </h4>
-                            <p class="text-slate-400 text-sm">We use tension clips and lumber bracing to secure boards from the inside where possible, avoiding screw holes in your exterior siding.</p>
+                            <p class="text-slate-400 text-sm">
+                                We use tension clips and lumber bracing to
+                                secure boards from the inside where possible,
+                                avoiding screw holes in your exterior siding.
+                            </p>
                         </div>
                     </div>
                     <!-- Step 3 -->
                     <div class="relative flex gap-6">
-                        <div class="z-10 flex-shrink-0 size-12 rounded-full bg-[#1c1f27] border border-[#282e39] flex items-center justify-center shadow-lg">
-                            <span class="text-[#135bec] font-bold text-lg">03</span>
+                        <div
+                            class="z-10 flex-shrink-0 size-12 rounded-full bg-[#1c1f27] border border-[#282e39] flex items-center justify-center shadow-lg"
+                        >
+                            <span class="text-[#135bec] font-bold text-lg"
+                                >03</span
+                            >
                         </div>
-                        <div class="bg-[#1c1f27] border border-[#282e39] rounded-xl p-6 flex-1">
-                            <h4 class="text-white text-lg font-bold mb-2 flex items-center gap-2">
-                                <span class="material-symbols-outlined text-slate-400">layers</span>
+                        <div
+                            class="bg-[#1c1f27] border border-[#282e39] rounded-xl p-6 flex-1"
+                        >
+                            <h4
+                                class="text-white text-lg font-bold mb-2 flex items-center gap-2"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-slate-400"
+                                    >layers</span
+                                >
                                 Shrink Wrap Technology
                             </h4>
-                            <p class="text-slate-400 text-sm">For complex roof damage, we apply heat-sealed industrial shrink wrap that acts as a temporary "second skin" roof, far superior to standard blue tarps.</p>
+                            <p class="text-slate-400 text-sm">
+                                For complex roof damage, we apply heat-sealed
+                                industrial shrink wrap that acts as a temporary
+                                "second skin" roof, far superior to standard
+                                blue tarps.
+                            </p>
                         </div>
                     </div>
                     <!-- Step 4 -->
                     <div class="relative flex gap-6">
-                        <div class="z-10 flex-shrink-0 size-12 rounded-full bg-[#1c1f27] border border-[#282e39] flex items-center justify-center shadow-lg">
-                            <span class="text-[#135bec] font-bold text-lg">04</span>
+                        <div
+                            class="z-10 flex-shrink-0 size-12 rounded-full bg-[#1c1f27] border border-[#282e39] flex items-center justify-center shadow-lg"
+                        >
+                            <span class="text-[#135bec] font-bold text-lg"
+                                >04</span
+                            >
                         </div>
-                        <div class="bg-[#1c1f27] border border-[#282e39] rounded-xl p-6 flex-1">
-                            <h4 class="text-white text-lg font-bold mb-2 flex items-center gap-2">
-                                <span class="material-symbols-outlined text-slate-400">camera_alt</span>
+                        <div
+                            class="bg-[#1c1f27] border border-[#282e39] rounded-xl p-6 flex-1"
+                        >
+                            <h4
+                                class="text-white text-lg font-bold mb-2 flex items-center gap-2"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-slate-400"
+                                    >camera_alt</span
+                                >
                                 Insurance Documentation
                             </h4>
-                            <p class="text-slate-400 text-sm">We photograph the entire process and provide a detailed report to your adjuster, proving you took immediate action to protect the property.</p>
+                            <p class="text-slate-400 text-sm">
+                                We photograph the entire process and provide a
+                                detailed report to your adjuster, proving you
+                                took immediate action to protect the property.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -210,42 +431,105 @@ import BoardUpLayout from '../../layouts/BoardUpLayout.astro';
     <!-- Cross-Silo Connections -->
     <section class="py-16 bg-[#0f1115]">
         <div class="px-4 md:px-10 max-w-[1100px] mx-auto">
-            <h3 class="text-white text-2xl font-bold mb-8 text-center">What caused the damage?</h3>
+            <h3 class="text-white text-2xl font-bold mb-8 text-center">
+                What caused the damage?
+            </h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Fire -->
-                <a href="/restoration/fire-damage/" class="group block relative bg-[#1c1f27] border border-[#282e39] hover:border-orange-500/50 rounded-xl p-6 transition-all hover:-translate-y-1">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <span class="material-symbols-outlined text-6xl text-orange-500">local_fire_department</span>
+                <a
+                    href="/restoration/fire-damage/"
+                    class="group block relative bg-[#1c1f27] border border-[#282e39] hover:border-orange-500/50 rounded-xl p-6 transition-all hover:-translate-y-1"
+                >
+                    <div
+                        class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+                    >
+                        <span
+                            class="material-symbols-outlined text-6xl text-orange-500"
+                            >local_fire_department</span
+                        >
                     </div>
-                    <span class="inline-block px-3 py-1 rounded bg-orange-500/10 text-orange-500 text-xs font-bold mb-4 uppercase">Urgent</span>
-                    <h4 class="text-white text-xl font-bold mb-2">Fire Damage</h4>
-                    <p class="text-slate-400 text-sm">Board-up is critical after fire to secure openings created by firefighters and heat.</p>
-                    <div class="mt-4 flex items-center text-orange-400 text-sm font-medium">
-                        Learn More <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                    <span
+                        class="inline-block px-3 py-1 rounded bg-orange-500/10 text-orange-500 text-xs font-bold mb-4 uppercase"
+                        >Urgent</span
+                    >
+                    <h4 class="text-white text-xl font-bold mb-2">
+                        Fire Damage
+                    </h4>
+                    <p class="text-slate-400 text-sm">
+                        Board-up is critical after fire to secure openings
+                        created by firefighters and heat.
+                    </p>
+                    <div
+                        class="mt-4 flex items-center text-orange-400 text-sm font-medium"
+                    >
+                        Learn More <span
+                            class="material-symbols-outlined text-sm ml-1"
+                            >arrow_forward</span
+                        >
                     </div>
                 </a>
                 <!-- Storm -->
-                <a href="/restoration/storm-damage/" class="group block relative bg-[#1c1f27] border border-[#282e39] hover:border-blue-500/50 rounded-xl p-6 transition-all hover:-translate-y-1">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <span class="material-symbols-outlined text-6xl text-blue-500">thunderstorm</span>
+                <a
+                    href="/restoration/storm-damage/"
+                    class="group block relative bg-[#1c1f27] border border-[#282e39] hover:border-blue-500/50 rounded-xl p-6 transition-all hover:-translate-y-1"
+                >
+                    <div
+                        class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+                    >
+                        <span
+                            class="material-symbols-outlined text-6xl text-blue-500"
+                            >thunderstorm</span
+                        >
                     </div>
-                    <span class="inline-block px-3 py-1 rounded bg-blue-500/10 text-blue-500 text-xs font-bold mb-4 uppercase">Common</span>
-                    <h4 class="text-white text-xl font-bold mb-2">Storm Damage</h4>
-                    <p class="text-slate-400 text-sm">From fallen trees to hail, immediate tarping prevents water from destroying interiors.</p>
-                    <div class="mt-4 flex items-center text-blue-400 text-sm font-medium">
-                        Learn More <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                    <span
+                        class="inline-block px-3 py-1 rounded bg-blue-500/10 text-blue-500 text-xs font-bold mb-4 uppercase"
+                        >Common</span
+                    >
+                    <h4 class="text-white text-xl font-bold mb-2">
+                        Storm Damage
+                    </h4>
+                    <p class="text-slate-400 text-sm">
+                        From fallen trees to hail, immediate tarping prevents
+                        water from destroying interiors.
+                    </p>
+                    <div
+                        class="mt-4 flex items-center text-blue-400 text-sm font-medium"
+                    >
+                        Learn More <span
+                            class="material-symbols-outlined text-sm ml-1"
+                            >arrow_forward</span
+                        >
                     </div>
                 </a>
                 <!-- Vandalism -->
-                <a href="/contact/" class="group block relative bg-[#1c1f27] border border-[#282e39] hover:border-slate-500/50 rounded-xl p-6 transition-all hover:-translate-y-1">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <span class="material-symbols-outlined text-6xl text-slate-500">domino_mask</span>
+                <a
+                    href="/contact/"
+                    class="group block relative bg-[#1c1f27] border border-[#282e39] hover:border-slate-500/50 rounded-xl p-6 transition-all hover:-translate-y-1"
+                >
+                    <div
+                        class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+                    >
+                        <span
+                            class="material-symbols-outlined text-6xl text-slate-500"
+                            >domino_mask</span
+                        >
                     </div>
-                    <span class="inline-block px-3 py-1 rounded bg-slate-500/10 text-slate-400 text-xs font-bold mb-4 uppercase">Security</span>
+                    <span
+                        class="inline-block px-3 py-1 rounded bg-slate-500/10 text-slate-400 text-xs font-bold mb-4 uppercase"
+                        >Security</span
+                    >
                     <h4 class="text-white text-xl font-bold mb-2">Vandalism</h4>
-                    <p class="text-slate-400 text-sm">Secure broken storefronts or windows instantly to signal that the property is monitored.</p>
-                    <div class="mt-4 flex items-center text-slate-300 text-sm font-medium">
-                        Learn More <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                    <p class="text-slate-400 text-sm">
+                        Secure broken storefronts or windows instantly to signal
+                        that the property is monitored.
+                    </p>
+                    <div
+                        class="mt-4 flex items-center text-slate-300 text-sm font-medium"
+                    >
+                        Learn More <span
+                            class="material-symbols-outlined text-sm ml-1"
+                            >arrow_forward</span
+                        >
                     </div>
                 </a>
             </div>
@@ -255,19 +539,38 @@ import BoardUpLayout from '../../layouts/BoardUpLayout.astro';
     <!-- Insurance Clause Education -->
     <section class="py-16 bg-[#135bec]/5 border-y border-[#135bec]/10">
         <div class="px-4 md:px-10 max-w-[900px] mx-auto text-center">
-            <span class="material-symbols-outlined text-4xl text-[#135bec] mb-4">description</span>
-            <h2 class="text-white text-2xl font-bold mb-6">Understanding Your "Duty to Mitigate"</h2>
-            <div class="bg-[#1e2330] border-l-4 border-[#135bec] p-6 md:p-8 rounded-r-lg shadow-lg text-left relative overflow-hidden">
-                <span class="absolute -right-4 -top-4 text-[#135bec]/5 text-9xl font-serif font-black select-none pointer-events-none">"</span>
-                <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+            <span class="material-symbols-outlined text-4xl text-[#135bec] mb-4"
+                >description</span
+            >
+            <h2 class="text-white text-2xl font-bold mb-6">
+                Understanding Your "Duty to Mitigate"
+            </h2>
+            <div
+                class="bg-[#1e2330] border-l-4 border-[#135bec] p-6 md:p-8 rounded-r-lg shadow-lg text-left relative overflow-hidden"
+            >
+                <span
+                    class="absolute -right-4 -top-4 text-[#135bec]/5 text-9xl font-serif font-black select-none pointer-events-none"
+                    >"</span
+                >
+                <h3
+                    class="text-white font-bold text-lg mb-2 flex items-center gap-2"
+                >
                     Standard Policy Language
                 </h3>
                 <p class="text-slate-300 text-base italic leading-relaxed mb-4">
-                    "In the event of a loss, it is the policyholder's duty to take all reasonable steps to protect the property from further damage. Failure to do so may result in denial of coverage for secondary damages."
+                    "In the event of a loss, it is the policyholder's duty to
+                    take all reasonable steps to protect the property from
+                    further damage. Failure to do so may result in denial of
+                    coverage for secondary damages."
                 </p>
                 <div class="h-px w-full bg-slate-700 mb-4"></div>
                 <p class="text-sm text-slate-400">
-                    <strong class="text-[#135bec]">Translation:</strong> If a storm breaks your window and you don't board it up, the insurance company might not pay for the water damage that happens <span class="italic">after</span> the window breaks. Paramount Restoration ensures you meet this requirement.
+                    <strong class="text-[#135bec]">Translation:</strong> If a storm
+                    breaks your window and you don't board it up, the insurance company
+                    might not pay for the water damage that happens <span
+                        class="italic">after</span
+                    > the window breaks. Paramount Restoration ensures you meet this
+                    requirement.
                 </p>
             </div>
         </div>
@@ -276,46 +579,99 @@ import BoardUpLayout from '../../layouts/BoardUpLayout.astro';
     <!-- FAQ Section -->
     <section class="py-16 lg:py-24 bg-[#111318]">
         <div class="px-4 md:px-10 max-w-[800px] mx-auto">
-            <h2 class="text-white text-2xl md:text-3xl font-bold mb-10 text-center">Emergency Security FAQ</h2>
+            <h2
+                class="text-white text-2xl md:text-3xl font-bold mb-10 text-center"
+            >
+                Emergency Security FAQ
+            </h2>
             <div class="flex flex-col gap-4">
                 <!-- Question 1 -->
-                <details class="group bg-[#1c1f27] border border-[#282e39] rounded-xl overflow-hidden cursor-pointer open:border-[#135bec]/50 transition-all">
-                    <summary class="flex items-center justify-between p-6 font-bold text-white text-lg select-none">
+                <details
+                    class="group bg-[#1c1f27] border border-[#282e39] rounded-xl overflow-hidden cursor-pointer open:border-[#135bec]/50 transition-all"
+                >
+                    <summary
+                        class="flex items-center justify-between p-6 font-bold text-white text-lg select-none"
+                    >
                         Will my insurance pay for emergency board-up?
-                        <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">keyboard_arrow_down</span>
+                        <span
+                            class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform"
+                            >keyboard_arrow_down</span
+                        >
                     </summary>
-                    <div class="px-6 pb-6 pt-0 text-slate-400 leading-relaxed border-t border-transparent group-open:border-[#282e39] animate-in fade-in slide-in-from-top-2">
-                        Yes, in almost all cases involving covered perils (fire, wind, storm), emergency mitigation services like board-up and tarping are fully covered. In fact, insurance companies prefer you do this to save them money on further damages.
+                    <div
+                        class="px-6 pb-6 pt-0 text-slate-400 leading-relaxed border-t border-transparent group-open:border-[#282e39] animate-in fade-in slide-in-from-top-2"
+                    >
+                        Yes, in almost all cases involving covered perils (fire,
+                        wind, storm), emergency mitigation services like
+                        board-up and tarping are fully covered. In fact,
+                        insurance companies prefer you do this to save them
+                        money on further damages.
                     </div>
                 </details>
                 <!-- Question 2 -->
-                <details class="group bg-[#1c1f27] border border-[#282e39] rounded-xl overflow-hidden cursor-pointer open:border-[#135bec]/50 transition-all">
-                    <summary class="flex items-center justify-between p-6 font-bold text-white text-lg select-none">
+                <details
+                    class="group bg-[#1c1f27] border border-[#282e39] rounded-xl overflow-hidden cursor-pointer open:border-[#135bec]/50 transition-all"
+                >
+                    <summary
+                        class="flex items-center justify-between p-6 font-bold text-white text-lg select-none"
+                    >
                         How long can the boards/tarp stay up?
-                        <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">keyboard_arrow_down</span>
+                        <span
+                            class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform"
+                            >keyboard_arrow_down</span
+                        >
                     </summary>
-                    <div class="px-6 pb-6 pt-0 text-slate-400 leading-relaxed border-t border-transparent group-open:border-[#282e39] animate-in fade-in slide-in-from-top-2">
-                        Our board-ups are designed to be secure for months if necessary. However, shrink wrap roof tarping is typically a temporary solution meant to last 3-6 months until permanent repairs can be made.
+                    <div
+                        class="px-6 pb-6 pt-0 text-slate-400 leading-relaxed border-t border-transparent group-open:border-[#282e39] animate-in fade-in slide-in-from-top-2"
+                    >
+                        Our board-ups are designed to be secure for months if
+                        necessary. However, shrink wrap roof tarping is
+                        typically a temporary solution meant to last 3-6 months
+                        until permanent repairs can be made.
                     </div>
                 </details>
                 <!-- Question 3 -->
-                <details class="group bg-[#1c1f27] border border-[#282e39] rounded-xl overflow-hidden cursor-pointer open:border-[#135bec]/50 transition-all">
-                    <summary class="flex items-center justify-between p-6 font-bold text-white text-lg select-none">
+                <details
+                    class="group bg-[#1c1f27] border border-[#282e39] rounded-xl overflow-hidden cursor-pointer open:border-[#135bec]/50 transition-all"
+                >
+                    <summary
+                        class="flex items-center justify-between p-6 font-bold text-white text-lg select-none"
+                    >
                         Can I still enter my home after it's boarded up?
-                        <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">keyboard_arrow_down</span>
+                        <span
+                            class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform"
+                            >keyboard_arrow_down</span
+                        >
                     </summary>
-                    <div class="px-6 pb-6 pt-0 text-slate-400 leading-relaxed border-t border-transparent group-open:border-[#282e39] animate-in fade-in slide-in-from-top-2">
-                        Yes. We typically install a specialized security door or hasp system on the main entry point, allowing you and authorized contractors access while keeping the property secure from intruders.
+                    <div
+                        class="px-6 pb-6 pt-0 text-slate-400 leading-relaxed border-t border-transparent group-open:border-[#282e39] animate-in fade-in slide-in-from-top-2"
+                    >
+                        Yes. We typically install a specialized security door or
+                        hasp system on the main entry point, allowing you and
+                        authorized contractors access while keeping the property
+                        secure from intruders.
                     </div>
                 </details>
                 <!-- Question 4 -->
-                <details class="group bg-[#1c1f27] border border-[#282e39] rounded-xl overflow-hidden cursor-pointer open:border-[#135bec]/50 transition-all">
-                    <summary class="flex items-center justify-between p-6 font-bold text-white text-lg select-none">
+                <details
+                    class="group bg-[#1c1f27] border border-[#282e39] rounded-xl overflow-hidden cursor-pointer open:border-[#135bec]/50 transition-all"
+                >
+                    <summary
+                        class="flex items-center justify-between p-6 font-bold text-white text-lg select-none"
+                    >
                         Do I need to pay upfront?
-                        <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">keyboard_arrow_down</span>
+                        <span
+                            class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform"
+                            >keyboard_arrow_down</span
+                        >
                     </summary>
-                    <div class="px-6 pb-6 pt-0 text-slate-400 leading-relaxed border-t border-transparent group-open:border-[#282e39] animate-in fade-in slide-in-from-top-2">
-                        For most insurance claims, we can bill your insurance carrier directly. We will collect your deductible if applicable, but we aim to minimize out-of-pocket stress during an emergency.
+                    <div
+                        class="px-6 pb-6 pt-0 text-slate-400 leading-relaxed border-t border-transparent group-open:border-[#282e39] animate-in fade-in slide-in-from-top-2"
+                    >
+                        For most insurance claims, we can bill your insurance
+                        carrier directly. We will collect your deductible if
+                        applicable, but we aim to minimize out-of-pocket stress
+                        during an emergency.
                     </div>
                 </details>
             </div>

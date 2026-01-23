@@ -38,8 +38,7 @@ const imageMap: Record<string, ImageMetadata> = {
   "water-damage": waterDamageHero,
 };
 
-const finalHeroImage =
-  imageMap[heroImageKey || "water-damage"] || waterDamageHero;
+imageMap[heroImageKey || "water-damage"] || waterDamageHero;
 
 // Icon map
 const iconMap: Record<string, any> = {

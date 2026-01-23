@@ -1,13 +1,18 @@
 ---
-import MainLayout from '../../../layouts/MainLayout.astro';
-import { Image } from 'astro:assets';
+import MainLayout from "../../../layouts/MainLayout.astro";
 
-const pageTitle = "Basement & Crawl Space Flood Cleanup in Florida | Paramount Restoration";
-const pageDescription = "Rapid water extraction for flooded basements and crawl spaces in Florida. Prevent mold and structural rot with our 60-minute emergency response. Licensed & Insured.";
+const pageTitle =
+    "Basement & Crawl Space Flood Cleanup in Florida | Paramount Restoration";
+const pageDescription =
+    "Rapid water extraction for flooded basements and crawl spaces in Florida. Prevent mold and structural rot with our 60-minute emergency response. Licensed & Insured.";
 ---
 
-<MainLayout title={pageTitle} description={pageDescription} image="/images/basement-flooding-og.jpg" schemaType="Service">
-    
+<MainLayout
+    title={pageTitle}
+    description={pageDescription}
+    image="/images/basement-flooding-og.jpg"
+    schemaType="Service"
+>
     <!-- Custom Styles for this page -->
     <style>
         .hotspot-dot {
@@ -27,13 +32,27 @@ const pageDescription = "Rapid water extraction for flooded basements and crawl 
     </style>
 
     <!-- Sticky Alert Bar -->
-    <div class="sticky top-20 z-40 bg-[#fff5eb] border-b border-orange-200 px-4 py-3 shadow-sm">
-        <div class="max-w-[1280px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-            <div class="flex items-center gap-2 text-orange-600 font-bold text-sm md:text-base">
-                <span class="material-symbols-outlined text-[20px]">warning</span>
-                <span>Standing water in your basement or crawl space? Don't enter without safety gear.</span>
+    <div
+        class="sticky top-20 z-40 bg-[#fff5eb] border-b border-orange-200 px-4 py-3 shadow-sm"
+    >
+        <div
+            class="max-w-[1280px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left"
+        >
+            <div
+                class="flex items-center gap-2 text-orange-600 font-bold text-sm md:text-base"
+            >
+                <span class="material-symbols-outlined text-[20px]"
+                    >warning</span
+                >
+                <span
+                    >Standing water in your basement or crawl space? Don't enter
+                    without safety gear.</span
+                >
             </div>
-            <a class="flex-shrink-0 bg-[#f97316] hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded-lg flex items-center gap-2 transition-colors animate-pulse" href="tel:7866022217">
+            <a
+                class="flex-shrink-0 bg-[#f97316] hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded-lg flex items-center gap-2 transition-colors animate-pulse"
+                href="tel:7866022217"
+            >
                 <span class="material-symbols-outlined text-[18px]">bolt</span>
                 EMERGENCY PUMP-OUT: (786) 602-2217
             </a>
@@ -43,43 +62,82 @@ const pageDescription = "Rapid water extraction for flooded basements and crawl 
     <!-- Hero Section -->
     <section class="bg-white relative overflow-hidden">
         <!-- Abstract background pattern -->
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50 to-transparent pointer-events-none"></div>
-        <div class="max-w-[1280px] mx-auto px-4 md:px-10 py-12 lg:py-20 relative z-10">
+        <div
+            class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50 to-transparent pointer-events-none"
+        >
+        </div>
+        <div
+            class="max-w-[1280px] mx-auto px-4 md:px-10 py-12 lg:py-20 relative z-10"
+        >
             <div class="flex flex-col lg:flex-row gap-12 items-center">
                 <!-- Content -->
                 <div class="flex-1 flex flex-col gap-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 w-fit">
-                        <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
-                        <span class="text-primary text-xs font-bold uppercase tracking-wide">The Dry-Out Promise</span>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 w-fit"
+                    >
+                        <span
+                            class="material-symbols-outlined text-primary text-[18px]"
+                            >verified</span
+                        >
+                        <span
+                            class="text-primary text-xs font-bold uppercase tracking-wide"
+                            >The Dry-Out Promise</span
+                        >
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight">
-                        Basement & Crawl Space <span class="text-primary">Flood Cleanup</span> in Florida
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight"
+                    >
+                        Basement & Crawl Space <span class="text-primary"
+                            >Flood Cleanup</span
+                        > in Florida
                     </h1>
-                    <p class="text-lg text-slate-600 font-medium leading-relaxed max-w-xl">
-                        Rapid water extraction, mold prevention, and structural drying. Don't let standing water destroy your foundation. We arrive within 60 minutes.
+                    <p
+                        class="text-lg text-slate-600 font-medium leading-relaxed max-w-xl"
+                    >
+                        Rapid water extraction, mold prevention, and structural
+                        drying. Don't let standing water destroy your
+                        foundation. We arrive within 60 minutes.
                     </p>
-                    
+
                     <!-- Trust Indicators Grid -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-2">
                         <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-primary">verified_user</span>
-                            <span class="text-sm font-bold text-slate-900">Licensed Mold Assessors</span>
+                            <span class="material-symbols-outlined text-primary"
+                                >verified_user</span
+                            >
+                            <span class="text-sm font-bold text-slate-900"
+                                >Licensed Mold Assessors</span
+                            >
                         </div>
                         <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-primary">schedule</span>
-                            <span class="text-sm font-bold text-slate-900">24/7 Availability</span>
+                            <span class="material-symbols-outlined text-primary"
+                                >schedule</span
+                            >
+                            <span class="text-sm font-bold text-slate-900"
+                                >24/7 Availability</span
+                            >
                         </div>
                         <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-primary">request_quote</span>
-                            <span class="text-sm font-bold text-slate-900">Direct Insurance Billing</span>
+                            <span class="material-symbols-outlined text-primary"
+                                >request_quote</span
+                            >
+                            <span class="text-sm font-bold text-slate-900"
+                                >Direct Insurance Billing</span
+                            >
                         </div>
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                        <a href="tel:7866022217" class="flex-1 sm:flex-none cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 text-white text-base font-bold transition-colors shadow-lg shadow-blue-500/20 flex text-center">
+                        <a
+                            href="tel:7866022217"
+                            class="flex-1 sm:flex-none cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 text-white text-base font-bold transition-colors shadow-lg shadow-blue-500/20 flex text-center"
+                        >
                             Get a Free Moisture Inspection
                         </a>
-                        <a href="/service-areas/" class="flex-1 sm:flex-none cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white border-2 border-slate-200 hover:border-primary text-slate-900 text-base font-bold transition-colors flex text-center">
+                        <a
+                            href="/service-areas/"
+                            class="flex-1 sm:flex-none cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white border-2 border-slate-200 hover:border-primary text-slate-900 text-base font-bold transition-colors flex text-center"
+                        >
                             View Service Area
                         </a>
                     </div>
@@ -87,21 +145,41 @@ const pageDescription = "Rapid water extraction for flooded basements and crawl 
 
                 <!-- Hero Image -->
                 <div class="flex-1 w-full max-w-xl lg:max-w-none">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] group">
+                    <div
+                        class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] group"
+                    >
                         <!-- Image -->
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Restoration technician standing in water wearing protective gear and using professional water pump equipment" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8Yz5y09E844BNTCjz0cKKkb2tAx_4-AUIlUAOYNrZdtS4KSMHUREOUYYU2XM7O0QAHn0EcfV-Kc5tWWd4eTHTfiG75IsIiFbhHbMCFyarMNRFhNA8tTse0JGKV-LIurFqy1599qvWysHLTylQa56Dso33HlSOAMLFNVkaNkQ4OzohkVp3i1JIUt-G7GAHG06QtXfhgw03oXH5Ttt8enlTiJB4D7GihvM1ydJcgQ3o_kaCe_X8Hn-mkoi2BurBpK0M8kP-8at2P4En');">
+                        <div
+                            class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Restoration technician standing in water wearing protective gear and using professional water pump equipment"
+                            style="background-image: url('/assets/images/restoration/water-damage/basement-technician.webp');"
+                        >
                         </div>
                         <!-- Overlay gradient -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+                        >
+                        </div>
                         <!-- Floating Badge -->
-                        <div class="absolute bottom-6 left-6 right-6 p-4 bg-white/95 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg">
+                        <div
+                            class="absolute bottom-6 left-6 right-6 p-4 bg-white/95 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg"
+                        >
                             <div class="flex items-start gap-4">
-                                <div class="bg-green-100 p-2 rounded-full text-green-600">
-                                    <span class="material-symbols-outlined">check_circle</span>
+                                <div
+                                    class="bg-green-100 p-2 rounded-full text-green-600"
+                                >
+                                    <span class="material-symbols-outlined"
+                                        >check_circle</span
+                                    >
                                 </div>
                                 <div>
-                                    <p class="font-bold text-slate-900">Active Response Team</p>
-                                    <p class="text-sm text-slate-500">Currently deployed in Tampa, Miami, and Orlando areas.</p>
+                                    <p class="font-bold text-slate-900">
+                                        Active Response Team
+                                    </p>
+                                    <p class="text-sm text-slate-500">
+                                        Currently deployed in Tampa, Miami, and
+                                        Orlando areas.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -114,22 +192,44 @@ const pageDescription = "Rapid water extraction for flooded basements and crawl 
     <!-- Florida Context Block -->
     <section class="bg-slate-50 py-16 border-y border-slate-200">
         <div class="max-w-[960px] mx-auto px-4 md:px-10">
-            <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100">
+            <div
+                class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100"
+            >
                 <div class="flex flex-col md:flex-row gap-8 items-start">
                     <div class="md:w-1/3 w-full">
-                        <div class="bg-blue-50 rounded-xl p-6 h-full flex flex-col justify-center">
-                            <span class="material-symbols-outlined text-primary text-4xl mb-4">water</span>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Florida Context</h3>
-                            <p class="text-sm text-slate-600">Understanding the unique challenges of our local water table.</p>
+                        <div
+                            class="bg-blue-50 rounded-xl p-6 h-full flex flex-col justify-center"
+                        >
+                            <span
+                                class="material-symbols-outlined text-primary text-4xl mb-4"
+                                >water</span
+                            >
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">
+                                Florida Context
+                            </h3>
+                            <p class="text-sm text-slate-600">
+                                Understanding the unique challenges of our local
+                                water table.
+                            </p>
                         </div>
                     </div>
                     <div class="md:w-2/3">
-                        <h2 class="text-2xl font-bold text-slate-900 mb-4">Understanding Below-Grade Water Damage in Florida</h2>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">
+                            Understanding Below-Grade Water Damage in Florida
+                        </h2>
                         <p class="text-slate-600 mb-4 leading-relaxed">
-                            Florida's high water table and humid climate create a "perfect storm" for basement and crawl space issues. Unlike northern basements that may dry naturally, Florida's below-grade spaces act as moisture sponges.
+                            Florida's high water table and humid climate create
+                            a "perfect storm" for basement and crawl space
+                            issues. Unlike northern basements that may dry
+                            naturally, Florida's below-grade spaces act as
+                            moisture sponges.
                         </p>
                         <p class="text-slate-600 leading-relaxed">
-                            Even a small amount of standing water can lead to rapid microbial growth within 24-48 hours. Our specialized equipment is calibrated specifically for Florida's atmospheric conditions to ensure a complete structural dry-out.
+                            Even a small amount of standing water can lead to
+                            rapid microbial growth within 24-48 hours. Our
+                            specialized equipment is calibrated specifically for
+                            Florida's atmospheric conditions to ensure a
+                            complete structural dry-out.
                         </p>
                     </div>
                 </div>
@@ -141,64 +241,129 @@ const pageDescription = "Rapid water extraction for flooded basements and crawl 
     <section class="py-20 bg-white">
         <div class="max-w-[1280px] mx-auto px-4 md:px-10">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Complete Restoration Solutions</h2>
-                <p class="text-lg text-slate-600">From initial extraction to final encapsulation, we handle every step of the recovery process.</p>
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">
+                    Complete Restoration Solutions
+                </h2>
+                <p class="text-lg text-slate-600">
+                    From initial extraction to final encapsulation, we handle
+                    every step of the recovery process.
+                </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1 -->
-                <div class="group bg-slate-50 rounded-xl p-6 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20">
-                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-[28px]">thunderstorm</span>
+                <div
+                    class="group bg-slate-50 rounded-xl p-6 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20"
+                >
+                    <div
+                        class="w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+                    >
+                        <span class="material-symbols-outlined text-[28px]"
+                            >thunderstorm</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Emergency Pump-Out</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">
+                        Emergency Pump-Out
+                    </h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Industrial-grade submersible pumps remove thousands of gallons per hour to stop damage instantly.
+                        Industrial-grade submersible pumps remove thousands of
+                        gallons per hour to stop damage instantly.
                     </p>
-                    <a class="inline-flex items-center text-orange-600 font-bold text-sm hover:underline" href="/restoration/water-damage/emergency-water-removal/">
-                        Learn more <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+                    <a
+                        class="inline-flex items-center text-orange-600 font-bold text-sm hover:underline"
+                        href="/restoration/water-damage/emergency-water-removal/"
+                    >
+                        Learn more <span
+                            class="material-symbols-outlined text-[16px] ml-1"
+                            >arrow_forward</span
+                        >
                     </a>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="group bg-slate-50 rounded-xl p-6 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20">
-                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-[28px]">shield</span>
+                <div
+                    class="group bg-slate-50 rounded-xl p-6 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20"
+                >
+                    <div
+                        class="w-12 h-12 bg-blue-100 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+                    >
+                        <span class="material-symbols-outlined text-[28px]"
+                            >shield</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Space Encapsulation</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">
+                        Space Encapsulation
+                    </h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Sealing crawl spaces with heavy-duty vapor barriers to prevent future moisture intrusion and mold.
+                        Sealing crawl spaces with heavy-duty vapor barriers to
+                        prevent future moisture intrusion and mold.
                     </p>
-                    <a class="inline-flex items-center text-primary font-bold text-sm hover:underline" href="/restoration/mold-remediation/prevention/">
-                        Learn more <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+                    <a
+                        class="inline-flex items-center text-primary font-bold text-sm hover:underline"
+                        href="/restoration/mold-remediation/prevention/"
+                    >
+                        Learn more <span
+                            class="material-symbols-outlined text-[16px] ml-1"
+                            >arrow_forward</span
+                        >
                     </a>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="group bg-slate-50 rounded-xl p-6 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20">
-                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-[28px]">sanitizer</span>
+                <div
+                    class="group bg-slate-50 rounded-xl p-6 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20"
+                >
+                    <div
+                        class="w-12 h-12 bg-blue-100 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+                    >
+                        <span class="material-symbols-outlined text-[28px]"
+                            >sanitizer</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Sewage Decontamination</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">
+                        Sewage Decontamination
+                    </h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Safe removal of biohazards and Category 3 water, followed by hospital-grade sanitization.
+                        Safe removal of biohazards and Category 3 water,
+                        followed by hospital-grade sanitization.
                     </p>
-                    <a class="inline-flex items-center text-primary font-bold text-sm hover:underline" href="/restoration/water-damage/sewage-cleanup/">
-                        Learn more <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+                    <a
+                        class="inline-flex items-center text-primary font-bold text-sm hover:underline"
+                        href="/restoration/water-damage/sewage-cleanup/"
+                    >
+                        Learn more <span
+                            class="material-symbols-outlined text-[16px] ml-1"
+                            >arrow_forward</span
+                        >
                     </a>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="group bg-slate-50 rounded-xl p-6 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20">
-                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-[28px]">air</span>
+                <div
+                    class="group bg-slate-50 rounded-xl p-6 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20"
+                >
+                    <div
+                        class="w-12 h-12 bg-blue-100 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+                    >
+                        <span class="material-symbols-outlined text-[28px]"
+                            >air</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Dehumidification</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">
+                        Dehumidification
+                    </h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Advanced desiccant dehumidifiers that pull moisture from structural beams and subflooring.
+                        Advanced desiccant dehumidifiers that pull moisture from
+                        structural beams and subflooring.
                     </p>
-                    <a class="inline-flex items-center text-primary font-bold text-sm hover:underline" href="/restoration/water-damage/structural-drying/">
-                        Learn more <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+                    <a
+                        class="inline-flex items-center text-primary font-bold text-sm hover:underline"
+                        href="/restoration/water-damage/structural-drying/"
+                    >
+                        Learn more <span
+                            class="material-symbols-outlined text-[16px] ml-1"
+                            >arrow_forward</span
+                        >
                     </a>
                 </div>
             </div>
@@ -207,39 +372,87 @@ const pageDescription = "Rapid water extraction for flooded basements and crawl 
 
     <!-- Technical Section & Interactive Element -->
     <section class="bg-[#101922] text-white py-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div
+            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"
+        >
+        </div>
         <div class="max-w-[1280px] mx-auto px-4 md:px-10 relative z-10">
             <div class="flex flex-col lg:flex-row gap-16">
                 <!-- Left: Answer First List -->
                 <div class="lg:w-1/2">
-                    <h2 class="text-3xl font-bold mb-8">What to do when your basement floods?</h2>
+                    <h2 class="text-3xl font-bold mb-8">
+                        What to do when your basement floods?
+                    </h2>
                     <div class="space-y-6">
                         <div class="flex gap-6">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-xl">1</div>
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-xl"
+                            >
+                                1
+                            </div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2">Shut Off Power Immediately</h3>
-                                <p class="text-slate-300 leading-relaxed">Water and electricity are a lethal combination. If your breaker box is in the flooded area, do not enter. Call your utility company first.</p>
+                                <h3 class="text-xl font-bold mb-2">
+                                    Shut Off Power Immediately
+                                </h3>
+                                <p class="text-slate-300 leading-relaxed">
+                                    Water and electricity are a lethal
+                                    combination. If your breaker box is in the
+                                    flooded area, do not enter. Call your
+                                    utility company first.
+                                </p>
                             </div>
                         </div>
                         <div class="flex gap-6">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">2</div>
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl"
+                            >
+                                2
+                            </div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2">Stop the Water Source</h3>
-                                <p class="text-slate-300 leading-relaxed">If it's a burst pipe, turn off the main water valve. If it's storm flooding, focus on safety and evacuation if necessary.</p>
+                                <h3 class="text-xl font-bold mb-2">
+                                    Stop the Water Source
+                                </h3>
+                                <p class="text-slate-300 leading-relaxed">
+                                    If it's a burst pipe, turn off the main
+                                    water valve. If it's storm flooding, focus
+                                    on safety and evacuation if necessary.
+                                </p>
                             </div>
                         </div>
                         <div class="flex gap-6">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">3</div>
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl"
+                            >
+                                3
+                            </div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2">Document for Insurance</h3>
-                                <p class="text-slate-300 leading-relaxed">Before cleanup begins, take photos and videos of the water level and damaged items. This is crucial for your claim.</p>
+                                <h3 class="text-xl font-bold mb-2">
+                                    Document for Insurance
+                                </h3>
+                                <p class="text-slate-300 leading-relaxed">
+                                    Before cleanup begins, take photos and
+                                    videos of the water level and damaged items.
+                                    This is crucial for your claim.
+                                </p>
                             </div>
                         </div>
                         <div class="flex gap-6">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">4</div>
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl"
+                            >
+                                4
+                            </div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2">Call Paramount Restoration</h3>
-                                <p class="text-slate-300 leading-relaxed">Time is the enemy. Call <span class="text-orange-500 font-bold">(786) 602-2217</span> for emergency extraction to prevent mold setting in.</p>
+                                <h3 class="text-xl font-bold mb-2">
+                                    Call Paramount Restoration
+                                </h3>
+                                <p class="text-slate-300 leading-relaxed">
+                                    Time is the enemy. Call <span
+                                        class="text-orange-500 font-bold"
+                                        >(786) 602-2217</span
+                                    > for emergency extraction to prevent mold setting
+                                    in.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -247,51 +460,112 @@ const pageDescription = "Rapid water extraction for flooded basements and crawl 
 
                 <!-- Right: Interactive Diagram (Static Implementation) -->
                 <div class="lg:w-1/2">
-                    <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+                    <div
+                        class="bg-white/5 rounded-2xl p-6 border border-white/10"
+                    >
                         <div class="flex items-center justify-between mb-6">
-                            <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                                <span class="material-symbols-outlined text-orange-500">warning</span>
+                            <h3
+                                class="text-xl font-bold text-white flex items-center gap-2"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-orange-500"
+                                    >warning</span
+                                >
                                 The Hidden Dangers
                             </h3>
-                            <span class="text-xs text-slate-400 uppercase tracking-widest">Structural Analysis</span>
+                            <span
+                                class="text-xs text-slate-400 uppercase tracking-widest"
+                                >Structural Analysis</span
+                            >
                         </div>
-                        
+
                         <!-- Diagram Container -->
-                        <div class="relative rounded-xl overflow-hidden aspect-video bg-slate-800">
+                        <div
+                            class="relative rounded-xl overflow-hidden aspect-video bg-slate-800"
+                        >
                             <!-- Background Image representing basement cross-section -->
-                            <div class="absolute inset-0 bg-cover bg-center opacity-50" data-alt="Cross section diagram of a house foundation showing soil, concrete wall, and water table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEu5X1IMCjHlkp3aWHGeevJe1IiZXIebZh9Bpj-wbuObJjyUNTJwDoY6ny-jFHo03XO7aOb_xUs77moeSLoWnoJKm_oUhKRO-7QYcHucYTV1PoL1fvCE60lm2wXb5gWWYRjFVfs5sGHO3DP0djLlezBciEdeH8LuAqcC4XDT_n3PMzBBZeWU6dkFir8_z-D0n4Olyfr_HvepPuKJNLKtgidVKyQcmgTp-JLzMUQ3rJ7LwVNWbZ3AgPnaSMySv0FYDvT6Asvm3Tg6bp');">
+                            <div
+                                class="absolute inset-0 bg-cover bg-center opacity-50"
+                                data-alt="Cross section diagram of a house foundation showing soil, concrete wall, and water table"
+                                style="background-image: url('/assets/images/restoration/water-damage/basement-diagram.webp');"
+                            >
                             </div>
-                            
+
                             <!-- Hotspots -->
                             <!-- Hotspot 1: Wall -->
-                            <div class="absolute top-[30%] left-[20%] group cursor-pointer z-20">
-                                <div class="hotspot-dot w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-lg"></div>
-                                <div class="absolute left-8 top-0 bg-white text-slate-900 p-3 rounded-lg shadow-xl w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto z-30">
-                                    <h4 class="font-bold text-sm mb-1 text-red-600">Hydrostatic Pressure</h4>
-                                    <p class="text-xs">Water pressure builds outside walls, forcing moisture through concrete pores.</p>
+                            <div
+                                class="absolute top-[30%] left-[20%] group cursor-pointer z-20"
+                            >
+                                <div
+                                    class="hotspot-dot w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-lg"
+                                >
+                                </div>
+                                <div
+                                    class="absolute left-8 top-0 bg-white text-slate-900 p-3 rounded-lg shadow-xl w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto z-30"
+                                >
+                                    <h4
+                                        class="font-bold text-sm mb-1 text-red-600"
+                                    >
+                                        Hydrostatic Pressure
+                                    </h4>
+                                    <p class="text-xs">
+                                        Water pressure builds outside walls,
+                                        forcing moisture through concrete pores.
+                                    </p>
                                 </div>
                             </div>
-                            
+
                             <!-- Hotspot 2: Floor/Corner -->
-                            <div class="absolute bottom-[20%] left-[40%] group cursor-pointer z-20">
-                                <div class="hotspot-dot w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-lg"></div>
-                                <div class="absolute left-8 top-[-50px] bg-white text-slate-900 p-3 rounded-lg shadow-xl w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto z-30">
-                                    <h4 class="font-bold text-sm mb-1 text-red-600">Foundation Cracks</h4>
-                                    <p class="text-xs">Water seepage erodes soil support, leading to settling and major structural cracks.</p>
+                            <div
+                                class="absolute bottom-[20%] left-[40%] group cursor-pointer z-20"
+                            >
+                                <div
+                                    class="hotspot-dot w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-lg"
+                                >
+                                </div>
+                                <div
+                                    class="absolute left-8 top-[-50px] bg-white text-slate-900 p-3 rounded-lg shadow-xl w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto z-30"
+                                >
+                                    <h4
+                                        class="font-bold text-sm mb-1 text-red-600"
+                                    >
+                                        Foundation Cracks
+                                    </h4>
+                                    <p class="text-xs">
+                                        Water seepage erodes soil support,
+                                        leading to settling and major structural
+                                        cracks.
+                                    </p>
                                 </div>
                             </div>
-                            
+
                             <!-- Hotspot 3: Air -->
-                            <div class="absolute top-[20%] right-[30%] group cursor-pointer z-20">
-                                <div class="hotspot-dot w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-lg"></div>
-                                <div class="absolute right-8 top-0 bg-white text-slate-900 p-3 rounded-lg shadow-xl w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto z-30">
-                                    <h4 class="font-bold text-sm mb-1 text-red-600">Airborne Spores</h4>
-                                    <p class="text-xs">Damp air circulates upward, spreading mold spores to living areas above.</p>
+                            <div
+                                class="absolute top-[20%] right-[30%] group cursor-pointer z-20"
+                            >
+                                <div
+                                    class="hotspot-dot w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-lg"
+                                >
+                                </div>
+                                <div
+                                    class="absolute right-8 top-0 bg-white text-slate-900 p-3 rounded-lg shadow-xl w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto z-30"
+                                >
+                                    <h4
+                                        class="font-bold text-sm mb-1 text-red-600"
+                                    >
+                                        Airborne Spores
+                                    </h4>
+                                    <p class="text-xs">
+                                        Damp air circulates upward, spreading
+                                        mold spores to living areas above.
+                                    </p>
                                 </div>
                             </div>
-                            
+
                             <!-- Overlay instruction -->
-                            <div class="absolute bottom-4 right-4 bg-black/60 px-3 py-1 rounded-full text-xs text-white backdrop-blur-sm pointer-events-none">
+                            <div
+                                class="absolute bottom-4 right-4 bg-black/60 px-3 py-1 rounded-full text-xs text-white backdrop-blur-sm pointer-events-none"
+                            >
                                 Hover over dots to see risks
                             </div>
                         </div>
@@ -304,29 +578,66 @@ const pageDescription = "Rapid water extraction for flooded basements and crawl 
     <!-- Social Proof & Testimonial -->
     <section class="py-20 bg-slate-50">
         <div class="max-w-[960px] mx-auto px-4 md:px-10">
-            <div class="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl p-8 md:p-12 shadow-md relative overflow-hidden">
+            <div
+                class="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl p-8 md:p-12 shadow-md relative overflow-hidden"
+            >
                 <!-- Decorative quote mark -->
-                <span class="absolute top-4 right-8 text-9xl text-primary/5 font-serif leading-none select-none">"</span>
-                
-                <div class="md:w-1/3 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-gray-100 pb-8 md:pb-0 md:pr-8">
-                    <div class="w-20 h-20 rounded-full bg-gray-200 mb-4 overflow-hidden">
-                        <div class="w-full h-full bg-cover bg-center" data-alt="Portrait of Sarah J., a happy customer from Tampa" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrWUjzM9e1W8qFhLestlvqO4-xjeHB5uFXDc84c7ZqjzN4fowt1-YpqO68OATwEm_N1e_yTuBywRpnf5wD1nBNF8JgEAhiK3-Zy3KSLMKLp5TPPWMn-QCR5SZxiBkRsf0vf39LkAN3CICxSeLDPxb7mjur0oGj8fN7T9XelWv6Z7orEWzaKA60i6G2BnVNJJuKNQBdfQ8eg-YQW6cqR7Re2HJSjXDqrq4lJJIc-auCBe0HbhJ4ENekMFBRG-CF2cDIqy3eR7b-LtcR');"></div>
+                <span
+                    class="absolute top-4 right-8 text-9xl text-primary/5 font-serif leading-none select-none"
+                    >"</span
+                >
+
+                <div
+                    class="md:w-1/3 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-gray-100 pb-8 md:pb-0 md:pr-8"
+                >
+                    <div
+                        class="w-20 h-20 rounded-full bg-gray-200 mb-4 overflow-hidden"
+                    >
+                        <div
+                            class="w-full h-full bg-cover bg-center"
+                            data-alt="Portrait of Sarah J., a happy customer from Tampa"
+                            style="background-image: url('/assets/images/restoration/water-damage/testimonial-sarah.webp');"
+                        >
+                        </div>
                     </div>
                     <h3 class="font-bold text-lg text-slate-900">Sarah J.</h3>
-                    <p class="text-sm text-slate-500 mb-2">Homeowner in Tampa, FL</p>
+                    <p class="text-sm text-slate-500 mb-2">
+                        Homeowner in Tampa, FL
+                    </p>
                     <div class="flex text-yellow-400">
-                        <span class="material-symbols-outlined text-[20px] fill-current">star</span>
-                        <span class="material-symbols-outlined text-[20px] fill-current">star</span>
-                        <span class="material-symbols-outlined text-[20px] fill-current">star</span>
-                        <span class="material-symbols-outlined text-[20px] fill-current">star</span>
-                        <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                        <span
+                            class="material-symbols-outlined text-[20px] fill-current"
+                            >star</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-[20px] fill-current"
+                            >star</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-[20px] fill-current"
+                            >star</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-[20px] fill-current"
+                            >star</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-[20px] fill-current"
+                            >star</span
+                        >
                     </div>
                 </div>
-                
+
                 <div class="md:w-2/3">
-                    <h4 class="text-xl font-bold text-slate-900 mb-4">"Saved our wood floors after the storm"</h4>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">
+                        "Saved our wood floors after the storm"
+                    </h4>
                     <p class="text-slate-600 text-lg leading-relaxed italic">
-                        "I thought our entire first floor was a goner after the crawl space flooded and wicked up the walls. Paramount got here in under an hour with huge fans and pumps. They handled the insurance directly, and we didn't have to replace the hardwood. Incredible service."
+                        "I thought our entire first floor was a goner after the
+                        crawl space flooded and wicked up the walls. Paramount
+                        got here in under an hour with huge fans and pumps. They
+                        handled the insurance directly, and we didn't have to
+                        replace the hardwood. Incredible service."
                     </p>
                 </div>
             </div>
@@ -336,57 +647,94 @@ const pageDescription = "Rapid water extraction for flooded basements and crawl 
     <!-- FAQ Section -->
     <section class="py-20 bg-white">
         <div class="max-w-[800px] mx-auto px-4 md:px-10">
-            <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Frequently Asked Questions</h2>
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">
+                Frequently Asked Questions
+            </h2>
             <div class="space-y-4">
                 <details class="group bg-slate-50 rounded-lg">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-slate-900 list-none">
-                        <span>Does homeowners insurance cover flood cleanup?</span>
+                    <summary
+                        class="flex justify-between items-center cursor-pointer p-6 font-bold text-slate-900 list-none"
+                    >
+                        <span
+                            >Does homeowners insurance cover flood cleanup?</span
+                        >
                         <span class="transition group-open:rotate-180">
-                            <span class="material-symbols-outlined">expand_more</span>
+                            <span class="material-symbols-outlined"
+                                >expand_more</span
+                            >
                         </span>
                     </summary>
                     <div class="text-slate-600 px-6 pb-6 leading-relaxed">
-                        It depends on the source. "Flood" insurance typically covers rising water from outside (storms), while standard policies often cover sudden internal issues like burst pipes. We work directly with your adjuster to maximize your coverage entitlement and handle the billing for you.
+                        It depends on the source. "Flood" insurance typically
+                        covers rising water from outside (storms), while
+                        standard policies often cover sudden internal issues
+                        like burst pipes. We work directly with your adjuster to
+                        maximize your coverage entitlement and handle the
+                        billing for you.
                     </div>
                 </details>
-                
+
                 <details class="group bg-slate-50 rounded-lg">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-slate-900 list-none">
+                    <summary
+                        class="flex justify-between items-center cursor-pointer p-6 font-bold text-slate-900 list-none"
+                    >
                         <span>How long does the drying process take?</span>
                         <span class="transition group-open:rotate-180">
-                            <span class="material-symbols-outlined">expand_more</span>
+                            <span class="material-symbols-outlined"
+                                >expand_more</span
+                            >
                         </span>
                     </summary>
                     <div class="text-slate-600 px-6 pb-6 leading-relaxed">
-                        Most residential drying projects take between 3 to 5 days. However, dense materials like hardwood or concrete in basements may require specialized heating equipment and take slightly longer. We monitor moisture levels daily to ensure it's truly dry.
+                        Most residential drying projects take between 3 to 5
+                        days. However, dense materials like hardwood or concrete
+                        in basements may require specialized heating equipment
+                        and take slightly longer. We monitor moisture levels
+                        daily to ensure it's truly dry.
                     </div>
                 </details>
-                
+
                 <details class="group bg-slate-50 rounded-lg">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-slate-900 list-none">
-                        <span>Can you save my wood floors if they got wet?</span>
+                    <summary
+                        class="flex justify-between items-center cursor-pointer p-6 font-bold text-slate-900 list-none"
+                    >
+                        <span>Can you save my wood floors if they got wet?</span
+                        >
                         <span class="transition group-open:rotate-180">
-                            <span class="material-symbols-outlined">expand_more</span>
+                            <span class="material-symbols-outlined"
+                                >expand_more</span
+                            >
                         </span>
                     </summary>
                     <div class="text-slate-600 px-6 pb-6 leading-relaxed">
-                        Often, yes! If we can begin the extraction and drying process within the first 24 hours using our injectable drying mats and industrial dehumidifiers, we can often draw the moisture out before the wood permanently warps or cups.
+                        Often, yes! If we can begin the extraction and drying
+                        process within the first 24 hours using our injectable
+                        drying mats and industrial dehumidifiers, we can often
+                        draw the moisture out before the wood permanently warps
+                        or cups.
                     </div>
                 </details>
-                
+
                 <details class="group bg-slate-50 rounded-lg">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-slate-900 list-none">
+                    <summary
+                        class="flex justify-between items-center cursor-pointer p-6 font-bold text-slate-900 list-none"
+                    >
                         <span>Is the mold dangerous right away?</span>
                         <span class="transition group-open:rotate-180">
-                            <span class="material-symbols-outlined">expand_more</span>
+                            <span class="material-symbols-outlined"
+                                >expand_more</span
+                            >
                         </span>
                     </summary>
                     <div class="text-slate-600 px-6 pb-6 leading-relaxed">
-                        Mold spores are always present, but active colonies begin to form within 24-48 hours of water exposure. This is why immediate removal of standing water and humidity control is critical to preventing a hazardous environment.
+                        Mold spores are always present, but active colonies
+                        begin to form within 24-48 hours of water exposure. This
+                        is why immediate removal of standing water and humidity
+                        control is critical to preventing a hazardous
+                        environment.
                     </div>
                 </details>
             </div>
         </div>
     </section>
-
 </MainLayout>

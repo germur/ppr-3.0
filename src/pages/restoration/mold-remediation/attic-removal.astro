@@ -1,74 +1,132 @@
 ---
-import MainLayout from '../../../layouts/MainLayout.astro';
+import MainLayout from "../../../layouts/MainLayout.astro";
 
-const seoTitle = "Attic Mold Removal & Insulation Replacement | Paramount Property Restoration";
-const seoDescription = "Florida heat turns attics into mold incubators. We safely remove mold and prevent spores from entering your living space through 'The Stack Effect'.";
+const seoTitle =
+    "Attic Mold Removal & Insulation Replacement | Paramount Property Restoration";
+const seoDescription =
+    "Florida heat turns attics into mold incubators. We safely remove mold and prevent spores from entering your living space through 'The Stack Effect'.";
 
 const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "Service",
-    "name": "Attic Mold Remediation"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "5"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Over 500 Florida Homeowners"
-  },
-  "reviewBody": "Rated 5/5 for Attic Cleanup. Trusted by over 500 Florida Homeowners."
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+        "@type": "Service",
+        name: "Attic Mold Remediation",
+    },
+    reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+    },
+    author: {
+        "@type": "Person",
+        name: "Over 500 Florida Homeowners",
+    },
+    reviewBody:
+        "Rated 5/5 for Attic Cleanup. Trusted by over 500 Florida Homeowners.",
 };
 ---
 
-<MainLayout title={seoTitle} description={seoDescription} customSchema={reviewSchema}>
+<MainLayout
+    title={seoTitle}
+    description={seoDescription}
+    customSchema={reviewSchema}
+>
     <!-- Custom Styles for this specific landing page -->
     <style>
-        .text-primary { color: #197fe6; }
-        .bg-primary { background-color: #197fe6; }
-        .text-secondary { color: #f97316; }
-        .bg-secondary { background-color: #f97316; }
-        .border-primary { border-color: #197fe6; }
-        .hover\:bg-primary:hover { background-color: #197fe6; }
-        .hover\:text-primary:hover { color: #197fe6; }
-        
-        .font-display { font-family: 'Space Grotesk', sans-serif; }
-        .font-body { font-family: 'Noto Sans', sans-serif; }
+        .text-primary {
+            color: #197fe6;
+        }
+        .bg-primary {
+            background-color: #197fe6;
+        }
+        .text-secondary {
+            color: #f97316;
+        }
+        .bg-secondary {
+            background-color: #f97316;
+        }
+        .border-primary {
+            border-color: #197fe6;
+        }
+        .hover\:bg-primary:hover {
+            background-color: #197fe6;
+        }
+        .hover\:text-primary:hover {
+            color: #197fe6;
+        }
+
+        .font-display {
+            font-family: "Space Grotesk", sans-serif;
+        }
+        .font-body {
+            font-family: "Noto Sans", sans-serif;
+        }
     </style>
 
-    <div class="bg-[#f6f7f8] dark:bg-[#111921] text-[#111418] dark:text-white font-display overflow-x-hidden transition-colors duration-200">
+    <div
+        class="bg-[#f6f7f8] dark:bg-[#111921] text-[#111418] dark:text-white font-display overflow-x-hidden transition-colors duration-200"
+    >
         <div class="relative flex h-auto w-full flex-col">
-
-
             <!-- Hero Section -->
-            <div class="px-4 md:px-40 flex justify-center py-10 bg-white dark:bg-[#111921]">
-                <div class="flex flex-col gap-8 md:flex-row max-w-[1200px] items-center">
+            <div
+                class="px-4 md:px-40 flex justify-center py-10 bg-white dark:bg-[#111921]"
+            >
+                <div
+                    class="flex flex-col gap-8 md:flex-row max-w-[1200px] items-center"
+                >
                     <div class="flex flex-col gap-6 md:w-1/2">
                         <div class="flex flex-col gap-3">
-                            <span class="text-secondary font-bold tracking-wider uppercase text-xs">Attic Health & Safety</span>
-                            <h1 class="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-[#111418] dark:text-white">
-                                Expert Attic Mold Removal & Insulation Replacement
+                            <span
+                                class="text-secondary font-bold tracking-wider uppercase text-xs"
+                                >Attic Health & Safety</span
+                            >
+                            <h1
+                                class="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-[#111418] dark:text-white"
+                            >
+                                Expert Attic Mold Removal & Insulation
+                                Replacement
                             </h1>
-                            <p class="text-lg text-gray-600 dark:text-gray-300 font-normal leading-relaxed">
-                                Why Florida heat turns your attic into a mold incubator—and how it impacts the air you breathe downstairs.
+                            <p
+                                class="text-lg text-gray-600 dark:text-gray-300 font-normal leading-relaxed"
+                            >
+                                Why Florida heat turns your attic into a mold
+                                incubator—and how it impacts the air you breathe
+                                downstairs.
                             </p>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <button class="bg-primary hover:bg-blue-600 text-white text-base font-bold h-12 px-8 rounded-lg shadow-lg shadow-primary/30 transition-all transform hover:scale-105">
+                            <button
+                                class="bg-primary hover:bg-blue-600 text-white text-base font-bold h-12 px-8 rounded-lg shadow-lg shadow-primary/30 transition-all transform hover:scale-105"
+                            >
                                 Inspect My Attic
                             </button>
-                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg">
-                                <span class="material-symbols-outlined text-green-600">verified_user</span>
-                                <span class="text-sm font-medium text-gray-700 dark:text-gray-200">IICRC Certified</span>
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-green-600"
+                                    >verified_user</span
+                                >
+                                <span
+                                    class="text-sm font-medium text-gray-700 dark:text-gray-200"
+                                    >IICRC Certified</span
+                                >
                             </div>
                         </div>
                     </div>
                     <div class="w-full md:w-1/2">
-                        <div class="w-full aspect-[4/3] bg-cover bg-center rounded-xl shadow-2xl relative overflow-hidden" data-alt="Technician in white protective Tyvek suit inspecting wooden rafters in an attic with a flashlight" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbN3zwtzARRChJNRj3BYaN_KIQxKIg3AX0PPncQi27jzoyBRd_HRkqNJmkzTcol64_kTqxo3kWsUvlPYgvSqMrqAbYYj21hL5Tv4tIINJ0QOk9-SH4jH90nXWt7KMhqytgDncgs0nGKVqqBNMwXNeTQD3iLbOROekxFMCdfxKXiybyXmVTkRjt5pwE5E9I8pKPA59fS_iICuccTzNQE6LQlG7HfBh6RqPRUA-EmfYW_TomOyhiDImM8si_As9EltWpaG6hRtlh8S-t");'>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 text-white font-medium text-sm bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
+                        <div
+                            class="w-full aspect-[4/3] bg-cover bg-center rounded-xl shadow-2xl relative overflow-hidden"
+                            data-alt="Technician in white protective Tyvek suit inspecting wooden rafters in an attic with a flashlight"
+                            style='background-image: url("/assets/images/restoration/mold-remediation/attic-removal-technician.webp");'
+                        >
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+                            >
+                            </div>
+                            <div
+                                class="absolute bottom-4 left-4 text-white font-medium text-sm bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm"
+                            >
                                 Professional Remediation in Progress
                             </div>
                         </div>
@@ -77,25 +135,64 @@ const reviewSchema = {
             </div>
 
             <!-- Trust / Rating Banner -->
-            <div class="bg-[#f6f7f8] dark:bg-gray-900/50 border-y border-gray-200 dark:border-gray-800">
+            <div
+                class="bg-[#f6f7f8] dark:bg-gray-900/50 border-y border-gray-200 dark:border-gray-800"
+            >
                 <div class="max-w-[1200px] mx-auto px-4 md:px-40 py-8">
-                    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-between gap-6"
+                    >
                         <div class="flex items-center gap-4">
                             <div class="flex flex-col">
-                                <h3 class="text-xl font-bold text-[#111418] dark:text-white">Rated 5/5 for Attic Cleanup</h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Trusted by over 500 Florida Homeowners</p>
+                                <h3
+                                    class="text-xl font-bold text-[#111418] dark:text-white"
+                                >
+                                    Rated 5/5 for Attic Cleanup
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-500 dark:text-gray-400"
+                                >
+                                    Trusted by over 500 Florida Homeowners
+                                </p>
                             </div>
                         </div>
                         <div class="flex gap-1 text-secondary">
-                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1">star</span>
-                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1">star</span>
-                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1">star</span>
-                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1">star</span>
-                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1">star</span>
+                            <span
+                                class="material-symbols-outlined fill-current"
+                                style="font-variation-settings: 'FILL' 1"
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined fill-current"
+                                style="font-variation-settings: 'FILL' 1"
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined fill-current"
+                                style="font-variation-settings: 'FILL' 1"
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined fill-current"
+                                style="font-variation-settings: 'FILL' 1"
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined fill-current"
+                                style="font-variation-settings: 'FILL' 1"
+                                >star</span
+                            >
                         </div>
-                        <div class="hidden md:block w-px h-12 bg-gray-300 dark:bg-gray-700"></div>
-                        <p class="italic text-gray-600 dark:text-gray-300 text-sm max-w-md text-center md:text-left">
-                            "Paramount handled our mold issue quickly. The technicians were professional and our air quality improved immediately."
+                        <div
+                            class="hidden md:block w-px h-12 bg-gray-300 dark:bg-gray-700"
+                        >
+                        </div>
+                        <p
+                            class="italic text-gray-600 dark:text-gray-300 text-sm max-w-md text-center md:text-left"
+                        >
+                            "Paramount handled our mold issue quickly. The
+                            technicians were professional and our air quality
+                            improved immediately."
                         </p>
                     </div>
                 </div>
@@ -105,49 +202,113 @@ const reviewSchema = {
             <div class="px-4 md:px-40 py-16 bg-white dark:bg-[#111921]">
                 <div class="max-w-[1200px] mx-auto flex flex-col gap-10">
                     <div class="text-center max-w-3xl mx-auto">
-                        <span class="text-secondary font-bold text-sm tracking-widest uppercase mb-2 block">Hidden Dangers</span>
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#111418] dark:text-white">Why Attic Mold is Dangerous</h2>
-                        <p class="text-lg text-gray-600 dark:text-gray-300">Understanding "The Stack Effect" and how it compromises your indoor air quality.</p>
+                        <span
+                            class="text-secondary font-bold text-sm tracking-widest uppercase mb-2 block"
+                            >Hidden Dangers</span
+                        >
+                        <h2
+                            class="text-3xl md:text-4xl font-bold mb-4 text-[#111418] dark:text-white"
+                        >
+                            Why Attic Mold is Dangerous
+                        </h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-300">
+                            Understanding "The Stack Effect" and how it
+                            compromises your indoor air quality.
+                        </p>
                     </div>
-                    <div class="bg-[#f6f7f8] dark:bg-gray-900 rounded-2xl p-6 md:p-10 shadow-sm border border-gray-100 dark:border-gray-800">
-                        <div class="flex flex-col lg:flex-row gap-10 items-center">
+                    <div
+                        class="bg-[#f6f7f8] dark:bg-gray-900 rounded-2xl p-6 md:p-10 shadow-sm border border-gray-100 dark:border-gray-800"
+                    >
+                        <div
+                            class="flex flex-col lg:flex-row gap-10 items-center"
+                        >
                             <div class="w-full lg:w-1/2">
                                 <!-- Diagram Placeholder -->
-                                <div class="w-full aspect-video bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-inner border border-gray-200 dark:border-gray-700 relative" data-alt="Diagram illustrating the stack effect in a house showing airflow moving from bottom to top and recirculating">
-                                    <img alt="House framing showing ventilation needs" class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9z9rUFXvlixX0cqqyov63I1K7YmTsk1SjxjkCoba4_jmOVVsLl2Kc3NNzWshdXPAMqpbybS_4FtnkFTfar58b4td92OmhhsyR9nhFqOnQ2a2ybPGUjWYnByZLHbeSPWnKtAx9bd2-SWR23rvkTNuiK3_kXyiqcT_RtgBSmVQPMHsxox6pfe6_K0OK3w7QORfw2RxIABpZw68V-ysF5oynpagid89Q2OtowowcGWQuPIaWh8bbyEfCeridCg_QhVgnr_bVsJ0oWhdf"/>
-                                    <div class="absolute inset-0 flex items-center justify-center bg-black/20">
-                                        <div class="bg-white/90 dark:bg-black/80 backdrop-blur text-xs font-mono p-2 rounded border border-gray-300 text-[#111418] dark:text-white">
+                                <div
+                                    class="w-full aspect-video bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-inner border border-gray-200 dark:border-gray-700 relative"
+                                    data-alt="Diagram illustrating the stack effect in a house showing airflow moving from bottom to top and recirculating"
+                                >
+                                    <img
+                                        alt="House framing showing ventilation needs"
+                                        class="w-full h-full object-cover opacity-90"
+                                        src="/assets/images/restoration/mold-remediation/attic-framing-ventilation.webp"
+                                    />
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-black/20"
+                                    >
+                                        <div
+                                            class="bg-white/90 dark:bg-black/80 backdrop-blur text-xs font-mono p-2 rounded border border-gray-300 text-[#111418] dark:text-white"
+                                        >
                                             [Diagram: Upward Airflow Pressure]
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="w-full lg:w-1/2 flex flex-col gap-6">
-                                <h3 class="text-2xl font-bold flex items-center gap-2 text-[#111418] dark:text-white">
-                                    <span class="material-symbols-outlined text-secondary text-3xl">air</span>
+                                <h3
+                                    class="text-2xl font-bold flex items-center gap-2 text-[#111418] dark:text-white"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-secondary text-3xl"
+                                        >air</span
+                                    >
                                     The Stack Effect
                                 </h3>
-                                <p class="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                                    As hot air rises in your attic, it creates a vacuum effect. While some air escapes through the roof, this pressure differential can actually push heavy mold spores and fiberglass particles <strong>downward</strong> into your living spaces through:
+                                <p
+                                    class="text-base text-gray-600 dark:text-gray-300 leading-relaxed"
+                                >
+                                    As hot air rises in your attic, it creates a
+                                    vacuum effect. While some air escapes
+                                    through the roof, this pressure differential
+                                    can actually push heavy mold spores and
+                                    fiberglass particles <strong
+                                        >downward</strong
+                                    > into your living spaces through:
                                 </p>
                                 <ul class="space-y-3">
-                                    <li class="flex items-start gap-3 text-gray-700 dark:text-gray-200">
-                                        <span class="material-symbols-outlined text-red-500 mt-0.5">warning</span>
-                                        <span class="text-sm font-medium">Unsealed recessed lighting fixtures</span>
+                                    <li
+                                        class="flex items-start gap-3 text-gray-700 dark:text-gray-200"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-red-500 mt-0.5"
+                                            >warning</span
+                                        >
+                                        <span class="text-sm font-medium"
+                                            >Unsealed recessed lighting fixtures</span
+                                        >
                                     </li>
-                                    <li class="flex items-start gap-3 text-gray-700 dark:text-gray-200">
-                                        <span class="material-symbols-outlined text-red-500 mt-0.5">warning</span>
-                                        <span class="text-sm font-medium">HVAC leaks and ductwork gaps</span>
+                                    <li
+                                        class="flex items-start gap-3 text-gray-700 dark:text-gray-200"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-red-500 mt-0.5"
+                                            >warning</span
+                                        >
+                                        <span class="text-sm font-medium"
+                                            >HVAC leaks and ductwork gaps</span
+                                        >
                                     </li>
-                                    <li class="flex items-start gap-3 text-gray-700 dark:text-gray-200">
-                                        <span class="material-symbols-outlined text-red-500 mt-0.5">warning</span>
-                                        <span class="text-sm font-medium">Attic access doors and hatches</span>
+                                    <li
+                                        class="flex items-start gap-3 text-gray-700 dark:text-gray-200"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-red-500 mt-0.5"
+                                            >warning</span
+                                        >
+                                        <span class="text-sm font-medium"
+                                            >Attic access doors and hatches</span
+                                        >
                                     </li>
                                 </ul>
                                 <div class="pt-4">
-                                    <button class="text-primary font-bold hover:underline flex items-center gap-1 group">
-                                        Learn More About Air Quality 
-                                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                    <button
+                                        class="text-primary font-bold hover:underline flex items-center gap-1 group"
+                                    >
+                                        Learn More About Air Quality
+                                        <span
+                                            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
+                                            >arrow_forward</span
+                                        >
                                     </button>
                                 </div>
                             </div>
@@ -160,47 +321,110 @@ const reviewSchema = {
             <div class="px-4 md:px-40 py-16 bg-[#f6f7f8] dark:bg-[#0d131a]">
                 <div class="max-w-[1200px] mx-auto">
                     <div class="mb-12">
-                        <h2 class="text-3xl font-bold mb-4 text-[#111418] dark:text-white">Our 3-Step Remediation Process</h2>
-                        <p class="text-gray-600 dark:text-gray-400 max-w-2xl">We don't just cover it up. We remove the problem, clean the structure, and restore your home's protection.</p>
+                        <h2
+                            class="text-3xl font-bold mb-4 text-[#111418] dark:text-white"
+                        >
+                            Our 3-Step Remediation Process
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-400 max-w-2xl">
+                            We don't just cover it up. We remove the problem,
+                            clean the structure, and restore your home's
+                            protection.
+                        </p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <!-- Step 1 -->
-                        <div class="bg-white dark:bg-[#111921] p-6 rounded-xl shadow-md border-t-4 border-primary flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300">
-                            <div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary mb-2">
-                                <span class="material-symbols-outlined text-2xl">lock</span>
+                        <div
+                            class="bg-white dark:bg-[#111921] p-6 rounded-xl shadow-md border-t-4 border-primary flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300"
+                        >
+                            <div
+                                class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary mb-2"
+                            >
+                                <span class="material-symbols-outlined text-2xl"
+                                    >lock</span
+                                >
                             </div>
-                            <h3 class="text-xl font-bold text-[#111418] dark:text-white">1. Containment</h3>
-                            <div class="w-full aspect-video bg-gray-200 rounded-lg mb-2 overflow-hidden" data-alt="Plastic sheeting sealing off a doorway to contain dust and mold spores">
-                                <div class="w-full h-full bg-gray-200 dark:bg-gray-800 bg-[url('https://images.unsplash.com/photo-1584650549445-56543b35eb64?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+                            <h3
+                                class="text-xl font-bold text-[#111418] dark:text-white"
+                            >
+                                1. Containment
+                            </h3>
+                            <div
+                                class="w-full aspect-video bg-gray-200 rounded-lg mb-2 overflow-hidden"
+                                data-alt="Plastic sheeting sealing off a doorway to contain dust and mold spores"
+                            >
+                                <div
+                                    class="w-full h-full bg-gray-200 dark:bg-gray-800 bg-[url('https://images.unsplash.com/photo-1584650549445-56543b35eb64?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"
+                                >
+                                </div>
                             </div>
                             <p class="text-sm text-gray-600 dark:text-gray-300">
-                                We isolate the work area with heavy-duty plastic sheeting and negative air pressure machines to ensure no spores escape into your living area.
+                                We isolate the work area with heavy-duty plastic
+                                sheeting and negative air pressure machines to
+                                ensure no spores escape into your living area.
                             </p>
                         </div>
                         <!-- Step 2 -->
-                        <div class="bg-white dark:bg-[#111921] p-6 rounded-xl shadow-md border-t-4 border-primary flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300">
-                            <div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary mb-2">
-                                <span class="material-symbols-outlined text-2xl">cleaning_services</span>
+                        <div
+                            class="bg-white dark:bg-[#111921] p-6 rounded-xl shadow-md border-t-4 border-primary flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300"
+                        >
+                            <div
+                                class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary mb-2"
+                            >
+                                <span class="material-symbols-outlined text-2xl"
+                                    >cleaning_services</span
+                                >
                             </div>
-                            <h3 class="text-xl font-bold text-[#111418] dark:text-white">2. Remediation</h3>
-                            <div class="w-full aspect-video bg-gray-200 rounded-lg mb-2 overflow-hidden" data-alt="Technician using specialized equipment to remove mold from wood surfaces">
-                                <div class="w-full h-full bg-gray-200 dark:bg-gray-800 bg-[url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+                            <h3
+                                class="text-xl font-bold text-[#111418] dark:text-white"
+                            >
+                                2. Remediation
+                            </h3>
+                            <div
+                                class="w-full aspect-video bg-gray-200 rounded-lg mb-2 overflow-hidden"
+                                data-alt="Technician using specialized equipment to remove mold from wood surfaces"
+                            >
+                                <div
+                                    class="w-full h-full bg-gray-200 dark:bg-gray-800 bg-[url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"
+                                >
+                                </div>
                             </div>
                             <p class="text-sm text-gray-600 dark:text-gray-300">
-                                Using dry-ice blasting or HEPA sanding, we physically remove mold from rafters and sheathing, followed by an antimicrobial treatment.
+                                Using dry-ice blasting or HEPA sanding, we
+                                physically remove mold from rafters and
+                                sheathing, followed by an antimicrobial
+                                treatment.
                             </p>
                         </div>
                         <!-- Step 3 -->
-                        <div class="bg-white dark:bg-[#111921] p-6 rounded-xl shadow-md border-t-4 border-primary flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300">
-                            <div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary mb-2">
-                                <span class="material-symbols-outlined text-2xl">hardware</span>
+                        <div
+                            class="bg-white dark:bg-[#111921] p-6 rounded-xl shadow-md border-t-4 border-primary flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300"
+                        >
+                            <div
+                                class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary mb-2"
+                            >
+                                <span class="material-symbols-outlined text-2xl"
+                                    >hardware</span
+                                >
                             </div>
-                            <h3 class="text-xl font-bold text-[#111418] dark:text-white">3. Restoration</h3>
-                            <div class="w-full aspect-video bg-gray-200 rounded-lg mb-2 overflow-hidden" data-alt="Rolls of fresh pink fiberglass insulation being installed in an attic">
-                                <div class="w-full h-full bg-gray-200 dark:bg-gray-800 bg-[url('https://images.unsplash.com/photo-1629141042787-8d073df26742?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+                            <h3
+                                class="text-xl font-bold text-[#111418] dark:text-white"
+                            >
+                                3. Restoration
+                            </h3>
+                            <div
+                                class="w-full aspect-video bg-gray-200 rounded-lg mb-2 overflow-hidden"
+                                data-alt="Rolls of fresh pink fiberglass insulation being installed in an attic"
+                            >
+                                <div
+                                    class="w-full h-full bg-gray-200 dark:bg-gray-800 bg-[url('https://images.unsplash.com/photo-1629141042787-8d073df26742?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"
+                                >
+                                </div>
                             </div>
                             <p class="text-sm text-gray-600 dark:text-gray-300">
-                                We remove contaminated insulation and install new, mold-resistant insulation to restore your home's thermal efficiency and safety.
+                                We remove contaminated insulation and install
+                                new, mold-resistant insulation to restore your
+                                home's thermal efficiency and safety.
                             </p>
                         </div>
                     </div>
@@ -208,39 +432,91 @@ const reviewSchema = {
             </div>
 
             <!-- Prevention Upsell Section -->
-            <div class="px-4 md:px-40 py-16 bg-white dark:bg-[#111921] border-t border-gray-100 dark:border-gray-800">
+            <div
+                class="px-4 md:px-40 py-16 bg-white dark:bg-[#111921] border-t border-gray-100 dark:border-gray-800"
+            >
                 <div class="max-w-[1200px] mx-auto">
-                    <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4"
+                    >
                         <div>
-                            <span class="text-secondary font-bold uppercase text-xs tracking-wider">Long Term Solutions</span>
-                            <h2 class="text-3xl font-bold text-[#111418] dark:text-white">Prevent Future Growth</h2>
+                            <span
+                                class="text-secondary font-bold uppercase text-xs tracking-wider"
+                                >Long Term Solutions</span
+                            >
+                            <h2
+                                class="text-3xl font-bold text-[#111418] dark:text-white"
+                            >
+                                Prevent Future Growth
+                            </h2>
                         </div>
-                        <a class="text-primary font-bold hover:underline" href="#">View All Prevention Services</a>
+                        <a
+                            class="text-primary font-bold hover:underline"
+                            href="#">View All Prevention Services</a
+                        >
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <!-- Upsell 1 -->
-                        <div class="flex flex-col md:flex-row gap-6 bg-[#f6f7f8] dark:bg-gray-900 p-6 rounded-xl items-center md:items-start">
-                            <div class="w-full md:w-32 h-32 bg-gray-300 rounded-lg shrink-0 bg-cover bg-center" data-alt="Solar powered attic fan installed on a roof" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCClG1fZT-6XT-wi2KBSsJApEoFDa-4UwpI4iNlkUdTH0ZJ5cvfjov51-wVvLJTRM_qGohWOiR6UrUj9fdkh59hNJaWXj_xCvaKg8vgwLlmeJ75Do51ZhMaJrBvsKfFQUN3JtYMrA5YEffDpiYM_eEobyPQ9V9Q2r9AqN2eSbUirQNrpXpwOZKLa-7fOubBlvMSAImm4wDzs8VrXr7tbVD37xbX75Kl3KyeziL0J7ysK08CH-PuzkoO_ADKAjHIIMMDCBKDVaz-_0i');"></div>
+                        <div
+                            class="flex flex-col md:flex-row gap-6 bg-[#f6f7f8] dark:bg-gray-900 p-6 rounded-xl items-center md:items-start"
+                        >
+                            <div
+                                class="w-full md:w-32 h-32 bg-gray-300 rounded-lg shrink-0 bg-cover bg-center"
+                                data-alt="Solar powered attic fan installed on a roof"
+                                style="background-image: url('/assets/images/restoration/mold-remediation/attic-fan-solar.webp');"
+                            >
+                            </div>
                             <div class="flex flex-col gap-2">
-                                <h3 class="text-xl font-bold text-[#111418] dark:text-white">Solar Attic Fans</h3>
-                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">Reduce attic humidity and heat build-up passively using solar energy. A critical defense against mold recurrence.</p>
-                                <button class="text-secondary font-bold text-sm text-left hover:text-orange-600">Learn about Solar Fans →</button>
+                                <h3
+                                    class="text-xl font-bold text-[#111418] dark:text-white"
+                                >
+                                    Solar Attic Fans
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 dark:text-gray-300 mb-2"
+                                >
+                                    Reduce attic humidity and heat build-up
+                                    passively using solar energy. A critical
+                                    defense against mold recurrence.
+                                </p>
+                                <button
+                                    class="text-secondary font-bold text-sm text-left hover:text-orange-600"
+                                    >Learn about Solar Fans →</button
+                                >
                             </div>
                         </div>
                         <!-- Upsell 2 -->
-                        <div class="flex flex-col md:flex-row gap-6 bg-[#f6f7f8] dark:bg-gray-900 p-6 rounded-xl items-center md:items-start">
-                            <div class="w-full md:w-32 h-32 bg-gray-300 rounded-lg shrink-0 bg-cover bg-center" data-alt="Spray foam insulation applied between wooden studs" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDN6Alj1WkKnM6UvWqLzF6XAGGphaBlNhducU4w6bAtjSXtBS_XMyxLtQc1GtTrmi8MQIlIrK_D4kx_PHMTkJhTYwHzyoaJF-HCN50mvRfDapkn11EEWbHMWbSThwuiLnCT2CEjDHlj4BwsnOpejJhoKeXe2Z2JmsjBZU6Cg7P6AXSyFvYq095rupKEc45MwpOja-wAcq4oeq-wT43ROkNtIprqYLOMAa7IFMxMbiZCeea_jJWZrTaom6lfOAHv93djIKHt-GIjJu-A');"></div>
+                        <div
+                            class="flex flex-col md:flex-row gap-6 bg-[#f6f7f8] dark:bg-gray-900 p-6 rounded-xl items-center md:items-start"
+                        >
+                            <div
+                                class="w-full md:w-32 h-32 bg-gray-300 rounded-lg shrink-0 bg-cover bg-center"
+                                data-alt="Spray foam insulation applied between wooden studs"
+                                style="background-image: url('/assets/images/restoration/mold-remediation/attic-spray-foam.webp');"
+                            >
+                            </div>
                             <div class="flex flex-col gap-2">
-                                <h3 class="text-xl font-bold text-[#111418] dark:text-white">Spray Foam Insulation</h3>
-                                <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">Create an airtight seal that moisture cannot penetrate. The ultimate upgrade for energy efficiency and mold prevention.</p>
-                                <button class="text-secondary font-bold text-sm text-left hover:text-orange-600">Explore Spray Foam →</button>
+                                <h3
+                                    class="text-xl font-bold text-[#111418] dark:text-white"
+                                >
+                                    Spray Foam Insulation
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 dark:text-gray-300 mb-2"
+                                >
+                                    Create an airtight seal that moisture cannot
+                                    penetrate. The ultimate upgrade for energy
+                                    efficiency and mold prevention.
+                                </p>
+                                <button
+                                    class="text-secondary font-bold text-sm text-left hover:text-orange-600"
+                                    >Explore Spray Foam →</button
+                                >
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </MainLayout>

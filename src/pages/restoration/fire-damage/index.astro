@@ -25,16 +25,8 @@ if (!entry) {
     throw new Error("Service page content not found");
 }
 const { Content } = await entry.render();
-const {
-    title,
-    description,
-    pageTitle,
-    pageDescription,
-    features,
-    processSteps,
-    faqs,
-    heroImage: heroImageKey,
-} = entry.data;
+const { title, pageTitle, pageDescription, features, processSteps, faqs } =
+    entry.data;
 
 // Image map
 const fireHeroUrl = fireHeroImg;

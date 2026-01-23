@@ -1,67 +1,123 @@
 ---
-import MainLayout from '../../../../layouts/MainLayout.astro';
-import CommonHead from '../../../../components/common/CommonHead.astro';
+import MainLayout from "../../../../layouts/MainLayout.astro";
 
-const seoTitle = "Professional Mold Inspection & Detection Services Florida | Paramount Property Restoration";
-const seoDescription = "Hidden moisture feeds mold. Our licensed MRSA assessors use thermal technology and lab-verified testing to detect what the naked eye misses. Same-day reports available.";
+const seoTitle =
+    "Professional Mold Inspection & Detection Services Florida | Paramount Property Restoration";
+const seoDescription =
+    "Hidden moisture feeds mold. Our licensed MRSA assessors use thermal technology and lab-verified testing to detect what the naked eye misses. Same-day reports available.";
 ---
 
-<MainLayout 
-  title={seoTitle} 
-  description={seoDescription} 
->
-
+<MainLayout title={seoTitle} description={seoDescription}>
     <!-- Hero Section -->
-    <section class="relative bg-slate-50 dark:bg-[#1a2c35] py-12 lg:py-20 overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-10 dark:opacity-5 bg-[radial-gradient(#1193d4_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <section
+        class="relative bg-slate-50 dark:bg-[#1a2c35] py-12 lg:py-20 overflow-hidden"
+    >
+        <div
+            class="absolute inset-0 z-0 opacity-10 dark:opacity-5 bg-[radial-gradient(#1193d4_1px,transparent_1px)] [background-size:16px_16px]"
+        >
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <!-- Content -->
                 <div class="flex flex-col gap-6 text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-[#1193d4] w-fit">
-                        <span class="material-symbols-outlined text-sm">verified_user</span>
-                        <span class="text-xs font-bold uppercase tracking-wide">Licensed MRSA Assessors</span>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-[#1193d4] w-fit"
+                    >
+                        <span class="material-symbols-outlined text-sm"
+                            >verified_user</span
+                        >
+                        <span class="text-xs font-bold uppercase tracking-wide"
+                            >Licensed MRSA Assessors</span
+                        >
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tight font-display">
-                        Scientific Certainty for Your <span class="text-[#1193d4]">Peace of Mind</span>
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tight font-display"
+                    >
+                        Scientific Certainty for Your <span
+                            class="text-[#1193d4]">Peace of Mind</span
+                        >
                     </h1>
-                    <p class="text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
-                        Professional mold inspection & detection services in Florida. Don't rely on guesswork. Get lab-verified results from licensed assessors using state-of-the-art thermal technology.
+                    <p
+                        class="text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed"
+                    >
+                        Professional mold inspection & detection services in
+                        Florida. Don't rely on guesswork. Get lab-verified
+                        results from licensed assessors using state-of-the-art
+                        thermal technology.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a href="/contact/" class="h-12 px-8 bg-[#1193d4] hover:bg-sky-600 text-white font-bold rounded-lg shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-2">
+                        <a
+                            href="/contact/"
+                            class="h-12 px-8 bg-[#1193d4] hover:bg-sky-600 text-white font-bold rounded-lg shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-2"
+                        >
                             <span>Schedule Your Assessment</span>
-                            <span class="material-symbols-outlined">arrow_forward</span>
+                            <span class="material-symbols-outlined"
+                                >arrow_forward</span
+                            >
                         </a>
                         <div class="flex items-center gap-4 px-4 h-12">
-                            <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-                                <span class="material-symbols-outlined text-green-500">check_circle</span>
-                                <span class="text-sm font-semibold">Same-Day Reports</span>
+                            <div
+                                class="flex items-center gap-2 text-slate-700 dark:text-slate-300"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-green-500"
+                                    >check_circle</span
+                                >
+                                <span class="text-sm font-semibold"
+                                    >Same-Day Reports</span
+                                >
                             </div>
-                            <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-                                <span class="material-symbols-outlined text-green-500">check_circle</span>
-                                <span class="text-sm font-semibold">IICRC Certified</span>
+                            <div
+                                class="flex items-center gap-2 text-slate-700 dark:text-slate-300"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-green-500"
+                                    >check_circle</span
+                                >
+                                <span class="text-sm font-semibold"
+                                    >IICRC Certified</span
+                                >
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Image -->
                 <div class="relative group">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[#1193d4] to-blue-400 rounded-2xl opacity-20 blur-lg group-hover:opacity-30 transition-opacity duration-500"></div>
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-200">
-                        <img 
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA7LUqh3C_0Ck2Gx2UEOyP_d81UXbUHOs-Si7dwy6njUvGkaOSIVK9Wl1ueZBYe5H7AcfZJexr92qIT_juM4wlolNDr3gom3d84degJwCCXupKpjU60NAKuo0pDtoEIIvSE0iDadjuzqdHlqzeECslqJ542uMAv7gdRm1sK5XKe9avmleGnAlCJuNWsBUnzBLIjvYYS-ZktruQFI1lSD-KgT9LNepGJ4xj0C3QWsAv7Png-2nAqsZn8Ra77hechNHwOhdH6Wc8XgJu" 
-                            alt="Inspector using thermal camera to detect moisture in wall" 
-                            class="w-full h-full object-cover" 
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-[#1193d4] to-blue-400 rounded-2xl opacity-20 blur-lg group-hover:opacity-30 transition-opacity duration-500"
+                    >
+                    </div>
+                    <div
+                        class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-200"
+                    >
+                        <img
+                            src="/assets/images/restoration/mold-remediation/mold-inspection-hero.webp"
+                            alt="Inspector using thermal camera to detect moisture in wall"
+                            class="w-full h-full object-cover"
                         />
                         <!-- Overlay Badge -->
-                        <div class="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur rounded-xl p-4 shadow-lg border border-slate-100 dark:border-slate-800 flex items-center gap-4">
-                            <div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-[#1193d4]">
-                                <span class="material-symbols-outlined">science</span>
+                        <div
+                            class="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur rounded-xl p-4 shadow-lg border border-slate-100 dark:border-slate-800 flex items-center gap-4"
+                        >
+                            <div
+                                class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-[#1193d4]"
+                            >
+                                <span class="material-symbols-outlined"
+                                    >science</span
+                                >
                             </div>
                             <div>
-                                <p class="text-sm font-bold text-slate-900 dark:text-white">Lab-Verified Analysis</p>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">We partner with independent labs for unbiased results.</p>
+                                <p
+                                    class="text-sm font-bold text-slate-900 dark:text-white"
+                                >
+                                    Lab-Verified Analysis
+                                </p>
+                                <p
+                                    class="text-xs text-slate-500 dark:text-slate-400"
+                                >
+                                    We partner with independent labs for
+                                    unbiased results.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -72,38 +128,92 @@ const seoDescription = "Hidden moisture feeds mold. Our licensed MRSA assessors 
 
     <!-- Answer First Block (AEO Optimized) -->
     <section class="max-w-4xl mx-auto px-4 -mt-8 relative z-20 mb-20">
-        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 md:p-8">
-            <h2 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
-                <span class="material-symbols-outlined text-[#1193d4] text-3xl">help</span>
+        <div
+            class="bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 md:p-8"
+        >
+            <h2
+                class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3"
+            >
+                <span class="material-symbols-outlined text-[#1193d4] text-3xl"
+                    >help</span
+                >
                 What does a mold inspection include?
             </h2>
             <div class="grid sm:grid-cols-2 gap-4">
-                <div class="flex gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50">
-                    <span class="material-symbols-outlined text-[#f97316] mt-0.5">visibility</span>
+                <div
+                    class="flex gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50"
+                >
+                    <span
+                        class="material-symbols-outlined text-[#f97316] mt-0.5"
+                        >visibility</span
+                    >
                     <div>
-                        <h3 class="font-bold text-slate-900 dark:text-white text-sm">Visual Inspection</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-300">Comprehensive physical assessment of property boundaries and AC systems.</p>
+                        <h3
+                            class="font-bold text-slate-900 dark:text-white text-sm"
+                        >
+                            Visual Inspection
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">
+                            Comprehensive physical assessment of property
+                            boundaries and AC systems.
+                        </p>
                     </div>
                 </div>
-                <div class="flex gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50">
-                    <span class="material-symbols-outlined text-[#f97316] mt-0.5">water_drop</span>
+                <div
+                    class="flex gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50"
+                >
+                    <span
+                        class="material-symbols-outlined text-[#f97316] mt-0.5"
+                        >water_drop</span
+                    >
                     <div>
-                        <h3 class="font-bold text-slate-900 dark:text-white text-sm">Moisture Mapping</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-300">Identifying hidden water sources with thermal & moisture meters.</p>
+                        <h3
+                            class="font-bold text-slate-900 dark:text-white text-sm"
+                        >
+                            Moisture Mapping
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">
+                            Identifying hidden water sources with thermal &
+                            moisture meters.
+                        </p>
                     </div>
                 </div>
-                <div class="flex gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50">
-                    <span class="material-symbols-outlined text-[#f97316] mt-0.5">air</span>
+                <div
+                    class="flex gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50"
+                >
+                    <span
+                        class="material-symbols-outlined text-[#f97316] mt-0.5"
+                        >air</span
+                    >
                     <div>
-                        <h3 class="font-bold text-slate-900 dark:text-white text-sm">Air Sampling</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-300">Spore trap analysis to detect invisible airborne contaminants.</p>
+                        <h3
+                            class="font-bold text-slate-900 dark:text-white text-sm"
+                        >
+                            Air Sampling
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">
+                            Spore trap analysis to detect invisible airborne
+                            contaminants.
+                        </p>
                     </div>
                 </div>
-                <div class="flex gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50">
-                    <span class="material-symbols-outlined text-[#f97316] mt-0.5">biotech</span>
+                <div
+                    class="flex gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50"
+                >
+                    <span
+                        class="material-symbols-outlined text-[#f97316] mt-0.5"
+                        >biotech</span
+                    >
                     <div>
-                        <h3 class="font-bold text-slate-900 dark:text-white text-sm">Surface Sampling</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-300">Swab or tape lift testing for specific species identification.</p>
+                        <h3
+                            class="font-bold text-slate-900 dark:text-white text-sm"
+                        >
+                            Surface Sampling
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">
+                            Swab or tape lift testing for specific species
+                            identification.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -114,68 +224,157 @@ const seoDescription = "Hidden moisture feeds mold. Our licensed MRSA assessors 
     <section class="py-16 bg-white dark:bg-[#111318]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-[#1193d4] font-semibold tracking-wide uppercase text-sm">Our Technology</span>
-                <h2 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mt-2 mb-4">Why Choose Professional Detection?</h2>
-                <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Mold often grows where you can't see it. We use advanced diagnostic tools to find the source, not just the symptom.</p>
+                <span
+                    class="text-[#1193d4] font-semibold tracking-wide uppercase text-sm"
+                    >Our Technology</span
+                >
+                <h2
+                    class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mt-2 mb-4"
+                >
+                    Why Choose Professional Detection?
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                    Mold often grows where you can't see it. We use advanced
+                    diagnostic tools to find the source, not just the symptom.
+                </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]"
+            >
                 <!-- Card 1: Thermal Imaging (Large) -->
-                <div class="md:col-span-2 bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 border border-slate-100 dark:border-slate-700 relative overflow-hidden group">
-                    <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-blue-50 to-transparent dark:from-blue-900/20 pointer-events-none"></div>
-                    <div class="relative z-10 flex flex-col justify-between h-full">
-                        <div class="bg-[#1193d4]/10 w-12 h-12 rounded-lg flex items-center justify-center text-[#1193d4] mb-4">
-                            <span class="material-symbols-outlined text-2xl">thermostat</span>
+                <div
+                    class="md:col-span-2 bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 border border-slate-100 dark:border-slate-700 relative overflow-hidden group"
+                >
+                    <div
+                        class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-blue-50 to-transparent dark:from-blue-900/20 pointer-events-none"
+                    >
+                    </div>
+                    <div
+                        class="relative z-10 flex flex-col justify-between h-full"
+                    >
+                        <div
+                            class="bg-[#1193d4]/10 w-12 h-12 rounded-lg flex items-center justify-center text-[#1193d4] mb-4"
+                        >
+                            <span class="material-symbols-outlined text-2xl"
+                                >thermostat</span
+                            >
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Thermal Imaging</h3>
-                            <p class="text-slate-600 dark:text-slate-300 max-w-md">Our infrared technology detects temperature differentials in walls and ceilings, revealing hidden moisture pockets that are invisible to the naked eye.</p>
+                            <h3
+                                class="text-2xl font-bold text-slate-900 dark:text-white mb-2"
+                            >
+                                Thermal Imaging
+                            </h3>
+                            <p
+                                class="text-slate-600 dark:text-slate-300 max-w-md"
+                            >
+                                Our infrared technology detects temperature
+                                differentials in walls and ceilings, revealing
+                                hidden moisture pockets that are invisible to
+                                the naked eye.
+                            </p>
                         </div>
                     </div>
                     <!-- Decorative image element -->
-                    <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-[#1193d4]/5 rounded-full blur-3xl group-hover:bg-[#1193d4]/10 transition-colors"></div>
+                    <div
+                        class="absolute -right-10 -bottom-10 w-64 h-64 bg-[#1193d4]/5 rounded-full blur-3xl group-hover:bg-[#1193d4]/10 transition-colors"
+                    >
+                    </div>
                 </div>
 
                 <!-- Card 2: Air Quality -->
-                <div class="bg-[#1193d4] text-white rounded-2xl p-8 relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#1193d4] to-blue-600"></div>
+                <div
+                    class="bg-[#1193d4] text-white rounded-2xl p-8 relative overflow-hidden group"
+                >
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[#1193d4] to-blue-600"
+                    >
+                    </div>
                     <div class="relative z-10">
-                        <div class="bg-white/20 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-6 backdrop-blur-sm">
-                            <span class="material-symbols-outlined text-2xl">cloud_sync</span>
+                        <div
+                            class="bg-white/20 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-6 backdrop-blur-sm"
+                        >
+                            <span class="material-symbols-outlined text-2xl"
+                                >cloud_sync</span
+                            >
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Air Quality Testing</h3>
-                        <p class="text-blue-100 text-sm">Spore trap analysis quantifies the mold spore count in your air compared to the outside baseline.</p>
+                        <h3 class="text-xl font-bold mb-2">
+                            Air Quality Testing
+                        </h3>
+                        <p class="text-blue-100 text-sm">
+                            Spore trap analysis quantifies the mold spore count
+                            in your air compared to the outside baseline.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Card 3: Humidity Check -->
-                <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:border-[#1193d4]/50 transition-colors group">
-                    <div class="bg-orange-100 dark:bg-orange-900/30 w-12 h-12 rounded-lg flex items-center justify-center text-[#f97316] mb-4">
-                        <span class="material-symbols-outlined text-2xl">humidity_percentage</span>
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 hover:border-[#1193d4]/50 transition-colors group"
+                >
+                    <div
+                        class="bg-orange-100 dark:bg-orange-900/30 w-12 h-12 rounded-lg flex items-center justify-center text-[#f97316] mb-4"
+                    >
+                        <span class="material-symbols-outlined text-2xl"
+                            >humidity_percentage</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Humidity Check</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm">We identify the source of growth by measuring relative humidity and dew points throughout the property.</p>
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2"
+                    >
+                        Humidity Check
+                    </h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">
+                        We identify the source of growth by measuring relative
+                        humidity and dew points throughout the property.
+                    </p>
                 </div>
 
                 <!-- Card 4: Documentation -->
-                <div class="md:col-span-2 bg-slate-900 dark:bg-black text-white rounded-2xl p-8 relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
+                <div
+                    class="md:col-span-2 bg-slate-900 dark:bg-black text-white rounded-2xl p-8 relative overflow-hidden flex flex-col md:flex-row items-center gap-8"
+                >
                     <div class="flex-1">
-                        <div class="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4 backdrop-blur-sm">
-                            <span class="material-symbols-outlined text-2xl">description</span>
+                        <div
+                            class="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4 backdrop-blur-sm"
+                        >
+                            <span class="material-symbols-outlined text-2xl"
+                                >description</span
+                            >
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Legally Defensible Documentation</h3>
-                        <p class="text-slate-300 text-sm mb-4">You receive a detailed, certified lab report that stands up in insurance claims and legal disputes. No jargon, just facts.</p>
-                        <a class="text-[#1193d4] font-semibold text-sm hover:text-white transition-colors flex items-center gap-1" href="#contact">
-                            View Sample Report <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        <h3 class="text-xl font-bold mb-2">
+                            Legally Defensible Documentation
+                        </h3>
+                        <p class="text-slate-300 text-sm mb-4">
+                            You receive a detailed, certified lab report that
+                            stands up in insurance claims and legal disputes. No
+                            jargon, just facts.
+                        </p>
+                        <a
+                            class="text-[#1193d4] font-semibold text-sm hover:text-white transition-colors flex items-center gap-1"
+                            href="#contact"
+                        >
+                            View Sample Report <span
+                                class="material-symbols-outlined text-base"
+                                >arrow_forward</span
+                            >
                         </a>
                     </div>
-                    <div class="w-full md:w-1/3 aspect-video bg-slate-800 rounded-lg border border-slate-700 relative overflow-hidden flex items-center justify-center">
-                        <img 
-                            class="absolute inset-0 w-full h-full object-cover opacity-60" 
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy1eiDwRIq0lKQ5GiDXnYQlNkGHQ30_pXM-RT9SXVeg94XDHRWWEN2wRojUH40AfMM3Nko3rnj08VYfsPIEjdhSJs1M3NAIpHwkX-cmlTDdSoUf9ZYvC59yjNnRY0PX1XQxb0NnRNm9ZcsBwkQQErOoNf5HTLdyea3PnxOXxkAvgfGPxrvCkEJYorG69NpIDg7AeDd1use_eYzd81eQwPOm2TToGOT3MtO-dZ1FKht0_lTgvBCZNoA8DnHhjaUzVx2JHukWPh1niTH"
+                    <div
+                        class="w-full md:w-1/3 aspect-video bg-slate-800 rounded-lg border border-slate-700 relative overflow-hidden flex items-center justify-center"
+                    >
+                        <img
+                            class="absolute inset-0 w-full h-full object-cover opacity-60"
+                            src="/assets/images/restoration/mold-remediation/mold-inspection-process.webp"
                             alt="Sample Report"
                         />
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-4xl text-slate-400">lock</span>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center"
+                        >
+                            <span
+                                class="material-symbols-outlined text-4xl text-slate-400"
+                                >lock</span
+                            >
                         </div>
                     </div>
                 </div>
@@ -187,42 +386,111 @@ const seoDescription = "Hidden moisture feeds mold. Our licensed MRSA assessors 
     <section class="py-16 bg-slate-50 dark:bg-[#1a2c35] relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-black text-slate-900 dark:text-white">From Suspicion to Solution</h2>
-                <p class="text-slate-600 dark:text-slate-400 mt-2">Our 5-step process ensures nothing is missed.</p>
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white">
+                    From Suspicion to Solution
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">
+                    Our 5-step process ensures nothing is missed.
+                </p>
             </div>
             <div class="relative">
                 <!-- Line for desktop -->
-                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 dark:bg-slate-700 -translate-y-1/2 z-0"></div>
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
+                <div
+                    class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 dark:bg-slate-700 -translate-y-1/2 z-0"
+                >
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10"
+                >
                     <!-- Step 1 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 border-4 border-[#1193d4] text-[#1193d4] font-bold flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform">1</div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Visual Assessment</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 px-2">Complete interior and exterior walkthrough.</p>
+                        <div
+                            class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 border-4 border-[#1193d4] text-[#1193d4] font-bold flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform"
+                        >
+                            1
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                        >
+                            Visual Assessment
+                        </h3>
+                        <p
+                            class="text-xs text-slate-500 dark:text-slate-400 px-2"
+                        >
+                            Complete interior and exterior walkthrough.
+                        </p>
                     </div>
                     <!-- Step 2 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 font-bold flex items-center justify-center shadow-lg mb-4 group-hover:border-[#1193d4] group-hover:text-[#1193d4] transition-colors">2</div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Sample Collection</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 px-2">Air and surface samples taken where needed.</p>
+                        <div
+                            class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 font-bold flex items-center justify-center shadow-lg mb-4 group-hover:border-[#1193d4] group-hover:text-[#1193d4] transition-colors"
+                        >
+                            2
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                        >
+                            Sample Collection
+                        </h3>
+                        <p
+                            class="text-xs text-slate-500 dark:text-slate-400 px-2"
+                        >
+                            Air and surface samples taken where needed.
+                        </p>
                     </div>
                     <!-- Step 3 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 font-bold flex items-center justify-center shadow-lg mb-4 group-hover:border-[#1193d4] group-hover:text-[#1193d4] transition-colors">3</div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Lab Analysis</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 px-2">Samples sent to independent certified lab.</p>
+                        <div
+                            class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 font-bold flex items-center justify-center shadow-lg mb-4 group-hover:border-[#1193d4] group-hover:text-[#1193d4] transition-colors"
+                        >
+                            3
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                        >
+                            Lab Analysis
+                        </h3>
+                        <p
+                            class="text-xs text-slate-500 dark:text-slate-400 px-2"
+                        >
+                            Samples sent to independent certified lab.
+                        </p>
                     </div>
                     <!-- Step 4 -->
                     <div class="flex flex-col items-center text-center group">
-                         <div class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 font-bold flex items-center justify-center shadow-lg mb-4 group-hover:border-[#1193d4] group-hover:text-[#1193d4] transition-colors">4</div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Detailed Report</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 px-2">Findings explained clearly with photos.</p>
+                        <div
+                            class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 font-bold flex items-center justify-center shadow-lg mb-4 group-hover:border-[#1193d4] group-hover:text-[#1193d4] transition-colors"
+                        >
+                            4
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                        >
+                            Detailed Report
+                        </h3>
+                        <p
+                            class="text-xs text-slate-500 dark:text-slate-400 px-2"
+                        >
+                            Findings explained clearly with photos.
+                        </p>
                     </div>
                     <!-- Step 5 -->
                     <div class="flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 border-4 border-[#f97316] text-[#f97316] font-bold flex items-center justify-center shadow-lg mb-4">5</div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Mold Protocol</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 px-2">Specific plan for remediation if needed.</p>
+                        <div
+                            class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 border-4 border-[#f97316] text-[#f97316] font-bold flex items-center justify-center shadow-lg mb-4"
+                        >
+                            5
+                        </div>
+                        <h3
+                            class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                        >
+                            Mold Protocol
+                        </h3>
+                        <p
+                            class="text-xs text-slate-500 dark:text-slate-400 px-2"
+                        >
+                            Specific plan for remediation if needed.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -234,53 +502,119 @@ const seoDescription = "Hidden moisture feeds mold. Our licensed MRSA assessors 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Comparison Block -->
-                <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 border border-slate-100 dark:border-slate-700">
-                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Inspection vs. Remediation</h3>
-                    <p class="text-slate-600 dark:text-slate-300 mb-8 text-sm">We believe in conflict-free service. An unbiased inspection protects your wallet by defining the exact scope of work needed—nothing more, nothing less.</p>
+                <div
+                    class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 border border-slate-100 dark:border-slate-700"
+                >
+                    <h3
+                        class="text-2xl font-bold text-slate-900 dark:text-white mb-6"
+                    >
+                        Inspection vs. Remediation
+                    </h3>
+                    <p class="text-slate-600 dark:text-slate-300 mb-8 text-sm">
+                        We believe in conflict-free service. An unbiased
+                        inspection protects your wallet by defining the exact
+                        scope of work needed—nothing more, nothing less.
+                    </p>
                     <div class="space-y-4">
-                        <div class="flex items-center justify-between p-4 bg-white dark:bg-slate-900 rounded-lg shadow-sm border-l-4 border-[#1193d4]">
+                        <div
+                            class="flex items-center justify-between p-4 bg-white dark:bg-slate-900 rounded-lg shadow-sm border-l-4 border-[#1193d4]"
+                        >
                             <div>
-                                <h4 class="font-bold text-slate-900 dark:text-white">Mold Inspection</h4>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">Diagnosis & Protocol</p>
+                                <h4
+                                    class="font-bold text-slate-900 dark:text-white"
+                                >
+                                    Mold Inspection
+                                </h4>
+                                <p
+                                    class="text-xs text-slate-500 dark:text-slate-400"
+                                >
+                                    Diagnosis & Protocol
+                                </p>
                             </div>
-                            <span class="text-sm font-semibold text-[#1193d4]">Our Focus</span>
+                            <span class="text-sm font-semibold text-[#1193d4]"
+                                >Our Focus</span
+                            >
                         </div>
-                        <div class="flex items-center justify-between p-4 bg-white dark:bg-slate-900 rounded-lg shadow-sm border-l-4 border-slate-300 opacity-70">
+                        <div
+                            class="flex items-center justify-between p-4 bg-white dark:bg-slate-900 rounded-lg shadow-sm border-l-4 border-slate-300 opacity-70"
+                        >
                             <div>
-                                <h4 class="font-bold text-slate-900 dark:text-white">Mold Remediation</h4>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">Removal & Repair</p>
+                                <h4
+                                    class="font-bold text-slate-900 dark:text-white"
+                                >
+                                    Mold Remediation
+                                </h4>
+                                <p
+                                    class="text-xs text-slate-500 dark:text-slate-400"
+                                >
+                                    Removal & Repair
+                                </p>
                             </div>
-                            <span class="text-sm font-semibold text-slate-500">The Next Step</span>
+                            <span class="text-sm font-semibold text-slate-500"
+                                >The Next Step</span
+                            >
                         </div>
                     </div>
                 </div>
 
                 <!-- Local Context Block -->
-                <div class="relative rounded-2xl p-8 overflow-hidden bg-blue-900 text-white flex flex-col justify-center min-h-[400px]">
-                    <img 
-                        class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" 
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfb6kXMILubaQcDqWLboYmraYJbeZ_ucLU5G2kMptFp4kow0qc7tRg16I1RxqiNBmNl8fNOQ_GQu9vzeBqSHe0blMtF5omsYCoX-BUsDhtevBpXjdT0CpdsnT4wF0Y73sZL-g_uZEwUMf88L6VezA7z3PoqwEggYuUeT_0WQj8FOV_1xOrriEhR4xhyxJROpYsm79lYeIgSRJfAXv5cWhqdWjAfj4xTvYikCRAzhh_lx14FaIWp2jRYo1l3WPoV8hWdX9NGq6_7f1q"
+                <div
+                    class="relative rounded-2xl p-8 overflow-hidden bg-blue-900 text-white flex flex-col justify-center min-h-[400px]"
+                >
+                    <img
+                        class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay"
+                        src="/assets/images/restoration/mold-remediation/mold-inspection-lab.webp"
                         alt="Aerial view of Florida coastline with houses near water"
                     />
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900 via-blue-900/80 to-transparent"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-blue-900 via-blue-900/80 to-transparent"
+                    >
+                    </div>
                     <div class="relative z-10">
-                        <div class="inline-block px-3 py-1 bg-[#f97316] rounded text-xs font-bold mb-4 uppercase tracking-wider">Local Insight</div>
-                        <h3 class="text-3xl font-bold mb-4">Why Florida Homes are High Risk</h3>
+                        <div
+                            class="inline-block px-3 py-1 bg-[#f97316] rounded text-xs font-bold mb-4 uppercase tracking-wider"
+                        >
+                            Local Insight
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">
+                            Why Florida Homes are High Risk
+                        </h3>
                         <p class="text-blue-100 mb-6 leading-relaxed">
-                            Florida's unique climate creates the perfect storm for microbial growth. High humidity (often 90%+), frequent storms, and HVAC systems running 24/7 mean moisture is a constant threat.
+                            Florida's unique climate creates the perfect storm
+                            for microbial growth. High humidity (often 90%+),
+                            frequent storms, and HVAC systems running 24/7 mean
+                            moisture is a constant threat.
                         </p>
                         <ul class="space-y-3">
                             <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-[#f97316] shrink-0">warning</span>
-                                <span class="text-sm text-blue-50">Concrete block construction can trap moisture.</span>
+                                <span
+                                    class="material-symbols-outlined text-[#f97316] shrink-0"
+                                    >warning</span
+                                >
+                                <span class="text-sm text-blue-50"
+                                    >Concrete block construction can trap
+                                    moisture.</span
+                                >
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-[#f97316] shrink-0">warning</span>
-                                <span class="text-sm text-blue-50">Storm surges leave behind hidden water damage.</span>
+                                <span
+                                    class="material-symbols-outlined text-[#f97316] shrink-0"
+                                    >warning</span
+                                >
+                                <span class="text-sm text-blue-50"
+                                    >Storm surges leave behind hidden water
+                                    damage.</span
+                                >
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-[#f97316] shrink-0">warning</span>
-                                <span class="text-sm text-blue-50">AC duct condensation is a primary mold source.</span>
+                                <span
+                                    class="material-symbols-outlined text-[#f97316] shrink-0"
+                                    >warning</span
+                                >
+                                <span class="text-sm text-blue-50"
+                                    >AC duct condensation is a primary mold
+                                    source.</span
+                                >
                             </li>
                         </ul>
                     </div>
@@ -292,37 +626,80 @@ const seoDescription = "Hidden moisture feeds mold. Our licensed MRSA assessors 
     <!-- FAQ Section -->
     <section class="py-16 bg-slate-50 dark:bg-[#1a2c35]">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-black text-center text-slate-900 dark:text-white mb-10">Common Questions</h2>
+            <h2
+                class="text-3xl font-black text-center text-slate-900 dark:text-white mb-10"
+            >
+                Common Questions
+            </h2>
             <div class="space-y-4">
-                <details class="group bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
-                    <summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-slate-900 dark:text-white group-open:text-[#1193d4] transition-colors">
+                <details
+                    class="group bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden"
+                >
+                    <summary
+                        class="flex cursor-pointer items-center justify-between p-6 font-bold text-slate-900 dark:text-white group-open:text-[#1193d4] transition-colors"
+                    >
                         How much does a mold inspection cost?
-                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                        <span
+                            class="material-symbols-outlined transition-transform group-open:rotate-180"
+                            >expand_more</span
+                        >
                     </summary>
-                    <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                        Costs vary based on square footage and the number of samples required. A basic visual inspection starts lower, while full protocol inspections with multiple lab samples will be higher. We provide a clear quote upfront with no hidden fees.
+                    <div
+                        class="px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
+                    >
+                        Costs vary based on square footage and the number of
+                        samples required. A basic visual inspection starts
+                        lower, while full protocol inspections with multiple lab
+                        samples will be higher. We provide a clear quote upfront
+                        with no hidden fees.
                     </div>
                 </details>
-                <details class="group bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
-                    <summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-slate-900 dark:text-white group-open:text-[#1193d4] transition-colors">
+                <details
+                    class="group bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden"
+                >
+                    <summary
+                        class="flex cursor-pointer items-center justify-between p-6 font-bold text-slate-900 dark:text-white group-open:text-[#1193d4] transition-colors"
+                    >
                         Do DIY mold test kits work?
-                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                        <span
+                            class="material-symbols-outlined transition-transform group-open:rotate-180"
+                            >expand_more</span
+                        >
                     </summary>
-                    <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                        Generally, no. DIY kits often give false positives because mold spores are naturally everywhere. They don't tell you <em>why</em> mold is growing or <em>where</em> the moisture is coming from. A professional assessment provides context and a solution, not just a petri dish with a spot on it.
+                    <div
+                        class="px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
+                    >
+                        Generally, no. DIY kits often give false positives
+                        because mold spores are naturally everywhere. They don't
+                        tell you <em>why</em> mold is growing or <em>where</em> the
+                        moisture is coming from. A professional assessment provides
+                        context and a solution, not just a petri dish with a spot
+                        on it.
                     </div>
                 </details>
-                <details class="group bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
-                    <summary class="flex cursor-pointer items-center justify-between p-6 font-bold text-slate-900 dark:text-white group-open:text-[#1193d4] transition-colors">
+                <details
+                    class="group bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden"
+                >
+                    <summary
+                        class="flex cursor-pointer items-center justify-between p-6 font-bold text-slate-900 dark:text-white group-open:text-[#1193d4] transition-colors"
+                    >
                         Do I need testing if I can see the mold?
-                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                        <span
+                            class="material-symbols-outlined transition-transform group-open:rotate-180"
+                            >expand_more</span
+                        >
                     </summary>
-                    <div class="px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                        Yes, usually. While the visible mold confirms growth, testing determines the species (some are toxic) and checks if the spores have spread to other areas of the home through the HVAC system. It also provides the documentation needed for insurance claims.
+                    <div
+                        class="px-6 pb-6 text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
+                    >
+                        Yes, usually. While the visible mold confirms growth,
+                        testing determines the species (some are toxic) and
+                        checks if the spores have spread to other areas of the
+                        home through the HVAC system. It also provides the
+                        documentation needed for insurance claims.
                     </div>
                 </details>
             </div>
         </div>
     </section>
-
 </MainLayout>

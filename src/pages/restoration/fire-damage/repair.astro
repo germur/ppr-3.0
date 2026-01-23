@@ -1,20 +1,24 @@
 ---
-import MainLayout from '../../../layouts/MainLayout.astro';
-import { Image } from 'astro:assets';
+import MainLayout from "../../../layouts/MainLayout.astro";
 
 const pageTitle = "Fire Damage Reconstruction & Repair Florida | Licensed GC";
-const pageDescription = "Full-service fire damage restoration and reconstruction. We handle everything from structural framing to final finishes. Licensed General Contractor.";
+const pageDescription =
+    "Full-service fire damage restoration and reconstruction. We handle everything from structural framing to final finishes. Licensed General Contractor.";
 ---
 
-<MainLayout title={pageTitle} description={pageDescription} image="/images/fire-repair-og.jpg" schemaType="Service">
-
+<MainLayout
+    title={pageTitle}
+    description={pageDescription}
+    image="/images/fire-repair-og.jpg"
+    schemaType="Service"
+>
     <!-- Custom Styles -->
     <style>
         /* Hide scrollbar for Bento Grid horizontal scroll on mobile if needed */
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
-        
+
         /* Native details marker hide */
         details > summary {
             list-style: none;
@@ -41,58 +45,107 @@ const pageDescription = "Full-service fire damage restoration and reconstruction
     </style>
 
     <!-- Sticky Alert Bar -->
-    <div class="sticky top-20 z-40 bg-orange-600 text-white shadow-md transition-transform duration-300" id="sticky-alert">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-center gap-2 text-center sm:text-left text-sm font-medium">
+    <div
+        class="sticky top-20 z-40 bg-orange-600 text-white shadow-md transition-transform duration-300"
+        id="sticky-alert"
+    >
+        <div
+            class="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-center gap-2 text-center sm:text-left text-sm font-medium"
+        >
             <span class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px]">engineering</span>
-                <span>Complete Reconstruction Services: From Permits to Paint.</span>
+                <span class="material-symbols-outlined text-[18px]"
+                    >engineering</span
+                >
+                <span
+                    >Complete Reconstruction Services: From Permits to Paint.</span
+                >
             </span>
-            <a href="tel:7866022217" class="inline-flex items-center gap-1 font-bold underline decoration-white/50 hover:decoration-white transition-all ml-2">
+            <a
+                href="tel:7866022217"
+                class="inline-flex items-center gap-1 font-bold underline decoration-white/50 hover:decoration-white transition-all ml-2"
+            >
                 Request a Rebuild Estimate: (786) 602-2217
             </a>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section class="relative bg-white dark:bg-slate-900 py-12 lg:py-20 overflow-hidden">
+    <section
+        class="relative bg-white dark:bg-slate-900 py-12 lg:py-20 overflow-hidden"
+    >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-12 items-center">
                 <!-- Content -->
                 <div class="flex-1 flex flex-col gap-6 z-10">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 w-fit">
-                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                        <span class="text-xs font-bold text-primary dark:text-blue-400 tracking-wide uppercase">Better Than Pre-Loss Condition</span>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 w-fit"
+                    >
+                        <span
+                            class="w-2 h-2 rounded-full bg-primary animate-pulse"
+                        ></span>
+                        <span
+                            class="text-xs font-bold text-primary dark:text-blue-400 tracking-wide uppercase"
+                            >Better Than Pre-Loss Condition</span
+                        >
                     </div>
-                    
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tight">
-                        Full-Service Fire Damage <span class="text-primary">Reconstruction</span> & Repairs
+
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tight"
+                    >
+                        Full-Service Fire Damage <span class="text-primary"
+                            >Reconstruction</span
+                        > & Repairs
                     </h1>
-                    
-                    <p class="text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
-                        Rebuilding your property from the studs up. As Licensed General Contractors, we manage every step from structural repairs to final finishes, dealing directly with your insurance.
+
+                    <p
+                        class="text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed"
+                    >
+                        Rebuilding your property from the studs up. As Licensed
+                        General Contractors, we manage every step from
+                        structural repairs to final finishes, dealing directly
+                        with your insurance.
                     </p>
-                    
+
                     <div class="flex flex-col sm:flex-row gap-4 mt-2">
-                        <a href="#contact" class="flex items-center justify-center gap-2 h-14 px-8 bg-primary hover:bg-blue-600 text-white text-base font-bold rounded-lg shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-0.5">
+                        <a
+                            href="#contact"
+                            class="flex items-center justify-center gap-2 h-14 px-8 bg-primary hover:bg-blue-600 text-white text-base font-bold rounded-lg shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-0.5"
+                        >
                             Start Your Rebuild
-                            <span class="material-symbols-outlined">arrow_forward</span>
+                            <span class="material-symbols-outlined"
+                                >arrow_forward</span
+                            >
                         </a>
-                        <a href="#portfolio" class="flex items-center justify-center gap-2 h-14 px-8 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-base font-bold rounded-lg transition-colors border border-slate-200 dark:border-slate-700">
+                        <a
+                            href="#portfolio"
+                            class="flex items-center justify-center gap-2 h-14 px-8 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-base font-bold rounded-lg transition-colors border border-slate-200 dark:border-slate-700"
+                        >
                             View Our Portfolio
                         </a>
                     </div>
-                    
-                    <div class="flex flex-wrap items-center gap-6 mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">
+
+                    <div
+                        class="flex flex-wrap items-center gap-6 mt-4 text-sm font-medium text-slate-500 dark:text-slate-400"
+                    >
                         <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-green-500 text-[20px]">verified</span>
+                            <span
+                                class="material-symbols-outlined text-green-500 text-[20px]"
+                                >verified</span
+                            >
                             Licensed GC
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-green-500 text-[20px]">verified</span>
+                            <span
+                                class="material-symbols-outlined text-green-500 text-[20px]"
+                                >verified</span
+                            >
                             IICRC Certified
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-green-500 text-[20px]">verified</span>
+                            <span
+                                class="material-symbols-outlined text-green-500 text-[20px]"
+                                >verified</span
+                            >
                             5-Star Rated
                         </div>
                     </div>
@@ -100,74 +153,179 @@ const pageDescription = "Full-service fire damage restoration and reconstruction
 
                 <!-- Hero Visual (Static Split for Hero, Interactive Slider later) -->
                 <div class="flex-1 w-full relative group perspective-1000">
-                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800">
+                    <div
+                        class="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800"
+                    >
                         <!-- After Image (Base) -->
-                        <div class="absolute inset-0 bg-cover bg-center" role="img" aria-label="Modern bright living room completely restored" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZbGqhG_GqfvIxdYC2dQE4Ebs0nIjvxj8wPwo1knu3qriF-1ZuhPFpElS-eeu2QddEvLsc0HXZpwQrmerDhbDipPRf9iQF6FIZWgQQa8qei5_8FDpm-O8bnwdWVjGxhxbr9dv5V6fC2PXJ-TdLzYysSMZeLwZ92r4mczlOCEoG0fTiwvc4-Pj5MLluZp89LSVfRVP0vVIk85pPMnYQoiuPcI9mjMyH9eKeQ6pRztaTBBDTUNfyd-dZNWTAfy2Miayya9kyNdXZR2se');"></div>
-                        
-                        <!-- Before Image (Clipped overlay) -->
-                        <div class="absolute inset-0 bg-cover bg-center w-[50%] border-r-4 border-orange-500" role="img" aria-label="Fire damaged room with charred wood" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFAaCaRuEt6pbxdN3SETuB13MiC92iwvPIi78ywZoJjjg_dGooLu9MXW4MXzIodne9cA_Qs8LaoTJPRfTsCpDbOHkJqe7NhHZ9vo6VPCpHF8MVINTVc8ege-EcsyTzKAoQFR5wecrusk3ND422rYZZ2EI52cEV6RakzaLPPZQ-UKF6sdDNjpAYdDmJnkL-F6dQyjcoqa4BVjYQJFufLF2KaF9LDqai4I3t6saNfxjFePhYZfIRyHd4k8wYCH64FwsOIvOHxI68N2Aa');">
-                            <div class="absolute bottom-4 left-4 bg-black/70 text-white text-xs font-bold px-3 py-1 rounded backdrop-blur-sm">BEFORE</div>
+                        <div
+                            class="absolute inset-0 bg-cover bg-center"
+                            role="img"
+                            aria-label="Modern bright living room completely restored"
+                            style="background-image: url('/assets/images/restoration/fire-damage/repair-after-modern.webp');"
+                        >
                         </div>
-                        <div class="absolute top-4 right-4 bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded backdrop-blur-sm shadow-sm">AFTER</div>
-                        
+
+                        <!-- Before Image (Clipped overlay) -->
+                        <div
+                            class="absolute inset-0 bg-cover bg-center w-[50%] border-r-4 border-orange-500"
+                            role="img"
+                            aria-label="Fire damaged room with charred wood"
+                            style="background-image: url('/assets/images/restoration/fire-damage/repair-before-charred.webp');"
+                        >
+                            <div
+                                class="absolute bottom-4 left-4 bg-black/70 text-white text-xs font-bold px-3 py-1 rounded backdrop-blur-sm"
+                            >
+                                BEFORE
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded backdrop-blur-sm shadow-sm"
+                        >
+                            AFTER
+                        </div>
+
                         <!-- Static Tag -->
-                        <div class="absolute inset-y-0 left-[50%] -ml-4 flex items-center justify-center pointer-events-none">
-                            <div class="w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center text-orange-600">
-                                <span class="material-symbols-outlined text-lg">compare_arrows</span>
+                        <div
+                            class="absolute inset-y-0 left-[50%] -ml-4 flex items-center justify-center pointer-events-none"
+                        >
+                            <div
+                                class="w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center text-orange-600"
+                            >
+                                <span class="material-symbols-outlined text-lg"
+                                    >compare_arrows</span
+                                >
                             </div>
                         </div>
                     </div>
                     <!-- Decorative blobs -->
-                    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -z-10"></div>
-                    <div class="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+                    <div
+                        class="absolute -bottom-10 -right-10 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -z-10"
+                    >
+                    </div>
+                    <div
+                        class="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"
+                    >
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Value Prop Bento Grid -->
-    <section class="py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+    <section
+        class="py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800"
+    >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">One Team. Complete Recovery.</h2>
-                <p class="text-lg text-slate-600 dark:text-slate-400">Why manage multiple contractors when you can have one partner for the entire journey? We streamline the complex reconstruction process.</p>
+                <h2
+                    class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4"
+                >
+                    One Team. Complete Recovery.
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400">
+                    Why manage multiple contractors when you can have one
+                    partner for the entire journey? We streamline the complex
+                    reconstruction process.
+                </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1 -->
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all group">
-                    <div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined text-[32px]">key</span>
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all group"
+                >
+                    <div
+                        class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-[32px]"
+                            >key</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Turnkey Restoration</h3>
-                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">One point of contact from initial soot removal to the final coat of paint. We handle the transitions seamlessly.</p>
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-3"
+                    >
+                        Turnkey Restoration
+                    </h3>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                        One point of contact from initial soot removal to the
+                        final coat of paint. We handle the transitions
+                        seamlessly.
+                    </p>
                 </div>
-                
+
                 <!-- Card 2 -->
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all group">
-                    <div class="size-12 rounded-lg bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined text-[32px]">description</span>
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all group"
+                >
+                    <div
+                        class="size-12 rounded-lg bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-[32px]"
+                            >description</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Insurance Mgmt</h3>
-                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">We speak the language of adjusters. We negotiate the scope of work and budget directly with your insurance carrier.</p>
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-3"
+                    >
+                        Insurance Mgmt
+                    </h3>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                        We speak the language of adjusters. We negotiate the
+                        scope of work and budget directly with your insurance
+                        carrier.
+                    </p>
                 </div>
-                
+
                 <!-- Card 3 -->
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all group">
-                    <div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined text-[32px]">security</span>
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all group"
+                >
+                    <div
+                        class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-[32px]"
+                            >security</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Code Upgrades</h3>
-                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">We identify required upgrades to bring older homes up to modern safety standards during the rebuild process.</p>
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-3"
+                    >
+                        Code Upgrades
+                    </h3>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                        We identify required upgrades to bring older homes up to
+                        modern safety standards during the rebuild process.
+                    </p>
                 </div>
-                
+
                 <!-- Card 4 -->
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all group">
-                    <div class="size-12 rounded-lg bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined text-[32px]">palette</span>
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all group"
+                >
+                    <div
+                        class="size-12 rounded-lg bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors"
+                    >
+                        <span class="material-symbols-outlined text-[32px]"
+                            >palette</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Material Matching</h3>
-                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Expert sourcing to find flooring, trim, cabinets, and fixtures that match your original vision or new design.</p>
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-3"
+                    >
+                        Material Matching
+                    </h3>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                        Expert sourcing to find flooring, trim, cabinets, and
+                        fixtures that match your original vision or new design.
+                    </p>
                 </div>
             </div>
         </div>
@@ -176,50 +334,97 @@ const pageDescription = "Full-service fire damage restoration and reconstruction
     <!-- Technical Spotlight -->
     <section class="py-20 bg-slate-900 text-white overflow-hidden relative">
         <!-- Background Elements -->
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-slate-800/50 skew-x-12 translate-x-32 pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
-        
+        <div
+            class="absolute top-0 right-0 w-1/2 h-full bg-slate-800/50 skew-x-12 translate-x-32 pointer-events-none"
+        >
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none"
+        >
+        </div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col lg:flex-row gap-16 items-center">
                 <div class="flex-1">
-                    <div class="text-orange-500 font-bold text-sm tracking-widest uppercase mb-2">Technical Spotlight</div>
-                    <h2 class="text-3xl sm:text-4xl font-bold mb-6">The Invisible Step: Smoke Sealing & Odor Control</h2>
+                    <div
+                        class="text-orange-500 font-bold text-sm tracking-widest uppercase mb-2"
+                    >
+                        Technical Spotlight
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+                        The Invisible Step: Smoke Sealing & Odor Control
+                    </h2>
                     <div class="space-y-6 text-slate-300">
                         <p class="leading-relaxed text-lg">
-                            Before a single new board is installed, we ensure the structural integrity of your home is free from the pervasive memory of smoke.
+                            Before a single new board is installed, we ensure
+                            the structural integrity of your home is free from
+                            the pervasive memory of smoke.
                         </p>
                         <ul class="space-y-4">
                             <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                <span
+                                    class="material-symbols-outlined text-primary mt-1"
+                                    >check_circle</span
+                                >
                                 <div>
-                                    <strong class="text-white block">Thermal Fogging</strong>
-                                    Neutralizes odor particles trapped deep within porous materials.
+                                    <strong class="text-white block"
+                                        >Thermal Fogging</strong
+                                    >
+                                    Neutralizes odor particles trapped deep within
+                                    porous materials.
                                 </div>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                <span
+                                    class="material-symbols-outlined text-primary mt-1"
+                                    >check_circle</span
+                                >
                                 <div>
-                                    <strong class="text-white block">Structural Encapsulation</strong>
-                                    We apply specialized sealants to framing to lock in any residual particulates, ensuring no odor returns on humid days.
+                                    <strong class="text-white block"
+                                        >Structural Encapsulation</strong
+                                    >
+                                    We apply specialized sealants to framing to lock
+                                    in any residual particulates, ensuring no odor
+                                    returns on humid days.
                                 </div>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                <span
+                                    class="material-symbols-outlined text-primary mt-1"
+                                    >check_circle</span
+                                >
                                 <div>
-                                    <strong class="text-white block">HVAC Decontamination</strong>
-                                    Complete cleaning and sealing of ductwork to prevent soot recirculation.
+                                    <strong class="text-white block"
+                                        >HVAC Decontamination</strong
+                                    >
+                                    Complete cleaning and sealing of ductwork to prevent
+                                    soot recirculation.
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="flex-1 w-full">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
-                        <div class="bg-cover bg-center h-[400px]" role="img" aria-label="Worker in protective gear applying sealant to wooden framing" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjjdu-hPFGHnjifsFNTWulL-bj9j7w4dbRozYtlHu4MPqujytr_Kc49y0FVBK0CfGAM_QKsHXGARSTx3OQO3-26aX4xHUfZbGnbf5yxrxPXqm-51iKLqewI0SZooP2l4B8PJ7nnXXuUSwOS4Ii78GKseuBWDuHroWqmglUnYhrjzZNNofVhDSgjsv0yRmre9d1_FP3aBZQN7B3RBi9i_6gVhfJPluZUznJ8rCQN1aMWqaunV-gSzFcY3b2SvydZQkgGC7--CAbcYMJ');"></div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-8">
-                            <div class="flex items-center gap-2 text-white/90 font-medium">
-                                <span class="material-symbols-outlined">science</span>
+                    <div
+                        class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700"
+                    >
+                        <div
+                            class="bg-cover bg-center h-[400px]"
+                            role="img"
+                            aria-label="Worker in protective gear applying sealant to wooden framing"
+                            style="background-image: url('/assets/images/restoration/fire-damage/repair-worker-sealant.webp');"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-8"
+                        >
+                            <div
+                                class="flex items-center gap-2 text-white/90 font-medium"
+                            >
+                                <span class="material-symbols-outlined"
+                                    >science</span
+                                >
                                 <span>Scientific Odor Remediation</span>
                             </div>
                         </div>
@@ -233,76 +438,173 @@ const pageDescription = "Full-service fire damage restoration and reconstruction
     <section class="py-20 bg-white dark:bg-slate-900">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">The Road to Recovery</h2>
-                <p class="mt-4 text-slate-600 dark:text-slate-400">Our transparent reconstruction process keeps you informed at every milestone.</p>
+                <h2
+                    class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white"
+                >
+                    The Road to Recovery
+                </h2>
+                <p class="mt-4 text-slate-600 dark:text-slate-400">
+                    Our transparent reconstruction process keeps you informed at
+                    every milestone.
+                </p>
             </div>
-            
+
             <div class="relative">
                 <!-- Vertical Line -->
                 <div class="timeline-line hidden sm:block"></div>
-                
+
                 <div class="space-y-12">
-                     <!-- Item 1 -->
-                    <div class="relative flex flex-col sm:flex-row gap-8 items-start sm:items-center group">
-                        <div class="sm:w-1/2 sm:text-right sm:pr-12 order-2 sm:order-1">
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Structural Assessment</h3>
-                            <p class="text-slate-500 dark:text-slate-400 mt-2">Engineering reviews and temporary shoring to ensure site safety before work begins.</p>
-                            <span class="inline-block mt-2 text-xs font-bold text-primary bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded">Day 1-3</span>
+                    <!-- Item 1 -->
+                    <div
+                        class="relative flex flex-col sm:flex-row gap-8 items-start sm:items-center group"
+                    >
+                        <div
+                            class="sm:w-1/2 sm:text-right sm:pr-12 order-2 sm:order-1"
+                        >
+                            <h3
+                                class="text-xl font-bold text-slate-900 dark:text-white"
+                            >
+                                Structural Assessment
+                            </h3>
+                            <p class="text-slate-500 dark:text-slate-400 mt-2">
+                                Engineering reviews and temporary shoring to
+                                ensure site safety before work begins.
+                            </p>
+                            <span
+                                class="inline-block mt-2 text-xs font-bold text-primary bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded"
+                                >Day 1-3</span
+                            >
                         </div>
-                        <div class="absolute left-[20px] sm:left-[50%] -translate-x-1/2 flex items-center justify-center size-10 rounded-full bg-primary text-white shadow-lg shadow-primary/30 z-10 order-1 sm:order-2">
-                            <span class="material-symbols-outlined text-sm">engineering</span>
+                        <div
+                            class="absolute left-[20px] sm:left-[50%] -translate-x-1/2 flex items-center justify-center size-10 rounded-full bg-primary text-white shadow-lg shadow-primary/30 z-10 order-1 sm:order-2"
+                        >
+                            <span class="material-symbols-outlined text-sm"
+                                >engineering</span
+                            >
                         </div>
                         <div class="sm:w-1/2 sm:pl-12 order-3 sm:order-3"></div>
                     </div>
-                    
+
                     <!-- Item 2 -->
-                    <div class="relative flex flex-col sm:flex-row gap-8 items-start sm:items-center group">
+                    <div
+                        class="relative flex flex-col sm:flex-row gap-8 items-start sm:items-center group"
+                    >
                         <div class="sm:w-1/2 sm:pr-12 order-2 sm:order-1"></div>
-                        <div class="absolute left-[20px] sm:left-[50%] -translate-x-1/2 flex items-center justify-center size-10 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-600 text-slate-500 z-10 order-1 sm:order-2">
-                            <span class="material-symbols-outlined text-sm">delete_sweep</span>
+                        <div
+                            class="absolute left-[20px] sm:left-[50%] -translate-x-1/2 flex items-center justify-center size-10 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-600 text-slate-500 z-10 order-1 sm:order-2"
+                        >
+                            <span class="material-symbols-outlined text-sm"
+                                >delete_sweep</span
+                            >
                         </div>
-                        <div class="sm:w-1/2 sm:text-left sm:pl-12 order-2 sm:order-3">
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Demolition & Debris Removal</h3>
-                            <p class="text-slate-500 dark:text-slate-400 mt-2">Clearing damaged materials down to the studs. Soot removal and air scrubbing begin.</p>
-                            <span class="inline-block mt-2 text-xs font-bold text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Week 1</span>
+                        <div
+                            class="sm:w-1/2 sm:text-left sm:pl-12 order-2 sm:order-3"
+                        >
+                            <h3
+                                class="text-xl font-bold text-slate-900 dark:text-white"
+                            >
+                                Demolition & Debris Removal
+                            </h3>
+                            <p class="text-slate-500 dark:text-slate-400 mt-2">
+                                Clearing damaged materials down to the studs.
+                                Soot removal and air scrubbing begin.
+                            </p>
+                            <span
+                                class="inline-block mt-2 text-xs font-bold text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded"
+                                >Week 1</span
+                            >
                         </div>
                     </div>
-                    
+
                     <!-- Item 3 -->
-                    <div class="relative flex flex-col sm:flex-row gap-8 items-start sm:items-center group">
-                        <div class="sm:w-1/2 sm:text-right sm:pr-12 order-2 sm:order-1">
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Framing, MEP & Rough-In</h3>
-                            <p class="text-slate-500 dark:text-slate-400 mt-2">Rebuilding walls, upgrading electrical, plumbing, and mechanical systems to code.</p>
-                            <span class="inline-block mt-2 text-xs font-bold text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Week 2-4</span>
+                    <div
+                        class="relative flex flex-col sm:flex-row gap-8 items-start sm:items-center group"
+                    >
+                        <div
+                            class="sm:w-1/2 sm:text-right sm:pr-12 order-2 sm:order-1"
+                        >
+                            <h3
+                                class="text-xl font-bold text-slate-900 dark:text-white"
+                            >
+                                Framing, MEP & Rough-In
+                            </h3>
+                            <p class="text-slate-500 dark:text-slate-400 mt-2">
+                                Rebuilding walls, upgrading electrical,
+                                plumbing, and mechanical systems to code.
+                            </p>
+                            <span
+                                class="inline-block mt-2 text-xs font-bold text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded"
+                                >Week 2-4</span
+                            >
                         </div>
-                        <div class="absolute left-[20px] sm:left-[50%] -translate-x-1/2 flex items-center justify-center size-10 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-600 text-slate-500 z-10 order-1 sm:order-2">
-                            <span class="material-symbols-outlined text-sm">construction</span>
+                        <div
+                            class="absolute left-[20px] sm:left-[50%] -translate-x-1/2 flex items-center justify-center size-10 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-600 text-slate-500 z-10 order-1 sm:order-2"
+                        >
+                            <span class="material-symbols-outlined text-sm"
+                                >construction</span
+                            >
                         </div>
-                         <div class="sm:w-1/2 sm:pl-12 order-3 sm:order-3"></div>
+                        <div class="sm:w-1/2 sm:pl-12 order-3 sm:order-3"></div>
                     </div>
-                    
+
                     <!-- Item 4 -->
-                     <div class="relative flex flex-col sm:flex-row gap-8 items-start sm:items-center group">
+                    <div
+                        class="relative flex flex-col sm:flex-row gap-8 items-start sm:items-center group"
+                    >
                         <div class="sm:w-1/2 sm:pr-12 order-2 sm:order-1"></div>
-                        <div class="absolute left-[20px] sm:left-[50%] -translate-x-1/2 flex items-center justify-center size-10 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-600 text-slate-500 z-10 order-1 sm:order-2">
-                            <span class="material-symbols-outlined text-sm">format_paint</span>
+                        <div
+                            class="absolute left-[20px] sm:left-[50%] -translate-x-1/2 flex items-center justify-center size-10 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-600 text-slate-500 z-10 order-1 sm:order-2"
+                        >
+                            <span class="material-symbols-outlined text-sm"
+                                >format_paint</span
+                            >
                         </div>
-                        <div class="sm:w-1/2 sm:text-left sm:pl-12 order-2 sm:order-3">
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Drywall, Texture & Finishes</h3>
-                            <p class="text-slate-500 dark:text-slate-400 mt-2">Walls are closed up. Flooring, cabinets, and paint bring the vision to life.</p>
-                            <span class="inline-block mt-2 text-xs font-bold text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Week 5-6</span>
+                        <div
+                            class="sm:w-1/2 sm:text-left sm:pl-12 order-2 sm:order-3"
+                        >
+                            <h3
+                                class="text-xl font-bold text-slate-900 dark:text-white"
+                            >
+                                Drywall, Texture & Finishes
+                            </h3>
+                            <p class="text-slate-500 dark:text-slate-400 mt-2">
+                                Walls are closed up. Flooring, cabinets, and
+                                paint bring the vision to life.
+                            </p>
+                            <span
+                                class="inline-block mt-2 text-xs font-bold text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded"
+                                >Week 5-6</span
+                            >
                         </div>
                     </div>
 
                     <!-- Item 5 -->
-                     <div class="relative flex flex-col sm:flex-row gap-8 items-start sm:items-center group">
-                        <div class="sm:w-1/2 sm:text-right sm:pr-12 order-2 sm:order-1">
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Final Inspection & Walkthrough</h3>
-                            <p class="text-slate-500 dark:text-slate-400 mt-2">Quality assurance checks with you and your adjuster. Keys are handed back.</p>
-                            <span class="inline-block mt-2 text-xs font-bold text-green-600 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded">Completion</span>
+                    <div
+                        class="relative flex flex-col sm:flex-row gap-8 items-start sm:items-center group"
+                    >
+                        <div
+                            class="sm:w-1/2 sm:text-right sm:pr-12 order-2 sm:order-1"
+                        >
+                            <h3
+                                class="text-xl font-bold text-slate-900 dark:text-white"
+                            >
+                                Final Inspection & Walkthrough
+                            </h3>
+                            <p class="text-slate-500 dark:text-slate-400 mt-2">
+                                Quality assurance checks with you and your
+                                adjuster. Keys are handed back.
+                            </p>
+                            <span
+                                class="inline-block mt-2 text-xs font-bold text-green-600 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded"
+                                >Completion</span
+                            >
                         </div>
-                        <div class="absolute left-[20px] sm:left-[50%] -translate-x-1/2 flex items-center justify-center size-10 rounded-full bg-green-500 text-white shadow-lg shadow-green-500/30 z-10 order-1 sm:order-2">
-                            <span class="material-symbols-outlined text-sm">check</span>
+                        <div
+                            class="absolute left-[20px] sm:left-[50%] -translate-x-1/2 flex items-center justify-center size-10 rounded-full bg-green-500 text-white shadow-lg shadow-green-500/30 z-10 order-1 sm:order-2"
+                        >
+                            <span class="material-symbols-outlined text-sm"
+                                >check</span
+                            >
                         </div>
                         <div class="sm:w-1/2 sm:pl-12 order-3 sm:order-3"></div>
                     </div>
@@ -316,62 +618,146 @@ const pageDescription = "Full-service fire damage restoration and reconstruction
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-end mb-10">
                 <div>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">See the Transformation</h2>
-                    <p class="mt-2 text-slate-600 dark:text-slate-400">Drag to compare Before and After photos of our recent projects.</p>
+                    <h2
+                        class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white"
+                    >
+                        See the Transformation
+                    </h2>
+                    <p class="mt-2 text-slate-600 dark:text-slate-400">
+                        Drag to compare Before and After photos of our recent
+                        projects.
+                    </p>
                 </div>
                 <!-- Navigation Buttons (Visual only for now if needed, or implement full carousel) -->
             </div>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Comparison 1 -->
-                <div class="relative group aspect-[4/3] rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-slate-700 select-none before-after-slider" id="slider-1">
-                     <div class="relative w-full h-full">
+                <div
+                    class="relative group aspect-[4/3] rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-slate-700 select-none before-after-slider"
+                    id="slider-1"
+                >
+                    <div class="relative w-full h-full">
                         <!-- After -->
                         <div class="absolute inset-0 w-full h-full">
-                             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG11tGfBusUUMeu-EMrO7g2YR4asCfFT40FTNXVIYaUXu6JDNXRg9g2zKMI3tY92yKhMK5ZTD_qlLOIfplYy8z8TDpLs0a5qyB1yZlhANadtiGVJf--BacgFdRdHWrB2HKFG0YGGOoA2Nxx6IG9AwyA7MxjJBhYNLQxmay5BbruPRIorMeud7mCLyb-svltrIUDvk0y5dEBYEiaPUJfm9neCNad3HSIbrbL-R7ki5SvnaeJCemzaV3oFiuaAUfQ-wjMYrfqkKo_F0F" class="w-full h-full object-cover" alt="Restored kitchen after fire" />
-                             <span class="absolute top-4 right-4 bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded shadow-sm z-10">AFTER</span>
+                            <img
+                                src="/assets/images/restoration/fire-damage/repair-kitchen-after.webp"
+                                class="w-full h-full object-cover"
+                                alt="Restored kitchen after fire"
+                            />
+                            <span
+                                class="absolute top-4 right-4 bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded shadow-sm z-10"
+                                >AFTER</span
+                            >
                         </div>
                         <!-- Before -->
-                        <div class="absolute inset-0 w-full h-full overflow-hidden before-image-wrapper" style="width: 50%;">
-                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0znwJm7T35j2Slr6ddnPi9fxCa5E6TcBSzhaKCc3ztcVgVyA6DujoFIvoC4T33DJqUMItJgVvhYy4yNFjZoR0C655NxUhfzC2id5E19Rumd_ONiBprDbjbDEpWdbXkd4aGWuWdFzHVPi4t46cnHrZmz4fXcKf7Pd9vGAtadZ0Mdh6qP4GDbIoGzoFXhQUDrlsdYjpNhy-W3pj1zaIgj-NWPLdS45V8hYFDeJBOTB9OnJSM1TXdobcpD-_Z-DXvNZrY66eDO37XpQK" class="absolute top-0 left-0 w-full h-full object-cover max-w-none" style="width: 200%;" alt="Kitchen with fire damage" id="before-img-1" />
-                            <span class="absolute top-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1 rounded z-10">BEFORE</span>
+                        <div
+                            class="absolute inset-0 w-full h-full overflow-hidden before-image-wrapper"
+                            style="width: 50%;"
+                        >
+                            <img
+                                src="/assets/images/restoration/fire-damage/repair-kitchen-before.webp"
+                                class="absolute top-0 left-0 w-full h-full object-cover max-w-none"
+                                style="width: 200%;"
+                                alt="Kitchen with fire damage"
+                                id="before-img-1"
+                            />
+                            <span
+                                class="absolute top-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1 rounded z-10"
+                                >BEFORE</span
+                            >
                         </div>
                         <!-- Handle -->
-                        <div class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 slider-handle" style="left: 50%;">
-                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center text-primary">
-                                <span class="material-symbols-outlined text-[20px]">unfold_more_double</span> <!-- Rotate 90deg via CSS or use standard icon -->
+                        <div
+                            class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 slider-handle"
+                            style="left: 50%;"
+                        >
+                            <div
+                                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center text-primary"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px]"
+                                    >unfold_more_double</span
+                                >
+                                <!-- Rotate 90deg via CSS or use standard icon -->
                             </div>
                         </div>
                     </div>
-                    <div class="absolute bottom-4 left-4 z-30 pointer-events-none">
-                        <h4 class="text-white font-bold text-lg drop-shadow-md text-shadow-sm">Kitchen Restoration</h4>
-                        <p class="text-white/90 text-sm drop-shadow-md">San Francisco, CA</p>
+                    <div
+                        class="absolute bottom-4 left-4 z-30 pointer-events-none"
+                    >
+                        <h4
+                            class="text-white font-bold text-lg drop-shadow-md text-shadow-sm"
+                        >
+                            Kitchen Restoration
+                        </h4>
+                        <p class="text-white/90 text-sm drop-shadow-md">
+                            San Francisco, CA
+                        </p>
                     </div>
                 </div>
 
                 <!-- Comparison 2 -->
-                <div class="relative group aspect-[4/3] rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-slate-700 select-none before-after-slider" id="slider-2">
-                     <div class="relative w-full h-full">
+                <div
+                    class="relative group aspect-[4/3] rounded-xl overflow-hidden shadow-lg border-2 border-white dark:border-slate-700 select-none before-after-slider"
+                    id="slider-2"
+                >
+                    <div class="relative w-full h-full">
                         <!-- After -->
                         <div class="absolute inset-0 w-full h-full">
-                             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk1brprlRzSDgE5WXsULAjjVG3yGwEgxsSHfCqMQJcxIKZzw9rRgcShfQSCuSRrVNuEbVwbYQvH5n8BKqfRWPvfplXOXByrnqj-e2xV8xTInBBK8Qmm4kUEp-xMKUdP2WMYWTj4RKzecuFYCWeW4JdhonMFaJScAUb-qf8CqwmMVDxhgM6L7LSORfGO3KMqFtGpqkWZVrObBD6yrvmZ0DPcjMAMYHWmpYaNC2wXJIh-e02uJwJrttyeFpVB8U4zfmcWiNQaP_uzzcE" class="w-full h-full object-cover" alt="Restored living room" />
-                             <span class="absolute top-4 right-4 bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded shadow-sm z-10">AFTER</span>
+                            <img
+                                src="/assets/images/restoration/fire-damage/repair-livingroom-after.webp"
+                                class="w-full h-full object-cover"
+                                alt="Restored living room"
+                            />
+                            <span
+                                class="absolute top-4 right-4 bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded shadow-sm z-10"
+                                >AFTER</span
+                            >
                         </div>
                         <!-- Before -->
-                        <div class="absolute inset-0 w-full h-full overflow-hidden before-image-wrapper" style="width: 50%;">
-                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3C2u2XDPlJXST7J8Sff2_Pi6r9M_gCeHPyvtUCipA6vEhMRDV6w2C12jAAhnyY-dOZRGdeGobtZIXpU56RCt-CjpvMvttQOJjd3us-Z8jShlo59LFJ4dIdyBU-4eShld7IRhYHaoR05NcGPPdoPmTCcKB5Uk0XAGZ7uzCZxqL5srPUXWNmvLGi4X_vHr7Ykq28IdbHMFYNvh0nShMCJXyGTgnggfK_3J4w89oNQpRSfin7A1zNQkaecQaj6jsFnhyWaAGifsLDttR" class="absolute top-0 left-0 w-full h-full object-cover max-w-none" style="width: 200%;" alt="Living room striped to studs" id="before-img-2" />
-                            <span class="absolute top-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1 rounded z-10">BEFORE</span>
+                        <div
+                            class="absolute inset-0 w-full h-full overflow-hidden before-image-wrapper"
+                            style="width: 50%;"
+                        >
+                            <img
+                                src="/assets/images/restoration/fire-damage/repair-livingroom-before.webp"
+                                class="absolute top-0 left-0 w-full h-full object-cover max-w-none"
+                                style="width: 200%;"
+                                alt="Living room striped to studs"
+                                id="before-img-2"
+                            />
+                            <span
+                                class="absolute top-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1 rounded z-10"
+                                >BEFORE</span
+                            >
                         </div>
                         <!-- Handle -->
-                         <div class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 slider-handle" style="left: 50%;">
-                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center text-primary">
-                                <span class="material-symbols-outlined text-[20px]">unfold_more_double</span>
+                        <div
+                            class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 slider-handle"
+                            style="left: 50%;"
+                        >
+                            <div
+                                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center text-primary"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px]"
+                                    >unfold_more_double</span
+                                >
                             </div>
                         </div>
                     </div>
-                     <div class="absolute bottom-4 left-4 z-30 pointer-events-none">
-                        <h4 class="text-white font-bold text-lg drop-shadow-md text-shadow-sm">Living Area Rebuild</h4>
-                        <p class="text-white/90 text-sm drop-shadow-md">Oakland, CA</p>
+                    <div
+                        class="absolute bottom-4 left-4 z-30 pointer-events-none"
+                    >
+                        <h4
+                            class="text-white font-bold text-lg drop-shadow-md text-shadow-sm"
+                        >
+                            Living Area Rebuild
+                        </h4>
+                        <p class="text-white/90 text-sm drop-shadow-md">
+                            Oakland, CA
+                        </p>
                     </div>
                 </div>
             </div>
@@ -379,47 +765,107 @@ const pageDescription = "Full-service fire damage restoration and reconstruction
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-16 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+    <section
+        class="py-16 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800"
+    >
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white text-center mb-12">Frequently Asked Questions</h2>
+            <h2
+                class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white text-center mb-12"
+            >
+                Frequently Asked Questions
+            </h2>
             <div class="space-y-4">
-                <details class="group bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden transition-all duration-300 open:pb-4 border border-slate-100 dark:border-slate-700">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-750 transition-colors">
+                <details
+                    class="group bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden transition-all duration-300 open:pb-4 border border-slate-100 dark:border-slate-700"
+                >
+                    <summary
+                        class="flex justify-between items-center cursor-pointer p-6 font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-750 transition-colors"
+                    >
                         Do I need a separate contractor for the repairs?
-                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        <span
+                            class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180"
+                            >expand_more</span
+                        >
                     </summary>
-                    <div class="px-6 text-slate-600 dark:text-slate-400 leading-relaxed">
-                        No. We are a licensed General Contractor. Unlike many mitigation companies that only do the cleaning, we handle the entire project from initial demolition to the final coat of paint. This streamlines communication and often speeds up the claim process.
+                    <div
+                        class="px-6 text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                        No. We are a licensed General Contractor. Unlike many
+                        mitigation companies that only do the cleaning, we
+                        handle the entire project from initial demolition to the
+                        final coat of paint. This streamlines communication and
+                        often speeds up the claim process.
                     </div>
                 </details>
 
-                <details class="group bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden transition-all duration-300 open:pb-4 border border-slate-100 dark:border-slate-700">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-750 transition-colors">
+                <details
+                    class="group bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden transition-all duration-300 open:pb-4 border border-slate-100 dark:border-slate-700"
+                >
+                    <summary
+                        class="flex justify-between items-center cursor-pointer p-6 font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-750 transition-colors"
+                    >
                         Will insurance cover code upgrades?
-                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        <span
+                            class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180"
+                            >expand_more</span
+                        >
                     </summary>
-                    <div class="px-6 text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Typically, yes. Most homeowner policies include "Ordinance or Law" coverage which pays for required upgrades to bring older homes up to current building codes during reconstruction. We review your policy to help you utilize this coverage effectively.
+                    <div
+                        class="px-6 text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                        Typically, yes. Most homeowner policies include
+                        "Ordinance or Law" coverage which pays for required
+                        upgrades to bring older homes up to current building
+                        codes during reconstruction. We review your policy to
+                        help you utilize this coverage effectively.
                     </div>
                 </details>
 
-                <details class="group bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden transition-all duration-300 open:pb-4 border border-slate-100 dark:border-slate-700">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-750 transition-colors">
-                        Can I make changes to my home's layout during reconstruction?
-                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                <details
+                    class="group bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden transition-all duration-300 open:pb-4 border border-slate-100 dark:border-slate-700"
+                >
+                    <summary
+                        class="flex justify-between items-center cursor-pointer p-6 font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-750 transition-colors"
+                    >
+                        Can I make changes to my home's layout during
+                        reconstruction?
+                        <span
+                            class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180"
+                            >expand_more</span
+                        >
                     </summary>
-                    <div class="px-6 text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Absolutely. This is the "silver lining" of property damage. Since we are rebuilding anyway, it is the perfect time to open up a wall, upgrade flooring, or remodel a kitchen. We can separate the insurance-covered costs from your optional upgrades so the billing is clear.
+                    <div
+                        class="px-6 text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                        Absolutely. This is the "silver lining" of property
+                        damage. Since we are rebuilding anyway, it is the
+                        perfect time to open up a wall, upgrade flooring, or
+                        remodel a kitchen. We can separate the insurance-covered
+                        costs from your optional upgrades so the billing is
+                        clear.
                     </div>
                 </details>
 
-                 <details class="group bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden transition-all duration-300 open:pb-4 border border-slate-100 dark:border-slate-700">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-750 transition-colors">
+                <details
+                    class="group bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden transition-all duration-300 open:pb-4 border border-slate-100 dark:border-slate-700"
+                >
+                    <summary
+                        class="flex justify-between items-center cursor-pointer p-6 font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-750 transition-colors"
+                    >
                         How long does the reconstruction process take?
-                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        <span
+                            class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180"
+                            >expand_more</span
+                        >
                     </summary>
-                    <div class="px-6 text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Timelines vary based on the severity of the damage. A kitchen fire might take 4-8 weeks, while a whole-home loss could take 4-6 months. We provide a detailed Gantt chart schedule at the beginning of the project so you know exactly what to expect.
+                    <div
+                        class="px-6 text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                        Timelines vary based on the severity of the damage. A
+                        kitchen fire might take 4-8 weeks, while a whole-home
+                        loss could take 4-6 months. We provide a detailed Gantt
+                        chart schedule at the beginning of the project so you
+                        know exactly what to expect.
                     </div>
                 </details>
             </div>
@@ -429,13 +875,24 @@ const pageDescription = "Full-service fire damage restoration and reconstruction
     <!-- Final CTA -->
     <section class="py-20 bg-primary text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl sm:text-4xl font-black mb-6">Ready to Rebuild Better?</h2>
-            <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">Don't settle for "good enough." Let our expert team restore your property to a condition that exceeds your expectations.</p>
+            <h2 class="text-3xl sm:text-4xl font-black mb-6">
+                Ready to Rebuild Better?
+            </h2>
+            <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+                Don't settle for "good enough." Let our expert team restore your
+                property to a condition that exceeds your expectations.
+            </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contact" class="bg-white text-primary hover:bg-blue-50 text-lg font-bold py-4 px-8 rounded-xl shadow-lg transition-transform hover:-translate-y-1">
+                <a
+                    href="#contact"
+                    class="bg-white text-primary hover:bg-blue-50 text-lg font-bold py-4 px-8 rounded-xl shadow-lg transition-transform hover:-translate-y-1"
+                >
                     Request Your Estimate
                 </a>
-                <a href="tel:7866022217" class="bg-transparent border-2 border-white/30 hover:bg-white/10 text-white text-lg font-bold py-4 px-8 rounded-xl transition-colors">
+                <a
+                    href="tel:7866022217"
+                    class="bg-transparent border-2 border-white/30 hover:bg-white/10 text-white text-lg font-bold py-4 px-8 rounded-xl transition-colors"
+                >
                     Call (786) 602-2217
                 </a>
             </div>
@@ -445,14 +902,17 @@ const pageDescription = "Full-service fire damage restoration and reconstruction
     <!-- Scripts for Sliders -->
     <script>
         // Init logic for multiple sliders
-        const sliders = document.querySelectorAll('.before-after-slider');
+        const sliders = document.querySelectorAll(".before-after-slider");
 
-        sliders.forEach(slider => {
+        sliders.forEach((slider) => {
             const container = slider as HTMLElement;
-            const beforeImage = container.querySelector('.before-image-wrapper') as HTMLElement;
-            const sliderHandle = container.querySelector('.slider-handle') as HTMLElement;
+            const beforeImage = container.querySelector(
+                ".before-image-wrapper",
+            ) as HTMLElement;
+            const sliderHandle = container.querySelector(
+                ".slider-handle",
+            ) as HTMLElement;
             // The inner image needs to be the one inside before-image-wrapper
-            const beforeImgElement = beforeImage.querySelector('img') as HTMLElement;
 
             if (container && beforeImage && sliderHandle) {
                 let isDragging = false;
@@ -460,7 +920,7 @@ const pageDescription = "Full-service fire damage restoration and reconstruction
                 const updateSlider = (x: number) => {
                     const rect = container.getBoundingClientRect();
                     let position = ((x - rect.left) / rect.width) * 100;
-                    
+
                     // Clamp position
                     position = Math.max(0, Math.min(100, position));
 
@@ -483,23 +943,23 @@ const pageDescription = "Full-service fire damage restoration and reconstruction
                     // Optional: jump to click position on mouse down
                     updateSlider(e.clientX);
                 };
-                
-                const onTouchStart = (e: TouchEvent) => {
-                     isDragging = true;
-                     updateSlider(e.touches[0].clientX);
-                }
 
-                const onMouseUp = () => isDragging = false;
-                
+                const onTouchStart = (e: TouchEvent) => {
+                    isDragging = true;
+                    updateSlider(e.touches[0].clientX);
+                };
+
+                const onMouseUp = () => (isDragging = false);
+
                 // Mouse events
-                container.addEventListener('mousedown', onMouseDown);
-                window.addEventListener('mouseup', onMouseUp);
-                window.addEventListener('mousemove', onMouseMove);
+                container.addEventListener("mousedown", onMouseDown);
+                window.addEventListener("mouseup", onMouseUp);
+                window.addEventListener("mousemove", onMouseMove);
 
                 // Touch events
-                container.addEventListener('touchstart', onTouchStart);
-                window.addEventListener('touchend', onMouseUp);
-                window.addEventListener('touchmove', onTouchMove);
+                container.addEventListener("touchstart", onTouchStart);
+                window.addEventListener("touchend", onMouseUp);
+                window.addEventListener("touchmove", onTouchMove);
             }
         });
     </script>

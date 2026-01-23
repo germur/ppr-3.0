@@ -99,7 +99,12 @@ const services = defineCollection({
         faqs: z.array(z.object({
             question: z.string(),
             answer: z.string()
-        }))
+        })),
+        // Optional sections for specific services like Sewage
+        insuranceTitle: z.string().optional(),
+        insuranceText: z.string().optional(),
+        protocolTitle: z.string().optional(),
+        protocolDescription: z.string().optional()
     })
 });
 

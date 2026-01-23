@@ -1,83 +1,128 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
+import MainLayout from "../../layouts/MainLayout.astro";
 
-import type { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  city: CollectionEntry<'cities'>;
+  city: CollectionEntry<"cities">;
 }
 
 const { city } = Astro.props;
-const { 
-  name: cityName, 
+const {
+  name: cityName,
   title,
   description,
-  restoration_pain, 
-  remodeling_desire, 
-  local_building_dept, 
-  local_service_radius, 
-  stats, 
-  compliance 
+  restoration_pain,
+  remodeling_desire,
+  local_building_dept,
+  local_service_radius,
+  stats,
+  compliance,
 } = city.data;
 
 // Dynamic Data setup
-const roi = stats?.roi || '85%';
-const valueIncrease = stats?.value_increase || '+12%';
+
+const valueIncrease = stats?.value_increase || "+12%";
 
 // Hero Image Logic
-const heroImage = city.data.image || 'https://lh3.googleusercontent.com/aida-public/AB6AXuAmVMMj3fxbRmw8hLgcwdCjLmSJAO8-lhT5S6-4cDlWVIzxmWtrAh1bbst00D3IYs1C9vXQt_Hz2P9ocQTngc0umxpOyzmDRlD8nJm6BIm8O8rLLoKm5fhYS2e4zjWnIArg9Ovlzlrdnb8Kqen3XDulKXQVeCGT2wFzdiNmfyxPPmMm1zl1IqoKfNMOrx7CsNWIbfeLqAuYkRIEGdXOb6Nl6FvcYQEraKW_-zMxbKk2afQ-UdhuLzqd1BUu7Z3y8Etan-ouvzYb1OVc';
+const heroImage =
+  city.data.image ||
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuAmVMMj3fxbRmw8hLgcwdCjLmSJAO8-lhT5S6-4cDlWVIzxmWtrAh1bbst00D3IYs1C9vXQt_Hz2P9ocQTngc0umxpOyzmDRlD8nJm6BIm8O8rLLoKm5fhYS2e4zjWnIArg9Ovlzlrdnb8Kqen3XDulKXQVeCGT2wFzdiNmfyxPPmMm1zl1IqoKfNMOrx7CsNWIbfeLqAuYkRIEGdXOb6Nl6FvcYQEraKW_-zMxbKk2afQ-UdhuLzqd1BUu7Z3y8Etan-ouvzYb1OVc";
 
 // Meta setup
 // Use the explicit title/description from frontmatter if available, otherwise fallback to defaults
-const pageTitle = title || `${cityName} General Contractor & Restoration | Paramount Property Restoration`;
-const pageDescription = description || `Premier water damage restoration and luxury remodeling services in ${cityName}. We navigate local building codes for you.`;
+const pageTitle =
+  title ||
+  `${cityName} General Contractor & Restoration | Paramount Property Restoration`;
+const pageDescription =
+  description ||
+  `Premier water damage restoration and luxury remodeling services in ${cityName}. We navigate local building codes for you.`;
 ---
 
-<MainLayout title={pageTitle} description={pageDescription} city={cityName} >
+<MainLayout title={pageTitle} description={pageDescription} city={cityName}>
   <!-- Inject specific fonts for this page design -->
   <fragment slot="head">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <style>
       /* Enforce strict font overrides for this landing page design */
-      .font-display, h1, h2, h3, h4 { font-family: 'Manrope', sans-serif !important; }
-      .group\/design-root { font-family: 'Noto Sans', sans-serif; }
+      .font-display,
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Manrope", sans-serif !important;
+      }
+      .group\/design-root {
+        font-family: "Noto Sans", sans-serif;
+      }
     </style>
   </fragment>
 
   <!-- Page Envelope -->
-  <div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden text-[#111418] dark:text-white">
-    
+  <div
+    class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden text-[#111418] dark:text-white"
+  >
     <!-- HeroSection -->
     <div class="w-full bg-white dark:bg-[#111418]">
       <div class="layout-container flex flex-col items-center">
         <div class="w-full max-w-[1280px] p-4 md:px-10 md:py-8">
-          <div class="relative flex min-h-[560px] flex-col gap-6 overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-8 md:gap-8 items-center justify-center text-center shadow-lg" data-alt={`Luxury in ${cityName}`} style={`background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url("${heroImage}");`}>
+          <div
+            class="relative flex min-h-[560px] flex-col gap-6 overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-8 md:gap-8 items-center justify-center text-center shadow-lg"
+            data-alt={`Luxury in ${cityName}`}
+            style={`background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url("${heroImage}");`}
+          >
             <div class="flex flex-col gap-4 max-w-[800px]">
-              <span class="mx-auto w-fit rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white backdrop-blur-md">
+              <span
+                class="mx-auto w-fit rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white backdrop-blur-md"
+              >
                 Serving {cityName} & Southwest Florida
               </span>
-              <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-6xl drop-shadow-sm font-display">
+              <h1
+                class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-6xl drop-shadow-sm font-display"
+              >
                 {cityName} General Contractor & Restoration: Crafting Your Ideal Space
               </h1>
-              <h2 class="text-white/90 text-base font-medium leading-relaxed md:text-xl max-w-[640px] mx-auto drop-shadow-sm">
-                From emergency restoration to luxury remodeling, we blend coastal elegance with hurricane resilience for {cityName} homes.
+              <h2
+                class="text-white/90 text-base font-medium leading-relaxed md:text-xl max-w-[640px] mx-auto drop-shadow-sm"
+              >
+                From emergency restoration to luxury remodeling, we blend
+                coastal elegance with hurricane resilience for {cityName} homes.
               </h2>
             </div>
             <div class="flex flex-col gap-3 sm:flex-row">
-              <a href={`/service-areas/${city.slug}/water-damage-restoration/`} class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-[#ef4444] hover:bg-red-700 text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg transition-transform hover:scale-105">
+              <a
+                href={`/service-areas/${city.slug}/water-damage-restoration/`}
+                class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-[#ef4444] hover:bg-red-700 text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg transition-transform hover:scale-105"
+              >
                 <span class="truncate">Emergency Restoration</span>
               </a>
-              <a href={`/service-areas/${city.slug}/kitchen-remodeling/`} class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-secondary hover:bg-orange-700 text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg transition-transform hover:scale-105">
+              <a
+                href={`/service-areas/${city.slug}/kitchen-remodeling/`}
+                class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-secondary hover:bg-orange-700 text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg transition-transform hover:scale-105"
+              >
                 <span class="truncate">Get Remodeling Quote</span>
               </a>
             </div>
             <!-- Trust Badges Overlay -->
-            <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-6 opacity-80">
-              <div class="flex items-center gap-2 text-white text-xs font-semibold uppercase tracking-wide">
-                <span class="material-symbols-outlined text-secondary text-lg">verified_user</span> Licensed & Insured
+            <div
+              class="absolute bottom-6 left-0 right-0 flex justify-center gap-6 opacity-80"
+            >
+              <div
+                class="flex items-center gap-2 text-white text-xs font-semibold uppercase tracking-wide"
+              >
+                <span class="material-symbols-outlined text-secondary text-lg"
+                  >verified_user</span
+                > Licensed & Insured
               </div>
-              <div class="flex items-center gap-2 text-white text-xs font-semibold uppercase tracking-wide">
-                <span class="material-symbols-outlined text-secondary text-lg">home_work</span> Local Experts
+              <div
+                class="flex items-center gap-2 text-white text-xs font-semibold uppercase tracking-wide"
+              >
+                <span class="material-symbols-outlined text-secondary text-lg"
+                  >home_work</span
+                > Local Experts
               </div>
             </div>
           </div>
@@ -94,24 +139,46 @@ const pageDescription = description || `Premier water damage restoration and lux
               <div class="flex flex-col gap-4">
                 <div class="flex items-center gap-2">
                   <div class="h-1 w-12 rounded-full bg-primary"></div>
-                  <span class="text-sm font-bold text-primary uppercase tracking-wider">Local Context</span>
+                  <span
+                    class="text-sm font-bold text-primary uppercase tracking-wider"
+                    >Local Context</span
+                  >
                 </div>
-                <h2 class="text-[#111418] dark:text-white text-3xl font-black leading-tight tracking-[-0.02em] md:text-5xl font-display">
+                <h2
+                  class="text-[#111418] dark:text-white text-3xl font-black leading-tight tracking-[-0.02em] md:text-5xl font-display"
+                >
                   Protecting & Enhancing {cityName} Properties
                 </h2>
-                <p class="text-[#4e5d78] dark:text-gray-300 text-lg leading-relaxed">
-                  Southwest Florida presents unique challenges. From hurricane-resilient restoration to luxury coastal renovations, our approach is specifically tailored for the {cityName} local environment.
+                <p
+                  class="text-[#4e5d78] dark:text-gray-300 text-lg leading-relaxed"
+                >
+                  Southwest Florida presents unique challenges. From
+                  hurricane-resilient restoration to luxury coastal renovations,
+                  our approach is specifically tailored for the {cityName} local environment.
                 </p>
-                <p class="text-[#4e5d78] dark:text-gray-300 text-base leading-relaxed">
-                  {restoration_pain} We also navigate the complexities of {local_building_dept} permitting so you don't have to.
+                <p
+                  class="text-[#4e5d78] dark:text-gray-300 text-base leading-relaxed"
+                >
+                  {restoration_pain} We also navigate the complexities of {
+                    local_building_dept
+                  } permitting so you don't have to.
                 </p>
               </div>
-              <a href="/our-process/" class="w-fit flex items-center gap-2 text-primary font-bold text-lg hover:gap-3 transition-all">
-                Learn About Our Process <span class="material-symbols-outlined">arrow_forward</span>
+              <a
+                href="/our-process/"
+                class="w-fit flex items-center gap-2 text-primary font-bold text-lg hover:gap-3 transition-all"
+              >
+                Learn About Our Process <span class="material-symbols-outlined"
+                  >arrow_forward</span
+                >
               </a>
             </div>
             <div class="lg:w-1/2 relative">
-              <div class="aspect-[4/3] w-full rounded-2xl bg-cover bg-center shadow-2xl" data-alt={`Property in ${cityName}`} style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABgadTg0n-4oxrhu--dBfDFXRVbuudGYGCRmlyRGN2cgO1SpqD1l7CAEW4BS7Mb8VwJ8TSHRE5_xojIKBmwy5EEkNdrzaOCvqVzem4HY-qD7QOrBMgL3jaDW3GUrd_5PMcqQ6y67iZ0jOVX4mVB-PloCAZTSYdekdhNo1pZcVIHkMSTniMfAz_AITxgH5dHaVpHGCH4t9ftssZJGTAOwCbLJQTlMgvEgxmab5M-Vjh9EI5XIRA7oCF1CyQ2RNPHqv4-Gq4B5cXEzI4");'>
+              <div
+                class="aspect-[4/3] w-full rounded-2xl bg-cover bg-center shadow-2xl"
+                data-alt={`Property in ${cityName}`}
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABgadTg0n-4oxrhu--dBfDFXRVbuudGYGCRmlyRGN2cgO1SpqD1l7CAEW4BS7Mb8VwJ8TSHRE5_xojIKBmwy5EEkNdrzaOCvqVzem4HY-qD7QOrBMgL3jaDW3GUrd_5PMcqQ6y67iZ0jOVX4mVB-PloCAZTSYdekdhNo1pZcVIHkMSTniMfAz_AITxgH5dHaVpHGCH4t9ftssZJGTAOwCbLJQTlMgvEgxmab5M-Vjh9EI5XIRA7oCF1CyQ2RNPHqv4-Gq4B5cXEzI4");'
+              >
               </div>
             </div>
           </div>
@@ -124,79 +191,175 @@ const pageDescription = description || `Premier water damage restoration and lux
       <div class="layout-container flex justify-center">
         <div class="w-full max-w-[1280px] px-4 md:px-10 flex flex-col gap-10">
           <div class="flex flex-col items-center text-center gap-4">
-            <h2 class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] md:text-4xl font-display">Complete Property Services</h2>
-            <p class="text-[#617289] dark:text-gray-400 max-w-2xl">From emergency recovery to dream renovations in {cityName}.</p>
+            <h2
+              class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] md:text-4xl font-display"
+            >
+              Complete Property Services
+            </h2>
+            <p class="text-[#617289] dark:text-gray-400 max-w-2xl">
+              From emergency recovery to dream renovations in {cityName}.
+            </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
-            
             <!-- Row 1: Primary Restoration -->
             <!-- Card 1: Water Damage (Big) -->
-            <a href={`/service-areas/${city.slug}/water-damage-restoration/`} class="group relative flex flex-col justify-center items-center overflow-hidden rounded-2xl bg-primary p-6 shadow-md transition-all hover:shadow-xl md:col-span-2 text-center order-1">
-              <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+            <a
+              href={`/service-areas/${city.slug}/water-damage-restoration/`}
+              class="group relative flex flex-col justify-center items-center overflow-hidden rounded-2xl bg-primary p-6 shadow-md transition-all hover:shadow-xl md:col-span-2 text-center order-1"
+            >
+              <div
+                class="absolute inset-0 opacity-10"
+                style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"
+              >
+              </div>
               <div class="relative z-10 flex flex-col items-center gap-4">
-                <span class="material-symbols-outlined text-5xl text-white">water_drop</span>
-                <h3 class="text-3xl font-bold text-white font-display">Water Damage Restoration</h3>
-                <p class="text-white/80 max-w-lg text-lg">Rapid extraction and drying for flood and leak damage in {cityName}.</p>
-                <span class="rounded-lg bg-white px-6 py-2 text-sm font-bold text-primary hover:bg-gray-100">24/7 Response</span>
+                <span class="material-symbols-outlined text-5xl text-white"
+                  >water_drop</span
+                >
+                <h3 class="text-3xl font-bold text-white font-display">
+                  Water Damage Restoration
+                </h3>
+                <p class="text-white/80 max-w-lg text-lg">
+                  Rapid extraction and drying for flood and leak damage in {
+                    cityName
+                  }.
+                </p>
+                <span
+                  class="rounded-lg bg-white px-6 py-2 text-sm font-bold text-primary hover:bg-gray-100"
+                  >24/7 Response</span
+                >
               </div>
             </a>
 
             <!-- Card 2: Fire Damage -->
-            <a href={`/service-areas/${city.slug}/fire-damage-restoration/`} class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 p-6 shadow-md transition-all hover:shadow-xl order-2">
-              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Fire damage repair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBd5RZlvJ_eI0JbY-KPS1MZ7NTuPfXp1YEgq76GVYr5zoJncOE99wF7p0dInVssUjsB2slnz_3pGap-Xszxa5Zl3FUOPvzsagm8B61WAmEoUeQ2xIC8-vJd_gTMOyzOKZabMjlGmWXU-WFrlJywhZXey_FMQuHDOPk_Lx1BTjwAB7mTKolCX3crGVzAKghp7ALaMEwAfFYtwUb5_RWBFl9_JcOf8Ml_xUxdk1xLpUySdGMG1VD_gJvfZaX8oj4nI_ao7BC1_GWKg7Tj");'>
+            <a
+              href={`/service-areas/${city.slug}/fire-damage-restoration/`}
+              class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 p-6 shadow-md transition-all hover:shadow-xl order-2"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                data-alt="Fire damage repair"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBd5RZlvJ_eI0JbY-KPS1MZ7NTuPfXp1YEgq76GVYr5zoJncOE99wF7p0dInVssUjsB2slnz_3pGap-Xszxa5Zl3FUOPvzsagm8B61WAmEoUeQ2xIC8-vJd_gTMOyzOKZabMjlGmWXU-WFrlJywhZXey_FMQuHDOPk_Lx1BTjwAB7mTKolCX3crGVzAKghp7ALaMEwAfFYtwUb5_RWBFl9_JcOf8Ml_xUxdk1xLpUySdGMG1VD_gJvfZaX8oj4nI_ao7BC1_GWKg7Tj");'
+              >
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+              >
+              </div>
               <div class="relative z-10 flex flex-col gap-2">
-                <span class="material-symbols-outlined text-4xl text-orange-500 mb-2">local_fire_department</span>
-                <h3 class="text-2xl font-bold text-white font-display">Fire Damage</h3>
+                <span
+                  class="material-symbols-outlined text-4xl text-orange-500 mb-2"
+                  >local_fire_department</span
+                >
+                <h3 class="text-2xl font-bold text-white font-display">
+                  Fire Damage
+                </h3>
                 <p class="text-white/90 text-sm">Smoke & soot removal.</p>
               </div>
             </a>
 
             <!-- Row 2: Hybrid -->
             <!-- Card 3: Mold Remediation -->
-            <a href={`/service-areas/${city.slug}/mold-remediation/`} class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-teal-900 p-6 shadow-md transition-all hover:shadow-xl order-3">
-              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Mold inspection" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDep2FTyFF8p35UqmyUMPhpQ-N89mTKlJAi4TZ6zZYWBwQVmGDrtQv5ZGBl0cGLYxQ_XWM4HmjIfnZg1MMiC3Qaq2ryv8r9u8TtY1xP7rVoA3amNg31o2x3bZ25jiZ6_mH6mt7nnMAEzDYcvlPwMY4Uin6r0YgZs8ENNa4uGENyGSihybe94IIKb8gPBY5oFrZv1FiYzRtG9OyXubfaClgXWiE1XJAIQxElz5fNWitK1wuqC4nZCnAumJDnYqAP86BXVzGsicr12lk8");'>
+            <a
+              href={`/service-areas/${city.slug}/mold-remediation/`}
+              class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-teal-900 p-6 shadow-md transition-all hover:shadow-xl order-3"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                data-alt="Mold inspection"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDep2FTyFF8p35UqmyUMPhpQ-N89mTKlJAi4TZ6zZYWBwQVmGDrtQv5ZGBl0cGLYxQ_XWM4HmjIfnZg1MMiC3Qaq2ryv8r9u8TtY1xP7rVoA3amNg31o2x3bZ25jiZ6_mH6mt7nnMAEzDYcvlPwMY4Uin6r0YgZs8ENNa4uGENyGSihybe94IIKb8gPBY5oFrZv1FiYzRtG9OyXubfaClgXWiE1XJAIQxElz5fNWitK1wuqC4nZCnAumJDnYqAP86BXVzGsicr12lk8");'
+              >
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+              >
+              </div>
               <div class="relative z-10 flex flex-col gap-2">
-                <span class="material-symbols-outlined text-4xl text-teal-400 mb-2">microbiology</span>
-                <h3 class="text-2xl font-bold text-white font-display">Mold Remediation</h3>
-                <p class="text-white/90 text-sm">Certified removal & testing.</p>
+                <span
+                  class="material-symbols-outlined text-4xl text-teal-400 mb-2"
+                  >microbiology</span
+                >
+                <h3 class="text-2xl font-bold text-white font-display">
+                  Mold Remediation
+                </h3>
+                <p class="text-white/90 text-sm">
+                  Certified removal & testing.
+                </p>
               </div>
             </a>
 
             <!-- Card 4: Kitchens (Big) -->
-             <a href={`/service-areas/${city.slug}/kitchen-remodeling/`} class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-100 p-6 shadow-md transition-all hover:shadow-xl md:col-span-2 order-4">
-              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="High end luxury kitchen remodel" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB44qeiOVzcAu2hRN5l625UiYVgEChEd98mxg_6_dZY0JmPzBaRvWb5vfH3jMY07c_5ekPvj2j7EmK_TKwBXBGnTcK3ic-7kAX5_eFCZALV9AWQS3zKwMpWTTPyZARwOCORbncuY4LVjywvJLVnHQidy2TIXWRLY2SHT2TAq9iJffBRlJkYXJnPZRWpOTUSJepAMeg-8LjJBLGI8HFDQsrKeB-Lgi3R8kaX3WpktjA_D8sXnA7TzLNZqplObpvmTfYt69vMJ8kCSQpA");'>
+            <a
+              href={`/service-areas/${city.slug}/kitchen-remodeling/`}
+              class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-100 p-6 shadow-md transition-all hover:shadow-xl md:col-span-2 order-4"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                data-alt="High end luxury kitchen remodel"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB44qeiOVzcAu2hRN5l625UiYVgEChEd98mxg_6_dZY0JmPzBaRvWb5vfH3jMY07c_5ekPvj2j7EmK_TKwBXBGnTcK3ic-7kAX5_eFCZALV9AWQS3zKwMpWTTPyZARwOCORbncuY4LVjywvJLVnHQidy2TIXWRLY2SHT2TAq9iJffBRlJkYXJnPZRWpOTUSJepAMeg-8LjJBLGI8HFDQsrKeB-Lgi3R8kaX3WpktjA_D8sXnA7TzLNZqplObpvmTfYt69vMJ8kCSQpA");'
+              >
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+              >
+              </div>
               <div class="relative z-10 flex flex-col gap-2">
-                <div class="w-fit rounded-lg bg-orange-600/90 px-3 py-1 text-xs font-bold text-white uppercase mb-2">Renovation</div>
-                <h3 class="text-3xl font-bold text-white font-display">Luxury Kitchens</h3>
-                <p class="text-white/90 text-lg max-w-md">Custom cabinetry and high-end finishes.</p>
+                <div
+                  class="w-fit rounded-lg bg-orange-600/90 px-3 py-1 text-xs font-bold text-white uppercase mb-2"
+                >
+                  Renovation
+                </div>
+                <h3 class="text-3xl font-bold text-white font-display">
+                  Luxury Kitchens
+                </h3>
+                <p class="text-white/90 text-lg max-w-md">
+                  Custom cabinetry and high-end finishes.
+                </p>
               </div>
             </a>
 
             <!-- Row 3: Secondary Services -->
             <!-- Card 5: Bathrooms -->
-            <a href={`/service-areas/${city.slug}/bathroom-remodeling/`} class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-100 p-6 shadow-md transition-all hover:shadow-xl order-5">
-              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Spa like bathroom" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiEiy8YZs7Ig69Nfh1r0kKx5r3UmECqxmz3OJW5rJW9fg1ixUW6moZlDyfp4bH6kzBRLBF7e2_BGdhpZqxDbxUmER70o68ygV-ck_YYZ2WTsKhE1lUh-DyV-xn_8de08hmBZ-egPoPQtWdAOJYWNb-szb4_RVJhi71mTPk-IgW3Ng5biI-mOfW1lfNwnryWRDhJJ6Sp4KIv-rAc09H3WLYj0kGhwKkrIzXptT5USdVN4KMoH3TMtU10xAYOuz1EgJWn8ZaKRbzK9VT");'>
+            <a
+              href={`/service-areas/${city.slug}/bathroom-remodeling/`}
+              class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-100 p-6 shadow-md transition-all hover:shadow-xl order-5"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                data-alt="Spa like bathroom"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiEiy8YZs7Ig69Nfh1r0kKx5r3UmECqxmz3OJW5rJW9fg1ixUW6moZlDyfp4bH6kzBRLBF7e2_BGdhpZqxDbxUmER70o68ygV-ck_YYZ2WTsKhE1lUh-DyV-xn_8de08hmBZ-egPoPQtWdAOJYWNb-szb4_RVJhi71mTPk-IgW3Ng5biI-mOfW1lfNwnryWRDhJJ6Sp4KIv-rAc09H3WLYj0kGhwKkrIzXptT5USdVN4KMoH3TMtU10xAYOuz1EgJWn8ZaKRbzK9VT");'
+              >
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+              >
+              </div>
               <div class="relative z-10 flex flex-col gap-2">
-                <h3 class="text-2xl font-bold text-white font-display">Modern Bathrooms</h3>
+                <h3 class="text-2xl font-bold text-white font-display">
+                  Modern Bathrooms
+                </h3>
                 <p class="text-white/90 text-sm">Spa-inspired retreats.</p>
               </div>
             </a>
 
             <!-- Card 6: Outdoor -->
-             <div class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-100 p-6 shadow-md transition-all hover:shadow-xl order-6">
-              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Outdoor kitchen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAU6_1qRp2Mbpyzby2jIl3GsPeI0hcWKF9GFUJRtlxHSyN5X7EVyQsE6Fon_5nlP5CGTLPaLSdQpcXNMc5RSNnFOliQLl_USryDBjEk31EWDj2UcuLKsL4CZV2zJrTHjXHtFtYqKTMysinl5Y5s9f8BuhRGDJraAZkah9ET8iQiBjPNxqSMAS0ujySQNk7P3FOeo35-2nMMNtQ30O2_DdmAG6VuJAuPi9kQJWi9IBEppxNFKs7hushbCvXyMQ4FTvnn6-iFmgZjpK8n");'>
+            <div
+              class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-100 p-6 shadow-md transition-all hover:shadow-xl order-6"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                data-alt="Outdoor kitchen"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAU6_1qRp2Mbpyzby2jIl3GsPeI0hcWKF9GFUJRtlxHSyN5X7EVyQsE6Fon_5nlP5CGTLPaLSdQpcXNMc5RSNnFOliQLl_USryDBjEk31EWDj2UcuLKsL4CZV2zJrTHjXHtFtYqKTMysinl5Y5s9f8BuhRGDJraAZkah9ET8iQiBjPNxqSMAS0ujySQNk7P3FOeo35-2nMMNtQ30O2_DdmAG6VuJAuPi9kQJWi9IBEppxNFKs7hushbCvXyMQ4FTvnn6-iFmgZjpK8n");'
+              >
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+              >
+              </div>
               <div class="relative z-10 flex flex-col gap-2">
-                <h3 class="text-2xl font-bold text-white font-display">Outdoor Living</h3>
+                <h3 class="text-2xl font-bold text-white font-display">
+                  Outdoor Living
+                </h3>
                 <p class="text-white/90 text-sm">Hurricane-ready spaces.</p>
               </div>
             </div>
@@ -206,17 +369,30 @@ const pageDescription = description || `Premier water damage restoration and lux
             <!-- Let's add Storm as 7th item? Grid fits 3 items/row. -->
             <!-- If we have 6 items: Water(2)+Fire(1)=3. Mold(1)+Kitchen(2)=3. That's 2 full rows. Bath(1)+Outdoor(1) leaves 1 gap. -->
             <!-- Let's make Bath(1) + Outdoor(2)? Or Storm(1)+Bath(1)+Outdoor(1). -->
-            
-            <a href={`/service-areas/${city.slug}/storm-damage-repair/`} class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-blue-900 p-6 shadow-md transition-all hover:shadow-xl order-7">
-              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Storm damage" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPTmIGYWPYYf4Jlr0lC9gCh4WGsXzPP-nJ1Nap6VN2fhPmabR-0h9ykp5XoD-R-hFHZh_7T9wNtSCvU6UAmGlBiTz1QfCnUzRdS_MxUU3IdGyXsImL3lfmxYeuLATqG2QrTrkF4aQZAr1q63ljVQqOxiMqo62SlBftHXymdRN25IRYF5u-LsdI2nKVGy9Db1ECInlxPX5I4Y0u7GbzigPwi5vkyaYRom_iSQ5OiRiRZbEdmm3Qf2OO-pMUg7IXbhoCPd3IdUO5qj9t");'>
+
+            <a
+              href={`/service-areas/${city.slug}/storm-damage-repair/`}
+              class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-blue-900 p-6 shadow-md transition-all hover:shadow-xl order-7"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                data-alt="Storm damage"
+                style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPTmIGYWPYYf4Jlr0lC9gCh4WGsXzPP-nJ1Nap6VN2fhPmabR-0h9ykp5XoD-R-hFHZh_7T9wNtSCvU6UAmGlBiTz1QfCnUzRdS_MxUU3IdGyXsImL3lfmxYeuLATqG2QrTrkF4aQZAr1q63ljVQqOxiMqo62SlBftHXymdRN25IRYF5u-LsdI2nKVGy9Db1ECInlxPX5I4Y0u7GbzigPwi5vkyaYRom_iSQ5OiRiRZbEdmm3Qf2OO-pMUg7IXbhoCPd3IdUO5qj9t");'
+              >
               </div>
               <div class="relative z-10 flex flex-col gap-2">
-                <span class="material-symbols-outlined text-4xl text-blue-300 mb-2">cyclone</span>
-                <h3 class="text-2xl font-bold text-white font-display">Storm Damage</h3>
-                <p class="text-white/90 text-sm">Debris & structural handling.</p>
+                <span
+                  class="material-symbols-outlined text-4xl text-blue-300 mb-2"
+                  >cyclone</span
+                >
+                <h3 class="text-2xl font-bold text-white font-display">
+                  Storm Damage
+                </h3>
+                <p class="text-white/90 text-sm">
+                  Debris & structural handling.
+                </p>
               </div>
             </a>
-
           </div>
         </div>
       </div>
@@ -225,65 +401,125 @@ const pageDescription = description || `Premier water damage restoration and lux
     <!-- Technical Authority & Market Data Split -->
     <div class="w-full bg-[#f0f4f8] dark:bg-[#161e28] py-12 md:py-20">
       <div class="layout-container flex justify-center">
-        <div class="w-full max-w-[1280px] px-4 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div
+          class="w-full max-w-[1280px] px-4 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12"
+        >
           <!-- Technical Authority -->
           <div class="flex flex-col gap-6">
             <div class="flex items-center gap-2">
               <span class="material-symbols-outlined text-primary">gavel</span>
-              <span class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Compliance & Safety</span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400"
+                >Compliance & Safety</span
+              >
             </div>
-            <h2 class="text-3xl font-bold text-[#111418] dark:text-white font-display">Navigating {cityName} Building Codes</h2>
-            <p class="text-[#617289] dark:text-gray-400">From structural drying standards to reconstruction permitting, we handle all compliance.</p>
+            <h2
+              class="text-3xl font-bold text-[#111418] dark:text-white font-display"
+            >
+              Navigating {cityName} Building Codes
+            </h2>
+            <p class="text-[#617289] dark:text-gray-400">
+              From structural drying standards to reconstruction permitting, we
+              handle all compliance.
+            </p>
             <div class="flex flex-col gap-3">
-                {compliance ? compliance.map(item => (
+              {
+                compliance ? (
+                  compliance.map((item) => (
                     <details class="group rounded-xl bg-white dark:bg-[#1e2732] p-4 shadow-sm open:shadow-md transition-all">
-                    <summary class="flex cursor-pointer list-none items-center justify-between font-bold text-[#111418] dark:text-white">
-                    <span>{item.title}</span>
-                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-                    </summary>
-                    <p class="mt-3 text-sm text-[#617289] dark:text-gray-400 leading-relaxed">{item.content}</p>
+                      <summary class="flex cursor-pointer list-none items-center justify-between font-bold text-[#111418] dark:text-white">
+                        <span>{item.title}</span>
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">
+                          expand_more
+                        </span>
+                      </summary>
+                      <p class="mt-3 text-sm text-[#617289] dark:text-gray-400 leading-relaxed">
+                        {item.content}
+                      </p>
                     </details>
-                )) : (
-                    <details class="group rounded-xl bg-white dark:bg-[#1e2732] p-4 shadow-sm open:shadow-md transition-all">
+                  ))
+                ) : (
+                  <details class="group rounded-xl bg-white dark:bg-[#1e2732] p-4 shadow-sm open:shadow-md transition-all">
                     <summary class="flex cursor-pointer list-none items-center justify-between font-bold text-[#111418] dark:text-white">
-                    <span>{cityName} Permitting & Insurance</span>
-                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                      <span>{cityName} Permitting & Insurance</span>
+                      <span class="material-symbols-outlined transition-transform group-open:rotate-180">
+                        expand_more
+                      </span>
                     </summary>
                     <p class="mt-3 text-sm text-[#617289] dark:text-gray-400 leading-relaxed">
-                        We work directly with {local_building_dept} and all major insurance carriers to expedite your project.
+                      We work directly with {local_building_dept} and all major
+                      insurance carriers to expedite your project.
                     </p>
-                    </details>
-                )}
+                  </details>
+                )
+              }
             </div>
           </div>
           <!-- Market Data Widget -->
           <div class="flex flex-col gap-6">
             <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-primary">trending_up</span>
-              <span class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Why Choose Us</span>
+              <span class="material-symbols-outlined text-primary"
+                >trending_up</span
+              >
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400"
+                >Why Choose Us</span
+              >
             </div>
-            <h2 class="text-3xl font-bold text-[#111418] dark:text-white font-display">Expertise in {cityName}</h2>
+            <h2
+              class="text-3xl font-bold text-[#111418] dark:text-white font-display"
+            >
+              Expertise in {cityName}
+            </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <!-- Stat Card 1 -->
-              <div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-[#1e2732] p-6 shadow-sm border-l-4 border-primary">
-                <span class="text-4xl font-black text-[#111418] dark:text-white font-display">60m</span>
-                <span class="text-sm font-medium text-[#617289] dark:text-gray-400">Avg. Emergency Response Time</span>
+              <div
+                class="flex flex-col gap-2 rounded-xl bg-white dark:bg-[#1e2732] p-6 shadow-sm border-l-4 border-primary"
+              >
+                <span
+                  class="text-4xl font-black text-[#111418] dark:text-white font-display"
+                  >60m</span
+                >
+                <span
+                  class="text-sm font-medium text-[#617289] dark:text-gray-400"
+                  >Avg. Emergency Response Time</span
+                >
               </div>
               <!-- Stat Card 2 -->
-              <div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-[#1e2732] p-6 shadow-sm border-l-4 border-secondary">
-                <span class="text-4xl font-black text-[#111418] dark:text-white font-display">{valueIncrease}</span>
-                <span class="text-sm font-medium text-[#617289] dark:text-gray-400">Property Value Preservation</span>
+              <div
+                class="flex flex-col gap-2 rounded-xl bg-white dark:bg-[#1e2732] p-6 shadow-sm border-l-4 border-secondary"
+              >
+                <span
+                  class="text-4xl font-black text-[#111418] dark:text-white font-display"
+                  >{valueIncrease}</span
+                >
+                <span
+                  class="text-sm font-medium text-[#617289] dark:text-gray-400"
+                  >Property Value Preservation</span
+                >
               </div>
               <!-- Stat Card 3 (Full Width) -->
-              <div class="sm:col-span-2 flex flex-col gap-4 rounded-xl bg-white dark:bg-[#1e2732] p-6 shadow-sm">
+              <div
+                class="sm:col-span-2 flex flex-col gap-4 rounded-xl bg-white dark:bg-[#1e2732] p-6 shadow-sm"
+              >
                 <div class="flex justify-between items-center">
-                  <h4 class="font-bold text-[#111418] dark:text-white">Project Timeline Control</h4>
-                  <span class="text-xs text-primary font-bold bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded">On-Schedule Guarantee</span>
+                  <h4 class="font-bold text-[#111418] dark:text-white">
+                    Project Timeline Control
+                  </h4>
+                  <span
+                    class="text-xs text-primary font-bold bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded"
+                    >On-Schedule Guarantee</span
+                  >
                 </div>
-                <div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2.5">
-                  <div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
+                <div
+                  class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2.5"
+                >
+                  <div class="bg-primary h-2.5 rounded-full" style="width: 85%">
+                  </div>
                 </div>
-                <div class="flex justify-between text-xs text-[#617289] dark:text-gray-400">
+                <div
+                  class="flex justify-between text-xs text-[#617289] dark:text-gray-400"
+                >
                   <span>Mitigation</span>
                   <span>Restoration</span>
                   <span>Remodeling</span>
@@ -295,30 +531,49 @@ const pageDescription = description || `Premier water damage restoration and lux
       </div>
     </div>
 
-
-
     <!-- FAQ Section -->
     <div class="w-full bg-[#f8fafe] dark:bg-[#161e28] py-12 md:py-20">
       <div class="layout-container flex justify-center">
         <div class="w-full max-w-[800px] px-4 md:px-10 flex flex-col gap-10">
-          <h2 class="text-center text-[#111418] dark:text-white text-3xl font-bold font-display">Frequently Asked Questions</h2>
+          <h2
+            class="text-center text-[#111418] dark:text-white text-3xl font-bold font-display"
+          >
+            Frequently Asked Questions
+          </h2>
           <div class="flex flex-col gap-4">
-            <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e2732] overflow-hidden">
-              <button class="flex w-full items-center justify-between p-6 text-left font-bold text-[#111418] dark:text-white text-lg">
+            <div
+              class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e2732] overflow-hidden"
+            >
+              <button
+                class="flex w-full items-center justify-between p-6 text-left font-bold text-[#111418] dark:text-white text-lg"
+              >
                 Do I need a permit for a {cityName} renovation?
-                <span class="material-symbols-outlined text-primary">add_circle</span>
+                <span class="material-symbols-outlined text-primary"
+                  >add_circle</span
+                >
               </button>
               <div class="px-6 pb-6 text-[#617289] dark:text-gray-400">
-                Yes, almost all renovations in {cityName} that involve electrical, plumbing, or structural changes require a permit. We handle the entire permitting process for you to ensure compliance with city codes.
+                Yes, almost all renovations in {cityName} that involve electrical,
+                plumbing, or structural changes require a permit. We handle the entire
+                permitting process for you to ensure compliance with city codes.
               </div>
             </div>
-            <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e2732] overflow-hidden">
-              <button class="flex w-full items-center justify-between p-6 text-left font-bold text-[#111418] dark:text-white text-lg">
+            <div
+              class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e2732] overflow-hidden"
+            >
+              <button
+                class="flex w-full items-center justify-between p-6 text-left font-bold text-[#111418] dark:text-white text-lg"
+              >
                 How much does a renovation cost in {cityName}?
-                <span class="material-symbols-outlined text-primary">add_circle</span>
+                <span class="material-symbols-outlined text-primary"
+                  >add_circle</span
+                >
               </button>
               <div class="px-6 pb-6 text-[#617289] dark:text-gray-400">
-                Costs vary based on finishes and scope. A luxury kitchen remodel in {cityName} typically starts around $50k and can go upwards of $150k+ for high-end custom cabinetry and appliances. We provide detailed estimates after our initial consultation.
+                Costs vary based on finishes and scope. A luxury kitchen remodel
+                in {cityName} typically starts around $50k and can go upwards of $150k+
+                for high-end custom cabinetry and appliances. We provide detailed
+                estimates after our initial consultation.
               </div>
             </div>
           </div>
@@ -329,15 +584,25 @@ const pageDescription = description || `Premier water damage restoration and lux
     <!-- Call to Action Banner -->
     <div class="w-full bg-primary py-16">
       <div class="layout-container flex justify-center">
-        <div class="w-full max-w-[1280px] px-4 md:px-10 flex flex-col items-center text-center gap-6">
-          <h2 class="text-white text-3xl md:text-5xl font-black tracking-tight max-w-3xl font-display">Ready to Transform Your {cityName} Home?</h2>
-          <p class="text-blue-100 text-lg max-w-2xl">Schedule your complimentary consultation today and let's start designing your dream space.</p>
-          <button class="mt-4 flex min-w-[220px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-8 bg-secondary hover:bg-orange-600 shadow-xl text-white text-lg font-bold transition-all hover:scale-105">
+        <div
+          class="w-full max-w-[1280px] px-4 md:px-10 flex flex-col items-center text-center gap-6"
+        >
+          <h2
+            class="text-white text-3xl md:text-5xl font-black tracking-tight max-w-3xl font-display"
+          >
+            Ready to Transform Your {cityName} Home?
+          </h2>
+          <p class="text-blue-100 text-lg max-w-2xl">
+            Schedule your complimentary consultation today and let's start
+            designing your dream space.
+          </p>
+          <button
+            class="mt-4 flex min-w-[220px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-8 bg-secondary hover:bg-orange-600 shadow-xl text-white text-lg font-bold transition-all hover:scale-105"
+          >
             Get Your Free Estimate
           </button>
         </div>
       </div>
     </div>
-
   </div>
 </MainLayout>

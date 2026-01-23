@@ -14,7 +14,6 @@ const {
     sticky = true,
     secondaryColor = "#0d7ff2", // Default Primary Blue
     emergencyBtnText = "(786) 602-2217",
-    logoText = "Paramount",
 } = Astro.props;
 
 import Navigation from "./Navigation.astro";
@@ -26,11 +25,6 @@ const themeClasses = {
     transparent:
         "bg-transparent border-b border-white/10 text-white backdrop-blur-md",
 };
-
-const textColorClass =
-    theme === "light"
-        ? "text-slate-700 hover:text-[var(--secondary-color)]"
-        : "text-slate-300 hover:text-white";
 ---
 
 <header

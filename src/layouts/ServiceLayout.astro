@@ -15,7 +15,6 @@ interface Props {
 const {
     title,
     description,
-    themeColor = "blue",
     heroImage,
     heroImagePosition = "object-center",
     schema,
@@ -28,14 +27,26 @@ const {
         class="relative w-full h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden"
     >
         <div class="absolute inset-0 bg-black/50 z-10 transition-colors"></div>
-        <Image
-            src={heroImage}
-            alt={title}
-            class={`absolute inset-0 w-full h-full object-cover ${heroImagePosition}`}
-            quality={80}
-            format="webp"
-            inferSize={typeof heroImage === "string"}
-        />
+        {
+            typeof heroImage === "string" ? (
+                <Image
+                    src={heroImage}
+                    alt={title}
+                    class={`absolute inset-0 w-full h-full object-cover ${heroImagePosition}`}
+                    quality={80}
+                    format="webp"
+                    inferSize={true}
+                />
+            ) : (
+                <Image
+                    src={heroImage}
+                    alt={title}
+                    class={`absolute inset-0 w-full h-full object-cover ${heroImagePosition}`}
+                    quality={80}
+                    format="webp"
+                />
+            )
+        }
 
         <div
             class="relative z-20 flex flex-col items-center justify-center px-4 text-center max-w-4xl mx-auto"
