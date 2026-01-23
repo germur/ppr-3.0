@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from "../../../layouts/ServiceLayout.astro";
 import { generateServiceSchema } from "../../../utils/schemaGenerator";
+import debrisHero from "../../../assets/images/restoration/storm-damage/debris-removal-hero.webp";
 
 const pageTitle = "Storm Debris Removal Help When You Need It Most";
 const pageDescription =
@@ -8,7 +9,7 @@ const pageDescription =
 
 const schema = generateServiceSchema({
     url: "https://paramountpropertyrestoration.com/restoration/storm-damage/debris-removal/",
-    image: "/assets/images/restoration/storm-damage/debris-removal-hero.webp",
+    image: debrisHero.src,
     description: pageDescription,
     serviceType: "Debris Removal",
     services: [
@@ -22,7 +23,7 @@ const schema = generateServiceSchema({
 <ServiceLayout
     title={pageTitle}
     description={pageDescription}
-    heroImage="/assets/images/restoration/storm-damage/debris-removal-hero.webp"
+    heroImage={debrisHero}
     themeColor="orange"
     schema={schema}
 >

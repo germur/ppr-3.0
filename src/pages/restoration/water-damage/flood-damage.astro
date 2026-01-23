@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from "../../../layouts/ServiceLayout.astro";
 import { generateServiceSchema } from "../../../utils/schemaGenerator";
+import floodHero from "../../../assets/images/restoration/water-damage/flood-damage-hero.webp";
 
 const pageTitle = "Emergency Flood Damage Cleanup & Sanitization in Florida";
 const pageDescription =
@@ -8,7 +9,7 @@ const pageDescription =
 
 const schema = generateServiceSchema({
     url: "https://paramountpropertyrestoration.com/restoration/water-damage/flood-damage/",
-    image: "/assets/images/restoration/water-damage/flood-damage-hero.webp",
+    image: floodHero.src,
     description: pageDescription,
     serviceType: "Flood Damage Restoration",
     services: [
@@ -22,7 +23,7 @@ const schema = generateServiceSchema({
 <ServiceLayout
     title={pageTitle}
     description={pageDescription}
-    heroImage="/assets/images/restoration/water-damage/flood-damage-hero.webp"
+    heroImage={floodHero}
     themeColor="orange"
     schema={schema}
 >

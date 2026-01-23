@@ -2,6 +2,7 @@
 import ServiceLayout from "../../../layouts/ServiceLayout.astro";
 import FAQAccordion from "../../../components/ui/FAQAccordion";
 import { stormDamageFAQs } from "../../../data/restoration-faqs";
+import stormHero from "../../../assets/images/restoration/storm-damage/storm-damage-hero-main.webp";
 
 const pageTitle = "Hurricane Damage Help When You Need It Most";
 const pageDescription =
@@ -18,7 +19,7 @@ const schema = {
 <ServiceLayout
     title={pageTitle}
     description={pageDescription}
-    heroImage="/assets/images/restoration/storm-damage/storm-damage-hero-main.webp"
+    heroImage={stormHero}
     themeColor="red"
     schema={schema}
 >
