@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 
 // --- Configuration ---
-const NEW_REPO_PATH = '/Users/rogermurillo/.gemini/antigravity/scratch/ppr-3-0';
+const NEW_REPO_PATH = process.cwd();
 const OLD_DATA_LOCATIONS = [
     // Hardcoding legacy data here for simplicity and self-containment 
     // based on previous analysis of old-ppr-repo/src/data/locations.js and restoration.js

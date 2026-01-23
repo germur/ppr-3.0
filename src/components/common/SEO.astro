@@ -6,188 +6,204 @@ export interface Props {
   canonical?: string;
   noindex?: boolean;
   // Variables para Schema Dinámico
-  // Variables para Schema Dinámico
-  schemaType?: 'LocalBusiness' | 'Service' | 'Article' | 'FAQPage' | 'EmergencyService' | 'CleaningService';
+  schemaType?:
+    | "LocalBusiness"
+    | "Service"
+    | "Article"
+    | "FAQPage"
+    | "EmergencyService"
+    | "CleaningService";
   city?: string; // Para pSEO (ej: "Orlando")
   serviceName?: string; // Para pSEO (ej: "Water Damage Restoration")
   publishDate?: string; // Para Blogs
   authorName?: string; // Para Blogs
   faqData?: { question: string; answer: string }[]; // Para FAQs
   customSchema?: any; // Fallback for custom injections
-  type?: 'LocalBusiness' | 'Service' | 'Article' | 'FAQPage' | 'EmergencyService' | 'CleaningService'; // Backwards compatibility alias for schemaType
+  type?:
+    | "LocalBusiness"
+    | "Service"
+    | "Article"
+    | "FAQPage"
+    | "EmergencyService"
+    | "CleaningService"; // Backwards compatibility alias for schemaType
 }
 
 const {
   title,
   description,
-  image = '/ppr-logo.png', // Corrected default image path
+  image = "/ppr-logo.png",
   canonical,
   noindex = false,
-  schemaType = 'LocalBusiness',
+  schemaType = "LocalBusiness",
   city,
   serviceName,
   publishDate,
-  authorName = 'Paramount Property Restoration Team',
+  authorName = "Paramount Property Restoration Team",
   faqData = [],
   customSchema,
-  type
+  type,
 } = Astro.props;
 
 // Map legacy 'type' prop to schemaType if schemaType is default/unset but type is present
-// Note: schemaType default is 'LocalBusiness', so we check if type is provided to override
 const effectiveSchemaType = type || schemaType;
 
 // 1. Construcción de URLs Absolutas (Crítico para SEO y OpenGraph)
-const siteURL = Astro.site ? Astro.site.origin : 'https://paramountpropertyrestoration.com';
+const siteURL = Astro.site
+  ? Astro.site.origin
+  : "https://paramountpropertyrestoration.com";
 const canonicalURL = canonical || new URL(Astro.url.pathname, siteURL).href;
 const absoluteImage = new URL(image, siteURL).href;
 
 // 2. Base del Schema: Organización Global (Siempre presente para E-E-A-T)
 const organizationSchema = {
-  "@type": "GeneralContractor", // Más específico que LocalBusiness
+  "@type": "GeneralContractor",
   "@id": `${siteURL}/#organization`,
-  "name": "Paramount Property Restoration",
-  "url": siteURL,
-  "logo": `${siteURL}/ppr-logo.png`, // Corrected path
-  "image": `${siteURL}/ppr-logo.png`, // Corrected path
-  "telephone": "+1-786-602-2217",
-  "address": {
+  name: "Paramount Property Restoration",
+  url: siteURL,
+  logo: `${siteURL}/ppr-logo.png`,
+  image: `${siteURL}/ppr-logo.png`,
+  telephone: "+1-786-602-2217",
+  address: {
     "@type": "PostalAddress",
-    "streetAddress": "10890 NW 17th St Suite 138",
-    "addressLocality": "Miami",
-    "addressRegion": "FL",
-    "postalCode": "33172",
-    "addressCountry": "US"
+    streetAddress: "10890 NW 17th St Suite 138",
+    addressLocality: "Miami",
+    addressRegion: "FL",
+    postalCode: "33172",
+    addressCountry: "US",
   },
-  "geo": {
+  geo: {
     "@type": "GeoCoordinates",
-    "latitude": 25.790654, 
-    "longitude": -80.370327
+    latitude: 25.790654,
+    longitude: -80.370327,
   },
-  "license": "CGC #1529606", // Crítico para confianza en construcción
-  "sameAs": [
+  license: "CGC #1529606",
+  sameAs: [
     "https://www.facebook.com/paramountpropertyrestoration",
-    "https://www.linkedin.com/company/paramount-property-restoration"
-  ]
+    "https://www.linkedin.com/company/paramount-property-restoration",
+  ],
 };
 
 // 3. Generación Dinámica del Schema de la Página
 let mainEntitySchema;
 
-if (effectiveSchemaType === 'Service' && serviceName) {
+if (effectiveSchemaType === "Service" && serviceName) {
   // Schema para Páginas de Servicio y pSEO (Ciudades)
   mainEntitySchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": title,
-    "provider": { "@id": `${siteURL}/#organization` },
-    "areaServed": city ? {
-      "@type": "City",
-      "name": city,
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "FL",
-        "addressCountry": "US"
-      }
-    } : {
-      "@type": "State",
-      "name": "Florida"
-    },
-    "description": description,
-    "hasOfferCatalog": {
+    name: title,
+    provider: { "@id": `${siteURL}/#organization` },
+    areaServed: city
+      ? {
+          "@type": "City",
+          name: city,
+          address: {
+            "@type": "PostalAddress",
+            addressRegion: "FL",
+            addressCountry: "US",
+          },
+        }
+      : {
+          "@type": "State",
+          name: "Florida",
+        },
+    description: description,
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": serviceName,
-      "itemListElement": [
+      name: serviceName,
+      itemListElement: [
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": `${serviceName} in ${city || 'Florida'}`
-          }
-        }
-      ]
-    }
+            name: `${serviceName} in ${city || "Florida"}`,
+          },
+        },
+      ],
+    },
   };
-} else if (effectiveSchemaType === 'Article') {
+} else if (effectiveSchemaType === "Article") {
   // Schema para Blog (Potencia E-E-A-T y "Article" Rich Results)
   mainEntitySchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": title,
-    "image": absoluteImage,
-    "author": {
+    headline: title,
+    image: absoluteImage,
+    author: {
       "@type": "Person",
-      "name": authorName
+      name: authorName,
     },
-    "publisher": { "@id": `${siteURL}/#organization` },
-    "datePublished": publishDate,
-    "description": description
+    publisher: { "@id": `${siteURL}/#organization` },
+    datePublished: publishDate,
+    description: description,
   };
 } else {
-  // Fallback a LocalBusiness (Home y páginas generales)
+  // Fallback a LocalBusiness
   mainEntitySchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${siteURL}/#organization`,
-    "name": title,
-    "description": description
+    name: title,
+    description: description,
   };
 }
 
-// 4. Schema de Breadcrumbs (Migas de Pan) - Vital para Jerarquía y UX
-// Basic implementation - can be enhanced to parsing URL segments dynamically if needed
+// 4. Schema de Breadcrumbs (Migas de Pan)
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [
+  itemListElement: [
     {
       "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": siteURL
+      position: 1,
+      name: "Home",
+      item: siteURL,
     },
     {
       "@type": "ListItem",
-      "position": 2,
-      "name": title,
-      "item": canonicalURL
-    }
-  ]
+      position: 2,
+      name: title,
+      item: canonicalURL,
+    },
+  ],
 };
 
-// 5. Schema de FAQ (Si hay datos)
+// 5. Schema de FAQ
 let faqSchema = null;
 if (faqData.length > 0) {
   faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqData.map(item => ({
+    mainEntity: faqData.map((item) => ({
       "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
+      name: item.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": item.answer
-      }
-    }))
+        text: item.answer,
+      },
+    })),
   };
 }
 ---
 
-<!-- Global Metadata -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/png" href="/ppr-icon.png" />
 
-<!-- SEO Tags Principales -->
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalURL} />
 
-<!-- Control de Robots -->
 {noindex && <meta name="robots" content="noindex, nofollow" />}
-{!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+{
+  !noindex && (
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+  )
+}
 
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
@@ -196,32 +212,49 @@ if (faqData.length > 0) {
 <meta property="og:site_name" content="Paramount Property Restoration" />
 <meta property="og:locale" content="en_US" />
 
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={absoluteImage} />
 
-<!-- Inyección de JSON-LD Schemas -->
-<!-- 1. Organization Global -->
-<script is:inline type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  ...organizationSchema
-})} />
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    ...organizationSchema,
+  })}
+/>
 
-<!-- 2. Main Entity (Service/Article) -->
-<script is:inline type="application/ld+json" set:html={JSON.stringify(mainEntitySchema)} />
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(mainEntitySchema)}
+/>
 
-<!-- 3. Breadcrumbs -->
-<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(breadcrumbSchema)}
+/>
 
-<!-- 4. FAQ (Condicional) -->
-{faqSchema && (
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-)}
+{
+  faqSchema && (
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(faqSchema)}
+    />
+  )
+}
 
-<!-- 5. Custom Schema (Fallback) -->
-{customSchema && (
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(customSchema)} />
-)}
+{
+  customSchema && (
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(customSchema)}
+    />
+  )
+}

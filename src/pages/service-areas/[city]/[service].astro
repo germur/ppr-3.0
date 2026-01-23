@@ -1,76 +1,110 @@
 ---
-import { getCollection } from 'astro:content';
-import MainLayout from '../../../layouts/MainLayout.astro';
-import RemodelingPage from '../../../components/pages/RemodelingPage.astro';
+import { getCollection } from "astro:content";
+import MainLayout from "../../../layouts/MainLayout.astro";
+import RemodelingPage from "../../../components/pages/RemodelingPage.astro";
 
-
-import WaterTemplate from '../../../components/templates/WaterTemplate.astro';
-import FireTemplate from '../../../components/templates/FireTemplate.astro';
-import MoldTemplate from '../../../components/templates/MoldTemplate.astro';
-import StormTemplate from '../../../components/templates/StormTemplate.astro';
-import '../../../styles/global.css';
+import WaterTemplate from "../../../components/templates/WaterTemplate.astro";
+import FireTemplate from "../../../components/templates/FireTemplate.astro";
+import MoldTemplate from "../../../components/templates/MoldTemplate.astro";
+import StormTemplate from "../../../components/templates/StormTemplate.astro";
+import "../../../styles/global.css";
 
 export async function getStaticPaths() {
-  const cities = await getCollection('cities');
-  
+  const cities = await getCollection("cities");
   const services = [
-    { slug: 'water-damage-restoration', type: 'restoration', name: 'Water Damage Restoration' },
-    { slug: 'fire-damage-restoration', type: 'restoration', name: 'Fire Damage Restoration' },
-    { slug: 'mold-remediation', type: 'restoration', name: 'Mold Remediation' },
-    { slug: 'storm-damage-repair', type: 'restoration', name: 'Storm Damage Repair' },
-    { slug: 'kitchen-remodeling', type: 'remodeling', name: 'Kitchen Remodeling' },
-    { slug: 'bathroom-remodeling', type: 'remodeling', name: 'Bathroom Remodeling' },
-    { slug: 'commercial-renovation', type: 'commercial', name: 'Commercial Renovation' }
+    {
+      slug: "water-damage-restoration",
+      type: "restoration",
+      name: "Water Damage Restoration",
+    },
+    {
+      slug: "fire-damage-restoration",
+      type: "restoration",
+      name: "Fire Damage Restoration",
+    },
+    { slug: "mold-remediation", type: "restoration", name: "Mold Remediation" },
+    {
+      slug: "storm-damage-repair",
+      type: "restoration",
+      name: "Storm Damage Repair",
+    },
+    {
+      slug: "kitchen-remodeling",
+      type: "remodeling",
+      name: "Kitchen Remodeling",
+    },
+    {
+      slug: "bathroom-remodeling",
+      type: "remodeling",
+      name: "Bathroom Remodeling",
+    },
+    {
+      slug: "commercial-renovation",
+      type: "commercial",
+      name: "Commercial Renovation",
+    },
   ] as const;
 
-  return cities.flatMap(city => {
-    return services.map(service => ({
-      params: { 
+  return cities.flatMap((city) => {
+    return services.map((service) => ({
+      params: {
         city: city.slug,
-        service: service.slug 
+        service: service.slug,
       },
       props: { city, service },
     }));
   });
 }
 
-import { cities as cityDataList } from '../../../data/service-areas';
+import { cities as cityDataList } from "../../../data/service-areas";
 const { city, service } = Astro.props;
 const { name: cityName, restoration_pain } = city.data;
 
 // Fallback to data file for neighborhoods since Content Collection schema lacks it
-const extendedCity = cityDataList.find(c => c.slug === city.slug);
+const extendedCity = cityDataList.find((c) => c.slug === city.slug);
 const neighborhoods = extendedCity?.neighborhoods || [];
 
-const isRemodeling = service.type === 'remodeling';
+const isRemodeling = service.type === "remodeling";
 ---
 
-{isRemodeling ? (
-  <RemodelingPage city={city} service={service} />
-) : (
-  <MainLayout 
-    title={`${service.name} ${cityName} | Paramount Property Restoration`}
-    description={`Professional ${service.name} services in ${cityName}. 24/7 Emergency Response, Licensed & Insured. ${restoration_pain.substring(0, 100)}...`}
-    city={cityName}
-    serviceName={service.name}
-    schemaType="Service"
-  >
-    {service.slug === 'water-damage-restoration' && <WaterTemplate city={city} />}
-    {service.slug === 'fire-damage-restoration' && <FireTemplate city={city} />}
-    {service.slug === 'mold-remediation' && <MoldTemplate city={city} />}
-    {service.slug === 'storm-damage-repair' && <StormTemplate city={city} />}
-    
-    {/* Neighborhoods SEO Section - Implemented for Longtail "Brickell" Strategy */}
-    {neighborhoods.length > 0 && (
-      <section class="py-12 bg-gray-50 border-t border-gray-200">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Serving All {cityName} Neighborhoods</h3>
+{
+  isRemodeling ? (
+    <RemodelingPage city={city} service={service} />
+  ) : (
+    <MainLayout
+      title={`${service.name} ${cityName} | Paramount Property Restoration`}
+      description={`Professional ${service.name} services in ${cityName}. 24/7 Emergency Response, Licensed & Insured. ${restoration_pain.substring(0, 100)}...`}
+      city={cityName}
+      serviceName={service.name}
+      schemaType="Service"
+    >
+      {service.slug === "water-damage-restoration" && (
+        <WaterTemplate city={city} />
+      )}
+      {service.slug === "fire-damage-restoration" && (
+        <FireTemplate city={city} />
+      )}
+      {service.slug === "mold-remediation" && <MoldTemplate city={city} />}
+      {service.slug === "storm-damage-repair" && <StormTemplate city={city} />}
+
+      {/* Neighborhoods SEO Section - Implemented for Longtail "Brickell" Strategy */}
+      {neighborhoods.length > 0 && (
+        <section class="py-12 bg-gray-50 border-t border-gray-200">
+          <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Serving All {cityName} Neighborhoods
+            </h3>
             <p class="text-gray-700 max-w-3xl mx-auto">
-                We are proud to stand as {cityName}'s leading restoration experts, serving all local communities including <span class="font-semibold">{neighborhoods.join(', ')}</span> and surrounding areas. 
-                Whether you are in {neighborhoods[0]} or near {extendedCity?.landmarks?.[0] || 'downtown'}, our rapid response capability ensures we reach you fast.
+              We are proud to stand as {cityName}'s leading restoration experts,
+              serving all local communities including{" "}
+              <span class="font-semibold">{neighborhoods.join(", ")}</span> and
+              surrounding areas. Whether you are in {neighborhoods[0]} or near{" "}
+              {extendedCity?.landmarks?.[0] || "downtown"}, our rapid response
+              capability ensures we reach you fast.
             </p>
-        </div>
-      </section>
-    )}
-  </MainLayout>
-)}
+          </div>
+        </section>
+      )}
+    </MainLayout>
+  )
+}
