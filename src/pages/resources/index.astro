@@ -1,195 +1,392 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
-import { getCollection } from 'astro:content';
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
 
 // Fetch and sort blog posts for "Latest Insights"
-const posts = await getCollection('blog');
-const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+const posts = await getCollection("blog");
+const sortedPosts = posts
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    .slice(0, 3);
 
 // Page Metadata
-const pageTitle = "Florida Homeowner Resource Center | Paramount Property Restoration";
-const metaDesc = "Your trusted hub for disaster preparedness, home restoration guides, remodeling inspiration, and insurance claims assistance in Florida.";
+const pageTitle =
+    "Florida Homeowner Resource Center | Paramount Property Restoration";
+const metaDesc =
+    "Your trusted hub for disaster preparedness, home restoration guides, remodeling inspiration, and insurance claims assistance in Florida.";
 ---
 
 <MainLayout title={pageTitle} description={metaDesc}>
     <!-- Hero Section -->
-    <div class="relative bg-[#f8f9fa] dark:bg-[#101822] pt-16 pb-12 sm:pt-24 sm:pb-16 lg:pb-20">
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-            <div class="mb-4 inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-900/30 px-3 py-1 text-sm font-medium text-[#136dec] ring-1 ring-inset ring-blue-700/10 dark:ring-blue-700/30">
-                <span class="mr-2 h-1.5 w-1.5 rounded-full bg-[#136dec] animate-pulse"></span> New: 2025 Hurricane Guides
+    <div
+        class="relative bg-[#f8f9fa] dark:bg-[#101822] pt-16 pb-12 sm:pt-24 sm:pb-16 lg:pb-20"
+    >
+        <div
+            class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center"
+        >
+            <div
+                class="mb-4 inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-900/30 px-3 py-1 text-sm font-medium text-[#136dec] ring-1 ring-inset ring-blue-700/10 dark:ring-blue-700/30"
+            >
+                <span
+                    class="mr-2 h-1.5 w-1.5 rounded-full bg-[#136dec] animate-pulse"
+                ></span> New: 2025 Hurricane Guides
             </div>
-            <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-6xl mb-6">
-                Florida Homeowner <span class="text-[#136dec]">Resource Center</span>
+            <h1
+                class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-6xl mb-6"
+            >
+                Florida Homeowner <span class="text-[#136dec]"
+                    >Resource Center</span
+                >
             </h1>
-            <p class="max-w-2xl text-xl text-slate-600 dark:text-slate-400 mb-10">
-                Your trusted hub for disaster preparedness, home restoration guides, remodeling inspiration, and insurance claims assistance.
+            <p
+                class="max-w-2xl text-xl text-slate-600 dark:text-slate-400 mb-10"
+            >
+                Your trusted hub for disaster preparedness, home restoration
+                guides, remodeling inspiration, and insurance claims assistance.
             </p>
-            
+
             <!-- Search Bar -->
             <div class="w-full max-w-2xl relative group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-[#136dec] to-[#f97316] rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                <div class="relative flex items-center bg-white dark:bg-[#1e293b] rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-2">
-                    <div class="flex items-center justify-center pl-4 text-slate-400">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-[#136dec] to-[#f97316] rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"
+                >
+                </div>
+                <div
+                    class="relative flex items-center bg-white dark:bg-[#1e293b] rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-2"
+                >
+                    <div
+                        class="flex items-center justify-center pl-4 text-slate-400"
+                    >
                         <span class="material-symbols-outlined">search</span>
                     </div>
-                    <input class="w-full bg-transparent border-0 focus:ring-0 text-slate-900 dark:text-white placeholder:text-slate-400 h-12 text-lg" placeholder="Search for 'Water Damage', 'Kitchen Ideas', or 'Insurance Help'..." type="text"/>
-                    <button class="hidden sm:flex bg-[#136dec] hover:bg-blue-700 text-white rounded-lg px-6 h-10 items-center justify-center font-medium transition-colors">
+                    <input
+                        class="w-full bg-transparent border-0 focus:ring-0 text-slate-900 dark:text-white placeholder:text-slate-400 h-12 text-lg"
+                        placeholder="Search for 'Water Damage', 'Kitchen Ideas', or 'Insurance Help'..."
+                        type="text"
+                    />
+                    <button
+                        class="hidden sm:flex bg-[#136dec] hover:bg-blue-700 text-white rounded-lg px-6 h-10 items-center justify-center font-medium transition-colors"
+                    >
                         Search
                     </button>
                 </div>
             </div>
 
-            <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+            <div
+                class="mt-8 flex flex-wrap justify-center gap-3 text-sm text-slate-500 dark:text-slate-400"
+            >
                 <span>Popular:</span>
-                <a class="underline hover:text-[#136dec]" href="/service-areas/central-florida/orlando/mold-remediation/">Mold Removal</a>
+                <a
+                    class="underline hover:text-[#136dec]"
+                    href="/service-areas/orlando/mold-remediation/"
+                    >Mold Removal</a
+                >
                 <span class="text-slate-300">•</span>
-                <a class="underline hover:text-[#136dec]" href="/remodeling/kitchen/">Kitchen Trends</a>
+                <a
+                    class="underline hover:text-[#136dec]"
+                    href="/remodeling/kitchen/">Kitchen Trends</a
+                >
                 <span class="text-slate-300">•</span>
-                <a class="underline hover:text-[#136dec]" href="/insurance-claims/">Insurance Claims</a>
+                <a
+                    class="underline hover:text-[#136dec]"
+                    href="/insurance-claims/">Insurance Claims</a
+                >
             </div>
         </div>
     </div>
 
     <!-- Navigation by Intent (Bento Grid) -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 auto-rows-[minmax(320px,auto)]">
-            
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 auto-rows-[minmax(320px,auto)]"
+        >
             <!-- Card 1: Disaster Preparedness (Urgent/TOFU) -->
-            <div class="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white dark:bg-[#1e293b] border border-orange-100 dark:border-orange-900/30 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <span class="material-symbols-outlined text-[120px] text-[#f97316]">warning</span>
+            <div
+                class="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white dark:bg-[#1e293b] border border-orange-100 dark:border-orange-900/30 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+                <div
+                    class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+                >
+                    <span
+                        class="material-symbols-outlined text-[120px] text-[#f97316]"
+                        >warning</span
+                    >
                 </div>
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-red-500"></div>
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-red-500"
+                >
+                </div>
                 <div class="p-8 relative z-10 w-full">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="p-2 bg-orange-100 dark:bg-orange-900/50 rounded-lg text-[#f97316]">
+                        <div
+                            class="p-2 bg-orange-100 dark:bg-orange-900/50 rounded-lg text-[#f97316]"
+                        >
                             <span class="material-symbols-outlined">storm</span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Disaster Preparedness</h3>
+                        <h3
+                            class="text-xl font-bold text-slate-900 dark:text-white"
+                        >
+                            Disaster Preparedness
+                        </h3>
                     </div>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6">Stay ahead of the storm. Essential guides for Florida homeowners to protect their property before disaster strikes.</p>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6">
+                        Stay ahead of the storm. Essential guides for Florida
+                        homeowners to protect their property before disaster
+                        strikes.
+                    </p>
                     <ul class="space-y-3 w-full">
                         <li>
-                            <a class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#f97316] font-medium group/link" href="/restoration/storm-damage/">
-                                <span class="material-symbols-outlined text-sm text-[#f97316]">check_circle</span>
+                            <a
+                                class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#f97316] font-medium group/link"
+                                href="/restoration/storm-damage/"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-sm text-[#f97316]"
+                                    >check_circle</span
+                                >
                                 2025 Hurricane Checklist
-                                <span class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto">arrow_forward</span>
+                                <span
+                                    class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto"
+                                    >arrow_forward</span
+                                >
                             </a>
                         </li>
                         <li>
-                            <a class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#f97316] font-medium group/link" href="#">
-                                <span class="material-symbols-outlined text-sm text-[#f97316]">map</span>
+                            <a
+                                class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#f97316] font-medium group/link"
+                                href="#"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-sm text-[#f97316]"
+                                    >map</span
+                                >
                                 Florida Flood Zone Maps
-                                <span class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto">arrow_forward</span>
+                                <span
+                                    class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto"
+                                    >arrow_forward</span
+                                >
                             </a>
                         </li>
                         <li>
-                            <a class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#f97316] font-medium group/link" href="/restoration/storm-damage/">
-                                <span class="material-symbols-outlined text-sm text-[#f97316]">security</span>
+                            <a
+                                class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#f97316] font-medium group/link"
+                                href="/restoration/storm-damage/"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-sm text-[#f97316]"
+                                    >security</span
+                                >
                                 Emergency Board-Up Services
-                                <span class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto">arrow_forward</span>
+                                <span
+                                    class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto"
+                                    >arrow_forward</span
+                                >
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="px-8 pb-8 mt-auto">
-                    <button class="w-full py-2.5 rounded-lg border border-orange-200 dark:border-orange-800 text-[#f97316] hover:bg-orange-50 dark:hover:bg-orange-900/20 font-semibold text-sm transition-colors">
+                    <button
+                        class="w-full py-2.5 rounded-lg border border-orange-200 dark:border-orange-800 text-[#f97316] hover:bg-orange-50 dark:hover:bg-orange-900/20 font-semibold text-sm transition-colors"
+                    >
                         View All Safety Guides
                     </button>
                 </div>
             </div>
 
             <!-- Card 2: Restoration Guides (MOFU) -->
-            <div class="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white dark:bg-[#1e293b] border border-blue-100 dark:border-blue-900/30 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-15 transition-opacity">
-                    <span class="material-symbols-outlined text-[120px] text-[#136dec]">water_drop</span>
+            <div
+                class="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white dark:bg-[#1e293b] border border-blue-100 dark:border-blue-900/30 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+                <div
+                    class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-15 transition-opacity"
+                >
+                    <span
+                        class="material-symbols-outlined text-[120px] text-[#136dec]"
+                        >water_drop</span
+                    >
                 </div>
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-[#136dec]"></div>
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-[#136dec]"
+                >
+                </div>
                 <div class="p-8 relative z-10 w-full">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg text-[#136dec]">
+                        <div
+                            class="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg text-[#136dec]"
+                        >
                             <span class="material-symbols-outlined">build</span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Restoration Guides</h3>
+                        <h3
+                            class="text-xl font-bold text-slate-900 dark:text-white"
+                        >
+                            Restoration Guides
+                        </h3>
                     </div>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6">Expert advice on recovering from water, fire, and mold damage. Know the steps to take immediately.</p>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6">
+                        Expert advice on recovering from water, fire, and mold
+                        damage. Know the steps to take immediately.
+                    </p>
                     <ul class="space-y-3 w-full">
                         <li>
-                            <a class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#136dec] font-medium group/link" href="/restoration/water-damage/">
-                                <span class="material-symbols-outlined text-sm text-[#136dec]">schedule</span>
+                            <a
+                                class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#136dec] font-medium group/link"
+                                href="/restoration/water-damage/"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-sm text-[#136dec]"
+                                    >schedule</span
+                                >
                                 Water Damage Timeline
-                                <span class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto">arrow_forward</span>
+                                <span
+                                    class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto"
+                                    >arrow_forward</span
+                                >
                             </a>
                         </li>
                         <li>
-                            <a class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#136dec] font-medium group/link" href="/restoration/mold-remediation/">
-                                <span class="material-symbols-outlined text-sm text-[#136dec]">science</span>
+                            <a
+                                class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#136dec] font-medium group/link"
+                                href="/restoration/mold-remediation/"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-sm text-[#136dec]"
+                                    >science</span
+                                >
                                 Mold Remediation 101
-                                <span class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto">arrow_forward</span>
+                                <span
+                                    class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto"
+                                    >arrow_forward</span
+                                >
                             </a>
                         </li>
                         <li>
-                            <a class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#136dec] font-medium group/link" href="/restoration/fire-damage/">
-                                <span class="material-symbols-outlined text-sm text-[#136dec]">local_fire_department</span>
+                            <a
+                                class="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-[#136dec] font-medium group/link"
+                                href="/restoration/fire-damage/"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-sm text-[#136dec]"
+                                    >local_fire_department</span
+                                >
                                 Fire Damage Cleanup Steps
-                                <span class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto">arrow_forward</span>
+                                <span
+                                    class="material-symbols-outlined text-sm opacity-0 group-hover/link:opacity-100 transition-opacity ml-auto"
+                                    >arrow_forward</span
+                                >
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="px-8 pb-8 mt-auto">
-                    <button class="w-full py-2.5 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-[#136dec] hover:bg-blue-100 dark:hover:bg-blue-900/40 font-semibold text-sm transition-colors">
+                    <button
+                        class="w-full py-2.5 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-[#136dec] hover:bg-blue-100 dark:hover:bg-blue-900/40 font-semibold text-sm transition-colors"
+                    >
                         Access Restoration Hub
                     </button>
                 </div>
             </div>
 
             <!-- Card 3: Home Remodeling (Visual/BOFU) -->
-            <div class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-slate-900 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 min-h-[320px]">
+            <div
+                class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-slate-900 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 min-h-[320px]"
+            >
                 <!-- Background Image -->
-                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern luxury kitchen with island and pendant lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoDN58lksB60q_8-k9G3rCrf6aF140OtGtH1tSjqR8xLcg7LhR_dHKDNplhwZFvP5KHfxZcrY3yfSZE-_ifdfVCCpyWeDVVEEBctXG34yl_pVb29aWX4LfPhYwMb5mVCX_T3aFQ-bTwH--6grMs1ngZGc1sGlK_dgpZmRz8Qur26CJ3-OqHcqsp97-sDzK0X_dAGxENTmWiS7ZS7yE_rsdMrhWPcaHMRZxt4H9J0kMdA7PxW6-lU3mLvBgrNYt_fZGoiwV-_YteqKj');">
+                <div
+                    class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    data-alt="Modern luxury kitchen with island and pendant lighting"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoDN58lksB60q_8-k9G3rCrf6aF140OtGtH1tSjqR8xLcg7LhR_dHKDNplhwZFvP5KHfxZcrY3yfSZE-_ifdfVCCpyWeDVVEEBctXG34yl_pVb29aWX4LfPhYwMb5mVCX_T3aFQ-bTwH--6grMs1ngZGc1sGlK_dgpZmRz8Qur26CJ3-OqHcqsp97-sDzK0X_dAGxENTmWiS7ZS7yE_rsdMrhWPcaHMRZxt4H9J0kMdA7PxW6-lU3mLvBgrNYt_fZGoiwV-_YteqKj');"
+                >
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"
+                >
+                </div>
                 <div class="p-8 relative z-10 text-white">
                     <div class="flex items-center gap-3 mb-2">
-                        <span class="material-symbols-outlined text-orange-400">architecture</span>
+                        <span class="material-symbols-outlined text-orange-400"
+                            >architecture</span
+                        >
                         <h3 class="text-xl font-bold">Remodeling & Design</h3>
                     </div>
-                    <p class="text-slate-200 mb-4 text-sm">Transform your house into a dream home with our latest design trends.</p>
+                    <p class="text-slate-200 mb-4 text-sm">
+                        Transform your house into a dream home with our latest
+                        design trends.
+                    </p>
                     <div class="flex flex-wrap gap-2">
-                        <a class="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium hover:bg-white/20 transition-colors" href="/remodeling/kitchen/">2025 Kitchen Trends</a>
-                        <a class="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium hover:bg-white/20 transition-colors" href="/remodeling/bathroom/">Bathroom ROI</a>
-                        <a class="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium hover:bg-white/20 transition-colors" href="/remodeling/">Flooring Ideas</a>
+                        <a
+                            class="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium hover:bg-white/20 transition-colors"
+                            href="/remodeling/kitchen/">2025 Kitchen Trends</a
+                        >
+                        <a
+                            class="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium hover:bg-white/20 transition-colors"
+                            href="/remodeling/bathroom/">Bathroom ROI</a
+                        >
+                        <a
+                            class="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium hover:bg-white/20 transition-colors"
+                            href="/remodeling/">Flooring Ideas</a
+                        >
                     </div>
                 </div>
             </div>
 
             <!-- Card 4: Cost & Insurance (Finance/BOFU) -->
-            <div class="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div class="absolute top-0 left-0 w-1 h-full bg-slate-300 dark:bg-slate-600"></div>
+            <div
+                class="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+                <div
+                    class="absolute top-0 left-0 w-1 h-full bg-slate-300 dark:bg-slate-600"
+                >
+                </div>
                 <div class="p-8 relative z-10 flex-1 flex flex-col">
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex items-center gap-3">
-                            <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300">
-                                <span class="material-symbols-outlined">calculate</span>
+                            <div
+                                class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300"
+                            >
+                                <span class="material-symbols-outlined"
+                                    >calculate</span
+                                >
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Cost & Insurance Center</h3>
+                            <h3
+                                class="text-xl font-bold text-slate-900 dark:text-white"
+                            >
+                                Cost & Insurance Center
+                            </h3>
                         </div>
                     </div>
                     <div class="flex-1 space-y-4">
-                        <a class="block p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-100 dark:border-slate-700" href="/contact/">
-                            <h4 class="font-bold text-slate-900 dark:text-white mb-1 flex items-center justify-between">
+                        <a
+                            class="block p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-100 dark:border-slate-700"
+                            href="/contact/"
+                        >
+                            <h4
+                                class="font-bold text-slate-900 dark:text-white mb-1 flex items-center justify-between"
+                            >
                                 Restoration Cost Guide
-                                <span class="material-symbols-outlined text-sm">chevron_right</span>
+                                <span class="material-symbols-outlined text-sm"
+                                    >chevron_right</span
+                                >
                             </h4>
-                            <p class="text-sm text-slate-500">Estimates for water, fire, and mold repair in Florida.</p>
+                            <p class="text-sm text-slate-500">
+                                Estimates for water, fire, and mold repair in
+                                Florida.
+                            </p>
                         </a>
-                        <a class="block p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-100 dark:border-slate-700" href="/insurance-claims/">
-                            <h4 class="font-bold text-slate-900 dark:text-white mb-1 flex items-center justify-between">
+                        <a
+                            class="block p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-100 dark:border-slate-700"
+                            href="/insurance-claims/"
+                        >
+                            <h4
+                                class="font-bold text-slate-900 dark:text-white mb-1 flex items-center justify-between"
+                            >
                                 Insurance Claim Helper
-                                <span class="material-symbols-outlined text-sm">chevron_right</span>
+                                <span class="material-symbols-outlined text-sm"
+                                    >chevron_right</span
+                                >
                             </h4>
-                            <p class="text-sm text-slate-500">How to file correctly and get max coverage.</p>
+                            <p class="text-sm text-slate-500">
+                                How to file correctly and get max coverage.
+                            </p>
                         </a>
                     </div>
                 </div>
@@ -199,23 +396,54 @@ const metaDesc = "Your trusted hub for disaster preparedness, home restoration g
 
     <!-- Featured Tool / Lead Magnet -->
     <div class="bg-slate-900 text-white py-16 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+        <div
+            class="absolute inset-0 opacity-20"
+            style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"
+        >
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-[#136dec]/20 border border-[#136dec]/30 backdrop-blur-md rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div
+                class="bg-[#136dec]/20 border border-[#136dec]/30 backdrop-blur-md rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8"
+            >
                 <div class="flex-1 text-center md:text-left">
-                    <span class="inline-block px-3 py-1 bg-[#f97316] text-white text-xs font-bold uppercase tracking-wider rounded-full mb-4">Free Download</span>
-                    <h2 class="text-3xl font-bold mb-3">2025 Florida Hurricane Prep Checklist</h2>
-                    <p class="text-blue-100 text-lg">Don't wait for the warning siren. Get the ultimate guide to securing your home and family, completely free.</p>
+                    <span
+                        class="inline-block px-3 py-1 bg-[#f97316] text-white text-xs font-bold uppercase tracking-wider rounded-full mb-4"
+                        >Free Download</span
+                    >
+                    <h2 class="text-3xl font-bold mb-3">
+                        2025 Florida Hurricane Prep Checklist
+                    </h2>
+                    <p class="text-blue-100 text-lg">
+                        Don't wait for the warning siren. Get the ultimate guide
+                        to securing your home and family, completely free.
+                    </p>
                 </div>
                 <div class="w-full md:w-auto max-w-md">
                     <form class="flex flex-col sm:flex-row gap-3">
-                        <label class="sr-only" for="email-address">Email address</label>
-                        <input autocomplete="email" class="min-w-0 flex-auto rounded-lg border-0 bg-white/10 px-3.5 py-3 text-white shadow-sm ring-1 ring-inset ring-white/20 focus:ring-2 focus:ring-inset focus:ring-[#f97316] sm:text-sm sm:leading-6 placeholder:text-gray-400" id="email-address" name="email" placeholder="Enter your email" required="" type="email"/>
-                        <button class="flex-none rounded-lg bg-[#f97316] px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f97316] transition-colors" type="button">
+                        <label class="sr-only" for="email-address"
+                            >Email address</label
+                        >
+                        <input
+                            autocomplete="email"
+                            class="min-w-0 flex-auto rounded-lg border-0 bg-white/10 px-3.5 py-3 text-white shadow-sm ring-1 ring-inset ring-white/20 focus:ring-2 focus:ring-inset focus:ring-[#f97316] sm:text-sm sm:leading-6 placeholder:text-gray-400"
+                            id="email-address"
+                            name="email"
+                            placeholder="Enter your email"
+                            required=""
+                            type="email"
+                        />
+                        <button
+                            class="flex-none rounded-lg bg-[#f97316] px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f97316] transition-colors"
+                            type="button"
+                        >
                             Get the Checklist
                         </button>
                     </form>
-                    <p class="mt-3 text-xs text-blue-200 text-center md:text-left">We respect your privacy. No spam.</p>
+                    <p
+                        class="mt-3 text-xs text-blue-200 text-center md:text-left"
+                    >
+                        We respect your privacy. No spam.
+                    </p>
                 </div>
             </div>
         </div>
@@ -226,62 +454,143 @@ const metaDesc = "Your trusted hub for disaster preparedness, home restoration g
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-end mb-10">
                 <div>
-                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Latest Insights</h2>
-                    <p class="mt-2 text-slate-600 dark:text-slate-400">Expert advice from the field.</p>
+                    <h2
+                        class="text-3xl font-bold text-slate-900 dark:text-white"
+                    >
+                        Latest Insights
+                    </h2>
+                    <p class="mt-2 text-slate-600 dark:text-slate-400">
+                        Expert advice from the field.
+                    </p>
                 </div>
-                <a class="hidden sm:inline-flex items-center text-[#136dec] font-semibold hover:text-blue-700" href="/resources/water-damage/">
+                <a
+                    class="hidden sm:inline-flex items-center text-[#136dec] font-semibold hover:text-blue-700"
+                    href="/resources/water-damage/"
+                >
                     View all articles
-                    <span class="material-symbols-outlined ml-1">arrow_forward</span>
+                    <span class="material-symbols-outlined ml-1"
+                        >arrow_forward</span
+                    >
                 </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {sortedPosts.map(post => (
-                <article class="flex flex-col group cursor-pointer">
-                    <a href={`/resources/${post.data.subcategory}/${post.slug}`} class="block">
-                        <div class="relative overflow-hidden rounded-xl mb-4 aspect-[4/3]">
-                            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors z-10"></div>
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt={post.data.title} style={`background-image: url('${post.data.image || "https://placehold.co/600x400/101822/FFF"}');`}>
+                {
+                    sortedPosts.map((post) => (
+                        <article class="flex flex-col group cursor-pointer">
+                            <a
+                                href={`/resources/${post.data.subcategory}/${post.slug}`}
+                                class="block"
+                            >
+                                <div class="relative overflow-hidden rounded-xl mb-4 aspect-[4/3]">
+                                    <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors z-10" />
+                                    <div
+                                        class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                        data-alt={post.data.title}
+                                        style={`background-image: url('${post.data.image || "https://placehold.co/600x400/101822/FFF"}');`}
+                                    />
+                                </div>
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="text-xs font-bold text-[#136dec] uppercase tracking-wider">
+                                        {post.data.category}
+                                    </span>
+                                    <span class="text-xs text-slate-400">
+                                        •
+                                    </span>
+                                    <span class="text-xs text-slate-500">
+                                        {post.data.pubDate.toLocaleDateString()}
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#136dec] transition-colors">
+                                    {post.data.title}
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4">
+                                    {post.data.description}
+                                </p>
+                            </a>
+                            <div class="mt-auto flex items-center gap-2">
+                                <div class="size-6 rounded-full bg-slate-200 overflow-hidden">
+                                    <img
+                                        alt={post.data.author || "Author"}
+                                        class="w-full h-full object-cover"
+                                        src={
+                                            post.data.authorImage ||
+                                            "https://placehold.co/100x100?text=A"
+                                        }
+                                    />
+                                </div>
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300">
+                                    {post.data.author || "Paramount Team"}
+                                </span>
                             </div>
-                        </div>
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-xs font-bold text-[#136dec] uppercase tracking-wider">{post.data.category}</span>
-                            <span class="text-xs text-slate-400">•</span>
-                            <span class="text-xs text-slate-500">{post.data.pubDate.toLocaleDateString()}</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#136dec] transition-colors">
-                            {post.data.title}
-                        </h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4">
-                            {post.data.description}
-                        </p>
-                    </a>
-                    <div class="mt-auto flex items-center gap-2">
-                        <div class="size-6 rounded-full bg-slate-200 overflow-hidden">
-                            <img alt={post.data.author || "Author"} class="w-full h-full object-cover" src={post.data.authorImage || "https://placehold.co/100x100?text=A"} />
-                        </div>
-                        <span class="text-sm font-medium text-slate-700 dark:text-slate-300">{post.data.author || "Paramount Team"}</span>
-                    </div>
-                </article>
-                ))}
+                        </article>
+                    ))
+                }
             </div>
         </div>
     </div>
 
     <!-- SEO Footer: Serving Your Community -->
-    <div class="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 py-12">
+    <div
+        class="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 py-12"
+    >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">Serving Your Community</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-4 gap-x-8">
-                <a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline" href="/service-areas/south-florida/miami/water-damage-restoration/">Restoration in Miami</a>
-                <a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline" href="/service-areas/tampa-bay/tampa/water-damage-restoration/">Water Damage Tampa</a>
-                <a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline" href="/service-areas/central-florida/orlando/mold-remediation/">Mold Removal Orlando</a>
-                <a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline" href="#">Fire Repair Jacksonville</a>
-                <a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline" href="/service-areas/south-florida/fort-lauderdale/water-damage-restoration/">Restoration Fort Lauderdale</a>
-                <a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline" href="/service-areas/southwest-florida/naples/water-damage-restoration/">Naples Disaster Recovery</a>
-                <a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline" href="/service-areas/southwest-florida/sarasota/water-damage-restoration/">Sarasota Water Cleanup</a>
-                <a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline" href="/service-areas/south-florida/west-palm-beach/kitchen-remodeling/">West Palm Beach Remodeling</a>
-                <a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline" href="/service-areas/tampa-bay/clearwater/water-damage-restoration/">Clearwater Restoration</a>
-                <a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline" href="/service-areas/south-florida/boca-raton/mold-remediation/">Boca Raton Mold Services</a>
+            <h3
+                class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6"
+            >
+                Serving Your Community
+            </h3>
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-4 gap-x-8"
+            >
+                <a
+                    class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline"
+                    href="/service-areas/miami/water-damage-restoration/"
+                    >Restoration in Miami</a
+                >
+                <a
+                    class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline"
+                    href="/service-areas/tampa/water-damage-restoration/"
+                    >Water Damage Tampa</a
+                >
+                <a
+                    class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline"
+                    href="/service-areas/orlando/mold-remediation/"
+                    >Mold Removal Orlando</a
+                >
+                <a
+                    class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline"
+                    href="#">Fire Repair Jacksonville</a
+                >
+                <a
+                    class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline"
+                    href="/service-areas/fort-lauderdale/water-damage-restoration/"
+                    >Restoration Fort Lauderdale</a
+                >
+                <a
+                    class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline"
+                    href="/service-areas/naples/water-damage-restoration/"
+                    >Naples Disaster Recovery</a
+                >
+                <a
+                    class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline"
+                    href="/service-areas/sarasota/water-damage-restoration/"
+                    >Sarasota Water Cleanup</a
+                >
+                <a
+                    class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline"
+                    href="/service-areas/west-palm-beach/kitchen-remodeling/"
+                    >West Palm Beach Remodeling</a
+                >
+                <a
+                    class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline"
+                    href="/service-areas/clearwater/water-damage-restoration/"
+                    >Clearwater Restoration</a
+                >
+                <a
+                    class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#136dec] hover:underline"
+                    href="/service-areas/boca-raton/mold-remediation/"
+                    >Boca Raton Mold Services</a
+                >
             </div>
         </div>
     </div>

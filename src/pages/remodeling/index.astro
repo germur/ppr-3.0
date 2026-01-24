@@ -1,48 +1,54 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
+import MainLayout from "../../layouts/MainLayout.astro";
 
-const pageTitle = "Premier General Contractor & Home Remodeling in Florida | Paramount";
-const metaDesc = "Licensed General Contractor (CGC #1529606) specializing in luxury kitchen & bath remodeling, home additions, and commercial renovations across Central & South Florida. Turnkey design-build services.";
+const pageTitle =
+    "Premier General Contractor & Home Remodeling in Florida | Paramount";
+const metaDesc =
+    "Licensed General Contractor (CGC #1529606) specializing in luxury kitchen & bath remodeling, home additions, and commercial renovations across Central & South Florida. Turnkey design-build services.";
 
 const remodelingSchema = {
-  "@context": "https://schema.org",
-  "@type": "GeneralContractor",
-  "name": "Paramount Property Restoration - Remodeling Division",
-  "image": "https://paramountpropertyrestoration.com/images/remodeling-showcase.jpg",
-  "url": "https://paramountpropertyrestoration.com/remodeling/",
-  "priceRange": "$$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressRegion": "FL",
-    "addressCountry": "US"
-  },
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Kitchen Remodeling"
-      }
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    name: "Paramount Property Restoration - Remodeling Division",
+    image: "https://paramountpropertyrestoration.com/images/remodeling-showcase.jpg",
+    url: "https://paramountpropertyrestoration.com/remodeling/",
+    priceRange: "$$$",
+    address: {
+        "@type": "PostalAddress",
+        addressRegion: "FL",
+        addressCountry: "US",
     },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Bathroom Renovation"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Home Additions & ADUs"
-      }
-    }
-  ]
+    makesOffer: [
+        {
+            "@type": "Offer",
+            itemOffered: {
+                "@type": "Service",
+                name: "Kitchen Remodeling",
+            },
+        },
+        {
+            "@type": "Offer",
+            itemOffered: {
+                "@type": "Service",
+                name: "Bathroom Renovation",
+            },
+        },
+        {
+            "@type": "Offer",
+            itemOffered: {
+                "@type": "Service",
+                name: "Home Additions & ADUs",
+            },
+        },
+    ],
 };
 ---
 
-<MainLayout title={pageTitle} description={metaDesc} customSchema={remodelingSchema}>
+<MainLayout
+    title={pageTitle}
+    description={metaDesc}
+    customSchema={remodelingSchema}
+>
     <!-- Local Styles specific to this landing page -->
     <style>
         details > summary {
@@ -52,50 +58,92 @@ const remodelingSchema = {
             display: none;
         }
         .text-shadow {
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         .bento-card-gradient {
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.8) 0%,
+                rgba(0, 0, 0, 0.2) 60%,
+                rgba(0, 0, 0, 0) 100%
+            );
         }
     </style>
 
     <!-- Hero Section -->
     <div class="relative w-full">
-        <div class="flex min-h-[650px] flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-20 text-center" data-alt="Luxury modern open concept kitchen with marble island and floor to ceiling windows overlooking florida palms" style='background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAd_-Tgc2glQ_xzm9AIof1siP0JiuRuMWtsQ3nOkm0GlUbLSSVyfhqPFl0lEPc9A_2JKlC2kbzC4jCZC0bqePgQYO_NVEAysFEKlT1_ItPHQ6TdQmzhRCBiwsOtrITx9nK5-Me8lG3MFvK6_VrR5SvKXaH02WEpdtWBmAUFq1gnq1K6iK0Ftcm0yQGaMDg0I4SI2dLP4m88p7B7X2oBLSYflorJ_rH46KPOSWbOtG3KPv9itdXgl0zUK7SWZ0l81-hkO2h86xVHM2Lh");'>
+        <div
+            class="flex min-h-[650px] flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-20 text-center"
+            data-alt="Luxury modern open concept kitchen with marble island and floor to ceiling windows overlooking florida palms"
+            style='background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAd_-Tgc2glQ_xzm9AIof1siP0JiuRuMWtsQ3nOkm0GlUbLSSVyfhqPFl0lEPc9A_2JKlC2kbzC4jCZC0bqePgQYO_NVEAysFEKlT1_ItPHQ6TdQmzhRCBiwsOtrITx9nK5-Me8lG3MFvK6_VrR5SvKXaH02WEpdtWBmAUFq1gnq1K6iK0Ftcm0yQGaMDg0I4SI2dLP4m88p7B7X2oBLSYflorJ_rH46KPOSWbOtG3KPv9itdXgl0zUK7SWZ0l81-hkO2h86xVHM2Lh");'
+        >
             <div class="flex max-w-[1024px] flex-col gap-6 animate-fade-in-up">
-                <span class="mx-auto w-fit rounded-full bg-[#137fec]/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm border border-white/20">
+                <span
+                    class="mx-auto w-fit rounded-full bg-[#137fec]/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm border border-white/20"
+                >
                     PPR Remodeling Division
                 </span>
-                <h1 class="text-shadow text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl md:text-6xl">
-                    Florida’s Premier General Contractor <br class="hidden md:block"/> & Design-Build Experts
+                <h1
+                    class="text-shadow text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl md:text-6xl"
+                >
+                    Florida’s Premier General Contractor <br
+                        class="hidden md:block"
+                    /> & Design-Build Experts
                 </h1>
-                <h2 class="mx-auto max-w-[800px] text-gray-200 text-lg font-medium leading-relaxed sm:text-xl">
-                    Transforming spaces with precision craftsmanship and certified expertise. From concept to completion, we build resilience and luxury into every square foot.
+                <h2
+                    class="mx-auto max-w-[800px] text-gray-200 text-lg font-medium leading-relaxed sm:text-xl"
+                >
+                    Transforming spaces with precision craftsmanship and
+                    certified expertise. From concept to completion, we build
+                    resilience and luxury into every square foot.
                 </h2>
                 <div class="flex flex-wrap justify-center gap-4 pt-2">
-                    <a href="/contact/" class="flex h-12 min-w-[200px] cursor-pointer items-center justify-center rounded-lg bg-[#f97316] px-6 text-base font-bold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-orange-500/30">
+                    <a
+                        href="/contact/"
+                        class="flex h-12 min-w-[200px] cursor-pointer items-center justify-center rounded-lg bg-[#f97316] px-6 text-base font-bold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-orange-500/30"
+                    >
                         Request Your Free Estimate
                     </a>
-                    <a href="#services" class="flex h-12 min-w-[160px] cursor-pointer items-center justify-center rounded-lg bg-white/10 px-6 text-base font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 border border-white/40">
+                    <a
+                        href="#services"
+                        class="flex h-12 min-w-[160px] cursor-pointer items-center justify-center rounded-lg bg-white/10 px-6 text-base font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 border border-white/40"
+                    >
                         View Our Portfolio
                     </a>
                 </div>
-                <div class="mt-8 flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-white/90 text-sm font-semibold">
+                <div
+                    class="mt-8 flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-white/90 text-sm font-semibold"
+                >
                     <div class="flex items-center gap-2">
-                        <div class="bg-[#137fec]/20 p-1.5 rounded-full backdrop-blur-sm border border-white/20">
-                            <span class="material-symbols-outlined text-[#f97316] text-xl">verified_user</span>
+                        <div
+                            class="bg-[#137fec]/20 p-1.5 rounded-full backdrop-blur-sm border border-white/20"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[#f97316] text-xl"
+                                >verified_user</span
+                            >
                         </div>
                         Licensed & Insured
                     </div>
                     <div class="flex items-center gap-2">
-                        <div class="bg-[#137fec]/20 p-1.5 rounded-full backdrop-blur-sm border border-white/20">
-                            <span class="material-symbols-outlined text-[#f97316] text-xl">workspace_premium</span>
+                        <div
+                            class="bg-[#137fec]/20 p-1.5 rounded-full backdrop-blur-sm border border-white/20"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[#f97316] text-xl"
+                                >workspace_premium</span
+                            >
                         </div>
                         24-Month Warranty
                     </div>
                     <div class="flex items-center gap-2">
-                        <div class="bg-[#137fec]/20 p-1.5 rounded-full backdrop-blur-sm border border-white/20">
-                            <span class="material-symbols-outlined text-[#f97316] text-xl">star</span>
+                        <div
+                            class="bg-[#137fec]/20 p-1.5 rounded-full backdrop-blur-sm border border-white/20"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[#f97316] text-xl"
+                                >star</span
+                            >
                         </div>
                         5-Star Rated Service
                     </div>
@@ -107,130 +155,309 @@ const remodelingSchema = {
     <!-- Introduction Section -->
     <section class="py-16 px-4 md:px-10 bg-white dark:bg-[#1a2632]">
         <div class="mx-auto max-w-[960px] text-center">
-            <h2 class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-tight mb-6">Built for Florida's Unique Environment</h2>
-            <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
-                Florida remodeling requires more than just good design; it demands an understanding of our unique climate. At Paramount Property Restoration (PPR), we differentiate ourselves by integrating <span class="text-[#137fec] font-bold">storm-resilient engineering</span> and <span class="text-[#137fec] font-bold">humidity-control systems</span> into every project. We don't just renovate; we fortify your investment against the elements while delivering the modern, sophisticated aesthetic you desire.
+            <h2
+                class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-tight mb-6"
+            >
+                Built for Florida's Unique Environment
+            </h2>
+            <p
+                class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto"
+            >
+                Florida remodeling requires more than just good design; it
+                demands an understanding of our unique climate. At Paramount
+                Property Restoration (PPR), we differentiate ourselves by
+                integrating <span class="text-[#137fec] font-bold"
+                    >storm-resilient engineering</span
+                > and <span class="text-[#137fec] font-bold"
+                    >humidity-control systems</span
+                > into every project. We don't just renovate; we fortify your investment
+                against the elements while delivering the modern, sophisticated aesthetic
+                you desire.
             </p>
         </div>
     </section>
 
     <!-- Services Bento Grid -->
-    <section class="py-16 px-4 md:px-10 bg-[#f6f7f8] dark:bg-[#101922]" id="services">
+    <section
+        class="py-16 px-4 md:px-10 bg-[#f6f7f8] dark:bg-[#101922]"
+        id="services"
+    >
         <div class="mx-auto max-w-[1200px]">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+            <div
+                class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4"
+            >
                 <div>
-                    <span class="text-[#f97316] font-bold tracking-wider uppercase text-sm">Our Services</span>
-                    <h2 class="text-[#111418] dark:text-white text-3xl md:text-4xl font-bold mt-2">Remodeling Expertise</h2>
-                    <p class="text-gray-500 dark:text-gray-400 mt-2 max-w-xl">Comprehensive design-build services tailored to your vision.</p>
+                    <span
+                        class="text-[#f97316] font-bold tracking-wider uppercase text-sm"
+                        >Our Services</span
+                    >
+                    <h2
+                        class="text-[#111418] dark:text-white text-3xl md:text-4xl font-bold mt-2"
+                    >
+                        Remodeling Expertise
+                    </h2>
+                    <p class="text-gray-500 dark:text-gray-400 mt-2 max-w-xl">
+                        Comprehensive design-build services tailored to your
+                        vision.
+                    </p>
                 </div>
-                <a class="text-[#137fec] font-bold flex items-center gap-1 hover:text-blue-700 transition-colors" href="/remodeling/">
-                    Explore All Services <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                <a
+                    class="text-[#137fec] font-bold flex items-center gap-1 hover:text-blue-700 transition-colors"
+                    href="/remodeling/"
+                >
+                    Explore All Services <span
+                        class="material-symbols-outlined text-sm"
+                        >arrow_forward</span
+                    >
                 </a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 grid-rows-auto gap-4 md:gap-6 h-auto md:min-h-[600px]">
-                
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 grid-rows-auto gap-4 md:gap-6 h-auto md:min-h-[600px]"
+            >
                 <!-- Kitchen - Large Card -->
-                <div id="kitchen" class="group relative md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoMHKfuhInz_ckbXUJfw5kfRnd4v7JTtbs-mK-PoSOpQ66WoEL-FycsJr_KkGhPBEq09ar6NHux0ADLHNRTZM3pP7Plh3XyWqTJAS1znYdLFLAFFE_1QTJdWjKzXu5nQkb-i9tJcoLs0dzyjf5A0sHFIqObfYl_mNm2snbMsv8cmJpucKNBNc53GO30fFqxb8RdojOfLtUYIFaAdU4Ht0AxCNU1e8nWxdKF0TQoEesoq-EJKGXDR9lxPkVTs0xwRqDhO4wB5Ew5MdA");'></div>
+                <div
+                    id="kitchen"
+                    class="group relative md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                >
+                    <div
+                        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoMHKfuhInz_ckbXUJfw5kfRnd4v7JTtbs-mK-PoSOpQ66WoEL-FycsJr_KkGhPBEq09ar6NHux0ADLHNRTZM3pP7Plh3XyWqTJAS1znYdLFLAFFE_1QTJdWjKzXu5nQkb-i9tJcoLs0dzyjf5A0sHFIqObfYl_mNm2snbMsv8cmJpucKNBNc53GO30fFqxb8RdojOfLtUYIFaAdU4Ht0AxCNU1e8nWxdKF0TQoEesoq-EJKGXDR9lxPkVTs0xwRqDhO4wB5Ew5MdA");'
+                    >
+                    </div>
                     <div class="absolute inset-0 bento-card-gradient"></div>
                     <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                        <h3 class="text-2xl font-bold text-white mb-2">Kitchen Remodeling</h3>
-                        <p class="text-gray-200 text-sm md:text-base mb-4 max-w-[90%] line-clamp-2">Custom cabinetry, high-end appliances, and chef-inspired layouts designed for entertaining.</p>
-                        <span class="inline-flex items-center text-[#f97316] font-bold text-sm bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 group-hover:bg-[#f97316] group-hover:text-white transition-colors">
-                            Explore Kitchens <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">
+                            Kitchen Remodeling
+                        </h3>
+                        <p
+                            class="text-gray-200 text-sm md:text-base mb-4 max-w-[90%] line-clamp-2"
+                        >
+                            Custom cabinetry, high-end appliances, and
+                            chef-inspired layouts designed for entertaining.
+                        </p>
+                        <span
+                            class="inline-flex items-center text-[#f97316] font-bold text-sm bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 group-hover:bg-[#f97316] group-hover:text-white transition-colors"
+                        >
+                            Explore Kitchens <span
+                                class="material-symbols-outlined text-sm ml-1"
+                                >arrow_forward</span
+                            >
                         </span>
                     </div>
-                    <a aria-label="View Kitchen Remodeling" class="absolute inset-0 z-10" href="/remodeling/kitchen/"></a>
+                    <a
+                        aria-label="View Kitchen Remodeling"
+                        class="absolute inset-0 z-10"
+                        href="/remodeling/kitchen/"></a>
                 </div>
 
                 <!-- Bathroom - Small Card -->
-                <div id="bathroom" class="group relative md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[250px]">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3wNEkt7S8Fep08YJ5DV8yJF8UhRdDweMUl-7QZN6KsXQs6AmP0nZLZyza7-h8S2yHxTC3dAErxfzRb2dtQlFMlWtDCz8mmUtVTSf0YiUbCR7sXTYW4DvBefDZERuqWtybCrNu0I1Pjp1qphik_LJCfCusApBKZsX3NBAxj0cKSzMjjqZaoc0bjbreeig6HrHdWAo_6zhpcdess0EBJZwVq2PkQEOVSmORV4kJI1jmtP37Jd5Iy7jkE0lT4aea-je18mIfR0IkHHkL");'></div>
+                <div
+                    id="bathroom"
+                    class="group relative md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[250px]"
+                >
+                    <div
+                        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3wNEkt7S8Fep08YJ5DV8yJF8UhRdDweMUl-7QZN6KsXQs6AmP0nZLZyza7-h8S2yHxTC3dAErxfzRb2dtQlFMlWtDCz8mmUtVTSf0YiUbCR7sXTYW4DvBefDZERuqWtybCrNu0I1Pjp1qphik_LJCfCusApBKZsX3NBAxj0cKSzMjjqZaoc0bjbreeig6HrHdWAo_6zhpcdess0EBJZwVq2PkQEOVSmORV4kJI1jmtP37Jd5Iy7jkE0lT4aea-je18mIfR0IkHHkL");'
+                    >
+                    </div>
                     <div class="absolute inset-0 bento-card-gradient"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
-                        <h3 class="text-xl font-bold text-white mb-1">Bathroom Renovations</h3>
-                        <p class="text-gray-300 text-xs mb-3 line-clamp-2">Spa-inspired retreats with modern fixtures.</p>
-                        <span class="text-[#f97316] font-bold text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                            View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        <h3 class="text-xl font-bold text-white mb-1">
+                            Bathroom Renovations
+                        </h3>
+                        <p class="text-gray-300 text-xs mb-3 line-clamp-2">
+                            Spa-inspired retreats with modern fixtures.
+                        </p>
+                        <span
+                            class="text-[#f97316] font-bold text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                        >
+                            View Details <span
+                                class="material-symbols-outlined text-sm"
+                                >arrow_forward</span
+                            >
                         </span>
                     </div>
-                    <a aria-label="View Bathroom Renovations" class="absolute inset-0 z-10" href="/remodeling/bathroom/"></a>
+                    <a
+                        aria-label="View Bathroom Renovations"
+                        class="absolute inset-0 z-10"
+                        href="/remodeling/bathroom/"></a>
                 </div>
 
                 <!-- Commercial - Large Card (Replaces Additions/Commercial Small Cards) -->
-                <div id="commercial" class="group relative md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-1 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[250px] bg-slate-900">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjArnzoHiawXqjIyG3Oceq85yZ_5ydqCNDt26dxPoHjaRb6iwrkEpGrTu-e1dWFmlMAbkcb4v0v1A-U3oEGoCPymT9uYS1SuFoyM5nbylVLtUixD3U6snH1e-xVoIZ5XV-dqUCgRFo7H4NxPyiHxebOz6oJv6YunEFUNsuMbv54Cc1-h74N1s1waa4-JmORdFQgCbJG5NZjh_s-wwbRMljewrCGFEoNXdxIBDni4ZGZdQEGFIpXEcS77yb4DH3JFLqmmULUxli3c-o");'></div> 
+                <div
+                    id="commercial"
+                    class="group relative md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-1 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[250px] bg-slate-900"
+                >
+                    <div
+                        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjArnzoHiawXqjIyG3Oceq85yZ_5ydqCNDt26dxPoHjaRb6iwrkEpGrTu-e1dWFmlMAbkcb4v0v1A-U3oEGoCPymT9uYS1SuFoyM5nbylVLtUixD3U6snH1e-xVoIZ5XV-dqUCgRFo7H4NxPyiHxebOz6oJv6YunEFUNsuMbv54Cc1-h74N1s1waa4-JmORdFQgCbJG5NZjh_s-wwbRMljewrCGFEoNXdxIBDni4ZGZdQEGFIpXEcS77yb4DH3JFLqmmULUxli3c-o");'
+                    >
+                    </div>
                     <div class="absolute inset-0 bento-card-gradient"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
-                        <span class="inline-flex items-center gap-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-blue-100 mb-2 backdrop-blur-sm">
-                           <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-                           Enterprise
+                        <span
+                            class="inline-flex items-center gap-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-blue-100 mb-2 backdrop-blur-sm"
+                        >
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"
+                            ></span>
+                            Enterprise
                         </span>
-                        <h3 class="text-xl font-bold text-white mb-1">Commercial Build-Outs</h3>
-                        <p class="text-gray-300 text-xs mb-3 line-clamp-2 max-w-md">Turnkey office, retail, and hospitality renovations. Rapid mobilization for large-scale projects.</p>
-                        <span class="text-[#f97316] font-bold text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                            View Commercial Services <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        <h3 class="text-xl font-bold text-white mb-1">
+                            Commercial Build-Outs
+                        </h3>
+                        <p
+                            class="text-gray-300 text-xs mb-3 line-clamp-2 max-w-md"
+                        >
+                            Turnkey office, retail, and hospitality renovations.
+                            Rapid mobilization for large-scale projects.
+                        </p>
+                        <span
+                            class="text-[#f97316] font-bold text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                        >
+                            View Commercial Services <span
+                                class="material-symbols-outlined text-sm"
+                                >arrow_forward</span
+                            >
                         </span>
                     </div>
-                    <a aria-label="View Commercial Services" class="absolute inset-0 z-10" href="/commercial/"></a>
+                    <a
+                        aria-label="View Commercial Services"
+                        class="absolute inset-0 z-10"
+                        href="/commercial/"></a>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- Trends Section -->
     <section class="py-16 px-4 md:px-10 bg-white dark:bg-[#1a2632]" id="trends">
-        <div class="mx-auto max-w-[1200px] flex flex-col lg:flex-row gap-12 items-center">
+        <div
+            class="mx-auto max-w-[1200px] flex flex-col lg:flex-row gap-12 items-center"
+        >
             <div class="w-full lg:w-1/2 relative">
-                <div class="aspect-[4/3] rounded-xl bg-cover bg-center shadow-xl border-4 border-white dark:border-gray-700" data-alt="Sunlit minimalist living room with indoor plants and biofilic design elements" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNW7DdoTWPfeluUp0VxeO2oGr8L0GjT7vhnNnvZ6nZgtikJzA6wuVGLrJRyPUQyWGCxWt7giblgE31B4S9AukLwKJWXhIZSdhdRlsu3yyI1z6Mx91fdfNplx8R1UhXCHmfEf_y-dgEVteCrobXGn6-Ofu4w3sCt7vDx5JBAW6o2qtISkLX7G8L7kdDl2tLCLT7BnOqtS1hyIiKM_-DV36tPZ_iNvGVBPDg0bQcHCY4WJ3Ss0uDa7l9vt659UrAYfu0nKj1DqK5aCfO");'>
+                <div
+                    class="aspect-[4/3] rounded-xl bg-cover bg-center shadow-xl border-4 border-white dark:border-gray-700"
+                    data-alt="Sunlit minimalist living room with indoor plants and biofilic design elements"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNW7DdoTWPfeluUp0VxeO2oGr8L0GjT7vhnNnvZ6nZgtikJzA6wuVGLrJRyPUQyWGCxWt7giblgE31B4S9AukLwKJWXhIZSdhdRlsu3yyI1z6Mx91fdfNplx8R1UhXCHmfEf_y-dgEVteCrobXGn6-Ofu4w3sCt7vDx5JBAW6o2qtISkLX7G8L7kdDl2tLCLT7BnOqtS1hyIiKM_-DV36tPZ_iNvGVBPDg0bQcHCY4WJ3Ss0uDa7l9vt659UrAYfu0nKj1DqK5aCfO");'
+                >
                 </div>
-                <div class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-5 rounded-lg shadow-xl max-w-[240px] hidden md:block border-l-4 border-[#f97316]">
+                <div
+                    class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-5 rounded-lg shadow-xl max-w-[240px] hidden md:block border-l-4 border-[#f97316]"
+                >
                     <div class="flex items-center gap-2 mb-2">
-                        <span class="material-symbols-outlined text-[#f97316]">insights</span>
-                        <span class="font-bold text-sm dark:text-white uppercase tracking-wide">Market Insight</span>
+                        <span class="material-symbols-outlined text-[#f97316]"
+                            >insights</span
+                        >
+                        <span
+                            class="font-bold text-sm dark:text-white uppercase tracking-wide"
+                            >Market Insight</span
+                        >
                     </div>
-                    <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Smart home integration increases resale value by an average of 5-7% in Florida markets.</p>
+                    <p
+                        class="text-xs text-gray-500 dark:text-gray-400 font-medium"
+                    >
+                        Smart home integration increases resale value by an
+                        average of 5-7% in Florida markets.
+                    </p>
                 </div>
             </div>
             <div class="w-full lg:w-1/2">
-                <span class="text-[#137fec] font-bold tracking-wider uppercase text-sm">Industry Insights</span>
-                <h2 class="text-[#111418] dark:text-white text-3xl lg:text-4xl font-bold mt-2 mb-6 leading-tight">Building for the Future: <br/>Florida Remodeling Trends</h2>
+                <span
+                    class="text-[#137fec] font-bold tracking-wider uppercase text-sm"
+                    >Industry Insights</span
+                >
+                <h2
+                    class="text-[#111418] dark:text-white text-3xl lg:text-4xl font-bold mt-2 mb-6 leading-tight"
+                >
+                    Building for the Future: <br />Florida Remodeling Trends
+                </h2>
                 <p class="text-gray-600 dark:text-gray-300 mb-8 text-lg">
-                    We don't just follow trends; we implement forward-thinking design that prepares your home for the next decade of Florida living.
+                    We don't just follow trends; we implement forward-thinking
+                    design that prepares your home for the next decade of
+                    Florida living.
                 </p>
                 <div class="space-y-6">
                     <div class="flex gap-4">
-                        <div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center shrink-0">
-                            <span class="material-symbols-outlined text-[#137fec]">shield_moon</span>
+                        <div
+                            class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center shrink-0"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[#137fec]"
+                                >shield_moon</span
+                            >
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg text-[#111418] dark:text-white">Resiliency First</h4>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Impact-rated glass, reinforced roofing, and flood-resistant materials are now standard, not optional.</p>
+                            <h4
+                                class="font-bold text-lg text-[#111418] dark:text-white"
+                            >
+                                Resiliency First
+                            </h4>
+                            <p
+                                class="text-sm text-gray-500 dark:text-gray-400 mt-1"
+                            >
+                                Impact-rated glass, reinforced roofing, and
+                                flood-resistant materials are now standard, not
+                                optional.
+                            </p>
                         </div>
                     </div>
                     <div class="flex gap-4">
-                        <div class="size-12 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center shrink-0">
-                            <span class="material-symbols-outlined text-[#f97316]">home_iot_device</span>
+                        <div
+                            class="size-12 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center shrink-0"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[#f97316]"
+                                >home_iot_device</span
+                            >
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg text-[#111418] dark:text-white">Smart Living Ecosystems</h4>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Integrated climate control, security, and energy management systems for ultimate efficiency.</p>
+                            <h4
+                                class="font-bold text-lg text-[#111418] dark:text-white"
+                            >
+                                Smart Living Ecosystems
+                            </h4>
+                            <p
+                                class="text-sm text-gray-500 dark:text-gray-400 mt-1"
+                            >
+                                Integrated climate control, security, and energy
+                                management systems for ultimate efficiency.
+                            </p>
                         </div>
                     </div>
                     <div class="flex gap-4">
-                        <div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center shrink-0">
-                            <span class="material-symbols-outlined text-[#137fec]">diversity_3</span>
+                        <div
+                            class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center shrink-0"
+                        >
+                            <span
+                                class="material-symbols-outlined text-[#137fec]"
+                                >diversity_3</span
+                            >
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg text-[#111418] dark:text-white">Multigenerational Spaces</h4>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Designing private suites and ADUs to comfortably accommodate aging parents or adult children.</p>
+                            <h4
+                                class="font-bold text-lg text-[#111418] dark:text-white"
+                            >
+                                Multigenerational Spaces
+                            </h4>
+                            <p
+                                class="text-sm text-gray-500 dark:text-gray-400 mt-1"
+                            >
+                                Designing private suites and ADUs to comfortably
+                                accommodate aging parents or adult children.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="mt-8">
-                    <a class="inline-flex items-center text-[#137fec] font-bold hover:underline" href="/resources/">
-                        Read Our Full Trend Report <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                    <a
+                        class="inline-flex items-center text-[#137fec] font-bold hover:underline"
+                        href="/resources/"
+                    >
+                        Read Our Full Trend Report <span
+                            class="material-symbols-outlined text-sm ml-1"
+                            >arrow_forward</span
+                        >
                     </a>
                 </div>
             </div>
@@ -238,46 +465,112 @@ const remodelingSchema = {
     </section>
 
     <!-- Process Section -->
-    <section class="py-16 px-4 md:px-10 bg-[#f6f7f8] dark:bg-[#101922] border-y border-gray-200 dark:border-gray-800" id="process">
+    <section
+        class="py-16 px-4 md:px-10 bg-[#f6f7f8] dark:bg-[#101922] border-y border-gray-200 dark:border-gray-800"
+        id="process"
+    >
         <div class="mx-auto max-w-[1200px]">
             <div class="text-center mb-12">
-                <span class="text-[#f97316] font-bold tracking-wider uppercase text-sm">The PPR Method</span>
-                <h2 class="text-[#111418] dark:text-white text-3xl font-bold mt-2">Our Remodeling Process</h2>
-                <p class="text-gray-500 dark:text-gray-400 mt-2">A transparent, step-by-step journey to your dream home.</p>
+                <span
+                    class="text-[#f97316] font-bold tracking-wider uppercase text-sm"
+                    >The PPR Method</span
+                >
+                <h2
+                    class="text-[#111418] dark:text-white text-3xl font-bold mt-2"
+                >
+                    Our Remodeling Process
+                </h2>
+                <p class="text-gray-500 dark:text-gray-400 mt-2">
+                    A transparent, step-by-step journey to your dream home.
+                </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative mb-12">
-                <div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gray-300 dark:bg-gray-700 -z-10"></div>
-                <div class="flex flex-col items-center text-center group">
-                    <div class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-[#137fec] group-hover:border-[#f97316] transition-colors duration-300 flex items-center justify-center mb-6 shadow-md z-10">
-                        <span class="material-symbols-outlined text-4xl text-[#137fec] group-hover:text-[#f97316] transition-colors">handshake</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-2">1. Consultation</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">We align on your vision, budget, and scope with a free onsite assessment.</p>
+                <div
+                    class="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gray-300 dark:bg-gray-700 -z-10"
+                >
                 </div>
                 <div class="flex flex-col items-center text-center group">
-                    <div class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-gray-200 dark:border-gray-600 group-hover:border-[#f97316] transition-colors duration-300 flex items-center justify-center mb-6 shadow-md z-10">
-                        <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-[#f97316] transition-colors">design_services</span>
+                    <div
+                        class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-[#137fec] group-hover:border-[#f97316] transition-colors duration-300 flex items-center justify-center mb-6 shadow-md z-10"
+                    >
+                        <span
+                            class="material-symbols-outlined text-4xl text-[#137fec] group-hover:text-[#f97316] transition-colors"
+                            >handshake</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-2">2. Design</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Collaborative 3D renderings and material selection to finalize the look.</p>
+                    <h3
+                        class="text-xl font-bold text-[#111418] dark:text-white mb-2"
+                    >
+                        1. Consultation
+                    </h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                        We align on your vision, budget, and scope with a free
+                        onsite assessment.
+                    </p>
                 </div>
                 <div class="flex flex-col items-center text-center group">
-                    <div class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-gray-200 dark:border-gray-600 group-hover:border-[#f97316] transition-colors duration-300 flex items-center justify-center mb-6 shadow-md z-10">
-                        <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-[#f97316] transition-colors">gavel</span>
+                    <div
+                        class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-gray-200 dark:border-gray-600 group-hover:border-[#f97316] transition-colors duration-300 flex items-center justify-center mb-6 shadow-md z-10"
+                    >
+                        <span
+                            class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-[#f97316] transition-colors"
+                            >design_services</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-2">3. Permitting</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">We handle all city approvals, engineering, and documentation for you.</p>
+                    <h3
+                        class="text-xl font-bold text-[#111418] dark:text-white mb-2"
+                    >
+                        2. Design
+                    </h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                        Collaborative 3D renderings and material selection to
+                        finalize the look.
+                    </p>
                 </div>
                 <div class="flex flex-col items-center text-center group">
-                    <div class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-gray-200 dark:border-gray-600 group-hover:border-[#f97316] transition-colors duration-300 flex items-center justify-center mb-6 shadow-md z-10">
-                        <span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-[#f97316] transition-colors">construction</span>
+                    <div
+                        class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-gray-200 dark:border-gray-600 group-hover:border-[#f97316] transition-colors duration-300 flex items-center justify-center mb-6 shadow-md z-10"
+                    >
+                        <span
+                            class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-[#f97316] transition-colors"
+                            >gavel</span
+                        >
                     </div>
-                    <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-2">4. Construction</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Expert build-out with dedicated project management and regular updates.</p>
+                    <h3
+                        class="text-xl font-bold text-[#111418] dark:text-white mb-2"
+                    >
+                        3. Permitting
+                    </h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                        We handle all city approvals, engineering, and
+                        documentation for you.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="size-24 rounded-full bg-white dark:bg-gray-800 border-4 border-gray-200 dark:border-gray-600 group-hover:border-[#f97316] transition-colors duration-300 flex items-center justify-center mb-6 shadow-md z-10"
+                    >
+                        <span
+                            class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-[#f97316] transition-colors"
+                            >construction</span
+                        >
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-[#111418] dark:text-white mb-2"
+                    >
+                        4. Construction
+                    </h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                        Expert build-out with dedicated project management and
+                        regular updates.
+                    </p>
                 </div>
             </div>
             <div class="text-center">
-                <a class="inline-flex h-12 items-center justify-center rounded-lg border-2 border-[#137fec] text-[#137fec] px-8 text-base font-bold shadow-sm transition-colors hover:bg-[#137fec] hover:text-white" href="/our-process/">
+                <a
+                    class="inline-flex h-12 items-center justify-center rounded-lg border-2 border-[#137fec] text-[#137fec] px-8 text-base font-bold shadow-sm transition-colors hover:bg-[#137fec] hover:text-white"
+                    href="/our-process/"
+                >
                     View Our Detailed Process Page
                 </a>
             </div>
@@ -285,64 +578,180 @@ const remodelingSchema = {
     </section>
 
     <!-- Local Hubs Section -->
-    <section class="py-16 px-4 md:px-10 bg-white dark:bg-[#1a2632]" id="locations">
+    <section
+        class="py-16 px-4 md:px-10 bg-white dark:bg-[#1a2632]"
+        id="locations"
+    >
         <div class="mx-auto max-w-[1000px]">
             <div class="mb-16 text-center">
-                <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-6">Local Remodeling Hubs</h3>
-                <p class="text-gray-500 dark:text-gray-400 mb-6 max-w-2xl mx-auto">We provide localized remodeling services tailored to city-specific building codes and architectural styles.</p>
+                <h3
+                    class="text-xl font-bold text-[#111418] dark:text-white mb-6"
+                >
+                    Local Remodeling Hubs
+                </h3>
+                <p
+                    class="text-gray-500 dark:text-gray-400 mb-6 max-w-2xl mx-auto"
+                >
+                    We provide localized remodeling services tailored to
+                    city-specific building codes and architectural styles.
+                </p>
                 <div class="flex flex-wrap justify-center gap-3">
-                    <a class="flex items-center gap-2 rounded-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-5 py-2.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-[#137fec] hover:text-white hover:border-[#137fec] transition-all group" href="/service-areas/central-florida/orlando/kitchen-remodeling/">
-                        <span class="material-symbols-outlined text-[18px] text-[#137fec] group-hover:text-white">location_on</span>
+                    <a
+                        class="flex items-center gap-2 rounded-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-5 py-2.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-[#137fec] hover:text-white hover:border-[#137fec] transition-all group"
+                        href="/service-areas/orlando/kitchen-remodeling/"
+                    >
+                        <span
+                            class="material-symbols-outlined text-[18px] text-[#137fec] group-hover:text-white"
+                            >location_on</span
+                        >
                         Orlando Remodeling
                     </a>
-                    <a class="flex items-center gap-2 rounded-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-5 py-2.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-[#137fec] hover:text-white hover:border-[#137fec] transition-all group" href="/service-areas/south-florida/miami/kitchen-remodeling/">
-                        <span class="material-symbols-outlined text-[18px] text-[#137fec] group-hover:text-white">location_on</span>
+                    <a
+                        class="flex items-center gap-2 rounded-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-5 py-2.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-[#137fec] hover:text-white hover:border-[#137fec] transition-all group"
+                        href="/service-areas/miami/kitchen-remodeling/"
+                    >
+                        <span
+                            class="material-symbols-outlined text-[18px] text-[#137fec] group-hover:text-white"
+                            >location_on</span
+                        >
                         Miami Renovations
                     </a>
-                    <a class="flex items-center gap-2 rounded-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-5 py-2.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-[#137fec] hover:text-white hover:border-[#137fec] transition-all group" href="/service-areas/tampa-bay/tampa/kitchen-remodeling/">
-                        <span class="material-symbols-outlined text-[18px] text-[#137fec] group-hover:text-white">location_on</span>
+                    <a
+                        class="flex items-center gap-2 rounded-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-5 py-2.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-[#137fec] hover:text-white hover:border-[#137fec] transition-all group"
+                        href="/service-areas/tampa/kitchen-remodeling/"
+                    >
+                        <span
+                            class="material-symbols-outlined text-[18px] text-[#137fec] group-hover:text-white"
+                            >location_on</span
+                        >
                         Tampa Design-Build
                     </a>
-                    <a class="flex items-center gap-2 rounded-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-5 py-2.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-[#137fec] hover:text-white hover:border-[#137fec] transition-all group" href="/service-areas/south-florida/fort-lauderdale/kitchen-remodeling/">
-                        <span class="material-symbols-outlined text-[18px] text-[#137fec] group-hover:text-white">location_on</span>
+                    <a
+                        class="flex items-center gap-2 rounded-full bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-5 py-2.5 text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-[#137fec] hover:text-white hover:border-[#137fec] transition-all group"
+                        href="/service-areas/fort-lauderdale/kitchen-remodeling/"
+                    >
+                        <span
+                            class="material-symbols-outlined text-[18px] text-[#137fec] group-hover:text-white"
+                            >location_on</span
+                        >
                         Fort Lauderdale Remodeling
                     </a>
                 </div>
             </div>
-            <div class="bg-blue-50/50 dark:bg-gray-800/50 rounded-2xl p-6 md:p-10 border border-blue-100 dark:border-gray-700">
-                <h3 class="text-2xl font-bold text-[#111418] dark:text-white mb-2 text-center">Frequently Asked Questions</h3>
-                <p class="text-center text-gray-500 mb-8">Answers to common concerns about your next project.</p>
-                <div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
-                    <details class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                        <summary class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg">
-                            <span itemprop="name">How do you handle permits for remodeling in Florida?</span>
-                            <span class="material-symbols-outlined text-[#137fec] transition-transform group-open:rotate-180">expand_more</span>
+            <div
+                class="bg-blue-50/50 dark:bg-gray-800/50 rounded-2xl p-6 md:p-10 border border-blue-100 dark:border-gray-700"
+            >
+                <h3
+                    class="text-2xl font-bold text-[#111418] dark:text-white mb-2 text-center"
+                >
+                    Frequently Asked Questions
+                </h3>
+                <p class="text-center text-gray-500 mb-8">
+                    Answers to common concerns about your next project.
+                </p>
+                <div
+                    class="space-y-4"
+                    itemscope
+                    itemtype="https://schema.org/FAQPage"
+                >
+                    <details
+                        class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700"
+                        itemprop="mainEntity"
+                        itemscope
+                        itemtype="https://schema.org/Question"
+                    >
+                        <summary
+                            class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg"
+                        >
+                            <span itemprop="name"
+                                >How do you handle permits for remodeling in
+                                Florida?</span
+                            >
+                            <span
+                                class="material-symbols-outlined text-[#137fec] transition-transform group-open:rotate-180"
+                                >expand_more</span
+                            >
                         </summary>
-                        <div class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <div
+                            class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1"
+                            itemprop="acceptedAnswer"
+                            itemscope
+                            itemtype="https://schema.org/Answer"
+                        >
                             <span itemprop="text">
-                                Paramount Property Restoration is a fully licensed General Contractor. We handle the entire permitting process, including filing applications, meeting local Florida building codes, and scheduling all necessary inspections to ensure your project is compliant and legal.
+                                Paramount Property Restoration is a fully
+                                licensed General Contractor. We handle the
+                                entire permitting process, including filing
+                                applications, meeting local Florida building
+                                codes, and scheduling all necessary inspections
+                                to ensure your project is compliant and legal.
                             </span>
                         </div>
                     </details>
-                    <details class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                        <summary class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg">
-                            <span itemprop="name">What is the typical timeline for a major renovation?</span>
-                            <span class="material-symbols-outlined text-[#137fec] transition-transform group-open:rotate-180">expand_more</span>
+                    <details
+                        class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700"
+                        itemprop="mainEntity"
+                        itemscope
+                        itemtype="https://schema.org/Question"
+                    >
+                        <summary
+                            class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg"
+                        >
+                            <span itemprop="name"
+                                >What is the typical timeline for a major
+                                renovation?</span
+                            >
+                            <span
+                                class="material-symbols-outlined text-[#137fec] transition-transform group-open:rotate-180"
+                                >expand_more</span
+                            >
                         </summary>
-                        <div class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <div
+                            class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1"
+                            itemprop="acceptedAnswer"
+                            itemscope
+                            itemtype="https://schema.org/Answer"
+                        >
                             <span itemprop="text">
-                                Timelines vary by scope. A kitchen remodel typically takes 6-8 weeks, while a whole-home renovation can take 3-6 months. During the Design phase, we provide a detailed project schedule so you know exactly what to expect at every stage.
+                                Timelines vary by scope. A kitchen remodel
+                                typically takes 6-8 weeks, while a whole-home
+                                renovation can take 3-6 months. During the
+                                Design phase, we provide a detailed project
+                                schedule so you know exactly what to expect at
+                                every stage.
                             </span>
                         </div>
                     </details>
-                    <details class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                        <summary class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg">
-                            <span itemprop="name">Are you licensed and insured for commercial work?</span>
-                            <span class="material-symbols-outlined text-[#137fec] transition-transform group-open:rotate-180">expand_more</span>
+                    <details
+                        class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700"
+                        itemprop="mainEntity"
+                        itemscope
+                        itemtype="https://schema.org/Question"
+                    >
+                        <summary
+                            class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg"
+                        >
+                            <span itemprop="name"
+                                >Are you licensed and insured for commercial
+                                work?</span
+                            >
+                            <span
+                                class="material-symbols-outlined text-[#137fec] transition-transform group-open:rotate-180"
+                                >expand_more</span
+                            >
                         </summary>
-                        <div class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <div
+                            class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1"
+                            itemprop="acceptedAnswer"
+                            itemscope
+                            itemtype="https://schema.org/Answer"
+                        >
                             <span itemprop="text">
-                                Yes, PPR is fully licensed and insured for both residential and commercial projects across Florida. We carry comprehensive liability and workers' compensation insurance to protect our clients and our team.
+                                Yes, PPR is fully licensed and insured for both
+                                residential and commercial projects across
+                                Florida. We carry comprehensive liability and
+                                workers' compensation insurance to protect our
+                                clients and our team.
                             </span>
                         </div>
                     </details>

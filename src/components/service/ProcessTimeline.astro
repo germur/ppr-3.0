@@ -1,5 +1,14 @@
 ---
-const { steps } = Astro.props;
+const { steps, theme } = Astro.props;
+
+interface Props {
+    steps: {
+        icon: any;
+        title: string;
+        description: string;
+    }[];
+    theme?: string;
+}
 ---
 
 <div class="relative py-12">

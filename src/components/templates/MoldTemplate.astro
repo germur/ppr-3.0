@@ -1,268 +1,526 @@
 ---
-import { moldRemediationFAQs } from '../../data/restoration-faqs';
+import { moldRemediationFAQs } from "../../data/restoration-faqs";
 
 const { city } = Astro.props;
-const locationName = city ? city.data.name : 'Florida';
+const locationName = city ? city.data.name : "Florida";
 ---
 
-    <!-- Hero Section -->
-    <header class="relative w-full py-12 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto">
-        <div class="flex flex-col lg:flex-row gap-12 items-center">
-            <!-- Content -->
-            <div class="flex-1 flex flex-col gap-6 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#11d4c4]/10 text-[#11d4c4] text-xs font-bold uppercase tracking-wider w-fit mx-auto lg:mx-0">
-                    <span class="material-symbols-outlined text-base">verified_user</span>
-                    Trusted & Insured
+<!-- Hero Section -->
+<header
+    class="relative w-full py-12 lg:py-20 px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto"
+>
+    <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <!-- Content -->
+        <div class="flex-1 flex flex-col gap-6 text-center lg:text-left">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#11d4c4]/10 text-[#11d4c4] text-xs font-bold uppercase tracking-wider w-fit mx-auto lg:mx-0"
+            >
+                <span class="material-symbols-outlined text-base"
+                    >verified_user</span
+                >
+                Trusted & Insured
+            </div>
+            <h1
+                class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0f172a] leading-[1.1] tracking-tight"
+            >
+                Licensed Mold Remediation & <span class="text-[#11d4c4]"
+                    >Inspection Services</span
+                >
+            </h1>
+            <p
+                class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+            >
+                In {locationName}'s humid climate, mold is more than a
+                nuisance—it’s a health risk. Following Florida Senate Bill 2A
+                regulations, we provide professional mold assessment and
+                remediation. Don't rely on DIY kits; our certified team
+                identifies hidden moisture sources and removes mold safely using
+                HEPA filtration and negative air pressure.
+            </p>
+            <div
+                class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2"
+            >
+                <a
+                    href="/contact/"
+                    class="bg-[#11d4c4] hover:bg-teal-400 text-[#0f172a] px-6 py-3.5 rounded-lg font-bold text-base transition-colors flex items-center gap-2 shadow-lg shadow-[#11d4c4]/20 justify-center"
+                >
+                    <span class="material-symbols-outlined">calendar_month</span
+                    >
+                    Get a Professional Mold Inspection
+                </a>
+                <a
+                    href="#process"
+                    class="bg-white border-2 border-slate-200 hover:border-[#11d4c4] text-slate-700 hover:text-[#11d4c4] px-6 py-3.5 rounded-lg font-bold text-base transition-all flex items-center gap-2 justify-center"
+                >
+                    <span class="material-symbols-outlined">school</span>
+                    Black Mold Education
+                </a>
+            </div>
+            <div
+                class="flex items-center justify-center lg:justify-start gap-6 pt-4 text-xs font-medium text-slate-400"
+            >
+                <div class="flex items-center gap-1">
+                    <span
+                        class="material-symbols-outlined text-[#11d4c4] text-base"
+                        >check_circle</span
+                    >
+                    Specialized Team
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0f172a] leading-[1.1] tracking-tight">
-                    Licensed Mold Remediation & <span class="text-[#11d4c4]">Inspection Services</span>
-                </h1>
-                <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    In {locationName}'s humid climate, mold is more than a nuisance—it’s a health risk. Following Florida Senate Bill 2A regulations, we provide professional mold assessment and remediation. Don't rely on DIY kits; our certified team identifies hidden moisture sources and removes mold safely using HEPA filtration and negative air pressure.
+                <div class="flex items-center gap-1">
+                    <span
+                        class="material-symbols-outlined text-[#11d4c4] text-base"
+                        >check_circle</span
+                    >
+                    24/7 Response
+                </div>
+            </div>
+        </div>
+        <!-- Image -->
+        <div class="flex-1 w-full max-w-[600px] lg:max-w-none">
+            <div
+                class="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl shadow-slate-200"
+            >
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-[#11d4c4]/20 to-transparent z-10"
+                >
+                </div>
+                <img
+                    alt="Mold Inspection Professional"
+                    class="w-full h-full object-cover"
+                    data-alt="Scientific air quality testing professional with equipment in a clean home environment"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDep2FTyFF8p35UqmyUMPhpQ-N89mTKlJAi4TZ6zZYWBwQVmGDrtQv5ZGBl0cGLYxQ_XWM4HmjIfnZg1MMiC3Qaq2ryv8r9u8TtY1xP7rVoA3amNg31o2x3bZ25jiZ6_mH6mt7nnMAEzDYcvlPwMY4Uin6r0YgZs8ENNa4uGENyGSihybe94IIKb8gPBY5oFrZv1FiYzRtG9OyXubfaClgXWiE1XJAIQxElz5fNWitK1wuqC4nZCnAumJDnYqAP86BXVzGsicr12lk8"
+                />
+                <!-- Floating Badge -->
+                <div
+                    class="absolute bottom-6 left-6 z-20 bg-white/95 backdrop-blur px-4 py-3 rounded-lg shadow-lg flex items-center gap-3 border border-slate-100"
+                >
+                    <div
+                        class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600"
+                    >
+                        <span class="material-symbols-outlined"
+                            >health_and_safety</span
+                        >
+                    </div>
+                    <div>
+                        <p
+                            class="text-xs text-slate-500 font-semibold uppercase"
+                        >
+                            Air Quality Status
+                        </p>
+                        <p class="text-sm font-bold text-[#0f172a]">
+                            Restored to Healthy Levels
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Mold Lifecycle Bento Grid -->
+<section
+    id="process"
+    class="py-16 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-100"
+>
+    <div class="max-w-[1280px] mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-[#0f172a] mb-4">
+                Complete Mold Solutions
+            </h2>
+            <p class="text-slate-600">
+                Our scientific approach moves beyond simple cleaning. We
+                identify the source, contain the spread, and engineer a
+                permanent solution.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Step 1: Inspection & Testing -->
+            <article
+                class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors"
+            >
+                <div
+                    class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+                >
+                    <span class="material-symbols-outlined text-2xl"
+                        >biotech</span
+                    >
+                </div>
+                <h3 class="text-lg font-bold text-[#0f172a] mb-2">
+                    1. Inspection & Testing
+                </h3>
+                <p class="text-sm text-slate-600 mb-4 flex-grow">
+                    Identifying air quality issues and visible growth through
+                    professional assessment.
                 </p>
-                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
-                    <a href="/contact/" class="bg-[#11d4c4] hover:bg-teal-400 text-[#0f172a] px-6 py-3.5 rounded-lg font-bold text-base transition-colors flex items-center gap-2 shadow-lg shadow-[#11d4c4]/20 justify-center">
-                        <span class="material-symbols-outlined">calendar_month</span>
-                        Get a Professional Mold Inspection
+            </article>
+            <!-- Step 2: Containment -->
+            <article
+                class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors"
+            >
+                <div
+                    class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+                >
+                    <span class="material-symbols-outlined text-2xl"
+                        >security</span
+                    >
+                </div>
+                <h3 class="text-lg font-bold text-[#0f172a] mb-2">
+                    2. Containment
+                </h3>
+                <p class="text-sm text-slate-600 mb-4 flex-grow">
+                    Preventing spore spread to other areas of your home using
+                    safety barriers.
+                </p>
+            </article>
+            <!-- Step 3: Sanitization -->
+            <article
+                class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors"
+            >
+                <div
+                    class="w-12 h-12 bg-[#11d4c4]/20 text-[#11d4c4] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+                >
+                    <span class="material-symbols-outlined text-2xl"
+                        >cleaning_services</span
+                    >
+                </div>
+                <h3 class="text-lg font-bold text-[#0f172a] mb-2">
+                    3. Sanitization
+                </h3>
+                <p class="text-sm text-slate-600 mb-4 flex-grow">
+                    Cleaning contents and structural elements with
+                    professional-grade solutions.
+                </p>
+            </article>
+            <!-- Step 4: Prevention -->
+            <article
+                class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors"
+            >
+                <div
+                    class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+                >
+                    <span class="material-symbols-outlined text-2xl"
+                        >water_drop</span
+                    >
+                </div>
+                <h3 class="text-lg font-bold text-[#0f172a] mb-2">
+                    4. Prevention
+                </h3>
+                <p class="text-sm text-slate-600 mb-4 flex-grow">
+                    Installing dehumidification systems to prevent recurrence of
+                    mold growth.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Hidden Dangers & Florida Context -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Hidden Dangers -->
+        <div class="flex flex-col gap-6">
+            <div class="mb-2">
+                <h2 class="text-2xl font-bold text-[#0f172a] mb-2">
+                    Hidden Dangers: Signals in Your Home
+                </h2>
+                <p class="text-slate-600 text-sm">
+                    Mold isn't always visible. Watch for these silent
+                    indicators.
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <!-- Health Signals -->
+                <div class="bg-red-50 border border-red-100 rounded-xl p-5">
+                    <div
+                        class="flex items-center gap-2 mb-3 text-red-700 font-bold"
+                    >
+                        <span class="material-symbols-outlined"
+                            >medical_services</span
+                        >
+                        Health Signals
+                    </div>
+                    <ul class="space-y-2">
+                        <li
+                            class="flex items-start gap-2 text-sm text-slate-700"
+                        >
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5"
+                            ></span>
+                            Persistent coughing or sneezing
+                        </li>
+                        <li
+                            class="flex items-start gap-2 text-sm text-slate-700"
+                        >
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5"
+                            ></span>
+                            Unexplained headaches
+                        </li>
+                        <li
+                            class="flex items-start gap-2 text-sm text-slate-700"
+                        >
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5"
+                            ></span>
+                            Eye or skin irritation
+                        </li>
+                        <li
+                            class="flex items-start gap-2 text-sm text-slate-700"
+                        >
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5"
+                            ></span>
+                            Worsening asthma symptoms
+                        </li>
+                    </ul>
+                </div>
+                <!-- House Signals -->
+                <div
+                    class="bg-orange-50 border border-orange-100 rounded-xl p-5"
+                >
+                    <div
+                        class="flex items-center gap-2 mb-3 text-orange-700 font-bold"
+                    >
+                        <span class="material-symbols-outlined">home_work</span>
+                        House Signals
+                    </div>
+                    <ul class="space-y-2">
+                        <li
+                            class="flex items-start gap-2 text-sm text-slate-700"
+                        >
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5"
+                            ></span>
+                            Musty, earthy odors
+                        </li>
+                        <li
+                            class="flex items-start gap-2 text-sm text-slate-700"
+                        >
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5"
+                            ></span>
+                            Peeling wallpaper or paint
+                        </li>
+                        <li
+                            class="flex items-start gap-2 text-sm text-slate-700"
+                        >
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5"
+                            ></span>
+                            Dark grout in showers
+                        </li>
+                        <li
+                            class="flex items-start gap-2 text-sm text-slate-700"
+                        >
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5"
+                            ></span>
+                            Water stains on ceilings
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Florida Context -->
+        <div
+            class="relative bg-[#0f172a] rounded-xl p-8 overflow-hidden flex flex-col justify-between min-h-[300px]"
+        >
+            <!-- Abstract Map Pattern -->
+            <div
+                class="absolute inset-0 opacity-10"
+                style="background-image: radial-gradient(#11d4c4 1px, transparent 1px); background-size: 20px 20px;"
+            >
+            </div>
+            <div class="relative z-10">
+                <div
+                    class="flex items-center gap-2 text-[#11d4c4] mb-4 font-bold tracking-wide uppercase text-xs"
+                >
+                    <span class="material-symbols-outlined text-lg"
+                        >location_on</span
+                    >
+                    {locationName}-Specific Context
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">
+                    Why {locationName} Mold is Different
+                </h3>
+                <p class="text-slate-300 leading-relaxed mb-6">
+                    {locationName}'s average humidity of 74% creates the perfect
+                    breeding ground for aggressive mold strains. Standard
+                    cleaning isn't enough—you need humidity control systems
+                    designed for our sub-tropical climate.
+                </p>
+            </div>
+            <div
+                class="relative z-10 p-4 bg-white/10 backdrop-blur rounded-lg border border-white/10"
+            >
+                <div class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-[#11d4c4] mt-1"
+                        >gavel</span
+                    >
+                    <div>
+                        <h4 class="text-white font-bold text-sm">
+                            Insurance Claims Assistance
+                        </h4>
+                        <p class="text-slate-300 text-xs mt-1">
+                            We navigate Florida property insurance policies to
+                            help document damage and file your claim correctly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Cluster & FAQ -->
+<section class="py-16 bg-white border-t border-slate-100">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Services Cluster -->
+            <div class="lg:col-span-1">
+                <h3 class="text-xl font-bold text-[#0f172a] mb-6">
+                    Specialized Services
+                </h3>
+                <div class="flex flex-col gap-2">
+                    <a
+                        href="/restoration/mold-remediation/"
+                        class="group flex items-center justify-between p-3 rounded-lg hover:bg-[#f6f8f8] transition-colors border border-transparent hover:border-slate-100"
+                    >
+                        <span
+                            class="text-slate-700 font-medium group-hover:text-[#11d4c4] transition-colors"
+                            >Black Mold Removal</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-slate-300 group-hover:text-[#11d4c4]"
+                            >chevron_right</span
+                        >
                     </a>
-                    <a href="#process" class="bg-white border-2 border-slate-200 hover:border-[#11d4c4] text-slate-700 hover:text-[#11d4c4] px-6 py-3.5 rounded-lg font-bold text-base transition-all flex items-center gap-2 justify-center">
-                        <span class="material-symbols-outlined">school</span>
-                        Black Mold Education
+                    <a
+                        href="/restoration/mold-remediation/"
+                        class="group flex items-center justify-between p-3 rounded-lg hover:bg-[#f6f8f8] transition-colors border border-transparent hover:border-slate-100"
+                    >
+                        <span
+                            class="text-slate-700 font-medium group-hover:text-[#11d4c4] transition-colors"
+                            >Attic & Crawlspace Remediation</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-slate-300 group-hover:text-[#11d4c4]"
+                            >chevron_right</span
+                        >
+                    </a>
+                    <a
+                        href="/restoration/mold-remediation/"
+                        class="group flex items-center justify-between p-3 rounded-lg hover:bg-[#f6f8f8] transition-colors border border-transparent hover:border-slate-100"
+                    >
+                        <span
+                            class="text-slate-700 font-medium group-hover:text-[#11d4c4] transition-colors"
+                            >HVAC & Duct Cleaning</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-slate-300 group-hover:text-[#11d4c4]"
+                            >chevron_right</span
+                        >
+                    </a>
+                    <a
+                        href="/restoration/water-damage/"
+                        class="group flex items-center justify-between p-3 rounded-lg hover:bg-[#f6f8f8] transition-colors border border-transparent hover:border-slate-100"
+                    >
+                        <span
+                            class="text-slate-700 font-medium group-hover:text-[#11d4c4] transition-colors"
+                            >Water Damage Restoration</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-slate-300 group-hover:text-[#11d4c4]"
+                            >chevron_right</span
+                        >
+                    </a>
+                    <a
+                        href="/commercial/"
+                        class="group flex items-center justify-between p-3 rounded-lg hover:bg-[#f6f8f8] transition-colors border border-transparent hover:border-slate-100"
+                    >
+                        <span
+                            class="text-slate-700 font-medium group-hover:text-[#11d4c4] transition-colors"
+                            >Commercial Sanitization</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-slate-300 group-hover:text-[#11d4c4]"
+                            >chevron_right</span
+                        >
                     </a>
                 </div>
-                <div class="flex items-center justify-center lg:justify-start gap-6 pt-4 text-xs font-medium text-slate-400">
-
-                    <div class="flex items-center gap-1">
-                        <span class="material-symbols-outlined text-[#11d4c4] text-base">check_circle</span>
-                        Specialized Team
-                    </div>
-                    <div class="flex items-center gap-1">
-                        <span class="material-symbols-outlined text-[#11d4c4] text-base">check_circle</span>
-                        24/7 Response
-                    </div>
-                </div>
             </div>
-            <!-- Image -->
-            <div class="flex-1 w-full max-w-[600px] lg:max-w-none">
-                <div class="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl shadow-slate-200">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-[#11d4c4]/20 to-transparent z-10"></div>
-                    <img alt="Mold Inspection Professional" class="w-full h-full object-cover" data-alt="Scientific air quality testing professional with equipment in a clean home environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDep2FTyFF8p35UqmyUMPhpQ-N89mTKlJAi4TZ6zZYWBwQVmGDrtQv5ZGBl0cGLYxQ_XWM4HmjIfnZg1MMiC3Qaq2ryv8r9u8TtY1xP7rVoA3amNg31o2x3bZ25jiZ6_mH6mt7nnMAEzDYcvlPwMY4Uin6r0YgZs8ENNa4uGENyGSihybe94IIKb8gPBY5oFrZv1FiYzRtG9OyXubfaClgXWiE1XJAIQxElz5fNWitK1wuqC4nZCnAumJDnYqAP86BXVzGsicr12lk8"/>
-                    <!-- Floating Badge -->
-                    <div class="absolute bottom-6 left-6 z-20 bg-white/95 backdrop-blur px-4 py-3 rounded-lg shadow-lg flex items-center gap-3 border border-slate-100">
-                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                            <span class="material-symbols-outlined">health_and_safety</span>
-                        </div>
-                        <div>
-                            <p class="text-xs text-slate-500 font-semibold uppercase">Air Quality Status</p>
-                            <p class="text-sm font-bold text-[#0f172a]">Restored to Healthy Levels</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mold Lifecycle Bento Grid -->
-    <section id="process" class="py-16 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-100">
-        <div class="max-w-[1280px] mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Complete Mold Solutions</h2>
-                <p class="text-slate-600">Our scientific approach moves beyond simple cleaning. We identify the source, contain the spread, and engineer a permanent solution.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Step 1: Inspection & Testing -->
-                <article class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-2xl">biotech</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">1. Inspection & Testing</h3>
-                    <p class="text-sm text-slate-600 mb-4 flex-grow">Identifying air quality issues and visible growth through professional assessment.</p>
-                </article>
-                <!-- Step 2: Containment -->
-                <article class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors">
-                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-2xl">security</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">2. Containment</h3>
-                    <p class="text-sm text-slate-600 mb-4 flex-grow">Preventing spore spread to other areas of your home using safety barriers.</p>
-                </article>
-                <!-- Step 3: Sanitization -->
-                <article class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors">
-                    <div class="w-12 h-12 bg-[#11d4c4]/20 text-[#11d4c4] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-2xl">cleaning_services</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">3. Sanitization</h3>
-                    <p class="text-sm text-slate-600 mb-4 flex-grow">Cleaning contents and structural elements with professional-grade solutions.</p>
-                </article>
-                <!-- Step 4: Prevention -->
-                <article class="group relative flex flex-col p-6 rounded-xl bg-[#f6f8f8] border border-slate-200 hover:border-[#11d4c4] transition-colors">
-                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-2xl">water_drop</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-[#0f172a] mb-2">4. Prevention</h3>
-                    <p class="text-sm text-slate-600 mb-4 flex-grow">Installing dehumidification systems to prevent recurrence of mold growth.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hidden Dangers & Florida Context -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12">
-            <!-- Hidden Dangers -->
-            <div class="flex flex-col gap-6">
-                <div class="mb-2">
-                    <h2 class="text-2xl font-bold text-[#0f172a] mb-2">Hidden Dangers: Signals in Your Home</h2>
-                    <p class="text-slate-600 text-sm">Mold isn't always visible. Watch for these silent indicators.</p>
-                </div>
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <!-- Health Signals -->
-                    <div class="bg-red-50 border border-red-100 rounded-xl p-5">
-                        <div class="flex items-center gap-2 mb-3 text-red-700 font-bold">
-                            <span class="material-symbols-outlined">medical_services</span>
-                            Health Signals
-                        </div>
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-2 text-sm text-slate-700">
-                                <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5"></span>
-                                Persistent coughing or sneezing
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-slate-700">
-                                <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5"></span>
-                                Unexplained headaches
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-slate-700">
-                                <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5"></span>
-                                Eye or skin irritation
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-slate-700">
-                                <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5"></span>
-                                Worsening asthma symptoms
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- House Signals -->
-                    <div class="bg-orange-50 border border-orange-100 rounded-xl p-5">
-                        <div class="flex items-center gap-2 mb-3 text-orange-700 font-bold">
-                            <span class="material-symbols-outlined">home_work</span>
-                            House Signals
-                        </div>
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-2 text-sm text-slate-700">
-                                <span class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5"></span>
-                                Musty, earthy odors
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-slate-700">
-                                <span class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5"></span>
-                                Peeling wallpaper or paint
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-slate-700">
-                                <span class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5"></span>
-                                Dark grout in showers
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-slate-700">
-                                <span class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5"></span>
-                                Water stains on ceilings
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- Florida Context -->
-            <div class="relative bg-[#0f172a] rounded-xl p-8 overflow-hidden flex flex-col justify-between min-h-[300px]">
-                <!-- Abstract Map Pattern -->
-                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#11d4c4 1px, transparent 1px); background-size: 20px 20px;"></div>
-                <div class="relative z-10">
-                    <div class="flex items-center gap-2 text-[#11d4c4] mb-4 font-bold tracking-wide uppercase text-xs">
-                        <span class="material-symbols-outlined text-lg">location_on</span>
-                        {locationName}-Specific Context
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Why {locationName} Mold is Different</h3>
-                    <p class="text-slate-300 leading-relaxed mb-6">
-                        {locationName}'s average humidity of 74% creates the perfect breeding ground for aggressive mold strains. Standard cleaning isn't enough—you need humidity control systems designed for our sub-tropical climate.
-                    </p>
-                </div>
-                <div class="relative z-10 p-4 bg-white/10 backdrop-blur rounded-lg border border-white/10">
-                    <div class="flex items-start gap-3">
-                        <span class="material-symbols-outlined text-[#11d4c4] mt-1">gavel</span>
-                        <div>
-                            <h4 class="text-white font-bold text-sm">Insurance Claims Assistance</h4>
-                            <p class="text-slate-300 text-xs mt-1">We navigate Florida property insurance policies to help document damage and file your claim correctly.</p>
-                        </div>
-                    </div>
+            <!-- FAQ -->
+            <div class="lg:col-span-2">
+                <h3 class="text-xl font-bold text-[#0f172a] mb-6">
+                    Frequently Asked Questions
+                </h3>
+                <div class="flex flex-col gap-3">
+                    {
+                        moldRemediationFAQs.map((item) => (
+                            <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                                <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+                                    <span class="text-base font-bold text-[#0f172a] group-hover:text-[#11d4c4] transition-colors pr-4">
+                                        {item.question}
+                                    </span>
+                                    <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-slate-50 text-slate-400 group-open:bg-[#11d4c4] group-open:text-[#0f172a] transition-all duration-300">
+                                        <span class="material-symbols-outlined text-xl group-open:hidden">
+                                            add
+                                        </span>
+                                        <span class="material-symbols-outlined text-xl hidden group-open:block">
+                                            remove
+                                        </span>
+                                    </span>
+                                </summary>
+                                <div class="px-4 pb-4 text-slate-600 leading-relaxed animate-fade-in text-sm bg-slate-50/50">
+                                    {item.answer}
+                                </div>
+                            </details>
+                        ))
+                    }
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Services Cluster & FAQ -->
-    <section class="py-16 bg-white border-t border-slate-100">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-12">
-                <!-- Services Cluster -->
-                <div class="lg:col-span-1">
-                    <h3 class="text-xl font-bold text-[#0f172a] mb-6">Specialized Services</h3>
-                    <div class="flex flex-col gap-2">
-                        <a href="/restoration/mold-remediation/" class="group flex items-center justify-between p-3 rounded-lg hover:bg-[#f6f8f8] transition-colors border border-transparent hover:border-slate-100">
-                            <span class="text-slate-700 font-medium group-hover:text-[#11d4c4] transition-colors">Black Mold Removal</span>
-                            <span class="material-symbols-outlined text-slate-300 group-hover:text-[#11d4c4]">chevron_right</span>
-                        </a>
-                        <a href="/restoration/mold-remediation/" class="group flex items-center justify-between p-3 rounded-lg hover:bg-[#f6f8f8] transition-colors border border-transparent hover:border-slate-100">
-                            <span class="text-slate-700 font-medium group-hover:text-[#11d4c4] transition-colors">Attic & Crawlspace Remediation</span>
-                            <span class="material-symbols-outlined text-slate-300 group-hover:text-[#11d4c4]">chevron_right</span>
-                        </a>
-                        <a href="/restoration/mold-remediation/" class="group flex items-center justify-between p-3 rounded-lg hover:bg-[#f6f8f8] transition-colors border border-transparent hover:border-slate-100">
-                            <span class="text-slate-700 font-medium group-hover:text-[#11d4c4] transition-colors">HVAC & Duct Cleaning</span>
-                            <span class="material-symbols-outlined text-slate-300 group-hover:text-[#11d4c4]">chevron_right</span>
-                        </a>
-                        <a href="/restoration/water-damage/" class="group flex items-center justify-between p-3 rounded-lg hover:bg-[#f6f8f8] transition-colors border border-transparent hover:border-slate-100">
-                            <span class="text-slate-700 font-medium group-hover:text-[#11d4c4] transition-colors">Water Damage Restoration</span>
-                            <span class="material-symbols-outlined text-slate-300 group-hover:text-[#11d4c4]">chevron_right</span>
-                        </a>
-                        <a href="/commercial/" class="group flex items-center justify-between p-3 rounded-lg hover:bg-[#f6f8f8] transition-colors border border-transparent hover:border-slate-100">
-                            <span class="text-slate-700 font-medium group-hover:text-[#11d4c4] transition-colors">Commercial Sanitization</span>
-                            <span class="material-symbols-outlined text-slate-300 group-hover:text-[#11d4c4]">chevron_right</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- FAQ -->
-                <div class="lg:col-span-2">
-                    <h3 class="text-xl font-bold text-[#0f172a] mb-6">Frequently Asked Questions</h3>
-            <div class="flex flex-col gap-3">
-                       {moldRemediationFAQs.map((item) => (
-                         <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                           <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
-                             <span class="text-base font-bold text-[#0f172a] group-hover:text-[#11d4c4] transition-colors pr-4">
-                               {item.question}
-                             </span>
-                             <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-slate-50 text-slate-400 group-open:bg-[#11d4c4] group-open:text-[#0f172a] transition-all duration-300">
-                               <span class="material-symbols-outlined text-xl group-open:hidden">add</span>
-                               <span class="material-symbols-outlined text-xl hidden group-open:block">remove</span>
-                             </span>
-                           </summary>
-                           <div class="px-4 pb-4 text-slate-600 leading-relaxed animate-fade-in text-sm bg-slate-50/50">
-                             {item.answer}
-                           </div>
-                         </details>
-                       ))}
-                    </div>
-                </div>
-            </div>
+    </div>
+</section>
+<!-- Service Areas (Internal Linking) -->
+<section class="py-16 bg-[#f6f8f8] border-t border-slate-200">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 class="text-xl font-bold text-[#0f172a] mb-6">
+            Serving {locationName} & Surrounding Areas
+        </h3>
+        <div class="flex flex-wrap gap-3">
+            <a
+                class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm"
+                href="/service-areas/orlando/">Orlando</a
+            >
+            <a
+                class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm"
+                href="/service-areas/miami/">Miami</a
+            >
+            <a
+                class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm"
+                href="/service-areas/tampa/">Tampa</a
+            >
+            <a
+                class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm"
+                href="/service-areas/fort-lauderdale/">Fort Lauderdale</a
+            >
+            <a
+                class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm"
+                href="/service-areas/fort-myers/">Fort Myers</a
+            >
+            <a
+                class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm"
+                href="/service-areas/naples/">Naples</a
+            >
+            <a
+                class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm"
+                href="/service-areas/sarasota/">Sarasota</a
+            >
+            <a
+                class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm"
+                href="/service-areas/">View All Locations</a
+            >
         </div>
-    </section>
-    <!-- Service Areas (Internal Linking) -->
-    <section class="py-16 bg-[#f6f8f8] border-t border-slate-200">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-xl font-bold text-[#0f172a] mb-6">Serving {locationName} & Surrounding Areas</h3>
-            <div class="flex flex-wrap gap-3">
-                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/central-florida/orlando/">Orlando</a>
-                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/south-florida/miami/">Miami</a>
-                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/tampa-bay/tampa/">Tampa</a>
-                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/south-florida/fort-lauderdale/">Fort Lauderdale</a>
-                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/southwest-florida/fort-myers/">Fort Myers</a>
-                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/southwest-florida/naples/">Naples</a>
-                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/tampa-bay/sarasota/">Sarasota</a>
-                <a class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:border-[#11d4c4] hover:text-[#11d4c4] transition-colors shadow-sm" href="/service-areas/">View All Locations</a>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>

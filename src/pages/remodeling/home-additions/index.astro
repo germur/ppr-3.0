@@ -1,86 +1,106 @@
 ---
-import Header from '../../../components/common/Header.astro';
+import Header from "../../../components/common/Header.astro";
 
-import MainLayout from '../../../layouts/MainLayout.astro';
+import MainLayout from "../../../layouts/MainLayout.astro";
 
-const pageTitle = "Home Additions & ADU Builders in Florida | Expand Your Space | Paramount";
-const metaDesc = "Maximize your property value with a custom home addition or detached ADU. We handle Florida zoning, permits, and construction for guest houses and suite expansions. CGC #1529606.";
+const pageTitle =
+    "Home Additions & ADU Builders in Florida | Expand Your Space | Paramount";
+const metaDesc =
+    "Maximize your property value with a custom home addition or detached ADU. We handle Florida zoning, permits, and construction for guest houses and suite expansions. CGC #1529606.";
 
 const additionsSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Home Additions & ADU Construction",
-  "provider": {
-    "@type": "GeneralContractor",
-    "name": "Paramount Property Restoration",
-    "image": "https://paramountpropertyrestoration.com/logo.png",
-    "priceRange": "$$$",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "FL"
-    }
-  },
-  "areaServed": "Florida",
-  "description": "Design and construction of residential additions, including ADUs, in-law suites, and second-story expansions.",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Construction Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Accessory Dwelling Unit (ADU) Building"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Second Story Additions"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Garage Conversions"
-        }
-      }
-    ]
-  }
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Home Additions & ADU Construction",
+    provider: {
+        "@type": "GeneralContractor",
+        name: "Paramount Property Restoration",
+        image: "https://paramountpropertyrestoration.com/logo.png",
+        priceRange: "$$$",
+        address: {
+            "@type": "PostalAddress",
+            addressRegion: "FL",
+        },
+    },
+    areaServed: "Florida",
+    description:
+        "Design and construction of residential additions, including ADUs, in-law suites, and second-story expansions.",
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Construction Services",
+        itemListElement: [
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Accessory Dwelling Unit (ADU) Building",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Second Story Additions",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Garage Conversions",
+                },
+            },
+        ],
+    },
 };
 ---
 
-<MainLayout 
-  title={pageTitle} 
-  description={metaDesc} 
-  customSchema={additionsSchema}
-  hideHeader={true}
-  hideFooter={false}
-  breadcrumbItems={[
-    { label: 'Home', href: '/' },
-    { label: 'Remodeling', href: '/remodeling/' },
-    { label: 'Additions & ADUs', href: '/remodeling/home-additions/' }
-  ]}
+<MainLayout
+    title={pageTitle}
+    description={metaDesc}
+    customSchema={additionsSchema}
+    hideHeader={true}
+    hideFooter={false}
+    breadcrumbItems={[
+        { label: "Home", href: "/" },
+        { label: "Remodeling", href: "/remodeling/" },
+        { label: "Additions & ADUs", href: "/remodeling/home-additions/" },
+    ]}
 >
     <!-- Inject Fonts into Head -->
     <fragment slot="head">
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
     </fragment>
 
     <!-- Sticky Nav Wrapper -->
     <div class="sticky top-0 z-50 font-['Plus_Jakarta_Sans']">
         <!-- Sticky Bar -->
-        <div class="bg-[#1269e2] text-white px-4 py-2 text-center text-sm font-medium flex items-center justify-center gap-4 flex-wrap shadow-md border-b border-blue-600 relative z-[51]">
+        <div
+            class="bg-[#1269e2] text-white px-4 py-2 text-center text-sm font-medium flex items-center justify-center gap-4 flex-wrap shadow-md border-b border-blue-600 relative z-[51]"
+        >
             <span class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-white text-[18px]">add_home_work</span>
-                Need more space? <span class="font-bold">Free Feasibility Study for ADUs & Additions.</span>
+                <span class="material-symbols-outlined text-white text-[18px]"
+                    >add_home_work</span
+                >
+                Need more space? <span class="font-bold"
+                    >Free Feasibility Study for ADUs & Additions.</span
+                >
             </span>
-            <a href="tel:7866022217" class="bg-white text-[#1269e2] hover:bg-blue-50 px-4 py-1 rounded text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-1">
+            <a
+                href="tel:7866022217"
+                class="bg-white text-[#1269e2] hover:bg-blue-50 px-4 py-1 rounded text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-1"
+            >
                 Check Feasibility
-                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                <span class="material-symbols-outlined text-[14px]"
+                    >arrow_forward</span
+                >
             </a>
         </div>
 
@@ -88,15 +108,18 @@ const additionsSchema = {
         <Header theme="light" sticky={false} />
     </div>
 
-
-    
     <!-- Local Styles -->
     <style>
         .text-shadow {
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         /* Override primary color locally for this page */
-        .text-primary, .bg-primary, .border-primary, .hover\:bg-primary:hover, .hover\:text-primary:hover, .group-hover\:bg-primary:hover {
+        .text-primary,
+        .bg-primary,
+        .border-primary,
+        .hover\:bg-primary:hover,
+        .hover\:text-primary:hover,
+        .group-hover\:bg-primary:hover {
             --tw-text-opacity: 1;
             color: rgba(18, 105, 226, var(--tw-text-opacity)); /* #1269e2 */
         }
@@ -107,19 +130,37 @@ const additionsSchema = {
 
     <!-- Hero Section -->
     <div class="relative w-full">
-        <div class="flex min-h-[600px] flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-20 text-center" data-alt="Modern detached ADU guest house in Florida backyard with landscaping" style='background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9w0f4g3qX9UoXbF5vT7sZ1yE8rJ4mN2cK6LP3hW5QG7YV8aB9dC_eR1iS0tUo4n5lM6pXO7zF3vG2wH8jY9kL4rN0sQ1mP5T6bZ8v9c2x3y4u5i6o7p8q9r0s1t2u3v4w5x6y7z8a9b0c1d2e3f4g5h6i7j8k9l0m1n2o3p4q5r6s7t8u9v0w1x2y3z4a5b6c7d8e9");'>
+        <div
+            class="flex min-h-[600px] flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-20 text-center"
+            data-alt="Modern detached ADU guest house in Florida backyard with landscaping"
+            style='background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9w0f4g3qX9UoXbF5vT7sZ1yE8rJ4mN2cK6LP3hW5QG7YV8aB9dC_eR1iS0tUo4n5lM6pXO7zF3vG2wH8jY9kL4rN0sQ1mP5T6bZ8v9c2x3y4u5i6o7p8q9r0s1t2u3v4w5x6y7z8a9b0c1d2e3f4g5h6i7j8k9l0m1n2o3p4q5r6s7t8u9v0w1x2y3z4a5b6c7d8e9");'
+        >
             <div class="flex max-w-[1024px] flex-col gap-6 animate-fade-in-up">
-                <span class="mx-auto w-fit rounded-full bg-[#1269e2]/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm border border-white/20">
+                <span
+                    class="mx-auto w-fit rounded-full bg-[#1269e2]/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm border border-white/20"
+                >
                     Don't Move, Improve
                 </span>
-                <h1 class="text-shadow text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl md:text-6xl">
-                    Custom Home Additions & <br class="hidden md:block"/>Accessory Dwelling Units (ADUs)
+                <h1
+                    class="text-shadow text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl md:text-6xl"
+                >
+                    Custom Home Additions & <br
+                        class="hidden md:block"
+                    />Accessory Dwelling Units (ADUs)
                 </h1>
-                <h2 class="mx-auto max-w-[800px] text-gray-200 text-lg font-medium leading-relaxed sm:text-xl">
-                    Expand your living footprint without leaving the neighborhood you love. From multigenerational suites to income-generating guest houses, we build compliant, high-value structures across Central & South Florida.
+                <h2
+                    class="mx-auto max-w-[800px] text-gray-200 text-lg font-medium leading-relaxed sm:text-xl"
+                >
+                    Expand your living footprint without leaving the
+                    neighborhood you love. From multigenerational suites to
+                    income-generating guest houses, we build compliant,
+                    high-value structures across Central & South Florida.
                 </h2>
                 <div class="flex flex-wrap justify-center gap-4 pt-2">
-                    <a href="/contact/" class="flex h-12 min-w-[200px] cursor-pointer items-center justify-center rounded-lg bg-[#f97316] px-6 text-base font-bold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-orange-500/30">
+                    <a
+                        href="/contact/"
+                        class="flex h-12 min-w-[200px] cursor-pointer items-center justify-center rounded-lg bg-[#f97316] px-6 text-base font-bold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-orange-500/30"
+                    >
                         Request a Feasibility Consultation
                     </a>
                 </div>
@@ -129,47 +170,117 @@ const additionsSchema = {
 
     <!-- Information Gain: Permitting Maze -->
     <section class="py-16 px-4 md:px-10 bg-white dark:bg-[#1a2632]">
-        <div class="mx-auto max-w-[1000px] flex flex-col md:flex-row gap-12 items-center">
+        <div
+            class="mx-auto max-w-[1000px] flex flex-col md:flex-row gap-12 items-center"
+        >
             <div class="w-full md:w-1/2">
-                <span class="text-[#f97316] font-bold tracking-wider uppercase text-sm">Zoning Expertise</span>
-                <h2 class="text-[#111418] dark:text-white text-3xl font-bold mt-2 mb-6 leading-tight">Navigating Florida’s Zoning & Permitting for You</h2>
-                <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                    Building an addition in Florida involves navigating complex setbacks, impervious surface ratios, and strict hurricane codes. Unlike standard contractors, Paramount offers a turnkey service: we manage the architectural drawings, engineering, and city approvals ensuring your new structure is 100% legal and insurable.
+                <span
+                    class="text-[#f97316] font-bold tracking-wider uppercase text-sm"
+                    >Zoning Expertise</span
+                >
+                <h2
+                    class="text-[#111418] dark:text-white text-3xl font-bold mt-2 mb-6 leading-tight"
+                >
+                    Navigating Florida’s Zoning & Permitting for You
+                </h2>
+                <p
+                    class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6"
+                >
+                    Building an addition in Florida involves navigating complex
+                    setbacks, impervious surface ratios, and strict hurricane
+                    codes. Unlike standard contractors, Paramount offers a
+                    turnkey service: we manage the architectural drawings,
+                    engineering, and city approvals ensuring your new structure
+                    is 100% legal and insurable.
                 </p>
                 <ul class="space-y-4">
                     <li class="flex items-start gap-3">
-                        <span class="material-symbols-outlined text-[#1269e2] mt-1">check_circle</span>
+                        <span
+                            class="material-symbols-outlined text-[#1269e2] mt-1"
+                            >check_circle</span
+                        >
                         <div>
-                            <strong class="block text-[#111418] dark:text-white">HOA & City Approvals</strong>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">We handle the paperwork and board meetings.</p>
+                            <strong class="block text-[#111418] dark:text-white"
+                                >HOA & City Approvals</strong
+                            >
+                            <p class="text-sm text-gray-500 dark:text-gray-400">
+                                We handle the paperwork and board meetings.
+                            </p>
                         </div>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="material-symbols-outlined text-[#1269e2] mt-1">check_circle</span>
+                        <span
+                            class="material-symbols-outlined text-[#1269e2] mt-1"
+                            >check_circle</span
+                        >
                         <div>
-                            <strong class="block text-[#111418] dark:text-white">Structural Engineering</strong>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Calculations for wind loads and foundation integrity.</p>
+                            <strong class="block text-[#111418] dark:text-white"
+                                >Structural Engineering</strong
+                            >
+                            <p class="text-sm text-gray-500 dark:text-gray-400">
+                                Calculations for wind loads and foundation
+                                integrity.
+                            </p>
                         </div>
                     </li>
                 </ul>
             </div>
-            <div class="w-full md:w-1/2 bg-blue-50 dark:bg-gray-800 rounded-2xl p-8 border border-blue-100 dark:border-gray-700">
-                <h3 class="text-xl font-bold text-[#111418] dark:text-white mb-4 flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[#1269e2]">gavel</span>
+            <div
+                class="w-full md:w-1/2 bg-blue-50 dark:bg-gray-800 rounded-2xl p-8 border border-blue-100 dark:border-gray-700"
+            >
+                <h3
+                    class="text-xl font-bold text-[#111418] dark:text-white mb-4 flex items-center gap-2"
+                >
+                    <span class="material-symbols-outlined text-[#1269e2]"
+                        >gavel</span
+                    >
                     Common Zoning Considerations
                 </h3>
                 <div class="space-y-4">
-                    <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm">
-                        <h4 class="font-bold text-[#111418] dark:text-white text-sm">Setbacks</h4>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Distance required from property lines (usually 5-10ft).</p>
+                    <div
+                        class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm"
+                    >
+                        <h4
+                            class="font-bold text-[#111418] dark:text-white text-sm"
+                        >
+                            Setbacks
+                        </h4>
+                        <p
+                            class="text-xs text-gray-500 dark:text-gray-400 mt-1"
+                        >
+                            Distance required from property lines (usually
+                            5-10ft).
+                        </p>
                     </div>
-                    <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm">
-                        <h4 class="font-bold text-[#111418] dark:text-white text-sm">Lot Coverage</h4>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Maximum percentage of your lot that can be covered by structures.</p>
+                    <div
+                        class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm"
+                    >
+                        <h4
+                            class="font-bold text-[#111418] dark:text-white text-sm"
+                        >
+                            Lot Coverage
+                        </h4>
+                        <p
+                            class="text-xs text-gray-500 dark:text-gray-400 mt-1"
+                        >
+                            Maximum percentage of your lot that can be covered
+                            by structures.
+                        </p>
                     </div>
-                    <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm">
-                        <h4 class="font-bold text-[#111418] dark:text-white text-sm">Flood Zones</h4>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Base Flood Elevation requirements for new habitable space.</p>
+                    <div
+                        class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-sm"
+                    >
+                        <h4
+                            class="font-bold text-[#111418] dark:text-white text-sm"
+                        >
+                            Flood Zones
+                        </h4>
+                        <p
+                            class="text-xs text-gray-500 dark:text-gray-400 mt-1"
+                        >
+                            Base Flood Elevation requirements for new habitable
+                            space.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -180,60 +291,138 @@ const additionsSchema = {
     <section class="py-16 px-4 md:px-10 bg-[#f6f7f8] dark:bg-[#101922]">
         <div class="mx-auto max-w-[1200px]">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-[#111418] dark:text-white">Ways to Expand Your Home</h2>
-                <p class="text-gray-500 dark:text-gray-400 mt-2">Tailored solutions for every lot size and budget.</p>
+                <h2 class="text-3xl font-bold text-[#111418] dark:text-white">
+                    Ways to Expand Your Home
+                </h2>
+                <p class="text-gray-500 dark:text-gray-400 mt-2">
+                    Tailored solutions for every lot size and budget.
+                </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
-                
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]"
+            >
                 <!-- The Modern ADU (Large) -->
-                <a href="/remodeling/home-additions/adu-guest-house/" class="md:col-span-2 row-span-2 relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all block">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern backyard ADU with floor to ceiling windows" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHg78_q5K7zR0946720D23851532910748123564012395678019345678912345678901234567890123456789012345678901234567890123456789");'></div> 
-                    <div class="absolute inset-0 bg-gray-600 mix-blend-multiply"></div>
-                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_lNPtFDntKgzGHzRGx9UCLVH472zRFHPPmigN-VJbebE0x-xhHQTgrGARvFqTqdx96DxFjaviySHVSOmdNOcaki8vgvZZjZF4S7mD2SPz4Z6xnx1Xlov8Fj6XacYa33nrQ9nWVfdUnb45ezFrTN6IhboftCftg18MoeEkK6Zh3efDtfc3kUD0gOcfUcbg_2iFEMKx_aAj73e8o3ZwgT29KFueNNqwhoBikxXcQh9Zu1NMBKZAqXpbCYurm-EMPw7gmywKPY-VpQaj");'></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <a
+                    href="/remodeling/home-additions/adu-guest-house/"
+                    class="md:col-span-2 row-span-2 relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all block"
+                >
+                    <div
+                        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Modern backyard ADU with floor to ceiling windows"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHg78_q5K7zR0946720D23851532910748123564012395678019345678912345678901234567890123456789012345678901234567890123456789");'
+                    >
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gray-600 mix-blend-multiply"
+                    >
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_lNPtFDntKgzGHzRGx9UCLVH472zRFHPPmigN-VJbebE0x-xhHQTgrGARvFqTqdx96DxFjaviySHVSOmdNOcaki8vgvZZjZF4S7mD2SPz4Z6xnx1Xlov8Fj6XacYa33nrQ9nWVfdUnb45ezFrTN6IhboftCftg18MoeEkK6Zh3efDtfc3kUD0gOcfUcbg_2iFEMKx_aAj73e8o3ZwgT29KFueNNqwhoBikxXcQh9Zu1NMBKZAqXpbCYurm-EMPw7gmywKPY-VpQaj");'
+                    >
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+                    >
+                    </div>
                     <div class="absolute bottom-0 left-0 p-8">
-                        <span class="inline-block px-3 py-1 rounded-full bg-[#f97316] text-white text-xs font-bold mb-3">High ROI</span>
-                        <h3 class="text-2xl font-bold text-white mb-2">The Modern ADU (Accessory Dwelling Unit)</h3>
-                        <p class="text-gray-200 text-sm md:text-base mb-4 max-w-lg">Independent structures for aging parents (in-law quarters) or rental income (Airbnb). Complete with kitchenette and bath.</p>
-                         <p class="text-blue-200 text-xs italic">
-                            <span class="hover:underline hover:text-white transition-colors">We design compact kitchens efficiently...</span>
+                        <span
+                            class="inline-block px-3 py-1 rounded-full bg-[#f97316] text-white text-xs font-bold mb-3"
+                            >High ROI</span
+                        >
+                        <h3 class="text-2xl font-bold text-white mb-2">
+                            The Modern ADU (Accessory Dwelling Unit)
+                        </h3>
+                        <p
+                            class="text-gray-200 text-sm md:text-base mb-4 max-w-lg"
+                        >
+                            Independent structures for aging parents (in-law
+                            quarters) or rental income (Airbnb). Complete with
+                            kitchenette and bath.
+                        </p>
+                        <p class="text-blue-200 text-xs italic">
+                            <span
+                                class="hover:underline hover:text-white transition-colors"
+                                >We design compact kitchens efficiently...</span
+                            >
                         </p>
                     </div>
                 </a>
 
                 <!-- Second Story Additions -->
-                <div class="relative group overflow-hidden rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 flex flex-col justify-between">
-                     <div class="bg-blue-50 size-12 rounded-full flex items-center justify-center text-[#1269e2] mb-4">
+                <div
+                    class="relative group overflow-hidden rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 flex flex-col justify-between"
+                >
+                    <div
+                        class="bg-blue-50 size-12 rounded-full flex items-center justify-center text-[#1269e2] mb-4"
+                    >
                         <span class="material-symbols-outlined">stairs</span>
                     </div>
                     <div>
-                        <h3 class="text-[#111418] dark:text-white text-xl font-bold mb-2">Second-Story Additions</h3>
-                        <p class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed">Doubling your square footage by building up, not out. Ideal for smaller lots where footprint expansion isn't possible.</p>
+                        <h3
+                            class="text-[#111418] dark:text-white text-xl font-bold mb-2"
+                        >
+                            Second-Story Additions
+                        </h3>
+                        <p
+                            class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                        >
+                            Doubling your square footage by building up, not
+                            out. Ideal for smaller lots where footprint
+                            expansion isn't possible.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Garage Conversions -->
-                <div class="relative group overflow-hidden rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 flex flex-col justify-between">
-                    <div class="bg-orange-50 size-12 rounded-full flex items-center justify-center text-[#f97316] mb-4">
-                        <span class="material-symbols-outlined">garage_home</span>
+                <div
+                    class="relative group overflow-hidden rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 flex flex-col justify-between"
+                >
+                    <div
+                        class="bg-orange-50 size-12 rounded-full flex items-center justify-center text-[#f97316] mb-4"
+                    >
+                        <span class="material-symbols-outlined"
+                            >garage_home</span
+                        >
                     </div>
                     <div>
-                        <h3 class="text-[#111418] dark:text-white text-xl font-bold mb-2">Garage Conversions</h3>
-                        <p class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed">Transforming underutilized storage into a conditioned living space, gym, or home office.</p>
+                        <h3
+                            class="text-[#111418] dark:text-white text-xl font-bold mb-2"
+                        >
+                            Garage Conversions
+                        </h3>
+                        <p
+                            class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                        >
+                            Transforming underutilized storage into a
+                            conditioned living space, gym, or home office.
+                        </p>
                     </div>
                 </div>
 
-                 <!-- Sunrooms -->
-                 <div class="relative group overflow-hidden rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 flex flex-col justify-between md:col-span-1">
-                    <div class="bg-blue-50 size-12 rounded-full flex items-center justify-center text-[#1269e2] mb-4">
+                <!-- Sunrooms -->
+                <div
+                    class="relative group overflow-hidden rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 flex flex-col justify-between md:col-span-1"
+                >
+                    <div
+                        class="bg-blue-50 size-12 rounded-full flex items-center justify-center text-[#1269e2] mb-4"
+                    >
                         <span class="material-symbols-outlined">sunny</span>
                     </div>
                     <div>
-                        <h3 class="text-[#111418] dark:text-white text-xl font-bold mb-2">Sunrooms & Enclosures</h3>
-                        <p class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed">Merging indoor luxury with outdoor views using high-impact hurricane glass.</p>
+                        <h3
+                            class="text-[#111418] dark:text-white text-xl font-bold mb-2"
+                        >
+                            Sunrooms & Enclosures
+                        </h3>
+                        <p
+                            class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                        >
+                            Merging indoor luxury with outdoor views using
+                            high-impact hurricane glass.
+                        </p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -241,20 +430,53 @@ const additionsSchema = {
     <!-- Technical Focus: Resilience -->
     <section class="py-16 px-4 md:px-10 bg-white dark:bg-[#1a2632]">
         <div class="mx-auto max-w-[960px] text-center">
-            <h2 class="text-[#111418] dark:text-white text-3xl font-bold mb-6">Seamless Integration & Storm Resilience</h2>
+            <h2 class="text-[#111418] dark:text-white text-3xl font-bold mb-6">
+                Seamless Integration & Storm Resilience
+            </h2>
             <div class="grid md:grid-cols-2 gap-8 text-left mt-10">
                 <div class="flex gap-4">
-                    <span class="material-symbols-outlined text-[#1269e2] text-3xl shrink-0">architecture</span>
+                    <span
+                        class="material-symbols-outlined text-[#1269e2] text-3xl shrink-0"
+                        >architecture</span
+                    >
                     <div>
-                        <h4 class="font-bold text-[#111418] dark:text-white text-lg">Architectural Matching</h4>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">We don't just stick a box on your house. We match rooflines, stucco textures, and flooring elevations for a seamless look that appears original to the home.</p>
+                        <h4
+                            class="font-bold text-[#111418] dark:text-white text-lg"
+                        >
+                            Architectural Matching
+                        </h4>
+                        <p
+                            class="text-gray-600 dark:text-gray-400 text-sm mt-2"
+                        >
+                            We don't just stick a box on your house. We match
+                            rooflines, stucco textures, and flooring elevations
+                            for a seamless look that appears original to the
+                            home.
+                        </p>
                     </div>
                 </div>
                 <div class="flex gap-4">
-                    <span class="material-symbols-outlined text-[#1269e2] text-3xl shrink-0">cyclone</span>
+                    <span
+                        class="material-symbols-outlined text-[#1269e2] text-3xl shrink-0"
+                        >cyclone</span
+                    >
                     <div>
-                        <h4 class="font-bold text-[#111418] dark:text-white text-lg">Hurricane Ready</h4>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">All new structures meet the latest Florida Building Codes for wind resistance. Built to withstand storms, learning from our <a href="/restoration/storm-damage/" class="text-[#1269e2] hover:underline">Storm Damage Restoration</a> experience.</p>
+                        <h4
+                            class="font-bold text-[#111418] dark:text-white text-lg"
+                        >
+                            Hurricane Ready
+                        </h4>
+                        <p
+                            class="text-gray-600 dark:text-gray-400 text-sm mt-2"
+                        >
+                            All new structures meet the latest Florida Building
+                            Codes for wind resistance. Built to withstand
+                            storms, learning from our <a
+                                href="/restoration/storm-damage/"
+                                class="text-[#1269e2] hover:underline"
+                                >Storm Damage Restoration</a
+                            > experience.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -264,38 +486,109 @@ const additionsSchema = {
     <!-- FAQ Section -->
     <section class="py-16 px-4 md:px-10 bg-[#f6f7f8] dark:bg-[#101922]">
         <div class="mx-auto max-w-[800px]">
-            <h2 class="text-2xl font-bold text-center text-[#111418] dark:text-white mb-8">Common Questions About Additions</h2>
-            <div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
-                <details class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                    <summary class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg">
-                        <span itemprop="name">How much does it cost to build an ADU in Florida?</span>
-                        <span class="material-symbols-outlined text-[#1269e2] transition-transform group-open:rotate-180">expand_more</span>
+            <h2
+                class="text-2xl font-bold text-center text-[#111418] dark:text-white mb-8"
+            >
+                Common Questions About Additions
+            </h2>
+            <div
+                class="space-y-4"
+                itemscope
+                itemtype="https://schema.org/FAQPage"
+            >
+                <details
+                    class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700"
+                    itemprop="mainEntity"
+                    itemscope
+                    itemtype="https://schema.org/Question"
+                >
+                    <summary
+                        class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg"
+                    >
+                        <span itemprop="name"
+                            >How much does it cost to build an ADU in Florida?</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-[#1269e2] transition-transform group-open:rotate-180"
+                            >expand_more</span
+                        >
                     </summary>
-                    <div class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <div
+                        class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1"
+                        itemprop="acceptedAnswer"
+                        itemscope
+                        itemtype="https://schema.org/Answer"
+                    >
                         <span itemprop="text">
-                            Costs vary widely based on size and finishes, but generally range from $250 to $400 per square foot for detached ADUs. Garage conversions are typically more cost-effective, starting around $100-$150 per sq. ft. We provide detailed estimates after a site feasibility study.
+                            Costs vary widely based on size and finishes, but
+                            generally range from $250 to $400 per square foot
+                            for detached ADUs. Garage conversions are typically
+                            more cost-effective, starting around $100-$150 per
+                            sq. ft. We provide detailed estimates after a site
+                            feasibility study.
                         </span>
                     </div>
                 </details>
-                <details class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                    <summary class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg">
-                        <span itemprop="name">Do I need a permit for a garage conversion?</span>
-                        <span class="material-symbols-outlined text-[#1269e2] transition-transform group-open:rotate-180">expand_more</span>
+                <details
+                    class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700"
+                    itemprop="mainEntity"
+                    itemscope
+                    itemtype="https://schema.org/Question"
+                >
+                    <summary
+                        class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg"
+                    >
+                        <span itemprop="name"
+                            >Do I need a permit for a garage conversion?</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-[#1269e2] transition-transform group-open:rotate-180"
+                            >expand_more</span
+                        >
                     </summary>
-                    <div class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <div
+                        class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1"
+                        itemprop="acceptedAnswer"
+                        itemscope
+                        itemtype="https://schema.org/Answer"
+                    >
                         <span itemprop="text">
-                            Yes, always. Converting a non-living space into habitable space requires permits to ensure proper insulation, electrical safety, and HVAC standards. Unpermitted work can lead to heavy fines and major issues when selling your home.
+                            Yes, always. Converting a non-living space into
+                            habitable space requires permits to ensure proper
+                            insulation, electrical safety, and HVAC standards.
+                            Unpermitted work can lead to heavy fines and major
+                            issues when selling your home.
                         </span>
                     </div>
                 </details>
-                <details class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                    <summary class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg">
-                        <span itemprop="name">How long does the permitting process take?</span>
-                        <span class="material-symbols-outlined text-[#1269e2] transition-transform group-open:rotate-180">expand_more</span>
+                <details
+                    class="group bg-white dark:bg-[#1a2632] rounded-lg p-5 cursor-pointer shadow-sm border border-gray-100 dark:border-gray-700"
+                    itemprop="mainEntity"
+                    itemscope
+                    itemtype="https://schema.org/Question"
+                >
+                    <summary
+                        class="flex justify-between items-center font-bold text-[#111418] dark:text-white text-lg"
+                    >
+                        <span itemprop="name"
+                            >How long does the permitting process take?</span
+                        >
+                        <span
+                            class="material-symbols-outlined text-[#1269e2] transition-transform group-open:rotate-180"
+                            >expand_more</span
+                        >
                     </summary>
-                    <div class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <div
+                        class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed pl-1"
+                        itemprop="acceptedAnswer"
+                        itemscope
+                        itemtype="https://schema.org/Answer"
+                    >
                         <span itemprop="text">
-                           In Florida, permitting for additions typically takes 4-8 weeks, depending on the municipality and complexity of the plans. We monitor this daily to expedite approval.
+                            In Florida, permitting for additions typically takes
+                            4-8 weeks, depending on the municipality and
+                            complexity of the plans. We monitor this daily to
+                            expedite approval.
                         </span>
                     </div>
                 </details>
@@ -304,39 +597,82 @@ const additionsSchema = {
     </section>
 
     <!-- Programmatic SEO / Local Neighborhoods -->
-    <section class="py-12 bg-white dark:bg-[#101822] border-t border-[#f0f2f4] dark:border-gray-800">
+    <section
+        class="py-12 bg-white dark:bg-[#101822] border-t border-[#f0f2f4] dark:border-gray-800"
+    >
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="mb-8">
-                <h3 class="text-[#111418] dark:text-white text-xl font-bold mb-2">Expanding Homes Across Florida</h3>
-                <p class="text-sm text-[#617289] dark:text-gray-400">Our construction teams are active in:</p>
+                <h3
+                    class="text-[#111418] dark:text-white text-xl font-bold mb-2"
+                >
+                    Expanding Homes Across Florida
+                </h3>
+                <p class="text-sm text-[#617289] dark:text-gray-400">
+                    Our construction teams are active in:
+                </p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/central-florida/orlando/home-additions/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                <a
+                    class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/service-areas/orlando/home-additions/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >location_on</span
+                    >
                     Orlando
                 </a>
-                <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/miami/home-additions/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                <a
+                    class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/service-areas/miami/home-additions/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >location_on</span
+                    >
                     Miami
                 </a>
-                <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/tampa-bay/tampa/home-additions/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                <a
+                    class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/service-areas/tampa/home-additions/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >location_on</span
+                    >
                     Tampa
                 </a>
-                <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/fort-lauderdale/home-additions/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                <a
+                    class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/service-areas/fort-lauderdale/home-additions/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >location_on</span
+                    >
                     Fort Lauderdale
                 </a>
-                <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/southwest-florida/naples/home-additions/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                <a
+                    class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/service-areas/naples/home-additions/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >location_on</span
+                    >
                     Naples
                 </a>
-                <a class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group" href="/remodeling/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">arrow_back</span>
+                <a
+                    class="text-[#617289] dark:text-gray-400 hover:text-[#1269e2] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/remodeling/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >arrow_back</span
+                    >
                     Back to Services
                 </a>
             </div>
         </div>
     </section>
-
 </MainLayout>

@@ -1,59 +1,77 @@
 ---
-import Header from '../../../components/common/Header.astro';
+import Header from "../../../components/common/Header.astro";
 
-import MainLayout from '../../../layouts/MainLayout.astro';
+import MainLayout from "../../../layouts/MainLayout.astro";
 
 const pageTitle = "Whole Home Renovation & Gut Remodeling Florida | Paramount";
-const metaDesc = "Complete home transformations. From gut renovations to open-concept layout changes. We modernize aging Florida homes with luxury finishes and storm-resilient upgrades. CGC #1529606.";
+const metaDesc =
+    "Complete home transformations. From gut renovations to open-concept layout changes. We modernize aging Florida homes with luxury finishes and storm-resilient upgrades. CGC #1529606.";
 
 const wholeHomeSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Whole Home Renovation",
-  "provider": {
-    "@type": "GeneralContractor",
-    "name": "Paramount Property Restoration",
-    "url": "https://paramountpropertyrestoration.com"
-  },
-  "areaServed": "Florida",
-  "description": metaDesc,
-  "serviceType": "Residential Remodeling",
-   "offer": {
-    "@type": "Offer",
-    "name": "Complete Home Renovation"
-  }
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Whole Home Renovation",
+    provider: {
+        "@type": "GeneralContractor",
+        name: "Paramount Property Restoration",
+        url: "https://paramountpropertyrestoration.com",
+    },
+    areaServed: "Florida",
+    description: metaDesc,
+    serviceType: "Residential Remodeling",
+    offer: {
+        "@type": "Offer",
+        name: "Complete Home Renovation",
+    },
 };
 ---
 
-<MainLayout 
-  title={pageTitle} 
-  description={metaDesc} 
-  customSchema={wholeHomeSchema}
-  hideHeader={true}
-  hideFooter={false}
-  breadcrumbItems={[
-    { label: 'Home', href: '/' },
-    { label: 'Remodeling', href: '/remodeling/' },
-    { label: 'Whole Home', href: '/remodeling/whole-home/' }
-  ]}
+<MainLayout
+    title={pageTitle}
+    description={metaDesc}
+    customSchema={wholeHomeSchema}
+    hideHeader={true}
+    hideFooter={false}
+    breadcrumbItems={[
+        { label: "Home", href: "/" },
+        { label: "Remodeling", href: "/remodeling/" },
+        { label: "Whole Home", href: "/remodeling/whole-home/" },
+    ]}
 >
     <!-- Inject Fonts into Head -->
     <fragment slot="head">
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
     </fragment>
 
     <!-- Sticky Nav Wrapper -->
     <div class="sticky top-0 z-50 font-['Plus_Jakarta_Sans']">
         <!-- Sticky Bar -->
-        <div class="bg-[#1e293b] text-white px-4 py-2 text-center text-sm font-medium flex items-center justify-center gap-4 flex-wrap shadow-md border-b border-slate-600 relative z-[51]">
+        <div
+            class="bg-[#1e293b] text-white px-4 py-2 text-center text-sm font-medium flex items-center justify-center gap-4 flex-wrap shadow-md border-b border-slate-600 relative z-[51]"
+        >
             <span class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-white text-[18px]">home_work</span>
-                Don't setle for outdated. <span class="font-bold">Turn your house into your dream home.</span>
+                <span class="material-symbols-outlined text-white text-[18px]"
+                    >home_work</span
+                >
+                Don't setle for outdated. <span class="font-bold"
+                    >Turn your house into your dream home.</span
+                >
             </span>
-            <a href="tel:7866022217" class="bg-white text-[#1e293b] hover:bg-slate-100 px-4 py-1 rounded text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-1">
+            <a
+                href="tel:7866022217"
+                class="bg-white text-[#1e293b] hover:bg-slate-100 px-4 py-1 rounded text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-1"
+            >
                 Start Renovation
-                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                <span class="material-symbols-outlined text-[14px]"
+                    >arrow_forward</span
+                >
             </a>
         </div>
 
@@ -61,15 +79,18 @@ const wholeHomeSchema = {
         <Header theme="light" sticky={false} />
     </div>
 
-
-
     <!-- Local Styles -->
     <style>
         .font-display {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: "Plus Jakarta Sans", sans-serif;
         }
         /* Override primary color locally for this page */
-        .text-primary, .bg-primary, .border-primary, .hover\:bg-primary:hover, .hover\:text-primary:hover, .group-hover\:bg-primary:hover {
+        .text-primary,
+        .bg-primary,
+        .border-primary,
+        .hover\:bg-primary:hover,
+        .hover\:text-primary:hover,
+        .group-hover\:bg-primary:hover {
             --tw-text-opacity: 1;
             color: rgba(30, 41, 59, var(--tw-text-opacity)); /* Slate 800 */
         }
@@ -83,21 +104,43 @@ const wholeHomeSchema = {
     </style>
 
     <!-- Hero Section -->
-    <section class="relative flex flex-col items-center justify-center min-h-[600px] w-full bg-cover bg-center bg-no-repeat font-display" data-alt="Luxury open concept living room renovation in Florida with modern furniture and large windows" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHg78_q5K7zR0946720D23851532910748123564012395678019345678912345678901234567890123456789012345678901234567890123456789");'>
-        <div class="container mx-auto px-4 py-20 flex flex-col items-center text-center max-w-4xl z-10">
-            <div class="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-2xl border border-white/20 shadow-2xl animate-fade-in-up">
-                <span class="inline-block py-1 px-3 rounded-full bg-[#1e293b]/90 text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">Complete Transformation</span>
-                <h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight mb-6 drop-shadow-lg">
+    <section
+        class="relative flex flex-col items-center justify-center min-h-[600px] w-full bg-cover bg-center bg-no-repeat font-display"
+        data-alt="Luxury open concept living room renovation in Florida with modern furniture and large windows"
+        style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHg78_q5K7zR0946720D23851532910748123564012395678019345678912345678901234567890123456789012345678901234567890123456789");'
+    >
+        <div
+            class="container mx-auto px-4 py-20 flex flex-col items-center text-center max-w-4xl z-10"
+        >
+            <div
+                class="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-2xl border border-white/20 shadow-2xl animate-fade-in-up"
+            >
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-[#1e293b]/90 text-white text-xs font-bold uppercase tracking-wider mb-4 border border-white/20"
+                    >Complete Transformation</span
+                >
+                <h1
+                    class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight mb-6 drop-shadow-lg"
+                >
                     Whole Home Renovation & Gut Remodeling
                 </h1>
-                <p class="text-white/90 text-lg md:text-xl font-medium leading-relaxed mb-8 max-w-2xl mx-auto drop-shadow-md font-body">
-                    We breathe new life into aging Florida properties. Experience the seamless flow of open-concept living, modernized for today's lifestyle and engineered for tomorrow's storms.
+                <p
+                    class="text-white/90 text-lg md:text-xl font-medium leading-relaxed mb-8 max-w-2xl mx-auto drop-shadow-md font-body"
+                >
+                    We breathe new life into aging Florida properties.
+                    Experience the seamless flow of open-concept living,
+                    modernized for today's lifestyle and engineered for
+                    tomorrow's storms.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="flex items-center justify-center rounded-lg h-12 px-8 bg-[#fbbf24] hover:bg-yellow-500 text-slate-900 text-base font-bold transition-all shadow-lg hover:shadow-yellow-500/30 transform hover:-translate-y-1">
+                    <button
+                        class="flex items-center justify-center rounded-lg h-12 px-8 bg-[#fbbf24] hover:bg-yellow-500 text-slate-900 text-base font-bold transition-all shadow-lg hover:shadow-yellow-500/30 transform hover:-translate-y-1"
+                    >
                         Schedule On-Site Consultation
                     </button>
-                    <button class="flex items-center justify-center rounded-lg h-12 px-8 bg-white/20 hover:bg-white/30 backdrop-blur text-white border border-white/50 text-base font-bold transition-all">
+                    <button
+                        class="flex items-center justify-center rounded-lg h-12 px-8 bg-white/20 hover:bg-white/30 backdrop-blur text-white border border-white/50 text-base font-bold transition-all"
+                    >
                         View Renovation Gallery
                     </button>
                 </div>
@@ -110,46 +153,98 @@ const wholeHomeSchema = {
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="flex flex-col md:flex-row gap-12 items-start">
                 <div class="flex-1">
-                    <h2 class="text-[#111418] text-3xl md:text-4xl font-bold leading-tight mb-6">
-                        More Than Just Cosmetics: <span class="text-[#1e293b]">A Complete Reset</span>
+                    <h2
+                        class="text-[#111418] text-3xl md:text-4xl font-bold leading-tight mb-6"
+                    >
+                        More Than Just Cosmetics: <span class="text-[#1e293b]"
+                            >A Complete Reset</span
+                        >
                     </h2>
-                    <p class="text-[#617289] text-lg leading-relaxed mb-8 font-body">
-                        Whole home renovation allows you to correct the "hidden" sins of older construction—outdated wiring, corroded plumbing, and poor insulation—while completely reimagining the floorplan. It's the most cost-effective way to get a "new" custom home without moving.
+                    <p
+                        class="text-[#617289] text-lg leading-relaxed mb-8 font-body"
+                    >
+                        Whole home renovation allows you to correct the "hidden"
+                        sins of older construction—outdated wiring, corroded
+                        plumbing, and poor insulation—while completely
+                        reimagining the floorplan. It's the most cost-effective
+                        way to get a "new" custom home without moving.
                     </p>
                     <ul class="space-y-4">
                         <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-[#fbbf24]">check_circle</span>
-                            <span class="text-[#111418] font-bold">Remove Load-Bearing Walls</span>
+                            <span
+                                class="material-symbols-outlined text-[#fbbf24]"
+                                >check_circle</span
+                            >
+                            <span class="text-[#111418] font-bold"
+                                >Remove Load-Bearing Walls</span
+                            >
                         </li>
                         <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-[#fbbf24]">check_circle</span>
-                            <span class="text-[#111418] font-bold">Replace Plumbing & Electric</span>
+                            <span
+                                class="material-symbols-outlined text-[#fbbf24]"
+                                >check_circle</span
+                            >
+                            <span class="text-[#111418] font-bold"
+                                >Replace Plumbing & Electric</span
+                            >
                         </li>
                         <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-[#fbbf24]">check_circle</span>
-                            <span class="text-[#111418] font-bold">Install Impact Windows & Doors</span>
+                            <span
+                                class="material-symbols-outlined text-[#fbbf24]"
+                                >check_circle</span
+                            >
+                            <span class="text-[#111418] font-bold"
+                                >Install Impact Windows & Doors</span
+                            >
                         </li>
                     </ul>
                 </div>
                 <div class="flex-1 grid gap-6">
                     <!-- Feature 1 -->
-                    <div class="flex gap-5 p-6 rounded-xl border border-slate-200 bg-slate-50 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="size-12 rounded-full bg-[#1e293b] flex items-center justify-center text-white shrink-0">
+                    <div
+                        class="flex gap-5 p-6 rounded-xl border border-slate-200 bg-slate-50 shadow-sm hover:shadow-md transition-shadow group"
+                    >
+                        <div
+                            class="size-12 rounded-full bg-[#1e293b] flex items-center justify-center text-white shrink-0"
+                        >
                             <span class="material-symbols-outlined">floor</span>
                         </div>
                         <div>
-                            <h3 class="text-[#111418] text-lg font-bold mb-2">Open Layouts</h3>
-                            <p class="text-[#617289] text-sm leading-relaxed font-body">We specialize in structural engineering to safely remove walls, creating the expansive, light-filled flow standard in modern luxury homes.</p>
+                            <h3 class="text-[#111418] text-lg font-bold mb-2">
+                                Open Layouts
+                            </h3>
+                            <p
+                                class="text-[#617289] text-sm leading-relaxed font-body"
+                            >
+                                We specialize in structural engineering to
+                                safely remove walls, creating the expansive,
+                                light-filled flow standard in modern luxury
+                                homes.
+                            </p>
                         </div>
                     </div>
                     <!-- Feature 2 -->
-                    <div class="flex gap-5 p-6 rounded-xl border border-slate-200 bg-slate-50 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="size-12 rounded-full bg-[#1e293b] flex items-center justify-center text-white shrink-0">
-                            <span class="material-symbols-outlined">energy_savings_leaf</span>
+                    <div
+                        class="flex gap-5 p-6 rounded-xl border border-slate-200 bg-slate-50 shadow-sm hover:shadow-md transition-shadow group"
+                    >
+                        <div
+                            class="size-12 rounded-full bg-[#1e293b] flex items-center justify-center text-white shrink-0"
+                        >
+                            <span class="material-symbols-outlined"
+                                >energy_savings_leaf</span
+                            >
                         </div>
                         <div>
-                            <h3 class="text-[#111418] text-lg font-bold mb-2">Energy Efficiency</h3>
-                            <p class="text-[#617289] text-sm leading-relaxed font-body">From spray foam insulation to high-efficiency HVAC, we drastically reduce your cooling bills while increasing comfort.</p>
+                            <h3 class="text-[#111418] text-lg font-bold mb-2">
+                                Energy Efficiency
+                            </h3>
+                            <p
+                                class="text-[#617289] text-sm leading-relaxed font-body"
+                            >
+                                From spray foam insulation to high-efficiency
+                                HVAC, we drastically reduce your cooling bills
+                                while increasing comfort.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -161,53 +256,102 @@ const wholeHomeSchema = {
     <section class="py-16 bg-[#f8fafc] font-display">
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="mb-12 text-center max-w-3xl mx-auto">
-                <h2 class="text-[#111418] text-3xl md:text-4xl font-bold mb-4">The Complete Package</h2>
-                <p class="text-[#617289] text-lg font-body">Every surface, every system, every detail.</p>
+                <h2 class="text-[#111418] text-3xl md:text-4xl font-bold mb-4">
+                    The Complete Package
+                </h2>
+                <p class="text-[#617289] text-lg font-body">
+                    Every surface, every system, every detail.
+                </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
-                
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]"
+            >
                 <!-- Flooring -->
-                <div class="relative group overflow-hidden rounded-2xl md:col-span-2">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Large format porcelain tile flooring installation" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_lNPtFDntKgzGHzRGx9UCLVH472zRFHPPmigN-VJbebE0x-xhHQTgrGARvFqTqdx96DxFjaviySHVSOmdNOcaki8vgvZZjZF4S7mD2SPz4Z6xnx1Xlov8Fj6XacYa33nrQ9nWVfdUnb45ezFrTN6IhboftCftg18MoeEkK6Zh3efDtfc3kUD0gOcfUcbg_2iFEMKx_aAj73e8o3ZwgT29KFueNNqwhoBikxXcQh9Zu1NMBKZAqXpbCYurm-EMPw7gmywKPY-VpQaj");'></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div
+                    class="relative group overflow-hidden rounded-2xl md:col-span-2"
+                >
+                    <div
+                        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Large format porcelain tile flooring installation"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_lNPtFDntKgzGHzRGx9UCLVH472zRFHPPmigN-VJbebE0x-xhHQTgrGARvFqTqdx96DxFjaviySHVSOmdNOcaki8vgvZZjZF4S7mD2SPz4Z6xnx1Xlov8Fj6XacYa33nrQ9nWVfdUnb45ezFrTN6IhboftCftg18MoeEkK6Zh3efDtfc3kUD0gOcfUcbg_2iFEMKx_aAj73e8o3ZwgT29KFueNNqwhoBikxXcQh9Zu1NMBKZAqXpbCYurm-EMPw7gmywKPY-VpQaj");'
+                    >
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+                    >
+                    </div>
                     <div class="absolute bottom-0 left-0 p-8">
-                        <h3 class="text-white text-2xl font-bold mb-2">Luxury Flooring</h3>
-                        <p class="text-white/80 font-body">Large-format porcelain, engineered hardwood, and continuous tile layouts that visually expand your space.</p>
+                        <h3 class="text-white text-2xl font-bold mb-2">
+                            Luxury Flooring
+                        </h3>
+                        <p class="text-white/80 font-body">
+                            Large-format porcelain, engineered hardwood, and
+                            continuous tile layouts that visually expand your
+                            space.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Lighting -->
-                <div class="relative group overflow-hidden rounded-2xl bg-white border border-slate-200 p-8 flex flex-col justify-between">
-                    <div class="bg-yellow-50 size-12 rounded-full flex items-center justify-center text-[#fbbf24] mb-4">
+                <div
+                    class="relative group overflow-hidden rounded-2xl bg-white border border-slate-200 p-8 flex flex-col justify-between"
+                >
+                    <div
+                        class="bg-yellow-50 size-12 rounded-full flex items-center justify-center text-[#fbbf24] mb-4"
+                    >
                         <span class="material-symbols-outlined">lightbulb</span>
                     </div>
                     <div>
-                        <h3 class="text-[#111418] text-xl font-bold mb-2">Smart Lighting</h3>
-                        <p class="text-[#617289] text-sm font-body">Recessed LED layouts and smart switches for perfect ambiance.</p>
+                        <h3 class="text-[#111418] text-xl font-bold mb-2">
+                            Smart Lighting
+                        </h3>
+                        <p class="text-[#617289] text-sm font-body">
+                            Recessed LED layouts and smart switches for perfect
+                            ambiance.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Millwork -->
-                <div class="relative group overflow-hidden rounded-2xl bg-white border border-slate-200 p-8 flex flex-col justify-between">
-                    <div class="bg-slate-100 size-12 rounded-full flex items-center justify-center text-[#1e293b] mb-4">
+                <div
+                    class="relative group overflow-hidden rounded-2xl bg-white border border-slate-200 p-8 flex flex-col justify-between"
+                >
+                    <div
+                        class="bg-slate-100 size-12 rounded-full flex items-center justify-center text-[#1e293b] mb-4"
+                    >
                         <span class="material-symbols-outlined">carpenter</span>
                     </div>
                     <div>
-                        <h3 class="text-[#111418] text-xl font-bold mb-2">Custom Millwork</h3>
-                        <p class="text-[#617289] text-sm font-body">Baseboards, crown molding, and built-ins that add character and value.</p>
+                        <h3 class="text-[#111418] text-xl font-bold mb-2">
+                            Custom Millwork
+                        </h3>
+                        <p class="text-[#617289] text-sm font-body">
+                            Baseboards, crown molding, and built-ins that add
+                            character and value.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Call to Action -->
-                <div class="relative group overflow-hidden rounded-2xl bg-[#1e293b] flex flex-col items-center justify-center text-center p-6 cursor-pointer hover:bg-slate-800 transition-colors md:col-span-2">
-                    <h3 class="text-white text-xl font-bold mb-4">Ready for a Fresh Start?</h3>
-                    <p class="text-slate-300 mb-6 max-w-lg">Don't move. Improve perfectly.</p>
-                    <button class="bg-[#fbbf24] text-slate-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition-colors">
+                <div
+                    class="relative group overflow-hidden rounded-2xl bg-[#1e293b] flex flex-col items-center justify-center text-center p-6 cursor-pointer hover:bg-slate-800 transition-colors md:col-span-2"
+                >
+                    <h3 class="text-white text-xl font-bold mb-4">
+                        Ready for a Fresh Start?
+                    </h3>
+                    <p class="text-slate-300 mb-6 max-w-lg">
+                        Don't move. Improve perfectly.
+                    </p>
+                    <button
+                        class="bg-[#fbbf24] text-slate-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition-colors"
+                    >
                         Begin Your Renovation
                     </button>
-                    <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-white/5 rounded-full blur-3xl"></div>
+                    <div
+                        class="absolute -right-8 -bottom-8 w-32 h-32 bg-white/5 rounded-full blur-3xl"
+                    >
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -216,36 +360,75 @@ const wholeHomeSchema = {
     <section class="py-12 bg-white border-t border-[#f0f2f4] font-display">
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="mb-8">
-                <h3 class="text-[#111418] text-xl font-bold mb-2">Renovating Homes Across Florida</h3>
-                <p class="text-sm text-[#617289]">Our whole-home teams are active in:</p>
+                <h3 class="text-[#111418] text-xl font-bold mb-2">
+                    Renovating Homes Across Florida
+                </h3>
+                <p class="text-sm text-[#617289]">
+                    Our whole-home teams are active in:
+                </p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/central-florida/orlando/whole-home-renovation/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                <a
+                    class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/service-areas/orlando/whole-home-renovation/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >location_on</span
+                    >
                     Orlando
                 </a>
-                <a class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/miami/whole-home-renovation/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                <a
+                    class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/service-areas/miami/whole-home-renovation/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >location_on</span
+                    >
                     Miami
                 </a>
-                <a class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/tampa-bay/tampa/whole-home-renovation/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                <a
+                    class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/service-areas/tampa/whole-home-renovation/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >location_on</span
+                    >
                     Tampa
                 </a>
-                <a class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/south-florida/fort-lauderdale/whole-home-renovation/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                <a
+                    class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/service-areas/fort-lauderdale/whole-home-renovation/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >location_on</span
+                    >
                     Fort Lauderdale
                 </a>
-                <a class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group" href="/service-areas/southwest-florida/naples/whole-home-renovation/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">location_on</span>
+                <a
+                    class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/service-areas/naples/whole-home-renovation/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >location_on</span
+                    >
                     Naples
                 </a>
-                <a class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group" href="/remodeling/">
-                    <span class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity">arrow_back</span>
+                <a
+                    class="text-[#617289] hover:text-[#1e293b] text-sm font-medium transition-colors flex items-center gap-1 group"
+                    href="/remodeling/"
+                >
+                    <span
+                        class="material-symbols-outlined text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        >arrow_back</span
+                    >
                     Back to Services
                 </a>
             </div>
         </div>
     </section>
-
 </MainLayout>
