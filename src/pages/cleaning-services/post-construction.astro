@@ -2,6 +2,8 @@
 import Header from "../../components/common/Header.astro";
 import { Image } from "astro:assets";
 import MainLayout from "../../layouts/MainLayout.astro";
+import beforeConstructionImg from "../../assets/images/cleaning-services/before-construction.webp";
+import afterConstructionImg from "../../assets/images/cleaning-services/after-construction.webp";
 
 const customSchema = {
     "@context": "https://schema.org",
@@ -645,12 +647,9 @@ const customSchema = {
                             BEFORE
                         </div>
                         <Image
-                            width={800}
-                            height={600}
+                            src={beforeConstructionImg}
                             alt="Messy construction site with debris and dust"
                             class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
-                            data-alt="Interior room under construction with wood scraps and dust everywhere"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfWIwq-zAs1Q7fprIG-2dC9ybCx9yUKq1detl9s-KtjOmJao27tZtHoTSVL439qcghiqWwFLObdEgZRwvR_tXuMu_3h0Mb7Of-2C1KZMlTw4PFrmSGufGqjmCfz2RneTBn-YATnNCoIIwGSH_B4S3ylVwk-Yj-z-GRQZ37WJWL0Tfz95fEVr3_gVAunom8DDfo3xZJhwCf2nwA6F72O0IMhrY-P3dKMC3RCjaTNSsbG_mCRFcNheiKyrC7giDPiPYK15_K1MUGoedy"
                         />
                         <div
                             class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"
@@ -667,12 +666,9 @@ const customSchema = {
                             AFTER
                         </div>
                         <Image
-                            width={800}
-                            height={600}
+                            src={afterConstructionImg}
                             alt="Clean modern living room move-in ready"
                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                            data-alt="Pristine modern living room with polished floors and clean windows"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr4Z8CChApZwOvgmcM9HBM_0w9KnZSlgCcHNvwKG-THDcrWQr8X-GT1gBsI8kcjoJ9nAd_05ejvuqGqosVwmQ5rN82tM1FNRq-FFvcdWh5tnwLHF-ZAy7suz2NlRXkkV5DMOqfizEvFHCUY95bmCUeE-R3DqQIn1Fxhhl2hnxD3seRCy5L6XKirOqSqOufKPgIQ2Hr41yKU2N5RaBcnw873U2z0QWBBd6Xr60saB-4C-gcTXw5EKTsck_M365nfFTiPkt2xaBN0l2z"
                         />
                     </div>
                 </div>
