@@ -1,6 +1,42 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
 
+// 1. Fetch Dynamic Data
+const cities = await getCollection("cities");
+const blogPosts = await getCollection("blog");
+
+// 2. Organize Cities by Region
+const citiesByRegion: Record<string, { name: string; url: string }[]> =
+  cities.reduce((acc, city) => {
+    const region = city.data.region || "Florida";
+    // @ts-ignore
+    if (!acc[region]) acc[region] = [];
+    // @ts-ignore
+    acc[region].push({
+      name: city.data.name,
+      url: `/service-areas/${city.slug}/`,
+    });
+    return acc;
+  }, {});
+
+// Sort regions and cities
+const sortedRegions = Object.keys(citiesByRegion).sort();
+sortedRegions.forEach((region) => {
+  citiesByRegion[region].sort((a, b) => a.name.localeCompare(b.name));
+});
+
+// 3. Process Blog Posts (Recent 12)
+const recentResources = blogPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 12)
+  .map((post) => ({
+    name: post.data.title,
+    url: `/resources/${post.data.subcategory}/${post.slug}/`,
+    category: post.data.category,
+  }));
+
+// 4. Static Sections
 const sitemapSections = [
   {
     title: "General",
@@ -10,7 +46,7 @@ const sitemapSections = [
       { name: "Contact Us", url: "/contact" },
       { name: "24/7 Emergency Service", url: "/emergency" },
       { name: "Careers", url: "/careers" },
-    ]
+    ],
   },
   {
     title: "Restoration Services",
@@ -18,36 +54,78 @@ const sitemapSections = [
       { name: "Water Damage Restoration", url: "/restoration/water-damage" },
       { name: "Fire & Smoke Damage", url: "/restoration/fire-damage" },
       { name: "Mold Remediation", url: "/restoration/mold-remediation" },
-      { name: "Mold Inspection", url: "/restoration/mold-remediation/inspection" }, // Updated
-      { name: "Black Mold Removal", url: "/restoration/mold-remediation/black-mold-removal" },
-      { name: "Mold Prevention", url: "/restoration/mold-remediation/prevention" },
+      {
+        name: "Mold Inspection",
+        url: "/restoration/mold-remediation/inspection",
+      },
+      {
+        name: "Black Mold Removal",
+        url: "/restoration/mold-remediation/black-mold-removal",
+      },
+      {
+        name: "Mold Prevention",
+        url: "/restoration/mold-remediation/prevention",
+      },
       { name: "Storm Damage Repair", url: "/restoration/storm-damage" },
-      { name: "Wind Damage Repair", url: "/restoration/storm-damage/wind-damage" },
-      { name: "Flood Damage Restoration", url: "/restoration/water-damage/flood-damage" },
-      { name: "Emergency Water Extraction", url: "/restoration/water-damage/emergency-water-removal" },
-      { name: "Basement Flooding", url: "/restoration/water-damage/basement-flooding" },
-      { name: "Structural Drying", url: "/restoration/water-damage/structural-drying" },
-      { name: "Smoke & Soot Cleanup", url: "/restoration/fire-damage/smoke-damage" },
+      {
+        name: "Wind Damage Repair",
+        url: "/restoration/storm-damage/wind-damage",
+      },
+      {
+        name: "Flood Damage Restoration",
+        url: "/restoration/water-damage/flood-damage",
+      },
+      {
+        name: "Emergency Water Extraction",
+        url: "/restoration/water-damage/emergency-water-removal",
+      },
+      {
+        name: "Basement Flooding",
+        url: "/restoration/water-damage/basement-flooding",
+      },
+      {
+        name: "Structural Drying",
+        url: "/restoration/water-damage/structural-drying",
+      },
+      {
+        name: "Smoke & Soot Cleanup",
+        url: "/restoration/fire-damage/smoke-damage",
+      },
       { name: "Soot Cleanup", url: "/restoration/fire-damage/soot-cleanup" },
       { name: "Fire Damage Repair", url: "/restoration/fire-damage/repair" },
-      { name: "Sewage Cleanup", url: "/restoration/water-damage/sewage-cleanup" },
-      { name: "Emergency Board-Up", url: "/restoration/board-up-services" }, 
-      { name: "Storm Debris Removal", url: "/restoration/storm-damage/debris-removal" },
-      { name: "Hurricane Damage", url: "/restoration/storm-damage/hurricane-damage" },
-    ]
+      {
+        name: "Sewage Cleanup",
+        url: "/restoration/water-damage/sewage-cleanup",
+      },
+      { name: "Emergency Board-Up", url: "/restoration/board-up-services" },
+      {
+        name: "Storm Debris Removal",
+        url: "/restoration/storm-damage/debris-removal",
+      },
+      {
+        name: "Hurricane Damage",
+        url: "/restoration/storm-damage/hurricane-damage",
+      },
+    ],
   },
   {
     title: "Remodeling Services",
     links: [
       { name: "Remodeling Overview", url: "/remodeling" },
       { name: "Kitchen Remodeling", url: "/remodeling/kitchen" },
-      { name: "Modern Kitchen Design", url: "/remodeling/kitchen/modern-design" },
+      {
+        name: "Modern Kitchen Design",
+        url: "/remodeling/kitchen/modern-design",
+      },
       { name: "Bathroom Remodeling", url: "/remodeling/bathroom" },
       { name: "Spa Luxury Bathroom", url: "/remodeling/bathroom/spa-luxury" },
       { name: "Home Additions", url: "/remodeling/home-additions" },
-      { name: "ADU Guest House", url: "/remodeling/home-additions/adu-guest-house" },
+      {
+        name: "ADU Guest House",
+        url: "/remodeling/home-additions/adu-guest-house",
+      },
       { name: "Net-Zero Retrofit", url: "/remodeling/whole-home/net-zero" },
-    ]
+    ],
   },
   {
     title: "Commercial Services",
@@ -57,29 +135,30 @@ const sitemapSections = [
       { name: "Disaster Planning", url: "/commercial/disaster-planning" },
       { name: "Large Loss Restoration", url: "/commercial/large-loss" },
       { name: "Commercial Cleaning", url: "/commercial/cleaning" },
-    ]
+    ],
   },
   {
     title: "Cleaning & Disinfection",
     links: [
       { name: "Cleaning Overview", url: "/cleaning-services" },
-      { name: "Post Construction", url: "/cleaning-services/post-construction" },
+      {
+        name: "Post Construction",
+        url: "/cleaning-services/post-construction",
+      },
       { name: "Air Duct & HVAC", url: "/cleaning-services/air-duct-hvac" },
-      { name: "Biohazard & Trauma", url: "/cleaning-services/biohazard-trauma" },
-      { name: "Graffiti Removal", url: "/cleaning-services/vandalism-graffiti" },
-      { name: "Disinfection Services", url: "/cleaning-services/covid-disinfection" },
-    ]
-  },
-  {
-    title: "Service Areas",
-    links: [
-      { name: "Service Areas Overview", url: "/service-areas" },
-      { name: "Central Florida", url: "/service-areas/central-florida" },
-      { name: "South Florida", url: "/service-areas/south-florida" },
-      { name: "Tampa Bay", url: "/service-areas/tampa-bay" },
-      { name: "Southwest Florida", url: "/service-areas/southwest-florida" },
-      { name: "Treasure Coast", url: "/service-areas/treasure-coast" },
-    ]
+      {
+        name: "Biohazard & Trauma",
+        url: "/cleaning-services/biohazard-trauma",
+      },
+      {
+        name: "Graffiti Removal",
+        url: "/cleaning-services/vandalism-graffiti",
+      },
+      {
+        name: "Disinfection Services",
+        url: "/cleaning-services/covid-disinfection",
+      },
+    ],
   },
   {
     title: "Resources & Legal",
@@ -88,73 +167,194 @@ const sitemapSections = [
       { name: "Blog & Resources", url: "/resources" },
       { name: "Privacy Policy", url: "/privacy-policy" },
       { name: "Terms of Service", url: "/terms-of-service" },
-    ]
-  }
+    ],
+  },
 ];
 ---
 
-<MainLayout title="Sitemap | Paramount Property Restoration" description="Complete overview of all pages and services offered by Paramount Property Restoration in Florida.">
-    <!-- Hero Section -->
-    <section class="relative bg-slate-900 text-white py-20 px-4">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-900 to-slate-800 opacity-90"></div>
-            <!-- Abstract background pattern -->
-            <svg class="absolute w-full h-full opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0 100 C 20 0 50 0 100 100 Z" fill="currentColor"/>
-            </svg>
-        </div>
-        
-        <div class="relative max-w-7xl mx-auto text-center z-10">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Site Map</h1>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto">
-                Navigate through all our services, locations, and resources. Find exactly what you need to restore or improve your property.
-            </p>
-        </div>
-    </section>
+<MainLayout
+  title="Sitemap | Paramount Property Restoration"
+  description="Complete overview of all pages and services offered by Paramount Property Restoration in Florida."
+>
+  <!-- Hero Section -->
+  <section class="relative bg-slate-900 text-white py-20 px-4">
+    <div class="absolute inset-0 overflow-hidden">
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-slate-900 to-slate-800 opacity-90"
+      >
+      </div>
+      <!-- Abstract background pattern -->
+      <svg
+        class="absolute w-full h-full opacity-10"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <path d="M0 100 C 20 0 50 0 100 100 Z" fill="currentColor"></path>
+      </svg>
+    </div>
 
-    <!-- Sitemap Grid -->
-    <section class="py-16 bg-white dark:bg-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {sitemapSections.map((section) => (
-                    <div class="bg-gray-50 dark:bg-slate-800 rounded-xl p-8 border border-gray-100 dark:border-slate-700 hover:shadow-lg transition-shadow duration-300">
-                        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-6 border-b border-gray-200 dark:border-slate-700 pb-2">
-                            {section.title}
-                        </h2>
-                        <ul class="space-y-3">
-                            {section.links.map((link) => (
-                                <li>
-                                    <a 
-                                        href={link.url} 
-                                        class="flex items-center group text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200"
-                                    >
-                                        <span class="material-symbols-outlined text-sm mr-2 opacity-50 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
-                                        {link.name}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+    <div class="relative max-w-7xl mx-auto text-center z-10">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Site Map</h1>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+        Navigate through all our services, locations, and resources. Find
+        exactly what you need to restore or improve your property.
+      </p>
+    </div>
+  </section>
+
+  <div class="bg-white dark:bg-slate-950 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <!-- STATIC MAIN SECTIONS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
+        {
+          sitemapSections.map((section) => (
+            <div class="bg-gray-50 dark:bg-slate-900 rounded-xl p-8 border border-gray-100 dark:border-slate-800 hover:shadow-lg transition-shadow duration-300">
+              <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-6 border-b border-gray-200 dark:border-slate-700 pb-2">
+                {section.title}
+              </h2>
+              <ul class="space-y-3">
+                {section.links.map((link) => (
+                  <li>
+                    <a
+                      href={link.url}
+                      class="flex items-center group text-gray-600 dark:text-gray-400 hover:text-[#136dec] dark:hover:text-[#136dec] transition-colors duration-200"
+                    >
+                      <span class="material-symbols-outlined text-sm mr-2 opacity-50 group-hover:opacity-100 transition-opacity">
+                        arrow_forward_ios
+                      </span>
+                      {link.name}
+                    </a>
+                  </li>
                 ))}
+              </ul>
             </div>
-        </div>
-    </section>
+          ))
+        }
+      </div>
 
-    <!-- Quick CTA -->
-    <section class="bg-slate-50 dark:bg-slate-950 py-16 border-t border-gray-200 dark:border-slate-800">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Can't find what you're looking for?</h2>
-            <p class="text-gray-600 dark:text-gray-400 mb-8">
-                Our support team is available 24/7 to answer your questions and provide immediate assistance.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-blue-700 transition-colors">
-                    Contact Support
-                </a>
-                <a href="tel:7866022217" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-slate-600 text-base font-medium rounded-md text-gray-700 dark:text-white bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors">
-                    Call (786) 602-2217
-                </a>
-            </div>
+      <!-- DYNAMIC SERVICE AREAS -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <span
+            class="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg text-[#136dec]"
+          >
+            <span class="material-symbols-outlined">location_on</span>
+          </span>
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white">
+            Service Areas
+          </h2>
         </div>
-    </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            sortedRegions.map((region) => (
+              <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-gray-100 dark:border-slate-800">
+                <h3 class="font-bold text-lg mb-4 text-[#136dec] border-b border-gray-100 dark:border-slate-800 pb-2">
+                  {region}
+                </h3>
+                <ul class="space-y-2">
+                  {citiesByRegion[region].map((city) => (
+                    <li>
+                      <a
+                        href={city.url}
+                        class="flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-[#136dec] dark:hover:text-[#136dec] transition-colors"
+                      >
+                        <span class="material-symbols-outlined text-[4px] mr-2 bg-gray-300 rounded-full text-transparent">
+                          circle
+                        </span>
+                        {city.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+        <!-- Link to main regions -->
+        <div class="mt-4 text-center">
+          <a
+            href="/service-areas/"
+            class="text-sm font-bold text-[#136dec] hover:underline"
+            >View Regional Map & Coverage -></a
+          >
+        </div>
+      </div>
+
+      <!-- DYNAMIC RESOURCES -->
+      <div>
+        <div class="flex items-center gap-3 mb-8">
+          <span
+            class="p-2 bg-orange-50 dark:bg-orange-900/30 rounded-lg text-[#ea580c]"
+          >
+            <span class="material-symbols-outlined">article</span>
+          </span>
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white">
+            Recent Resources
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            recentResources.map((post) => (
+              <a
+                href={post.url}
+                class="group bg-white dark:bg-slate-900 p-6 rounded-xl border border-gray-100 dark:border-slate-800 hover:border-[#ea580c] dark:hover:border-[#ea580c] transition-colors shadow-sm hover:shadow-md"
+              >
+                <span class="text-xs font-bold text-[#ea580c] uppercase tracking-wider mb-2 block">
+                  {post.category}
+                </span>
+                <h3 class="font-bold text-slate-900 dark:text-white group-hover:text-[#ea580c] transition-colors line-clamp-2">
+                  {post.name}
+                </h3>
+                <div class="mt-4 flex items-center text-xs text-gray-500 font-medium group-hover:text-[#ea580c] transition-colors">
+                  Read Guide{" "}
+                  <span class="material-symbols-outlined text-sm ml-1">
+                    arrow_forward
+                  </span>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+        <div class="mt-8 text-center">
+          <a
+            href="/resources/"
+            class="inline-flex items-center justify-center px-6 py-3 border border-slate-200 dark:border-slate-700 text-base font-medium rounded-lg text-slate-700 dark:text-white bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
+          >
+            Browse All Articles
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick CTA -->
+  <section
+    class="bg-slate-50 dark:bg-slate-950 py-16 border-t border-gray-200 dark:border-slate-800"
+  >
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+        Can't find what you're looking for?
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 mb-8">
+        Our support team is available 24/7 to answer your questions and provide
+        immediate assistance.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#136dec] hover:bg-blue-700 transition-colors"
+        >
+          Contact Support
+        </a>
+        <a
+          href="tel:7866022217"
+          class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-slate-600 text-base font-medium rounded-md text-gray-700 dark:text-white bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
+        >
+          Call (786) 602-2217
+        </a>
+      </div>
+    </div>
+  </section>
 </MainLayout>
