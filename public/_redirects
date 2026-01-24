@@ -58,3 +58,7 @@
 /restoration/storm-damage/wind-damage/orlando /service-areas/orlando/storm-damage-repair 301
 /restoration/storm-damage/storm-debris-removal/orlando /service-areas/orlando/storm-damage-repair 301
 /restoration/storm-damage/emergency-storm-repair/orlando /service-areas/orlando/storm-damage-repair 301
+
+# --- Ad Fixes ---
+# Redirect broken Ads URL to working landing page
+/landing/mold-remediation/  /landing/mold-testing/  301
