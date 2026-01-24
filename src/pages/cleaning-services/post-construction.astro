@@ -1,107 +1,183 @@
 ---
-import Header from '../../components/common/Header.astro';
-import MainLayout from '../../layouts/MainLayout.astro';
+import Header from "../../components/common/Header.astro";
+import { Image } from "astro:assets";
+import MainLayout from "../../layouts/MainLayout.astro";
 
 const customSchema = {
-  "@context": "https://schema.org",
-  "@type": "CleaningService",
-  "name": "Post-Construction Cleaning Services Florida",
-  "description": "Final construction cleaning for Certificate of Occupancy. Rough clean, final detail, and punch-list completion for GCs and developers.",
-  "url": "https://paramountpropertyrestoration.com/cleaning-services/post-construction/",
-  "areaServed": ["Miami", "Fort Lauderdale", "Orlando", "Tampa", "Jacksonville"],
-  "provider": {
-    "@type": "Organization",
-    "name": "Paramount Property Restoration"
-  }
+    "@context": "https://schema.org",
+    "@type": "CleaningService",
+    name: "Post-Construction Cleaning Services Florida",
+    description:
+        "Final construction cleaning for Certificate of Occupancy. Rough clean, final detail, and punch-list completion for GCs and developers.",
+    url: "https://paramountpropertyrestoration.com/cleaning-services/post-construction/",
+    areaServed: [
+        "Miami",
+        "Fort Lauderdale",
+        "Orlando",
+        "Tampa",
+        "Jacksonville",
+    ],
+    provider: {
+        "@type": "Organization",
+        name: "Paramount Property Restoration",
+    },
 };
 ---
 
-<MainLayout 
-  title="Post-Construction Cleaning | Paramount Property Restoration" 
-  description="Turn your construction site into a move-in ready property. We handle rough cleaning, final detailing, and punch-list items for developers and homeowners."
-  customSchema={customSchema}
-  hideHeader={true}
-  hideFooter={true}  
+<MainLayout
+    title="Post-Construction Cleaning | Paramount Property Restoration"
+    description="Turn your construction site into a move-in ready property. We handle rough cleaning, final detailing, and punch-list items for developers and homeowners."
+    customSchema={customSchema}
+    hideHeader={true}
+    hideFooter={true}
 >
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet"
+    />
     <!-- Material Symbols -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet"
+    />
+
     <!-- Sticky Wrapper for Notification Bar + Header -->
     <div class="sticky top-0 z-50 font-[Manrope]">
         <!-- Sticky Notification Bar -->
-        <div class="bg-[#101922] text-white px-4 py-2 text-center text-sm font-medium flex items-center justify-center gap-4 flex-wrap shadow-md border-b border-white/10 relative z-[51]">
-            <span>We help you get your Certificate of Occupancy (CO) faster.</span>
-            <button class="bg-[#f97316] hover:bg-orange-600 text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider transition-colors">
+        <div
+            class="bg-[#101922] text-white px-4 py-2 text-center text-sm font-medium flex items-center justify-center gap-4 flex-wrap shadow-md border-b border-white/10 relative z-[51]"
+        >
+            <span
+                >We help you get your Certificate of Occupancy (CO) faster.</span
+            >
+            <button
+                class="bg-[#f97316] hover:bg-orange-600 text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider transition-colors"
+            >
                 Request a Bid
             </button>
         </div>
-        
+
         <!-- Dynamic Global Header (Light Theme) -->
         <Header theme="light" sticky={false} />
     </div>
 
-    <div class="font-[Manrope] text-[#111418] antialiased overflow-x-hidden bg-[#f6f7f8] dark:bg-[#101922]">
-
+    <div
+        class="font-[Manrope] text-[#111418] antialiased overflow-x-hidden bg-[#f6f7f8] dark:bg-[#101922]"
+    >
         <!-- Hero Section -->
-        <section class="relative min-h-[600px] flex items-center justify-center bg-[#101922] overflow-hidden">
+        <section
+            class="relative min-h-[600px] flex items-center justify-center bg-[#101922] overflow-hidden"
+        >
             <!-- Background Image simulating video frame -->
             <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-gradient-to-r from-[#101922]/90 via-[#101922]/70 to-transparent z-10"></div>
-                <div class="w-full h-full bg-cover bg-center opacity-60" data-alt="Construction site interior with sunlight streaming through large windows showing dust particles" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWF8uxzw5lRVUzgFmeJiNOou76UZiklYTbwzoDzCwWSDRU8Ao6UF5dPi1-amh5BrP0hnwBYQMlG9S1Io1tbU0_5Gl-qIv-OgeywuAlnlS_beYEiayoqY0wGR8TaNymyQBs-Mgi7Ww5i2mK8vUtU2VlEfjSuGMBDo9d5-NVaim7weNp09L0PeUEFMUlUk-tFAiBXHk67fukAJ0acZ2uRf-LQKCdQHieeCf37hgVIO-tZJaAoEG9dDTsBhm12RfRp_MBG--UZCcox3Mu');"></div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-[#101922]/90 via-[#101922]/70 to-transparent z-10"
+                >
+                </div>
+                <div
+                    class="w-full h-full bg-cover bg-center opacity-60"
+                    data-alt="Construction site interior with sunlight streaming through large windows showing dust particles"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWF8uxzw5lRVUzgFmeJiNOou76UZiklYTbwzoDzCwWSDRU8Ao6UF5dPi1-amh5BrP0hnwBYQMlG9S1Io1tbU0_5Gl-qIv-OgeywuAlnlS_beYEiayoqY0wGR8TaNymyQBs-Mgi7Ww5i2mK8vUtU2VlEfjSuGMBDo9d5-NVaim7weNp09L0PeUEFMUlUk-tFAiBXHk67fukAJ0acZ2uRf-LQKCdQHieeCf37hgVIO-tZJaAoEG9dDTsBhm12RfRp_MBG--UZCcox3Mu');"
+                >
+                </div>
             </div>
-            <div class="relative z-20 max-w-[1280px] w-full mx-auto px-4 md:px-8 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div
+                class="relative z-20 max-w-[1280px] w-full mx-auto px-4 md:px-8 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            >
                 <div class="flex flex-col gap-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-200 text-sm font-medium w-fit">
-                        <span class="material-symbols-outlined text-[18px]">verified</span>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-200 text-sm font-medium w-fit"
+                    >
+                        <span class="material-symbols-outlined text-[18px]"
+                            >verified</span
+                        >
                         <span>Florida's Premier Final Detailing</span>
                     </div>
-                    <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight">
-                        The Final Polish Before <span class="text-[#137fec]">Occupancy</span>
+                    <h1
+                        class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight"
+                    >
+                        The Final Polish Before <span class="text-[#137fec]"
+                            >Occupancy</span
+                        >
                     </h1>
-                    <p class="text-slate-300 text-lg md:text-xl font-normal leading-relaxed max-w-xl">
-                        Transforming chaotic construction sites into move-in ready properties. We bridge the gap between heavy construction and the white-glove finish needed for your CO.
+                    <p
+                        class="text-slate-300 text-lg md:text-xl font-normal leading-relaxed max-w-xl"
+                    >
+                        Transforming chaotic construction sites into move-in
+                        ready properties. We bridge the gap between heavy
+                        construction and the white-glove finish needed for your
+                        CO.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                        <button class="h-14 px-8 rounded-lg bg-[#137fec] text-white text-base font-bold shadow-lg shadow-blue-900/20 hover:bg-blue-600 transition-all flex items-center justify-center gap-2">
+                        <button
+                            class="h-14 px-8 rounded-lg bg-[#137fec] text-white text-base font-bold shadow-lg shadow-blue-900/20 hover:bg-blue-600 transition-all flex items-center justify-center gap-2"
+                        >
                             Get a Proposal
-                            <span class="material-symbols-outlined">arrow_forward</span>
+                            <span class="material-symbols-outlined"
+                                >arrow_forward</span
+                            >
                         </button>
-                        <button class="h-14 px-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white text-base font-bold hover:bg-white/20 transition-all flex items-center justify-center">
+                        <button
+                            class="h-14 px-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white text-base font-bold hover:bg-white/20 transition-all flex items-center justify-center"
+                        >
                             View Portfolio
                         </button>
                     </div>
                 </div>
                 <!-- Scrollytelling Visual Element / Card -->
                 <div class="hidden lg:block relative">
-                    <div class="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-2xl">
-                        <div class="flex items-center gap-4 mb-6 border-b border-white/10 pb-4">
-                            <div class="size-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
-                                <span class="material-symbols-outlined">check_circle</span>
+                    <div
+                        class="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-2xl"
+                    >
+                        <div
+                            class="flex items-center gap-4 mb-6 border-b border-white/10 pb-4"
+                        >
+                            <div
+                                class="size-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400"
+                            >
+                                <span class="material-symbols-outlined"
+                                    >check_circle</span
+                                >
                             </div>
                             <div>
-                                <h3 class="text-white font-bold text-lg">Inspection Ready</h3>
-                                <p class="text-slate-400 text-sm">Certificate of Occupancy Guaranteed</p>
+                                <h3 class="text-white font-bold text-lg">
+                                    Inspection Ready
+                                </h3>
+                                <p class="text-slate-400 text-sm">
+                                    Certificate of Occupancy Guaranteed
+                                </p>
                             </div>
                         </div>
                         <div class="space-y-4">
                             <div class="flex items-center gap-3 text-slate-200">
-                                <span class="material-symbols-outlined text-[#137fec]">done</span>
+                                <span
+                                    class="material-symbols-outlined text-[#137fec]"
+                                    >done</span
+                                >
                                 <span>Debris &amp; Sticker Removal</span>
                             </div>
                             <div class="flex items-center gap-3 text-slate-200">
-                                <span class="material-symbols-outlined text-[#137fec]">done</span>
+                                <span
+                                    class="material-symbols-outlined text-[#137fec]"
+                                    >done</span
+                                >
                                 <span>Fine Dust Extraction</span>
                             </div>
                             <div class="flex items-center gap-3 text-slate-200">
-                                <span class="material-symbols-outlined text-[#137fec]">done</span>
+                                <span
+                                    class="material-symbols-outlined text-[#137fec]"
+                                    >done</span
+                                >
                                 <span>Window &amp; Glass Detailing</span>
                             </div>
                             <div class="flex items-center gap-3 text-slate-200">
-                                <span class="material-symbols-outlined text-[#137fec]">done</span>
+                                <span
+                                    class="material-symbols-outlined text-[#137fec]"
+                                    >done</span
+                                >
                                 <span>Final Floor Polish</span>
                             </div>
                         </div>
@@ -114,25 +190,61 @@ const customSchema = {
         <section class="bg-white border-b border-[#f0f2f4]">
             <div class="max-w-[1280px] mx-auto px-4 md:px-8 py-10">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="flex flex-col gap-1 border-l-4 border-[#137fec] pl-4">
-                        <span class="text-[#617589] text-sm font-medium uppercase tracking-wider">Site Safety</span>
-                        <span class="text-[#111418] text-3xl font-bold">100%</span>
-                        <span class="text-[#617589] text-xs">Incident Free Record</span>
+                    <div
+                        class="flex flex-col gap-1 border-l-4 border-[#137fec] pl-4"
+                    >
+                        <span
+                            class="text-[#617589] text-sm font-medium uppercase tracking-wider"
+                            >Site Safety</span
+                        >
+                        <span class="text-[#111418] text-3xl font-bold"
+                            >100%</span
+                        >
+                        <span class="text-[#617589] text-xs"
+                            >Incident Free Record</span
+                        >
                     </div>
-                    <div class="flex flex-col gap-1 border-l-4 border-[#f97316] pl-4">
-                        <span class="text-[#617589] text-sm font-medium uppercase tracking-wider">Turnaround</span>
-                        <span class="text-[#111418] text-3xl font-bold">48 Hrs</span>
-                        <span class="text-[#617589] text-xs">Average completion</span>
+                    <div
+                        class="flex flex-col gap-1 border-l-4 border-[#f97316] pl-4"
+                    >
+                        <span
+                            class="text-[#617589] text-sm font-medium uppercase tracking-wider"
+                            >Turnaround</span
+                        >
+                        <span class="text-[#111418] text-3xl font-bold"
+                            >48 Hrs</span
+                        >
+                        <span class="text-[#617589] text-xs"
+                            >Average completion</span
+                        >
                     </div>
-                    <div class="flex flex-col gap-1 border-l-4 border-slate-300 pl-4">
-                        <span class="text-[#617589] text-sm font-medium uppercase tracking-wider">Compliance</span>
-                        <span class="text-[#111418] text-3xl font-bold">OSHA</span>
-                        <span class="text-[#617589] text-xs">Fully Certified Crews</span>
+                    <div
+                        class="flex flex-col gap-1 border-l-4 border-slate-300 pl-4"
+                    >
+                        <span
+                            class="text-[#617589] text-sm font-medium uppercase tracking-wider"
+                            >Compliance</span
+                        >
+                        <span class="text-[#111418] text-3xl font-bold"
+                            >OSHA</span
+                        >
+                        <span class="text-[#617589] text-xs"
+                            >Fully Certified Crews</span
+                        >
                     </div>
-                    <div class="flex flex-col gap-1 border-l-4 border-slate-300 pl-4">
-                        <span class="text-[#617589] text-sm font-medium uppercase tracking-wider">Rating</span>
-                        <span class="text-[#111418] text-3xl font-bold">5-Star</span>
-                        <span class="text-[#617589] text-xs">Google Reviews</span>
+                    <div
+                        class="flex flex-col gap-1 border-l-4 border-slate-300 pl-4"
+                    >
+                        <span
+                            class="text-[#617589] text-sm font-medium uppercase tracking-wider"
+                            >Rating</span
+                        >
+                        <span class="text-[#111418] text-3xl font-bold"
+                            >5-Star</span
+                        >
+                        <span class="text-[#617589] text-xs"
+                            >Google Reviews</span
+                        >
                     </div>
                 </div>
             </div>
@@ -142,62 +254,126 @@ const customSchema = {
         <section class="py-20 bg-[#f6f7f8]">
             <div class="max-w-[1280px] mx-auto px-4 md:px-8">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-[#111418] mb-4">Tailored Solutions for Your Project</h2>
-                    <p class="text-[#617589] max-w-2xl mx-auto">Whether you're managing a commercial high-rise or finishing your dream home renovation, our protocols adapt to your needs.</p>
+                    <h2 class="text-3xl font-bold text-[#111418] mb-4">
+                        Tailored Solutions for Your Project
+                    </h2>
+                    <p class="text-[#617589] max-w-2xl mx-auto">
+                        Whether you're managing a commercial high-rise or
+                        finishing your dream home renovation, our protocols
+                        adapt to your needs.
+                    </p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-6">
                     <!-- Developers Card -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 group hover:border-[#137fec]/50 transition-colors">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 group hover:border-[#137fec]/50 transition-colors"
+                    >
                         <div class="h-2 bg-[#101922] w-full"></div>
                         <div class="p-8">
                             <div class="flex items-center gap-3 mb-6">
-                                <span class="material-symbols-outlined text-4xl text-[#111418]">apartment</span>
-                                <h3 class="text-2xl font-bold text-[#111418]">For Developers &amp; GCs</h3>
+                                <span
+                                    class="material-symbols-outlined text-4xl text-[#111418]"
+                                    >apartment</span
+                                >
+                                <h3 class="text-2xl font-bold text-[#111418]">
+                                    For Developers &amp; GCs
+                                </h3>
                             </div>
-                            <p class="text-[#617589] mb-8 min-h-[48px]">We understand that time is money. Our teams work in shifts to ensure you meet your inspection deadlines.</p>
+                            <p class="text-[#617589] mb-8 min-h-[48px]">
+                                We understand that time is money. Our teams work
+                                in shifts to ensure you meet your inspection
+                                deadlines.
+                            </p>
                             <ul class="space-y-3 mb-8">
                                 <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-green-600 text-sm mt-1">check_circle</span>
-                                    <span class="text-[#111418] text-sm">Certificate of Occupancy prioritization</span>
+                                    <span
+                                        class="material-symbols-outlined text-green-600 text-sm mt-1"
+                                        >check_circle</span
+                                    >
+                                    <span class="text-[#111418] text-sm"
+                                        >Certificate of Occupancy prioritization</span
+                                    >
                                 </li>
                                 <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-green-600 text-sm mt-1">check_circle</span>
-                                    <span class="text-[#111418] text-sm">Volume pricing for multi-unit projects</span>
+                                    <span
+                                        class="material-symbols-outlined text-green-600 text-sm mt-1"
+                                        >check_circle</span
+                                    >
+                                    <span class="text-[#111418] text-sm"
+                                        >Volume pricing for multi-unit projects</span
+                                    >
                                 </li>
                                 <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-green-600 text-sm mt-1">check_circle</span>
-                                    <span class="text-[#111418] text-sm">Licensed &amp; Insured for commercial sites</span>
+                                    <span
+                                        class="material-symbols-outlined text-green-600 text-sm mt-1"
+                                        >check_circle</span
+                                    >
+                                    <span class="text-[#111418] text-sm"
+                                        >Licensed &amp; Insured for commercial
+                                        sites</span
+                                    >
                                 </li>
                             </ul>
-                            <button class="w-full py-3 rounded-lg bg-[#101922] text-white font-bold hover:bg-slate-800 transition-colors">
+                            <button
+                                class="w-full py-3 rounded-lg bg-[#101922] text-white font-bold hover:bg-slate-800 transition-colors"
+                            >
                                 Request Commercial Bid
                             </button>
                         </div>
                     </div>
                     <!-- Homeowners Card -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 group hover:border-[#137fec]/50 transition-colors">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 group hover:border-[#137fec]/50 transition-colors"
+                    >
                         <div class="h-2 bg-[#137fec] w-full"></div>
                         <div class="p-8">
                             <div class="flex items-center gap-3 mb-6">
-                                <span class="material-symbols-outlined text-4xl text-[#137fec]">home</span>
-                                <h3 class="text-2xl font-bold text-[#111418]">For Homeowners</h3>
+                                <span
+                                    class="material-symbols-outlined text-4xl text-[#137fec]"
+                                    >home</span
+                                >
+                                <h3 class="text-2xl font-bold text-[#111418]">
+                                    For Homeowners
+                                </h3>
                             </div>
-                            <p class="text-[#617589] mb-8 min-h-[48px]">Don't let renovation dust ruin your new space. We provide hospital-grade cleaning for your family's safety.</p>
+                            <p class="text-[#617589] mb-8 min-h-[48px]">
+                                Don't let renovation dust ruin your new space.
+                                We provide hospital-grade cleaning for your
+                                family's safety.
+                            </p>
                             <ul class="space-y-3 mb-8">
                                 <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-green-600 text-sm mt-1">check_circle</span>
-                                    <span class="text-[#111418] text-sm">HEPA filtration for micro-dust removal</span>
+                                    <span
+                                        class="material-symbols-outlined text-green-600 text-sm mt-1"
+                                        >check_circle</span
+                                    >
+                                    <span class="text-[#111418] text-sm"
+                                        >HEPA filtration for micro-dust removal</span
+                                    >
                                 </li>
                                 <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-green-600 text-sm mt-1">check_circle</span>
-                                    <span class="text-[#111418] text-sm">Eco-friendly &amp; pet-safe cleaning agents</span>
+                                    <span
+                                        class="material-symbols-outlined text-green-600 text-sm mt-1"
+                                        >check_circle</span
+                                    >
+                                    <span class="text-[#111418] text-sm"
+                                        >Eco-friendly &amp; pet-safe cleaning
+                                        agents</span
+                                    >
                                 </li>
                                 <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-green-600 text-sm mt-1">check_circle</span>
-                                    <span class="text-[#111418] text-sm">White-glove final walkthrough included</span>
+                                    <span
+                                        class="material-symbols-outlined text-green-600 text-sm mt-1"
+                                        >check_circle</span
+                                    >
+                                    <span class="text-[#111418] text-sm"
+                                        >White-glove final walkthrough included</span
+                                    >
                                 </li>
                             </ul>
-                            <button class="w-full py-3 rounded-lg bg-[#137fec] text-white font-bold hover:bg-blue-600 transition-colors">
+                            <button
+                                class="w-full py-3 rounded-lg bg-[#137fec] text-white font-bold hover:bg-blue-600 transition-colors"
+                            >
                                 Get Residential Quote
                             </button>
                         </div>
@@ -209,68 +385,148 @@ const customSchema = {
         <!-- 3-Phase Process Bento Grid -->
         <section class="py-20 bg-white">
             <div class="max-w-[1280px] mx-auto px-4 md:px-8">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div
+                    class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+                >
                     <div class="max-w-2xl">
-                        <h2 class="text-3xl font-bold text-[#111418] mb-4">From Rough to Ready: <br/>The 3-Phase Process</h2>
-                        <p class="text-[#617589]">Our systematic approach ensures no corner is left dusty. We handle everything from heavy debris removal to the final white-glove polish needed for inspection.</p>
+                        <h2 class="text-3xl font-bold text-[#111418] mb-4">
+                            From Rough to Ready: <br />The 3-Phase Process
+                        </h2>
+                        <p class="text-[#617589]">
+                            Our systematic approach ensures no corner is left
+                            dusty. We handle everything from heavy debris
+                            removal to the final white-glove polish needed for
+                            inspection.
+                        </p>
                     </div>
-                    <button class="flex items-center gap-2 text-[#137fec] font-bold hover:text-blue-700 transition-colors">
+                    <button
+                        class="flex items-center gap-2 text-[#137fec] font-bold hover:text-blue-700 transition-colors"
+                    >
                         View Detailed Specs
-                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        <span class="material-symbols-outlined text-sm"
+                            >open_in_new</span
+                        >
                     </button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Phase 1 -->
-                    <div class="bg-[#f6f7f8] p-8 rounded-2xl border border-transparent hover:border-slate-200 transition-all">
-                        <div class="w-12 h-12 bg-slate-200 rounded-xl flex items-center justify-center text-slate-700 mb-6">
-                            <span class="material-symbols-outlined">delete_sweep</span>
+                    <div
+                        class="bg-[#f6f7f8] p-8 rounded-2xl border border-transparent hover:border-slate-200 transition-all"
+                    >
+                        <div
+                            class="w-12 h-12 bg-slate-200 rounded-xl flex items-center justify-center text-slate-700 mb-6"
+                        >
+                            <span class="material-symbols-outlined"
+                                >delete_sweep</span
+                            >
                         </div>
-                        <div class="inline-block px-2 py-1 bg-slate-200 text-slate-600 text-xs font-bold rounded mb-2">PHASE 1</div>
-                        <h3 class="text-xl font-bold text-[#111418] mb-3">Rough Clean</h3>
+                        <div
+                            class="inline-block px-2 py-1 bg-slate-200 text-slate-600 text-xs font-bold rounded mb-2"
+                        >
+                            PHASE 1
+                        </div>
+                        <h3 class="text-xl font-bold text-[#111418] mb-3">
+                            Rough Clean
+                        </h3>
                         <p class="text-[#617589] text-sm leading-relaxed mb-6">
-                            Removal of large debris, stickers from windows, and paint overspray. Broom-swept floors and prepared surfaces for final finishes.
+                            Removal of large debris, stickers from windows, and
+                            paint overspray. Broom-swept floors and prepared
+                            surfaces for final finishes.
                         </p>
                         <div class="border-t border-slate-200 pt-4 mt-auto">
-                            <span class="text-xs font-bold text-slate-500 uppercase">Key Focus:</span>
+                            <span
+                                class="text-xs font-bold text-slate-500 uppercase"
+                                >Key Focus:</span
+                            >
                             <div class="flex flex-wrap gap-2 mt-2">
-                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600">Debris</span>
-                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600">Stickers</span>
+                                <span
+                                    class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600"
+                                    >Debris</span
+                                >
+                                <span
+                                    class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600"
+                                    >Stickers</span
+                                >
                             </div>
                         </div>
                     </div>
                     <!-- Phase 2 (Highlighted) -->
-                    <div class="bg-[#137fec] p-8 rounded-2xl text-white shadow-xl transform md:-translate-y-4">
-                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white mb-6">
-                            <span class="material-symbols-outlined">sanitizer</span>
+                    <div
+                        class="bg-[#137fec] p-8 rounded-2xl text-white shadow-xl transform md:-translate-y-4"
+                    >
+                        <div
+                            class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white mb-6"
+                        >
+                            <span class="material-symbols-outlined"
+                                >sanitizer</span
+                            >
                         </div>
-                        <div class="inline-block px-2 py-1 bg-white/20 text-white text-xs font-bold rounded mb-2">PHASE 2</div>
+                        <div
+                            class="inline-block px-2 py-1 bg-white/20 text-white text-xs font-bold rounded mb-2"
+                        >
+                            PHASE 2
+                        </div>
                         <h3 class="text-xl font-bold mb-3">Final Clean</h3>
                         <p class="text-blue-100 text-sm leading-relaxed mb-6">
-                            Deep cleaning of all surfaces including baseboards, light fixtures, and windows. Full sanitization of kitchens and bathrooms.
+                            Deep cleaning of all surfaces including baseboards,
+                            light fixtures, and windows. Full sanitization of
+                            kitchens and bathrooms.
                         </p>
                         <div class="border-t border-white/20 pt-4 mt-auto">
-                            <span class="text-xs font-bold text-blue-200 uppercase">Key Focus:</span>
+                            <span
+                                class="text-xs font-bold text-blue-200 uppercase"
+                                >Key Focus:</span
+                            >
                             <div class="flex flex-wrap gap-2 mt-2">
-                                <span class="text-xs bg-blue-600 border border-blue-500 px-2 py-1 rounded text-white">Sanitization</span>
-                                <span class="text-xs bg-blue-600 border border-blue-500 px-2 py-1 rounded text-white">Detailing</span>
+                                <span
+                                    class="text-xs bg-blue-600 border border-blue-500 px-2 py-1 rounded text-white"
+                                    >Sanitization</span
+                                >
+                                <span
+                                    class="text-xs bg-blue-600 border border-blue-500 px-2 py-1 rounded text-white"
+                                    >Detailing</span
+                                >
                             </div>
                         </div>
                     </div>
                     <!-- Phase 3 -->
-                    <div class="bg-[#f6f7f8] p-8 rounded-2xl border border-transparent hover:border-slate-200 transition-all">
-                        <div class="w-12 h-12 bg-[#f97316]/10 rounded-xl flex items-center justify-center text-[#f97316] mb-6">
-                            <span class="material-symbols-outlined">verified</span>
+                    <div
+                        class="bg-[#f6f7f8] p-8 rounded-2xl border border-transparent hover:border-slate-200 transition-all"
+                    >
+                        <div
+                            class="w-12 h-12 bg-[#f97316]/10 rounded-xl flex items-center justify-center text-[#f97316] mb-6"
+                        >
+                            <span class="material-symbols-outlined"
+                                >verified</span
+                            >
                         </div>
-                        <div class="inline-block px-2 py-1 bg-[#f97316]/10 text-[#f97316] text-xs font-bold rounded mb-2">PHASE 3</div>
-                        <h3 class="text-xl font-bold text-[#111418] mb-3">Touch-Up</h3>
+                        <div
+                            class="inline-block px-2 py-1 bg-[#f97316]/10 text-[#f97316] text-xs font-bold rounded mb-2"
+                        >
+                            PHASE 3
+                        </div>
+                        <h3 class="text-xl font-bold text-[#111418] mb-3">
+                            Touch-Up
+                        </h3>
                         <p class="text-[#617589] text-sm leading-relaxed mb-6">
-                            Final walkthrough after inspections or trade touch-ups to ensure the property is 100% move-in ready for the owner.
+                            Final walkthrough after inspections or trade
+                            touch-ups to ensure the property is 100% move-in
+                            ready for the owner.
                         </p>
                         <div class="border-t border-slate-200 pt-4 mt-auto">
-                            <span class="text-xs font-bold text-slate-500 uppercase">Key Focus:</span>
+                            <span
+                                class="text-xs font-bold text-slate-500 uppercase"
+                                >Key Focus:</span
+                            >
                             <div class="flex flex-wrap gap-2 mt-2">
-                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600">Re-polish</span>
-                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600">Inspection</span>
+                                <span
+                                    class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600"
+                                    >Re-polish</span
+                                >
+                                <span
+                                    class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600"
+                                    >Inspection</span
+                                >
                             </div>
                         </div>
                     </div>
@@ -281,41 +537,89 @@ const customSchema = {
         <!-- Technical Detail: Air Quality -->
         <section class="py-20 bg-[#101922] text-white overflow-hidden relative">
             <!-- Abstract Pattern background -->
-            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4b5563 1px, transparent 1px); background-size: 32px 32px;"></div>
+            <div
+                class="absolute inset-0 opacity-10"
+                style="background-image: radial-gradient(#4b5563 1px, transparent 1px); background-size: 32px 32px;"
+            >
+            </div>
             <div class="max-w-[1280px] mx-auto px-4 md:px-8 relative z-10">
                 <div class="flex flex-col lg:flex-row items-center gap-12">
                     <div class="flex-1 space-y-6">
-                        <div class="flex items-center gap-2 text-[#f97316] font-bold uppercase tracking-wide text-sm">
-                            <span class="material-symbols-outlined text-lg">air</span>
+                        <div
+                            class="flex items-center gap-2 text-[#f97316] font-bold uppercase tracking-wide text-sm"
+                        >
+                            <span class="material-symbols-outlined text-lg"
+                                >air</span
+                            >
                             Technical Insight
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold leading-tight">The Invisible Threat: <br/>Silica Dust &amp; Air Quality</h2>
+                        <h2
+                            class="text-3xl md:text-4xl font-bold leading-tight"
+                        >
+                            The Invisible Threat: <br />Silica Dust &amp; Air
+                            Quality
+                        </h2>
                         <p class="text-slate-300 text-lg leading-relaxed">
-                            Construction dust isn't just dirty—it's dangerous. Silica dust from drywall and concrete can linger in HVAC systems for months. Our process includes air scrubbing and vent cleaning protocols to ensure safe indoor air quality.
+                            Construction dust isn't just dirty—it's dangerous.
+                            Silica dust from drywall and concrete can linger in
+                            HVAC systems for months. Our process includes air
+                            scrubbing and vent cleaning protocols to ensure safe
+                            indoor air quality.
                         </p>
-                        <a class="inline-flex items-center gap-3 text-white border-b border-[#f97316] pb-1 hover:text-[#f97316] transition-colors group" href="#">
-                            <span>Learn about our HVAC &amp; Air Duct Cleaning Services</span>
-                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        <a
+                            class="inline-flex items-center gap-3 text-white border-b border-[#f97316] pb-1 hover:text-[#f97316] transition-colors group"
+                            href="#"
+                        >
+                            <span
+                                >Learn about our HVAC &amp; Air Duct Cleaning
+                                Services</span
+                            >
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                                >arrow_forward</span
+                            >
                         </a>
                     </div>
                     <div class="flex-1 flex justify-center">
-                        <div class="relative bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm max-w-md">
+                        <div
+                            class="relative bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm max-w-md"
+                        >
                             <div class="flex items-start gap-4 mb-6">
-                                <div class="size-12 rounded-full bg-red-500/20 flex items-center justify-center text-red-400 shrink-0">
-                                    <span class="material-symbols-outlined">warning</span>
+                                <div
+                                    class="size-12 rounded-full bg-red-500/20 flex items-center justify-center text-red-400 shrink-0"
+                                >
+                                    <span class="material-symbols-outlined"
+                                        >warning</span
+                                    >
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-lg">Health Risk: Silica</h4>
-                                    <p class="text-slate-400 text-sm">Respirable crystalline silica is a common byproduct of construction that damages lung tissue.</p>
+                                    <h4 class="font-bold text-lg">
+                                        Health Risk: Silica
+                                    </h4>
+                                    <p class="text-slate-400 text-sm">
+                                        Respirable crystalline silica is a
+                                        common byproduct of construction that
+                                        damages lung tissue.
+                                    </p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <div class="size-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 shrink-0">
-                                    <span class="material-symbols-outlined">filter_alt</span>
+                                <div
+                                    class="size-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 shrink-0"
+                                >
+                                    <span class="material-symbols-outlined"
+                                        >filter_alt</span
+                                    >
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-lg">Our Solution: HEPA</h4>
-                                    <p class="text-slate-400 text-sm">We utilize industrial-grade HEPA filters capturing 99.97% of particles down to 0.3 microns.</p>
+                                    <h4 class="font-bold text-lg">
+                                        Our Solution: HEPA
+                                    </h4>
+                                    <p class="text-slate-400 text-sm">
+                                        We utilize industrial-grade HEPA filters
+                                        capturing 99.97% of particles down to
+                                        0.3 microns.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -327,22 +631,53 @@ const customSchema = {
         <!-- Before & After Showcase -->
         <section class="py-20 bg-[#f6f7f8]">
             <div class="max-w-[1280px] mx-auto px-4 md:px-8">
-                <h2 class="text-3xl font-bold text-center text-[#111418] mb-12">The Transformation</h2>
+                <h2 class="text-3xl font-bold text-center text-[#111418] mb-12">
+                    The Transformation
+                </h2>
                 <div class="grid md:grid-cols-2 gap-4 h-[400px] md:h-[500px]">
                     <!-- Before Image -->
-                    <div class="relative h-full rounded-2xl overflow-hidden group">
-                        <div class="absolute top-4 left-4 bg-black/60 text-white px-4 py-2 rounded-lg font-bold backdrop-blur-sm z-10">BEFORE</div>
-                        <img alt="Messy construction site with debris and dust" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" data-alt="Interior room under construction with wood scraps and dust everywhere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfWIwq-zAs1Q7fprIG-2dC9ybCx9yUKq1detl9s-KtjOmJao27tZtHoTSVL439qcghiqWwFLObdEgZRwvR_tXuMu_3h0Mb7Of-2C1KZMlTw4PFrmSGufGqjmCfz2RneTBn-YATnNCoIIwGSH_B4S3ylVwk-Yj-z-GRQZ37WJWL0Tfz95fEVr3_gVAunom8DDfo3xZJhwCf2nwA6F72O0IMhrY-P3dKMC3RCjaTNSsbG_mCRFcNheiKyrC7giDPiPYK15_K1MUGoedy"/>
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                    <div
+                        class="relative h-full rounded-2xl overflow-hidden group"
+                    >
+                        <div
+                            class="absolute top-4 left-4 bg-black/60 text-white px-4 py-2 rounded-lg font-bold backdrop-blur-sm z-10"
+                        >
+                            BEFORE
+                        </div>
+                        <Image
+                            inferSize={true}
+                            alt="Messy construction site with debris and dust"
+                            class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+                            data-alt="Interior room under construction with wood scraps and dust everywhere"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfWIwq-zAs1Q7fprIG-2dC9ybCx9yUKq1detl9s-KtjOmJao27tZtHoTSVL439qcghiqWwFLObdEgZRwvR_tXuMu_3h0Mb7Of-2C1KZMlTw4PFrmSGufGqjmCfz2RneTBn-YATnNCoIIwGSH_B4S3ylVwk-Yj-z-GRQZ37WJWL0Tfz95fEVr3_gVAunom8DDfo3xZJhwCf2nwA6F72O0IMhrY-P3dKMC3RCjaTNSsbG_mCRFcNheiKyrC7giDPiPYK15_K1MUGoedy"
+                        />
+                        <div
+                            class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"
+                        >
+                        </div>
                     </div>
                     <!-- After Image -->
-                    <div class="relative h-full rounded-2xl overflow-hidden group">
-                        <div class="absolute top-4 left-4 bg-[#f97316] text-white px-4 py-2 rounded-lg font-bold shadow-lg z-10">AFTER</div>
-                        <img alt="Clean modern living room move-in ready" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Pristine modern living room with polished floors and clean windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr4Z8CChApZwOvgmcM9HBM_0w9KnZSlgCcHNvwKG-THDcrWQr8X-GT1gBsI8kcjoJ9nAd_05ejvuqGqosVwmQ5rN82tM1FNRq-FFvcdWh5tnwLHF-ZAy7suz2NlRXkkV5DMOqfizEvFHCUY95bmCUeE-R3DqQIn1Fxhhl2hnxD3seRCy5L6XKirOqSqOufKPgIQ2Hr41yKU2N5RaBcnw873U2z0QWBBd6Xr60saB-4C-gcTXw5EKTsck_M365nfFTiPkt2xaBN0l2z"/>
+                    <div
+                        class="relative h-full rounded-2xl overflow-hidden group"
+                    >
+                        <div
+                            class="absolute top-4 left-4 bg-[#f97316] text-white px-4 py-2 rounded-lg font-bold shadow-lg z-10"
+                        >
+                            AFTER
+                        </div>
+                        <Image
+                            inferSize={true}
+                            alt="Clean modern living room move-in ready"
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                            data-alt="Pristine modern living room with polished floors and clean windows"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr4Z8CChApZwOvgmcM9HBM_0w9KnZSlgCcHNvwKG-THDcrWQr8X-GT1gBsI8kcjoJ9nAd_05ejvuqGqosVwmQ5rN82tM1FNRq-FFvcdWh5tnwLHF-ZAy7suz2NlRXkkV5DMOqfizEvFHCUY95bmCUeE-R3DqQIn1Fxhhl2hnxD3seRCy5L6XKirOqSqOufKPgIQ2Hr41yKU2N5RaBcnw873U2z0QWBBd6Xr60saB-4C-gcTXw5EKTsck_M365nfFTiPkt2xaBN0l2z"
+                        />
                     </div>
                 </div>
                 <div class="mt-8 text-center">
-                    <p class="text-[#617589] text-sm">Hover over images to see details.</p>
+                    <p class="text-[#617589] text-sm">
+                        Hover over images to see details.
+                    </p>
                 </div>
             </div>
         </section>
@@ -350,20 +685,42 @@ const customSchema = {
         <!-- Safety & Compliance -->
         <section class="py-12 bg-white border-y border-[#f0f2f4]">
             <div class="max-w-[1280px] mx-auto px-4 md:px-8">
-                <p class="text-center text-[#617589] font-medium mb-8 uppercase tracking-widest text-xs">Certified, Licensed &amp; Insured for your protection</p>
-                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <p
+                    class="text-center text-[#617589] font-medium mb-8 uppercase tracking-widest text-xs"
+                >
+                    Certified, Licensed &amp; Insured for your protection
+                </p>
+                <div
+                    class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+                >
                     <!-- Using text placeholders for logos as per instruction to not use external images unless general -->
-                    <div class="flex items-center gap-2 text-xl font-bold text-slate-800">
-                        <span class="material-symbols-outlined text-3xl">security</span> OSHA Certified
+                    <div
+                        class="flex items-center gap-2 text-xl font-bold text-slate-800"
+                    >
+                        <span class="material-symbols-outlined text-3xl"
+                            >security</span
+                        > OSHA Certified
                     </div>
-                    <div class="flex items-center gap-2 text-xl font-bold text-slate-800">
-                        <span class="material-symbols-outlined text-3xl">policy</span> Liability Insured
+                    <div
+                        class="flex items-center gap-2 text-xl font-bold text-slate-800"
+                    >
+                        <span class="material-symbols-outlined text-3xl"
+                            >policy</span
+                        > Liability Insured
                     </div>
-                    <div class="flex items-center gap-2 text-xl font-bold text-slate-800">
-                        <span class="material-symbols-outlined text-3xl">badge</span> Licensed Contractor
+                    <div
+                        class="flex items-center gap-2 text-xl font-bold text-slate-800"
+                    >
+                        <span class="material-symbols-outlined text-3xl"
+                            >badge</span
+                        > Licensed Contractor
                     </div>
-                    <div class="flex items-center gap-2 text-xl font-bold text-slate-800">
-                        <span class="material-symbols-outlined text-3xl">workspace_premium</span> IICRC Certified
+                    <div
+                        class="flex items-center gap-2 text-xl font-bold text-slate-800"
+                    >
+                        <span class="material-symbols-outlined text-3xl"
+                            >workspace_premium</span
+                        > IICRC Certified
                     </div>
                 </div>
             </div>
@@ -372,46 +729,89 @@ const customSchema = {
         <!-- FAQ Section -->
         <section class="py-20 bg-[#f6f7f8]">
             <div class="max-w-[800px] mx-auto px-4 md:px-8">
-                <h2 class="text-3xl font-bold text-center text-[#111418] mb-12">Frequently Asked Questions</h2>
+                <h2 class="text-3xl font-bold text-center text-[#111418] mb-12">
+                    Frequently Asked Questions
+                </h2>
                 <div class="space-y-4">
                     <!-- FAQ Item 1 -->
-                    <details class="group bg-white rounded-lg border border-slate-200 overflow-hidden open:ring-2 open:ring-[#137fec]/20">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-[#111418] text-lg select-none">
+                    <details
+                        class="group bg-white rounded-lg border border-slate-200 overflow-hidden open:ring-2 open:ring-[#137fec]/20"
+                    >
+                        <summary
+                            class="flex items-center justify-between p-6 cursor-pointer font-bold text-[#111418] text-lg select-none"
+                        >
                             How quickly can you start after construction ends?
-                            <span class="material-symbols-outlined transform group-open:rotate-180 transition-transform">expand_more</span>
+                            <span
+                                class="material-symbols-outlined transform group-open:rotate-180 transition-transform"
+                                >expand_more</span
+                            >
                         </summary>
                         <div class="px-6 pb-6 text-[#617589] leading-relaxed">
-                            We typically require 24-48 hours notice. However, for registered commercial partners, we offer emergency dispatch services to meet tight CO inspection deadlines.
+                            We typically require 24-48 hours notice. However,
+                            for registered commercial partners, we offer
+                            emergency dispatch services to meet tight CO
+                            inspection deadlines.
                         </div>
                     </details>
                     <!-- FAQ Item 2 -->
-                    <details class="group bg-white rounded-lg border border-slate-200 overflow-hidden open:ring-2 open:ring-[#137fec]/20">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-[#111418] text-lg select-none">
+                    <details
+                        class="group bg-white rounded-lg border border-slate-200 overflow-hidden open:ring-2 open:ring-[#137fec]/20"
+                    >
+                        <summary
+                            class="flex items-center justify-between p-6 cursor-pointer font-bold text-[#111418] text-lg select-none"
+                        >
                             Do you handle heavy debris removal?
-                            <span class="material-symbols-outlined transform group-open:rotate-180 transition-transform">expand_more</span>
+                            <span
+                                class="material-symbols-outlined transform group-open:rotate-180 transition-transform"
+                                >expand_more</span
+                            >
                         </summary>
                         <div class="px-6 pb-6 text-[#617589] leading-relaxed">
-                            Yes. Our Phase 1 "Rough Clean" includes the removal of leftover construction materials, packaging, and heavy debris. We can also coordinate dumpster services if needed.
+                            Yes. Our Phase 1 "Rough Clean" includes the removal
+                            of leftover construction materials, packaging, and
+                            heavy debris. We can also coordinate dumpster
+                            services if needed.
                         </div>
                     </details>
                     <!-- FAQ Item 3 -->
-                    <details class="group bg-white rounded-lg border border-slate-200 overflow-hidden open:ring-2 open:ring-[#137fec]/20">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-[#111418] text-lg select-none">
-                            Do you clean exterior windows on high-rise buildings?
-                            <span class="material-symbols-outlined transform group-open:rotate-180 transition-transform">expand_more</span>
+                    <details
+                        class="group bg-white rounded-lg border border-slate-200 overflow-hidden open:ring-2 open:ring-[#137fec]/20"
+                    >
+                        <summary
+                            class="flex items-center justify-between p-6 cursor-pointer font-bold text-[#111418] text-lg select-none"
+                        >
+                            Do you clean exterior windows on high-rise
+                            buildings?
+                            <span
+                                class="material-symbols-outlined transform group-open:rotate-180 transition-transform"
+                                >expand_more</span
+                            >
                         </summary>
                         <div class="px-6 pb-6 text-[#617589] leading-relaxed">
-                            Our standard quote covers interior windows and exterior windows accessible via ladders (up to 2 stories). For high-rise exterior glass, we partner with specialized rigging crews—please specify this in your request.
+                            Our standard quote covers interior windows and
+                            exterior windows accessible via ladders (up to 2
+                            stories). For high-rise exterior glass, we partner
+                            with specialized rigging crews—please specify this
+                            in your request.
                         </div>
                     </details>
                     <!-- FAQ Item 4 -->
-                    <details class="group bg-white rounded-lg border border-slate-200 overflow-hidden open:ring-2 open:ring-[#137fec]/20">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-[#111418] text-lg select-none">
+                    <details
+                        class="group bg-white rounded-lg border border-slate-200 overflow-hidden open:ring-2 open:ring-[#137fec]/20"
+                    >
+                        <summary
+                            class="flex items-center justify-between p-6 cursor-pointer font-bold text-[#111418] text-lg select-none"
+                        >
                             How is pricing calculated?
-                            <span class="material-symbols-outlined transform group-open:rotate-180 transition-transform">expand_more</span>
+                            <span
+                                class="material-symbols-outlined transform group-open:rotate-180 transition-transform"
+                                >expand_more</span
+                            >
                         </summary>
                         <div class="px-6 pb-6 text-[#617589] leading-relaxed">
-                            Pricing is generally based on square footage and the scope of work (Phases needed). We offer competitive rates for Developers and GCs with ongoing projects.
+                            Pricing is generally based on square footage and the
+                            scope of work (Phases needed). We offer competitive
+                            rates for Developers and GCs with ongoing projects.
                         </div>
                     </details>
                 </div>
@@ -423,24 +823,38 @@ const customSchema = {
             <div class="max-w-[1280px] mx-auto px-4 md:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     <div class="col-span-1 md:col-span-1">
-                        <div class="flex items-center gap-2 text-[#111418] font-bold text-xl mb-4">
-                            <div class="size-6 bg-[#137fec] rounded flex items-center justify-center text-white">
-                                <span class="material-symbols-outlined text-sm">cleaning_services</span>
+                        <div
+                            class="flex items-center gap-2 text-[#111418] font-bold text-xl mb-4"
+                        >
+                            <div
+                                class="size-6 bg-[#137fec] rounded flex items-center justify-center text-white"
+                            >
+                                <span class="material-symbols-outlined text-sm"
+                                    >cleaning_services</span
+                                >
                             </div>
                             Paramount
                         </div>
                         <p class="text-[#617589] text-sm leading-relaxed mb-4">
-                            Premier property restoration and cleaning services in Florida. Specialized in post-construction, water damage, and mold remediation.
+                            Premier property restoration and cleaning services
+                            in Florida. Specialized in post-construction, water
+                            damage, and mold remediation.
                         </p>
                         <div class="flex gap-4">
                             <!-- Social placeholders -->
-                            <div class="size-8 rounded bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 cursor-pointer transition-colors">
+                            <div
+                                class="size-8 rounded bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 cursor-pointer transition-colors"
+                            >
                                 <span class="text-xs font-bold">IG</span>
                             </div>
-                            <div class="size-8 rounded bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 cursor-pointer transition-colors">
+                            <div
+                                class="size-8 rounded bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 cursor-pointer transition-colors"
+                            >
                                 <span class="text-xs font-bold">LI</span>
                             </div>
-                            <div class="size-8 rounded bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 cursor-pointer transition-colors">
+                            <div
+                                class="size-8 rounded bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 cursor-pointer transition-colors"
+                            >
                                 <span class="text-xs font-bold">FB</span>
                             </div>
                         </div>
@@ -448,71 +862,118 @@ const customSchema = {
                     <div>
                         <h4 class="font-bold text-[#111418] mb-4">Services</h4>
                         <ul class="space-y-2 text-sm text-[#617589]">
-                            <li><a class="hover:text-[#137fec]" href="#">Post-Construction Clean</a></li>
-                            <li><a class="hover:text-[#137fec]" href="#">Water Damage Restoration</a></li>
-                            <li><a class="hover:text-[#137fec]" href="#">Mold Remediation</a></li>
-                            <li><a class="hover:text-[#137fec]" href="#">HVAC &amp; Duct Cleaning</a></li>
+                            <li>
+                                <a class="hover:text-[#137fec]" href="#"
+                                    >Post-Construction Clean</a
+                                >
+                            </li>
+                            <li>
+                                <a class="hover:text-[#137fec]" href="#"
+                                    >Water Damage Restoration</a
+                                >
+                            </li>
+                            <li>
+                                <a class="hover:text-[#137fec]" href="#"
+                                    >Mold Remediation</a
+                                >
+                            </li>
+                            <li>
+                                <a class="hover:text-[#137fec]" href="#"
+                                    >HVAC &amp; Duct Cleaning</a
+                                >
+                            </li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-bold text-[#111418] mb-4">Resources</h4>
                         <ul class="space-y-2 text-sm text-[#617589]">
-                            <li><a class="hover:text-[#137fec]" href="#">Developer Partnerships</a></li>
-                            <li><a class="hover:text-[#137fec]" href="#">Homeowner Guide</a></li>
-                            <li><a class="hover:text-[#137fec]" href="#">Safety Protocols</a></li>
-                            <li><a class="hover:text-[#137fec]" href="#">Project Portfolio</a></li>
+                            <li>
+                                <a class="hover:text-[#137fec]" href="#"
+                                    >Developer Partnerships</a
+                                >
+                            </li>
+                            <li>
+                                <a class="hover:text-[#137fec]" href="#"
+                                    >Homeowner Guide</a
+                                >
+                            </li>
+                            <li>
+                                <a class="hover:text-[#137fec]" href="#"
+                                    >Safety Protocols</a
+                                >
+                            </li>
+                            <li>
+                                <a class="hover:text-[#137fec]" href="#"
+                                    >Project Portfolio</a
+                                >
+                            </li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-bold text-[#111418] mb-4">Contact</h4>
                         <ul class="space-y-2 text-sm text-[#617589]">
                             <li class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-sm">call</span>
+                                <span class="material-symbols-outlined text-sm"
+                                    >call</span
+                                >
                                 (555) 123-4567
                             </li>
                             <li class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-sm">mail</span>
+                                <span class="material-symbols-outlined text-sm"
+                                    >mail</span
+                                >
                                 bids@paramountprop.com
                             </li>
                             <li class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-sm">location_on</span>
+                                <span class="material-symbols-outlined text-sm"
+                                    >location_on</span
+                                >
                                 Miami, FL
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="border-t border-[#f0f2f4] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-slate-400 text-xs">© 2023 Paramount Property Restoration. All rights reserved.</p>
+                <div
+                    class="border-t border-[#f0f2f4] pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+                >
+                    <p class="text-slate-400 text-xs">
+                        © 2023 Paramount Property Restoration. All rights
+                        reserved.
+                    </p>
                     <div class="flex gap-6 text-xs text-slate-400">
-                        <a class="hover:text-[#111418]" href="#">Privacy Policy</a>
-                        <a class="hover:text-[#111418]" href="#">Terms of Service</a>
+                        <a class="hover:text-[#111418]" href="#"
+                            >Privacy Policy</a
+                        >
+                        <a class="hover:text-[#111418]" href="#"
+                            >Terms of Service</a
+                        >
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-    
+
     <style>
         /* Custom scrollbar for clean look */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1; 
+            background: #f1f1f1;
         }
         ::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
+            background: #cbd5e1;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; 
+            background: #94a3b8;
         }
-        
+
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* Custom styles for details summary arrow */
         details > summary {
             list-style: none;

@@ -1,12 +1,14 @@
 ---
-import MainLayout from '../../../layouts/MainLayout.astro';
-import { getCollection } from 'astro:content';
+import MainLayout from "../../../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection("blog");
   // Get all unique subcategories (using subcategory as the URL path 'category')
-  const subcategories = [...new Set(posts.map((post) => post.data.subcategory))];
-  
+  const subcategories = [
+    ...new Set(posts.map((post) => post.data.subcategory)),
+  ];
+
   return subcategories.map((sub) => {
     // Filter posts for this subcategory
     const filteredPosts = posts.filter((p) => p.data.subcategory === sub);
@@ -18,63 +20,91 @@ export async function getStaticPaths() {
 }
 
 const { category, posts } = Astro.props;
-const formattedTitle = category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+const formattedTitle = category
+  .split("-")
+  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(" ");
 
 // Sort by date
-const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
-<MainLayout title={`${formattedTitle} | Resources`}>
+<MainLayout
+  title={`${formattedTitle} | Resources`}
+  description={`Explore expert articles and guides about ${formattedTitle}. Professional advice for Florida homeowners on restoration and remodeling.`}
+>
   <div class="bg-gray-50 dark:bg-slate-900 min-h-screen pb-20">
-    
     <!-- Header -->
     <header class="bg-[#111418] text-white py-16 px-4">
       <div class="container mx-auto max-w-4xl">
         <!-- Breadcrumb -->
         <nav class="text-sm mb-4 text-gray-400 flex items-center gap-2">
-            <a href="/" class="hover:text-white transition-colors">Home</a>
-            <span class="material-symbols-outlined text-sm">chevron_right</span>
-            <a href="/resources" class="hover:text-white transition-colors">Resources</a>
-            <span class="material-symbols-outlined text-sm">chevron_right</span>
-            <span class="text-white font-bold">{formattedTitle}</span>
+          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <a href="/resources" class="hover:text-white transition-colors"
+            >Resources</a
+          >
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <span class="text-white font-bold">{formattedTitle}</span>
         </nav>
-        
-        <h1 class="text-3xl md:text-5xl font-black capitalize">{formattedTitle} Articles</h1>
+
+        <h1 class="text-3xl md:text-5xl font-black capitalize">
+          {formattedTitle} Articles
+        </h1>
       </div>
     </header>
 
     <!-- Posts Grid -->
     <main class="container mx-auto max-w-4xl px-4 mt-12">
       <div class="space-y-8">
-        {sortedPosts.map(post => (
-          <article class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row gap-8 hover:shadow-md transition-shadow">
-            <div class="md:w-1/3 aspect-video md:aspect-auto bg-gray-100 rounded-xl overflow-hidden shrink-0">
-               {post.data.image && (
-                   <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover" />
-               )}
-            </div>
-            <div class="flex flex-col justify-center">
+        {
+          sortedPosts.map((post) => (
+            <article class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row gap-8 hover:shadow-md transition-shadow">
+              <div class="md:w-1/3 aspect-video md:aspect-auto bg-gray-100 rounded-xl overflow-hidden shrink-0">
+                {post.data.image && (
+                  <img
+                    src={post.data.image}
+                    alt={post.data.title}
+                    class="w-full h-full object-cover"
+                  />
+                )}
+              </div>
+              <div class="flex flex-col justify-center">
                 <div class="flex items-center gap-2 mb-2 text-sm text-gray-500 dark:text-gray-400">
-                    <span class="font-bold text-blue-600 dark:text-blue-400">{post.data.category}</span>
-                    <span>•</span>
-                    <time datetime={post.data.pubDate.toISOString()}>
-                        {post.data.pubDate.toLocaleDateString()}
-                    </time>
+                  <span class="font-bold text-blue-600 dark:text-blue-400">
+                    {post.data.category}
+                  </span>
+                  <span>•</span>
+                  <time datetime={post.data.pubDate.toISOString()}>
+                    {post.data.pubDate.toLocaleDateString()}
+                  </time>
                 </div>
                 <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">
-                    <a href={`/resources/${category}/${post.slug}`} class="hover:text-blue-600 transition-colors">
-                        {post.data.title}
-                    </a>
+                  <a
+                    href={`/resources/${category}/${post.slug}`}
+                    class="hover:text-blue-600 transition-colors"
+                  >
+                    {post.data.title}
+                  </a>
                 </h2>
                 <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
-                    {post.data.description}
+                  {post.data.description}
                 </p>
-                <a href={`/resources/${category}/${post.slug}`} class="text-blue-600 font-bold inline-flex items-center gap-1 hover:gap-2 transition-all">
-                    Read Post <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                <a
+                  href={`/resources/${category}/${post.slug}`}
+                  class="text-blue-600 font-bold inline-flex items-center gap-1 hover:gap-2 transition-all"
+                >
+                  Read Post{" "}
+                  <span class="material-symbols-outlined text-sm">
+                    arrow_forward
+                  </span>
                 </a>
-            </div>
-          </article>
-        ))}
+              </div>
+            </article>
+          ))
+        }
       </div>
     </main>
   </div>

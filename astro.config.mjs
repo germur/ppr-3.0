@@ -14,6 +14,10 @@ export default defineConfig({
   site: 'https://paramountpropertyrestoration.com', // TODO: Update this to your actual domain
   integrations: [react(), sitemap(), mdx()],
 
+  image: {
+    remotePatterns: [{ protocol: "https", hostname: "lh3.googleusercontent.com" }],
+  },
+
   vite: {
     plugins: [
       tailwindcss(),

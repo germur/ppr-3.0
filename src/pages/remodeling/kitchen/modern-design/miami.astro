@@ -1,5 +1,5 @@
 ---
-import MainLayout from '../../../../layouts/MainLayout.astro';
+import MainLayout from "../../../../layouts/MainLayout.astro";
 
 const city = "Miami";
 const county = "Miami-Dade";
@@ -7,51 +7,51 @@ const pageTitle = `Modern Kitchen Remodeling ${city} - Paramount Property Restor
 const pageDescription = `Transform your ${city} home with a custom modern kitchen. Licensed contractors, hurricane-ready designs & smart tech. Get a free estimate in ${city}.`;
 
 const schema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": `Kitchen Remodeling ${city}`,
-  "provider": {
-    "@type": "GeneralContractor",
-    "name": "Paramount Property Restoration",
-    "areaServed": {
-      "@type": "City",
-      "name": city
-    }
-  },
-  "description": pageDescription,
-  "areaServed": city
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `Kitchen Remodeling ${city}`,
+    provider: {
+        "@type": "GeneralContractor",
+        name: "Paramount Property Restoration",
+        areaServed: {
+            "@type": "City",
+            name: city,
+        },
+    },
+    description: pageDescription,
+    areaServed: city,
 };
 
 const faqItems = [
     {
         question: `Do I need a permit for a kitchen island in ${city}?`,
-        answer: `Yes. In ${county} County, if you are adding electrical outlets or plumbing to a new island, a permit is required. We handle all drawings and submissions to ensure code compliance.`
+        answer: `Yes. In ${county} County, if you are adding electrical outlets or plumbing to a new island, a permit is required. We handle all drawings and submissions to ensure code compliance.`,
     },
     {
         question: "Are your kitchens hurricane-proof?",
-        answer: `While no kitchen is strictly "hurricane-proof," we use impact-resistant materials, secure cabinetry to structural studs, and recommend impact windows for the envelope of your home to minimize damage during storms.`
+        answer: `While no kitchen is strictly "hurricane-proof," we use impact-resistant materials, secure cabinetry to structural studs, and recommend impact windows for the envelope of your home to minimize damage during storms.`,
     },
     {
         question: "How long does a remodel take?",
-        answer: `A typical full kitchen remodel in ${city} takes 6-10 weeks. However, permitting in ${county} can sometimes extend timelines. We provide a detailed schedule during our initial consultation.`
-    }
+        answer: `A typical full kitchen remodel in ${city} takes 6-10 weeks. However, permitting in ${county} can sometimes extend timelines. We provide a detailed schedule during our initial consultation.`,
+    },
 ];
 
 // Breadcrumbs are auto-generated or can be explicit
 const breadcrumbs = [
-  { label: 'Home', href: '/' },
-  { label: 'Remodeling', href: '/remodeling/' },
-  { label: 'Kitchen', href: '/remodeling/kitchen/modern-design/' },
-  { label: city, href: Astro.url.pathname }
+    { label: "Home", href: "/" },
+    { label: "Remodeling", href: "/remodeling/" },
+    { label: "Kitchen", href: "/remodeling/kitchen/modern-design/" },
+    { label: city, href: Astro.url.pathname },
 ];
 ---
 
 <MainLayout
-  title={pageTitle}
-  description={pageDescription}
-  customSchema={schema}
-  faqItems={faqItems}
-  breadcrumbItems={breadcrumbs}
+    title={pageTitle}
+    description={pageDescription}
+    customSchema={schema}
+    faqItems={faqItems}
+    breadcrumbItems={breadcrumbs}
 >
     <fragment slot="head">
         <style>
@@ -61,14 +61,22 @@ const breadcrumbs = [
             }
             .no-scrollbar {
                 -ms-overflow-style: none;
-                scrollbar-width: none; 
+                scrollbar-width: none;
             }
             /* Material settings */
             .material-symbols-outlined {
-                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
             }
             .icon-filled {
-                font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                font-variation-settings:
+                    "FILL" 1,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
             }
         </style>
     </fragment>
@@ -76,32 +84,60 @@ const breadcrumbs = [
     <!-- Hero Section -->
     <div class="relative w-full flex justify-center bg-white dark:bg-[#111921]">
         <div class="w-full max-w-[1440px]">
-            <div class="relative w-full h-[600px] md:h-[700px] bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center px-4 md:px-20" 
-                 data-alt="Modern luxury kitchen in Miami with floor to ceiling windows overlooking the ocean" 
-                 style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD101KmTn6sWPqPpP--SxDSsyyl4CS9fttPb-lpBOlC_50RMLSfD1BepwA2dbAOs3fy6I3DdvlSltDsfTje6Z0nK3D_xNtuOJYIRBdolAv9PhY5AUyadma54dr9_tFYCctGfBSiHZHavR0T26vfGsEMzy3xOeOpy4V3vToePRoSdZU23RCxFzioKUoqx2ZRN87hb0Mm2aia7r6ia2NX_6ao5TQ-e3EzXRUxjZ41PUU1Pyz-IfpB4wVAJMKb1A3jKq4G93mzx5q-CorI");'>
-                
+            <div
+                class="relative w-full h-[600px] md:h-[700px] bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center px-4 md:px-20"
+                data-alt="Modern luxury kitchen in Miami with floor to ceiling windows overlooking the ocean"
+                style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD101KmTn6sWPqPpP--SxDSsyyl4CS9fttPb-lpBOlC_50RMLSfD1BepwA2dbAOs3fy6I3DdvlSltDsfTje6Z0nK3D_xNtuOJYIRBdolAv9PhY5AUyadma54dr9_tFYCctGfBSiHZHavR0T26vfGsEMzy3xOeOpy4V3vToePRoSdZU23RCxFzioKUoqx2ZRN87hb0Mm2aia7r6ia2NX_6ao5TQ-e3EzXRUxjZ41PUU1Pyz-IfpB4wVAJMKb1A3jKq4G93mzx5q-CorI");'
+            >
                 <div class="max-w-[800px] flex flex-col gap-6 items-center">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-bold uppercase tracking-wider">
-                        <span class="material-symbols-outlined text-sm icon-filled">verified</span>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-bold uppercase tracking-wider"
+                    >
+                        <span
+                            class="material-symbols-outlined text-sm icon-filled"
+                            >verified</span
+                        >
                         Licensed in {county}
                     </div>
-                    <h1 class="text-white text-4xl md:text-6xl font-black font-[Space_Grotesk] leading-tight tracking-[-0.033em]">
-                        Modern Kitchen Remodeling in {city}: Resilient & Smart Designs
+                    <h1
+                        class="text-white text-4xl md:text-6xl font-black font-[Space_Grotesk] leading-tight tracking-[-0.033em]"
+                    >
+                        Modern Kitchen Remodeling in {city}: Resilient & Smart
+                        Designs
                     </h1>
-                    <h2 class="text-gray-200 text-base md:text-lg font-normal max-w-[640px]">
-                        A licensed General Contractor specializing in Art Deco kitchen renovations for {city} homeowners. From hurricane-ready cabinetry to smart appliances.
+                    <h2
+                        class="text-gray-200 text-base md:text-lg font-normal max-w-[640px]"
+                    >
+                        A licensed General Contractor specializing in Art Deco
+                        kitchen renovations for {city} homeowners. From hurricane-ready
+                        cabinetry to smart appliances.
                     </h2>
-                    <div class="flex flex-col sm:flex-row gap-4 w-full justify-center pt-4">
-                        <button class="h-12 px-8 bg-[#197fe6] hover:bg-blue-600 text-white text-base font-bold rounded-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2" onclick="document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})">
+                    <div
+                        class="flex flex-col sm:flex-row gap-4 w-full justify-center pt-4"
+                    >
+                        <button
+                            class="h-12 px-8 bg-[#197fe6] hover:bg-blue-600 text-white text-base font-bold rounded-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                            onclick="document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})"
+                        >
                             <span>Get a {city} Kitchen Estimate</span>
-                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            <span class="material-symbols-outlined text-sm"
+                                >arrow_forward</span
+                            >
                         </button>
-                        <a href="/portfolio/" class="h-12 px-8 bg-white text-[#111418] hover:bg-gray-100 text-base font-bold rounded-lg transition-all flex items-center justify-center gap-2">
+                        <a
+                            href="/remodeling/"
+                            class="h-12 px-8 bg-white text-[#111418] hover:bg-gray-100 text-base font-bold rounded-lg transition-all flex items-center justify-center gap-2"
+                        >
                             <span>View Portfolio</span>
                         </a>
                     </div>
-                    <p class="text-white/60 text-sm mt-2 flex items-center gap-1">
-                        <span class="material-symbols-outlined text-sm text-[#ff6b00] icon-filled">security</span>
+                    <p
+                        class="text-white/60 text-sm mt-2 flex items-center gap-1"
+                    >
+                        <span
+                            class="material-symbols-outlined text-sm text-[#ff6b00] icon-filled"
+                            >security</span
+                        >
                         24-Month Warranty Included
                     </p>
                 </div>
@@ -110,49 +146,98 @@ const breadcrumbs = [
     </div>
 
     <!-- FeatureSection (Local Reality) -->
-    <div class="w-full flex justify-center bg-white dark:bg-[#111921] py-16 md:py-24">
+    <div
+        class="w-full flex justify-center bg-white dark:bg-[#111921] py-16 md:py-24"
+    >
         <div class="w-full max-w-[1200px] px-4 md:px-10 lg:px-20">
             <div class="flex flex-col gap-10">
                 <div class="flex flex-col gap-2 max-w-[720px]">
-                    <span class="text-[#ff6b00] font-bold uppercase tracking-wider text-sm">Local Expertise</span>
-                    <h2 class="text-[#111418] dark:text-white font-[Space_Grotesk] text-3xl md:text-4xl font-bold leading-tight">
+                    <span
+                        class="text-[#ff6b00] font-bold uppercase tracking-wider text-sm"
+                        >Local Expertise</span
+                    >
+                    <h2
+                        class="text-[#111418] dark:text-white font-[Space_Grotesk] text-3xl md:text-4xl font-bold leading-tight"
+                    >
                         Local Reality: Building in {city}
                     </h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Card 1 -->
-                    <div class="group flex flex-col gap-4 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-[#1a2632] p-6 shadow-sm hover:shadow-md transition-all">
-                        <div class="size-12 rounded-full bg-[#197fe6]/10 flex items-center justify-center text-[#197fe6] group-hover:bg-[#197fe6] group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined text-3xl">water_drop</span>
+                    <div
+                        class="group flex flex-col gap-4 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-[#1a2632] p-6 shadow-sm hover:shadow-md transition-all"
+                    >
+                        <div
+                            class="size-12 rounded-full bg-[#197fe6]/10 flex items-center justify-center text-[#197fe6] group-hover:bg-[#197fe6] group-hover:text-white transition-colors"
+                        >
+                            <span class="material-symbols-outlined text-3xl"
+                                >water_drop</span
+                            >
                         </div>
                         <div class="flex flex-col gap-2">
-                            <h3 class="text-[#111418] dark:text-white text-xl font-bold font-[Space_Grotesk]">{city} Humidity Control</h3>
-                            <p class="text-[#637588] dark:text-gray-400 text-sm leading-relaxed">
-                                In {city}, humidity averages 74%. We use marine-grade plywood and moisture-resistant seals to prevent mold behind your new cabinets.
+                            <h3
+                                class="text-[#111418] dark:text-white text-xl font-bold font-[Space_Grotesk]"
+                            >
+                                {city} Humidity Control
+                            </h3>
+                            <p
+                                class="text-[#637588] dark:text-gray-400 text-sm leading-relaxed"
+                            >
+                                In {city}, humidity averages 74%. We use
+                                marine-grade plywood and moisture-resistant
+                                seals to prevent mold behind your new cabinets.
                             </p>
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="group flex flex-col gap-4 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-[#1a2632] p-6 shadow-sm hover:shadow-md transition-all">
-                        <div class="size-12 rounded-full bg-[#197fe6]/10 flex items-center justify-center text-[#197fe6] group-hover:bg-[#197fe6] group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined text-3xl">description</span>
+                    <div
+                        class="group flex flex-col gap-4 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-[#1a2632] p-6 shadow-sm hover:shadow-md transition-all"
+                    >
+                        <div
+                            class="size-12 rounded-full bg-[#197fe6]/10 flex items-center justify-center text-[#197fe6] group-hover:bg-[#197fe6] group-hover:text-white transition-colors"
+                        >
+                            <span class="material-symbols-outlined text-3xl"
+                                >description</span
+                            >
                         </div>
                         <div class="flex flex-col gap-2">
-                            <h3 class="text-[#111418] dark:text-white text-xl font-bold font-[Space_Grotesk]">Permitting in {city}</h3>
-                            <p class="text-[#637588] dark:text-gray-400 text-sm leading-relaxed">
-                                We handle all filings with the {city} Building Department, ensuring your remodel meets the latest Florida Building Code requirements.
+                            <h3
+                                class="text-[#111418] dark:text-white text-xl font-bold font-[Space_Grotesk]"
+                            >
+                                Permitting in {city}
+                            </h3>
+                            <p
+                                class="text-[#637588] dark:text-gray-400 text-sm leading-relaxed"
+                            >
+                                We handle all filings with the {city} Building Department,
+                                ensuring your remodel meets the latest Florida Building
+                                Code requirements.
                             </p>
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="group flex flex-col gap-4 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-[#1a2632] p-6 shadow-sm hover:shadow-md transition-all">
-                        <div class="size-12 rounded-full bg-[#197fe6]/10 flex items-center justify-center text-[#197fe6] group-hover:bg-[#197fe6] group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined text-3xl">architecture</span>
+                    <div
+                        class="group flex flex-col gap-4 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-[#1a2632] p-6 shadow-sm hover:shadow-md transition-all"
+                    >
+                        <div
+                            class="size-12 rounded-full bg-[#197fe6]/10 flex items-center justify-center text-[#197fe6] group-hover:bg-[#197fe6] group-hover:text-white transition-colors"
+                        >
+                            <span class="material-symbols-outlined text-3xl"
+                                >architecture</span
+                            >
                         </div>
                         <div class="flex flex-col gap-2">
-                            <h3 class="text-[#111418] dark:text-white text-xl font-bold font-[Space_Grotesk]">Designing for {city} Homes</h3>
-                            <p class="text-[#637588] dark:text-gray-400 text-sm leading-relaxed">
-                                Whether you have a condo in Brickell or a home in Coral Gables, we optimize layouts for open-concept living suited to the coast.
+                            <h3
+                                class="text-[#111418] dark:text-white text-xl font-bold font-[Space_Grotesk]"
+                            >
+                                Designing for {city} Homes
+                            </h3>
+                            <p
+                                class="text-[#637588] dark:text-gray-400 text-sm leading-relaxed"
+                            >
+                                Whether you have a condo in Brickell or a home
+                                in Coral Gables, we optimize layouts for
+                                open-concept living suited to the coast.
                             </p>
                         </div>
                     </div>
@@ -162,69 +247,196 @@ const breadcrumbs = [
     </div>
 
     <!-- Trends Section -->
-    <div class="w-full flex flex-col bg-[#f8fafc] dark:bg-[#0b1117] border-y border-[#e2e8f0] dark:border-gray-800">
+    <div
+        class="w-full flex flex-col bg-[#f8fafc] dark:bg-[#0b1117] border-y border-[#e2e8f0] dark:border-gray-800"
+    >
         <div class="flex flex-col items-center py-16 md:py-24">
-            <div class="w-full max-w-[1200px] px-4 md:px-10 lg:px-20 mb-8 flex flex-col md:flex-row justify-between items-end gap-4">
+            <div
+                class="w-full max-w-[1200px] px-4 md:px-10 lg:px-20 mb-8 flex flex-col md:flex-row justify-between items-end gap-4"
+            >
                 <div class="max-w-[700px]">
-                    <h2 class="text-[#111418] dark:text-white font-[Space_Grotesk] text-3xl md:text-4xl font-bold leading-tight">Top Kitchen Trends for {city} Homes in 2026</h2>
-                    <p class="text-[#637588] dark:text-gray-400 mt-2">Curated designs that blend luxury with the practical needs of South Florida living.</p>
+                    <h2
+                        class="text-[#111418] dark:text-white font-[Space_Grotesk] text-3xl md:text-4xl font-bold leading-tight"
+                    >
+                        Top Kitchen Trends for {city} Homes in 2026
+                    </h2>
+                    <p class="text-[#637588] dark:text-gray-400 mt-2">
+                        Curated designs that blend luxury with the practical
+                        needs of South Florida living.
+                    </p>
                 </div>
                 <div class="flex gap-2">
-                    <button id="slideLeft" class="size-10 rounded-full border border-gray-300 bg-white dark:bg-[#1a2632] dark:border-gray-700 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-                        <span class="material-symbols-outlined">arrow_back</span>
+                    <button
+                        id="slideLeft"
+                        class="size-10 rounded-full border border-gray-300 bg-white dark:bg-[#1a2632] dark:border-gray-700 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    >
+                        <span class="material-symbols-outlined">arrow_back</span
+                        >
                     </button>
-                    <button id="slideRight" class="size-10 rounded-full bg-[#197fe6] text-white flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg">
-                        <span class="material-symbols-outlined">arrow_forward</span>
+                    <button
+                        id="slideRight"
+                        class="size-10 rounded-full bg-[#197fe6] text-white flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg"
+                    >
+                        <span class="material-symbols-outlined"
+                            >arrow_forward</span
+                        >
                     </button>
                 </div>
             </div>
-            
-            <div class="w-full max-w-[1200px] pl-4 md:px-10 lg:px-20 overflow-hidden">
-                <div id="trendsContainer" class="flex overflow-x-auto no-scrollbar gap-6 pb-8 snap-x scroll-smooth">
+
+            <div
+                class="w-full max-w-[1200px] pl-4 md:px-10 lg:px-20 overflow-hidden"
+            >
+                <div
+                    id="trendsContainer"
+                    class="flex overflow-x-auto no-scrollbar gap-6 pb-8 snap-x scroll-smooth"
+                >
                     <!-- Trend 1 -->
-                    <div class="flex-shrink-0 w-[300px] md:w-[380px] snap-center group cursor-pointer">
-                        <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 shadow-md">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxTlKlMHPuQI6FYYg54mg3HTcc44nm40bhXYre8tk6yIqO3VfR2d-r3YwByCpCaw2rT8TZyLPjB6O3DmgZj_7GcmFtD4TKBKMzokjoZyAUaPsep8EquDkrzojGuKuZoPpfIxtLTRqmR2pIl2UhFpvn9mJyEtFTjVYViykyB7JjXUVEkMSTA4SFxlYhMKcEoNYad7Ei1-EhkVZYSCocI4FDt-p2bbYLyysP1ahkOwoCEvV0Ccg-7CLdmxFMCJ3sD72iReX2bczeeloY");'></div>
-                            <div class="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur text-[#111418] text-xs font-bold px-3 py-1 rounded-full uppercase">Technology</div>
+                    <div
+                        class="flex-shrink-0 w-[300px] md:w-[380px] snap-center group cursor-pointer"
+                    >
+                        <div
+                            class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 shadow-md"
+                        >
+                            <div
+                                class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"
+                            >
+                            </div>
+                            <div
+                                class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxTlKlMHPuQI6FYYg54mg3HTcc44nm40bhXYre8tk6yIqO3VfR2d-r3YwByCpCaw2rT8TZyLPjB6O3DmgZj_7GcmFtD4TKBKMzokjoZyAUaPsep8EquDkrzojGuKuZoPpfIxtLTRqmR2pIl2UhFpvn9mJyEtFTjVYViykyB7JjXUVEkMSTA4SFxlYhMKcEoNYad7Ei1-EhkVZYSCocI4FDt-p2bbYLyysP1ahkOwoCEvV0Ccg-7CLdmxFMCJ3sD72iReX2bczeeloY");'
+                            >
+                            </div>
+                            <div
+                                class="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur text-[#111418] text-xs font-bold px-3 py-1 rounded-full uppercase"
+                            >
+                                Technology
+                            </div>
                         </div>
-                        <h3 class="text-[#111418] dark:text-white text-xl font-bold font-[Space_Grotesk] mb-1 group-hover:text-[#197fe6] transition-colors">Smart Kitchens</h3>
-                        <p class="text-[#637588] dark:text-gray-400 text-sm">Integrated technology for the modern home, from app-controlled ovens to voice-activated faucets.</p>
+                        <h3
+                            class="text-[#111418] dark:text-white text-xl font-bold font-[Space_Grotesk] mb-1 group-hover:text-[#197fe6] transition-colors"
+                        >
+                            Smart Kitchens
+                        </h3>
+                        <p class="text-[#637588] dark:text-gray-400 text-sm">
+                            Integrated technology for the modern home, from
+                            app-controlled ovens to voice-activated faucets.
+                        </p>
                     </div>
                     <!-- Trend 2 -->
-                    <div class="flex-shrink-0 w-[300px] md:w-[380px] snap-center group cursor-pointer">
-                        <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 shadow-md">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLK1TfcATrPtYrVPClBaPjGy65y3THBqEC5TnGaRA6UgRCq7TBz0esTUFC6xSzY-EapqoMtV7_wG8XQPg3zIPLKnrKA69tQvZ8GZeZ69Nej_hIG4DXup5Z6I78-2t6DCcHAawyowaSUX714q__Eu8ZjJy1SZLfQ4k4oNYy9-EsoEFSFYVJ5IPh-zLvgJskNAefhojKaZfoJHws1G0qgaZut0WeYnpdBKfpZRhdXXtqe9lTVy5C97JzUJwPyRUm8m2O96aPoZ-nWgFW");'></div>
-                            <div class="absolute top-4 left-4 z-20 bg-[#ff6b00]/90 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Safety</div>
+                    <div
+                        class="flex-shrink-0 w-[300px] md:w-[380px] snap-center group cursor-pointer"
+                    >
+                        <div
+                            class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 shadow-md"
+                        >
+                            <div
+                                class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"
+                            >
+                            </div>
+                            <div
+                                class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLK1TfcATrPtYrVPClBaPjGy65y3THBqEC5TnGaRA6UgRCq7TBz0esTUFC6xSzY-EapqoMtV7_wG8XQPg3zIPLKnrKA69tQvZ8GZeZ69Nej_hIG4DXup5Z6I78-2t6DCcHAawyowaSUX714q__Eu8ZjJy1SZLfQ4k4oNYy9-EsoEFSFYVJ5IPh-zLvgJskNAefhojKaZfoJHws1G0qgaZut0WeYnpdBKfpZRhdXXtqe9lTVy5C97JzUJwPyRUm8m2O96aPoZ-nWgFW");'
+                            >
+                            </div>
+                            <div
+                                class="absolute top-4 left-4 z-20 bg-[#ff6b00]/90 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full uppercase"
+                            >
+                                Safety
+                            </div>
                         </div>
-                        <h3 class="text-[#111418] dark:text-white text-xl font-bold font-[Space_Grotesk] mb-1 group-hover:text-[#197fe6] transition-colors">Hurricane Resilience</h3>
-                        <p class="text-[#637588] dark:text-gray-400 text-sm">Built to withstand {city}'s toughest storms with impact windows and reinforced cabinetry.</p>
+                        <h3
+                            class="text-[#111418] dark:text-white text-xl font-bold font-[Space_Grotesk] mb-1 group-hover:text-[#197fe6] transition-colors"
+                        >
+                            Hurricane Resilience
+                        </h3>
+                        <p class="text-[#637588] dark:text-gray-400 text-sm">
+                            Built to withstand {city}'s toughest storms with
+                            impact windows and reinforced cabinetry.
+                        </p>
                     </div>
                     <!-- Trend 3 -->
-                    <div class="flex-shrink-0 w-[300px] md:w-[380px] snap-center group cursor-pointer">
-                        <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 shadow-md">
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgTT-QpS5SJB5T4AhojtjPME35vKb7SnNTf_dN5Xj--pLoOy6eun2PR0KoqYGl0enSjhausZFmeCEw_vhZIyuoOfy4Zb1FCn4b6wTJtdeR5YgYfnO6p9dAS303jAp9Kmpp_ocv04cZtmlc410AUx6KzM8CZSJZLlc6YQB1ym0xt176SwwWz1gRLq6gOkEzjT7sn0mzn6_Nkhco9kJZRCeo_OOaBVcqPVE_m5URPstK1HbisMqBWDaC_XJvI_sOVo4Q-lzajZNdLD-C");'></div>
-                            <div class="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur text-[#111418] text-xs font-bold px-3 py-1 rounded-full uppercase">Materials</div>
+                    <div
+                        class="flex-shrink-0 w-[300px] md:w-[380px] snap-center group cursor-pointer"
+                    >
+                        <div
+                            class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 shadow-md"
+                        >
+                            <div
+                                class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"
+                            >
+                            </div>
+                            <div
+                                class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgTT-QpS5SJB5T4AhojtjPME35vKb7SnNTf_dN5Xj--pLoOy6eun2PR0KoqYGl0enSjhausZFmeCEw_vhZIyuoOfy4Zb1FCn4b6wTJtdeR5YgYfnO6p9dAS303jAp9Kmpp_ocv04cZtmlc410AUx6KzM8CZSJZLlc6YQB1ym0xt176SwwWz1gRLq6gOkEzjT7sn0mzn6_Nkhco9kJZRCeo_OOaBVcqPVE_m5URPstK1HbisMqBWDaC_XJvI_sOVo4Q-lzajZNdLD-C");'
+                            >
+                            </div>
+                            <div
+                                class="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur text-[#111418] text-xs font-bold px-3 py-1 rounded-full uppercase"
+                            >
+                                Materials
+                            </div>
                         </div>
-    </div>
-    
-    <!-- Local Linking -->
-    <section class="bg-[#111418] text-white py-16">
-        <div class="w-full max-w-[1200px] mx-auto px-4 md:px-10 lg:px-20">
-            <h5 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Serving All Neighborhoods in {city}</h5>
-            <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-400">
-                <li><a class="hover:text-[#ff6b00] transition-colors" href="#">Brickell Kitchens</a></li>
-                <li><a class="hover:text-[#ff6b00] transition-colors" href="#">Coral Gables Remodeling</a></li>
-                <li><a class="hover:text-[#ff6b00] transition-colors" href="#">Coconut Grove Design</a></li>
-                <li><a class="hover:text-[#ff6b00] transition-colors" href="#">Wynwood Renovations</a></li>
-                <li><a class="hover:text-[#ff6b00] transition-colors" href="#">Miami Beach Condos</a></li>
-                <li><a class="hover:text-[#ff6b00] transition-colors" href="#">Edgewater Interiors</a></li>
-                <li><a class="hover:text-[#ff6b00] transition-colors" href="#">Key Biscayne Homes</a></li>
-                <li><a class="hover:text-[#ff6b00] transition-colors" href="#">Design District Condos</a></li>
-            </ul>
-        </div>
-    </section>
+                    </div>
 
-</MainLayout>
+                    <!-- Local Linking -->
+                    <section class="bg-[#111418] text-white py-16">
+                        <div
+                            class="w-full max-w-[1200px] mx-auto px-4 md:px-10 lg:px-20"
+                        >
+                            <h5
+                                class="font-bold text-white mb-6 uppercase tracking-wider text-sm"
+                            >
+                                Serving All Neighborhoods in {city}
+                            </h5>
+                            <ul
+                                class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-400"
+                            >
+                                <li>
+                                    <a
+                                        class="hover:text-[#ff6b00] transition-colors"
+                                        href="#">Brickell Kitchens</a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="hover:text-[#ff6b00] transition-colors"
+                                        href="#">Coral Gables Remodeling</a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="hover:text-[#ff6b00] transition-colors"
+                                        href="#">Coconut Grove Design</a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="hover:text-[#ff6b00] transition-colors"
+                                        href="#">Wynwood Renovations</a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="hover:text-[#ff6b00] transition-colors"
+                                        href="#">Miami Beach Condos</a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="hover:text-[#ff6b00] transition-colors"
+                                        href="#">Edgewater Interiors</a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="hover:text-[#ff6b00] transition-colors"
+                                        href="#">Key Biscayne Homes</a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="hover:text-[#ff6b00] transition-colors"
+                                        href="#">Design District Condos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div></MainLayout
+>

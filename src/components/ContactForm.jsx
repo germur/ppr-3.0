@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { COMPANY_INFO } from '../data/company';
 
 export default function ContactForm() {
     const [status, setStatus] = useState('');
@@ -39,7 +40,7 @@ export default function ContactForm() {
                 </div>
                 <h3 className="text-2xl font-bold text-green-800 mb-2">Request Received!</h3>
                 <p className="text-green-700 mb-4">Our team has been notified. We will call you at the number provided shortly to confirm your appointment.</p>
-                <a href="tel:7866022217" className="inline-block bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition">
+                <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="inline-block bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition">
                     Call Now if Urgent
                 </a>
             </div>

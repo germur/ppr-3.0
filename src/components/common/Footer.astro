@@ -1,4 +1,5 @@
 ---
+import { COMPANY_INFO } from "../../data/company";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -17,7 +18,7 @@ const currentYear = new Date().getFullYear();
                     href="/"
                     class="block font-display font-bold text-xl md:text-2xl text-white leading-tight hover:text-orange-500 transition-colors"
                 >
-                    Paramount<br />Property Restoration
+                    {COMPANY_INFO.name.replace(" ", "")}<br /> Restoration
                 </a>
 
                 <div class="flex flex-col gap-4 text-sm text-gray-400">
@@ -34,7 +35,10 @@ const currentYear = new Date().getFullYear();
                                 >location_on</span
                             >
                             <span
-                                >10890 NW 17th St Suite 138<br />Miami, FL 33172</span
+                                >{COMPANY_INFO.address}<br />{
+                                    COMPANY_INFO.city
+                                }, {COMPANY_INFO.state}
+                                {COMPANY_INFO.zip}</span
                             >
                         </div>
                         <div class="flex items-center gap-2">
@@ -43,7 +47,7 @@ const currentYear = new Date().getFullYear();
                                 >map</span
                             >
                             <a
-                                href="https://share.google/Ph3ruFZqTluLoWaZv"
+                                href={COMPANY_INFO.googleMapsLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="underline hover:text-white transition-colors"
@@ -56,9 +60,9 @@ const currentYear = new Date().getFullYear();
                                 >phone_in_talk</span
                             >
                             <a
-                                href="tel:7866022217"
+                                href={`tel:${COMPANY_INFO.phoneRaw}`}
                                 class="hover:text-white transition-colors"
-                                >(786) 602-2217</a
+                                >{COMPANY_INFO.phone}</a
                             >
                         </div>
                         <div class="flex items-center gap-2">
@@ -67,16 +71,16 @@ const currentYear = new Date().getFullYear();
                                 >mail</span
                             >
                             <a
-                                href="mailto:services@paramountpropertyrestoration.com"
+                                href={`mailto:${COMPANY_INFO.email}`}
                                 class="hover:text-white transition-colors text-sm"
-                                >services@paramount...</a
+                                >{COMPANY_INFO.email}</a
                             >
                         </div>
                     </div>
 
                     <div class="flex gap-4 mt-2">
                         <a
-                            href="https://www.linkedin.com/company/paramount-property-restoration"
+                            href={COMPANY_INFO.social.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
                             class="text-gray-400 hover:text-white transition-colors"
@@ -85,7 +89,7 @@ const currentYear = new Date().getFullYear();
                             <span class="text-2xl font-bold">in</span>
                         </a>
                         <a
-                            href="https://www.facebook.com/paramountpropertyrestoration"
+                            href={COMPANY_INFO.social.facebook}
                             target="_blank"
                             rel="noopener noreferrer"
                             class="text-gray-400 hover:text-white transition-colors"
@@ -94,9 +98,11 @@ const currentYear = new Date().getFullYear();
                             <span class="text-2xl font-bold">f</span>
                         </a>
                         <a
-                            href="/contact/"
+                            href={COMPANY_INFO.social.instagram}
                             class="text-gray-400 hover:text-white transition-colors"
                             aria-label="Instagram"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <span class="material-symbols-outlined text-2xl"
                                 >photo_camera</span

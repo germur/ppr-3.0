@@ -62,7 +62,7 @@ export default function HeroSplit() {
                             <h2 className="text-2xl font-bold text-slate-900 mb-2">I Want to Remodel</h2>
                             <p className="text-slate-500 mb-6 text-sm">Kitchens, Bathrooms, & Full Renovations. Build your dream space.</p>
 
-                            <a href="/remodeling-services" className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm tracking-wide uppercase hover:gap-3 transition-all">
+                            <a href="/remodeling" className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm tracking-wide uppercase hover:gap-3 transition-all">
                                 Schedule Estimate <ArrowRight size={16} />
                             </a>
                         </div>

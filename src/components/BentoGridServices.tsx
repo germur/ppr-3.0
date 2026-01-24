@@ -31,7 +31,7 @@ export default function BentoGridServices() {
                     </BentoCard>
 
                     {/* 2. Kitchen Remodeling (Tall - 1x2) */}
-                    <BentoCard href="/remodeling-services/kitchen-remodeling" className="md:col-span-1 md:row-span-2 bg-orange-100 flex flex-col justify-between group">
+                    <BentoCard href="/remodeling/kitchen" className="md:col-span-1 md:row-span-2 bg-orange-100 flex flex-col justify-between group">
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10" />
                         <img src="https://images.unsplash.com/photo-1556912173-3db996ea0661?q=80&w=2669&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Kitchen Remodeling" />
 
@@ -84,7 +84,7 @@ export default function BentoGridServices() {
                     </BentoCard>
 
                     {/* 6. Commercial (Wide - 2x1) */}
-                    <BentoCard href="/commercial/construction" className="md:col-span-2 bg-white border border-slate-200 flex items-center justify-between group overflow-hidden">
+                    <BentoCard href="/commercial" className="md:col-span-2 bg-white border border-slate-200 flex items-center justify-between group overflow-hidden">
                         <div className="relative z-10 p-4">
                             <div className="flex items-center gap-3 mb-2">
                                 <Building2 className="text-slate-500 group-hover:text-orange-500 transition-colors" />

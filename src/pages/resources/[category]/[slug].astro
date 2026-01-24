@@ -21,9 +21,26 @@ const allPosts = await getCollection('blog');
 const relatedPosts = allPosts
     .filter(p => p.data.subcategory === post.data.subcategory && p.slug !== post.slug)
     .slice(0, 3);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "image": post.data.image,
+  "author": {
+    "@type": "Organization",
+    "name": post.data.author || "Paramount Property Restoration"
+  },
+  "datePublished": post.data.pubDate.toISOString(),
+};
 ---
 
-<MainLayout title={post.data.title}>
+<MainLayout 
+  title={`${post.data.title} | Paramount Property Resources`} 
+  description={post.data.description}
+  customSchema={schema}
+>
 {post.data.fullWidth ? (
       <Content />
   ) : (

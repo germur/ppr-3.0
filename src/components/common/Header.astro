@@ -8,12 +8,14 @@ interface Props {
     logoText?: string;
 }
 
+import { COMPANY_INFO } from "../../data/company";
+
 const {
     variant = "default",
     theme = "light",
     sticky = true,
     secondaryColor = "#0d7ff2", // Default Primary Blue
-    emergencyBtnText = "(786) 602-2217",
+    emergencyBtnText = COMPANY_INFO.phone,
 } = Astro.props;
 
 import Navigation from "./Navigation.astro";
@@ -73,7 +75,7 @@ const themeClasses = {
 
                 <!-- Emergency Button -->
                 <a
-                    href="tel:7866022217"
+                    href={`tel:${COMPANY_INFO.phoneRaw}`}
                     class="flex items-center gap-2 px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg text-white font-bold text-xs xl:text-sm transition-all shadow-lg hover:opacity-90 animate-pulse whitespace-nowrap"
                     style="background-color: #dc2626;"
                 >

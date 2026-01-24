@@ -12,6 +12,8 @@ interface Props {
     schema?: Record<string, any>;
 }
 
+import { COMPANY_INFO } from "../data/company";
+
 const {
     title,
     description,
@@ -52,7 +54,7 @@ const {
             }
             <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
                 <a
-                    href="tel:7866022217"
+                    href={`tel:${COMPANY_INFO.phoneRaw}`}
                     class="flex items-center justify-center gap-2 h-12 md:h-14 px-6 md:px-8 bg-[#dc2626] hover:bg-red-700 text-white text-base md:text-lg font-bold rounded-lg shadow-lg hover:shadow-red-500/30 transition-all hover:-translate-y-0.5"
                 >
                     <span

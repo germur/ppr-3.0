@@ -47,10 +47,12 @@ const {
 // Map legacy 'type' prop to schemaType if schemaType is default/unset but type is present
 const effectiveSchemaType = type || schemaType;
 
+import { COMPANY_INFO } from "../../data/company";
+
 // 1. Construcción de URLs Absolutas (Crítico para SEO y OpenGraph)
 const siteURL = Astro.site
   ? Astro.site.origin
-  : "https://paramountpropertyrestoration.com";
+  : "https://paramountpropertyrestoration.com"; // Consider pulling this from config too if available, but okay for main domain
 const canonicalURL = canonical || new URL(Astro.url.pathname, siteURL).href;
 const absoluteImage = new URL(image, siteURL).href;
 
@@ -58,17 +60,17 @@ const absoluteImage = new URL(image, siteURL).href;
 const organizationSchema = {
   "@type": "GeneralContractor",
   "@id": `${siteURL}/#organization`,
-  name: "Paramount Property Restoration",
+  name: COMPANY_INFO.name,
   url: siteURL,
   logo: `${siteURL}/ppr-logo.png`,
   image: `${siteURL}/ppr-logo.png`,
-  telephone: "+1-786-602-2217",
+  telephone: `+1-${COMPANY_INFO.phoneDashes}`, // Ensure +1 prefix
   address: {
     "@type": "PostalAddress",
-    streetAddress: "10890 NW 17th St Suite 138",
-    addressLocality: "Miami",
-    addressRegion: "FL",
-    postalCode: "33172",
+    streetAddress: COMPANY_INFO.address,
+    addressLocality: COMPANY_INFO.city,
+    addressRegion: COMPANY_INFO.state,
+    postalCode: COMPANY_INFO.zip,
     addressCountry: "US",
   },
   geo: {
@@ -78,9 +80,10 @@ const organizationSchema = {
   },
   license: "CGC #1529606",
   sameAs: [
-    "https://www.facebook.com/paramountpropertyrestoration",
-    "https://www.linkedin.com/company/paramount-property-restoration",
-  ],
+    COMPANY_INFO.social.facebook,
+    COMPANY_INFO.social.linkedin,
+    COMPANY_INFO.social.instagram,
+  ].filter(Boolean),
 };
 
 // 3. Generación Dinámica del Schema de la Página

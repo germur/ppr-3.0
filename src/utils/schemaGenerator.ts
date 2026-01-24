@@ -9,13 +9,15 @@ export interface SchemaProps {
     services?: { name: string; type?: string }[];
 }
 
+import { COMPANY_INFO } from '../data/company';
+
 export const generateServiceSchema = ({
     url,
     image,
     description,
     serviceType = "GeneralContractor",
-    name = "Paramount Property Restoration",
-    telephone = "+1-786-602-2217",
+    name = COMPANY_INFO.name,
+    telephone = `+1-${COMPANY_INFO.phoneDashes}`,
     areaServed = ["Miami", "Orlando", "Tampa", "Fort Lauderdale"],
     services = [],
 }: SchemaProps) => {
