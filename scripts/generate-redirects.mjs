@@ -1,180 +1,251 @@
+/**
+ * generate-redirects.mjs
+ * 
+ * Genera public/_redirects desde:
+ *  1. Datos GSC (opcional: pasar CSV de pages como argumento)
+ *  2. El mapeo ciudad×servicio definido aquí
+ * 
+ * Uso: node scripts/generate-redirects.mjs [path/to/Pages.csv]
+ */
 
 import fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-// --- Configuration ---
-const NEW_REPO_PATH = process.cwd();
-const OLD_DATA_LOCATIONS = [
-    // Hardcoding legacy data here for simplicity and self-containment 
-    // based on previous analysis of old-ppr-repo/src/data/locations.js and restoration.js
-];
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, '..');
 
-// --- Legacy Data (Hardcoded based on analysis) ---
-const legacyCities = [
-    { slug: "orlando", region: "central-florida" },
-    { slug: "kissimmee", region: "central-florida" },
-    { slug: "lakeland", region: "central-florida" },
-    { slug: "winter-garden", region: "central-florida" },
-    { slug: "clermont", region: "central-florida" },
-    { slug: "leesburg", region: "central-florida" },
-    { slug: "ocala", region: "central-florida" },
-    { slug: "deltona", region: "central-florida" },
-    { slug: "winter-haven", region: "central-florida" },
-    { slug: "sanford", region: "central-florida" },
-    { slug: "apopka", region: "central-florida" },
-    { slug: "plant-city", region: "central-florida" },
-    { slug: "tampa", region: "tampa-bay" },
-    { slug: "st-petersburg", region: "tampa-bay" },
-    { slug: "clearwater", region: "tampa-bay" },
-    { slug: "brandon", region: "tampa-bay" },
-    { slug: "largo", region: "tampa-bay" },
-    { slug: "pinellas-park", region: "tampa-bay" },
-    { slug: "temple-terrace", region: "tampa-bay" },
-    { slug: "safety-harbor", region: "tampa-bay" },
-    { slug: "fort-myers", region: "southwest-florida" },
-    { slug: "cape-coral", region: "southwest-florida" },
-    { slug: "naples", region: "southwest-florida" },
-    { slug: "bonita-springs", region: "southwest-florida" },
-    { slug: "estero", region: "southwest-florida" },
-    { slug: "sarasota", region: "southwest-florida" },
-    { slug: "bradenton", region: "southwest-florida" },
-    { slug: "venice", region: "southwest-florida" },
-    { slug: "port-charlotte", region: "southwest-florida" },
-    { slug: "north-port", region: "southwest-florida" },
-    { slug: "miami", region: "south-florida" },
-    { slug: "fort-lauderdale", region: "south-florida" },
-    { slug: "hollywood", region: "south-florida" },
-    { slug: "coral-gables", region: "south-florida" },
-    { slug: "hialeah", region: "south-florida" },
-    { slug: "plantation", region: "south-florida" },
-    { slug: "davie", region: "south-florida" },
-    { slug: "sunrise", region: "south-florida" },
-    { slug: "pompano-beach", region: "south-florida" },
-    { slug: "deerfield-beach", region: "south-florida" },
-    { slug: "boca-raton", region: "south-florida" },
-    { slug: "west-palm-beach", region: "south-florida" },
-    { slug: "miramar", region: "south-florida" },
-    { slug: "pembroke-pines", region: "south-florida" },
-    { slug: "homestead", region: "south-florida" },
-    { slug: "port-st-lucie", region: "treasure-coast" },
-    { slug: "fort-pierce", region: "treasure-coast" },
-    { slug: "stuart", region: "treasure-coast" },
-    { slug: "jensen-beach", region: "treasure-coast" },
-    { slug: "vero-beach", region: "treasure-coast" },
-    { slug: "jupiter", region: "treasure-coast" },
-    { slug: "palm-city", region: "treasure-coast" },
-    { slug: "hobe-sound", region: "treasure-coast" },
-    { slug: "marco-island", region: "southwest-florida" },
-    { slug: "jacksonville", region: "northeast-florida" },
-    { slug: "st-augustine", region: "northeast-florida" },
-    { slug: "gainesville", region: "northeast-florida" },
-    { slug: "palm-coast", region: "northeast-florida" },
-    { slug: "tallahassee", region: "northwest-florida" },
-    { slug: "pensacola", region: "northwest-florida" },
-    { slug: "panama-city", region: "northwest-florida" }
-];
+// ── Service mapping: old sub-service slug → new service slug ──────────────
+const RESTORATION_MAP = {
+  // Water
+  'flood-damage': 'water-damage-restoration',
+  'emergency-water-removal': 'water-damage-restoration',
+  'leak-repair': 'water-damage-restoration',
+  'ceiling-water-damage': 'water-damage-restoration',
+  'basement-flooding': 'water-damage-restoration',
+  'sewage-cleanup': 'water-damage-restoration',
+  'burst-pipe': 'water-damage-restoration',
+  'structural-drying': 'water-damage-restoration',
+  // Fire
+  'smoke-damage': 'fire-damage-restoration',
+  'soot-cleanup': 'fire-damage-restoration',
+  'fire-damage-repair': 'fire-damage-restoration',
+  'emergency-fire-response': 'fire-damage-restoration',
+  'contents-cleaning': 'fire-damage-restoration',
+  'repair': 'fire-damage-restoration',
+  // Mold
+  'mold-inspection': 'mold-remediation',
+  'black-mold-removal': 'mold-remediation',
+  'mold-prevention': 'mold-remediation',
+  'mold-testing': 'mold-remediation',
+  'mold-damage-restoration': 'mold-remediation',
+  'attic-removal': 'mold-remediation',
+  // Storm
+  'hurricane-damage': 'storm-damage-repair',
+  'wind-damage': 'storm-damage-repair',
+  'storm-debris-removal': 'storm-damage-repair',
+  'emergency-storm-repair': 'storm-damage-repair',
+  'hurricane-recovery': 'storm-damage-repair',
+  'debris-removal': 'storm-damage-repair',
+  // Mitigation (legacy PPR 2.x pattern)
+  'water-mitigation': 'water-damage-restoration',
+  'fire-mitigation': 'fire-damage-restoration',
+  'mold-mitigation': 'mold-remediation',
+  'storm-mitigation': 'storm-damage-repair',
+};
 
-const legacyServiceMapping = [
-    // Water Damage
-    { old: 'flood-damage', new: 'water-damage-restoration', group: 'water-damage' },
-    { old: 'leak-repair', new: 'leak-detection', group: 'water-damage' },
-    { old: 'basement-flooding', new: 'water-damage-restoration', group: 'water-damage' },
-    { old: 'ceiling-water-damage', new: 'water-damage-restoration', group: 'water-damage' },
-    { old: 'emergency-water-removal', new: 'water-damage-restoration', group: 'water-damage' },
+// ── City → region mapping ─────────────────────────────────────────────────
+const CITY_REGION = {
+  // Central Florida
+  'orlando': 'central-florida', 'kissimmee': 'central-florida', 'lakeland': 'central-florida',
+  'winter-garden': 'central-florida', 'clermont': 'central-florida', 'leesburg': 'central-florida',
+  'ocala': 'central-florida', 'deltona': 'central-florida', 'winter-haven': 'central-florida',
+  'sanford': 'central-florida', 'apopka': 'central-florida', 'winter-park': 'central-florida',
+  'lake-mary': 'central-florida', 'oviedo': 'central-florida', 'ocoee': 'central-florida',
+  'st-cloud': 'central-florida', 'altamonte-springs': 'central-florida',
+  'jacksonville': 'central-florida', 'st-augustine': 'central-florida',
+  'gainesville': 'central-florida', 'tallahassee': 'central-florida',
+  'pensacola': 'central-florida', 'panama-city': 'central-florida',
+  // Tampa Bay
+  'tampa': 'tampa-bay', 'st-petersburg': 'tampa-bay', 'clearwater': 'tampa-bay',
+  'brandon': 'tampa-bay', 'largo': 'tampa-bay', 'pinellas-park': 'tampa-bay',
+  'temple-terrace': 'tampa-bay', 'safety-harbor': 'tampa-bay', 'riverview': 'tampa-bay',
+  'westchase': 'tampa-bay', 'odessa': 'tampa-bay', 'land-o-lakes': 'tampa-bay',
+  'trinity': 'tampa-bay', 'palm-harbor': 'tampa-bay', 'dunedin': 'tampa-bay',
+  'tarpon-springs': 'tampa-bay', 'zephyrhills': 'tampa-bay', 'new-port-richey': 'tampa-bay',
+  'plant-city': 'tampa-bay', 'hyde-park': 'tampa-bay', 'wesley-chapel': 'tampa-bay',
+  // Southwest Florida
+  'fort-myers': 'southwest-florida', 'cape-coral': 'southwest-florida', 'naples': 'southwest-florida',
+  'bonita-springs': 'southwest-florida', 'estero': 'southwest-florida', 'sarasota': 'southwest-florida',
+  'bradenton': 'southwest-florida', 'venice': 'southwest-florida', 'port-charlotte': 'southwest-florida',
+  'north-port': 'southwest-florida', 'marco-island': 'southwest-florida',
+  'lehigh-acres': 'southwest-florida', 'punta-gorda': 'southwest-florida',
+  // South Florida & Treasure Coast
+  'miami': 'south-florida', 'fort-lauderdale': 'south-florida', 'hollywood': 'south-florida',
+  'coral-gables': 'south-florida', 'hialeah': 'south-florida', 'plantation': 'south-florida',
+  'davie': 'south-florida', 'sunrise': 'south-florida', 'pompano-beach': 'south-florida',
+  'deerfield-beach': 'south-florida', 'boca-raton': 'south-florida', 'west-palm-beach': 'south-florida',
+  'miramar': 'south-florida', 'pembroke-pines': 'south-florida', 'homestead': 'south-florida',
+  'coral-springs': 'south-florida', 'boynton-beach': 'south-florida', 'delray-beach': 'south-florida',
+  'jupiter': 'south-florida', 'miami-beach': 'south-florida', 'doral': 'south-florida',
+  'port-st-lucie': 'south-florida', 'fort-pierce': 'south-florida', 'stuart': 'south-florida',
+  'jensen-beach': 'south-florida', 'vero-beach': 'south-florida', 'palm-city': 'south-florida',
+  'hobe-sound': 'south-florida', 'palm-coast': 'south-florida',
+};
 
-    // Fire Damage
-    { old: 'smoke-damage', new: 'fire-damage-restoration', group: 'fire-damage' },
-    { old: 'soot-cleanup', new: 'fire-damage-restoration', group: 'fire-damage' },
-    { old: 'fire-damage-repair', new: 'fire-damage-restoration', group: 'fire-damage' },
-    { old: 'emergency-fire-response', new: 'fire-damage-restoration', group: 'fire-damage' },
+// ── Static rules (always included) ───────────────────────────────────────
+const STATIC_RULES = `
+# Tools & legacy landings
+/tools/mold-testing-cost-calculator  /landing/mold-testing/  301
+/tools/mold-testing-cost-calculator/ /landing/mold-testing/  301
+/book-mold-inspection                /landing/mold-testing/  301
+/book-mold-inspection/               /landing/mold-testing/  301
+/landing/mold-remediation            /landing/mold-testing/  301
+/landing/mold-remediation/           /landing/mold-testing/  301
 
-    // Mold
-    { old: 'mold-inspection', new: 'mold-remediation', group: 'mold-remediation' },
-    { old: 'black-mold-removal', new: 'mold-remediation', group: 'mold-remediation' },
-    { old: 'mold-prevention', new: 'mold-remediation', group: 'mold-remediation' },
-    { old: 'mold-testing', new: 'mold-remediation', group: 'mold-remediation' },
-    { old: 'mold-damage-restoration', new: 'mold-remediation', group: 'mold-remediation' },
+# Legacy service category pages
+/services/bathroom-remodeling        /remodeling/bathroom/       301
+/services/bathroom-remodeling/       /remodeling/bathroom/       301
+/services/bedroom-remodeling         /remodeling/bathroom/       301
+/services/bedroom-remodeling/        /remodeling/bathroom/       301
+/services/living-dining-remodeling   /remodeling/                301
+/services/living-dining-remodeling/  /remodeling/                301
+/services/kitchen-remodeling         /remodeling/kitchen/        301
+/services/kitchen-remodeling/        /remodeling/kitchen/        301
+/services/home-additions-remodeling  /remodeling/home-additions/ 301
+/services/home-additions-remodeling/ /remodeling/home-additions/ 301
 
-    // Storm
-    { old: 'hurricane-damage', new: 'storm-damage-repair', group: 'storm-damage' },
-    { old: 'wind-damage', new: 'storm-damage-repair', group: 'storm-damage' },
-    { old: 'storm-debris-removal', new: 'storm-damage-repair', group: 'storm-damage' },
-    { old: 'emergency-storm-repair', new: 'storm-damage-repair', group: 'storm-damage' },
+# Legacy restoration category pages (generic, no city)
+/restoration/mitigation-services                         /restoration/                          301
+/restoration/mitigation-services/                        /restoration/                          301
+/restoration/water-damage/flood-damage                   /restoration/water-damage/             301
+/restoration/water-damage/flood-damage/                  /restoration/water-damage/             301
+/restoration/water-damage/emergency-water-removal        /restoration/water-damage/emergency-water-removal/ 301
+/restoration/water-damage/emergency-water-removal/       /restoration/water-damage/emergency-water-removal/ 301
+/restoration/water-damage/leak-repair                    /restoration/water-damage/leak-repair/ 301
+/restoration/water-damage/leak-repair/                   /restoration/water-damage/leak-repair/ 301
+/restoration/water-damage/ceiling-water-damage           /restoration/water-damage/ceiling-water-damage/ 301
+/restoration/water-damage/ceiling-water-damage/          /restoration/water-damage/ceiling-water-damage/ 301
+/restoration/water-damage/basement-flooding              /restoration/water-damage/basement-flooding/ 301
+/restoration/water-damage/basement-flooding/             /restoration/water-damage/basement-flooding/ 301
+/restoration/fire-damage/fire-damage-repair              /restoration/fire-damage/repair/       301
+/restoration/fire-damage/fire-damage-repair/             /restoration/fire-damage/repair/       301
+/restoration/fire-damage/emergency-fire-response         /restoration/fire-damage/              301
+/restoration/fire-damage/emergency-fire-response/        /restoration/fire-damage/              301
+/restoration/fire-damage/smoke-damage                    /restoration/fire-damage/smoke-damage/ 301
+/restoration/fire-damage/soot-cleanup                    /restoration/fire-damage/soot-cleanup/ 301
+/restoration/mold-remediation/mold-inspection            /restoration/mold-remediation/inspection/ 301
+/restoration/mold-remediation/mold-inspection/           /restoration/mold-remediation/inspection/ 301
+/restoration/mold-remediation/mold-prevention            /restoration/mold-remediation/prevention/ 301
+/restoration/mold-remediation/mold-prevention/           /restoration/mold-remediation/prevention/ 301
+/restoration/mold-remediation/mold-testing               /restoration/mold-remediation/testing/ 301
+/restoration/mold-remediation/mold-testing/              /restoration/mold-remediation/testing/ 301
+/restoration/mold-remediation/mold-damage-restoration    /restoration/mold-remediation/         301
+/restoration/mold-remediation/mold-damage-restoration/   /restoration/mold-remediation/         301
+/restoration/mold-remediation/black-mold-removal         /restoration/mold-remediation/black-mold-removal/ 301
+/restoration/storm-damage/hurricane-damage               /restoration/storm-damage/hurricane-recovery/ 301
+/restoration/storm-damage/hurricane-damage/              /restoration/storm-damage/hurricane-recovery/ 301
+/restoration/storm-damage/storm-debris-removal           /restoration/storm-damage/debris-removal/ 301
+/restoration/storm-damage/storm-debris-removal/          /restoration/storm-damage/debris-removal/ 301
+/restoration/storm-damage/emergency-storm-repair         /restoration/storm-damage/             301
+/restoration/storm-damage/emergency-storm-repair/        /restoration/storm-damage/             301
+/restoration/storm-damage/wind-damage                    /restoration/storm-damage/wind-damage/ 301
 
-    // Litigation
-    { old: 'water-mitigation', new: 'water-damage-restoration', group: 'mitigation-services' },
-    { old: 'fire-mitigation', new: 'fire-damage-restoration', group: 'mitigation-services' },
-    { old: 'mold-mitigation', new: 'mold-remediation', group: 'mitigation-services' },
-    { old: 'storm-mitigation', new: 'storm-damage-repair', group: 'mitigation-services' },
-];
+# General catch-all legacy
+/home/*                  /           301
+/aboutUs                 /contact/   301
+/portfolio               /remodeling/ 301
+/blog/blog/*             /resources/ 301
+/remodeling-services     /remodeling/ 301
+/remodeling-services/*   /remodeling/ 301
+`.trim();
 
-const staticRedirects = [
-    { from: '/restoration', to: '/' },
-    { from: '/services', to: '/remodeling-services' },
-    { from: '/portfolio', to: '/remodeling-services' },
-    { from: '/contact', to: '/contact' },
-    { from: '/privacy', to: '/privacy-policy' },
-    { from: '/services/kitchen-remodeling', to: '/remodeling-services/kitchen-remodeling' },
-    { from: '/services/bathroom-remodeling', to: '/remodeling-services/bathroom-remodeling' },
-    { from: '/restoration/remodeling-services', to: '/remodeling-services' },
-    { from: '/contacto-antiguo', to: '/contact' },
-    { from: '/servicio-viejo', to: '/restoration/water-damage/' }, // Mapping to main restoration if possible or root
-];
+// ── Main ─────────────────────────────────────────────────────────────────
+async function generateRedirects(gscCsvPath = null) {
+  const seen = new Set();
+  const dynamic = [];
 
-// --- Generator ---
-
-async function generateRedirects() {
-    let redirects = [];
-
-    // 1. Static Redirects
-    for (const rule of staticRedirects) {
-        redirects.push(`${rule.from} ${rule.to} 301`);
+  function add(old, dest) {
+    const clean = old.replace(/\/$/, '');
+    if (!clean || seen.has(clean)) return;
+    seen.add(clean);
+    dynamic.push(`${clean} ${dest} 301`);
+    const withSlash = clean + '/';
+    if (!seen.has(withSlash)) {
+      seen.add(withSlash);
+      dynamic.push(`${withSlash} ${dest} 301`);
     }
+  }
 
-    // 2. Dynamic City Redirects
-    for (const city of legacyCities) {
-        for (const mapping of legacyServiceMapping) {
-            // Old Pattern: /restoration/[group]/[subservice]/[city]
-            const oldPath = `/restoration/${mapping.group}/${mapping.old}/${city.slug}`;
+  // If GSC CSV provided, parse it for discovered URLs
+  let gscPaths = [];
+  if (gscCsvPath) {
+    const raw = await fs.readFile(gscCsvPath, 'utf8');
+    const lines = raw.split('\n').slice(1).filter(Boolean);
+    gscPaths = lines.map(l => {
+      try { return new URL(l.split(',')[0].replace(/"/g, '')).pathname; }
+      catch { return ''; }
+    }).filter(Boolean);
+    console.log(`📂 Loaded ${gscPaths.length} URLs from GSC CSV`);
+  }
 
-            // New Pattern: /service-areas/[region]/[city]/[service]
-            // Note: Region slug usually matches loosely but let's assume valid mapping from old data for now
-            // In a real scenario we'd query the NEW regions.ts to be 100% sure, but let's trust the logic for now
+  // Generate from all known city×service combos
+  const groups = [
+    ['water-damage', Object.keys(RESTORATION_MAP).filter(k => RESTORATION_MAP[k] === 'water-damage-restoration')],
+    ['fire-damage', Object.keys(RESTORATION_MAP).filter(k => RESTORATION_MAP[k] === 'fire-damage-restoration')],
+    ['mold-remediation', Object.keys(RESTORATION_MAP).filter(k => RESTORATION_MAP[k] === 'mold-remediation')],
+    ['storm-damage', Object.keys(RESTORATION_MAP).filter(k => RESTORATION_MAP[k] === 'storm-damage-repair')],
+  ];
 
-            // Adjust region slug if needed (e.g. if new repo uses different slugs)
-            const newRegion = city.region; // Assuming identical slugs
-
-            const newPath = `/service-areas/${newRegion}/${city.slug}/${mapping.new}`;
-
-            redirects.push(`${oldPath} ${newPath} 301`);
-        }
+  for (const [group, subservices] of groups) {
+    for (const city of Object.keys(CITY_REGION)) {
+      const region = CITY_REGION[city];
+      for (const sub of subservices) {
+        const newSvc = RESTORATION_MAP[sub];
+        add(`/restoration/${group}/${sub}/${city}`, `/service-areas/${region}/${city}/${newSvc}/`);
+        add(`/restoration/mitigation-services/${sub.replace(/-restoration|ation|-damage|-remediation|-repair/g, '')}-mitigation/${city}`, `/service-areas/${region}/${city}/${newSvc}/`);
+      }
+      // /services/kitchen-remodeling/{city}
+      add(`/services/kitchen-remodeling/${city}`, `/service-areas/${region}/${city}/kitchen-remodeling/`);
+      add(`/services/bathroom-remodeling/${city}`, `/service-areas/${region}/${city}/bathroom-remodeling/`);
+      add(`/services/bedroom-remodeling/${city}`, `/service-areas/${region}/${city}/bathroom-remodeling/`);
+      add(`/services/home-additions-remodeling/${city}`, `/remodeling/home-additions/`);
+      add(`/services/living-dining-remodeling/${city}`, `/remodeling/`);
     }
+  }
 
-    // 3. Category Redirects (General subservices pages -> New Service Pages)
-    // Old: /restoration/[group]/[subservice] -> New: / (or best match)
-    // Since new site is location based, we might redirect generic service pages to a general service page if it exists, or Home.
-    // Given the new structure implies /restoration/water-damage might exist as a page? 
-    // Let's redirect specific subservices to the generic restoration page or home 
-    // IF the new site doesn't have a specific global service page (it seems to have /restoration/water-damage etc based on file search earlier?)
-    // Actually, earlier file search showed `src/pages/restoration/water-damage.astro` exists in the NEW repo.
-
-    // Let's map the general category pages too
-    const categoryMapping = [
-        { old: '/restoration/water-damage/flood-damage', new: '/restoration/water-damage' },
-        { old: '/restoration/water-damage/leak-repair', new: '/restoration/water-damage/leak-detection' }, // If exists
-        { old: '/restoration/fire-damage/smoke-damage', new: '/restoration/fire-damage' },
-        { old: '/restoration/mold-remediation/mold-inspection', new: '/restoration/mold-remediation' },
-        // Add more as needed
-    ];
-
-    for (const rule of categoryMapping) {
-        redirects.push(`${rule.old} ${rule.new} 301`);
+  // Also process discovered GSC paths not covered above
+  for (const p of gscPaths) {
+    const parts = p.replace(/\/$/, '').split('/').filter(Boolean);
+    if (parts.length === 4 && parts[0] === 'restoration' && RESTORATION_MAP[parts[2]]) {
+      const city = parts[3];
+      const region = CITY_REGION[city];
+      if (region) add(p, `/service-areas/${region}/${city}/${RESTORATION_MAP[parts[2]]}/`);
     }
+  }
 
+  const date = new Date().toISOString().split('T')[0];
+  const content = [
+    `# ============================================================`,
+    `# _redirects — Paramount Property Restoration`,
+    `# Generado: ${date} | ${dynamic.length + STATIC_RULES.split('\n').filter(l => l && !l.startsWith('#')).length} reglas totales`,
+    `# Regenerar: node scripts/generate-redirects.mjs [Pages.csv]`,
+    `# ============================================================`,
+    ``,
+    STATIC_RULES,
+    ``,
+    `# --- Ciudad × servicio (${dynamic.length} reglas dinámicas) ---`,
+    ...dynamic,
+    ``,
+    `# --- 404 fallback ---`,
+    `/* /404.html 404`,
+  ].join('\n');
 
-    const content = redirects.join('\n');
-    await fs.writeFile(path.join(NEW_REPO_PATH, 'public', '_redirects'), content);
-    console.log(`Generated ${redirects.length} redirects in public/_redirects`);
+  const outPath = path.join(ROOT, 'public', '_redirects');
+  await fs.writeFile(outPath, content);
+  console.log(`✅ ${outPath}`);
+  console.log(`   ${dynamic.length} reglas dinámicas + estáticas`);
 }
 
-generateRedirects().catch(console.error);
+const csvArg = process.argv[2] ? path.resolve(process.argv[2]) : null;
+generateRedirects(csvArg).catch(console.error);

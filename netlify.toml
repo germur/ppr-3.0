@@ -2,6 +2,16 @@
   command = "npm run build"
   publish = "dist"
 
+# Enforce trailing slash: redirect /path -> /path/ (301, permanent)
+# This prevents duplicate canonical issues in Google Search Console
+[[redirects]]
+  from = "/:path"
+  to = "/:path/"
+  status = 301
+  conditions = {path = ["*[^/]"]}
+  force = false
+
+# 404 fallback — must be last
 [[redirects]]
   from = "/*"
   to = "/404.html"
@@ -9,3 +19,6 @@
 
 [context.production]
   environment = { NODE_VERSION = "20" }
+
+[context.production.environment]
+  ASTRO_TELEMETRY_DISABLED = "1"
