@@ -202,13 +202,13 @@ async function generateRedirects(gscCsvPath = null) {
       const region = CITY_REGION[city];
       for (const sub of subservices) {
         const newSvc = RESTORATION_MAP[sub];
-        add(`/restoration/${group}/${sub}/${city}`, `/service-areas/${region}/${city}/${newSvc}/`);
-        add(`/restoration/mitigation-services/${sub.replace(/-restoration|ation|-damage|-remediation|-repair/g, '')}-mitigation/${city}`, `/service-areas/${region}/${city}/${newSvc}/`);
+        add(`/restoration/${group}/${sub}/${city}`, `/service-areas/${city}/${newSvc}/`);
+        add(`/restoration/mitigation-services/${sub.replace(/-restoration|ation|-damage|-remediation|-repair/g, '')}-mitigation/${city}`, `/service-areas/${city}/${newSvc}/`);
       }
       // /services/kitchen-remodeling/{city}
-      add(`/services/kitchen-remodeling/${city}`, `/service-areas/${region}/${city}/kitchen-remodeling/`);
-      add(`/services/bathroom-remodeling/${city}`, `/service-areas/${region}/${city}/bathroom-remodeling/`);
-      add(`/services/bedroom-remodeling/${city}`, `/service-areas/${region}/${city}/bathroom-remodeling/`);
+      add(`/services/kitchen-remodeling/${city}`, `/service-areas/${city}/kitchen-remodeling/`);
+      add(`/services/bathroom-remodeling/${city}`, `/service-areas/${city}/bathroom-remodeling/`);
+      add(`/services/bedroom-remodeling/${city}`, `/service-areas/${city}/bathroom-remodeling/`);
       add(`/services/home-additions-remodeling/${city}`, `/remodeling/home-additions/`);
       add(`/services/living-dining-remodeling/${city}`, `/remodeling/`);
     }
@@ -220,7 +220,7 @@ async function generateRedirects(gscCsvPath = null) {
     if (parts.length === 4 && parts[0] === 'restoration' && RESTORATION_MAP[parts[2]]) {
       const city = parts[3];
       const region = CITY_REGION[city];
-      if (region) add(p, `/service-areas/${region}/${city}/${RESTORATION_MAP[parts[2]]}/`);
+      if (region) add(p, `/service-areas/${city}/${RESTORATION_MAP[parts[2]]}/`);
     }
   }
 
