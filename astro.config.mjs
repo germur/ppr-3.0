@@ -11,7 +11,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://paramountpropertyrestoration.com', // TODO: Update this to your actual domain
+  site: 'https://paramountpropertyrestoration.com',
+  trailingSlash: 'always', // Enforce /path/ consistently — prevents duplicate canonical issues in GSC
   integrations: [react(), sitemap(), mdx()],
 
   image: {
