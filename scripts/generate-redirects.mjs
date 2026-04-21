@@ -54,6 +54,26 @@ const RESTORATION_MAP = {
   'storm-mitigation': 'storm-damage-repair',
 };
 
+// ── Cities WITH data files in src/content/cities/ (generate city-level pages) ──
+// These get redirected to /service-areas/{city}/{service}/
+// All other cities fall back to /restoration/{service-category}/
+const CITIES_WITH_PAGES = new Set([
+  'boca-raton', 'bonita-springs', 'bradenton', 'cape-coral', 'clearwater',
+  'coral-gables', 'delray-beach', 'estero', 'fort-lauderdale', 'fort-myers',
+  'kissimmee', 'miami', 'naples', 'orlando', 'sanford', 'sarasota',
+  'tampa', 'west-palm-beach', 'winter-park',
+]);
+
+// ── Service → restoration category fallback (for cities without pages) ───
+const SERVICE_CATEGORY_FALLBACK = {
+  'water-damage-restoration': '/restoration/water-damage/',
+  'fire-damage-restoration':  '/restoration/fire-damage/',
+  'mold-remediation':         '/restoration/mold-remediation/',
+  'storm-damage-repair':      '/restoration/storm-damage/',
+  'kitchen-remodeling':       '/remodeling/kitchen/',
+  'bathroom-remodeling':      '/remodeling/bathroom/',
+};
+
 // ── City → region mapping ─────────────────────────────────────────────────
 const CITY_REGION = {
   // Central Florida
@@ -158,6 +178,44 @@ const STATIC_RULES = `
 /blog/blog/*             /resources/ 301
 /remodeling-services     /remodeling/ 301
 /remodeling-services/*   /remodeling/ 301
+
+# Blog posts legacy → /resources/
+/blog/diy-mold-test-kits-guide                    /resources/  301
+/blog/diy-mold-test-kits-guide/                   /resources/  301
+/blog/florida-mold-challenge-sb2a-guide           /resources/  301
+/blog/florida-mold-challenge-sb2a-guide/          /resources/  301
+/blog/homeowner-mold-prevention-guide             /resources/  301
+/blog/homeowner-mold-prevention-guide/            /resources/  301
+/blog/mold-exposure-symptoms-medical-testing      /resources/  301
+/blog/mold-exposure-symptoms-medical-testing/     /resources/  301
+/blog/professional-mold-testing-cost-guide-2025   /resources/  301
+/blog/professional-mold-testing-cost-guide-2025/  /resources/  301
+/blog/real-estate-risk-mold-testing-florida       /resources/  301
+/blog/real-estate-risk-mold-testing-florida/      /resources/  301
+/blog/valor-renovacion-florida-2025               /resources/  301
+/blog/valor-renovacion-florida-2025/              /resources/  301
+/blog/guia-reparacion-banos                       /resources/  301
+/blog/guia-reparacion-banos/                      /resources/  301
+
+# Legacy pages
+/commercial/construction                          /restoration/           301
+/restoration/mitigation-services/water-mitigation /restoration/water-damage/ 301
+/restoration/mitigation-services/water-mitigation/ /restoration/water-damage/ 301
+/restoration/mitigation/mold-mitigation           /restoration/mold-remediation/ 301
+/restoration/storm/emergency-storm-repair         /restoration/storm-damage/ 301
+/restoration/water-damage/leak-detection          /restoration/water-damage/ 301
+/restoration/water-damage/leak-detection/         /restoration/water-damage/ 301
+/restoration/water-damage/winter-haven            /restoration/water-damage/ 301
+/terms                                            /privacy-policy/ 301
+/terms/                                           /privacy-policy/ 301
+/services/mold-remediation/removal                /restoration/mold-remediation/ 301
+/services/mold-remediation/removal/               /restoration/mold-remediation/ 301
+/services/bathroom-remodeling/null/largo          /remodeling/bathroom/ 301
+/services/bathroom-remodeling/null/largo/         /remodeling/bathroom/ 301
+/services/bedroom-remodeling/null/ocala           /remodeling/bathroom/ 301
+/services/bedroom-remodeling/null/ocala/          /remodeling/bathroom/ 301
+/services/kitchen-remodeling/null/estero          /remodeling/kitchen/ 301
+/services/kitchen-remodeling/null/estero/         /remodeling/kitchen/ 301
 `.trim();
 
 // ── Main ─────────────────────────────────────────────────────────────────
@@ -199,16 +257,23 @@ async function generateRedirects(gscCsvPath = null) {
 
   for (const [group, subservices] of groups) {
     for (const city of Object.keys(CITY_REGION)) {
-      const region = CITY_REGION[city];
+      const hasPage = CITIES_WITH_PAGES.has(city);
       for (const sub of subservices) {
         const newSvc = RESTORATION_MAP[sub];
-        add(`/restoration/${group}/${sub}/${city}`, `/service-areas/${city}/${newSvc}/`);
-        add(`/restoration/mitigation-services/${sub.replace(/-restoration|ation|-damage|-remediation|-repair/g, '')}-mitigation/${city}`, `/service-areas/${city}/${newSvc}/`);
+        // City with page → /service-areas/{city}/{service}/
+        // City without page → /restoration/{category}/ fallback
+        const dest = hasPage
+          ? `/service-areas/${city}/${newSvc}/`
+          : SERVICE_CATEGORY_FALLBACK[newSvc] || '/restoration/';
+        add(`/restoration/${group}/${sub}/${city}`, dest);
+        add(`/restoration/mitigation-services/${sub.replace(/-restoration|ation|-damage|-remediation|-repair/g, '')}-mitigation/${city}`, dest);
       }
-      // /services/kitchen-remodeling/{city}
-      add(`/services/kitchen-remodeling/${city}`, `/service-areas/${city}/kitchen-remodeling/`);
-      add(`/services/bathroom-remodeling/${city}`, `/service-areas/${city}/bathroom-remodeling/`);
-      add(`/services/bedroom-remodeling/${city}`, `/service-areas/${city}/bathroom-remodeling/`);
+      // /services/remodeling/{city}
+      const kitDest = hasPage ? `/service-areas/${city}/kitchen-remodeling/` : '/remodeling/kitchen/';
+      const bathDest = hasPage ? `/service-areas/${city}/bathroom-remodeling/` : '/remodeling/bathroom/';
+      add(`/services/kitchen-remodeling/${city}`, kitDest);
+      add(`/services/bathroom-remodeling/${city}`, bathDest);
+      add(`/services/bedroom-remodeling/${city}`, bathDest);
       add(`/services/home-additions-remodeling/${city}`, `/remodeling/home-additions/`);
       add(`/services/living-dining-remodeling/${city}`, `/remodeling/`);
     }
@@ -219,8 +284,13 @@ async function generateRedirects(gscCsvPath = null) {
     const parts = p.replace(/\/$/, '').split('/').filter(Boolean);
     if (parts.length === 4 && parts[0] === 'restoration' && RESTORATION_MAP[parts[2]]) {
       const city = parts[3];
-      const region = CITY_REGION[city];
-      if (region) add(p, `/service-areas/${city}/${RESTORATION_MAP[parts[2]]}/`);
+      if (!CITY_REGION[city]) continue;
+      const newSvc = RESTORATION_MAP[parts[2]];
+      const hasPage = CITIES_WITH_PAGES.has(city);
+      const dest = hasPage
+        ? `/service-areas/${city}/${newSvc}/`
+        : SERVICE_CATEGORY_FALLBACK[newSvc] || '/restoration/';
+      add(p, dest);
     }
   }
 
