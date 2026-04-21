@@ -59,9 +59,11 @@ const RESTORATION_MAP = {
 // All other cities fall back to /restoration/{service-category}/
 const CITIES_WITH_PAGES = new Set([
   'boca-raton', 'bonita-springs', 'bradenton', 'cape-coral', 'clearwater',
-  'coral-gables', 'delray-beach', 'estero', 'fort-lauderdale', 'fort-myers',
-  'kissimmee', 'miami', 'naples', 'orlando', 'sanford', 'sarasota',
-  'tampa', 'west-palm-beach', 'winter-park',
+  'coral-gables', 'deerfield-beach', 'delray-beach', 'estero', 'fort-lauderdale',
+  'fort-myers', 'fort-pierce', 'hobe-sound', 'kissimmee', 'lakeland', 'largo',
+  'miami', 'naples', 'ocala', 'orlando', 'palm-coast', 'port-st-lucie',
+  'sanford', 'sarasota', 'tampa', 'vero-beach', 'west-palm-beach',
+  'winter-garden', 'winter-park',
 ]);
 
 // ── Service → restoration category fallback (for cities without pages) ───
