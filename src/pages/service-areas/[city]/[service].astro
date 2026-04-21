@@ -65,6 +65,31 @@ const extendedCity = cityDataList.find((c) => c.slug === city.slug);
 const neighborhoods = extendedCity?.neighborhoods || [];
 
 const isRemodeling = service.type === "remodeling";
+
+// ── SEO title & description per service type ──────────────────────────────────
+const SEO_META: Record<string, { title: string; description: string }> = {
+  "water-damage-restoration": {
+    title: `Water Damage Restoration in ${cityName}, FL | 60-Min Response | Paramount`,
+    description: `Emergency water damage restoration in ${cityName}, FL. IICRC-certified, 60-min dispatch, direct insurance billing. Stop mold before it starts — call 24/7.`,
+  },
+  "fire-damage-restoration": {
+    title: `Fire & Smoke Damage Restoration in ${cityName}, FL | Licensed GC | Paramount`,
+    description: `Fire damage repair & smoke cleanup in ${cityName}, FL. Board-up, soot removal, full rebuild. Xactimate billing, 60-min response. Licensed contractor CGC #1529606.`,
+  },
+  "mold-remediation": {
+    title: `Mold Remediation in ${cityName}, FL | IICRC Certified | Paramount`,
+    description: `Licensed mold remediation in ${cityName}, FL. Florida two-party protocol, IICRC certified, direct insurance billing. Free assessment — 60-min response.`,
+  },
+  "storm-damage-repair": {
+    title: `Storm & Hurricane Damage Repair in ${cityName}, FL | 60-Min Response | Paramount`,
+    description: `Storm damage restoration in ${cityName}, FL. Emergency tarping, debris removal & full rebuild. Licensed GC — Xactimate billing, 60-min emergency dispatch.`,
+  },
+};
+
+const pageMeta = SEO_META[service.slug] ?? {
+  title: `${service.name} in ${cityName}, FL | Paramount Property Restoration`,
+  description: `Professional ${service.name} in ${cityName}, FL. 24/7 emergency response, licensed & insured. ${restoration_pain.substring(0, 100)}...`,
+};
 ---
 
 {
@@ -72,8 +97,8 @@ const isRemodeling = service.type === "remodeling";
     <RemodelingPage city={city} service={service} />
   ) : (
     <MainLayout
-      title={`${service.name} ${cityName} | Paramount Property Restoration`}
-      description={`Professional ${service.name} services in ${cityName}. 24/7 Emergency Response, Licensed & Insured. ${restoration_pain.substring(0, 100)}...`}
+      title={pageMeta.title}
+      description={pageMeta.description}
       city={cityName}
       serviceName={service.name}
       schemaType="Service"
