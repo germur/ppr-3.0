@@ -449,6 +449,75 @@ const locationName = city ? city.data.name : "Florida";
     </div>
 </section>
 
+<!-- Local Context Section (city-specific content) -->
+{city && (
+  <section class="py-16 bg-[#f6f7f8] dark:bg-gray-900/50 border-t border-gray-100 dark:border-gray-800">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-10">
+      <div class="grid lg:grid-cols-2 gap-8 mb-8">
+        <!-- Restoration Pain -->
+        <div class="bg-white dark:bg-[#101822] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="size-10 rounded-lg bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-400">
+              <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <h2 class="text-xl font-bold text-[#111418] dark:text-white">Storm Risks in {city.data.name}</h2>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">{city.data.restoration_pain}</p>
+        </div>
+        <!-- Remodeling Desire -->
+        <div class="bg-white dark:bg-[#101822] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="size-10 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
+              <span class="material-symbols-outlined">home_repair_service</span>
+            </div>
+            <h2 class="text-xl font-bold text-[#111418] dark:text-white">Restoration to Renovation in {city.data.name}</h2>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">{city.data.remodeling_desire}</p>
+        </div>
+      </div>
+
+      <!-- Compliance Requirements -->
+      {city.data.compliance && city.data.compliance.length > 0 && (
+        <div class="bg-white dark:bg-[#101822] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 shadow-sm mb-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="size-10 rounded-lg bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600">
+              <span class="material-symbols-outlined">gavel</span>
+            </div>
+            <h2 class="text-xl font-bold text-[#111418] dark:text-white">{city.data.name} Storm Restoration Permits & Compliance</h2>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6">
+            {city.data.compliance.map((item) => (
+              <div class="flex flex-col gap-2">
+                <h3 class="text-base font-bold text-[#111418] dark:text-white flex items-center gap-2">
+                  <span class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span>
+                  {item.title}
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed pl-7">{item.content}</p>
+              </div>
+            ))}
+          </div>
+          {city.data.local_building_dept && (
+            <p class="mt-6 text-sm text-gray-400 flex items-center gap-2 pt-4 border-t border-gray-100 dark:border-gray-800">
+              <span class="material-symbols-outlined text-[16px]">call</span>
+              Building Department: {city.data.local_building_dept}
+            </p>
+          )}
+        </div>
+      )}
+
+      <!-- Local Service Radius -->
+      {city.data.local_service_radius && (
+        <div class="bg-[#dc2626]/5 dark:bg-[#dc2626]/10 border border-[#dc2626]/10 rounded-xl p-6">
+          <h3 class="text-sm font-bold text-[#dc2626] uppercase tracking-wider mb-2">
+            Also Serving Near {city.data.name}
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">{city.data.local_service_radius}</p>
+        </div>
+      )}
+    </div>
+  </section>
+)}
+
 <!-- FAQ Section -->
 <section
     class="py-16 px-4 md:px-10 lg:px-40 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800"

@@ -372,6 +372,75 @@ const locationName = city ? city.data.name : "Florida";
     </div>
 </section>
 
+<!-- Local Context Section (city-specific content) -->
+{city && (
+  <section class="py-16 bg-[#f8fafc] border-t border-slate-100">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 mb-8">
+        <!-- Restoration Pain -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="size-10 rounded-lg bg-[#11d4c4]/10 flex items-center justify-center text-[#11d4c4]">
+              <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <h2 class="text-xl font-bold text-[#0f172a]">Mold Risks in {city.data.name}</h2>
+          </div>
+          <p class="text-slate-600 leading-relaxed text-sm">{city.data.restoration_pain}</p>
+        </div>
+        <!-- Remodeling Desire -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="size-10 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500">
+              <span class="material-symbols-outlined">home_repair_service</span>
+            </div>
+            <h2 class="text-xl font-bold text-[#0f172a]">Restoration to Renovation in {city.data.name}</h2>
+          </div>
+          <p class="text-slate-600 leading-relaxed text-sm">{city.data.remodeling_desire}</p>
+        </div>
+      </div>
+
+      <!-- Compliance Requirements -->
+      {city.data.compliance && city.data.compliance.length > 0 && (
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm mb-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="size-10 rounded-lg bg-green-50 flex items-center justify-center text-green-600">
+              <span class="material-symbols-outlined">gavel</span>
+            </div>
+            <h2 class="text-xl font-bold text-[#0f172a]">{city.data.name} Mold Remediation Permits & Compliance</h2>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6">
+            {city.data.compliance.map((item) => (
+              <div class="flex flex-col gap-2">
+                <h3 class="text-base font-bold text-[#0f172a] flex items-center gap-2">
+                  <span class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span>
+                  {item.title}
+                </h3>
+                <p class="text-sm text-slate-500 leading-relaxed pl-7">{item.content}</p>
+              </div>
+            ))}
+          </div>
+          {city.data.local_building_dept && (
+            <p class="mt-6 text-sm text-slate-400 flex items-center gap-2 pt-4 border-t border-slate-100">
+              <span class="material-symbols-outlined text-[16px]">call</span>
+              Building Department: {city.data.local_building_dept}
+            </p>
+          )}
+        </div>
+      )}
+
+      <!-- Local Service Radius -->
+      {city.data.local_service_radius && (
+        <div class="bg-[#11d4c4]/5 border border-[#11d4c4]/15 rounded-xl p-6">
+          <h3 class="text-sm font-bold text-[#11d4c4] uppercase tracking-wider mb-2">
+            Also Serving Near {city.data.name}
+          </h3>
+          <p class="text-sm text-slate-600">{city.data.local_service_radius}</p>
+        </div>
+      )}
+    </div>
+  </section>
+)}
+
 <!-- Services Cluster & FAQ -->
 <section class="py-16 bg-white border-t border-slate-100">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
