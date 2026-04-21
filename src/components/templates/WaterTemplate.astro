@@ -573,6 +573,87 @@ const locationName = city ? city.data.name : "Florida";
     </div>
   </section>
 
+  <!-- Local Context Section (city-specific content) -->
+  {city && (
+    <section class="py-16 w-full bg-[#f6f7f8] dark:bg-gray-900/50">
+      <div class="max-w-[1200px] mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-10">
+          <!-- Restoration Pain: why this city specifically needs help -->
+          <div class="bg-white dark:bg-[#101822] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="size-10 rounded-lg bg-[#1162d4]/10 flex items-center justify-center text-[#1162d4]">
+                <span class="material-symbols-outlined">location_on</span>
+              </div>
+              <h2 class="text-xl font-bold text-[#111418] dark:text-white">
+                Water Damage Risks in {city.data.name}
+              </h2>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+              {city.data.restoration_pain}
+            </p>
+          </div>
+          <!-- Remodeling Desire: what local homeowners want post-restoration -->
+          <div class="bg-white dark:bg-[#101822] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="size-10 rounded-lg bg-[#f97316]/10 flex items-center justify-center text-[#f97316]">
+                <span class="material-symbols-outlined">home_repair_service</span>
+              </div>
+              <h2 class="text-xl font-bold text-[#111418] dark:text-white">
+                Restoration to Renovation in {city.data.name}
+              </h2>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+              {city.data.remodeling_desire}
+            </p>
+          </div>
+        </div>
+
+        <!-- Compliance / Permit Requirements -->
+        {city.data.compliance && city.data.compliance.length > 0 && (
+          <div class="mt-8 bg-white dark:bg-[#101822] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="size-10 rounded-lg bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600">
+                <span class="material-symbols-outlined">gavel</span>
+              </div>
+              <h2 class="text-xl font-bold text-[#111418] dark:text-white">
+                {city.data.name} Permits & Code Requirements
+              </h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              {city.data.compliance.map((item) => (
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-base font-bold text-[#111418] dark:text-white flex items-center gap-2">
+                    <span class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span>
+                    {item.title}
+                  </h3>
+                  <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed pl-7">
+                    {item.content}
+                  </p>
+                </div>
+              ))}
+            </div>
+            {city.data.local_building_dept && (
+              <p class="mt-6 text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2 pt-4 border-t border-gray-100 dark:border-gray-800">
+                <span class="material-symbols-outlined text-[16px]">call</span>
+                Building Department: {city.data.local_building_dept}
+              </p>
+            )}
+          </div>
+        )}
+
+        <!-- Local Service Radius -->
+        {city.data.local_service_radius && (
+          <div class="mt-8 bg-[#1162d4]/5 dark:bg-[#1162d4]/10 rounded-2xl p-6 border border-[#1162d4]/10">
+            <h3 class="text-sm font-bold text-[#1162d4] uppercase tracking-wider mb-3">
+              Also Serving Near {city.data.name}
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">{city.data.local_service_radius}</p>
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
   <!-- Nearby Areas & FAQ -->
   <div class="w-full max-w-[1200px] px-4 py-16 lg:py-24">
     <div class="grid lg:grid-cols-12 gap-12">
