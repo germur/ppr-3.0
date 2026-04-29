@@ -82,7 +82,7 @@ export default function ContentBlock({ title, subtitle, description, image, reve
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            href="/contact"
+                            href="/contact/"
                             className={`inline-flex items-center gap-2 font-bold px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 ${dark ? 'bg-primary hover:bg-blue-600 text-white shadow-blue-900/20' : 'bg-primary hover:bg-blue-700 text-white shadow-blue-500/20'}`}
                         >
                             Get Started Now <ArrowRight size={18} />
