@@ -11558,4 +11558,16 @@
 /service-areas/tampa/whole-home-renovation /service-areas/tampa/ 301
 /service-areas/tampa/whole-home-renovation/ /service-areas/tampa/ 301
 
+# --- Thin content stubs → parent pages ---
+/commercial/cleaning /commercial/ 301
+/commercial/cleaning/ /commercial/ 301
+/commercial/disaster-planning /commercial/ 301
+/commercial/disaster-planning/ /commercial/ 301
+/commercial/large-loss /commercial/ 301
+/commercial/large-loss/ /commercial/ 301
+/restoration/mold-remediation/prevention/dehumidifier-installation /restoration/mold-remediation/prevention/ 301
+/restoration/mold-remediation/prevention/dehumidifier-installation/ /restoration/mold-remediation/prevention/ 301
+/restoration/mold-remediation/prevention/crawl-space-encapsulation /restoration/mold-remediation/prevention/ 301
+/restoration/mold-remediation/prevention/crawl-space-encapsulation/ /restoration/mold-remediation/prevention/ 301
+
 /* /404.html 404
