@@ -43,7 +43,7 @@ export default function HeroSplit() {
                             <h2 className="text-2xl font-bold text-slate-900 mb-2">I Have an Emergency</h2>
                             <p className="text-slate-500 mb-6 text-sm">Water, Fire, Mold, or Storm Damage. We arrive fast to mitigate.</p>
 
-                            <a href="/restoration" className="inline-flex items-center gap-2 text-red-600 font-bold text-sm tracking-wide uppercase hover:gap-3 transition-all">
+                            <a href="/restoration/" className="inline-flex items-center gap-2 text-red-600 font-bold text-sm tracking-wide uppercase hover:gap-3 transition-all">
                                 Dispatch Team Now <ArrowRight size={16} />
                             </a>
                         </div>
@@ -62,7 +62,7 @@ export default function HeroSplit() {
                             <h2 className="text-2xl font-bold text-slate-900 mb-2">I Want to Remodel</h2>
                             <p className="text-slate-500 mb-6 text-sm">Kitchens, Bathrooms, & Full Renovations. Build your dream space.</p>
 
-                            <a href="/remodeling" className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm tracking-wide uppercase hover:gap-3 transition-all">
+                            <a href="/remodeling/" className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm tracking-wide uppercase hover:gap-3 transition-all">
                                 Schedule Estimate <ArrowRight size={16} />
                             </a>
                         </div>
