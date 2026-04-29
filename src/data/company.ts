@@ -9,7 +9,7 @@ export const COMPANY_INFO = {
     state: "FL",
     zip: "33172",
     fullAddress: "10890 NW 17th St Suite 138, Miami, FL 33172",
-    googleMapsLink: "https://share.google/Ph3ruFZqTluLoWaZv", // Taken from Footer
+    googleMapsLink: "https://www.google.com/maps/place/Paramount+Property+Restoration/", // Direct Maps URL — avoids 302 from share.google shortener
     social: {
         linkedin: "https://www.linkedin.com/company/paramount-property-restoration",
         facebook: "https://www.facebook.com/paramountpropertyrestoration",
