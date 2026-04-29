@@ -3,7 +3,7 @@ title: "5 Hidden Signs of Water Damage in Your Florida Home"
 description: "Don't wait for a flood to detect damage. Learn the subtle signs of leaks that could be costing you thousands."
 pubDate: 2025-01-15
 author: "Paramount Restoration Team"
-image: "/images/blog/water-damage-signs.jpg"
+image: ""
 category: "Disaster Recovery"
 subcategory: "water-damage"
 featured: true

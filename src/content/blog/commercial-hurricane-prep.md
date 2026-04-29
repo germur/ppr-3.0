@@ -3,7 +3,7 @@ title: "Business Continuity: Preparing for Hurricane Season"
 description: "A checklist for property managers to minimize downtime and protect assets during Florida's storm season."
 pubDate: 2025-02-10
 author: "Commercial Division"
-image: "/images/blog/commercial-prep.jpg"
+image: ""
 category: "Commercial Services"
 subcategory: "commercial-restoration"
 featured: false
