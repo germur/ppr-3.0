@@ -36,10 +36,11 @@ const schema = {
 };
 ---
 
-<MainLayout 
-  title={`${post.data.title} | Paramount Property Resources`} 
+<MainLayout
+  title={`${post.data.title} | Paramount Property Resources`}
   description={post.data.description}
   customSchema={schema}
+  lang={post.data.lang}
 >
 {post.data.fullWidth ? (
       <Content />

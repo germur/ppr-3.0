@@ -19,9 +19,10 @@ export interface Props {
   breadcrumbItems?: { label: string; href: string }[];
   hideHeader?: boolean;
   hideFooter?: boolean;
+  lang?: string;
 }
 
-const { 
+const {
   title = "Paramount Property Restoration | Florida General Contractor",
   description = "Florida’s Trusted General Contractor for Restoration & Remodeling. From catastrophic storm recovery to luxury kitchen renovations.",
   image,
@@ -33,12 +34,13 @@ const {
   city,
   serviceName,
   hideHeader = false,
-  hideFooter = false
+  hideFooter = false,
+  lang = "en",
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
     <head>
     <!-- Google Tag Manager -->
     <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
