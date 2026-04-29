@@ -37,6 +37,7 @@ const blog = defineCollection({
         ]),
         featured: z.boolean().default(false),
         fullWidth: z.boolean().optional(),
+        lang: z.enum(['en', 'es']).default('en'),
     }),
 });
 
