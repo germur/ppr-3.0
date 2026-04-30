@@ -11570,4 +11570,76 @@
 /restoration/mold-remediation/prevention/crawl-space-encapsulation /restoration/mold-remediation/prevention/ 301
 /restoration/mold-remediation/prevention/crawl-space-encapsulation/ /restoration/mold-remediation/prevention/ 301
 
+# === GSC Validation 2026-04-30: 6 confirmed Failed URLs ===
+/restoration/wind-damage                              /restoration/storm-damage/wind-damage/ 301
+/restoration/wind-damage/                             /restoration/storm-damage/wind-damage/ 301
+/restoration/sewage-cleanup                           /restoration/water-damage/sewage-cleanup/ 301
+/restoration/sewage-cleanup/                          /restoration/water-damage/sewage-cleanup/ 301
+/restoration/mold-testing                             /restoration/mold-remediation/testing/ 301
+/restoration/mold-testing/                            /restoration/mold-remediation/testing/ 301
+/service-areas/tampa-bay/brandon/kitchen-remodeling   /service-areas/tampa/kitchen-remodeling/ 301
+/service-areas/tampa-bay/brandon/kitchen-remodeling/  /service-areas/tampa/kitchen-remodeling/ 301
+/restoration/mitigation-services/storm-mitigation/port-charlotte  /restoration/storm-damage/ 301
+/restoration/mitigation-services/storm-mitigation/port-charlotte/ /restoration/storm-damage/ 301
+/service-areas/southwest-florida/port-charlotte       /service-areas/ 301
+/service-areas/southwest-florida/port-charlotte/      /service-areas/ 301
+
+# === Wildcard catch-alls for legacy URL families (prevents future 404s) ===
+
+# Old /services/{type}/{city}/ pattern → /remodeling/{type}/
+/services/kitchen-remodeling/*       /remodeling/kitchen/  301
+/services/bathroom-remodeling/*      /remodeling/bathroom/ 301
+/services/living-dining-remodeling/* /remodeling/          301
+/services/bedroom-remodeling/*       /remodeling/          301
+/services/*                          /remodeling/          301
+
+# Old top-level service shortcuts → category pages (catch any city suffix too)
+/restoration/wind-damage/*    /restoration/storm-damage/wind-damage/    301
+/restoration/sewage-cleanup/* /restoration/water-damage/sewage-cleanup/ 301
+/restoration/mold-testing/*   /restoration/mold-remediation/testing/    301
+
+# /restoration/mitigation-services/{type}/{city}/ → category
+/restoration/mitigation-services/water-mitigation/* /restoration/water-damage/    301
+/restoration/mitigation-services/mold-mitigation/*  /restoration/mold-remediation/ 301
+/restoration/mitigation-services/storm-mitigation/* /restoration/storm-damage/    301
+/restoration/mitigation-services/fire-mitigation/*  /restoration/fire-damage/     301
+/restoration/mitigation-services/*                  /restoration/                 301
+/restoration/mitigation/*                           /restoration/                 301
+
+# /restoration/storm-damage/{subservice}/{city}/ → existing subservice
+/restoration/storm-damage/wind-damage/*           /restoration/storm-damage/wind-damage/        301
+/restoration/storm-damage/storm-debris-removal/*  /restoration/storm-damage/debris-removal/     301
+/restoration/storm-damage/hurricane-damage/*      /restoration/storm-damage/hurricane-recovery/ 301
+/restoration/storm-damage/emergency-storm-repair/* /restoration/storm-damage/                   301
+/restoration/storm/*                              /restoration/storm-damage/                    301
+
+# /restoration/mold-remediation/{subservice}/{city}/ → existing subservice
+/restoration/mold-remediation/mold-testing/*              /restoration/mold-remediation/testing/             301
+/restoration/mold-remediation/mold-prevention/*           /restoration/mold-remediation/prevention/          301
+/restoration/mold-remediation/mold-inspection/*           /restoration/mold-remediation/inspection/          301
+/restoration/mold-remediation/black-mold-removal/*        /restoration/mold-remediation/black-mold-removal/  301
+/restoration/mold-remediation/mold-damage-restoration/*   /restoration/mold-remediation/                     301
+
+# /restoration/water-damage/{subservice}/{city}/ → existing subservice
+/restoration/water-damage/emergency-water-removal/* /restoration/water-damage/emergency-water-removal/ 301
+/restoration/water-damage/ceiling-water-damage/*    /restoration/water-damage/ceiling-water-damage/    301
+/restoration/water-damage/basement-flooding/*       /restoration/water-damage/basement-flooding/       301
+/restoration/water-damage/flood-damage/*            /restoration/water-damage/flood-damage/            301
+/restoration/water-damage/leak-repair/*             /restoration/water-damage/leak-repair/             301
+/restoration/water-damage/sewage-cleanup/*          /restoration/water-damage/sewage-cleanup/          301
+
+# /restoration/fire-damage/{subservice}/{city}/ → existing subservice
+/restoration/fire-damage/emergency-fire-response/* /restoration/fire-damage/                301
+/restoration/fire-damage/soot-cleanup/*            /restoration/fire-damage/soot-cleanup/   301
+/restoration/fire-damage/fire-damage-repair/*      /restoration/fire-damage/repair/         301
+/restoration/fire-damage/smoke-damage/*            /restoration/fire-damage/smoke-damage/   301
+
+# Misc orphan paths
+/portfolio/*  /  301
+/portfolio    /  301
+
+# Unknown city under any region → region hub (specific cities already redirect via earlier rules)
+/service-areas/southwest-florida/port-charlotte/* /service-areas/ 301
+/service-areas/tampa-bay/brandon/*                /service-areas/tampa/ 301
+
 /* /404.html 404
