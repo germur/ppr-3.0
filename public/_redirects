@@ -11642,4 +11642,35 @@
 /service-areas/southwest-florida/port-charlotte/* /service-areas/ 301
 /service-areas/tampa-bay/brandon/*                /service-areas/tampa/ 301
 
+# === GSC 2026-05-21: /service-areas/{region}/{city}/ family (179 URLs still 404) ===
+# Preserve city signal: /service-areas/{region}/{city}/ -> /service-areas/{city}/
+/service-areas/southwest-florida/:city/:service/ /service-areas/:city/ 301
+/service-areas/southwest-florida/:city/          /service-areas/:city/ 301
+/service-areas/southwest-florida/*               /service-areas/       301
+
+/service-areas/south-florida/:city/:service/     /service-areas/:city/ 301
+/service-areas/south-florida/:city/              /service-areas/:city/ 301
+/service-areas/south-florida/*                   /service-areas/       301
+
+/service-areas/tampa-bay/:city/:service/         /service-areas/:city/ 301
+/service-areas/tampa-bay/:city/                  /service-areas/:city/ 301
+/service-areas/tampa-bay/*                       /service-areas/       301
+
+/service-areas/central-florida/:city/:service/   /service-areas/:city/ 301
+/service-areas/central-florida/:city/            /service-areas/:city/ 301
+/service-areas/central-florida/*                 /service-areas/       301
+
+# treasure-coast is not a real region page in the new IA
+/service-areas/treasure-coast/:city/:service/    /service-areas/:city/ 301
+/service-areas/treasure-coast/:city/             /service-areas/:city/ 301
+/service-areas/treasure-coast/*                  /service-areas/       301
+/service-areas/treasure-coast                    /service-areas/       301
+
+# Slug mismatches: old service slugs at /service-areas/{city}/{slug}/
+/service-areas/:city/water-damage/               /service-areas/:city/water-damage-restoration/  301
+/service-areas/:city/fire-damage/                /service-areas/:city/fire-damage-restoration/   301
+/service-areas/:city/storm-damage/               /service-areas/:city/storm-damage-repair/       301
+/service-areas/:city/commercial-restoration/     /service-areas/:city/                            301
+/service-areas/:city/leak-detection/             /service-areas/:city/water-damage-restoration/  301
+
 /* /404.html 404
