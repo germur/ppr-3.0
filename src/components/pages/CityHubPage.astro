@@ -21,8 +21,10 @@ const {
 } = city.data;
 
 // Dynamic Data setup
-
 const valueIncrease = stats?.value_increase || "+12%";
+
+// Thin-content detection: noindex cities with generic placeholder copy
+const isThinCity = restoration_pain.length < 200;
 
 // Hero Image Logic
 const heroImage =
@@ -39,7 +41,7 @@ const pageDescription =
   `Premier water damage restoration and luxury remodeling services in ${cityName}. We navigate local building codes for you.`;
 ---
 
-<MainLayout title={pageTitle} description={pageDescription} city={cityName}>
+<MainLayout title={pageTitle} description={pageDescription} city={cityName} noindex={isThinCity}>
   <!-- Inject specific fonts for this page design -->
   <fragment slot="head">
     <link

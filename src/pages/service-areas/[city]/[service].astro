@@ -66,6 +66,9 @@ const neighborhoods = extendedCity?.neighborhoods || [];
 
 const isRemodeling = service.type === "remodeling";
 
+// ── Thin-content detection: noindex cities with generic placeholder copy ─────
+const isThinCity = restoration_pain.length < 200;
+
 // ── SEO title & description per service type ──────────────────────────────────
 const SEO_META: Record<string, { title: string; description: string }> = {
   "water-damage-restoration": {
@@ -94,7 +97,7 @@ const pageMeta = SEO_META[service.slug] ?? {
 
 {
   isRemodeling ? (
-    <RemodelingPage city={city} service={service} />
+    <RemodelingPage city={city} service={service} noindex={isThinCity} />
   ) : (
     <MainLayout
       title={pageMeta.title}
@@ -102,6 +105,7 @@ const pageMeta = SEO_META[service.slug] ?? {
       city={cityName}
       serviceName={service.name}
       schemaType="Service"
+      noindex={isThinCity}
     >
       {service.slug === "water-damage-restoration" && (
         <WaterTemplate city={city} />
