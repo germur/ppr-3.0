@@ -6,12 +6,13 @@ interface Props {
   city: CollectionEntry<'cities'>;
   service: {
     slug: string;
-    type: 'restoration' | 'remodeling' | 'commercial'; // More specific if possible
+    type: 'restoration' | 'remodeling' | 'commercial';
     name: string;
   };
+  noindex?: boolean;
 }
 
-const { city, service } = Astro.props;
+const { city, service, noindex = false } = Astro.props;
 const { 
   name: cityName, 
   remodeling_desire, 
@@ -49,6 +50,7 @@ const heroImage = isKitchen
   city={cityName}
   serviceName={service.name}
   schemaType="Service"
+  noindex={noindex}
 >
     
     {/* HeroSection */}
