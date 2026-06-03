@@ -9,7 +9,7 @@ subcategory: "insurance-claims"
 featured: false
 ---
 
-# What is an AOB?
+## What is an AOB?
 
 An Assignment of Benefits (AOB) allows a third party (like a contractor) to file an insurance claim, make repair decisions, and collect insurance payments on your behalf.
 

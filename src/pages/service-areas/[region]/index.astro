@@ -3,48 +3,8 @@ import { getCollection } from 'astro:content';
 import MainLayout from '../../../layouts/MainLayout.astro';
 
 export async function getStaticPaths() {
-    const cities = await getCollection('cities');
-    
-    // Define regions and their display data
-    const regions = [
-        { 
-            slug: 'central-florida', 
-            name: 'Central Florida', 
-            title: 'Central Florida',
-            description: 'Serving Orlando, Kissimmee, Sanford and surrounding Central Florida communities with 24/7 disaster restoration.',
-            heroImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5IElSlDjVLBE7fZclhWir8YAOnMCir_GQcNNjJVj0a8QBNJjuJxnOFTlrYw-1c3rHCTbJSLN3wAtVS-1vRVkRBqdN640l_GFgPPyZWGZyO_weVs_z4C5znOTRUUfQydXscCknu4b9APYm95Pjahs92soikVTXKQp16tNa9UqWV6sAHWY2nCEuFTAGlfOEhIhzAZPUi9hRE2jJXNyd9X89nfMyBTx8G1AEdU_BiikwTRzarQTQBYG6CyZvWcfQCj4GeqFGUXji9ln5'
-        },
-        { 
-            slug: 'tampa-bay', 
-            name: 'Tampa Bay & Coast', 
-            title: 'Tampa Bay',
-            description: 'Premier restoration services for Tampa, St. Petersburg, Clearwater and the Gulf Coast.',
-            heroImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiEiy8YZs7Ig69Nfh1r0kKx5r3UmECqxmz3OJW5rJW9fg1ixUW6moZlDyfp4bH6kzBRLBF7e2_BGdhpZqxDbxUmER70o68ygV-ck_YYZ2WTsKhE1lUh-DyV-xn_8de08hmBZ-egPoPQtWdAOJYWNb-szb4_RVJhi71mTPk-IgW3Ng5biI-mOfW1lfNwnryWRDhJJ6Sp4KIv-rAc09H3WLYj0kGhwKkrIzXptT5USdVN4KMoH3TMtU10xAYOuz1EgJWn8ZaKRbzK9VT'
-        },
-        { 
-            slug: 'south-florida', 
-            name: 'South Florida', 
-            title: 'South Florida',
-            description: 'Expert recovery teams for Miami, Fort Lauderdale, West Palm Beach and the Keys.',
-            heroImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB44qeiOVzcAu2hRN5l625UiYVgEChEd98mxg_6_dZY0JmPzBaRvWb5vfH3jMY07c_5ekPvj2j7EmK_TKwBXBGnTcK3ic-7kAX5_eFCZALV9AWQS3zKwMpWTTPyZARwOCORbncuY4LVjywvJLVnHQidy2TIXWRLY2SHT2TAq9iJffBRlJkYXJnPZRWpOTUSJepAMeg-8LjJBLGI8HFDQsrKeB-Lgi3R8kaX3WpktjA_D8sXnA7TzLNZqplObpvmTfYt69vMJ8kCSQpA'
-        },
-        { 
-            slug: 'southwest-florida', 
-            name: 'Southwest Florida', 
-            title: 'Southwest Florida',
-            description: 'Fort Myers, Naples, and Cape Coral restoration specialists. Hurricane hardened and ready.',
-            heroImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuABgadTg0n-4oxrhu--dBfDFXRVbuudGYGCRmlyRGN2cgO1SpqD1l7CAEW4BS7Mb8VwJ8TSHRE5_xojIKBmwy5EEkNdrzaOCvqVzem4HY-qD7QOrBMgL3jaDW3GUrd_5PMcqQ6y67iZ0jOVX4mVB-PloCAZTSYdekdhNo1pZcVIHkMSTniMfAz_AITxgH5dHaVpHGCH4t9ftssZJGTAOwCbLJQTlMgvEgxmab5M-Vjh9EI5XIRA7oCF1CyQ2RNPHqv4-Gq4B5cXEzI4'
-        }
-    ];
-
-    return regions.map(region => {
-        // Filter cities belonging to this region
-        const regionalCities = cities.filter(city => city.data.region === region.name);
-        return {
-            params: { region: region.slug },
-            props: { region, cities: regionalCities }
-        };
-    });
+  // SEO v2 (poda): matriz programática descontinuada. 410 vía netlify.toml.
+  return [];
 }
 
 const { region, cities } = Astro.props;

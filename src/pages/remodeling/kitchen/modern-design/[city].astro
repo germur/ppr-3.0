@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import cities from '../../../../data/kitchen-cities.json';
 
 export interface CityData {
@@ -17,10 +18,8 @@ export interface CityData {
 }
 
 export async function getStaticPaths() {
-  return cities.map((city) => ({
-    params: { city: city.slug },
-    props: { cityData: city },
-  }));
+  // SEO v2 (poda): matriz programática descontinuada. 410 vía netlify.toml.
+  return [];
 }
 
 const { cityData } = Astro.props;
@@ -97,10 +96,11 @@ const faqItems = [
         <div class="absolute inset-0 w-full h-full">
             <img 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTCpC04HHuSCK-evvn286i9inZa2MCq4I46_0oz6IF-PmZU8rsbkX2u2wj7AR6gumnTeVHbHQmT8NPFFPkNh2mSGGJh08p1XqXFvPbOJm3KBm1hxAEapJe8Wwm7xUM5SeRS33bBNY84NUnPnheez3EX1NRv05XPTXgeIzYTmo5Qmc7TPr6s1-az0_vtrZTYL4rBM2t1LVUYlB4Aef5ZvX2HYRCPgTT9I09mDgVS1-WS2zUrhk82cZxjkplp4SOpw8f_al8bal0S9jf" 
+                 
                 alt={`Modern Kitchen Remodeling in ${city}`}
                 class="w-full h-full object-cover opacity-50"
                 loading="eager"
-            />
+             width={1200} height={800}  />
             <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
         </div>
 

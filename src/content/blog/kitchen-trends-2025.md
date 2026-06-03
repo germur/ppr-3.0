@@ -9,7 +9,7 @@ subcategory: "kitchen-renovations"
 featured: true
 ---
 
-# The Workstation Kitchen
+## The Workstation Kitchen
 
 The kitchen is no longer just for cooking—it's for working, entertaining, and living.
 

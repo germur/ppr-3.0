@@ -12,7 +12,7 @@ export default function HurricaneHero({ title, subtitle, stats }: { title: strin
         <section className="relative bg-slate-900 text-white overflow-hidden min-h-[600px] flex items-center">
             {/* Background Map Effect */}
             <div className="absolute inset-0 z-0 opacity-40">
-                <img src="https://images.unsplash.com/photo-1454789476662-53eb23ba5907?q=80&w=2552&auto=format&fit=crop" alt="Storm Map" className="w-full h-full object-cover grayscale mix-blend-multiply" />
+                <img src="https://images.unsplash.com/photo-1454789476662-53eb23ba5907?q=80&w=2552&auto=format&fit=crop" alt="Storm Map" className="w-full h-full object-cover grayscale mix-blend-multiply"  width={800} height={600} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
             </div>
 
@@ -57,10 +57,10 @@ export default function HurricaneHero({ title, subtitle, stats }: { title: strin
                     </div>
 
                     <img
-                        src="https://images.unsplash.com/photo-1626017232230-03e5c9b68ca4?q=80&w=2670&auto=format&fit=crop"
+                        src="/ppr-logo.png"
                         alt="Trucks on road"
                         className="w-full h-48 object-cover rounded-xl mb-6 border border-slate-800"
-                    />
+                     width={800} height={600} loading="lazy" decoding="async" />
 
                     <div className="grid grid-cols-2 gap-4">
                         {stats.map((stat, i) => (

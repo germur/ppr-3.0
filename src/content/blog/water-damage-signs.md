@@ -9,7 +9,7 @@ subcategory: "water-damage"
 featured: true
 ---
 
-# 5 Hidden Signs of Water Damage
+## 5 Hidden Signs of Water Damage
 
 Living in Florida means dealing with humidity and storms, but water damage isn't always obvious. Here are the 5 silent identifiers:
 

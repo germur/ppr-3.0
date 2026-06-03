@@ -10,50 +10,8 @@ import StormTemplate from "../../../components/templates/StormTemplate.astro";
 import "../../../styles/global.css";
 
 export async function getStaticPaths() {
-  const cities = await getCollection("cities");
-  const services = [
-    {
-      slug: "water-damage-restoration",
-      type: "restoration",
-      name: "Water Damage Restoration",
-    },
-    {
-      slug: "fire-damage-restoration",
-      type: "restoration",
-      name: "Fire Damage Restoration",
-    },
-    { slug: "mold-remediation", type: "restoration", name: "Mold Remediation" },
-    {
-      slug: "storm-damage-repair",
-      type: "restoration",
-      name: "Storm Damage Repair",
-    },
-    {
-      slug: "kitchen-remodeling",
-      type: "remodeling",
-      name: "Kitchen Remodeling",
-    },
-    {
-      slug: "bathroom-remodeling",
-      type: "remodeling",
-      name: "Bathroom Remodeling",
-    },
-    {
-      slug: "commercial-renovation",
-      type: "commercial",
-      name: "Commercial Renovation",
-    },
-  ] as const;
-
-  return cities.flatMap((city) => {
-    return services.map((service) => ({
-      params: {
-        city: city.slug,
-        service: service.slug,
-      },
-      props: { city, service },
-    }));
-  });
+  // SEO v2 (poda): matriz programática descontinuada. 410 vía netlify.toml.
+  return [];
 }
 
 import { cities as cityDataList } from "../../../data/service-areas";

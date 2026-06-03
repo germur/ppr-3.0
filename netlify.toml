@@ -1,9 +1,262 @@
+# ============================================================
+# Paramount Property Restoration — netlify.toml
+# Replanteamiento SEO v2: poda de la matriz programática.
+# Netlify evalúa redirects EN ORDEN y para en la 1a coincidencia.
+# Orden: (1) ciudades conservadas, (2) 301s, (3) 410s, (4) trailing slash, (5) 404.
+# ============================================================
+
 [build]
   command = "npm run build"
   publish = "dist"
 
-# Enforce trailing slash: redirect /path -> /path/ (301, permanent)
-# This prevents duplicate canonical issues in Google Search Console
+[context.production]
+  environment = { NODE_VERSION = "20" }
+
+# ----- 1. CIUDADES REALES QUE SE CONSERVAN -----
+# Solo el index de cada ciudad. Sus subpáginas [city]/[service] caen en el 410 de abajo.
+[[redirects]]
+  from = "/service-areas/boca-raton/"
+  to = "/service-areas/boca-raton/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/service-areas/bonita-springs/"
+  to = "/service-areas/bonita-springs/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/service-areas/cape-coral/"
+  to = "/service-areas/cape-coral/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/service-areas/coral-gables/"
+  to = "/service-areas/coral-gables/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/service-areas/delray-beach/"
+  to = "/service-areas/delray-beach/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/service-areas/estero/"
+  to = "/service-areas/estero/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/service-areas/fort-lauderdale/"
+  to = "/service-areas/fort-lauderdale/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/service-areas/fort-myers/"
+  to = "/service-areas/fort-myers/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/service-areas/miami/"
+  to = "/service-areas/miami/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/service-areas/naples/"
+  to = "/service-areas/naples/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/service-areas/west-palm-beach/"
+  to = "/service-areas/west-palm-beach/index.html"
+  status = 200
+
+# ----- 2. CONSOLIDACIONES 301 (subtemas restoration → pillar) -----
+[[redirects]]
+  from = "/restoration/fire-damage/contents-cleaning"
+  to = "/restoration/fire-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/fire-damage/repair"
+  to = "/restoration/fire-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/fire-damage/smoke-damage"
+  to = "/restoration/fire-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/fire-damage/soot-cleanup"
+  to = "/restoration/fire-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/mold-remediation/attic-removal"
+  to = "/restoration/mold-remediation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/mold-remediation/black-mold-removal"
+  to = "/restoration/mold-remediation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/mold-remediation/inspection"
+  to = "/restoration/mold-remediation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/mold-remediation/prevention"
+  to = "/restoration/mold-remediation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/mold-remediation/testing"
+  to = "/restoration/mold-remediation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/storm-damage/debris-removal"
+  to = "/restoration/storm-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/storm-damage/hurricane-recovery"
+  to = "/restoration/storm-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/storm-damage/wind-damage"
+  to = "/restoration/storm-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/water-damage/basement-flooding"
+  to = "/restoration/water-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/water-damage/burst-pipe"
+  to = "/restoration/water-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/water-damage/emergency-water-removal"
+  to = "/restoration/water-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/water-damage/flood-damage"
+  to = "/restoration/water-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/water-damage/leak-repair"
+  to = "/restoration/water-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/water-damage/sewage-cleanup"
+  to = "/restoration/water-damage/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/water-damage/structural-drying"
+  to = "/restoration/water-damage/"
+  status = 301
+  force = true
+
+# ----- 3. PODA 410 GONE (matriz programática + servicios fuera de alcance) -----
+[[redirects]]
+  from = "/service-areas/*/water-damage-restoration"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/service-areas/*/mold-remediation"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/service-areas/*/fire-damage-restoration"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/service-areas/*/storm-damage-repair"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/service-areas/*/kitchen-remodeling"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/service-areas/*/bathroom-remodeling"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/service-areas/*/commercial-renovation"
+  to = "/410.html"
+  status = 410
+  force = true
+
+# Resto de la matriz service-areas (regiones, [city]/[service], zombies)
+[[redirects]]
+  from = "/service-areas/*/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+# Remodeling completo (sin licencia GC — fuera de alcance)
+[[redirects]]
+  from = "/remodeling/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+# Cleaning services completo (no se presta)
+[[redirects]]
+  from = "/cleaning-services/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+# Landing huérfana de Google Ads
+[[redirects]]
+  from = "/landing/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+# ----- 4. TRAILING SLASH (de remoto): /path -> /path/ canónico -----
+# Evita duplicados de canonical en GSC. Va DESPUÉS de los 410/301 para no interferir.
 [[redirects]]
   from = "/:path"
   to = "/:path/"
@@ -11,12 +264,8 @@
   conditions = {path = ["*[^/]"]}
   force = false
 
-# 404 fallback — must be last
+# ----- 5. FALLBACK 404 (debe ir AL FINAL) -----
 [[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
-
-[context.production.environment]
-  NODE_VERSION = "20"
-  ASTRO_TELEMETRY_DISABLED = "1"

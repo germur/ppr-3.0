@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { moldRemediationFAQs } from "../../data/restoration-faqs";
 
 const { city } = Astro.props;
@@ -89,7 +90,11 @@ const locationName = city ? city.data.name : "Florida";
                     class="w-full h-full object-cover"
                     data-alt="Scientific air quality testing professional with equipment in a clean home environment"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDep2FTyFF8p35UqmyUMPhpQ-N89mTKlJAi4TZ6zZYWBwQVmGDrtQv5ZGBl0cGLYxQ_XWM4HmjIfnZg1MMiC3Qaq2ryv8r9u8TtY1xP7rVoA3amNg31o2x3bZ25jiZ6_mH6mt7nnMAEzDYcvlPwMY4Uin6r0YgZs8ENNa4uGENyGSihybe94IIKb8gPBY5oFrZv1FiYzRtG9OyXubfaClgXWiE1XJAIQxElz5fNWitK1wuqC4nZCnAumJDnYqAP86BXVzGsicr12lk8"
-                />
+                    alt="Mold Inspection Professional"
+                    class="w-full h-full object-cover"
+                    data-alt="Scientific air quality testing professional with equipment in a clean home environment"
+                    
+                 width={1200} height={800}  />
                 <!-- Floating Badge -->
                 <div
                     class="absolute bottom-6 left-6 z-20 bg-white/95 backdrop-blur px-4 py-3 rounded-lg shadow-lg flex items-center gap-3 border border-slate-100"

@@ -10,10 +10,10 @@ export default function HeroSplit() {
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-800 z-10" />
                 {/* Placeholder for actual background image */}
                 <img
-                    src="https://images.unsplash.com/photo-1581094794329-cd2c2ec5a842?q=80&w=2668&auto=format&fit=crop"
+                    src="/ppr-logo.png"
                     alt="Restoration and Remodeling"
                     className="w-full h-full object-cover opacity-30 grayscale"
-                />
+                 width={800} height={600} loading="lazy" decoding="async" />
             </div>
 
             <div className="relative z-20 container mx-auto px-4 text-center mt-20 mb-12">

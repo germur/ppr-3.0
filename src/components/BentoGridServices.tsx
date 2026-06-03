@@ -18,7 +18,7 @@ export default function BentoGridServices() {
                     <BentoCard href="/restoration/water-damage/" className="md:col-span-2 md:row-span-2 bg-blue-600 text-white flex flex-col justify-end">
                         <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent z-10" />
                         {/* Placeholder Image */}
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2670&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Water Damage" />
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2670&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Water Damage"  width={800} height={600} loading="lazy" decoding="async" />
 
                         <div className="relative z-20">
                             <div className="bg-white/20 backdrop-blur-md w-12 h-12 rounded-lg flex items-center justify-center mb-4">
@@ -33,7 +33,7 @@ export default function BentoGridServices() {
                     {/* 2. Kitchen Remodeling (Tall - 1x2) */}
                     <BentoCard href="/remodeling/kitchen/" className="md:col-span-1 md:row-span-2 bg-orange-100 flex flex-col justify-between group">
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10" />
-                        <img src="https://images.unsplash.com/photo-1556912173-3db996ea0661?q=80&w=2669&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Kitchen Remodeling" />
+                        <img src="/ppr-logo.png" className="absolute inset-0 w-full h-full object-cover" alt="Kitchen Remodeling"  width={800} height={600} loading="lazy" decoding="async" />
 
                         <div className="relative z-20 bg-white/90 backdrop-blur-sm p-4 rounded-xl mt-auto">
                             <Hammer className="text-orange-500 mb-2" size={24} />
@@ -93,7 +93,7 @@ export default function BentoGridServices() {
                             <p className="text-slate-500 text-sm">Large-loss recovery and tenant build-outs.</p>
                         </div>
                         <div className="relative h-full w-1/3">
-                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" alt="Commercial" />
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" alt="Commercial"  width={800} height={600} loading="lazy" decoding="async" />
                         </div>
                     </BentoCard>
 

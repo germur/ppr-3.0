@@ -3,11 +3,20 @@ import { getCollection } from 'astro:content';
 import CityHubPage from '../../../components/pages/CityHubPage.astro';
 
 export async function getStaticPaths() {
+  // SEO v2 (poda): solo se generan las ciudades reales donde se opera con
+  // contenido único. El resto de la matriz va a 410 vía netlify.toml.
+  const CONSERVED_CITIES = [
+    'boca-raton', 'bonita-springs', 'cape-coral', 'coral-gables',
+    'delray-beach', 'estero', 'fort-lauderdale', 'fort-myers',
+    'miami', 'naples', 'west-palm-beach',
+  ];
   const cities = await getCollection('cities');
-  return cities.map(city => ({
-    params: { city: city.slug },
-    props: { city },
-  }));
+  return cities
+    .filter(city => CONSERVED_CITIES.includes(city.slug))
+    .map(city => ({
+      params: { city: city.slug },
+      props: { city },
+    }));
 }
 
 const { city } = Astro.props;

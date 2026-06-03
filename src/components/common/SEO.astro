@@ -44,8 +44,29 @@ const {
   type,
 } = Astro.props;
 
+// Smart Title Truncation Logic (SEO Phase 2)
+let finalTitle = title;
+const MAX_TITLE_LENGTH = 60; // Google's safe pixel limit approximation
+
+if (finalTitle.length > MAX_TITLE_LENGTH) {
+  // Replace long suffix with short acronym
+  finalTitle = finalTitle.replace(" | Paramount Property Restoration", " | PPR");
+  finalTitle = finalTitle.replace(" - Paramount Property Restoration", " - PPR");
+  finalTitle = finalTitle.replace(" | Paramount Property Resources", " | PPR");
+  finalTitle = finalTitle.replace(" | Paramount", ""); // Removing shorter ones if still too long
+}
+
+// If it's STILL over 60 chars and has a short suffix, safely trim the suffix
+if (finalTitle.length > MAX_TITLE_LENGTH && finalTitle.endsWith(" | PPR")) {
+  finalTitle = finalTitle.replace(" | PPR", "");
+}
+if (finalTitle.length > MAX_TITLE_LENGTH && finalTitle.endsWith(" - PPR")) {
+  finalTitle = finalTitle.replace(" - PPR", "");
+}
+
 // Map legacy 'type' prop to schemaType if schemaType is default/unset but type is present
 const effectiveSchemaType = type || schemaType;
+
 
 import { COMPANY_INFO } from "../../data/company";
 
@@ -53,37 +74,33 @@ import { COMPANY_INFO } from "../../data/company";
 const siteURL = Astro.site
   ? Astro.site.origin
   : "https://paramountpropertyrestoration.com"; // Consider pulling this from config too if available, but okay for main domain
-const canonicalURL = canonical || new URL(Astro.url.pathname, siteURL).href;
+let canonicalURL = canonical || new URL(Astro.url.pathname, siteURL).href;
+if (!canonicalURL.endsWith('/')) {
+    canonicalURL += '/';
+}
 const absoluteImage = new URL(image, siteURL).href;
 
 // 2. Base del Schema: Organización Global (Siempre presente para E-E-A-T)
 const organizationSchema = {
-  "@type": "GeneralContractor",
+  "@type": ["LocalBusiness", "Organization"],
   "@id": `${siteURL}/#organization`,
-  name: COMPANY_INFO.name,
-  url: siteURL,
+  name: "Paramount Property Restoration",
+  url: `${siteURL}/`,
   logo: `${siteURL}/ppr-logo.png`,
   image: `${siteURL}/ppr-logo.png`,
-  telephone: `+1-${COMPANY_INFO.phoneDashes}`, // Ensure +1 prefix
+  description: "Florida’s Trusted General Contractor for Restoration & Remodeling.",
+  telephone: `+1-${COMPANY_INFO.phoneDashes}`,
   address: {
     "@type": "PostalAddress",
-    streetAddress: COMPANY_INFO.address,
-    addressLocality: COMPANY_INFO.city,
-    addressRegion: COMPANY_INFO.state,
-    postalCode: COMPANY_INFO.zip,
-    addressCountry: "US",
+    addressLocality: "Florida",
+    addressRegion: "FL",
+    addressCountry: "US"
   },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 25.790654,
-    longitude: -80.370327,
-  },
-  license: "CGC #1529606",
   sameAs: [
-    COMPANY_INFO.social.facebook,
-    COMPANY_INFO.social.linkedin,
-    COMPANY_INFO.social.instagram,
-  ].filter(Boolean),
+    "https://www.facebook.com/paramountpropertyrestoration",
+    "https://www.instagram.com/paramountpropertyrestoration",
+    "https://www.linkedin.com/company/paramount-property-restoration"
+  ]
 };
 
 // 3. Generación Dinámica del Schema de la Página
@@ -193,7 +210,7 @@ if (faqData.length > 0) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/png" href="/ppr-icon.png" />
 
-<title>{title}</title>
+<title>{finalTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalURL} />
 
@@ -209,7 +226,7 @@ if (faqData.length > 0) {
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonicalURL} />
-<meta property="og:title" content={title} />
+<meta property="og:title" content={finalTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={absoluteImage} />
 <meta property="og:site_name" content="Paramount Property Restoration" />
@@ -217,7 +234,7 @@ if (faqData.length > 0) {
 
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={title} />
+<meta property="twitter:title" content={finalTitle} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={absoluteImage} />
 

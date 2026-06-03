@@ -25,7 +25,7 @@ export default function ContentBlock({ title, subtitle, description, image, reve
                             viewport={{ once: true, margin: "-100px" }}
                             className={`rounded-2xl overflow-hidden shadow-2xl ${dark ? 'shadow-black/50 border border-slate-700' : 'shadow-slate-200 border border-slate-100'}`}
                         >
-                            <img src={image} alt={title} className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" />
+                            <img src={image} alt={title} className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"  width={800} height={600} loading="lazy" decoding="async" />
                         </motion.div>
                         {/* Decorative Blob */}
                         <div className={`absolute -bottom-12 -right-12 w-64 h-64 rounded-full blur-3xl -z-10 bg-primary/20`}></div>
