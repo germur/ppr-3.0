@@ -1,6 +1,6 @@
 ---
 name: "Naples"
-title: "General Contractor & Restoration Services in Naples, FL"
+title: "Property Restoration Services in Naples, FL"
 description: "Expert water damage restoration and luxury home remodeling in Naples. We navigate local building codes to deliver storm-resilient, high-end renovations."
 image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAmVMMj3fxbRmw8hLgcwdCjLmSJAO8-lhT5S6-4cDlWVIzxmWtrAh1bbst00D3IYs1C9vXQt_Hz2P9ocQTngc0umxpOyzmDRlD8nJm6BIm8O8rLLoKm5fhYS2e4zjWnIArg9Ovlzlrdnb8Kqen3XDulKXQVeCGT2wFzdiNmfyxPPmMm1zl1IqoKfNMOrx7CsNWIbfeLqAuYkRIEGdXOb6Nl6FvcYQEraKW_-zMxbKk2afQ-UdhuLzqd1BUu7Z3y8Etan-ouvzYb1OVc"
 region: "Southwest Florida"

@@ -31,7 +31,7 @@ export default function BentoGridServices() {
                     </BentoCard>
 
                     {/* 2. Kitchen Remodeling (Tall - 1x2) */}
-                    <BentoCard href="/remodeling/kitchen/" className="md:col-span-1 md:row-span-2 bg-orange-100 flex flex-col justify-between group">
+                    <BentoCard href="/restoration/water-damage/" className="md:col-span-1 md:row-span-2 bg-orange-100 flex flex-col justify-between group">
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10" />
                         <img src="/ppr-logo.png" className="absolute inset-0 w-full h-full object-cover" alt="Kitchen Remodeling"  width={800} height={600} loading="lazy" decoding="async" />
 

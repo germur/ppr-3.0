@@ -91,7 +91,7 @@ export const regions: RegionData[] = [
     {
         slug: "tampa-bay",
         name: "Tampa Bay",
-        heroH1: "Premier General Contractor & Restoration Services in the Tampa Bay Area",
+        heroH1: "Premier Property Restoration Services in the Tampa Bay Area",
         heroBadgeText: "Serving Hillsborough, Pinellas & Pasco Counties",
         introText: "Protecting and restoring properties from Gulf storms. Serving Hyde Park, St. Petersburg, Clearwater, and surrounding estates with rapid response times.",
         metaDescription: "Expert water and fire damage restoration in Tampa, St. Petersburg, and Clearwater. Quick response times for flood cleanup and mold remediation.",

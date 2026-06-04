@@ -21,11 +21,11 @@ export default function HeroSplit() {
                     SERVING ALL OF FLORIDA
                 </div>
                 <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4 max-w-5xl mx-auto leading-tight">
-                    Florida's Trusted General Contractor for <br />
-                    <span className="text-blue-400">Restoration</span> & <span className="text-orange-500">Remodeling</span>
+                    Florida's Trusted <br />
+                    <span className="text-blue-400">Restoration</span> & <span className="text-orange-500">Recovery Experts</span>
                 </h1>
                 <p className="text-slate-400 max-w-2xl mx-auto text-lg mb-12">
-                    From catastrophic storm recovery to luxury kitchen renovations, we rebuild homes and restore peace of mind. Fast response, expert craftsmanship.
+                    From catastrophic storm recovery to water, fire and mold damage, we restore your property and your peace of mind. Fast 24/7 response, expert craftsmanship.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
@@ -62,7 +62,7 @@ export default function HeroSplit() {
                             <h2 className="text-2xl font-bold text-slate-900 mb-2">I Want to Remodel</h2>
                             <p className="text-slate-500 mb-6 text-sm">Kitchens, Bathrooms, & Full Renovations. Build your dream space.</p>
 
-                            <a href="/remodeling/" className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm tracking-wide uppercase hover:gap-3 transition-all">
+                            <a href="/restoration/" className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm tracking-wide uppercase hover:gap-3 transition-all">
                                 Schedule Estimate <ArrowRight size={16} />
                             </a>
                         </div>

@@ -1,6 +1,6 @@
 ---
 name: "Miami"
-title: "Miami General Contractor & Restoration Experts"
+title: "Miami Property Restoration Experts"
 description: "Premier water damage restoration and luxury remodeling services in Miami. We navigate Miami-Dade's strict building codes to deliver high-end results."
 image: "https://images.unsplash.com/photo-1535498730771-e735b998cd64?q=80&w=2574&auto=format&fit=crop"
 region: "South Florida"

@@ -85,7 +85,7 @@ export const kitchenRemodelingFAQs = [
     },
     {
         question: "Do I need a permit for my kitchen renovation?",
-        answer: "Yes. In Florida, most kitchen renovations involving electrical, plumbing, or structural changes require a permit. As a licensed General Contractor, we handle all permitting and inspections for you."
+        answer: "Restoration work that involves structural repairs may require permits. We coordinate with licensed contractors and guide you through the permitting and inspection process."
     },
     {
         question: "Can you help with the design layout?",
